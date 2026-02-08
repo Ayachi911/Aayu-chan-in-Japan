@@ -1,0 +1,78 @@
+body {
+    font-family: var(--font-serif);
+    background: #fafafa;
+}
+
+nav { background: #ffffff; }
+
+main {
+    max-width: 650px;
+    background: #ffffff;
+    padding: 3rem 5%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+article { line-height: 1.8; }
+
+h1 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 42px;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    margin-top: 3rem;
+}
+
+time {
+    font-family: var(--font-sans);
+    margin-bottom: 3rem;
+}
+
+p {
+    font-size: 19px;
+    margin-bottom: 1.8rem;
+    line-height: 1.8;
+}
+
+article p:first-of-type::first-letter {
+    font-size: 3.5em;
+    line-height: 0.9;
+    float: left;
+    margin: 0.1em 0.1em 0 0;
+    font-weight: 600;
+}
+
+blockquote {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid #1a1a1a;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.intro-text {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.archive-item h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.archive-item p {
+    font-size: 17px;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    main { padding: 2rem 6%; }
+    article p:first-of-type::first-letter { font-size: 2.5em; }
+}
