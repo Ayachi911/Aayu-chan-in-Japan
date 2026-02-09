@@ -84,4 +84,29 @@ time {
     h3 { font-size: 20px; }
     .nav-links { gap: 1rem; }
     nav a { font-size: 11px; }
+
+}
+/* In global.css or about-specific stylesheet */
+.about-formal {
+    padding: 2rem 0;
+    border-top: 2px solid #e5e5e5;
+    margin-top: 3rem;
+}
+
+.about-formal ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.about-formal li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.about-formal li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
 }
