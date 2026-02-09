@@ -89,4 +89,14 @@ article li {
         border-radius: 12px;
         padding: 2rem 6%;
     }
+
+}
+/* In guides.css */
+time {
+    position: relative;
+}
+
+time::before {
+    content: "🔄 ";
+    opacity: 0.6;
 }
