@@ -2,7 +2,17 @@
     --guide-pink: #FFE5EC;
     --guide-mint: #D5F4E6;
 }
-
+/* Reading Progress Bar */
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b9d 0%, #00d4aa 100%);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
 body {
     font-family: var(--font-sans);
     background: var(--guide-pink);
@@ -276,6 +286,7 @@ time::before {
     content: "🔄 ";
     opacity: 0.6;
 }
+
 
 
 
