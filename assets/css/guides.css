@@ -91,6 +91,56 @@ article li {
     }
 
 }
+/* Guide Card Layout */
+.guide-cards {
+    display: grid;
+    gap: 2rem;
+}
+
+.guide-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 107, 157, 0.15);
+    border-color: var(--guide-pink);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.read-time {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    color: #666;
+    font-weight: 500;
+}
 /* In guides.css */
 time {
     position: relative;
@@ -100,3 +150,4 @@ time::before {
     content: "🔄 ";
     opacity: 0.6;
 }
+
