@@ -71,7 +71,38 @@ h2 {
     margin-bottom: 0.5rem;
     color: #00a884;
 }
+.copyable-callout {
+    position: relative;
+}
 
+.copy-btn {
+    margin-top: 1rem;
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid #00d4aa;
+    border-radius: 8px;
+    color: #00a884;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: #00d4aa;
+    color: white;
+    transform: scale(1.05);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.copy-btn.copied {
+    background: #00a884;
+    color: white;
+    border-color: #00a884;
+}
 .divider {
     text-align: center;
     margin: 3rem 0;
@@ -286,6 +317,7 @@ time::before {
     content: "🔄 ";
     opacity: 0.6;
 }
+
 
 
 
