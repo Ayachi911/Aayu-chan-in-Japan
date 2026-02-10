@@ -119,7 +119,66 @@ article li {
     align-items: center;
     margin-bottom: 1rem;
 }
+/* Interactive Checklist */
+.checklist-box {
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe5ec 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+    border: 2px solid #ffd4e5;
+}
 
+.checklist-box h3 {
+    margin-top: 0;
+    color: #ff6b9d;
+    font-size: 20px;
+}
+
+.interactive-checklist {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.interactive-checklist li {
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.interactive-checklist li:hover {
+    background: #f9f9f9;
+    transform: translateX(4px);
+}
+
+.interactive-checklist label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.75rem;
+    font-size: 15px;
+}
+
+.interactive-checklist input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #ff6b9d;
+}
+
+.interactive-checklist input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.checklist-progress {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #00a884;
+    font-size: 14px;
+}
 .read-time {
     font-size: 12px;
     color: #666;
@@ -150,4 +209,5 @@ time::before {
     content: "🔄 ";
     opacity: 0.6;
 }
+
 
