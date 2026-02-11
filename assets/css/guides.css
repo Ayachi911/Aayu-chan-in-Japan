@@ -1,268 +1,467 @@
+/* ============================================
+   TOKYO ZINE AESTHETIC — GUIDES ONLY
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap');
+
 :root {
-    --guide-pink: #FFE5EC;
-    --guide-mint: #D5F4E6;
+    --guide-cream: #faf7f2;
+    --guide-charcoal: #2a2a2a;
+    --guide-terracotta: #e07856;
+    --guide-sage: #87a878;
+    --guide-mustard: #d4a574;
+    --guide-ink: #1a1a1a;
+    --guide-paper: #fffef9;
 }
-/* Reading Progress Bar */
-.reading-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, #ff6b9d 0%, #00d4aa 100%);
-    z-index: 9999;
-    transition: width 0.1s ease-out;
-}
+
 body {
-    font-family: var(--font-sans);
-    background: var(--guide-pink);
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--guide-cream);
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0,0,0,0.015) 2px,
+            rgba(0,0,0,0.015) 4px
+        );
 }
+
+/* ============================================
+   NAVIGATION OVERRIDE
+   ============================================ */
 
 nav {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--guide-paper);
+    border-bottom: 3px solid var(--guide-charcoal);
+    backdrop-filter: none;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
 }
 
-main {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    padding: 3rem 5%;
-    max-width: 750px;
-}
-
-h1 {
-    font-family: var(--font-sans);
+nav a {
     font-weight: 600;
-    color: #1a1a1a;
-    font-size: 40px;
-}
-
-h2 {
-    color: #ff6b9d;
-    font-size: 26px;
-    font-weight: 600;
-    margin-top: 2.5rem;
-}
-
-.difficulty-tag {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--guide-mint);
-    color: #1a1a1a;
-    border-radius: 20px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.callout {
-    background: var(--guide-mint);
-    padding: 1.5rem;
-    border-left: 4px solid #00d4aa;
-    margin: 2rem 0;
-    border-radius: 8px;
-}
-
-.callout strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #00a884;
-}
-.copyable-callout {
     position: relative;
 }
 
-.copy-btn {
-    margin-top: 1rem;
-    padding: 8px 16px;
-    background: white;
-    border: 2px solid #00d4aa;
-    border-radius: 8px;
-    color: #00a884;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--guide-terracotta);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.copy-btn:hover {
-    background: #00d4aa;
-    color: white;
-    transform: scale(1.05);
+nav a:hover::after {
+    width: 100%;
 }
 
-.copy-btn:active {
-    transform: scale(0.95);
+/* ============================================
+   MAIN CONTAINER — NOTEBOOK AESTHETIC
+   ============================================ */
+
+main {
+    background: var(--guide-paper);
+    border-radius: 0;
+    box-shadow: 
+        8px 8px 0 rgba(224, 120, 86, 0.15),
+        16px 16px 0 rgba(135, 168, 120, 0.1);
+    padding: 4rem 6%;
+    max-width: 900px;
+    margin: 3rem auto 6rem;
+    border: 3px solid var(--guide-charcoal);
+    position: relative;
 }
 
-.copy-btn.copied {
-    background: #00a884;
-    color: white;
-    border-color: #00a884;
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 2px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--guide-terracotta) 0px,
+        var(--guide-terracotta) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    opacity: 0.3;
 }
-.divider {
-    text-align: center;
-    margin: 3rem 0;
-    font-size: 28px;
+
+/* ============================================
+   TYPOGRAPHY — BOLD & KINETIC
+   ============================================ */
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.1;
+    color: var(--guide-charcoal);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 8px;
+    background: var(--guide-mustard);
     opacity: 0.6;
+    transform: skewX(-12deg);
 }
 
-article ul, article ol {
-    margin: 1.5rem 0 1.5rem 2rem;
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--guide-terracotta);
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-article li {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
+h2::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--guide-sage);
+    font-size: 28px;
 }
 
-.intro-text {
-    font-size: 19px;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+h3 {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--guide-charcoal);
+    margin-top: 2.5rem;
 }
 
-@media (max-width: 768px) {
-    main {
-        border-radius: 12px;
-        padding: 2rem 6%;
-    }
-
+p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--guide-ink);
+    margin-bottom: 1.75rem;
 }
-/* Guide Card Layout */
-.guide-cards {
+
+/* ============================================
+   ARCHIVE CARDS — POLAROID STACK
+   ============================================ */
+
+.archive-list {
+    margin-top: 4rem;
     display: grid;
-    gap: 2rem;
+    gap: 3rem;
 }
 
-.guide-card {
+.archive-item {
     background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    border: 2px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    border: 3px solid var(--guide-charcoal);
+    box-shadow: 
+        6px 6px 0 var(--guide-mustard),
+        12px 12px 0 var(--guide-sage);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    transform: rotate(-1deg);
 }
 
-.guide-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(255, 107, 157, 0.15);
-    border-color: var(--guide-pink);
+.archive-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.archive-item:hover {
+    transform: rotate(0deg) translateY(-8px);
+    box-shadow: 
+        8px 8px 0 var(--guide-terracotta),
+        16px 16px 0 var(--guide-sage);
+}
+
+.archive-item h3 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+.archive-item h3 a {
+    color: var(--guide-charcoal);
+    text-decoration: none;
+    position: relative;
+    display: inline;
+    background-image: linear-gradient(
+        to right,
+        var(--guide-terracotta) 0%,
+        var(--guide-terracotta) 100%
+    );
+    background-size: 0 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+}
+
+.archive-item h3 a:hover {
+    background-size: 100% 3px;
+}
+
+/* ============================================
+   DIFFICULTY TAG — STAMP AESTHETIC
+   ============================================ */
+
+.difficulty-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--guide-terracotta);
+    color: white;
+    border: 3px solid var(--guide-charcoal);
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    font-family: 'DM Mono', monospace;
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
-/* Interactive Checklist */
-.checklist-box {
-    background: linear-gradient(135deg, #fff9e6 0%, #ffe5ec 100%);
+
+.read-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--guide-sage);
+    font-weight: 500;
+}
+
+/* ============================================
+   TAGS — HANDWRITTEN NOTES
+   ============================================ */
+
+.card-tags {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 6px 12px;
+    background: var(--guide-cream);
+    border: 2px dashed var(--guide-sage);
+    color: var(--guide-charcoal);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background: var(--guide-sage);
+    color: white;
+    border-style: solid;
+}
+
+/* ============================================
+   CALLOUT — STICKY NOTE VIBES
+   ============================================ */
+
+.callout {
+    background: #fff9e6;
     padding: 2rem;
-    border-radius: 12px;
-    margin: 2.5rem 0;
-    border: 2px solid #ffd4e5;
+    border-left: 6px solid var(--guide-mustard);
+    margin: 3rem 0;
+    border-radius: 0;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(212, 165, 116, 0.3);
+}
+
+.callout::before {
+    content: '📌';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-size: 24px;
+    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.1));
+}
+
+.callout strong {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--guide-charcoal);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ============================================
+   DIVIDER — TORN PAPER
+   ============================================ */
+
+.divider {
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 32px;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 2px;
+    background: var(--guide-sage);
+    opacity: 0.4;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* ============================================
+   LISTS — CHECKBOX AESTHETIC
+   ============================================ */
+
+article ul {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+article li {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    line-height: 1.7;
+}
+
+article li::before {
+    content: '□';
+    position: absolute;
+    left: 0;
+    color: var(--guide-terracotta);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ============================================
+   INTERACTIVE CHECKLIST
+   ============================================ */
+
+.checklist-box {
+    background: linear-gradient(135deg, #f0ebe3 0%, #e8dfd0 100%);
+    padding: 2.5rem;
+    border: 3px solid var(--guide-charcoal);
+    margin: 3rem 0;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
 }
 
 .checklist-box h3 {
     margin-top: 0;
-    color: #ff6b9d;
-    font-size: 20px;
+    color: var(--guide-terracotta);
+    font-size: 24px;
 }
 
 .interactive-checklist {
     list-style: none;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     padding: 0;
 }
 
 .interactive-checklist li {
-    margin-bottom: 0.75rem;
-    padding: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
     background: white;
-    border-radius: 8px;
+    border: 2px solid var(--guide-charcoal);
     transition: all 0.2s;
 }
 
 .interactive-checklist li:hover {
-    background: #f9f9f9;
-    transform: translateX(4px);
+    transform: translateX(6px);
+    box-shadow: 4px 4px 0 var(--guide-mustard);
 }
 
 .interactive-checklist label {
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 0.75rem;
-    font-size: 15px;
+    gap: 1rem;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .interactive-checklist input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
-    accent-color: #ff6b9d;
-}
-
-.interactive-checklist input[type="checkbox"]:checked + label {
-    text-decoration: line-through;
-    opacity: 0.6;
+    accent-color: var(--guide-terracotta);
+    border: 2px solid var(--guide-charcoal);
 }
 
 .checklist-progress {
-    margin-top: 1rem;
-    font-weight: 600;
-    color: #00a884;
-    font-size: 14px;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: var(--guide-sage);
+    font-size: 16px;
+    font-family: 'DM Mono', monospace;
 }
-/* FAQ Section */
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+
 .faq-section {
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
 
 .faq-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     background: white;
-    border-radius: 12px;
+    border: 3px solid var(--guide-charcoal);
     overflow: hidden;
-    border: 2px solid #f0f0f0;
-    transition: border-color 0.3s;
-}
-
-.faq-item:hover {
-    border-color: var(--guide-mint);
 }
 
 .faq-question {
     width: 100%;
     text-align: left;
-    padding: 1.25rem 1.5rem;
-    background: transparent;
+    padding: 1.5rem;
+    background: var(--guide-paper);
     border: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #1a1a1a;
+    color: var(--guide-charcoal);
     transition: background 0.2s;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .faq-question:hover {
-    background: #fafafa;
+    background: var(--guide-cream);
 }
 
 .faq-icon {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 300;
     transition: transform 0.3s;
-    color: #ff6b9d;
+    color: var(--guide-terracotta);
 }
 
 .faq-item.active .faq-icon {
@@ -272,69 +471,103 @@ article li {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    padding: 0 1.5rem;
+    transition: max-height 0.3s ease-out;
+    background: white;
 }
 
 .faq-item.active .faq-answer {
     max-height: 500px;
-    padding: 0 1.5rem 1.25rem;
 }
 
 .faq-answer p {
     margin: 0;
-    padding-top: 0.5rem;
-    color: #555;
+    padding: 1.5rem;
+    color: var(--guide-charcoal);
     line-height: 1.7;
-}
-.read-time {
-    font-size: 12px;
-    color: #666;
-    font-weight: 500;
+    border-top: 2px dashed var(--guide-sage);
 }
 
-.card-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+/* ============================================
+   COPY BUTTON
+   ============================================ */
+
+.copy-btn {
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    background: white;
+    border: 3px solid var(--guide-terracotta);
+    color: var(--guide-terracotta);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.tag {
-    font-size: 11px;
-    padding: 4px 10px;
-    background: #f0f0f0;
-    border-radius: 12px;
-    color: #666;
-    font-weight: 500;
-}
-/* In guides.css */
-time {
-    position: relative;
+.copy-btn:hover {
+    background: var(--guide-terracotta);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
 }
 
-time::before {
-    content: "🔄 ";
-    opacity: 0.6;
+.copy-btn:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
-/* Back to Top Button */
+
+.copy-btn.copied {
+    background: var(--guide-sage);
+    border-color: var(--guide-sage);
+    color: white;
+}
+
+/* ============================================
+   READING PROGRESS BAR
+   ============================================ */
+
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--guide-terracotta) 0%,
+        var(--guide-mustard) 50%,
+        var(--guide-sage) 100%
+    );
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   BACK TO TOP — BRUTALIST CIRCLE
+   ============================================ */
+
 .back-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b9d 0%, #00d4aa 100%);
-    color: white;
-    border: none;
-    font-size: 24px;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    background: var(--guide-charcoal);
+    color: var(--guide-mustard);
+    border: 3px solid var(--guide-mustard);
+    font-size: 28px;
+    font-weight: 700;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
-    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 4px 4px 0 var(--guide-terracotta);
     z-index: 1000;
+    transform: rotate(0deg);
 }
 
 .back-to-top.visible {
@@ -343,25 +576,82 @@ time::before {
 }
 
 .back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+    transform: rotate(-90deg) scale(1.1);
+    box-shadow: 6px 6px 0 var(--guide-sage);
 }
 
 .back-to-top:active {
-    transform: translateY(-2px);
+    transform: rotate(-90deg) scale(0.95);
 }
 
+/* ============================================
+   TIME TAG
+   ============================================ */
+
+time {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--guide-sage);
+    margin: 1rem 0 2rem;
+    font-weight: 500;
+}
+
+time::before {
+    content: '🔄 ';
+    opacity: 0.8;
+}
+
+/* ============================================
+   INTRO TEXT
+   ============================================ */
+
+.intro-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--guide-charcoal);
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--guide-terracotta);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
 @media (max-width: 768px) {
+    h1 {
+        font-size: 38px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+    
+    main {
+        padding: 2.5rem 5%;
+        margin: 2rem auto 4rem;
+        box-shadow: 
+            6px 6px 0 rgba(224, 120, 86, 0.15),
+            12px 12px 0 rgba(135, 168, 120, 0.1);
+    }
+    
+    main::before {
+        left: 40px;
+    }
+    
+    .archive-item {
+        padding: 2rem;
+        box-shadow: 
+            4px 4px 0 var(--guide-mustard),
+            8px 8px 0 var(--guide-sage);
+    }
+    
     .back-to-top {
         bottom: 1.5rem;
         right: 1.5rem;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
-
-
-
-
-
