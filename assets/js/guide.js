@@ -117,3 +117,38 @@ if (backToTopBtn) {
         });
     });
 }
+// Cyberpunk card hover effect - RGB split
+document.querySelectorAll('.archive-item').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
+
+// Glitch effect on h1
+const h1 = document.querySelector('h1');
+if (h1) {
+    setInterval(() => {
+        if (Math.random() > 0.95) {
+            h1.style.textShadow = `
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                2px 2px 0 var(--neon-pink),
+                -2px -2px 0 var(--neon-purple)
+            `;
+            
+            setTimeout(() => {
+                h1.style.textShadow = `
+                    0 0 10px var(--neon-pink),
+                    0 0 20px var(--neon-pink),
+                    0 0 30px var(--neon-pink),
+                    0 0 40px var(--hot-pink)
+                `;
+            }, 100);
+        }
+    }, 3000);
+}
