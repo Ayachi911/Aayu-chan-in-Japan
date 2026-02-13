@@ -1,8 +1,9 @@
 /* ============================================
-   HEISEI-ERA SHOUJO WEB — SOFT & NOSTALGIC
+   SHOUJO MAGAZINE EDITORIAL LAYOUT
+   Watercolor anime aesthetic, layered structure
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Comfortaa:wght@400;600&family=Mali:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Comfortaa:wght@400;700&family=Mali:wght@400;600&display=swap');
 
 :root {
     --soft-pink: #ffd6e8;
@@ -12,28 +13,39 @@
     --soft-sage: #d8e9d0;
     --peach: #ffe5d9;
     --lavender: #e8d9f5;
+    --watercolor-pink: rgba(255, 214, 232, 0.3);
+    --watercolor-blue: rgba(212, 228, 247, 0.3);
     --text-gray: #6b6b6b;
     --text-dark: #4a4a4a;
 }
 
 /* ============================================
-   BACKGROUND — SUBTLE PATTERN
+   BODY — SUBTLE WATERCOLOR TEXTURE
    ============================================ */
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background: var(--cream);
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255, 214, 232, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(212, 228, 247, 0.15) 0%, transparent 50%),
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(255, 179, 217, 0.03) 10px,
-            rgba(255, 179, 217, 0.03) 20px
-        );
+    background: linear-gradient(135deg, 
+        #fffbf5 0%, 
+        #fff5f0 50%,
+        #fdf8f3 100%);
+    background-attachment: fixed;
     color: var(--text-dark);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 20%, var(--watercolor-pink) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, var(--watercolor-blue) 0%, transparent 40%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="noise"><feTurbulence baseFrequency="0.9" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* ============================================
@@ -42,259 +54,310 @@ body {
 
 nav {
     background: rgba(255, 255, 255, 0.95);
-    border-bottom: 3px solid var(--soft-pink);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 12px rgba(255, 179, 217, 0.15);
+    border-bottom: 2px solid rgba(255, 179, 217, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(255, 179, 217, 0.1);
 }
 
 nav a {
     font-weight: 600;
-    position: relative;
     color: var(--text-dark);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: var(--dusty-rose);
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--dusty-rose);
-    transition: width 0.3s ease;
-}
+/* ============================================
+   MAGAZINE CONTAINER — OUTER FRAME
+   ============================================ */
 
-nav a:hover::after {
-    width: 80%;
+.magazine-container {
+    max-width: 1200px;
+    margin: 2rem auto 4rem;
+    padding: 0 3%;
 }
 
 /* ============================================
-   HERO BANNER — MAGAZINE HEADER
+   HERO MAGAZINE COVER
    ============================================ */
 
-.guide-hero {
+.hero-cover {
+    position: relative;
     background: linear-gradient(135deg, 
-        var(--soft-pink) 0%, 
-        var(--peach) 50%,
-        var(--baby-blue) 100%);
-    padding: 4rem 6%;
-    text-align: center;
+        rgba(255, 229, 217, 0.6) 0%,
+        rgba(255, 214, 232, 0.6) 50%,
+        rgba(212, 228, 247, 0.6) 100%);
+    border-radius: 24px;
+    padding: 4rem 5%;
     margin-bottom: 3rem;
-    border-radius: 24px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    box-shadow: 
-        0 8px 20px rgba(255, 179, 217, 0.25),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4);
-    position: relative;
     overflow: hidden;
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.06),
+        inset 0 0 60px rgba(255, 255, 255, 0.4);
 }
 
-.guide-hero::before {
-    content: '🌸';
-    position: absolute;
-    top: 1rem;
-    left: 2rem;
-    font-size: 48px;
-    opacity: 0.3;
-}
-
-.guide-hero::after {
-    content: '🌸';
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
-    font-size: 48px;
-    opacity: 0.3;
-}
-
-/* ============================================
-   MAIN CONTAINER — ORGANIZED PANELS
-   ============================================ */
-
-main {
-    background: white;
-    border-radius: 24px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    padding: 3rem 5%;
-    max-width: 900px;
-    margin: 0 auto 4rem;
-    border: 3px solid var(--soft-pink);
-}
-
-/* ============================================
-   TYPOGRAPHY — SOFT & READABLE
-   ============================================ */
-
-h1 {
-    font-family: 'Comfortaa', cursive;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.2;
-    color: var(--text-dark);
-    margin-bottom: 0.75rem;
-    position: relative;
-    display: inline-block;
-}
-
-h1::after {
+.hero-cover::before {
     content: '';
     position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 4px;
-    background: var(--dusty-rose);
-    border-radius: 2px;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(255, 214, 232, 0.4) 0%, 
+        transparent 70%);
+    border-radius: 50%;
 }
 
-h2 {
-    font-family: 'Comfortaa', cursive;
-    font-weight: 600;
-    font-size: 28px;
-    color: var(--dusty-rose);
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
+.hero-illustration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    padding-right: 3rem;
 }
 
-h2::before {
-    content: '🎀';
-    font-size: 24px;
+.illustration-placeholder {
+    width: 280px;
+    height: 320px;
+    background: linear-gradient(135deg, 
+        rgba(255, 179, 217, 0.2) 0%,
+        rgba(212, 228, 247, 0.2) 100%);
+    border-radius: 50% 50% 48% 52% / 45% 55% 45% 55%;
+    position: relative;
 }
 
-h3 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--text-dark);
-    margin-top: 2rem;
+.illustration-placeholder::after {
+    content: '🌸';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    opacity: 0.3;
 }
 
-p {
-    font-size: 17px;
-    line-height: 1.75;
-    color: var(--text-gray);
-    margin-bottom: 1.5rem;
+.hero-text-block {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(255, 179, 217, 0.15);
 }
 
-/* ============================================
-   SUBTITLE — HANDWRITTEN FEEL
-   ============================================ */
-
-.intro-text {
+.magazine-label {
     font-family: 'Mali', cursive;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 14px;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text-block h1 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+    font-size: 18px;
     color: var(--text-gray);
-    margin-bottom: 2.5rem;
-    text-align: center;
-    padding: 1rem 2rem;
-    background: var(--peach);
-    border-radius: 16px;
-    border: 2px dashed var(--dusty-rose);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* ============================================
-   ARCHIVE CARDS — SCRAPBOOK STICKERS
+   CONTENT GRID LAYOUT
    ============================================ */
 
-.archive-list {
-    margin-top: 3rem;
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ============================================
+   RIBBON LABELS
+   ============================================ */
+
+.ribbon-label {
+    position: absolute;
+    top: -12px;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--dusty-rose) 0%, #ff9ec7 100%);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    box-shadow: 0 4px 12px rgba(255, 179, 217, 0.35);
+    z-index: 10;
+}
+
+.ribbon-label::before,
+.ribbon-label::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.ribbon-label::before {
+    left: 0;
+    border-width: 6px 0 0 8px;
+    border-color: transparent transparent transparent #d9006e;
+}
+
+.ribbon-label::after {
+    right: 0;
+    border-width: 6px 8px 0 0;
+    border-color: transparent #d9006e transparent transparent;
+}
+
+.section-divider {
+    margin: 3rem 0 2rem;
+    position: relative;
+}
+
+.ribbon-header {
+    display: inline-block;
+    background: linear-gradient(135deg, 
+        rgba(255, 214, 232, 0.6) 0%,
+        rgba(212, 228, 247, 0.6) 100%);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(255, 179, 217, 0.2);
+    position: relative;
+}
+
+.ribbon-header::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--soft-pink);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(255, 179, 217, 0.3);
+}
+
+.ribbon-header::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--baby-blue);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(212, 228, 247, 0.3);
+}
+
+/* ============================================
+   FEATURED GUIDE
+   ============================================ */
+
+.featured-guide {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.featured-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 249, 245, 0.95) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(255, 179, 217, 0.15);
+    border: 1px solid rgba(255, 179, 217, 0.2);
+    position: relative;
+}
+
+.card-illustration-corner {
+    position: absolute;
+    top: -20px;
+    right: 2rem;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, 
+        rgba(255, 214, 232, 0.4) 0%,
+        transparent 70%);
+    border-radius: 50%;
+}
+
+.card-illustration-corner::after {
+    content: '✿';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: var(--dusty-rose);
+    opacity: 0.6;
+}
+
+/* ============================================
+   GUIDE CARDS
+   ============================================ */
+
+.guide-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
 }
 
-.archive-item {
-    background: white;
+.guide-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
     padding: 2rem;
-    border-radius: 20px;
-    border: 3px solid var(--soft-pink);
-    box-shadow: 0 6px 16px rgba(255, 179, 217, 0.2);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 179, 217, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
-.archive-item::before {
-    content: '✿';
-    position: absolute;
-    top: -12px;
-    left: 1.5rem;
-    background: white;
-    padding: 0 8px;
-    font-size: 20px;
-    color: var(--dusty-rose);
+.guide-card:nth-child(odd) {
+    transform: rotate(-0.5deg);
 }
 
-.archive-item:nth-child(even) {
-    border-color: var(--baby-blue);
+.guide-card:nth-child(even) {
+    transform: rotate(0.5deg);
+    background: rgba(255, 249, 245, 0.9);
 }
 
-.archive-item:nth-child(even)::before {
-    content: '✦';
-    color: #8fb4d4;
+.guide-card:hover {
+    transform: translateY(-6px) rotate(0deg);
+    box-shadow: 0 12px 28px rgba(255, 179, 217, 0.25);
 }
 
-.archive-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(255, 179, 217, 0.35);
-    border-color: var(--dusty-rose);
-}
-
-.archive-item h3 {
-    margin-top: 0;
-    font-size: 24px;
-    line-height: 1.3;
-}
-
-.archive-item h3 a {
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.3s;
-    background-image: linear-gradient(
-        to right,
-        var(--dusty-rose) 0%,
-        var(--dusty-rose) 100%
-    );
-    background-size: 0 2px;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: background-size 0.3s ease;
-}
-
-.archive-item h3 a:hover {
-    color: var(--dusty-rose);
-    background-size: 100% 2px;
-}
-
-/* ============================================
-   DIFFICULTY TAG — SOFT BADGE
-   ============================================ */
-
-.difficulty-tag {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--soft-sage);
-    color: var(--text-dark);
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 2px 6px rgba(216, 233, 208, 0.4);
+.guide-card.coming-soon {
+    opacity: 0.6;
+    background: rgba(245, 245, 245, 0.8);
 }
 
 .card-header {
@@ -306,402 +369,230 @@ p {
     gap: 0.75rem;
 }
 
-.read-time {
-    font-family: 'Mali', cursive;
-    font-size: 14px;
-    color: var(--text-gray);
-    font-weight: 400;
+.difficulty-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--soft-sage);
+    color: var(--text-dark);
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 6px rgba(216, 233, 208, 0.3);
 }
 
-/* ============================================
-   TAGS — MINI STICKERS
-   ============================================ */
+.read-time {
+    font-family: 'Mali', cursive;
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+.guide-card h3 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0.75rem 0;
+    line-height: 1.3;
+}
+
+.guide-card h3 a {
+    color: var(--text-dark);
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--dusty-rose), var(--dusty-rose));
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+}
+
+.guide-card h3 a:hover {
+    background-size: 100% 2px;
+    color: var(--dusty-rose);
+}
+
+.guide-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin: 0.75rem 0 1.25rem;
+}
 
 .card-tags {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-top: 1.25rem;
 }
 
 .tag {
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px 12px;
     background: var(--lavender);
-    border-radius: 16px;
+    border-radius: 12px;
     color: var(--text-dark);
     font-weight: 500;
+    box-shadow: 0 2px 4px rgba(232, 217, 245, 0.25);
     transition: all 0.2s;
-    box-shadow: 0 2px 4px rgba(232, 217, 245, 0.3);
 }
 
 .tag:hover {
     background: var(--baby-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(212, 228, 247, 0.4);
 }
 
 /* ============================================
-   CALLOUT — STICKY NOTE
+   SIDEBAR WIDGET
    ============================================ */
 
-.callout {
-    background: #fff9e8;
-    padding: 1.75rem;
-    border-left: 4px solid #ffd93d;
-    border-radius: 12px;
-    margin: 2.5rem 0;
-    box-shadow: 0 4px 12px rgba(255, 217, 61, 0.15);
-    position: relative;
+.sidebar-widget {
+    position: sticky;
+    top: 2rem;
 }
 
-.callout::before {
-    content: '📌';
-    position: absolute;
-    top: -10px;
-    left: 1.5rem;
-    font-size: 24px;
-}
-
-.callout strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-    font-size: 17px;
-    font-weight: 700;
-    font-family: 'Comfortaa', cursive;
-}
-
-/* ============================================
-   DIVIDER — DECORATIVE LINE
-   ============================================ */
-
-.divider {
+.widget-mascot {
     text-align: center;
-    margin: 3rem 0;
-    font-size: 28px;
+    margin-bottom: 1.5rem;
+}
+
+.mascot-placeholder {
+    width: 120px;
+    height: 140px;
+    margin: 0 auto;
+    background: radial-gradient(circle, 
+        rgba(255, 214, 232, 0.3) 0%,
+        transparent 70%);
+    border-radius: 50% 50% 45% 55% / 60% 60% 40% 40%;
     position: relative;
 }
 
-.divider::before,
-.divider::after {
-    content: '';
+.mascot-placeholder::after {
+    content: '(◕‿◕)';
     position: absolute;
     top: 50%;
-    width: 35%;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        transparent 0%,
-        var(--soft-pink) 50%,
-        transparent 100%
-    );
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    opacity: 0.5;
 }
 
-.divider::before { left: 0; }
-.divider::after { right: 0; }
-
-/* ============================================
-   LISTS — SOFT CHECKBOXES
-   ============================================ */
-
-article ul {
-    list-style: none;
-    margin: 1.75rem 0;
-    padding: 0;
-}
-
-article li {
-    padding-left: 2rem;
-    margin-bottom: 0.85rem;
-    position: relative;
-    line-height: 1.7;
-}
-
-article li::before {
-    content: '🌸';
-    position: absolute;
-    left: 0;
-    font-size: 16px;
-}
-
-/* ============================================
-   INTERACTIVE CHECKLIST
-   ============================================ */
-
-.checklist-box {
-    background: linear-gradient(135deg, var(--peach) 0%, var(--soft-pink) 100%);
-    padding: 2rem;
+.widget-box {
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 16px;
-    margin: 2.5rem 0;
-    border: 3px solid var(--dusty-rose);
-    box-shadow: 0 6px 16px rgba(255, 179, 217, 0.25);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(255, 179, 217, 0.12);
+    border: 1px solid rgba(255, 179, 217, 0.15);
 }
 
-.checklist-box h3 {
-    margin-top: 0;
-    color: var(--text-dark);
-    font-size: 22px;
+.widget-box h4 {
     font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dusty-rose);
+    margin: 0 0 1rem;
 }
 
-.interactive-checklist {
+.widget-links {
     list-style: none;
-    margin: 1.5rem 0;
     padding: 0;
+    margin: 0;
 }
 
-.interactive-checklist li {
-    margin-bottom: 0.85rem;
-    padding: 0.85rem 1rem;
-    background: white;
-    border-radius: 12px;
-    transition: all 0.2s;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+.widget-links li {
+    margin-bottom: 0.75rem;
 }
 
-.interactive-checklist li:hover {
-    transform: translateX(6px);
-    box-shadow: 0 4px 10px rgba(255, 179, 217, 0.3);
-}
-
-.interactive-checklist label {
+.widget-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    gap: 0.85rem;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-dark);
 }
 
-.interactive-checklist input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: var(--dusty-rose);
+.widget-links a::before {
+    content: '→';
+    margin-right: 0.5rem;
+    color: var(--dusty-rose);
+    transition: transform 0.2s;
 }
 
-.checklist-progress {
-    margin-top: 1.25rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    font-size: 15px;
-    font-family: 'Mali', cursive;
+.widget-links a:hover {
+    color: var(--dusty-rose);
 }
 
-/* ============================================
-   FAQ SECTION
-   ============================================ */
-
-.faq-section {
-    margin: 3rem 0;
+.widget-links a:hover::before {
+    transform: translateX(4px);
 }
 
-.faq-item {
-    margin-bottom: 1.25rem;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid var(--soft-pink);
-    box-shadow: 0 4px 10px rgba(255, 179, 217, 0.15);
-}
-
-.faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 1.25rem 1.5rem;
-    background: white;
-    border: none;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
+/* Timeline Widget */
+.timeline-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--text-dark);
-    transition: all 0.2s;
-    font-family: 'Quicksand', sans-serif;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed rgba(255, 179, 217, 0.2);
+    font-size: 13px;
 }
 
-.faq-question:hover {
-    background: var(--peach);
+.timeline-item:last-child {
+    border-bottom: none;
 }
 
-.faq-icon {
-    font-size: 24px;
-    font-weight: 300;
-    transition: transform 0.3s;
-    color: var(--dusty-rose);
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: #fffbf9;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-}
-
-.faq-answer p {
-    margin: 0;
-    padding: 1.25rem 1.5rem;
-    color: var(--text-gray);
-    line-height: 1.7;
-    border-top: 2px dashed var(--soft-pink);
-}
-
-/* ============================================
-   COPY BUTTON
-   ============================================ */
-
-.copy-btn {
-    margin-top: 1.25rem;
-    padding: 10px 18px;
-    background: white;
-    border: 2px solid var(--dusty-rose);
-    border-radius: 20px;
-    color: var(--dusty-rose);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: 'Quicksand', sans-serif;
-    box-shadow: 0 3px 8px rgba(255, 179, 217, 0.2);
-}
-
-.copy-btn:hover {
-    background: var(--dusty-rose);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(255, 179, 217, 0.35);
-}
-
-.copy-btn:active {
-    transform: translateY(0);
-}
-
-.copy-btn.copied {
-    background: var(--soft-sage);
-    border-color: var(--soft-sage);
-    color: white;
-}
-
-/* ============================================
-   READING PROGRESS BAR
-   ============================================ */
-
-.reading-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--soft-pink) 0%,
-        var(--dusty-rose) 50%,
-        var(--baby-blue) 100%
-    );
-    z-index: 9999;
-    transition: width 0.1s ease-out;
-    box-shadow: 0 2px 8px rgba(255, 179, 217, 0.4);
-}
-
-/* ============================================
-   BACK TO TOP — SOFT CIRCLE
-   ============================================ */
-
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--dusty-rose);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    box-shadow: 0 6px 16px rgba(255, 179, 217, 0.4);
-    z-index: 1000;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(255, 179, 217, 0.5);
-}
-
-.back-to-top:active {
-    transform: translateY(-2px);
-}
-
-/* ============================================
-   TIME TAG
-   ============================================ */
-
-time {
-    display: block;
+.timeline-item .month {
     font-family: 'Mali', cursive;
-    font-size: 14px;
-    color: var(--text-gray);
-    margin: 0.75rem 0 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
+    color: var(--dusty-rose);
 }
 
-time::before {
-    content: '🔄 ';
-    opacity: 0.7;
+.timeline-item .event {
+    color: var(--text-gray);
 }
 
 /* ============================================
    MOBILE RESPONSIVE
    ============================================ */
 
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-widget {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .widget-mascot {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
-    h1 {
+    .hero-cover {
+        padding: 3rem 5%;
+    }
+    
+    .hero-illustration {
+        display: none;
+    }
+    
+    .hero-text-block {
+        max-width: 100%;
+    }
+    
+    .hero-text-block h1 {
         font-size: 36px;
     }
     
-    h2 {
-        font-size: 24px;
+    .sidebar-widget {
+        grid-template-columns: 1fr;
     }
     
-    .guide-hero {
-        padding: 3rem 5%;
-        margin-top: 1.5rem;
-    }
-    
-    main {
-        padding: 2rem 5%;
-        margin: 0 1rem 3rem;
-    }
-    
-    .archive-item {
-        padding: 1.5rem;
-    }
-    
-    .back-to-top {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
+    .guide-card {
+        transform: none !important;
     }
 }
