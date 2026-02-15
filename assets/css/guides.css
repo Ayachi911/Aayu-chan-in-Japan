@@ -390,20 +390,25 @@ body {
 }
 
 .puzzle-grid {
+    /* Adjusted Size: 85px*3 + 16px gap = 271px fits inside 280px available space */
     display: grid;
-    grid-template-columns: repeat(3, 90px);
-    grid-template-rows: repeat(3, 90px);
+    grid-template-columns: repeat(3, 85px);
+    grid-template-rows: repeat(3, 85px);
     gap: 8px;
     justify-content: center;
     margin-bottom: 15px;
 }
 
 .tile {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     border-radius: 12px;
     border: 2px solid #f5a9c6;
-    background-size: 270px 270px;
+    
+    /* Fallback color if image breaks */
+    background-color: #ffcce0;
+    background-size: 255px 255px; /* 3 x 85 */
+    
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -413,7 +418,8 @@ body {
 }
 
 .empty {
-    background: #ffeaf3;
+    background: #ffeaf3 !important; /* Force override background image */
+    background-image: none !important;
     border: 2px dashed #f5a9c6;
     cursor: default;
 }
@@ -934,4 +940,3 @@ body {
         flex-wrap: wrap;
     }
 }
-
