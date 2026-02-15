@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const size = 3;
         // IMPORTANT: Must match CSS (.tile width)
-        const tileSize = 85; 
+        const tileSize = 70; 
         
         // IMPORTANT: If this image is missing, you will see Pink tiles instead!
         const imageSrc = "../assets/images/stamp-main.jpg"; 
