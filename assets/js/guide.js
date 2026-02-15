@@ -165,8 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (puzzle && shuffleBtn && winMessage) {
 
         const size = 3;
-        const tileSize = 90;
-        const imageSrc = "../assets/images/stamp-main.jpg"; // adjust path
+        // IMPORTANT: Must match CSS (.tile width)
+        const tileSize = 85; 
+        
+        // IMPORTANT: If this image is missing, you will see Pink tiles instead!
+        const imageSrc = "../assets/images/stamp-main.jpg"; 
+        
         let tiles = [];
         let emptyIndex = 8;
 
@@ -187,7 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const col = i % size;
 
                     tile.style.backgroundImage = `url(${imageSrc})`;
+                    // Negative position moves the background image around to show the correct slice
                     tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
+                    
+                    // The background size must be the FULL image size (85 * 3 = 255)
                     tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
                 }
 
@@ -228,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function shufflePuzzle() {
+            // Random valid moves to ensure solvability
             for (let i = 0; i < 200; i++) {
                 const neighbors = [];
                 for (let j = 0; j < 9; j++) {
@@ -258,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         shuffleBtn.addEventListener("click", shufflePuzzle);
 
         initPuzzle();
+        // Automatically shuffle on load so it's ready to play!
         shufflePuzzle();
     }
 
