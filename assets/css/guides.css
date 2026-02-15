@@ -369,45 +369,44 @@ body {
    ============================================ */
 
 .stamps-container {
-    background: #ffffff;
-    border: 3px solid #f5a9c6;
-    border-radius: 18px;
-    padding: 20px;
-    width: 280px;
-    margin: 30px auto;
-    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+    background: white;
+    border: 3px solid var(--border-pink);
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 10px rgba(255, 179, 217, 0.2);
+    overflow: hidden;
 }
+
 
 .stamps-header {
-    background: #f9c6d8;
-    padding: 10px;
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--peach) 100%);
+    padding: 10px 14px;
+    border-bottom: 3px solid var(--border-pink);
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: #6d4c5b;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
+
 .puzzle-grid {
-    /* Adjusted Size: 85px*3 + 16px gap = 271px fits inside 280px available space */
     display: grid;
-    grid-template-columns: repeat(3, 85px);
-    grid-template-rows: repeat(3, 85px);
-    gap: 8px;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 6px;
     justify-content: center;
-    margin-bottom: 15px;
+    margin: 12px 0;
 }
 
 .tile {
-    width: 85px;
-    height: 85px;
+    width: 70px;
+    height: 70px;
     border-radius: 12px;
     border: 2px solid #f5a9c6;
     
     /* Fallback color if image breaks */
     background-color: #ffcce0;
-    background-size: 255px 255px; /* 3 x 85 */
+    background-size: 210px 210px; /* 3 x 85 */
     
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -940,4 +939,5 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
