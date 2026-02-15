@@ -368,25 +368,82 @@ body {
    STAMP COLLECTION
    ============================================ */
 
-.stamp-collection {
+.stamps-container {
+    background: #ffffff;
+    border: 3px solid #f5a9c6;
+    border-radius: 18px;
+    padding: 20px;
+    width: 320px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+}
+
+.stamps-header {
+    background: #f9c6d8;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #6d4c5b;
+}
+
+.puzzle-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
-.stamp-item {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: contain;
-    border: 2px solid var(--border-pink);
-    border-radius: 6px;
-    background: var(--cream);
-    transition: transform 0.2s;
+.tile {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    border: 2px solid #f5a9c6;
+    background-size: 270px 270px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.stamp-item:hover {
-    transform: scale(1.15) rotate(-5deg);
+.tile:hover {
+    transform: scale(1.05);
 }
+
+.empty {
+    background: #ffeaf3;
+    border: 2px dashed #f5a9c6;
+    cursor: default;
+}
+
+.puzzle-controls {
+    text-align: center;
+}
+
+#shuffleBtn {
+    background: #f9c6d8;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6d4c5b;
+}
+
+#shuffleBtn:hover {
+    background: #f5a9c6;
+}
+
+.win-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e75480;
+    display: none;
+}
+
 
 /* ============================================
    FRIENDS LIST
@@ -877,3 +934,4 @@ body {
         flex-wrap: wrap;
     }
 }
+
