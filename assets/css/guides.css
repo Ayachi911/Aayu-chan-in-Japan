@@ -142,14 +142,11 @@ body {
 }
 
 .site-title {
-    font-family: 'Klaristha-Thin.ttf', cursive;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--text);
-    margin: 0;
-    text-shadow: 2px 2px 0 rgba(255, 204, 224, 0.5);
+    font-family: 'Klaristha', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 0.02em;
 }
-
 .site-subtitle {
     font-family: 'Mali', cursive;
     font-size: 18px;
@@ -946,6 +943,7 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
 
