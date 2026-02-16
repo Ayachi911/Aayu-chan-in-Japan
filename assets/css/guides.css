@@ -6,8 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=VT323&family=Quicksand:wght@400;600&family=Mali:wght@400;600&display=swap');
 @font-face {
     font-family: 'Glamour';
-    src: url('../assets/fonts/Glamour.ttf') format('truetype');
-    font-style: normal;
+    src: url('../assets/fonts/Glamour.otf') format('truetype');
     font-display: swap;
 }
 
@@ -945,6 +944,7 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
 
