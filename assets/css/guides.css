@@ -135,7 +135,7 @@ body {
 }
 
 .site-title {
-    font-family: 'Fredoka', cursive;
+    font-family: 'Klaristha-Thin.ttf', cursive;
     font-size: 42px;
     font-weight: 700;
     color: var(--text);
@@ -939,5 +939,6 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
