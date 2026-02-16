@@ -544,11 +544,15 @@ body {
     height: auto;
     margin: 0.5rem auto;
 }
-
 .welcome-title {
-    font-family: 'Glamour', serif;
+    font-family: 'Glamour', cursive;
+    font-size: 44px;
     font-weight: normal;
+
+    font-feature-settings: "liga" 1, "calt" 1, "swsh" 1;
+    font-variant-ligatures: common-ligatures contextual;
 }
+
 
 
 
@@ -941,6 +945,7 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
 
