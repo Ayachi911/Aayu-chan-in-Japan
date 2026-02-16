@@ -7,7 +7,6 @@
 @font-face {
     font-family: 'Glamour';
     src: url('../assets/fonts/Glamour.ttf') format('truetype');
-    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -547,13 +546,10 @@ body {
 }
 
 .welcome-title {
-    font-family: 'Glamour', sans-serif;
-    font-weight: 300;
-    font-size: 32px;
-    letter-spacing: 0.02em;
-    color: var(--text);
-    margin: 0.75rem 0;
+    font-family: 'Glamour', serif;
+    font-weight: normal;
 }
+
 
 
 .welcome-text {
@@ -945,6 +941,7 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
 
