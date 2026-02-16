@@ -140,7 +140,7 @@ body {
 }
 
 .site-title {
-    font-family: 'Glamour', sans-serif;
+    font-family: 'Glamour';
     font-weight: 300;
     font-size: 30px;
     letter-spacing: 0.02em;
@@ -944,6 +944,7 @@ body {
         flex-wrap: wrap;
     }
 }
+
 
 
 
