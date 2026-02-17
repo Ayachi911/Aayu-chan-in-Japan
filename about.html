@@ -374,41 +374,50 @@
 
     <script src="script.js"></script>
 
-    <!-- ✅ REAL visitor counter — persistent, no reset on redeploy, no fake numbers -->
-    <script>
-    (function () {
-        const NAMESPACE   = "ayachi-samyal-shrine";  // unique to your site
-        const KEY         = "total-visits";
-        const SESSION_KEY = "ayachi_counted";
-        const el = document.getElementById("visitor-count");
+    <!--
+  ============================================================
+  VISITOR COUNTER — drop this at the bottom of BOTH files,
+  just before </body>. Replace the old countapi script block.
+  
+  Also make sure your counter element has id="visitor-count":
+  
+    <p id="visitor-count" style="font-size:24px; font-family:'VT323',monospace; letter-spacing:2px;">······</p>
+  ============================================================
+-->
+<script>
+(function () {
+    // ⚠️ Make this key UNIQUE to you — include your name so it won't
+    // accidentally clash with anyone else using the same free service.
+    // Do NOT change this key between your two pages — same key = shared count.
+    var KEY         = "ayachi-samyal-shrine-v1";
+    var SESSION_KEY = "ayachi_counted";
+    var BASE        = "https://countapi.mileshilliard.com/api/v1";
+    var el          = document.getElementById("visitor-count");
 
-        function display(n) {
-            // Pad to 6 digits like a classic hit counter: 000001
-            if (el) el.textContent = String(n).padStart(6, "0");
-        }
+    function display(n) {
+        if (el) el.textContent = String(n).padStart(6, "0");
+    }
 
-        const alreadyCounted = sessionStorage.getItem(SESSION_KEY);
-
-        if (alreadyCounted) {
-            // Same browser tab session — just show the count, don't add another hit
-            fetch("https://api.countapi.xyz/get/" + NAMESPACE + "/" + KEY)
-                .then(r => r.json())
-                .then(d => { if (d && d.value !== undefined) display(d.value); })
-                .catch(() => { if (el) el.textContent = "······"; });
-        } else {
-            // Fresh visit — increment and record so refreshing won't double-count
-            fetch("https://api.countapi.xyz/hit/" + NAMESPACE + "/" + KEY)
-                .then(r => r.json())
-                .then(d => {
-                    if (d && d.value !== undefined) {
-                        display(d.value);
-                        sessionStorage.setItem(SESSION_KEY, "1");
-                    }
-                })
-                .catch(() => { if (el) el.textContent = "······"; });
-        }
-    })();
-    </script>
-
+    if (sessionStorage.getItem(SESSION_KEY)) {
+        // Same browser session (e.g. refresh) — just show current count, no increment
+        fetch(BASE + "/get/" + KEY)
+            .then(function(r){ return r.json(); })
+            .then(function(d){ if (d && d.value !== undefined) display(parseInt(d.value, 10)); })
+            .catch(function(){ if (el) el.textContent = "······"; });
+    } else {
+        // New visit — increment
+        fetch(BASE + "/hit/" + KEY)
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+                if (d && d.value !== undefined) {
+                    display(parseInt(d.value, 10));
+                    sessionStorage.setItem(SESSION_KEY, "1");
+                }
+            })
+            .catch(function(){ if (el) el.textContent = "······"; });
+    }
+})();
+</script>
 </body>
 </html>
+
