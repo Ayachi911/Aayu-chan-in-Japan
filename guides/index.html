@@ -432,35 +432,38 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- ✅ REAL visitor counter — same key as homepage so it's one shared count -->
 <script>
 (function () {
-    const NAMESPACE   = "ayachi-samyal-shrine";  // ← same namespace as index.html
-    const KEY         = "total-visits";           // ← same key = one shared counter
-    const SESSION_KEY = "ayachi_counted";
-    const el = document.getElementById("visitor-count");
+    // ⚠️ Make this key UNIQUE to you — include your name so it won't
+    // accidentally clash with anyone else using the same free service.
+    // Do NOT change this key between your two pages — same key = shared count.
+    var KEY         = "ayachi-samyal-shrine-v1";
+    var SESSION_KEY = "ayachi_counted";
+    var BASE        = "https://countapi.mileshilliard.com/api/v1";
+    var el          = document.getElementById("visitor-count");
 
     function display(n) {
         if (el) el.textContent = String(n).padStart(6, "0");
     }
 
-    const alreadyCounted = sessionStorage.getItem(SESSION_KEY);
-
-    if (alreadyCounted) {
-        fetch("https://api.countapi.xyz/get/" + NAMESPACE + "/" + KEY)
-            .then(r => r.json())
-            .then(d => { if (d && d.value !== undefined) display(d.value); })
-            .catch(() => { if (el) el.textContent = "······"; });
+    if (sessionStorage.getItem(SESSION_KEY)) {
+        // Same browser session (e.g. refresh) — just show current count, no increment
+        fetch(BASE + "/get/" + KEY)
+            .then(function(r){ return r.json(); })
+            .then(function(d){ if (d && d.value !== undefined) display(parseInt(d.value, 10)); })
+            .catch(function(){ if (el) el.textContent = "······"; });
     } else {
-        fetch("https://api.countapi.xyz/hit/" + NAMESPACE + "/" + KEY)
-            .then(r => r.json())
-            .then(d => {
+        // New visit — increment
+        fetch(BASE + "/hit/" + KEY)
+            .then(function(r){ return r.json(); })
+            .then(function(d){
                 if (d && d.value !== undefined) {
-                    display(d.value);
+                    display(parseInt(d.value, 10));
                     sessionStorage.setItem(SESSION_KEY, "1");
                 }
             })
-            .catch(() => { if (el) el.textContent = "······"; });
+            .catch(function(){ if (el) el.textContent = "······"; });
     }
 })();
 </script>
-
 </body>
 </html>
+
