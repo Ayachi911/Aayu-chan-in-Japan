@@ -17,7 +17,7 @@
             
             <div class="banner-container">
                 <img src="../assets/images/banner-main.jpg" alt="Ayachi's Banner" class="main-banner">
-              
+                <div class="banner-overlay">
                     <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
                     <p class="site-subtitle">♡ your senpai in study abroad applications ♡</p>
                 </div>
@@ -96,15 +96,12 @@
 
                     <div class="stamps-container">
                         <div class="stamps-header">
-                            links x puzzle ✿
+                           links x puzzle ✿
                         </div>
-
                         <div id="puzzle" class="puzzle-grid"></div>
-
                         <div class="puzzle-controls">
                             <button id="shuffleBtn">Shuffle ♡</button>
                         </div>
-
                         <div id="winMessage" class="win-message">
                             You Win! ✨
                         </div>
@@ -230,25 +227,19 @@
                                 What to actually bring, what to leave behind, and what you can buy there. The definitive packing guide!
                             </p>
                         </div>
-
                     </div>
 
                 </main>
 
                 <aside class="right-sidebar">
                     
+                    <!-- ✅ REAL Visitor Counter — replaces fake counter-digit.gif images showing "1337" -->
                     <div class="widget-box">
                         <div class="widget-header">
                             <span class="widget-title pixel-text">Visitors ♡</span>
                         </div>
-                        <div class="widget-content">
-                            <div class="visitor-counter">
-                                <img src="../assets/images/counter-digit.gif" alt="0">
-                                <img src="../assets/images/counter-digit.gif" alt="1">
-                                <img src="../assets/images/counter-digit.gif" alt="3">
-                                <img src="../assets/images/counter-digit.gif" alt="3">
-                                <img src="../assets/images/counter-digit.gif" alt="7">
-                            </div>
+                        <div class="widget-content" style="text-align: center;">
+                            <p id="visitor-count" style="font-size: 28px; font-family: 'VT323', monospace; letter-spacing: 3px; color: #c06080;">······</p>
                         </div>
                     </div>
 
@@ -347,83 +338,59 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- PUZZLE SETTINGS ---
+
+    // --- PUZZLE ---
     const puzzle = document.getElementById("puzzle");
     const shuffleBtn = document.getElementById("shuffleBtn");
     const winMessage = document.getElementById("winMessage");
 
-    // Make sure we have the elements before running
     if (puzzle && shuffleBtn) {
-        
         const size = 3;
-        const tileSize = 85; // Must match CSS width
-        
-        // ⚠️ If this image path is wrong, you will see PINK SQUARES.
-        // If you see NOTHING, it means the code broke elsewhere.
+        const tileSize = 85;
         const imageSrc = "../assets/images/stamp-main.jpg"; 
-        
         let tiles = [];
         let emptyIndex = 8;
 
-        // 1. CREATE THE TILES
         function initPuzzle() {
-            puzzle.innerHTML = ""; // Clear any old text
+            puzzle.innerHTML = "";
             tiles = [];
-
             for (let i = 0; i < 9; i++) {
                 const tile = document.createElement("div");
                 tile.classList.add("tile");
                 tile.dataset.index = i;
-
-                // Setup the last tile as the "empty" gap
                 if (i === 8) {
                     tile.classList.add("empty");
                     emptyIndex = i;
                 } else {
                     const row = Math.floor(i / size);
                     const col = i % size;
-
-                    // Apply the image
                     tile.style.backgroundImage = `url(${imageSrc})`;
                     tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
                     tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
                 }
-
-                // Add click listener
                 tile.addEventListener("click", () => moveTile(i));
-                
-                // Put it on the page
                 puzzle.appendChild(tile);
                 tiles.push(tile);
             }
         }
 
-        // 2. LOGIC TO CHECK MOVES
         function isAdjacent(i1, i2) {
-            const r1 = Math.floor(i1 / size);
-            const c1 = i1 % size;
-            const r2 = Math.floor(i2 / size);
-            const c2 = i2 % size;
+            const r1 = Math.floor(i1 / size), c1 = i1 % size;
+            const r2 = Math.floor(i2 / size), c2 = i2 % size;
             return (Math.abs(r1 - r2) + Math.abs(c1 - c2)) === 1;
         }
 
-        // 3. SWAP TILES
         function swap(i1, i2) {
             const tempBg = tiles[i1].style.backgroundPosition;
             const tempImg = tiles[i1].style.backgroundImage;
-
             tiles[i1].style.backgroundPosition = tiles[i2].style.backgroundPosition;
             tiles[i1].style.backgroundImage = tiles[i2].style.backgroundImage;
-
             tiles[i2].style.backgroundPosition = tempBg;
             tiles[i2].style.backgroundImage = tempImg;
-
             tiles[i1].classList.toggle("empty");
             tiles[i2].classList.toggle("empty");
         }
 
-        // 4. HANDLE CLICK
         function moveTile(index) {
             if (isAdjacent(index, emptyIndex)) {
                 swap(index, emptyIndex);
@@ -432,7 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 5. SHUFFLE
         function shufflePuzzle() {
             for (let i = 0; i < 200; i++) {
                 const neighbors = [];
@@ -443,25 +409,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 swap(rand, emptyIndex);
                 emptyIndex = rand;
             }
-            if(winMessage) winMessage.style.display = "none";
+            if (winMessage) winMessage.style.display = "none";
         }
 
-        // 6. CHECK WIN
         function checkWin() {
             let correct = true;
             for (let i = 0; i < 8; i++) {
-                const row = Math.floor(i / size);
-                const col = i % size;
+                const row = Math.floor(i / size), col = i % size;
                 const expected = `-${col * tileSize}px -${row * tileSize}px`;
-                if (tiles[i].style.backgroundPosition !== expected) {
-                    correct = false;
-                    break;
-                }
+                if (tiles[i].style.backgroundPosition !== expected) { correct = false; break; }
             }
             if (correct && winMessage) winMessage.style.display = "block";
         }
 
-        // Start the game!
         shuffleBtn.addEventListener("click", shufflePuzzle);
         initPuzzle();
         shufflePuzzle();
@@ -469,12 +429,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- ✅ REAL visitor counter — same key as homepage so it's one shared count -->
+<script>
+(function () {
+    const NAMESPACE   = "ayachi-samyal-shrine";  // ← same namespace as index.html
+    const KEY         = "total-visits";           // ← same key = one shared counter
+    const SESSION_KEY = "ayachi_counted";
+    const el = document.getElementById("visitor-count");
+
+    function display(n) {
+        if (el) el.textContent = String(n).padStart(6, "0");
+    }
+
+    const alreadyCounted = sessionStorage.getItem(SESSION_KEY);
+
+    if (alreadyCounted) {
+        fetch("https://api.countapi.xyz/get/" + NAMESPACE + "/" + KEY)
+            .then(r => r.json())
+            .then(d => { if (d && d.value !== undefined) display(d.value); })
+            .catch(() => { if (el) el.textContent = "······"; });
+    } else {
+        fetch("https://api.countapi.xyz/hit/" + NAMESPACE + "/" + KEY)
+            .then(r => r.json())
+            .then(d => {
+                if (d && d.value !== undefined) {
+                    display(d.value);
+                    sessionStorage.setItem(SESSION_KEY, "1");
+                }
+            })
+            .catch(() => { if (el) el.textContent = "······"; });
+    }
+})();
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
