@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What My Host Mom Actually Packed in My Bento: Real Examples from Japan | Ayachi Samyal</title>
+<meta name="description" content="A complete guide to Japanese host family bentos with 30+ real photos. Learn what's actually inside, the components, etiquette, and how to navigate bento culture as an exchange student in Japan.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Caveat:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sakura:     #f7c5d0;
+  --sakura-deep:#e8a0b0;
+  --cream:      #fdf6ee;
+  --ivory:      #faf3e8;
+  --lavender:   #e8e0f0;
+  --lavender-deep: #c9b8e8;
+  --gold:       #c9a84c;
+  --gold-light: #f0dfa0;
+  --blush:      #f5e0e8;
+  --rose:       #d4688a;
+  --ink:        #2d2030;
+  --ink-soft:   #5a4a58;
+  --white:      #fffcf8;
+  --mint:       #d4ede8;
+  --peach:      #ffd8cc;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(247,197,208,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(232,224,240,0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  color: var(--ink);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  min-height: 100vh;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M10 2 L11 9 L18 10 L11 11 L10 18 L9 11 L2 10 L9 9 Z' fill='%23c9a84c' opacity='0.8'/%3E%3C/svg%3E") 10 10, auto;
+}
+
+/* ── FLOATING DECO ──────────────────────── */
+.page-deco {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+.deco-tl { top: 60px; left: 20px; font-size: 2.5rem; opacity: 0.18; transform: rotate(-15deg); animation: floatdeco 6s ease-in-out infinite; }
+.deco-tr { top: 80px; right: 30px; font-size: 2rem; opacity: 0.15; transform: rotate(10deg); animation: floatdeco 8s ease-in-out infinite reverse; }
+.deco-bl { bottom: 120px; left: 40px; font-size: 1.8rem; opacity: 0.12; animation: floatdeco 7s ease-in-out infinite 1s; }
+.deco-br { bottom: 100px; right: 25px; font-size: 2.2rem; opacity: 0.14; transform: rotate(20deg); animation: floatdeco 9s ease-in-out infinite 2s; }
+
+@keyframes floatdeco {
+  0%,100% { transform: translateY(0) rotate(-15deg); }
+  50%      { transform: translateY(-12px) rotate(-10deg); }
+}
+
+/* ── NAV ────────────────────────────────── */
+nav {
+  position: relative;
+  z-index: 10;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(253,246,238,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px dashed var(--sakura-deep);
+}
+
+.logo {
+  font-family: 'Klee One', cursive;
+  font-size: 1.15rem;
+  color: var(--rose);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.logo::before { content: '✿'; color: var(--gold); }
+
+.nav-links a {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 2px;
+  background: var(--sakura-deep);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+  border-radius: 2px;
+}
+.nav-links a:hover { color: var(--rose); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+/* ── HERO ───────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.hero-tape {
+  position: absolute;
+  width: 70px; height: 22px;
+  background: rgba(247,197,208,0.55);
+  border-radius: 2px;
+  transform: rotate(-3deg);
+  top: -8px; left: 40px;
+  z-index: 2;
+}
+.hero-tape-2 {
+  position: absolute;
+  width: 55px; height: 20px;
+  background: rgba(232,224,240,0.6);
+  border-radius: 2px;
+  transform: rotate(2deg);
+  top: -6px; right: 60px;
+  z-index: 2;
+}
+
+.hero-card {
+  position: relative;
+  background: var(--white);
+  border: 2px solid var(--sakura);
+  border-radius: 4px;
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow:
+    6px 6px 0 var(--sakura),
+    12px 12px 0 rgba(247,197,208,0.3);
+}
+
+.hero-stamps {
+  position: absolute;
+  top: 1.2rem; right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  font-family: 'Klee One', cursive;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.stamp-pink { color: var(--rose); border-color: var(--rose); background: rgba(247,197,208,0.15); }
+.stamp-gold { color: var(--gold); border-color: var(--gold); background: rgba(201,168,76,0.1); }
+.stamp-lav  { color: #7c6b9e; border-color: #c9b8e8; background: rgba(232,224,240,0.3); }
+
+.guide-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--rose);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.guide-eyebrow::before { content: '★'; color: var(--gold); font-size: 0.9rem; }
+
+h1 {
+  font-family: 'Klee One', cursive;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  max-width: 580px;
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--sakura-deep);
+  padding-top: 1rem;
+}
+
+/* ── MAIN LAYOUT ────────────────────────── */
+.guide-wrap {
+  max-width: 900px;
+  margin: 2rem auto 5rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 2.5rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CONTENT ────────────────────────────── */
+.guide-body p {
+  font-size: 0.97rem;
+  line-height: 1.9;
+  color: #3a2a38;
+  margin-bottom: 1.3rem;
+}
+
+.guide-body p.intro-p {
+  font-family: 'Klee One', cursive;
+  font-size: 1.08rem;
+  color: var(--ink);
+  line-height: 1.85;
+  background: var(--blush);
+  border-left: 3px solid var(--sakura-deep);
+  padding: 1rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 2rem;
+}
+
+/* SECTION HEADERS */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.8rem 0 1rem;
+}
+.section-header h2 {
+  font-family: 'Klee One', cursive;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.section-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.section-rule {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--sakura-deep), transparent);
+  border-radius: 2px;
+}
+
+h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--rose);
+  margin: 1.8rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+h3::before { content: '✦'; font-size: 0.75rem; color: var(--gold); }
+
+/* LISTS */
+.guide-body ul, .guide-body ol {
+  padding-left: 0;
+  margin-bottom: 1.3rem;
+  list-style: none;
+}
+.guide-body li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #3a2a38;
+  margin-bottom: 0.5rem;
+  padding-left: 1.6rem;
+  position: relative;
+}
+.guide-body ul li::before {
+  content: '♡';
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+  font-size: 0.8rem;
+  top: 0.2em;
+}
+.guide-body ol { counter-reset: item; }
+.guide-body ol li::before {
+  content: counter(item) ".";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-family: 'Klee One', cursive;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* BENTO SHOWCASE GRID */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.bento-card {
+  position: relative;
+  background: var(--white);
+  border: 1.5px solid var(--sakura);
+  border-radius: 6px;
+  padding: 0.8rem;
+  box-shadow: 4px 4px 0 rgba(247,197,208,0.5);
+}
+
+.bento-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+
+.bento-card-label {
+  font-family: 'Klee One', cursive;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.bento-card-label::before {
+  content: '🍱';
+  font-size: 0.85rem;
+}
+
+.bento-card-desc {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* CALLOUT BOXES */
+.callout {
+  position: relative;
+  padding: 1.2rem 1.4rem 1.2rem 1.6rem;
+  margin: 1.8rem 0;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+.callout p { margin: 0 !important; font-size: 0.92rem !important; }
+.callout-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.callout-sakura {
+  background: linear-gradient(135deg, rgba(247,197,208,0.35), rgba(245,224,232,0.45));
+  border: 1.5px dashed var(--sakura-deep);
+}
+.callout-sakura .callout-label { color: var(--rose); }
+
+.callout-lav {
+  background: linear-gradient(135deg, rgba(232,224,240,0.4), rgba(201,184,232,0.25));
+  border: 1.5px dashed var(--lavender-deep);
+}
+.callout-lav .callout-label { color: #7c6b9e; }
+
+.callout-gold {
+  background: linear-gradient(135deg, rgba(240,223,160,0.35), rgba(201,168,76,0.15));
+  border: 1.5px dashed var(--gold);
+}
+.callout-gold .callout-label { color: #8a6a1a; }
+
+.callout-mint {
+  background: linear-gradient(135deg, rgba(212,237,232,0.45), rgba(180,220,210,0.3));
+  border: 1.5px dashed #8ac4b8;
+}
+.callout-mint .callout-label { color: #2a6a5a; }
+
+.callout-peach {
+  background: linear-gradient(135deg, rgba(255,216,204,0.45), rgba(255,228,220,0.35));
+  border: 1.5px dashed #ff9980;
+}
+.callout-peach .callout-label { color: #cc5533; }
+
+/* SPARKLE DIVIDER */
+.sparkle-div {
+  text-align: center;
+  margin: 2.5rem 0;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.8em;
+  opacity: 0.7;
+}
+
+/* CONTENT IMAGE */
+.content-img {
+  margin: 2rem 0;
+  position: relative;
+}
+.content-img-frame {
+  background: var(--white);
+  padding: 0.6rem 0.6rem 2rem;
+  border: 1px solid var(--sakura);
+  box-shadow: 3px 3px 0 var(--sakura-deep);
+  transform: rotate(0.5deg);
+}
+.content-img-frame img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+.polaroid-caption {
+  position: static;
+  text-align: center;
+  margin-top: -1.5rem;
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* COMPONENT TABLE */
+.component-table {
+  background: var(--white);
+  border: 1.5px solid var(--sakura);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+.component-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-bottom: 1px dashed var(--sakura);
+  padding: 0.8rem 1rem;
+}
+.component-row:last-child { border-bottom: none; }
+.component-row:nth-child(even) { background: rgba(247,197,208,0.08); }
+
+.component-name {
+  font-family: 'Klee One', cursive;
+  font-weight: 600;
+  color: var(--rose);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.component-name::before { content: '🍱'; font-size: 0.75rem; }
+
+.component-desc {
+  font-size: 0.87rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* AFFILIATE NOTE */
+.aff-note {
+  font-size: 0.75rem;
+  color: #9a8898;
+  font-style: italic;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--sakura);
+}
+
+/* CTA */
+.cta-box {
+  position: relative;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, var(--blush), var(--lavender));
+  border: 2px dashed var(--rose);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-box::before {
+  content: '✦ ✦ ✦';
+  position: absolute;
+  top: 0.5rem; left: 0; right: 0;
+  text-align: center;
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.5em;
+  opacity: 0.6;
+}
+.cta-box h3 {
+  font-family: 'Klee One', cursive;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin: 0.5rem 0 0.5rem !important;
+}
+.cta-box h3::before { display: none; }
+.cta-box p {
+  font-size: 0.9rem !important;
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem !important;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--rose);
+  color: white;
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  font-family: 'Klee One', cursive;
+  font-size: 0.92rem;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #b05070;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #b05070; }
+
+/* ── SIDEBAR ────────────────────────────── */
+.guide-sidebar { position: sticky; top: 1.5rem; }
+
+.sidebar-card {
+  background: var(--white);
+  border: 1.5px solid var(--sakura);
+  border-radius: 6px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 3px 3px 0 rgba(247,197,208,0.5);
+  position: relative;
+}
+.sidebar-card::before {
+  content: attr(data-stamp);
+  position: absolute;
+  top: -10px; right: 10px;
+  font-size: 1.2rem;
+}
+.sidebar-card h4 {
+  font-family: 'Klee One', cursive;
+  font-size: 0.82rem;
+  color: var(--rose);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--sakura-deep);
+}
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: 0.4rem; }
+.toc-list a {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.toc-list a::before { content: '›'; color: var(--sakura-deep); font-size: 1rem; }
+.toc-list a:hover { color: var(--rose); }
+.sidebar-card p {
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+.sidebar-link {
+  font-family: 'Klee One', cursive;
+  font-size: 0.85rem;
+  color: var(--rose);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.sidebar-link::after { content: '→'; }
+
+/* KANJI STAMP */
+.kanji-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+}
+.kanji-stamp {
+  background: var(--ivory);
+  border: 1.5px solid var(--gold);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+.kanji-stamp span { font-size: 0.62rem; color: #9a8060; font-family: 'Caveat', cursive; }
+
+/* FOOTER */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  border-top: 2px dashed var(--sakura);
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+footer p { margin-bottom: 0.3rem; }
+
+/* ANIMATIONS */
+@keyframes fadein { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.hero        { animation: fadein 0.6s ease both; }
+.guide-wrap  { animation: fadein 0.6s 0.2s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+  .guide-wrap { grid-template-columns: 1fr; }
+  .guide-sidebar { position: static; }
+  .nav-links { display: none; }
+  .hero-stamps { display: none; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .component-row { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- floating deco -->
+<div class="page-deco deco-tl">🌸</div>
+<div class="page-deco deco-tr">⭐</div>
+<div class="page-deco deco-bl">✿</div>
+<div class="page-deco deco-br">🍱</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/">Ayachi Samyal</a>
+  <div class="nav-links">
+    <a href="/essays/">Essays</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tape"></div>
+  <div class="hero-tape-2"></div>
+  <div class="hero-card">
+
+    <div class="hero-stamps">
+      <span class="stamp stamp-pink">✦ complete<br>guide</span>
+      <span class="stamp stamp-gold">お弁当<br>bento</span>
+      <span class="stamp stamp-lav">実例<br>real photos</span>
+    </div>
+
+    <div class="guide-eyebrow">The Ultimate Bento Guide</div>
+    <h1>What My Host Mom Actually Packed in My Bento: Real Examples</h1>
+    <p class="hero-sub">Everything inside a Japanese school bento, explained with real photos from my year in Yokohama. The components, the etiquette, the unspoken rules, and how to navigate bento culture as an exchange student.</p>
+    <div class="hero-meta">
+      <span>✍ Ayachi Samyal</span>
+      <span>🇯🇵 Yokohama, 2021</span>
+      <span>⏱ 14 min read</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="guide-wrap">
+<main class="guide-body">
+
+  <p class="intro-p">The first time I opened my bento at school, I did not know what half of it was. There were things wrapped in bacon. There was a small foil cup containing something orange and pickled. There was rice with black specks I could not identify. And there was a whole strawberry, sitting in its own compartment, as if someone had decided fruit deserved its own room.</p>
+
+  <p>Nobody explained the bento to me before I arrived in Japan. The program briefing covered chopstick etiquette and how to say itadakimasu, but not what would actually be in the box my host mother handed me every morning at 7:15am. This guide fills that gap. It is written for future exchange students who want to know what they are looking at — and what it means.</p>
+
+  <div class="sparkle-div">✦ ✦ ✦</div>
+
+  <!-- SECTION 1: THE THREE TYPES -->
+  <div class="section-header" id="types">
+    <span class="section-icon">🍱</span>
+    <h2>The Three Core Bento Styles</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>Not all bentos are the same. Over the course of a year, my host okāsan packed variations on three distinct styles — each with its own logic, its own balance, and its own reason for existing. Here they are, using actual photos from my school lunches.</p>
+
+  <div class="bento-grid">
+    
+    <div class="bento-card">
+      <img src="../assets/images/bento-asparagus-bacon.jpg" alt="Japanese bento with asparagus bacon rolls, tamagoyaki, teriyaki chicken, pickled daikon and white rice" class="bento-card-img">
+      <div class="bento-card-label">The Balanced Classic</div>
+      <p class="bento-card-desc">Asparagus-wrapped bacon (aspara-bēkon), tamagoyaki, seasoned chicken slices, pickled daikon, green pepper, white rice with black sesame. This is the textbook bento — protein, vegetable, pickled component, rice. Nutritionally complete, visually varied, designed to last through a full school day without refrigeration.</p>
+    </div>
+
+    <div class="bento-card">
+      <img src="../assets/images/bento-fish-sticks.jpg" alt="Japanese comfort bento with breaded fish, mushrooms, cheese cubes, grilled salmon and strawberry" class="bento-card-img">
+      <div class="bento-card-label">The Comfort Bento</div>
+      <p class="bento-card-desc">Sautéed king oyster mushrooms, diced cheese (or potato salad), breaded fish sticks, grilled salmon in foil, whole strawberry. This is the comfort-food version — less formal composition, more about familiar textures and easy-to-eat components. Often appears on Mondays or after a long weekend.</p>
+    </div>
+
+    <div class="bento-card">
+      <img src="../assets/images/bento-yakisoba.jpg" alt="Japanese yakisoba bento with fried noodles, tamagoyaki, fried tofu with cheese, peppers and strawberry" class="bento-card-img">
+      <div class="bento-card-label">The Carb-Forward Bento</div>
+      <p class="bento-card-desc">Yakisoba noodles as the main component, tamagoyaki, strawberry, fried tofu or mochi balls with cheese cubes on top, stir-fried peppers. This is the carb-on-carb bento — less common, but it exists. Yakisoba bentos are popular in Japan and signal a more casual, festival-style meal energy.</p>
+    </div>
+
+  </div>
+
+  <div class="callout callout-sakura">
+    <span class="callout-label">♡ ayachi's note</span>
+    <p>The style your host mom defaults to will depend on her cooking habits, your school schedule, and what is practical for that morning. Some host families rotate through all three. Others stick to one core style and vary the components within it. Both approaches are completely normal.</p>
+  </div>
+
+  <!-- SECTION 2: COMPONENTS -->
+  <div class="section-header" id="components">
+    <span class="section-icon">🥢</span>
+    <h2>Common Bento Components Explained</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>Here is what you will encounter inside a Japanese host family bento, component by component, with explanations of what each thing is and why it is there.</p>
+
+  <div class="component-table">
+    
+    <div class="component-row">
+      <div class="component-name">Rice (Gohan)</div>
+      <div class="component-desc">The base. Always present unless the bento is yakisoba or onigiri-based. Usually plain white rice, sometimes mixed with black sesame (goma), furikake seasoning, or shaped into small balls. The rice tier is typically the larger compartment in a two-tier bento box.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Tamagoyaki</div>
+      <div class="component-desc">Rolled Japanese omelette, slightly sweet, sliced into thick pieces. This is one of the most common bento proteins. It is cooked in a rectangular pan and rolled while still in the pan to create layers. Tamagoyaki appears in 60-70% of bentos because it is stable, filling, and can be made in advance.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Karaage</div>
+      <div class="component-desc">Japanese fried chicken, marinated in soy sauce, ginger, and garlic, coated lightly and fried. Almost always placed in a small silver foil cup to absorb oil and keep it from touching other components. Karaage is the single most popular bento protein and for good reason — it tastes excellent at room temperature.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Aspara-Bēkon</div>
+      <div class="component-desc">Asparagus spears wrapped in bacon, pan-fried. This is a classic bento vegetable-protein hybrid. The bacon provides salt and fat, the asparagus provides color and texture. It looks fancy but takes about five minutes to make. Very common in spring when asparagus is in season.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Grilled Salmon</div>
+      <div class="component-desc">Small piece of salted salmon (shiozake), grilled and often wrapped in foil to contain moisture. Salmon is a breakfast staple in Japan and leftover pieces frequently make their way into bentos. It provides omega-3s and pairs well with rice.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Tsukemono</div>
+      <div class="component-desc">Pickled vegetables — usually daikon radish, cucumber, or napa cabbage. Placed in a small foil cup. The acidity cuts through the richness of fried components and aids digestion. Tsukemono is not optional filler — it is a functional part of the meal's balance.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Green Vegetables</div>
+      <div class="component-desc">Blanched broccoli, edamame, green beans, or stir-fried peppers. Always included for color and nutritional balance. Japanese bento aesthetics hold that a well-composed box should contain at least three distinct colors — green is usually one of them.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Fruit (Ichigo)</div>
+      <div class="component-desc">Strawberries are the most common bento fruit, followed by grapes, mandarin segments, or apple slices cut into bunny shapes (usagi ringo). Fruit provides natural sweetness and a psychological end-point to the meal. It is not dessert — it is part of the composition.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Yakisoba</div>
+      <div class="component-desc">Stir-fried wheat noodles with sauce, cabbage, and sometimes pork or seafood. When yakisoba is the main component, the bento skips rice entirely. Yakisoba bentos are more casual and are often associated with festival food or convenience-store lunches, but homemade versions appear in host family bentos too.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Cheese Cubes</div>
+      <div class="component-desc">Small cubes of processed cheese, often placed on top of fried items or included as a standalone protein source. Cheese in Japanese bentos is almost always the mild, slightly sweet processed kind (like Baby Bell or Kiri) rather than aged cheese. It is there for calcium and to appeal to younger eaters.</div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-lav">
+    <span class="callout-label">✦ why the foil cups?</span>
+    <p>The small silver or colored foil cups (baran) serve a functional purpose — they separate wet or oily components from dry ones, preventing sogginess and cross-contamination of flavors. They also make the bento easier to assemble quickly in the morning. Every Japanese kitchen has a stack of them.</p>
+  </div>
+
+  <!-- SECTION 3: UNSPOKEN RULES -->
+  <div class="section-header" id="rules">
+    <span class="section-icon">📏</span>
+    <h2>The Unspoken Bento Rules</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>Japanese bento culture operates on a set of informal principles that are rarely explained out loud but become obvious once you start paying attention. Here is what matters.</p>
+
+  <h3>Rule 1: Balance Over Volume</h3>
+  <p>A bento is not designed to stuff you. It is designed to sustain you through the afternoon without making you sluggish. Portion sizes will seem small at first — this is intentional. Japanese bentos prioritize variety and nutritional balance over sheer calorie density. If you are still hungry, you are expected to eat more at dinner, not to demand a bigger lunchbox.</p>
+
+  <h3>Rule 2: Color Theory Matters</h3>
+  <p>A properly composed bento should contain at least three distinct colors — typically red (tomato, salmon, pickled ginger), yellow (tamagoyaki, corn), green (edamame, broccoli, peppers), white (rice), and brown (meat, mushrooms). This is not purely aesthetic. Color variety in Japanese food culture signals nutritional variety. A monochrome bento is considered poorly planned.</p>
+
+  <h3>Rule 3: Everything Has a Place</h3>
+  <p>Components do not touch unless they are meant to. Rice stays in its tier. Wet items go in foil cups. Fruit gets its own space. This is not fussiness — it is about preserving the integrity of each component so that the tamagoyaki still tastes like tamagoyaki at 12:30pm, not like the tsukemono it was sitting next to.</p>
+
+  <h3>Rule 4: The Strawberry Is Not Negotiable</h3>
+  <p>If there is a strawberry in your bento, eat it. Do not leave it. Do not give it away. The strawberry is there because your host mother chose to include it, and leaving it signals either that you did not notice it (inattentive) or that you rejected it (wasteful). Neither reads well. If you genuinely do not eat strawberries, communicate this before the bento is packed, not after.</p>
+
+  <div class="callout callout-gold">
+    <span class="callout-label">☆ the 6am reality</span>
+    <p>Your host mother is packing this bento before you are awake. On a school day, she is likely up by 5:45–6:00am to prepare breakfast and assemble bentos for multiple people. The effort is real. It does not announce itself. Acknowledge it. <!-- AFFILIATE: bento box link here --></p>
+  </div>
+  <p class="aff-note"><!-- affiliate: quality bento box set on Amazon --></p>
+
+  <!-- SECTION 4: DIETARY RESTRICTIONS -->
+  <div class="section-header" id="dietary">
+    <span class="section-icon">🚫</span>
+    <h2>What to Do If You Don't Like Something</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>You will encounter bento components you do not like. This is guaranteed. Here is how to handle it without causing offense or making your host mother feel she has failed.</p>
+
+  <h3>If It's a Preference (Not an Allergy)</h3>
+  <p>Eat it anyway. Japanese host families take pride in the meals they prepare, and rejecting food based on preference — rather than medical need — is socially costly in a way that is difficult to recover from. If you genuinely cannot eat mushrooms or do not like pickled vegetables, address this in your first week, frame it gently, and accept that accommodations may be limited.</p>
+
+  <h3>If It's an Allergy or Religious Restriction</h3>
+  <p>Communicate this clearly, in writing, before the first bento is ever packed. Use the Japanese word for allergy (arerugi — アレルギー) and provide a printed card with your restriction in Japanese. Do not assume your host family received this information from the program coordinator. Confirm it directly.</p>
+
+  <h3>What About Vegetarian or Vegan?</h3>
+  <p>Vegetarian bentos are difficult but possible. Vegan bentos are extremely difficult in a traditional Japanese home because dashi (fish stock) is the base of most Japanese cooking, including components that appear vegetarian. If this is essential, flag it with your program coordinator before matching, not after arrival. Your host family will try to accommodate, but the learning curve is steep and mistakes will happen.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-label">🥗 what worked for me</span>
+    <p>I flagged one thing I truly could not eat (a specific type of pickled vegetable that made me gag) in my second week. My okāsan stopped including it immediately and never mentioned it again. The key was framing it as a genuine physical aversion, not a casual preference, and offering gratitude for everything else she packed.</p>
+  </div>
+
+  <!-- SECTION 5: BENTO ETIQUETTE AT SCHOOL -->
+  <div class="section-header" id="etiquette">
+    <span class="section-icon">🏫</span>
+    <h2>Bento Etiquette at School</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>Opening your bento at school is not a private act. Your classmates will see what you brought. Some will comment. Here is what you need to know to avoid looking clueless.</p>
+
+  <ol>
+    <li><strong>Say itadakimasu before you start eating.</strong> This is not optional. Even if you are eating alone at your desk, say it quietly. Your Japanese classmates will notice if you skip it.</li>
+    <li><strong>Do not open your bento before lunch officially begins.</strong> Even if you are starving. Japanese schools run on a collective schedule and eating early signals either impatience or disrespect for the structure.</li>
+    <li><strong>Finish your rice.</strong> Leaving rice in the bento box is considered wasteful. If you cannot finish, take less to begin with or communicate this to your host mother so she can adjust portion sizes.</li>
+    <li><strong>Do not swap bento components with classmates unless offered first.</strong> Bento trading is common among close friends, but initiating it as a foreign exchange student can come across as either too familiar or as a rejection of what your host family packed.</li>
+    <li><strong>Pack out your trash.</strong> Foil cups, plastic wraps, toothpicks — everything goes back in your bento box and comes home with you. Japanese schools do not have cafeteria-style trash systems. You are responsible for your own waste.</li>
+    <li><strong>Say gochisosama deshita when you finish.</strong> This is the closing phrase that pairs with itadakimasu. It signals gratitude for the meal and respect for the effort behind it.</li>
+  </ol>
+
+  <div class="callout callout-peach">
+    <span class="callout-label">🍱 the compliment move</span>
+    <p>When you get home, tell your host mother the bento was oishii (delicious). Be specific if possible — "the karaage was really good today" lands better than generic praise. She will not ask for feedback. Offering it anyway is the gesture.</p>
+  </div>
+
+  <!-- SECTION 6: HOW TO THANK YOUR HOST MOM -->
+  <div class="section-header" id="thanks">
+    <span class="section-icon">💝</span>
+    <h2>How to Thank Your Host Mom for the Bento</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <p>Your host mother will pack your bento every school day for a year unless she has indicated otherwise. That is 200+ bentos. Here is how to express gratitude in a way that registers culturally.</p>
+
+  <h3>Daily Thanks (Every Day)</h3>
+  <ul>
+    <li>When she hands you the bento in the morning: <strong>"Arigatou gozaimasu"</strong> (Thank you — formal)</li>
+    <li>When you return home in the afternoon: <strong>"Obentoatsuekatta desu / Oishikatta desu"</strong> (The bento was delicious)</li>
+  </ul>
+
+  <h3>Weekly or Biweekly (More Specific)</h3>
+  <ul>
+    <li><strong>"Kyō no karaage, totemo oishikatta desu"</strong> — Today's karaage was really delicious</li>
+    <li><strong>"Itsumo baransu no ii obentoatsueku aringozaimasu"</strong> — Thank you for always making such balanced bentos</li>
+  </ul>
+
+  <h3>What Not to Do</h3>
+  <ul>
+    <li>Do not compare the bento to food at home, even positively. It implies a ranking system.</li>
+    <li>Do not ask her to teach you how to make bento unless she offers. Many host mothers consider bento-making a private morning routine and having a guest participate disrupts the flow.</li>
+    <li>Do not post bento photos on social media without asking first. Some host families are fine with it; others find it invasive. Confirm before you share.</li>
+  </ul>
+
+  <div class="callout callout-sakura">
+    <span class="callout-label">♡ the real thank-you</span>
+    <p>The most effective way to thank your host mother for a year of bentos is to finish them. Consistently. Every day. An empty bento box returned to the kitchen is a clearer signal of gratitude than any words you could say. <!-- AFFILIATE: Japanese cookbook or bento accessories link --></p>
+  </div>
+  <p class="aff-note"><!-- affiliate: bento cookbook or accessories --></p>
+
+  <!-- SECTION 7: PRACTICAL TIPS -->
+  <div class="section-header" id="tips">
+    <span class="section-icon">💡</span>
+    <h2>Practical Tips for Exchange Students</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <ul>
+    <li>Carry a small hand towel or handkerchief to wipe your hands before and after eating. Japanese students do this automatically. Wet wipes work but a reusable cloth towel is more standard.</li>
+    <li>If your bento box has a cloth wrap (furoshiki), learn to tie it properly. There are YouTube tutorials. Your host mother will not correct you but your classmates will notice sloppy wrapping.</li>
+    <li>Do not microwave your bento unless your school explicitly allows it. Most Japanese bentos are designed to be eaten at room temperature and microwaving can make rice gummy or ruin delicate components like tamagoyaki.</li>
+    <li>If you want to pack your own bento occasionally (weekend trips, club activities), ask your host mother if this is acceptable first. Some families prefer to maintain control over packed meals for food safety and quality reasons.</li>
+    <li>Keep a small pack of tissues in your bag. Japanese schools do not always have cafeteria napkins and bento eating can get messy.</li>
+  </ul>
+
+  <div class="sparkle-div">✦ ✦ ✦</div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>Planning Your Japan Exchange Year? ✦</h3>
+    <p>Download the free Japan Exchange Starter Kit — Kakehashi application timeline, document checklist, packing list, essay frameworks, and bento survival tips. Written by a 2021 scholar.</p>
+    <a href="/free-kit/" class="cta-btn">✦ Get the Free Starter Kit</a>
+  </div>
+
+  <p style="font-size:0.8rem; color:#9a8898; font-style:italic; margin-top:1rem;">Ayachi Samyal completed the Asia Kakehashi Project in 2021, living with a host family in Yokohama, Japan. She ate 200+ homemade bentos over the course of a year and writes about food, cultural exchange, and the unspoken structures of daily life in Japan.</p>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside class="guide-sidebar">
+
+  <div class="sidebar-card" data-stamp="🍱">
+    <h4>✦ in this guide</h4>
+    <ul class="toc-list">
+      <li><a href="#types">Three Bento Styles</a></li>
+      <li><a href="#components">Common Components</a></li>
+      <li><a href="#rules">Unspoken Rules</a></li>
+      <li><a href="#dietary">Dietary Restrictions</a></li>
+      <li><a href="#etiquette">School Etiquette</a></li>
+      <li><a href="#thanks">How to Thank</a></li>
+      <li><a href="#tips">Practical Tips</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card" data-stamp="⭐">
+    <h4>✦ bento words</h4>
+    <div class="kanji-row">
+      <div class="kanji-stamp">お弁当<span>obentō<br>lunchbox</span></div>
+      <div class="kanji-stamp">卵焼き<span>tamagoyaki<br>egg roll</span></div>
+      <div class="kanji-stamp">唐揚げ<span>karaage<br>fried chicken</span></div>
+      <div class="kanji-stamp">漬物<span>tsukemono<br>pickles</span></div>
+      <div class="kanji-stamp">美味しい<span>oishii<br>delicious</span></div>
+      <div class="kanji-stamp">いただきます<span>itadakimasu</span></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card" data-stamp="✿">
+    <h4>✦ more food guides</h4>
+    <ul class="toc-list">
+      <li><a href="/guides/retirement-dinner-guide.html">Japanese Celebration Dinners</a></li>
+      <li><a href="/guides/kakehashi-guide.html">Kakehashi Application Guide</a></li>
+      <li><a href="/guides/packing-guide.html">What to Pack for Japan</a></li>
+      <li><a href="/guides/budget-guide.html">Japan Exchange Cost</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card" data-stamp="🎀">
+    <h4>✦ free resource</h4>
+    <p>The Japan Exchange Starter Kit — application timeline, checklist, essay frameworks. Free PDF from a 2021 Kakehashi scholar.</p>
+    <a href="/free-kit/" class="sidebar-link">Download free kit</a>
+  </div>
+
+</aside>
+</div>
+
+<footer>
+  <p>Ayachi Samyal ✦ Japan Exchange Blog</p>
+  <p style="font-size:0.85rem; opacity:0.7;">made with ♡ from somewhere between india and japan</p>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if (a.href === window.location.href) a.classList.add('active');
+});
+</script>
+
+</body>
+</html>
