@@ -3,51 +3,545 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing | Ayachi Samyal</title>
+    <title>Ayachi Samyal — Writing</title>
+    <meta name="description" content="Essays on cultural exchange and international policy. Japan exchange guides for high schoolers. By Ayachi Samyal, Asia Kakehashi Scholar 2021.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, sans-serif; overflow-x: hidden; }
-        .tagline {
-            position: fixed; top: 2rem; left: 50%; transform: translateX(-50%);
-            z-index: 10; font-size: 14px; color: rgba(0,0,0,0.5);
-            letter-spacing: 0.05em; text-transform: uppercase;
-        }
-        .homepage-split { display: flex; min-height: 100vh; }
-        .section {
-            flex: 1; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-decoration: none;
-            transition: all 0.5s ease; padding: 4rem 2rem; position: relative;
-        }
-        .section:hover { flex: 1.3; }
-        .section:not(:hover) { flex: 0.7; filter: brightness(0.85); }
-        .section-essays { background: #0A0A0A; color: #FFFFFF; }
-        .section-guides { background: #FFE5EC; color: #1a1a1a; }
-        .section h1 { font-size: 56px; font-weight: 700; margin-bottom: 1rem; }
-        .section p { font-size: 18px; opacity: 0.85; max-width: 300px; text-align: center; }
-        .section::after {
-            content: '→'; position: absolute; bottom: 3rem;
-            font-size: 32px; opacity: 0; transition: opacity 0.3s;
-        }
-        .section:hover::after { opacity: 0.5; }
-        @media (max-width: 768px) {
-            .homepage-split { flex-direction: column; }
-            .section { min-height: 50vh; }
-            .section:hover, .section:not(:hover) { flex: 1; filter: none; }
-            .section h1 { font-size: 40px; }
-        }
+    :root {
+        --ink:       #1c1918;
+        --ink-mid:   #3d3836;
+        --ink-soft:  #7a7270;
+        --paper:     #faf7f2;
+        --rule:      #e0d8cd;
+        --rule-dk:   #c8bfb5;
+        --red:       #c8192c;
+        --tint:      #f3ede4;
+        --serif:     'Cormorant Garamond', Georgia, serif;
+        --sans:      'DM Sans', -apple-system, sans-serif;
+        --mono:      'IBM Plex Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 300;
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--paper);
+        border-bottom: 1px solid var(--rule);
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+
+    .nav-name {
+        font-family: var(--serif);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        transition: color 0.2s;
+    }
+    .nav-name:hover { color: var(--red); }
+
+    .nav-links {
+        display: flex;
+        gap: 0;
+        align-items: center;
+        height: 100%;
+    }
+
+    .nav-links a {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding: 0 1.1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--red); border-bottom-color: var(--red); }
+
+    .nav-portfolio-link {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--rule-dk);
+        margin-left: 0.5rem;
+        transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-portfolio-link:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ── HERO ── */
+    .homepage-hero {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 6vh 5% 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: end;
+    }
+
+    .hero-left {}
+
+    .hero-eyebrow {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-name {
+        font-family: var(--serif);
+        font-size: clamp(48px, 7vw, 88px);
+        font-weight: 300;
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-bio {
+        font-size: 0.95rem;
+        color: var(--ink-mid);
+        line-height: 1.75;
+        max-width: 420px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-bio strong { font-weight: 500; color: var(--ink); }
+
+    .hero-right {
+        padding-bottom: 1rem;
+    }
+
+    /* The two-door entry — Essays / Guides */
+    .entry-doors {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        height: 100%;
+        min-height: 280px;
+    }
+
+    .entry-door {
+        background: var(--paper);
+        padding: 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: background 0.2s;
+        cursor: pointer;
+    }
+    .entry-door:hover { background: var(--tint); }
+
+    .door-label {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 0.5rem;
+    }
+
+    .door-title {
+        font-family: var(--serif);
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        font-weight: 300;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+    }
+
+    .door-desc {
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    .door-arrow {
+        font-size: 1rem;
+        color: var(--red);
+        margin-top: 0.8rem;
+        display: block;
+        transition: transform 0.2s;
+    }
+    .entry-door:hover .door-arrow { transform: translateX(4px); }
+
+    /* ── RULE DIVIDER ── */
+    .section-rule {
+        max-width: 1000px;
+        margin: 5vh auto 0;
+        padding: 0 5%;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── CREDENTIALS STRIP ── */
+    .credentials-strip {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 5%;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .cred-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .cred-value {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: var(--ink);
+    }
+
+    .cred-label {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+    }
+
+    /* ── LATEST ESSAYS ── */
+    .section-block {
+        max-width: 1000px;
+        margin: 4vh auto 0;
+        padding: 0 5%;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .section-header h2 {
+        font-family: var(--serif);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 300;
+        color: var(--ink);
+    }
+
+    .section-header a {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--red);
+        transition: opacity 0.2s;
+    }
+    .section-header a:hover { opacity: 0.7; }
+
+    /* Essay list */
+    .essay-list { display: flex; flex-direction: column; }
+
+    .essay-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 1.5rem;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid var(--rule);
+        align-items: start;
+        transition: background 0.15s;
+    }
+    .essay-item:last-child { border-bottom: none; }
+
+    .essay-date {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding-top: 0.25rem;
+        line-height: 1.4;
+    }
+
+    .essay-body h3 {
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: var(--ink);
+        margin-bottom: 0.35rem;
+        transition: color 0.15s;
+    }
+    .essay-item:hover h3 { color: var(--red); }
+
+    .essay-body p {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        line-height: 1.55;
+        font-weight: 300;
+    }
+
+    /* Guide cards */
+    .guides-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        margin-bottom: 4vh;
+    }
+
+    .guide-card {
+        background: var(--paper);
+        padding: 1.5rem;
+        transition: background 0.2s;
+        display: block;
+    }
+    .guide-card:hover { background: var(--tint); }
+
+    .guide-tag {
+        font-family: var(--mono);
+        font-size: 8px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 0.6rem;
+        display: block;
+    }
+
+    .guide-card h3 {
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .guide-card p {
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+        background: var(--ink);
+        margin-top: 6vh;
+        padding: 2rem 5%;
+    }
+
+    .footer-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-name {
+        font-family: var(--serif);
+        font-size: 0.95rem;
+        font-weight: 300;
+        color: rgba(255,255,255,0.7);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.4);
+        transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+        .homepage-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 4vh; }
+        .entry-doors { grid-template-rows: auto auto; min-height: unset; }
+        .guides-grid { grid-template-columns: 1fr; }
+        .credentials-strip { gap: 1.5rem; }
+        nav { padding: 0 4vw; }
+        .nav-portfolio-link { display: none; }
+    }
     </style>
 </head>
 <body>
-    <div class="tagline">Writing from two perspectives</div>
-    <div class="homepage-split">
-        <a href="essays/" class="section section-essays">
-            <h1>Essays</h1>
-            <p>Cultural reflections & international perspectives</p>
+
+<nav>
+    <a href="/" class="nav-name">Ayachi Samyal</a>
+    <div class="nav-links">
+        <a href="/" class="active">Home</a>
+        <a href="essays/">Essays</a>
+        <a href="guides/">Guides</a>
+        <a href="about.html">About</a>
+        <a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener" class="nav-portfolio-link">Portfolio ↗</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="homepage-hero">
+    <div class="hero-left">
+        <div class="hero-eyebrow">Writing · Ayachi Samyal</div>
+        <h1 class="hero-name">Writing<br>from two<br>worlds.</h1>
+        <p class="hero-bio">
+            <strong>BTech student. Published author. Asia Kakehashi Scholar, Yokohama 2021.</strong>
+            I write about cultural exchange and international policy — and about the texture of daily life in Japan, for high schoolers who want to go there too.
+        </p>
+    </div>
+    <div class="hero-right">
+        <div class="entry-doors">
+            <a href="essays/" class="entry-door">
+                <div>
+                    <div class="door-label">Policy · Culture · Analysis</div>
+                    <div class="door-title">Essays</div>
+                    <div class="door-desc">Serious writing on cultural exchange, soft power, and international relations — drawn from a year inside Japanese institutions.</div>
+                </div>
+                <span class="door-arrow">→</span>
+            </a>
+            <a href="guides/" class="entry-door">
+                <div>
+                    <div class="door-label">Japan Exchange · For High Schoolers</div>
+                    <div class="door-title">Guides</div>
+                    <div class="door-desc">Everything I wish I'd known — Kakehashi applications, daily life, food, money, packing — written for students who are actually going.</div>
+                </div>
+                <span class="door-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CREDENTIALS -->
+<div class="section-rule"></div>
+<div class="credentials-strip">
+    <div class="cred-item">
+        <span class="cred-value">Asia Kakehashi Scholar</span>
+        <span class="cred-label">Japan MOFA · 2021 · 1 of 21 from India</span>
+    </div>
+    <div class="cred-item">
+        <span class="cred-value">Published Author</span>
+        <span class="cred-label">3 books · 200+ copies sold · Since age 10</span>
+    </div>
+    <div class="cred-item">
+        <span class="cred-value">400K+ Monthly Reach</span>
+        <span class="cred-label">Pinterest · Two platforms</span>
+    </div>
+    <div class="cred-item">
+        <span class="cred-value">5 Languages</span>
+        <span class="cred-label">EN · HI · PU · JP · FR</span>
+    </div>
+</div>
+
+<!-- LATEST ESSAYS -->
+<div class="section-block">
+    <div class="section-header">
+        <h2>Recent Essays</h2>
+        <a href="essays/">All Essays →</a>
+    </div>
+    <div class="essay-list">
+        <a href="essays/cultural-exchange-statecraft.html" class="essay-item">
+            <div class="essay-date">Feb<br>2026</div>
+            <div class="essay-body">
+                <h3>Cultural Exchange as Statecraft</h3>
+                <p>How governments deploy youth exchange programs as instruments of long-term geopolitical influence — and what the Kakehashi program reveals about Japan's soft power doctrine.</p>
+            </div>
         </a>
-        <a href="guides/" class="section section-guides">
-            <h1>Guides</h1>
-            <p>Navigating Japan exchange programs 🌸</p>
+        <a href="essays/what-living-in-japan.html" class="essay-item">
+            <div class="essay-date">Feb<br>2026</div>
+            <div class="essay-body">
+                <h3>What Living in Japan Taught Me About Power, Politeness, and Strategic Silence</h3>
+                <p>How silence, deference, and social ritual function as governance tools — drawn from a year inside a Yokohama high school.</p>
+            </div>
+        </a>
+        <a href="essays/host-family-dinner.html" class="essay-item">
+            <div class="essay-date">Feb<br>2026</div>
+            <div class="essay-body">
+                <h3>What a Feast Taught Me About Rest</h3>
+                <p>A Japanese host family dinner on a rare leisure day — and what fuwa fuwa actually reveals about a culture that doesn't perform relaxation.</p>
+            </div>
         </a>
     </div>
+</div>
+
+<!-- LATEST GUIDES -->
+<div class="section-block" style="margin-top:4vh;">
+    <div class="section-header">
+        <h2>From the Guides</h2>
+        <a href="guides/">All Guides →</a>
+    </div>
+    <div class="guides-grid">
+        <a href="guides/Bento.html" class="guide-card">
+            <span class="guide-tag">Food · Daily Life</span>
+            <h3>The Definitive Bento Guide</h3>
+            <p>What goes in a Japanese bento, how school lunch works, and why the box matters more than the food.</p>
+        </a>
+        <a href="guides/kakehashi-guide.html" class="guide-card">
+            <span class="guide-tag">Application · Kakehashi</span>
+            <h3>Complete Guide to Asia Kakehashi Project</h3>
+            <p>How to apply, what the program actually covers, and what happens after you're selected.</p>
+        </a>
+        <a href="guides/Strobby-festival.html" class="guide-card">
+            <span class="guide-tag">Personal Essay · Yokohama</span>
+            <h3>I Spent ¥800 at the Strawberry Festival and It Broke Me</h3>
+            <p>The Akarengasoko strawberry festival, Aki's Sweets, and becoming irreversibly strawberry-coded.</p>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-name">Ayachi Samyal · Writing</div>
+        <div class="footer-links">
+            <a href="essays/">Essays</a>
+            <a href="guides/">Guides</a>
+            <a href="about.html">About</a>
+            <a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener">Portfolio ↗</a>
+            <a href="mailto:samyalayachi@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
