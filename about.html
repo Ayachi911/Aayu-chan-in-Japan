@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ayachi Samyal</title>
+<meta name="description" content="BTech student, published author since age 10, Asia Kakehashi Scholar 2021, ML researcher, 5 languages. Writing about Japan, policy, and cultural exchange.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --ink:       #1c1918;
+    --ink-mid:   #3d3836;
+    --ink-soft:  #7a7270;
+    --paper:     #faf7f2;
+    --rule:      #e0d8cd;
+    --rule-dk:   #c8bfb5;
+    --red:       #c8192c;
+    --tint:      #f3ede4;
+    --warm:      #c8956c;
+    --serif:     'Cormorant Garamond', Georgia, serif;
+    --sans:      'DM Sans', -apple-system, sans-serif;
+    --mono:      'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+a { color: var(--red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── NAV ── */
+nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    transition: color 0.2s;
+}
+.nav-name:hover { color: var(--red); }
+
+.nav-links { display: flex; align-items: center; height: 100%; }
+.nav-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: none; }
+.nav-links a.active { color: var(--red); border-bottom-color: var(--red); }
+
+/* ── PAGE ── */
+.page-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 5% 8vh;
+}
+
+/* ── HEADER ── */
+.about-header {
+    padding: 5vh 0 3vh;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 4vh;
+}
+
+.about-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.8rem;
+}
+
+.about-name {
+    font-family: var(--serif);
+    font-size: clamp(56px, 9vw, 96px);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+}
+
+.about-tagline {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+/* ── TWO COLUMN ── */
+.about-body {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ── PROSE ── */
+.about-prose p {
+    font-family: var(--serif);
+    font-size: 1.18rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+}
+
+.about-prose p strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.about-prose p em {
+    font-style: italic;
+    color: var(--warm);
+}
+
+.prose-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2rem 0;
+}
+
+.about-cta-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-primary {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--red);
+    padding: 0.65rem 1.3rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+}
+.cta-primary:hover { background: #a01220; text-decoration: none; }
+
+.cta-secondary {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1px solid var(--rule-dk);
+    padding: 0.65rem 1.3rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+    display: inline-block;
+}
+.cta-secondary:hover { border-color: var(--ink); text-decoration: none; }
+
+/* ── SIDEBAR ── */
+.about-sidebar {}
+
+.sidebar-block {
+    border: 1px solid var(--rule);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.sidebar-block-title {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0.7rem 1rem;
+    background: var(--tint);
+    border-bottom: 1px solid var(--rule);
+}
+
+.cred-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cred-list li {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.cred-list li:last-child { border-bottom: none; }
+
+.cred-list li strong {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 0.88rem;
+}
+
+.cred-list li span {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--red);
+    text-transform: uppercase;
+}
+
+/* Language grid */
+.lang-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+}
+
+.lang-cell {
+    background: var(--paper);
+    padding: 0.7rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.lang-cell .l-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
+}
+
+.lang-cell .l-level {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+/* ── FOOTER ── */
+footer {
+    background: var(--ink);
+    margin-top: 6vh;
+    padding: 1.8rem 5%;
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-name {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+    .about-body { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-sidebar { order: -1; }
+    .sidebar-block { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-name">Ayachi Samyal</a>
+    <div class="nav-links">
+        <a href="essays/">Essays</a>
+        <a href="guides/">Guides</a>
+        <a href="about.html" class="active">About</a>
+        <a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener">Portfolio ↗</a>
+    </div>
+</nav>
+
+<div class="page-wrap">
+
+    <div class="about-header">
+        <div class="about-eyebrow">About</div>
+        <h1 class="about-name">Ayachi<br>Samyal</h1>
+        <div class="about-tagline">BTech Student · Published Author · Asia Kakehashi Scholar · ML Researcher</div>
+    </div>
+
+    <div class="about-body">
+
+        <!-- PROSE -->
+        <div class="about-prose">
+            <p>
+                I am a BTech student based in Chandigarh, India, currently studying at Amity University. I have been publishing work — comics, poetry, writing — since I was ten years old. The first one was a comic about a character named Sam Saira. The second sold over two hundred copies and was donated to the Kailash Satyarthi Foundation. I was the youngest speaker at the Sangrur Literary Festival that year.
+            </p>
+            <p>
+                In 2021, I was selected by the Japanese government for the <strong>Asia Kakehashi Project</strong> — a fully-funded year-long cultural ambassadorship in Japan. I was one of twenty-one students selected from India, and about two hundred and fifty across Asia. I was sixteen. I lived with a host family in Yokohama, attended Hiranuma High School full-time, studied Kyuudo, practiced tea ceremony, and took every exam in Japanese. I scored second highest in the school-wide English examination among all students.
+            </p>
+            <p>
+                That year is the subject of most of this writing. The <em>essays</em> on this site use it as a lens for thinking about soft power, cultural exchange, and international relations. The <em>guides</em> are written for high schoolers who want to do what I did — with everything I wish someone had told me.
+            </p>
+
+            <hr class="prose-rule">
+
+            <p>
+                Outside writing: I do ML research. My first internship was a water quality prediction project at C-DAC Mohali, a government research institution. I am currently working on diatom-based fuel analysis under Dr. Sarika Grover in Environmental Sciences. The long-term direction is the intersection of <strong>machine learning and international policy</strong> — using computational methods to study the things I write about.
+            </p>
+            <p>
+                I also run two Pinterest accounts with a combined monthly reach of 400,000+. One is illustration. One is photography and aesthetics. I built both from zero, which taught me more about content strategy and algorithmic thinking than most courses do. I speak five languages. I draw traditionally with ink pens, and I am currently working on an original manga series.
+            </p>
+            <p>
+                If you want to get in touch — for commissions, collaborations, research, or otherwise — email is best: <a href="mailto:samyalayachi@gmail.com">samyalayachi@gmail.com</a>.
+            </p>
+
+            <div class="about-cta-row">
+                <a href="essays/" class="cta-primary">Read Essays →</a>
+                <a href="guides/" class="cta-secondary">Browse Guides</a>
+                <a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener" class="cta-secondary">Full Portfolio ↗</a>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="about-sidebar">
+
+            <div class="sidebar-block">
+                <div class="sidebar-block-title">Credentials</div>
+                <ul class="cred-list">
+                    <li>
+                        <strong>Asia Kakehashi Scholar</strong>
+                        <span>Japan Ministry of Foreign Affairs · 2021</span>
+                    </li>
+                    <li>
+                        <strong>OECD Head, Pixel Club</strong>
+                        <span>Amity University · 2025–27</span>
+                    </li>
+                    <li>
+                        <strong>ML Internship, C-DAC Mohali</strong>
+                        <span>Government Research Institution</span>
+                    </li>
+                    <li>
+                        <strong>Bub Dub — 200+ copies sold</strong>
+                        <span>Self-published comic · 2016</span>
+                    </li>
+                    <li>
+                        <strong>Thoughts of a Dreamy Girl</strong>
+                        <span>Poetry collection · 2017</span>
+                    </li>
+                    <li>
+                        <strong>Sam Saira</strong>
+                        <span>Debut comic · 2015</span>
+                    </li>
+                    <li>
+                        <strong>Youngest Speaker, Sangrur Literary Festival</strong>
+                        <span>Age 10 · 2015</span>
+                    </li>
+                    <li>
+                        <strong>International Rank 23, Science Olympiad</strong>
+                        <span></span>
+                    </li>
+                    <li>
+                        <strong>400K+ Monthly Pinterest Reach</strong>
+                        <span>Two platforms</span>
+                    </li>
+                    <li>
+                        <strong>BTech (Current)</strong>
+                        <span>Amity University, Chandigarh</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block">
+                <div class="sidebar-block-title">Languages</div>
+                <div class="lang-grid">
+                    <div class="lang-cell">
+                        <span class="l-name">English</span>
+                        <span class="l-level">Native</span>
+                    </div>
+                    <div class="lang-cell">
+                        <span class="l-name">Hindi</span>
+                        <span class="l-level">Native</span>
+                    </div>
+                    <div class="lang-cell">
+                        <span class="l-name">Punjabi</span>
+                        <span class="l-level">Native</span>
+                    </div>
+                    <div class="lang-cell">
+                        <span class="l-name">Japanese</span>
+                        <span class="l-level">N4</span>
+                    </div>
+                    <div class="lang-cell">
+                        <span class="l-name">French</span>
+                        <span class="l-level">Elementary</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <div class="sidebar-block-title">Contact</div>
+                <ul class="cred-list">
+                    <li>
+                        <strong>Email</strong>
+                        <span><a href="mailto:samyalayachi@gmail.com">samyalayachi@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <strong>LinkedIn</strong>
+                        <span><a href="https://linkedin.com/in/ayachisamyal" target="_blank" rel="noopener">ayachisamyal ↗</a></span>
+                    </li>
+                    <li>
+                        <strong>Portfolio</strong>
+                        <span><a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener">ayachisamyal.vercel.app ↗</a></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-name">Ayachi Samyal</div>
+        <div class="footer-links">
+            <a href="essays/">Essays</a>
+            <a href="guides/">Guides</a>
+            <a href="https://ayachisamyal.vercel.app" target="_blank" rel="noopener">Portfolio ↗</a>
+            <a href="mailto:samyalayachi@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
