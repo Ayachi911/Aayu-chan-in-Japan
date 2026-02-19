@@ -1,0 +1,214 @@
+/* ============================================
+   PROJECTS — Portfolio Grid
+   ============================================ */
+
+/* Extends editorial.css */
+
+.projects-header {
+  padding: calc(var(--rhythm) * 1.5) 5% calc(var(--rhythm) * 0.75);
+  border-bottom: 2px solid var(--ink);
+}
+
+.header-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.title-rule {
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.header-intro {
+  font-family: var(--serif);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.75;
+  color: var(--ink-mid);
+  max-width: 750px;
+}
+
+/* Projects Grid */
+.projects-grid-section {
+  padding: var(--rhythm) 5%;
+}
+
+.project-category {
+  margin-bottom: calc(var(--rhythm) * 1.5);
+}
+
+.category-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* Project Cards */
+.project-card {
+  border: 1px solid var(--rule);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.06);
+  transform: translateX(4px);
+}
+
+.project-card.featured {
+  border-width: 2px;
+  border-color: var(--accent);
+  background: linear-gradient(to bottom, var(--paper), #f5f0eb);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-tag {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.card-tag {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.card-tag.research {
+  background: #2d5a7b;
+  color: white;
+}
+
+.card-tag.book {
+  background: #6b4c87;
+  color: white;
+}
+
+.card-tag.platform {
+  background: #c77b3a;
+  color: white;
+}
+
+.card-tag.dev {
+  background: #3a7d54;
+  color: white;
+}
+
+.card-tag.design {
+  background: #a84d5c;
+  color: white;
+}
+
+.card-tag.leadership {
+  background: #8b7d5a;
+  color: white;
+}
+
+.card-header h3 {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.project-card p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  margin-bottom: 1.25rem;
+}
+
+.card-tech {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.card-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.card-meta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.card-meta a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-header {
+    padding: calc(var(--rhythm) * 0.75) 5% calc(var(--rhythm) * 0.5);
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
