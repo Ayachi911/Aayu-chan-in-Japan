@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Spent 800 Yen at the Yokohama Strawberry Festival and It Broke Me (Permanently) | Ayachi Samyal</title>
+<meta name="description" content="The Akarengasoko strawberry festival changed how I understand fruit. A personal essay on Yokohama's Red Brick Warehouse, Aki's Sweets, and becoming irreversibly, completely strawberry-coded.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Kaisei+Opti:wght@400;700&family=Caveat:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red:        #e8192c;
+  --red-deep:   #b5111f;
+  --red-soft:   #f04455;
+  --cream:      #fff8f0;
+  --cream-warm: #fef3e8;
+  --green:      #3a6b35;
+  --green-soft: #5a8a52;
+  --pink:       #ffd6dc;
+  --pink-deep:  #f7a8b4;
+  --white:      #fffcfa;
+  --ink:        #1c0a0e;
+  --ink-soft:   #5c3040;
+  --gold:       #c8920a;
+  --dot:        rgba(232,25,44,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle, var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--ink);
+  font-family: 'Shippori Mincho', serif;
+  line-height: 1.85;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='15' rx='8' ry='9' fill='%23e8192c' opacity='0.85'/%3E%3Cellipse cx='12' cy='15' rx='5' ry='6' fill='none' stroke='%23b5111f' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M12 6 Q14 2 18 1' stroke='%233a6b35' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='8.5' cy='12' r='0.8' fill='%23ffd6dc' opacity='0.7'/%3E%3Ccircle cx='15' cy='14' r='0.7' fill='%23ffd6dc' opacity='0.7'/%3E%3Ccircle cx='11' cy='18' r='0.7' fill='%23ffd6dc' opacity='0.6'/%3E%3C/svg%3E") 12 12, auto;
+  overflow-x: hidden;
+}
+
+/* ── FLOATING STRAWBERRIES (background deco) ── */
+.float-bg {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  font-size: 1.5rem;
+  opacity: 0.07;
+  user-select: none;
+  animation: floatup linear infinite;
+}
+@keyframes floatup {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.07; }
+  90% { opacity: 0.07; }
+  100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+}
+
+/* ── NAV ── */
+nav {
+  position: relative;
+  z-index: 20;
+  background: var(--red);
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 4px solid var(--red-deep);
+}
+
+.nav-logo {
+  font-family: 'Kaisei Opti', serif;
+  font-size: 0.95rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.05em;
+}
+.nav-logo::before { content: '🍓'; font-size: 1rem; }
+
+.nav-tag {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  padding: 0.9rem 1rem;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+}
+.nav-links a {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.12); color: white; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  z-index: 2;
+  background: var(--red);
+  padding: 4rem 2rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* big decorative strawberry behind hero text */
+.hero::before {
+  content: '🍓';
+  position: absolute;
+  font-size: 22rem;
+  top: -3rem;
+  left: -4rem;
+  opacity: 0.06;
+  line-height: 1;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+.hero::after {
+  content: '🍓';
+  position: absolute;
+  font-size: 18rem;
+  bottom: -4rem;
+  right: -2rem;
+  opacity: 0.07;
+  line-height: 1;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+/* wave bottom */
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+h1 {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  max-width: 700px;
+  margin: 0 auto 1.2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.hero-sub {
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+}
+.hero-meta-dot { color: var(--pink); }
+
+/* ── STICKER ROW ── */
+.sticker-row {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: -1.2rem auto 0;
+  padding: 0 1.5rem;
+  max-width: 700px;
+}
+
+.sticker {
+  background: white;
+  border: 2.5px solid var(--red);
+  border-radius: 50px;
+  padding: 0.35rem 0.9rem;
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: var(--red);
+  box-shadow: 3px 3px 0 var(--red-deep);
+  transform: rotate(var(--rot, 0deg));
+  white-space: nowrap;
+}
+
+/* ── MAIN ── */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 3rem auto 5rem;
+  padding: 0 1.5rem;
+}
+
+/* ── PROSE ── */
+.essay-body p {
+  font-size: 1rem;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 400;
+}
+
+.lead-p {
+  font-size: 1.12rem !important;
+  color: var(--ink) !important;
+  font-weight: 500 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ── PHOTO BLOCKS ── */
+
+/* full-width polaroid */
+.photo-full {
+  position: relative;
+  margin: 2.5rem -1rem;
+}
+.polaroid {
+  background: white;
+  padding: 0.7rem 0.7rem 2.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12), 5px 5px 0 var(--pink-deep);
+  transform: rotate(var(--rot, -0.8deg));
+  position: relative;
+}
+.polaroid img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.polaroid-cap {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  padding: 0 1rem;
+}
+.polaroid-sticker {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  font-size: 1.8rem;
+  transform: rotate(10deg);
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.15));
+}
+
+/* side-by-side photos */
+.photo-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2.5rem 0;
+}
+.photo-duo .polaroid {
+  margin: 0;
+}
+.photo-duo .polaroid img {
+  max-height: 280px;
+}
+
+/* three-up */
+.photo-trio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+.photo-trio .polaroid img {
+  max-height: 200px;
+}
+.photo-trio .polaroid {
+  padding-bottom: 2.4rem;
+}
+.photo-trio .polaroid-cap {
+  font-size: 0.85rem;
+}
+
+/* ── SECTION HEADERS ── */
+.section-break {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 1.5rem;
+}
+.section-berry { font-size: 1.5rem; flex-shrink: 0; }
+.section-break h2 {
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--red-deep);
+  flex: 1;
+}
+.section-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--red) 0,
+    var(--red) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.3;
+}
+
+/* ── CALLOUT / QUOTE BOXES ── */
+.berry-box {
+  position: relative;
+  background: var(--pink);
+  border: 2px solid var(--pink-deep);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  margin: 2rem 0;
+  font-family: 'Caveat', cursive;
+  font-size: 1.08rem;
+  color: var(--red-deep);
+  line-height: 1.7;
+}
+.berry-box::before {
+  content: '🍓';
+  position: absolute;
+  top: -14px;
+  left: 16px;
+  font-size: 1.4rem;
+}
+
+.price-tag {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  font-family: 'Kaisei Opti', serif;
+  box-shadow: 3px 3px 0 var(--red-deep);
+  float: right;
+  margin: 0 0 1rem 1.2rem;
+}
+.price-tag-yen {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+.price-tag-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.price-tag-note {
+  font-family: 'Caveat', cursive;
+  font-size: 0.62rem;
+  opacity: 0.75;
+}
+
+/* strawberry addiction list */
+.addiction-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.addiction-list li {
+  background: white;
+  border: 1.5px solid var(--pink-deep);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 2px 2px 0 var(--pink-deep);
+}
+.addiction-list li::before {
+  content: '🍓';
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* PULL QUOTE */
+.pull-quote {
+  border-left: 5px solid var(--red);
+  margin: 2.5rem 0;
+  padding: 1rem 0 1rem 1.5rem;
+  position: relative;
+}
+.pull-quote::before {
+  content: '"';
+  font-family: 'Kaisei Opti', serif;
+  font-size: 5rem;
+  color: var(--pink-deep);
+  position: absolute;
+  top: -1.5rem;
+  left: 0.3rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+.pull-quote p {
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.2rem !important;
+  color: var(--red-deep) !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.pull-quote cite {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* SPARKLE TEXT */
+.sparkle {
+  display: inline-block;
+  animation: sparklepop 2s ease-in-out infinite;
+}
+@keyframes sparklepop {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* MANGA-STYLE THOUGHT BUBBLE */
+.thought {
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 1.2rem 1.4rem;
+  margin: 2rem 0;
+  position: relative;
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.7;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.thought::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 28px;
+  border: 8px solid transparent;
+  border-top-color: var(--ink);
+}
+.thought::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 30px;
+  border: 6px solid transparent;
+  border-top-color: white;
+  z-index: 1;
+}
+.thought-speaker {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  text-transform: uppercase;
+  font-family: 'Caveat', cursive;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* PLACE INFO BOX */
+.place-card {
+  background: var(--cream-warm);
+  border: 2px solid var(--red);
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem;
+  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+.place-icon {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.place-name {
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--red-deep);
+  margin-bottom: 0.2rem;
+}
+.place-name-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.place-desc {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  z-index: 1;
+  background: var(--red-deep);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+footer p {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.3rem;
+}
+.footer-berry { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+
+/* ANIMATIONS */
+@keyframes fadein { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.hero { animation: fadein 0.6s ease both; }
+.sticker-row { animation: fadein 0.6s 0.2s ease both; }
+.page-wrap { animation: fadein 0.6s 0.3s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .photo-duo, .photo-trio { grid-template-columns: 1fr; }
+  .addiction-list { grid-template-columns: 1fr; }
+  .place-card { grid-template-columns: 1fr; text-align: center; }
+  .nav-links { display: none; }
+  h1 { font-size: 1.8rem; }
+  .price-tag { float: none; margin: 0 auto 1rem; display: flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- floating bg strawberries -->
+<div class="float-bg" style="left:5%; animation-duration:18s; font-size:1.2rem; animation-delay:0s;">🍓</div>
+<div class="float-bg" style="left:20%; animation-duration:24s; font-size:2rem; animation-delay:4s;">🍓</div>
+<div class="float-bg" style="left:40%; animation-duration:20s; font-size:1rem; animation-delay:8s;">🍓</div>
+<div class="float-bg" style="left:65%; animation-duration:22s; font-size:1.5rem; animation-delay:2s;">🍓</div>
+<div class="float-bg" style="left:82%; animation-duration:19s; font-size:1.8rem; animation-delay:6s;">🍓</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">Ayachi Samyal</a>
+  <span class="nav-tag">Personal Essays</span>
+  <div class="nav-links">
+    <a href="/essays/">Essays</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">🍓 &nbsp;Personal Essay &nbsp;·&nbsp; Yokohama 2021 &nbsp;🍓</div>
+  <h1>I Spent 800 Yen at the Yokohama Strawberry Festival and It Changed Me Permanently</h1>
+  <p class="hero-sub">Akarengasoko. Red Brick Warehouse. The place that gave me a strawberry addiction I have no interest in curing.</p>
+  <div class="hero-meta">
+    <span>✎ Ayachi Samyal</span>
+    <span class="hero-meta-dot">🍓</span>
+    <span>Yokohama, Japan</span>
+    <span class="hero-meta-dot">🍓</span>
+    <span>6 min read</span>
+  </div>
+
+  <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff8f0"/>
+  </svg>
+</div>
+
+<!-- STICKER ROW -->
+<div class="sticker-row">
+  <div class="sticker" style="--rot: -3deg;">🍓 800 yen well spent</div>
+  <div class="sticker" style="--rot: 2deg;">📍 Yokohama</div>
+  <div class="sticker" style="--rot: -1.5deg;">🏮 Akarengasoko</div>
+  <div class="sticker" style="--rot: 3deg;">permanently strawberry-coded</div>
+</div>
+
+<!-- MAIN ESSAY -->
+<div class="page-wrap">
+<article class="essay-body">
+
+  <p class="lead-p">In India, strawberries came small, tart, and slightly suspicious — the kind of fruit you ate because it looked like it should taste like strawberry shortcake but didn't quite follow through on the promise. I liked them okay. They were cute. I had no idea what was coming.</p>
+
+  <!-- PHOTO: cake on waterfront -->
+  <div class="photo-full">
+    <div class="polaroid" style="--rot: -1.2deg;">
+      <div class="polaroid-sticker">🍓</div>
+      <img src="/mnt/user-data/uploads/IMG_4772.jpeg" alt="Aki's Sweets strawberry mille-feuille cake held at the Yokohama waterfront, Shonan Fujisawa sticker visible">
+      <div class="polaroid-cap">the cake. the one. ¥600-something of heaven // waterfront, Yokohama ✦</div>
+    </div>
+  </div>
+
+  <div class="section-break">
+    <span class="section-berry">🍓</span>
+    <h2>The Red Brick Warehouse and What Lives There</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-icon">🏮</div>
+    <div>
+      <div class="place-name">Yokohama Red Brick Warehouse</div>
+      <div class="place-name-jp">横浜赤レンガ倉庫 — Yokohama Akarengasoko</div>
+      <p class="place-desc">A pair of early 1900s heritage brick warehouses on the Yokohama waterfront, converted into a shopping and events complex. One stop from Sakuragichō on the Minatomiraisen, or a long walk from the bay. Famous for hosting seasonal festivals — strawberry fairs, chocolate fairs, German Christmas markets. Also: the setting for the Yokohama chapters in Bungo Stray Dogs, which means if you're an anime person you will recognize the building immediately and lose your mind a little.</p>
+    </div>
+  </div>
+
+  <p>My school was in Yokohama. The eki stop before mine — one single stop — was the station that dropped you at the doorstep of the waterfront, and from there a ten-minute walk to the Red Brick Warehouse. I made this journey several times that year. But the strawberry festival was the one that left a mark.</p>
+
+  <div class="thought">
+    <span class="thought-speaker">me, arriving at the festival:</span>
+    "okay I'll just look around, maybe get one small thing, nothing crazy—"
+    <br><br>
+    <strong>[exits 800 yen later with two strawberry items, having almost genuflected in front of a large strawberry sculpture]</strong>
+  </div>
+
+  <p>The festival was the kind of thing Japan does with seasonal produce — complete, maximalist, entirely committed. Strawberry everything. Strawberry cakes, strawberry daifuku, strawberry crepes, strawberry parfaits, strawberry merchandise. And everywhere, the actual fruit itself: glossy, enormous, so red it looked almost lit from within.</p>
+
+  <!-- THE STATUE -->
+  <div class="photo-full">
+    <div class="polaroid" style="--rot: 0.5deg;">
+      <div class="polaroid-sticker">👑</div>
+      <img src="/mnt/user-data/uploads/IMG_3723.jpeg" alt="Enormous glossy red strawberry sculpture on a white plinth in front of the Yokohama Red Brick Warehouse, bright blue sky behind it">
+      <div class="polaroid-cap">THE SCULPTURE. THE ONE. standing before the red brick warehouse like it owns the place. because it does. 🍓</div>
+    </div>
+  </div>
+
+  <div class="berry-box">
+    There was a large strawberry sculpture at the festival. On a plinth. In front of the entire Red Brick Warehouse. Taller than a person. Glossy. Perfectly red. With little moulded seeds and big green leaves at the base like a crown. Signs around it said DO NOT STEP ON IT, DO NOT SIT ON IT — in both Japanese and English — which tells you everything about how much people wanted to interact with this strawberry. I would have prayed to it. I would have left offerings. I took seventeen photos instead.
+  </div>
+
+  <div class="photo-duo">
+    <div class="polaroid" style="--rot: -1.5deg;">
+      <img src="/mnt/user-data/uploads/IMG_3722.jpeg" alt="The Red Brick Warehouse seen from across the street with festival banners and colourful murals visible along the waterfront fence">
+      <div class="polaroid-cap">approaching the warehouse — you can feel it before you see it</div>
+    </div>
+    <div class="polaroid" style="--rot: 1.8deg;">
+      <img src="/mnt/user-data/uploads/IMG_3726.jpeg" alt="The side of the Red Brick Warehouse building with ornate iron canopy brackets, benches along the waterfront promenade, people walking toward the harbour">
+      <div class="polaroid-cap">the waterfront side of the warehouse — where I ate my cake on a bench 🌊</div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>It was maybe 1.5 meters tall. Lacquered. So red it looked like someone had decided to paint the concept of strawberry in three dimensions.</p>
+    <cite>— me, still thinking about the sculpture, years later</cite>
+  </div>
+
+  <!-- PHOTO DUO: both cake angles -->
+  <div class="photo-duo">
+    <div class="polaroid" style="--rot: 1.5deg;">
+      <img src="/mnt/user-data/uploads/IMG_4769.jpeg" alt="Aki's Sweets strawberry mille-feuille from above on a wooden bench, gold leaf visible on strawberry">
+      <div class="polaroid-cap">from above — note the gold leaf 🌟</div>
+    </div>
+    <div class="polaroid" style="--rot: -2deg;">
+      <img src="/mnt/user-data/uploads/IMG_4772.jpeg" alt="Strawberry shortcake held at waterfront, whipped cream tower visible">
+      <div class="polaroid-cap">the height of the cream situation</div>
+    </div>
+  </div>
+
+  <div class="section-break">
+    <span class="section-berry">🍓</span>
+    <h2>800 Yen. Two Items. Zero Regrets.</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="price-tag">
+    <span class="price-tag-yen">SPENT</span>
+    <span class="price-tag-num">¥800</span>
+    <span class="price-tag-note">worth it</span>
+  </div>
+
+  <p>I spent 800 yen. For context — that is roughly the price of a convenience store meal deal, or two canned coffees, or one mid-tier onigiri and a bottle of green tea. I spent it on two strawberry items from Aki's Sweets Shonan Fujisawa, which had a stall at the festival, and I felt no guilt whatsoever.</p>
+
+  <p>Item one was the cake. A mille-feuille situation — flaky pastry layers, clouds of fresh whipped cream, six to seven large strawberries arranged with the commitment of someone who takes their fruit architecture seriously. One of the strawberries had a leaf still attached and was perched on top of a cream swirl like a tiny throne. There was, I believe, a gold leaf accent on one of the strawberries. Gold. Leaf. On a strawberry.</p>
+
+  <div class="berry-box">
+    These were not Indian strawberries. These were not the slightly tired ones I'd find at a Delhi market. These were Tochigi or Saga or Fukuoka strawberries — grown for size, grown for sweetness, grown with the full weight of Japanese agricultural perfectionism behind them. They were large. They were bright. They were so sweet that eating one felt like the concept of sweetness agreeing to show up in physical form.
+  </div>
+
+  <p>The cream was cold and fresh and not too sweet, which meant it let the strawberries do all the talking. I ate it on a bench near the waterfront. There were boats. There was winter sun. I think I may have made a sound.</p>
+
+  <div class="pull-quote">
+    <p>THEY WERE BIG SWEET AND SO BRIGHT LOOKING. WITH CREAM THEY WENT MHMHHHMMM.</p>
+    <cite>— me, to my phone notes, immediately after eating</cite>
+  </div>
+
+  <!-- THE LOCATION PHOTOS -->
+  <div class="section-break">
+    <span class="section-berry">🍓</span>
+    <h2>The Festival, The Place, The Vibe</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="photo-trio">
+    <div class="polaroid" style="--rot: -1.5deg;">
+      <img src="/mnt/user-data/uploads/IMG_4762.jpeg" alt="Yokohama city bus at a crosswalk, blue sky">
+      <div class="polaroid-cap">横浜市営バス — getting there</div>
+    </div>
+    <div class="polaroid" style="--rot: 2deg;">
+      <img src="/mnt/user-data/uploads/IMG_4773.jpeg" alt="Yokohama parking lot with dramatic blue sky and clouds">
+      <div class="polaroid-cap">the sky near the waterfront</div>
+    </div>
+    <div class="polaroid" style="--rot: -0.8deg;">
+      <img src="/mnt/user-data/uploads/IMG_4765.jpeg" alt="A detailed chocolate model of the Red Brick Warehouse on display">
+      <div class="polaroid-cap">chocolate model of the building itself 🍫</div>
+    </div>
+  </div>
+
+  <p>The Red Brick Warehouse in winter is a specific kind of beautiful — the old brickwork under cold blue sky, the harbor right there, the mountains somewhere behind the clouds. The festival stalls were set up along the outer courtyard and inside the warehouse floors. Seasonal festivals there always feel slightly too good for how accessible they are. One train stop. That's all it took.</p>
+
+  <p>There was a large strawberry sculpture at the event. Decorative, promotional, absolutely unnecessary, completely wonderful. I would have taken a photo with it. I would have talked to it. I respected it as an artistic statement about what strawberries deserve.</p>
+
+  <!-- SHOPPING PHOTOS -->
+  <div class="photo-duo">
+    <div class="polaroid" style="--rot: 1.8deg;">
+      <img src="/mnt/user-data/uploads/IMG_4768.jpeg" alt="Cat-themed souvenir shop display with keychains, pouches and bookmarks from Pottering Cat">
+      <div class="polaroid-cap">pottering cat stall — I browsed but did not stray 🐱</div>
+    </div>
+    <div class="polaroid" style="--rot: -1.5deg;">
+      <img src="/mnt/user-data/uploads/IMG_4767.jpeg" alt="Glasswork flower plates displayed in a shop, pink sakura and purple flower designs">
+      <div class="polaroid-cap">glass plates — gorgeous and did not come home with me</div>
+    </div>
+  </div>
+
+  <p>The warehouse had other stalls too — crafts, glass art, the cat accessories shop I definitely browsed for ten minutes without buying anything. But I was there for one reason. I spent my 800 yen with focus and intention, walked to the waterfront bench, and ate my cake in the January cold like a person who had made excellent choices.</p>
+
+  <div class="section-break">
+    <span class="section-berry">🍓</span>
+    <h2>What Happened After: A Full Conversion</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p>I went back to India eventually. And something had changed. The strawberry obsession that started in Yokohama did not leave with my suitcase. It followed me home, took up residence, and began expanding its territory.</p>
+
+  <p>The evidence:</p>
+
+  <ul class="addiction-list">
+    <li>Nivea strawberry lip balm (daily use)</li>
+    <li>The Body Shop strawberry hand cream</li>
+    <li>Strawberry ceramic cup + saucer</li>
+    <li>Strawberry printed plates</li>
+    <li>Strawberry gifted for Valentine's Day</li>
+    <li>Friend saw a girl fussing over strawberries in Canada. Thought of me immediately.</li>
+    <li>Besties gift me strawberry items unprompted</li>
+    <li>All my friends know. They all know.</li>
+  </ul>
+
+  <div class="thought">
+    <span class="thought-speaker">Harshita, working at a superstore in Canada:</span>
+    sees small girl creating a fuss over strawberries
+    <br><br>
+    → immediately texts me about it
+    <br><br>
+    this is my legacy. this is what I have built.
+  </div>
+
+  <p>Harshita works part-time at a superstore in Canada. She saw a little girl making a complete fuss over strawberries and her first thought was of me. That is — I think — the highest compliment I have ever received. A child in Canada having a meltdown about fruit, and my friend across an ocean thinking: <em>ah yes, Ayachi energy.</em></p>
+
+  <div class="berry-box">
+    In India they were small and tart, so I thought they were just cute — like strawberry shortcake the cartoon made them seem. But when I went to Japan and tasted what a strawberry could actually be when it was grown with full agricultural seriousness and eaten with fresh cream in January by a waterfront — something clicked. Something was activated. There is no going back.
+  </div>
+
+  <p>I think about the Yokohama strawberry festival the way some people think about a meal they'll never stop chasing — that one lunch in some city that recalibrated their understanding of what food could be. Mine happened to be a mille-feuille on a paper plate at a winter festival, eaten on a harbor bench, for eight hundred yen.</p>
+
+  <div class="pull-quote">
+    <p>The strawberry found me in Japan. Everything since has been the aftermath.</p>
+    <cite>— Ayachi, still strawberry-coded, still no regrets</cite>
+  </div>
+
+  <p style="color: var(--ink-soft); font-size: 0.88rem; font-style: italic; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--pink-deep);">
+    Ayachi Samyal completed the Asia Kakehashi Project in 2021, living with a host family in Yokohama, Japan. The Red Brick Warehouse is one stop from Sakuragichō Station on the Minatomirai Line. Aki's Sweets Shonan Fujisawa appears at seasonal festivals in the area. The strawberry sculpture cannot be confirmed to still exist but is real in her heart.
+  </p>
+
+</article>
+</div>
+
+<footer>
+  <span class="footer-berry">🍓</span>
+  <p>Ayachi Samyal · Japan Exchange Blog</p>
+  <p style="font-size:0.85rem;">横浜 Yokohama 2021 · permanently strawberry-coded</p>
+</footer>
+
+</body>
+</html>
