@@ -1,128 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayachi Samyal</title>
-    <meta name="description" content="Cultural exchange as statecraft. Machine learning as governance tool. Japan–India relations as lived experience.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/editorial.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research & Writing — Ayachi Samyal</title>
+<meta name="description" content="Essays on cultural exchange and statecraft. Practical guides for exchange students. Field notes from Japan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!-- Reuses editorial.css from portfolio. No new stylesheet needed. -->
+<link rel="stylesheet" href="../assets/css/editorial.css">
+<style>
+/* ── GATEWAY-ONLY ADDITIONS ─────────────────────────────────
+   These 80 lines are the ONLY new CSS needed.
+   Everything else reuses existing editorial.css classes.
+──────────────────────────────────────────────────────────── */
+
+/* Intro block */
+.gateway-intro {
+  max-width: var(--max-prose);
+  margin: var(--rhythm) auto 0;
+  padding: 0 5%;
+}
+.gateway-intro .overline {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.gateway-intro h1 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+.gateway-intro .bio {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink-mid);
+  margin-bottom: 2rem;
+}
+
+/* Featured entry points — 3 curated reads */
+.gateway-reads {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--rule);
+  margin-top: 2rem;
+}
+.gateway-read {
+  padding: 1.4rem 1.5rem;
+  background: var(--paper);
+  border-right: 1px solid var(--rule);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.18s;
+}
+.gateway-read:last-child { border-right: none; }
+.gateway-read:hover { background: #f2ede5; }
+.gateway-read .read-type {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.gateway-read .read-title {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.gateway-read .read-arrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+/* Section divider rule */
+.gateway-rule {
+  max-width: var(--max-wide);
+  margin: var(--rhythm) auto 0;
+  padding: 0 5%;
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+.gateway-section-label {
+  max-width: var(--max-wide);
+  margin: 3rem auto 0;
+  padding: 0 5%;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Category cards */
+.gateway-cards {
+  max-width: var(--max-wide);
+  margin: 2rem auto var(--rhythm);
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.gateway-card {
+  border: 1px solid var(--rule);
+  padding: 2rem 1.8rem 1.6rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: var(--paper);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.gateway-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(139,26,26,0.06);
+}
+.gateway-card .card-kicker {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.gateway-card h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.gateway-card p {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.gateway-card .card-count {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gateway-card .card-count span:last-child {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .gateway-reads { grid-template-columns: 1fr; }
+  .gateway-read { border-right: none; border-bottom: 1px solid var(--rule); }
+  .gateway-read:last-child { border-bottom: none; }
+  .gateway-cards { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-    <nav class="global-nav">
-        <a href="/" class="nav-logo">Ayachi Samyal</a>
-        <div class="nav-links">
-            <div class="nav-dropdown">
-                <a href="/research/" class="nav-link">Research & Writing</a>
-                <div class="dropdown-menu">
-                    <a href="/research/essays/">Essays</a>
-                    <a href="/research/field-notes/">Field Notes</a>
-                    <a href="/research/guides/">Guides</a>
-                </div>
-            </div>
-            <a href="/projects/" class="nav-link">Projects</a>
-            <a href="/frameworks/" class="nav-link">Frameworks</a>
-            <a href="/about.html" class="nav-link">About</a>
-        </div>
-    </nav>
+<!-- Uses existing .global-nav from editorial.css -->
+<nav class="global-nav">
+  <a href="/" class="nav-logo">Ayachi Samyal</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <a href="/research/" class="nav-link">Research & Writing</a>
+      <div class="dropdown-menu">
+        <a href="/research/essays/">Essays</a>
+        <a href="/research/field-notes/">Field Notes</a>
+        <a href="/research/guides/">Guides</a>
+      </div>
+    </div>
+    <a href="/projects/" class="nav-link">Projects</a>
+    <a href="/frameworks/" class="nav-link">Frameworks</a>
+    <a href="/about.html" class="nav-link">About</a>
+  </div>
+</nav>
 
-    <header class="hero-editorial">
-        <div class="hero-container">
-            <div class="hero-eyebrow">Ayachi Samyal</div>
-            <h1 class="hero-title">Cultural exchange as statecraft.<br>Machine learning as governance tool.<br>Japan–India relations as lived experience.</h1>
-            <div class="hero-rule"></div>
-            <p class="hero-statement">
-                I write about the systems underneath the experience — how soft power programs actually work, what host family dynamics reveal about social structure, why teenage exchange creates diplomatic infrastructure decades later.
-            </p>
-            <div class="hero-meta">
-                <span>Asia Kakehashi Scholar, 2021</span>
-                <span class="meta-sep">·</span>
-                <span>C-DAC ML Research</span>
-                <span class="meta-sep">·</span>
-                <span>Published author since age 10</span>
-            </div>
-            <p class="hero-current">Currently: BTech + international relations</p>
-        </div>
-    </header>
+<!-- ── SECTION 1: INTRO ─────────────────────────────────── -->
+<div class="gateway-intro">
+  <span class="overline">Research & Writing</span>
+  <h1>The writing that didn't fit<br>into a portfolio.</h1>
+  <p class="bio">
+    I went to Japan at 16 through the Asia Kakehashi Project. I've been trying to understand what happened ever since — not just personally, but structurally. These are the essays, guides, and field notes I produce when I'm thinking in public. The essays argue something. The guides are useful. The field notes are honest.
+  </p>
 
-    <section class="featured-work">
-        <div class="section-container">
-            <h2 class="section-label">Featured Work</h2>
-            
-            <div class="featured-grid">
-                <article class="featured-card featured-primary">
-                    <span class="card-type">Essay</span>
-                    <h3><a href="/research/essays/cultural-exchange-statecraft.html">Cultural Exchange as Statecraft</a></h3>
-                    <p>Japan's youth exchange programs operate not as cultural goodwill gestures but as deliberate instruments of norm diffusion and relationship pre-formation.</p>
-                    <div class="card-meta">12 min read · Policy Analysis</div>
-                </article>
+  <!-- Three curated reads — one per section -->
+  <div class="gateway-reads">
+    <a href="essays/cultural-exchange-statecraft.html" class="gateway-read">
+      <span class="read-type">Read an Essay →</span>
+      <span class="read-title">Cultural Exchange as Statecraft</span>
+      <span class="read-arrow">12 min · Policy Analysis</span>
+    </a>
+    <a href="guides/kakehashi-guide.html" class="gateway-read">
+      <span class="read-type">Read a Guide →</span>
+      <span class="read-title">Complete Guide to Asia Kakehashi Project</span>
+      <span class="read-arrow">12 min · Application Guide</span>
+    </a>
+    <a href="essays/bus-driver.html" class="gateway-read">
+      <span class="read-type">Read a Field Note →</span>
+      <span class="read-title">The Bus Driver Who Stopped</span>
+      <span class="read-arrow">5 min · Cultural Observation</span>
+    </a>
+  </div>
+</div>
 
-                <article class="featured-card">
-                    <span class="card-type">Guide</span>
-                    <h3><a href="/research/guides/kakehashi-guide.html">Complete Guide to Asia Kakehashi Project</a></h3>
-                    <p>Everything you need to know about applying to the Asia Kakehashi Project. Essay tips, interview prep, what actually happens during the program.</p>
-                    <div class="card-meta">12 min read · Application Guide</div>
-                </article>
+<!-- ── SECTION 2: CATEGORY CARDS ───────────────────────── -->
+<hr class="gateway-rule">
+<p class="gateway-section-label">Browse by Section</p>
 
-                <article class="featured-card">
-                    <span class="card-type">Field Note</span>
-                    <h3><a href="/research/essays/bus-driver.html">The Bus Driver Who Stopped</a></h3>
-                    <p>What one small mercy on a Saturday morning revealed about Japanese institutional logic — the coexistence of kindness and rigidity.</p>
-                    <div class="card-meta">5 min read · Cultural Observation</div>
-                </article>
-            </div>
-        </div>
-    </section>
+<div class="gateway-cards">
 
-    <section class="metrics-bar">
-        <div class="section-container">
-            <div class="metrics-grid">
-                <div class="metric">
-                    <div class="metric-num">1<span class="metric-denom">/21</span></div>
-                    <div class="metric-label">Selected from India for Kakehashi at age 16</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-num">400K<span class="metric-denom">+</span></div>
-                    <div class="metric-label">Monthly Pinterest reach</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-num">200<span class="metric-denom">+</span></div>
-                    <div class="metric-label">Self-published comic copies sold</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-num">23</div>
-                    <div class="metric-label">International rank, Science Olympiad</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <a href="essays/" class="gateway-card">
+    <span class="card-kicker">Essays</span>
+    <h2>Arguments about big systems.</h2>
+    <p>Long-form analysis of cultural diplomacy, soft power, and what Japan–India exchange actually produces at scale. These take a position.</p>
+    <div class="card-count">
+      <span>5 essays published</span>
+      <span>→</span>
+    </div>
+  </a>
 
-    <section class="current-focus">
-        <div class="section-container">
-            <h2 class="section-label">Current Focus</h2>
-            <div class="focus-content">
-                <h3>Kakehashi Cohort Tracker</h3>
-                <p>Building a living database of Asia Kakehashi scholars (2015–2024) — mapping program evolution, cohort distribution, and alumni outcomes. The first comprehensive documentation of Japan's largest youth diplomacy program in South Asia.</p>
-                <a href="/projects/kakehashi-tracker/" class="focus-link">View Project →</a>
-            </div>
-        </div>
-    </section>
+  <a href="guides/" class="gateway-card">
+    <span class="card-kicker">Guides</span>
+    <h2>Practical knowledge, tested.</h2>
+    <p>Everything I wish I'd known before applying to Kakehashi — packing lists, budget breakdowns, cultural prep, and commute logistics from someone who did it at 16.</p>
+    <div class="card-count">
+      <span>7 guides published</span>
+      <span>→</span>
+    </div>
+  </a>
 
-    <footer class="global-footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="footer-name">Ayachi Samyal</div>
-                <div class="footer-meta">Chandigarh, India · BTech Student · Asia Kakehashi Scholar 2021</div>
-            </div>
-            <div class="footer-right">
-                <a href="mailto:samyalayachi@gmail.com">samyalayachi@gmail.com</a>
-                <a href="https://linkedin.com/in/ayachisamyal" target="_blank" rel="noopener">LinkedIn ↗</a>
-                <a href="https://github.com/Ayachi911" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-        </div>
-    </footer>
+  <a href="field-notes/" class="gateway-card">
+    <span class="card-kicker">Field Notes</span>
+    <h2>Small moments, examined.</h2>
+    <p>Things that happened and felt significant — a retirement dinner, a train I almost missed, a Tuesday where nothing and everything changed. Reported honestly.</p>
+    <div class="card-count">
+      <span>2 notes published</span>
+      <span>→</span>
+    </div>
+  </a>
+
+</div>
+
+<footer style="border-top:1px solid var(--rule);padding:2rem 5%;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:11px;color:var(--ink-soft);">
+  <span>Ayachi Samyal</span>
+  <a href="/" style="color:var(--ink-soft);text-decoration:none;">← Back to Portfolio</a>
+</footer>
 
 </body>
 </html>
