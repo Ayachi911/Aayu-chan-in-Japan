@@ -9,33 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Sans:wght@300;400;500&family=VT323&family=Klee+One&display=swap" rel="stylesheet">
 
-<!-- Keeps puzzle JS, visitor counter, friends, social — all intact -->
-<!-- Only guides.css layout/typography is overridden below -->
-
 <style>
-/* ═══════════════════════════════════════════════════════════
-   GUIDES SHRINE REDESIGN — "Curated Fan Site"
-   Direction: Shoujo editorial. Early Livejournal + Swirl.net
-   energy, but structured and clean.
-   
-   WHAT CHANGED from old guides.css:
-   - Typography: Fredoka/Mali → Noto Serif JP + DM Sans + Klee
-   - Background: solid pastel → subtle paper texture, no diagonal
-   - Outer frame: thick gradient border → thin elegant border
-   - Nav tabs: pill buttons → flat tab strip with bottom border
-   - Guide cards: 3px rounded border → thin ruled border, no shadow
-   - Headers: pixel-text everywhere → reserved for widgets only
-   - Color: hot pink dominant → dusty rose + sage + cream
-   
-   WHAT DIDN'T CHANGE:
-   - Layout structure (3-col grid) — identical
-   - Sidebar widgets (profile, socials, puzzle, friends, buttons)
-   - Right sidebar (visitor counter, timeline, mood, badges)
-   - All existing class names that still work fine
-   - Puzzle JS and visitor counter scripts
-═══════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════
+   AYACHI'S JAPAN EXCHANGE SHRINE — MERGED EDITION
+   Pretty new fonts + cutesy old pink/gingham vibes
+══════════════════════════════════════════════════════ */
 
-/* ── IMPORT ── */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Sans:wght@300;400;500&family=VT323&family=Klee+One&display=swap');
 
 @font-face {
@@ -46,74 +25,60 @@
 
 /* ── TOKENS ── */
 :root {
-  /* Palette — dusty rose, sage, warm cream, soft navy */
-  --rose:         #e8c4cc;
-  --rose-deep:    #c8899a;
-  --rose-dark:    #9c5a6e;
-  --sage:         #c8d8c0;
-  --sage-deep:    #8aaa80;
-  --cream:        #faf7f2;
-  --cream-warm:   #f2ebe0;
-  --paper:        #fffdf8;
-  --ink:          #2e2420;
-  --ink-mid:      #5a4840;
-  --ink-soft:     #8a7870;
-  --border:       #e0d4cc;
-  --border-sage:  #c0cdb8;
-  --lavender:     #dcd0e8;
-  --blush:        #fce8ed;
-  /* From old guides.css — kept for widget compatibility */
-  --pink:         #ffcce0;
-  --dark-pink:    #c8899a; /* overriding to dusty rose */
-  --blue:         #d4e4f7;
-  --yellow:       #f5d76e;
-  --text:         #2e2420;
-  --text-gray:    #8a7870;
-  --border-pink:  #e0d4cc;
-  --border-blue:  #c0d0e0;
+  --pink:        #ffcce0;
+  --dark-pink:   #ffb3d9;
+  --hot-pink:    #f9a8c9;
+  --cream:       #fffef9;
+  --blue:        #d4e4f7;
+  --sage:        #d8e9d0;
+  --peach:       #ffe5d9;
+  --lavender:    #e8d9f5;
+  --yellow:      #ffd93d;
+  --text:        #4a4a4a;
+  --text-gray:   #6b6b6b;
+  --border-pink: #ffb3d9;
+  --border-blue: #bdd4f0;
   /* Type */
-  --serif:        'Noto Serif JP', Georgia, serif;
-  --sans:         'DM Sans', system-ui, sans-serif;
-  --hand:         'Klee One', cursive;
-  --pixel:        'VT323', monospace;
+  --serif: 'Noto Serif JP', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --hand:  'Klee One', cursive;
+  --pixel: 'VT323', monospace;
 }
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── BODY — subtle washi paper texture, no diagonal stripes ── */
+/* ── BODY — gingham background from old version ── */
 body {
   font-family: var(--sans);
-  background-color: var(--cream);
+  background-color: #fff0f5;
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent, transparent 23px,
-      rgba(200,170,150,0.06) 23px, rgba(200,170,150,0.06) 24px
-    );
-  color: var(--ink);
+    repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255, 204, 224, 0.12) 30px, rgba(255, 204, 224, 0.12) 60px),
+    repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(212, 228, 247, 0.12) 30px, rgba(212, 228, 247, 0.12) 60px);
+  color: var(--text);
   overflow-x: hidden;
 }
 
-/* ── SPARKLES — kept, just repositioned ── */
-.floating-sparkle { position: fixed; z-index: 1000; pointer-events: none; width: 32px; height: 32px; opacity: 0.7; }
-.sparkle-1 { top: 8%; left: 4%; animation: float 6s ease-in-out infinite; }
-.sparkle-2 { top: 28%; right: 6%; animation: float 8s ease-in-out infinite 2s; }
-.sparkle-3 { bottom: 12%; left: 8%; animation: float 7s ease-in-out infinite 1s; }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+/* ── SPARKLES ── */
+.floating-sparkle { position: fixed; z-index: 1000; pointer-events: none; width: 40px; height: 40px; }
+.sparkle-1 { top: 10%; left: 5%; animation: float 6s ease-in-out infinite; }
+.sparkle-2 { top: 30%; right: 8%; animation: float 8s ease-in-out infinite 2s; }
+.sparkle-3 { bottom: 15%; left: 10%; animation: float 7s ease-in-out infinite 1s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
 
-/* ── OUTER FRAME — thin, elegant ── */
+/* ── OUTER FRAME — old chunky pink gradient border ── */
 .outer-frame {
-  max-width: 1180px;
-  margin: 1.5rem auto;
-  padding: 3px;
-  background: linear-gradient(135deg, var(--rose) 0%, var(--sage) 60%, var(--lavender) 100%);
-  border-radius: 4px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 8px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(255, 179, 217, 0.4);
 }
 .inner-frame {
-  background: var(--paper);
-  border-radius: 2px;
-  border: 1px solid var(--border);
+  background: white;
+  border-radius: 16px;
+  border: 4px solid var(--border-pink);
   overflow: hidden;
 }
 
@@ -121,284 +86,296 @@ body {
 .banner-container {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 280px;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 4px solid var(--border-pink);
 }
-.main-banner { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.88) sepia(8%); }
-
+.main-banner { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9); }
 .banner-overlay {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background: rgba(255,253,248,0.93);
-  padding: 1.5rem 2.5rem;
-  border-radius: 2px;
-  border: 1px solid var(--border);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  border: 3px solid var(--border-pink);
+  box-shadow: 0 6px 20px rgba(255, 179, 217, 0.4);
 }
 .site-title {
   font-family: 'Glamour', var(--serif);
   font-weight: 300;
-  font-size: 26px;
-  letter-spacing: 0.04em;
-  color: var(--ink);
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  color: var(--text);
 }
 .site-subtitle {
   font-family: var(--hand);
-  font-size: 15px;
-  color: var(--rose-dark);
-  margin: 0.4rem 0 0;
+  font-size: 16px;
+  color: var(--text-gray);
+  margin: 0.5rem 0 0;
 }
 
-/* ── NAV TABS — flat strip, not pill buttons ── */
+/* ── NAV TABS — old pill style ── */
 .nav-tabs {
-  background: var(--cream-warm);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--peach) 100%);
   display: flex;
   justify-content: center;
-  gap: 0;
-  padding: 0;
-  border-bottom: 1px solid var(--border);
+  gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 3px solid var(--border-pink);
 }
 .tab-btn {
-  background: transparent;
-  color: var(--ink-soft);
+  background: white;
+  color: var(--text);
   text-decoration: none;
-  padding: 0.75rem 1.8rem;
+  padding: 10px 24px;
+  border-radius: 16px;
   font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-bottom: 2px solid transparent;
-  transition: color 0.18s, border-color 0.18s;
-  border-radius: 0;
-  box-shadow: none;
+  font-weight: 700;
+  font-size: 15px;
+  border: 3px solid var(--border-pink);
+  transition: all 0.2s;
+  box-shadow: 0 3px 6px rgba(255, 179, 217, 0.2);
 }
-.tab-btn:hover { color: var(--ink); border-bottom-color: var(--rose-deep); }
-.tab-btn.active { color: var(--rose-dark); border-bottom-color: var(--rose-dark); font-weight: 600; }
+.tab-btn:hover, .tab-btn.active {
+  background: var(--dark-pink);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 179, 217, 0.4);
+}
 
-/* ── MAIN LAYOUT — identical 3-col ── */
+/* ── MAIN LAYOUT — old 3-col with gaps ── */
 .main-layout {
   display: grid;
-  grid-template-columns: 230px 1fr 210px;
-  gap: 0;
-  background: var(--paper);
+  grid-template-columns: 240px 1fr 220px;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(255, 240, 245, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* ── SIDEBAR SHARED ── */
-.left-sidebar, .right-sidebar {
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.left-sidebar { border-right: 1px solid var(--border); }
-.right-sidebar { border-left: 1px solid var(--border); }
-
-/* ── WIDGET BOX — refined ── */
+/* ── WIDGET BOXES — old chunky pink ── */
 .widget-box {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 2px;
+  background: white;
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 10px rgba(255, 179, 217, 0.2);
+  overflow: hidden;
 }
 .widget-header {
-  background: var(--cream-warm);
-  border-bottom: 1px solid var(--border);
-  padding: 0.4rem 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--peach) 100%);
+  padding: 10px 14px;
+  border-bottom: 3px solid var(--border-pink);
+  text-align: center;
 }
 .widget-title {
   font-family: var(--pixel);
-  font-size: 17px;
-  color: var(--ink-mid);
-  letter-spacing: 0.05em;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
 }
-.widget-content { padding: 0.8rem; }
+.widget-content { padding: 14px; }
 
 /* ── PROFILE BLOCK ── */
 .profile-block {
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--paper);
+  background: white;
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 10px rgba(255, 179, 217, 0.2);
   overflow: hidden;
 }
 .profile-header {
-  background: linear-gradient(135deg, var(--blush), var(--lavender));
-  padding: 0.5rem 0.8rem;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  padding: 10px;
+  border-bottom: 3px solid var(--border-pink);
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  border-bottom: 1px solid var(--border);
+  gap: 8px;
 }
-.header-icon { width: 16px; height: 16px; }
+.header-icon { width: 24px; height: 24px; }
 .profile-title {
   font-family: var(--pixel);
-  font-size: 18px;
-  color: var(--rose-dark);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
 }
-.profile-content { padding: 0.9rem; text-align: center; }
+.profile-content { padding: 1.25rem; text-align: center; }
 .profile-pic-frame {
-  width: 72px; height: 72px;
-  border: 2px solid var(--border);
+  width: 120px; height: 120px;
+  margin: 0 auto 1rem;
+  border: 4px solid var(--border-pink);
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 0.6rem;
-  background: var(--blush);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  box-shadow: 0 4px 12px rgba(255, 179, 217, 0.3);
 }
 .profile-pic { width: 100%; height: 100%; object-fit: cover; }
 .profile-name {
   font-family: var(--hand);
-  font-size: 18px;
-  color: var(--rose-dark);
-  margin-bottom: 0.4rem;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0.5rem 0;
 }
-.profile-bio {
-  font-family: var(--sans);
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-}
-.profile-age { color: var(--rose-dark); font-weight: 500; }
-
+.profile-bio { font-family: var(--sans); font-size: 13px; line-height: 1.6; color: var(--text-gray); margin: 0.75rem 0; }
+.profile-age { color: var(--hot-pink); font-weight: 600; }
 .profile-stats {
-  margin-top: 0.7rem;
-  border-top: 1px dashed var(--border);
-  padding-top: 0.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, rgba(255,204,224,0.2) 0%, rgba(212,228,247,0.2) 100%);
+  padding: 0.75rem;
+  border-radius: 8px;
 }
-.stat-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-}
-.stat-label { color: var(--ink-soft); font-family: var(--sans); }
-.stat-value { color: var(--ink); font-family: var(--sans); font-weight: 500; }
+.stat-item { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; font-family: var(--sans); }
+.stat-label { font-weight: 600; color: var(--text); }
+.stat-value { color: var(--text-gray); }
 
 /* ── SOCIAL LINKS ── */
-.social-links { display: flex; flex-direction: column; gap: 0.35rem; }
+.social-links { display: flex; flex-direction: column; gap: 8px; }
 .social-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.5rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--ink);
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  background: var(--cream);
+  border: 2px solid var(--border-pink);
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 12px;
+  color: var(--text);
   font-family: var(--sans);
-  font-weight: 400;
-  border-radius: 2px;
-  transition: background 0.15s, border-color 0.15s;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
-.social-btn:hover { background: var(--blush); border-color: var(--rose); }
-.social-icon { width: 14px; height: 14px; object-fit: contain; }
+.social-btn:hover { background: var(--pink); transform: translateX(4px); }
+.social-icon { width: 20px; height: 20px; }
 
-/* ── PUZZLE / STAMPS CONTAINER ── */
+/* ── PUZZLE / STAMPS ── */
 .stamps-container {
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--paper);
+  background: white;
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 10px rgba(255, 179, 217, 0.2);
   overflow: hidden;
 }
 .stamps-header {
-  background: var(--cream-warm);
-  border-bottom: 1px solid var(--border);
-  padding: 0.4rem 0.8rem;
-  font-family: var(--pixel);
-  font-size: 17px;
-  color: var(--ink-mid);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--peach) 100%);
+  padding: 10px 14px;
+  border-bottom: 3px solid var(--border-pink);
   text-align: center;
+  font-family: var(--pixel);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
 }
 .puzzle-grid {
   display: grid;
-  grid-template-columns: repeat(3,85px);
-  margin: 0.6rem auto;
-  width: 255px;
-  gap: 0;
-  border: 1px solid var(--border);
+  grid-template-columns: repeat(3, 70px);
+  grid-template-rows: repeat(3, 70px);
+  gap: 6px;
+  justify-content: center;
+  margin: 12px auto;
+  width: fit-content;
 }
 .tile {
-  width: 85px;
-  height: 85px;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  border: 2px solid #f5a9c6;
+  background-color: #ffcce0;
+  background-size: 210px 210px;
   cursor: pointer;
-  border: 1px solid var(--border);
-  transition: opacity 0.1s;
+  transition: transform 0.2s ease;
 }
-.tile:hover:not(.empty) { opacity: 0.85; }
-.tile.empty { background: var(--blush) !important; cursor: default; }
-.puzzle-controls { text-align: center; padding: 0.5rem; }
+.tile:hover:not(.empty) { transform: scale(1.05); }
+.empty {
+  background: #ffeaf3 !important;
+  background-image: none !important;
+  border: 2px dashed #f5a9c6;
+  cursor: default;
+}
+.puzzle-controls { text-align: center; padding: 8px; }
 #shuffleBtn {
+  background: #f9c6d8;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 12px;
+  cursor: pointer;
   font-family: var(--pixel);
   font-size: 18px;
-  background: var(--rose);
-  border: 1px solid var(--rose-deep);
-  color: var(--rose-dark);
-  padding: 0.25rem 1rem;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background 0.15s;
+  font-weight: bold;
+  color: #6d4c5b;
+  transition: background 0.2s;
 }
-#shuffleBtn:hover { background: var(--rose-deep); color: white; }
+#shuffleBtn:hover { background: #f5a9c6; }
 .win-message {
   display: none;
   text-align: center;
+  margin-top: 10px;
   font-family: var(--pixel);
   font-size: 22px;
-  color: var(--sage-deep);
-  padding: 0.4rem;
+  font-weight: bold;
+  color: #e75480;
+  padding: 6px;
 }
 
 /* ── FRIENDS ── */
-.friends-list { display: flex; flex-direction: column; gap: 0.5rem; }
-.friend-item { display: flex; align-items: center; gap: 0.6rem; }
-.friend-icon {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  object-fit: cover;
+.friends-list { display: flex; flex-direction: column; gap: 10px; }
+.friend-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px;
+  background: var(--cream);
+  border: 2px solid var(--border-blue);
+  border-radius: 8px;
+  transition: all 0.2s;
 }
-.friend-name { font-size: 12px; font-family: var(--sans); color: var(--ink-mid); }
+.friend-item:hover { background: var(--blue); transform: translateX(4px); }
+.friend-icon { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border-pink); }
+.friend-name { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--text); }
 
 /* ── WEB BUTTONS ── */
-.button-collection { display: flex; flex-wrap: wrap; gap: 4px; }
-.web-button { height: 20px; width: auto; border-radius: 1px; }
+.button-collection { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.web-button { width: 100%; height: auto; cursor: pointer; transition: transform 0.2s; }
+.web-button:hover { transform: scale(1.1); }
 
-/* ── CENTER CONTENT ── */
+/* ── CENTER CONTENT — old bordered box ── */
 .center-content {
-  padding: 1.5rem 1.8rem;
-  min-width: 0;
-  border-top: none;
+  background: white;
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(255, 179, 217, 0.2);
 }
 
-/* ── WELCOME BANNER — clean ── */
+/* ── WELCOME BANNER ── */
 .welcome-banner {
+  background: linear-gradient(135deg, rgba(255,229,217,0.4) 0%, rgba(255,214,232,0.4) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed var(--border-pink);
   text-align: center;
   margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
 }
-.divider-img { max-width: 260px; height: auto; margin: 0.4rem auto; display: block; opacity: 0.6; }
+.divider-img { width: 100%; max-width: 400px; height: auto; margin: 0.5rem auto; display: block; }
 .welcome-title {
-  font-family: var(--hand);
-  font-size: 22px;
-  color: var(--rose-dark);
-  margin: 0.5rem 0;
+  font-family: 'Glamour', var(--serif);
+  font-size: 40px;
+  font-weight: normal;
+  color: var(--text);
+  font-feature-settings: "liga" 1, "calt" 1, "swsh" 1;
+  font-variant-ligatures: common-ligatures contextual;
 }
 .welcome-text {
   font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  max-width: 460px;
-  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-gray);
+  margin: 0.5rem 0;
 }
 
 /* ── SECTION HEADERS ── */
@@ -406,280 +383,233 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 1.2rem;
+  gap: 12px;
+  margin-bottom: 1.5rem;
 }
-.section-icon { width: 24px; height: 24px; }
+.section-icon { width: 32px; height: 32px; }
 .section-title {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
-/* ── REFERENCE IMAGES — new block ── */
-.reference-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  margin: 0 0 1.8rem;
-}
-.ref-img-frame {
-  border: 1px solid var(--border);
-  padding: 3px;
-  background: var(--cream-warm);
-  position: relative;
-  overflow: hidden;
-}
-.ref-img-frame img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  display: block;
-  filter: sepia(5%);
-  transition: filter 0.2s;
-}
-.ref-img-frame:hover img { filter: sepia(0%); }
-.ref-img-caption {
-  font-family: var(--sans);
-  font-size: 10px;
-  color: var(--ink-soft);
-  text-align: center;
-  padding: 0.3rem 0.2rem 0.1rem;
-  letter-spacing: 0.05em;
-}
-
-/* ── GUIDE CARDS — editorial ── */
+/* ── GUIDE CARDS — old styling + new serif titles ── */
 .featured-guide-block, .all-guides-section { margin-bottom: 2rem; }
 
 .guide-card {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1rem;
+  background: white;
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(255, 179, 217, 0.2);
   position: relative;
-  transition: border-color 0.18s, background 0.18s;
+  transition: all 0.3s ease;
 }
-.guide-card:hover { border-color: var(--rose-deep); background: var(--blush); }
+.guide-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(255, 179, 217, 0.35); }
 .guide-card.featured {
-  border-color: var(--rose-deep);
-  border-left: 3px solid var(--rose-dark);
-  background: linear-gradient(135deg, rgba(252,232,237,0.3) 0%, rgba(255,253,248,1) 100%);
+  background: linear-gradient(135deg, rgba(255,214,232,0.15) 0%, rgba(212,228,247,0.15) 100%);
+  border-color: var(--dark-pink);
+  border-width: 4px;
 }
 
 .featured-badge {
   position: absolute;
-  top: 10px; right: 12px;
-  background: var(--sage);
-  color: var(--ink-mid);
-  padding: 3px 10px;
+  top: 12px; right: 12px;
+  background: var(--yellow);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 14px;
   font-family: var(--pixel);
-  font-size: 15px;
-  letter-spacing: 0.1em;
-  border: 1px solid var(--border-sage);
-}
-
-.corner-decoration {
-  position: absolute;
-  top: -10px; right: 1.2rem;
-  width: 28px; height: 28px;
-  opacity: 0.7;
-}
-
-.guide-title {
-  font-family: var(--serif);
   font-size: 16px;
   font-weight: 700;
-  margin: 0 0 0.6rem;
-  line-height: 1.3;
-  color: var(--ink);
+  text-transform: uppercase;
+  box-shadow: 0 3px 8px rgba(255, 217, 61, 0.4);
 }
-.guide-title a { color: inherit; text-decoration: none; }
-.guide-title a:hover { color: var(--rose-dark); }
+.corner-decoration {
+  position: absolute;
+  top: -12px; right: 1.5rem;
+  width: 40px; height: 40px;
+}
+
+/* NEW: serif titles from new HTML */
+.guide-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 0.8rem;
+  line-height: 1.3;
+  color: var(--text);
+}
+.guide-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.guide-title a:hover { color: #e0607e; }
 
 .guide-meta {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 .meta-badge {
-  background: var(--blush);
-  color: var(--rose-dark);
-  padding: 2px 10px;
+  background: var(--sage);
+  color: var(--text);
+  padding: 5px 14px;
+  border-radius: 14px;
   font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  border: 1px solid var(--rose);
-  border-radius: 1px;
 }
-.meta-badge.sage { background: var(--sage); color: #4a6a40; border-color: var(--border-sage); }
-.meta-badge.lavender { background: var(--lavender); color: #5a408a; border-color: #c8b8e0; }
-.meta-time { font-size: 11px; color: var(--ink-soft); font-family: var(--sans); }
+.meta-badge.sage { background: var(--sage); }
+.meta-badge.lavender { background: var(--lavender); }
+.meta-time { font-family: var(--sans); font-size: 13px; color: var(--text-gray); }
 
 .guide-description {
   font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  margin-bottom: 0.8rem;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
 }
 
-.guide-tags {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-  margin-bottom: 0.9rem;
-}
+.guide-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
 .tag {
-  background: var(--cream-warm);
-  color: var(--ink-mid);
-  padding: 3px 10px;
-  font-size: 10px;
+  background: var(--lavender);
+  color: var(--text);
+  padding: 5px 12px;
+  border-radius: 12px;
   font-family: var(--sans);
-  font-weight: 500;
-  border: 1px solid var(--border);
-  border-radius: 1px;
-  letter-spacing: 0.05em;
-  transition: background 0.15s;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
-.tag:hover { background: var(--rose); border-color: var(--rose-deep); }
+.tag:hover { background: var(--blue); transform: translateY(-2px); }
 
 .read-button {
-  background: transparent;
-  color: var(--rose-dark);
+  background: var(--dark-pink);
+  color: white;
   text-decoration: none;
-  padding: 0.35rem 0;
+  padding: 10px 24px;
+  border-radius: 20px;
   font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--rose-deep);
+  font-size: 14px;
+  font-weight: 700;
   display: inline-block;
-  transition: color 0.15s, border-color 0.15s;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(255, 179, 217, 0.3);
 }
-.read-button:hover { color: var(--rose-dark); border-color: var(--rose-dark); }
+.read-button:hover { background: #ff8fb8; transform: translateY(-3px); box-shadow: 0 6px 14px rgba(255, 179, 217, 0.5); }
 
 /* ── GLITTER DIVIDER ── */
-.glitter-divider { text-align: center; margin: 1.5rem 0; }
-.glitter-img { max-width: 70%; height: auto; opacity: 0.5; }
+.glitter-divider { text-align: center; margin: 2rem 0; }
+.glitter-img { max-width: 80%; height: auto; }
 
 /* ── EMAIL CAPTURE ── */
 .email-capture-box {
-  background: linear-gradient(135deg, var(--blush) 0%, var(--lavender) 100%);
-  border: 1px solid var(--border);
-  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(255,214,232,0.3) 0%, rgba(232,217,245,0.3) 100%);
+  border: 3px solid var(--border-pink);
+  border-radius: 12px;
   padding: 1.4rem;
   margin-top: 2rem;
   text-align: center;
 }
 .email-capture-box h3 {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 .email-capture-box p {
-  font-size: 12px;
-  color: var(--ink-soft);
-  margin-bottom: 1rem;
   font-family: var(--sans);
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 .email-form { display: flex; flex-direction: column; gap: 0.5rem; }
 .email-input {
   padding: 0.5rem 0.8rem;
-  border: 1px solid var(--border);
-  background: var(--paper);
+  border: 2px solid var(--border-pink);
+  background: white;
   font-family: var(--sans);
   font-size: 13px;
-  color: var(--ink);
-  border-radius: 2px;
+  color: var(--text);
+  border-radius: 10px;
   outline: none;
   transition: border-color 0.15s;
 }
-.email-input:focus { border-color: var(--rose-deep); }
+.email-input:focus { border-color: var(--hot-pink); }
 .email-submit {
-  background: var(--rose-dark);
+  background: var(--dark-pink);
   color: white;
   border: none;
   padding: 0.5rem 1.2rem;
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 14px;
   transition: background 0.15s;
 }
-.email-submit:hover { background: #7a4458; }
-.email-privacy { font-size: 10px !important; color: var(--ink-soft) !important; margin: 0.5rem 0 0 !important; }
+.email-submit:hover { background: #ff8fb8; }
+.email-privacy { font-size: 11px !important; color: var(--text-gray) !important; margin: 0.5rem 0 0 !important; }
 
-/* ── RIGHT SIDEBAR WIDGETS ── */
-.visitor-counter { display: flex; justify-content: center; gap: 2px; }
-.visitor-counter img { height: 22px; width: auto; }
+/* ── RIGHT SIDEBAR ── */
 #visitor-count {
-  font-size: 26px;
+  font-size: 28px;
   font-family: var(--pixel);
   letter-spacing: 3px;
-  color: var(--rose-dark);
+  color: #c06080;
 }
 .timeline { font-size: 12px; }
 .timeline-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
-  border-bottom: 1px dashed var(--border);
+  display: flex; justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border-pink);
 }
 .timeline-item:last-child { border-bottom: none; }
-.timeline-month { font-family: var(--pixel); font-size: 15px; color: var(--rose-dark); }
-.timeline-event { font-size: 11px; color: var(--ink-soft); font-family: var(--sans); }
-
+.timeline-month { font-family: var(--pixel); font-size: 15px; color: var(--dark-pink); }
+.timeline-event { font-family: var(--sans); font-size: 11px; color: var(--text-gray); }
 .mood-display { text-align: center; }
-.mood-icon { width: 40px; height: 40px; margin-bottom: 6px; }
-.mood-text { font-size: 12px; color: var(--ink-soft); font-family: var(--hand); }
-
-.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.mood-icon { width: 48px; height: 48px; margin-bottom: 8px; }
+.mood-text { font-family: var(--hand); font-size: 14px; color: var(--text-gray); margin: 0; }
+.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .pixel-badge {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: var(--cream-warm);
+  width: 100%; aspect-ratio: 1; object-fit: contain;
+  border: 2px solid var(--border-blue);
+  border-radius: 6px;
+  background: var(--cream);
   transition: transform 0.2s;
 }
-.pixel-badge:hover { transform: scale(1.08) rotate(-3deg); }
-
+.pixel-badge:hover { transform: scale(1.1) rotate(-5deg); }
 .quick-links { list-style: none; }
-.quick-links li { margin-bottom: 5px; }
+.quick-links li { margin-bottom: 6px; }
 .quick-links a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  font-size: 12px;
   font-family: var(--sans);
-  transition: color 0.15s;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  display: block;
+  padding: 4px 0;
+  transition: color 0.2s;
 }
-.quick-links a:hover { color: var(--rose-dark); }
+.quick-links a:hover { color: var(--hot-pink); }
 
 /* ── FOOTER ── */
 .site-footer {
-  background: linear-gradient(135deg, var(--blush) 0%, var(--lavender) 100%);
-  border-top: 1px solid var(--border);
-  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  border-top: 3px solid var(--border-pink);
+  padding: 1.75rem;
   text-align: center;
 }
-.footer-divider { max-width: 240px; height: auto; margin: 0.4rem auto; opacity: 0.4; }
-.footer-text { font-size: 13px; font-weight: 500; color: var(--ink-mid); font-family: var(--sans); margin: 0.4rem 0; }
-.footer-note { font-size: 12px; font-style: italic; color: var(--ink-soft); font-family: var(--serif); }
-.footer-credits { font-size: 10px; color: var(--ink-soft); font-family: var(--sans); margin-top: 0.4rem; letter-spacing: 0.05em; }
+.footer-divider { max-width: 300px; height: auto; margin: 0.5rem auto; display: block; }
+.footer-text { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--text); margin: 0.5rem 0; }
+.footer-note { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--text-gray); margin: 0.25rem 0; }
+.footer-credits { font-family: var(--sans); font-size: 11px; color: var(--text-gray); margin: 0.5rem 0 0; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
@@ -688,33 +618,29 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    border: none;
-    border-top: 1px solid var(--border);
-    padding: 1rem;
   }
   .profile-block { grid-column: 1 / -1; }
-  .reference-images { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .left-sidebar, .right-sidebar { grid-template-columns: 1fr; }
-  .reference-images { grid-template-columns: 1fr; }
   .nav-tabs { flex-wrap: wrap; }
-  .site-title { font-size: 20px; }
+  .site-title { font-size: 24px; }
+  .banner-overlay { padding: 1.5rem 2rem; }
 }
 </style>
 </head>
 <body>
 
-<img src="../../assets/images/sparkle1.gif" alt="" class="floating-sparkle sparkle-1">
-<img src="../../assets/images/sparkle2.gif" alt="" class="floating-sparkle sparkle-2">
-<img src="../../assets/images/sparkle3.gif" alt="" class="floating-sparkle sparkle-3">
+<img src="../assets/images/sparkle1.gif" alt="" class="floating-sparkle sparkle-1">
+<img src="../assets/images/sparkle2.gif" alt="" class="floating-sparkle sparkle-2">
+<img src="../assets/images/sparkle3.gif" alt="" class="floating-sparkle sparkle-3">
 
 <div class="outer-frame">
 <div class="inner-frame">
 
   <!-- BANNER -->
   <div class="banner-container">
-    <img src="../../assets/images/banner-main.jpg" alt="Ayachi's Banner" class="main-banner">
+    <img src="../assets/images/banner-main.jpg" alt="Ayachi's Banner" class="main-banner">
     <div class="banner-overlay">
       <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
       <p class="site-subtitle">♡ your senpai in study abroad applications ♡</p>
@@ -723,10 +649,10 @@ body {
 
   <!-- NAV -->
   <nav class="nav-tabs">
-    <a href="../../" class="tab-btn">Home</a>
+    <a href="../" class="tab-btn">Home</a>
     <a href="../essays/" class="tab-btn">Essays</a>
     <a href="../guides/" class="tab-btn active">Guides</a>
-    <a href="../../about.html" class="tab-btn">About</a>
+    <a href="../about.html" class="tab-btn">About</a>
   </nav>
 
   <div class="main-layout">
@@ -736,13 +662,13 @@ body {
 
       <div class="profile-block">
         <div class="profile-header">
-          <img src="../../assets/images/pixel-heart.gif" alt="" class="header-icon">
+          <img src="../assets/images/pixel-heart.gif" alt="heart" class="header-icon">
           <span class="profile-title">Profile</span>
-          <img src="../../assets/images/pixel-heart.gif" alt="" class="header-icon">
+          <img src="../assets/images/pixel-heart.gif" alt="heart" class="header-icon">
         </div>
         <div class="profile-content">
           <div class="profile-pic-frame">
-            <img src="../../assets/images/profile-ayachi.png" alt="Ayachi" class="profile-pic">
+            <img src="../assets/images/profile-ayachi.png" alt="Ayachi" class="profile-pic">
           </div>
           <h2 class="profile-name">Ayachi ♡</h2>
           <p class="profile-bio">
@@ -752,34 +678,48 @@ body {
             <span class="profile-age">16 when I went to Japan!</span>
           </p>
           <div class="profile-stats">
-            <div class="stat-item"><span class="stat-label">Country</span><span class="stat-value">India 🇮🇳</span></div>
-            <div class="stat-item"><span class="stat-label">Exchange</span><span class="stat-value">Japan 🇯🇵</span></div>
-            <div class="stat-item"><span class="stat-label">Status</span><span class="stat-value">Writing guides!</span></div>
+            <div class="stat-item">
+              <span class="stat-label">Country</span>
+              <span class="stat-value">India 🇮🇳</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Exchange</span>
+              <span class="stat-value">Japan 🇯🇵</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Status</span>
+              <span class="stat-value">Writing guides!</span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Socials ☆</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Socials ☆</span>
+        </div>
         <div class="widget-content">
           <div class="social-links">
-            <a href="https://github.com/Ayachi911" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-github.png" alt="" class="social-icon"><span>GitHub</span>
+            <a href="https://github.com/Ayachi911" class="social-btn" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/images/icon-github.png" alt="github" class="social-icon">
+              <span>GitHub</span>
             </a>
             <a href="#" class="social-btn">
-              <img src="../../assets/images/icon-linkedin.png" alt="" class="social-icon"><span>LinkedIn</span>
+              <img src="../assets/images/icon-linkedin.png" alt="linkedin" class="social-icon">
+              <span>LinkedIn</span>
             </a>
-            <a href="https://pin.it/sQGY1KQgt" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-pinterest.png" alt="" class="social-icon"><span>Pinterest</span>
+            <a href="https://pin.it/sQGY1KQgt" class="social-btn" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/images/icon-pinterest.png" alt="pinterest" class="social-icon">
+              <span>Pinterest</span>
             </a>
-            <a href="https://instagram.com/brehen.yeeteager" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-instagram.png" alt="" class="social-icon"><span>Instagram</span>
+            <a href="https://instagram.com/brehen.yeeteager" class="social-btn" target="_blank" rel="noopener noreferrer">
+              <img src="../assets/images/icon-instagram.png" alt="instagram" class="social-icon">
+              <span>Instagram</span>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- PUZZLE — JS unchanged -->
       <div class="stamps-container">
         <div class="stamps-header">links x puzzle ✿</div>
         <div id="puzzle" class="puzzle-grid"></div>
@@ -790,19 +730,21 @@ body {
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Best Friends ♡</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Best Friends ♡</span>
+        </div>
         <div class="widget-content">
           <div class="friends-list">
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0430.jpeg" alt="" class="friend-icon">
+              <img src="../assets/images/IMG_0430.jpeg" alt="friend" class="friend-icon">
               <span class="friend-name">Pranav</span>
             </div>
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0431.jpeg" alt="" class="friend-icon">
+              <img src="../assets/images/IMG_0431.jpeg" alt="friend" class="friend-icon">
               <span class="friend-name">Aarush</span>
             </div>
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0432.jpeg" alt="" class="friend-icon">
+              <img src="../assets/images/IMG_0432.jpeg" alt="friend" class="friend-icon">
               <span class="friend-name">Anish</span>
             </div>
           </div>
@@ -810,59 +752,44 @@ body {
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Web Buttons</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Web Buttons</span>
+        </div>
         <div class="widget-content">
           <div class="button-collection">
-            <img src="../../assets/images/button1.gif" alt="" class="web-button">
-            <img src="../../assets/images/button2.gif" alt="" class="web-button">
-            <img src="../../assets/images/button3.gif" alt="" class="web-button">
-            <img src="../../assets/images/button4.gif" alt="" class="web-button">
+            <img src="../assets/images/button1.gif" alt="button" class="web-button">
+            <img src="../assets/images/button2.gif" alt="button" class="web-button">
+            <img src="../assets/images/button3.gif" alt="button" class="web-button">
+            <img src="../assets/images/button4.gif" alt="button" class="web-button">
           </div>
         </div>
       </div>
 
     </aside>
 
-    <!-- ── CENTER ── -->
+    <!-- ── CENTER CONTENT ── -->
     <main class="center-content">
 
       <div class="welcome-banner">
-        <img src="../../assets/images/divider-top.png" alt="" class="divider-img">
+        <img src="../assets/images/divider-top.png" alt="divider" class="divider-img">
         <h2 class="welcome-title">Welcome to my Guide Collection! ✿</h2>
         <p class="welcome-text">
           Hi! I'm Ayachi, and I went to Japan at 16 through the Asia Kakehashi Project. These guides are everything I wish I knew before applying. Click any guide to start reading! ♡
         </p>
-        <img src="../../assets/images/divider-bottom.png" alt="" class="divider-img">
-      </div>
-
-      <!-- REFERENCE IMAGES — new block, add your 3 images here -->
-      <div class="reference-images">
-        <div class="ref-img-frame">
-          <!-- Replace src with your actual image paths -->
-          <img src="../../assets/images/IMG_0423.jpeg" alt="Japan exchange moment">
-          <p class="ref-img-caption">yokohama, 2021</p>
-        </div>
-        <div class="ref-img-frame">
-          <img src="../../assets/images/japan-banner.jpg" alt="Japan exchange">
-          <p class="ref-img-caption">kakehashi program</p>
-        </div>
-        <div class="ref-img-frame">
-          <img src="../../assets/images/stamp-main.jpg" alt="Japan stamps">
-          <p class="ref-img-caption">collected memories</p>
-        </div>
+        <img src="../assets/images/divider-bottom.png" alt="divider" class="divider-img">
       </div>
 
       <!-- FEATURED GUIDE -->
       <div class="featured-guide-block">
         <div class="section-header">
-          <img src="../../assets/images/star-icon.gif" alt="" class="section-icon">
-          <h3 class="section-title">★ Start Here ★</h3>
-          <img src="../../assets/images/star-icon.gif" alt="" class="section-icon">
+          <img src="../assets/images/star-icon.gif" alt="star" class="section-icon">
+          <h3 class="section-title">★ START HERE ★</h3>
+          <img src="../assets/images/star-icon.gif" alt="star" class="section-icon">
         </div>
 
         <div class="guide-card featured">
           <div class="featured-badge">FEATURED</div>
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
+          <img src="../assets/images/corner-deco.png" alt="decoration" class="corner-decoration">
           <h4 class="guide-title">
             <a href="kakehashi-guide.html">Complete Guide to Asia Kakehashi Project</a>
           </h4>
@@ -871,7 +798,7 @@ body {
             <span class="meta-time">⏱ 12 min</span>
           </div>
           <p class="guide-description">
-            Everything you need to know about applying to the Asia Kakehashi Project. Essay tips, interview prep, what actually happens during the program, and insider advice from someone who's been there.
+            Everything you need to know about applying to the Asia Kakehashi Project! Essay tips, interview prep, what actually happens during the program, and insider advice from someone who's been there.
           </p>
           <div class="guide-tags">
             <span class="tag">Application</span>
@@ -884,97 +811,157 @@ body {
       </div>
 
       <div class="glitter-divider">
-        <img src="../../assets/images/glitter-line.png" alt="" class="glitter-img">
+        <img src="../assets/images/glitter-line.png" alt="divider" class="glitter-img">
       </div>
 
       <!-- ALL GUIDES -->
       <div class="all-guides-section">
         <div class="section-header">
-          <img src="../../assets/images/book-icon.gif" alt="" class="section-icon">
+          <img src="../assets/images/book-icon.gif" alt="book" class="section-icon">
           <h3 class="section-title">All Guides</h3>
-          <img src="../../assets/images/book-icon.gif" alt="" class="section-icon">
+          <img src="../assets/images/book-icon.gif" alt="book" class="section-icon">
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h4>
+          <img src="../assets/images/flower-deco.png" alt="flower" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge sage">10th–12th Graders</span>
             <span class="meta-time">⏱ 18 min</span>
           </div>
-          <p class="guide-description">Real talk about preparing mentally, socially, and emotionally for high school exchange in Japan. Beyond packing lists — this is about culture shock, homesickness, and actually thriving.</p>
+          <p class="guide-description">
+            Real talk about preparing mentally, socially, and emotionally for high school exchange in Japan. Beyond packing lists — this is about culture shock, homesickness, and actually thriving.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Mental Prep</span><span class="tag">Culture Shock</span><span class="tag">Real Talk</span>
+            <span class="tag">Mental Prep</span>
+            <span class="tag">Culture Shock</span>
+            <span class="tag">Real Talk</span>
           </div>
           <a href="japan-exchange-survival-guide.html" class="read-button">Read Guide →</a>
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/star-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="packing-guide.html">What to Pack for a Year in Japan (Tested List)</a></h4>
+          <img src="../assets/images/star-deco.png" alt="star" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="packing-guide.html">What to Pack for a Year in Japan (Tested List)</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge sage">All Exchange Students</span>
             <span class="meta-time">⏱ 15 min</span>
           </div>
-          <p class="guide-description">What to bring, what to skip, what to buy in Japan. Tested over a full year in Yokohama — includes packing checklist, gear recs, shoe sizing warnings, and the tech setup you actually need.</p>
+          <p class="guide-description">
+            What to bring, what to skip, what to buy in Japan. Tested over a full year in Yokohama — includes packing checklist, gear recs, shoe sizing warnings, and the tech setup you actually need.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Packing</span><span class="tag">Gear</span><span class="tag">Tech</span><span class="tag">Clothes</span>
+            <span class="tag">Packing</span>
+            <span class="tag">Gear</span>
+            <span class="tag">Tech</span>
+            <span class="tag">Clothes</span>
           </div>
           <a href="packing-guide.html" class="read-button">Read Guide →</a>
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h4>
+          <img src="../assets/images/flower-deco.png" alt="flower" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge lavender">Students + Parents</span>
             <span class="meta-time">⏱ 12 min</span>
           </div>
-          <p class="guide-description">Real numbers. What's covered, what isn't, monthly spend breakdown, travel insurance options, and the honest total your family needs to budget. No sugar-coating.</p>
+          <p class="guide-description">
+            Real numbers. What's covered, what isn't, monthly spend breakdown, travel insurance options, and the honest total your family needs to budget. No sugar-coating.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Budget</span><span class="tag">Money</span><span class="tag">Insurance</span><span class="tag">Parents</span>
+            <span class="tag">Budget</span>
+            <span class="tag">Money</span>
+            <span class="tag">Insurance</span>
+            <span class="tag">Parents</span>
           </div>
           <a href="budget-guide.html" class="read-button">Read Guide →</a>
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Bento.html">What My Host Mom Packed in My Bento Every Day</a></h4>
+          <img src="../assets/images/corner-deco.png" alt="decoration" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="retirement-dinner.html">What I Ate at a Japanese Retirement Celebration Dinner</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge sage">Host Family Life</span>
             <span class="meta-time">⏱ 10 min</span>
           </div>
-          <p class="guide-description">A complete guide to Japanese host family bentos with real examples. Components, etiquette, and how to navigate bento culture as an exchange student.</p>
+          <p class="guide-description">
+            My host ojii-chan retired at 70+. The whole family gathered. Here's everything on that table — plus what daily host family food actually looks like, bento culture, breakfast, and dinner etiquette.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Food</span><span class="tag">Host Family</span><span class="tag">Culture</span><span class="tag">Etiquette</span>
+            <span class="tag">Food</span>
+            <span class="tag">Host Family</span>
+            <span class="tag">Culture</span>
+            <span class="tag">Etiquette</span>
+          </div>
+          <a href="retirement-dinner.html" class="read-button">Read Guide →</a>
+        </div>
+
+        <div class="guide-card">
+          <img src="../assets/images/corner-deco.png" alt="decoration" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="Bento.html">What My Host Mom Packed in My Bento Every Day</a>
+          </h4>
+          <div class="guide-meta">
+            <span class="meta-badge sage">Host Family Life</span>
+            <span class="meta-time">⏱ 10 min</span>
+          </div>
+          <p class="guide-description">
+            What my host mom packed me every day. Everything in that bento box — plus what daily host family food actually looks like, bento culture, breakfast, and dinner etiquette.
+          </p>
+          <div class="guide-tags">
+            <span class="tag">Food</span>
+            <span class="tag">Host Family</span>
+            <span class="tag">Culture</span>
+            <span class="tag">Etiquette</span>
           </div>
           <a href="Bento.html" class="read-button">Read Guide →</a>
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Train.html">How to Survive the Daily Commute to a Japanese High School</a></h4>
+          <img src="../assets/images/corner-deco.png" alt="decoration" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="Train.html">How to Survive the Daily Commute to a Japanese High School</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge sage">Daily Life</span>
             <span class="meta-time">⏱ 8 min</span>
           </div>
-          <p class="guide-description">Bus 111 from Kounandai, 11 minutes. Train to Yokohama, 23 minutes. Walk uphill, 15 minutes. The full commute — and the morning the bus driver saved me.</p>
+          <p class="guide-description">
+            Bus 111 from Kounandai, 11 minutes. Train to Yokohama, 23 minutes. Walk uphill, 15 minutes. The full commute — and the morning the bus driver saved me.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Transport</span><span class="tag">Commute</span><span class="tag">Daily Life</span>
+            <span class="tag">Transport</span>
+            <span class="tag">Commute</span>
+            <span class="tag">Daily Life</span>
           </div>
           <a href="Train.html" class="read-button">Read Guide →</a>
         </div>
 
         <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
+          <img src="../assets/images/flower-deco.png" alt="flower" class="corner-decoration">
+          <h4 class="guide-title">
+            <a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a>
+          </h4>
           <div class="guide-meta">
             <span class="meta-badge">Events</span>
             <span class="meta-time">⏱ 10 min</span>
           </div>
-          <p class="guide-description">A strawberry festival in Yokohama. Everything that was on that table — and what Japanese festival food culture actually looks like from the inside.</p>
+          <p class="guide-description">
+            A strawberry festival in Yokohama. Everything that was on that table — and what Japanese festival food culture actually looks like from the inside.
+          </p>
           <div class="guide-tags">
-            <span class="tag">Food</span><span class="tag">Festival</span><span class="tag">Yokohama</span>
+            <span class="tag">Food</span>
+            <span class="tag">Festival</span>
+            <span class="tag">Yokohama</span>
           </div>
           <a href="Strobby-festival.html" class="read-button">Read Guide →</a>
         </div>
@@ -999,67 +986,90 @@ body {
     <aside class="right-sidebar">
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Visitors ♡</span></div>
-        <div class="widget-content" style="text-align:center;">
+        <div class="widget-header">
+          <span class="widget-title">Visitors ♡</span>
+        </div>
+        <div class="widget-content" style="text-align: center;">
           <p id="visitor-count">······</p>
         </div>
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Application Timeline</span></div>
+        <div class="widget-header">
+          <span class="widget-title">App Timeline</span>
+        </div>
         <div class="widget-content">
           <div class="timeline">
-            <div class="timeline-item"><span class="timeline-month">Aug–Sep</span><span class="timeline-event">Apps Open</span></div>
-            <div class="timeline-item"><span class="timeline-month">Oct–Nov</span><span class="timeline-event">Interviews</span></div>
-            <div class="timeline-item"><span class="timeline-month">December</span><span class="timeline-event">Results</span></div>
-            <div class="timeline-item"><span class="timeline-month">Jan–Mar</span><span class="timeline-event">Departure</span></div>
+            <div class="timeline-item">
+              <span class="timeline-month">Aug–Sep</span>
+              <span class="timeline-event">Apps Open</span>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-month">Oct–Nov</span>
+              <span class="timeline-event">Interviews</span>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-month">December</span>
+              <span class="timeline-event">Results</span>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-month">Jan–Mar</span>
+              <span class="timeline-event">Departure</span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Current Mood</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Current Mood</span>
+        </div>
         <div class="widget-content">
           <div class="mood-display">
-            <img src="../../assets/images/mood-happy.gif" alt="" class="mood-icon">
+            <img src="../assets/images/mood-happy.gif" alt="mood" class="mood-icon">
             <p class="mood-text">excited! ✨</p>
           </div>
         </div>
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Pixel Badges</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Pixel Badges</span>
+        </div>
         <div class="widget-content">
           <div class="badge-grid">
-            <img src="../../assets/images/badge1.png" alt="" class="pixel-badge">
-            <img src="../../assets/images/badge2.png" alt="" class="pixel-badge">
-            <img src="../../assets/images/badge3.png" alt="" class="pixel-badge">
-            <img src="../../assets/images/badge4.png" alt="" class="pixel-badge">
+            <img src="../assets/images/badge1.png" alt="badge" class="pixel-badge">
+            <img src="../assets/images/badge2.png" alt="badge" class="pixel-badge">
+            <img src="../assets/images/badge3.png" alt="badge" class="pixel-badge">
+            <img src="../assets/images/badge4.png" alt="badge" class="pixel-badge">
           </div>
         </div>
       </div>
 
       <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Quick Links</span></div>
+        <div class="widget-header">
+          <span class="widget-title">Quick Links</span>
+        </div>
         <div class="widget-content">
           <ul class="quick-links">
             <li><a href="#featured">★ Start Here</a></li>
-            <li><a href="kakehashi-guide.html">📋 Kakehashi Guide</a></li>
-            <li><a href="packing-guide.html">🎒 Packing List</a></li>
-            <li><a href="budget-guide.html">💰 Budget Guide</a></li>
+            <li><a href="#timeline">📅 Timeline</a></li>
+            <li><a href="#faq">❓ FAQ</a></li>
+            <li><a href="#resources">📚 Resources</a></li>
           </ul>
         </div>
       </div>
 
     </aside>
+
   </div><!-- /main-layout -->
 
   <footer class="site-footer">
-    <img src="../../assets/images/footer-divider.png" alt="" class="footer-divider">
+    <img src="../assets/images/footer-divider.png" alt="divider" class="footer-divider">
     <p class="footer-text">Ayachi's Japan Exchange Guides ©️ 2026</p>
     <p class="footer-note">Made with ♡ for future exchange students</p>
     <p class="footer-credits">Layout inspired by 2000s anime fan sites</p>
-    <img src="../../assets/images/footer-divider.png" alt="" class="footer-divider">
+    <img src="../assets/images/footer-divider.png" alt="divider" class="footer-divider">
   </footer>
 
 </div><!-- /inner-frame -->
@@ -1070,81 +1080,128 @@ function handleSignup(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.email-submit');
   btn.textContent = 'Sending ♡...';
-  setTimeout(() => { btn.textContent = 'Check your inbox! ✨'; btn.style.background = '#6a9a60'; }, 800);
+  setTimeout(() => { btn.textContent = 'Check your inbox! ✨'; btn.style.background = '#6abf69'; }, 800);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // PUZZLE — identical to original
   const puzzle = document.getElementById("puzzle");
   const shuffleBtn = document.getElementById("shuffleBtn");
   const winMessage = document.getElementById("winMessage");
+
   if (puzzle && shuffleBtn) {
-    const size = 3, tileSize = 85;
+    const size = 3;
+    const tileSize = 70;
     const imageSrc = "../assets/images/stamp-main.jpg";
-    let tiles = [], emptyIndex = 8;
+    let tiles = [];
+    let emptyIndex = 8;
+
     function initPuzzle() {
-      puzzle.innerHTML = ""; tiles = [];
+      puzzle.innerHTML = "";
+      tiles = [];
       for (let i = 0; i < 9; i++) {
         const tile = document.createElement("div");
         tile.classList.add("tile");
         tile.dataset.index = i;
-        if (i === 8) { tile.classList.add("empty"); emptyIndex = i; }
-        else {
-          const row = Math.floor(i / size), col = i % size;
+        if (i === 8) {
+          tile.classList.add("empty");
+          emptyIndex = i;
+        } else {
+          const row = Math.floor(i / size);
+          const col = i % size;
           tile.style.backgroundImage = `url(${imageSrc})`;
           tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
           tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
         }
         tile.addEventListener("click", () => moveTile(i));
-        puzzle.appendChild(tile); tiles.push(tile);
+        puzzle.appendChild(tile);
+        tiles.push(tile);
       }
     }
+
     function isAdjacent(i1, i2) {
-      const r1=Math.floor(i1/size),c1=i1%size,r2=Math.floor(i2/size),c2=i2%size;
-      return (Math.abs(r1-r2)+Math.abs(c1-c2))===1;
+      const r1 = Math.floor(i1 / size), c1 = i1 % size;
+      const r2 = Math.floor(i2 / size), c2 = i2 % size;
+      return (Math.abs(r1 - r2) + Math.abs(c1 - c2)) === 1;
     }
+
     function swap(i1, i2) {
-      const tempBg=tiles[i1].style.backgroundPosition, tempImg=tiles[i1].style.backgroundImage;
-      tiles[i1].style.backgroundPosition=tiles[i2].style.backgroundPosition;
-      tiles[i1].style.backgroundImage=tiles[i2].style.backgroundImage;
-      tiles[i2].style.backgroundPosition=tempBg; tiles[i2].style.backgroundImage=tempImg;
-      tiles[i1].classList.toggle("empty"); tiles[i2].classList.toggle("empty");
+      const tempBg = tiles[i1].style.backgroundPosition;
+      const tempImg = tiles[i1].style.backgroundImage;
+      tiles[i1].style.backgroundPosition = tiles[i2].style.backgroundPosition;
+      tiles[i1].style.backgroundImage = tiles[i2].style.backgroundImage;
+      tiles[i2].style.backgroundPosition = tempBg;
+      tiles[i2].style.backgroundImage = tempImg;
+      tiles[i1].classList.toggle("empty");
+      tiles[i2].classList.toggle("empty");
     }
-    function moveTile(index) { if(isAdjacent(index,emptyIndex)){swap(index,emptyIndex);emptyIndex=index;checkWin();} }
-    function shufflePuzzle() {
-      for(let i=0;i<200;i++){
-        const n=[]; for(let j=0;j<9;j++){if(isAdjacent(j,emptyIndex))n.push(j);}
-        const r=n[Math.floor(Math.random()*n.length)]; swap(r,emptyIndex); emptyIndex=r;
+
+    function moveTile(index) {
+      if (isAdjacent(index, emptyIndex)) {
+        swap(index, emptyIndex);
+        emptyIndex = index;
+        checkWin();
       }
-      if(winMessage) winMessage.style.display="none";
     }
+
+    function shufflePuzzle() {
+      for (let i = 0; i < 200; i++) {
+        const neighbors = [];
+        for (let j = 0; j < 9; j++) {
+          if (isAdjacent(j, emptyIndex)) neighbors.push(j);
+        }
+        const rand = neighbors[Math.floor(Math.random() * neighbors.length)];
+        swap(rand, emptyIndex);
+        emptyIndex = rand;
+      }
+      if (winMessage) winMessage.style.display = "none";
+    }
+
     function checkWin() {
-      let ok=true;
-      for(let i=0;i<8;i++){const row=Math.floor(i/size),col=i%size;if(tiles[i].style.backgroundPosition!==`-${col*tileSize}px -${row*tileSize}px`){ok=false;break;}}
-      if(ok&&winMessage) winMessage.style.display="block";
+      let correct = true;
+      for (let i = 0; i < 8; i++) {
+        const row = Math.floor(i / size), col = i % size;
+        const expected = `-${col * tileSize}px -${row * tileSize}px`;
+        if (tiles[i].style.backgroundPosition !== expected) { correct = false; break; }
+      }
+      if (correct && winMessage) winMessage.style.display = "block";
     }
+
     shuffleBtn.addEventListener("click", shufflePuzzle);
-    initPuzzle(); shufflePuzzle();
+    initPuzzle();
+    shufflePuzzle();
   }
 });
 </script>
 
-<!-- Visitor counter — identical to original -->
 <script>
-(function(){
-  var KEY="ayachi-samyal-shrine-v1", SESSION_KEY="ayachi_counted";
-  var BASE="https://countapi.mileshilliard.com/api/v1";
-  var el=document.getElementById("visitor-count");
-  function display(n){if(el)el.textContent=String(n).padStart(6,"0");}
-  if(sessionStorage.getItem(SESSION_KEY)){
-    fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{if(el)el.textContent="······";});
+(function () {
+  var KEY         = "ayachi-samyal-shrine-v1";
+  var SESSION_KEY = "ayachi_counted";
+  var BASE        = "https://countapi.mileshilliard.com/api/v1";
+  var el          = document.getElementById("visitor-count");
+
+  function display(n) {
+    if (el) el.textContent = String(n).padStart(6, "0");
+  }
+
+  if (sessionStorage.getItem(SESSION_KEY)) {
+    fetch(BASE + "/get/" + KEY)
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if (d && d.value !== undefined) display(parseInt(d.value, 10)); })
+      .catch(function(){ if (el) el.textContent = "······"; });
   } else {
-    fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{if(el)el.textContent="······";});
+    fetch(BASE + "/hit/" + KEY)
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (d && d.value !== undefined) {
+          display(parseInt(d.value, 10));
+          sessionStorage.setItem(SESSION_KEY, "1");
+        }
+      })
+      .catch(function(){ if (el) el.textContent = "······"; });
   }
 })();
 </script>
 
 </body>
 </html>
-
-
