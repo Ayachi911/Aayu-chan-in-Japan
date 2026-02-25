@@ -11,9 +11,9 @@
 
 <style>
 /* ══════════════════════════════════════════════════════════════
-   AYACHI'S SHRINE — "Coffee & Strawberry Jam" Edition
-   Vibes: warm espresso mornings, fresh croissants, strawberry
-   jam, garlic baguette, Ciao magazine, shoujo ribbons & frills
+   AYACHI'S SHRINE — "2008 Shoujo Diary Scrapbook" Edition
+   Vibes: strawberry milk, washi tape, manga scan energy,
+   Ciao magazine, gingham picnic, red ribbon chaos, hyper-feminine
 ══════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=DM+Sans:wght@300;400;500&family=VT323&family=Klee+One&display=swap');
@@ -24,41 +24,62 @@
   font-display: swap;
 }
 
-/* ── PALETTE ── */
+/* ══════════════════════════════════════════════════════════════
+   1. CSS VARIABLE COLOR SYSTEM
+══════════════════════════════════════════════════════════════ */
 :root {
-  --espresso:    #3b1f0e;
-  --coffee:      #6b3a22;
-  --latte:       #a0673a;
-  --caramel:     #c9894e;
-  --croissant:   #e8c99a;
-  --cream:       #fdf6ec;
-  --cream-warm:  #f7edd8;
-  --paper:       #fefcf7;
-  --strawberry:  #d94f6b;
-  --jam:         #b03050;
-  --blush:       #f7d0d8;
-  --petal:       #fce8ee;
-  --sage:        #c8d8b8;
-  --sage-deep:   #7a9a68;
-  --ink:         #2a1a0e;
-  --ink-mid:     #5a3820;
-  --ink-soft:    #8a6848;
-  --border:      #d8c0a0;
-  --border-warm: #c8a880;
-  /* legacy aliases */
-  --rose:        #d94f6b;
-  --rose-deep:   #b03050;
-  --rose-dark:   #8a1f38;
-  --pink:        #fce8ee;
-  --dark-pink:   #d94f6b;
-  --blue:        #d8e8d0;
-  --lavender:    #e8dcc8;
-  --text:        #2a1a0e;
-  --text-gray:   #8a6848;
-  --border-pink: #c8a880;
-  --border-blue: #b8c8a8;
-  --border-sage: #b0c8a0;
-  --yellow:      #e8c040;
+  /* Core palette */
+  --base-bg:        #fff5f7;      /* soft white-pink page base */
+  --strawberry:     #e8193c;      /* primary strawberry red */
+  --bright-pink:    #ff4d88;      /* hot pink accent */
+  --soft-blush:     #ffd6e4;      /* pastel blush fill */
+  --magenta:        #cc1166;      /* manga banner magenta */
+  --lavender:       #d4aaff;      /* optional lavender pop */
+  --shadow:         rgba(180,0,60,0.18);  /* pinkish shadow */
+  --border-red:     #e8193c;      /* strawberry border */
+  --border-pink:    #ffaacc;      /* soft pink border */
+
+  /* Text */
+  --ink:            #2a0a18;
+  --ink-mid:        #7a2040;
+  --ink-soft:       #aa6080;
+
+  /* Surface tones */
+  --paper:          #fffbfc;
+  --cream:          #fff0f5;
+  --card-bg:        #fff8fa;
+
+  /* Badge colors */
+  --sage:           #c8e8c0;
+  --sage-deep:      #4a8040;
+  --border-sage:    #88c080;
+
+  /* Legacy aliases (keep for HTML compatibility) */
+  --espresso:       #2a0a18;
+  --coffee:         #7a2040;
+  --latte:          #cc6090;
+  --caramel:        #ff4d88;
+  --croissant:      #ffd6e4;
+  --cream-warm:     #fff0f5;
+  --jam:            #cc1166;
+  --blush:          #ffd6e4;
+  --petal:          #ffe0ec;
+  --ink-soft:       #aa6080;
+  --border:         #ffaacc;
+  --border-warm:    #ff88aa;
+  --rose:           #e8193c;
+  --rose-deep:      #cc1166;
+  --rose-dark:      #8a0030;
+  --pink:           #fff0f5;
+  --dark-pink:      #ff4d88;
+  --blue:           #d4aaff;
+  --yellow:         #ffdd44;
+  --text:           #2a0a18;
+  --text-gray:      #aa6080;
+  --border-blue:    #d4aaff;
+  --lavender-alt:   #d4aaff;
+
+  /* Typography */
   --serif: 'Noto Serif JP', Georgia, serif;
   --sans:  'DM Sans', system-ui, sans-serif;
   --hand:  'Klee One', cursive;
@@ -67,103 +88,144 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── BODY — warm linen gingham ── */
+/* ══════════════════════════════════════════════════════════════
+   2. GINGHAM BACKGROUND — red-white, faded to ~7% opacity
+   Recommendation: full page background (Option A)
+   for full diary-page immersion
+══════════════════════════════════════════════════════════════ */
 body {
   font-family: var(--sans);
-  background-color: #f5e8d4;
-  background-image:
-    repeating-linear-gradient(0deg,  transparent, transparent 29px, rgba(180,130,80,0.09) 29px, rgba(180,130,80,0.09) 30px),
-    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(180,130,80,0.09) 29px, rgba(180,130,80,0.09) 30px);
   color: var(--ink);
   overflow-x: hidden;
+
+  background-color: var(--base-bg);
+  /* Layered gingham: horizontal + vertical stripes at low opacity */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(232, 25, 60, 0.07) 19px,
+      rgba(232, 25, 60, 0.07) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(232, 25, 60, 0.07) 19px,
+      rgba(232, 25, 60, 0.07) 20px
+    );
 }
 
+/* ── FLOATING SPARKLES ── */
 .floating-sparkle { position: fixed; z-index: 1000; pointer-events: none; width: 36px; height: 36px; opacity: 0.8; }
 .sparkle-1 { top: 8%;  left: 4%;  animation: float 6s ease-in-out infinite; }
 .sparkle-2 { top: 28%; right: 6%; animation: float 8s ease-in-out infinite 2s; }
 .sparkle-3 { bottom: 12%; left: 8%; animation: float 7s ease-in-out infinite 1s; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
 
-/* ── OUTER FRAME ── */
+/* ══════════════════════════════════════════════════════════════
+   OUTER FRAME — candy stripe border
+══════════════════════════════════════════════════════════════ */
 .outer-frame {
   max-width: 1200px;
   margin: 1.5rem auto;
   padding: 5px;
-  background: linear-gradient(135deg, var(--caramel) 0%, var(--strawberry) 50%, var(--caramel) 100%);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--strawberry) 0px, var(--strawberry) 8px,
+    #fff 8px, #fff 16px,
+    var(--bright-pink) 16px, var(--bright-pink) 24px,
+    #fff 24px, #fff 32px
+  );
   border-radius: 6px;
-  box-shadow: 0 6px 28px rgba(59,31,14,0.22), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow:
+    0 8px 32px var(--shadow),
+    0 2px 0 var(--strawberry),
+    inset 0 1px 0 rgba(255,255,255,0.4);
 }
 .inner-frame {
   background: var(--paper);
   border-radius: 3px;
-  border: 2px solid var(--border-warm);
+  border: 2px solid var(--border-pink);
   overflow: hidden;
 }
 
-/* ── BANNER ── */
+/* ══════════════════════════════════════════════════════════════
+   4. MANGA SCAN BANNER HEADER
+   Full-width magenta strip, white text, subtle gradient + shadow
+══════════════════════════════════════════════════════════════ */
 .banner-container {
   position: relative;
   width: 100%; height: 250px;
   overflow: hidden;
-  border-bottom: 3px solid var(--border-warm);
+  border-bottom: 4px solid var(--strawberry);
 }
-/* frill stripe at bottom of banner */
+/* Gingham strip at bottom of banner */
 .banner-container::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0; height: 10px;
+  bottom: 0; left: 0; right: 0; height: 14px;
   background: repeating-linear-gradient(
     90deg,
     var(--strawberry) 0px, var(--strawberry) 10px,
-    var(--blush) 10px, var(--blush) 20px
+    #fff 10px, #fff 20px
   );
-  opacity: 0.55;
+  opacity: 0.8;
 }
-.main-banner { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.88) sepia(15%) saturate(1.1); }
+.main-banner {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.82) saturate(1.3);
+}
 .banner-overlay {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -54%);
   text-align: center;
-  background: rgba(253,246,236,0.95);
+  /* Manga scan: white card with magenta stripe top */
+  background: rgba(255,255,255,0.97);
   padding: 1.4rem 2.8rem;
-  border-radius: 4px;
-  border: 2px solid var(--border-warm);
-  border-top: 4px solid var(--strawberry);
-  box-shadow: 0 4px 16px rgba(107,58,34,0.15);
+  border-radius: 3px;
+  border: 2.5px solid var(--border-red);
+  border-top: 6px solid var(--magenta);
+  box-shadow:
+    0 6px 24px var(--shadow),
+    4px 4px 0 var(--strawberry);
 }
 .banner-overlay::before {
   content: '🎀';
   position: absolute;
-  top: -20px; left: 50%; transform: translateX(-50%);
-  font-size: 24px;
-  filter: drop-shadow(0 1px 3px rgba(180,0,40,0.3));
+  top: -22px; left: 50%; transform: translateX(-50%);
+  font-size: 26px;
+  filter: drop-shadow(0 2px 4px rgba(200,0,60,0.4));
 }
 .site-title {
   font-family: 'Glamour', var(--serif);
   font-weight: 300; font-size: 28px;
-  letter-spacing: 0.04em; color: var(--espresso);
+  letter-spacing: 0.04em;
+  color: var(--magenta);
+  text-shadow: 2px 2px 0 rgba(232,25,60,0.15);
 }
 .site-subtitle {
   font-family: var(--hand);
-  font-size: 14px; color: var(--coffee); margin: 0.4rem 0 0;
+  font-size: 14px; color: var(--ink-mid); margin: 0.4rem 0 0;
 }
 
 /* ── NAV ── */
 .nav-tabs {
-  background: linear-gradient(135deg, var(--croissant) 0%, var(--cream-warm) 100%);
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--strawberry) 60%, var(--bright-pink) 100%);
   display: flex; justify-content: center; gap: 0; padding: 0;
-  border-bottom: 3px solid var(--border-warm);
+  border-bottom: 3px solid var(--strawberry);
 }
 .tab-btn {
-  background: transparent; color: var(--ink-mid);
+  background: transparent; color: rgba(255,255,255,0.85);
   text-decoration: none; padding: 0.7rem 1.8rem;
   font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
   border-bottom: 3px solid transparent;
   transition: color 0.18s, border-color 0.18s, background 0.18s;
 }
-.tab-btn:hover { color: var(--espresso); background: rgba(201,137,78,0.12); border-bottom-color: var(--caramel); }
-.tab-btn.active { color: var(--jam); border-bottom-color: var(--strawberry); font-weight: 700; background: rgba(217,79,107,0.07); }
+.tab-btn:hover { color: #fff; background: rgba(255,255,255,0.15); border-bottom-color: #fff; }
+.tab-btn.active { color: #fff; border-bottom-color: #fff; font-weight: 700; background: rgba(255,255,255,0.2); }
 
 /* ── MAIN LAYOUT ── */
 .main-layout {
@@ -176,59 +238,63 @@ body {
 .left-sidebar, .right-sidebar {
   padding: 1.2rem;
   display: flex; flex-direction: column; gap: 1rem;
-  background: linear-gradient(180deg, var(--cream-warm) 0%, var(--paper) 100%);
+  background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
 }
-.left-sidebar  { border-right: 2px solid var(--border); }
-.right-sidebar { border-left:  2px solid var(--border); }
+.left-sidebar  { border-right: 2px dashed var(--border-pink); }
+.right-sidebar { border-left:  2px dashed var(--border-pink); }
 
-/* ── WIDGET BOXES ── */
+/* ══════════════════════════════════════════════════════════════
+   WIDGET BOXES — washi tape + polaroid energy
+══════════════════════════════════════════════════════════════ */
 .widget-box {
-  background: var(--paper);
-  border: 2px solid var(--border); border-radius: 3px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-pink); border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(107,58,34,0.07);
+  box-shadow: 3px 3px 0 rgba(232,25,60,0.12);
 }
 .widget-header {
-  background: linear-gradient(135deg, var(--croissant) 0%, var(--caramel) 100%);
-  border-bottom: 2px solid var(--border-warm);
+  background: linear-gradient(135deg, var(--strawberry) 0%, var(--magenta) 100%);
+  border-bottom: 2px solid var(--border-red);
   padding: 0.4rem 0.8rem;
   display: flex; align-items: center; justify-content: center; gap: 0.4rem;
 }
-.widget-header::before { content: '🎀'; font-size: 10px; opacity: 0.7; }
-.widget-header::after  { content: '🎀'; font-size: 10px; opacity: 0.7; }
+.widget-header::before { content: '♥'; font-size: 10px; color: rgba(255,255,255,0.7); }
+.widget-header::after  { content: '♥'; font-size: 10px; color: rgba(255,255,255,0.7); }
 .widget-title {
-  font-family: var(--pixel); font-size: 18px; font-weight: 400; color: var(--espresso);
+  font-family: var(--pixel); font-size: 18px; font-weight: 400; color: #fff;
 }
 .widget-content { padding: 0.8rem; }
 
 /* ── PROFILE BLOCK ── */
 .profile-block {
-  border: 2px solid var(--border); border-radius: 3px;
-  background: var(--paper); overflow: hidden;
-  box-shadow: 0 2px 8px rgba(107,58,34,0.07);
+  border: 2px solid var(--border-pink); border-radius: 3px;
+  background: var(--card-bg); overflow: hidden;
+  box-shadow: 3px 3px 0 rgba(232,25,60,0.12);
+  /* subtle rotation — washi sticker effect */
+  /* kept at 0 for profile to preserve readability */
 }
 .profile-header {
-  background: linear-gradient(135deg, var(--blush), var(--croissant));
+  background: linear-gradient(135deg, var(--strawberry) 0%, var(--magenta) 100%);
   padding: 0.5rem 0.8rem;
   display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-  border-bottom: 2px solid var(--border-warm);
+  border-bottom: 2px solid var(--border-red);
 }
 .header-icon { width: 16px; height: 16px; }
-.profile-title { font-family: var(--pixel); font-size: 18px; font-weight: 400; color: var(--espresso); }
+.profile-title { font-family: var(--pixel); font-size: 18px; font-weight: 400; color: #fff; }
 .profile-content { padding: 0.9rem; text-align: center; }
 .profile-pic-frame {
   width: 76px; height: 76px;
-  border: 3px solid var(--border-warm); border-radius: 50%;
+  border: 3px solid var(--border-red); border-radius: 50%;
   overflow: hidden; margin: 0 auto 0.6rem;
-  background: var(--blush);
-  box-shadow: 0 0 0 4px var(--petal), 0 0 0 6px var(--border-warm);
+  background: var(--soft-blush);
+  box-shadow: 0 0 0 4px var(--petal), 0 0 0 6px var(--border-pink), 3px 3px 0 var(--strawberry);
 }
 .profile-pic { width: 100%; height: 100%; object-fit: cover; }
-.profile-name { font-family: var(--hand); font-size: 18px; color: var(--coffee); margin-bottom: 0.4rem; }
+.profile-name { font-family: var(--hand); font-size: 18px; color: var(--magenta); margin-bottom: 0.4rem; }
 .profile-bio { font-family: var(--sans); font-size: 11px; line-height: 1.7; color: var(--ink-soft); }
-.profile-age { color: var(--strawberry); font-weight: 600; }
+.profile-age { color: var(--strawberry); font-weight: 700; }
 .profile-stats {
-  margin-top: 0.7rem; border-top: 1px dashed var(--border);
+  margin-top: 0.7rem; border-top: 2px dashed var(--border-pink);
   padding-top: 0.6rem; display: flex; flex-direction: column; gap: 0.3rem;
 }
 .stat-item { display: flex; justify-content: space-between; font-size: 11px; font-family: var(--sans); }
@@ -240,46 +306,63 @@ body {
 .social-btn {
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0.35rem 0.6rem;
-  background: var(--cream-warm); border: 1px solid var(--border);
+  background: var(--cream); border: 1.5px solid var(--border-pink);
   color: var(--ink-mid); text-decoration: none;
   font-size: 12px; font-family: var(--sans); font-weight: 500;
   border-radius: 2px; transition: background 0.15s, border-color 0.15s, transform 0.1s;
 }
-.social-btn:hover { background: var(--blush); border-color: var(--strawberry); transform: translateX(2px); }
+.social-btn:hover { background: var(--soft-blush); border-color: var(--strawberry); transform: translateX(3px); }
 .social-icon { width: 14px; height: 14px; object-fit: contain; }
 
 /* ── PUZZLE ── */
 .stamps-container {
-  border: 2px solid var(--border); border-radius: 3px;
-  background: var(--paper); overflow: hidden;
-  box-shadow: 0 2px 8px rgba(107,58,34,0.07);
+  border: 2px solid var(--border-pink); border-radius: 3px;
+  background: var(--card-bg); overflow: hidden;
+  box-shadow: 3px 3px 0 rgba(232,25,60,0.12);
 }
 .stamps-header {
-  background: linear-gradient(135deg, var(--croissant) 0%, var(--caramel) 100%);
-  border-bottom: 2px solid var(--border-warm);
+  background: linear-gradient(135deg, var(--strawberry) 0%, var(--magenta) 100%);
+  border-bottom: 2px solid var(--border-red);
   padding: 0.4rem 0.8rem;
   font-family: var(--pixel); font-size: 18px; font-weight: 400;
-  color: var(--espresso); text-align: center;
+  color: #fff; text-align: center;
 }
 .puzzle-grid {
   display: grid; grid-template-columns: repeat(3, 85px);
   margin: 0.6rem auto; width: 255px; gap: 0;
-  border: 2px solid var(--border-warm);
+  border: 2px solid var(--border-pink);
 }
 .tile {
   width: 85px; height: 85px; cursor: pointer;
-  border: 1px solid var(--border-warm); transition: opacity 0.1s;
+  border: 1px solid var(--border-pink); transition: opacity 0.1s;
 }
 .tile:hover:not(.empty) { opacity: 0.8; }
-.tile.empty { background: var(--petal) !important; background-image: none !important; cursor: default; }
+.tile.empty { background: var(--soft-blush) !important; background-image: none !important; cursor: default; }
 .puzzle-controls { text-align: center; padding: 0.5rem; }
+
+/* ══════════════════════════════════════════════════════════════
+   6. CANDY-STYLE BUTTONS
+   Rounded, gradient, gloss highlight, brightening hover
+══════════════════════════════════════════════════════════════ */
 #shuffleBtn {
   font-family: var(--pixel); font-size: 18px; font-weight: 400;
-  background: var(--blush); border: 2px solid var(--border-warm);
-  color: var(--coffee); padding: 0.25rem 1rem; cursor: pointer;
-  border-radius: 2px; transition: background 0.15s, color 0.15s;
+  background: linear-gradient(180deg, var(--bright-pink) 0%, var(--strawberry) 60%, var(--magenta) 100%);
+  border: 2px solid var(--border-red);
+  color: #fff; padding: 0.25rem 1rem; cursor: pointer;
+  border-radius: 20px; transition: filter 0.15s, transform 0.1s;
+  position: relative; overflow: hidden;
+  box-shadow: 0 3px 0 var(--magenta), 0 4px 8px var(--shadow);
 }
-#shuffleBtn:hover { background: var(--strawberry); color: white; }
+#shuffleBtn::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+#shuffleBtn:hover { filter: brightness(1.15); transform: translateY(-1px); }
+#shuffleBtn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--magenta); }
+
 .win-message {
   display: none; text-align: center;
   font-family: var(--pixel); font-size: 22px; font-weight: 400;
@@ -291,11 +374,11 @@ body {
 .friend-item {
   display: flex; align-items: center; gap: 0.6rem;
   padding: 0.3rem 0.4rem; border-radius: 2px;
-  background: var(--cream-warm); border: 1px solid var(--border);
+  background: var(--cream); border: 1px solid var(--border-pink);
   transition: background 0.15s;
 }
-.friend-item:hover { background: var(--blush); }
-.friend-icon { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border-warm); object-fit: cover; }
+.friend-item:hover { background: var(--soft-blush); }
+.friend-icon { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border-red); object-fit: cover; }
 .friend-name { font-size: 12px; font-family: var(--sans); color: var(--ink-mid); font-weight: 500; }
 
 /* ── WEB BUTTONS ── */
@@ -305,60 +388,82 @@ body {
 /* ── CENTER ── */
 .center-content { padding: 1.5rem 1.8rem; min-width: 0; }
 
-/* ── WELCOME BANNER — Ciao magazine style ── */
+/* ══════════════════════════════════════════════════════════════
+   WELCOME BANNER — Ciao magazine / diary entry style
+   with washi tape pseudo-element overlay (top)
+══════════════════════════════════════════════════════════════ */
 .welcome-banner {
   text-align: center;
   margin-bottom: 2rem;
-  padding: 1.4rem 1.2rem 1.2rem;
-  background: linear-gradient(135deg, var(--petal) 0%, var(--cream-warm) 60%, var(--blush) 100%);
-  border: 2px solid var(--border-warm); border-radius: 4px;
-  border-top: 5px solid var(--strawberry);
-  box-shadow: 0 4px 12px rgba(107,58,34,0.1);
+  padding: 1.8rem 1.4rem 1.4rem;
+  background: linear-gradient(135deg, #fff8fa 0%, var(--soft-blush) 50%, #ffe8f0 100%);
+  border: 2.5px solid var(--border-pink); border-radius: 4px;
+  border-top: 6px solid var(--strawberry);
+  box-shadow:
+    0 6px 20px var(--shadow),
+    4px 4px 0 rgba(232,25,60,0.15);
   position: relative;
+  /* ══════════════════════════════════════════════════════════
+     3. POLAROID CARD STYLING — applied to welcome banner
+     White card, thicker bottom padding, soft drop shadow,
+     slight rotation, washi tape overlay
+  ══════════════════════════════════════════════════════════ */
+  transform: rotate(-0.5deg);
 }
-/* ribbon bow top center */
+/* ══════════════════════════════════════════════════════════════
+   5. WASHI TAPE OVERLAY — semi-transparent pink, rotated,
+   sits partially overlapping card top
+══════════════════════════════════════════════════════════════ */
 .welcome-banner::before {
   content: '🎀';
-  position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-  font-size: 22px;
+  position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+  font-size: 26px;
+  filter: drop-shadow(0 2px 6px rgba(200,0,60,0.4));
 }
-/* frill bottom stripe */
 .welcome-banner::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
-  background: repeating-linear-gradient(
-    90deg, var(--caramel) 0px, var(--caramel) 5px,
-    transparent 5px, transparent 10px
-  );
-  opacity: 0.5;
+  position: absolute;
+  top: -8px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+  width: 120px; height: 18px;
+  background: rgba(255,77,136,0.45);
+  border-radius: 2px;
+  /* soft blur for tape feel */
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
 }
 .divider-img { max-width: 260px; height: auto; margin: 0.4rem auto; display: block; opacity: 0.5; }
 .welcome-title {
-  font-family: var(--hand); font-size: 23px; color: var(--coffee); margin: 0.5rem 0;
+  font-family: var(--hand); font-size: 23px; color: var(--magenta); margin: 0.5rem 0;
 }
 .welcome-text {
   font-family: var(--sans); font-size: 13px; line-height: 1.7;
   color: var(--ink-soft); max-width: 460px; margin: 0 auto;
 }
 
-/* ── SECTION HEADERS — ribbon label ── */
+/* ══════════════════════════════════════════════════════════════
+   SECTION HEADERS — ribbon label
+══════════════════════════════════════════════════════════════ */
 .section-header {
   display: flex; align-items: center; justify-content: center;
   gap: 10px; margin-bottom: 1.2rem;
 }
 .section-header::before,
 .section-header::after {
-  content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--caramel));
+  content: ''; flex: 1; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--bright-pink));
 }
-.section-header::after { background: linear-gradient(90deg, var(--caramel), transparent); }
+.section-header::after { background: linear-gradient(90deg, var(--bright-pink), transparent); }
 .section-icon { width: 24px; height: 24px; }
 .section-title {
   font-family: var(--pixel); font-size: 20px; font-weight: 400;
-  color: var(--coffee);
-  background: var(--cream-warm); padding: 2px 12px;
-  border: 1px solid var(--border-warm);
+  color: #fff;
+  background: linear-gradient(135deg, var(--strawberry), var(--magenta));
+  padding: 3px 14px;
+  border: 2px solid var(--border-red);
+  border-radius: 2px;
   letter-spacing: 0.05em; white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--magenta);
 }
 
 /* ── REFERENCE IMAGES ── */
@@ -367,43 +472,85 @@ body {
   gap: 0.6rem; margin: 0 0 1.8rem;
 }
 .ref-img-frame {
-  border: 2px solid var(--border-warm); padding: 4px;
-  background: var(--cream-warm); position: relative;
+  border: 2px solid var(--border-pink); padding: 4px;
+  background: var(--cream); position: relative;
 }
 .ref-img-frame img {
   width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
-  filter: sepia(12%) saturate(1.05); transition: filter 0.2s;
+  filter: saturate(1.1); transition: filter 0.2s;
 }
-.ref-img-frame:hover img { filter: sepia(0%); }
+.ref-img-frame:hover img { filter: saturate(1.3); }
 .ref-img-caption {
   font-family: var(--sans); font-size: 10px; color: var(--ink-soft);
   text-align: center; padding: 0.3rem 0.2rem 0.1rem; letter-spacing: 0.05em;
 }
 
-/* ── GUIDE CARDS ── */
+/* ══════════════════════════════════════════════════════════════
+   GUIDE CARDS — Polaroid + washi tape system
+   Rotation rules:
+   • Max 3 rotated elements per viewport
+   • Max ±1.5deg rotation
+   • Only decorative containers rotate, not text blocks
+   • Never rotate both card AND its parent
+══════════════════════════════════════════════════════════════ */
 .featured-guide-block, .all-guides-section { margin-bottom: 2rem; }
+
+/* ══════════════════════════════════════════════════════════════
+   3. POLAROID CARD STYLING
+══════════════════════════════════════════════════════════════ */
 .guide-card {
-  background: var(--paper); border: 2px solid var(--border); border-radius: 3px;
-  padding: 1.2rem 1.4rem; margin-bottom: 1rem; position: relative;
-  border-left: 5px solid var(--caramel);
+  background: #fff;
+  border: 2px solid var(--border-pink); border-radius: 3px;
+  padding: 1.2rem 1.4rem 2rem;  /* thick bottom padding = polaroid */
+  margin-bottom: 1.2rem; position: relative;
+  border-left: 5px solid var(--bright-pink);
+  box-shadow:
+    0 4px 16px var(--shadow),
+    3px 3px 0 rgba(232,25,60,0.12);
   transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
 }
 .guide-card:hover {
   border-color: var(--strawberry); border-left-color: var(--strawberry);
-  box-shadow: 0 4px 16px rgba(107,58,34,0.12); transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow), 4px 4px 0 var(--strawberry);
+  transform: translateY(-3px) rotate(0.3deg);
 }
+/* Washi tape on non-featured cards */
+.guide-card:not(.featured)::before {
+  content: '';
+  position: absolute;
+  top: -7px; left: 20px;
+  width: 80px; height: 14px;
+  background: rgba(255,77,136,0.38);
+  transform: rotate(-1deg);
+  border-radius: 2px;
+  box-shadow: inset 0 0 4px rgba(255,255,255,0.3);
+}
+
 .guide-card.featured {
   border-left: 6px solid var(--strawberry);
-  background: linear-gradient(135deg, rgba(247,208,216,0.25) 0%, var(--paper) 100%);
-  box-shadow: 0 3px 12px rgba(217,79,107,0.1);
+  background: linear-gradient(135deg, rgba(255,214,228,0.3) 0%, #fff 60%);
+  box-shadow: 0 6px 24px var(--shadow), 4px 4px 0 var(--strawberry);
+  transform: rotate(-0.8deg);
+}
+.guide-card.featured::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 30px;
+  width: 100px; height: 16px;
+  background: rgba(232,25,60,0.4);
+  transform: rotate(-1.5deg);
+  border-radius: 2px;
+  box-shadow: inset 0 0 4px rgba(255,255,255,0.3);
 }
 /* ribbon-tail featured badge */
 .featured-badge {
   position: absolute; top: -1px; right: 14px;
-  background: var(--strawberry); color: white;
+  background: linear-gradient(180deg, var(--strawberry), var(--magenta));
+  color: white;
   padding: 3px 12px 8px;
   font-family: var(--pixel); font-size: 16px; font-weight: 400; letter-spacing: 0.08em;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  box-shadow: 2px 2px 0 var(--magenta);
 }
 .corner-decoration {
   position: absolute; top: -10px; right: 1.2rem;
@@ -411,60 +558,122 @@ body {
 }
 .guide-title {
   font-family: var(--serif); font-size: 16px; font-weight: 700;
-  margin: 0 0 0.6rem; line-height: 1.3; color: var(--espresso);
+  margin: 0 0 0.6rem; line-height: 1.3; color: var(--ink);
 }
 .guide-title a { color: inherit; text-decoration: none; }
 .guide-title a:hover { color: var(--strawberry); }
 .guide-meta { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
 .meta-badge {
-  background: var(--blush); color: var(--jam); padding: 2px 10px;
+  background: var(--soft-blush); color: var(--magenta); padding: 2px 10px;
   font-family: var(--sans); font-size: 10px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  border: 1px solid var(--strawberry); border-radius: 2px;
+  border: 1.5px solid var(--strawberry); border-radius: 20px;
+  box-shadow: 1px 1px 0 rgba(232,25,60,0.2);
 }
-.meta-badge.sage    { background: var(--sage);    color: var(--sage-deep);  border-color: var(--border-sage); }
-.meta-badge.lavender{ background: var(--lavender); color: var(--coffee);    border-color: var(--border-warm); }
+.meta-badge.sage    { background: var(--sage);    color: var(--sage-deep);  border-color: var(--border-sage); border-radius: 20px; }
+.meta-badge.lavender{ background: #ede0ff; color: #6020a0;    border-color: var(--lavender); border-radius: 20px; }
 .meta-time { font-size: 11px; color: var(--ink-soft); font-family: var(--sans); }
 .guide-description { font-family: var(--sans); font-size: 13px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 0.8rem; }
 .guide-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 0.9rem; }
 .tag {
-  background: var(--cream-warm); color: var(--ink-mid); padding: 3px 10px;
+  background: var(--cream); color: var(--ink-mid); padding: 3px 10px;
   font-size: 10px; font-family: var(--sans); font-weight: 500;
-  border: 1px solid var(--border); border-radius: 10px; letter-spacing: 0.04em;
+  border: 1.5px solid var(--border-pink); border-radius: 10px; letter-spacing: 0.04em;
   transition: background 0.15s, border-color 0.15s;
 }
-.tag:hover { background: var(--blush); border-color: var(--strawberry); }
-.read-button {
-  background: var(--coffee); color: var(--cream);
-  text-decoration: none; padding: 0.4rem 1rem;
-  font-family: var(--sans); font-size: 12px; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px;
-  display: inline-block; transition: background 0.15s, transform 0.1s;
-  box-shadow: 0 2px 6px rgba(59,31,14,0.2);
-}
-.read-button:hover { background: var(--strawberry); transform: translateY(-1px); }
+.tag:hover { background: var(--soft-blush); border-color: var(--strawberry); }
 
-/* ── GLITTER DIVIDER ── */
-.glitter-divider { text-align: center; margin: 1.5rem 0; }
+/* ══════════════════════════════════════════════════════════════
+   6. CANDY BUTTONS (read button variant)
+══════════════════════════════════════════════════════════════ */
+.read-button {
+  background: linear-gradient(180deg, var(--bright-pink) 0%, var(--strawberry) 55%, var(--magenta) 100%);
+  color: #fff;
+  text-decoration: none; padding: 0.45rem 1.2rem;
+  font-family: var(--sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 20px;
+  display: inline-block;
+  border: 2px solid var(--border-red);
+  box-shadow: 0 3px 0 var(--magenta), 0 4px 10px var(--shadow);
+  transition: filter 0.15s, transform 0.1s;
+  position: relative; overflow: hidden;
+}
+.read-button::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+.read-button:hover { filter: brightness(1.12); transform: translateY(-2px); }
+.read-button:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--magenta); }
+
+/* ══════════════════════════════════════════════════════════════
+   7. DECORATIVE DIVIDER SYSTEM — ♥ heart chain motif
+   Consistent motif: hearts with trailing lines
+   CSS-only implementation
+══════════════════════════════════════════════════════════════ */
+.glitter-divider {
+  text-align: center; margin: 1.8rem 0;
+  display: flex; align-items: center; gap: 0;
+}
+.glitter-divider::before,
+.glitter-divider::after {
+  content: '♥ · · · ♥ · · · ♥ · · · ♥ · · · ♥ · · · ♥ · · · ♥';
+  flex: 1;
+  font-size: 11px;
+  color: var(--bright-pink);
+  letter-spacing: 2px;
+  opacity: 0.7;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.glitter-divider::before {
+  text-align: right;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 100%);
+}
+.glitter-divider::after {
+  text-align: left;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, transparent 100%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, transparent 100%);
+}
 .glitter-img { max-width: 70%; height: auto; opacity: 0.45; }
 
-/* ── EMAIL CAPTURE — bakery receipt style ── */
+/* ── EMAIL CAPTURE — diary note style ── */
 .email-capture-box {
-  background: repeating-linear-gradient(
-    0deg, var(--cream-warm), var(--cream-warm) 23px,
-    rgba(200,160,100,0.12) 23px, rgba(200,160,100,0.12) 24px
+  background: #fff;
+  /* lined diary paper background */
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 23px,
+    rgba(255,100,160,0.12) 23px, rgba(255,100,160,0.12) 24px
   );
-  border: 2px dashed var(--caramel); border-radius: 4px;
+  border: 2.5px solid var(--border-pink);
+  border-left: 5px solid var(--strawberry);
+  border-radius: 4px;
   padding: 1.4rem; margin-top: 2rem; text-align: center;
   position: relative;
+  box-shadow: 4px 4px 0 rgba(232,25,60,0.15);
+  transform: rotate(0.4deg);
 }
+/* washi tape on email box */
 .email-capture-box::before {
-  content: '☕  🍓  🥐  🧄🥖';
+  content: '';
+  position: absolute;
+  top: -8px; right: 30px;
+  width: 90px; height: 15px;
+  background: rgba(212,170,255,0.55);
+  transform: rotate(2deg);
+  border-radius: 2px;
+}
+.email-capture-box::after {
+  content: '🍓  ✉️  🎀';
   display: block; font-size: 16px; margin-bottom: 0.6rem; letter-spacing: 0.3em;
 }
 .email-capture-box h3 {
   font-family: var(--serif); font-size: 16px; font-weight: 700;
-  color: var(--espresso); margin-bottom: 0.5rem;
+  color: var(--magenta); margin-bottom: 0.5rem;
 }
 .email-capture-box p {
   font-family: var(--sans); font-size: 12px; color: var(--ink-soft);
@@ -472,25 +681,28 @@ body {
 }
 .email-form { display: flex; flex-direction: column; gap: 0.5rem; }
 .email-input {
-  padding: 0.5rem 0.8rem; border: 2px solid var(--border-warm);
+  padding: 0.5rem 0.8rem; border: 2px solid var(--border-pink);
   background: var(--paper); font-family: var(--sans); font-size: 13px; color: var(--ink);
-  border-radius: 2px; outline: none; transition: border-color 0.15s;
+  border-radius: 20px; outline: none; transition: border-color 0.15s;
 }
-.email-input:focus { border-color: var(--caramel); }
+.email-input:focus { border-color: var(--strawberry); }
 .email-submit {
-  background: var(--coffee); color: var(--cream); border: none;
+  background: linear-gradient(180deg, var(--bright-pink), var(--strawberry));
+  color: #fff; border: 2px solid var(--border-red);
   padding: 0.5rem 1.2rem; font-family: var(--sans); font-size: 13px; font-weight: 600;
-  cursor: pointer; border-radius: 2px; transition: background 0.15s;
+  cursor: pointer; border-radius: 20px;
+  box-shadow: 0 3px 0 var(--magenta);
+  transition: filter 0.15s;
 }
-.email-submit:hover { background: var(--strawberry); }
+.email-submit:hover { filter: brightness(1.12); }
 .email-privacy { font-size: 10px !important; color: var(--ink-soft) !important; margin: 0.5rem 0 0 !important; }
 
 /* ── RIGHT SIDEBAR ── */
-#visitor-count { font-size: 28px; font-family: var(--pixel); letter-spacing: 3px; color: var(--coffee); }
+#visitor-count { font-size: 28px; font-family: var(--pixel); letter-spacing: 3px; color: var(--strawberry); }
 .timeline { font-size: 12px; }
 .timeline-item {
   display: flex; justify-content: space-between; padding: 5px 0;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border-pink);
 }
 .timeline-item:last-child { border-bottom: none; }
 .timeline-month { font-family: var(--pixel); font-size: 15px; font-weight: 400; color: var(--strawberry); }
@@ -501,8 +713,8 @@ body {
 .badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
 .pixel-badge {
   width: 100%; aspect-ratio: 1; object-fit: contain;
-  border: 2px solid var(--border-warm); border-radius: 2px;
-  background: var(--cream-warm); transition: transform 0.2s;
+  border: 2px solid var(--border-pink); border-radius: 2px;
+  background: var(--cream); transition: transform 0.2s;
 }
 .pixel-badge:hover { transform: scale(1.08) rotate(-3deg); }
 .quick-links { list-style: none; }
@@ -515,31 +727,29 @@ body {
 
 /* ── FOOTER ── */
 .site-footer {
-  background: linear-gradient(135deg, var(--croissant) 0%, var(--caramel) 100%);
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--strawberry) 50%, var(--bright-pink) 100%);
   border-top: 4px solid var(--strawberry);
   padding: 1.5rem; text-align: center; position: relative;
 }
-/* frill strip just inside footer top */
 .site-footer::before {
   content: '';
-  position: absolute; top: 4px; left: 0; right: 0; height: 5px;
+  position: absolute; top: 4px; left: 0; right: 0; height: 6px;
   background: repeating-linear-gradient(
-    90deg, var(--blush) 0px, var(--blush) 8px,
+    90deg, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.4) 8px,
     transparent 8px, transparent 16px
   );
-  opacity: 0.6;
 }
 .footer-divider { max-width: 240px; height: auto; margin: 0.4rem auto; display: block; opacity: 0.4; }
-.footer-text { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--espresso); margin: 0.4rem 0; }
-.footer-note { font-family: var(--serif); font-size: 12px; font-style: italic; color: var(--ink-mid); }
-.footer-credits { font-family: var(--sans); font-size: 10px; color: var(--ink-mid); margin-top: 0.4rem; letter-spacing: 0.05em; }
+.footer-text { font-family: var(--sans); font-size: 13px; font-weight: 600; color: #fff; margin: 0.4rem 0; }
+.footer-note { font-family: var(--serif); font-size: 12px; font-style: italic; color: rgba(255,255,255,0.85); }
+.footer-credits { font-family: var(--sans); font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 0.4rem; letter-spacing: 0.05em; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .main-layout { grid-template-columns: 1fr; }
   .left-sidebar, .right-sidebar {
     display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; border: none; border-top: 2px solid var(--border); padding: 1rem;
+    gap: 1rem; border: none; border-top: 2px dashed var(--border-pink); padding: 1rem;
   }
   .profile-block { grid-column: 1 / -1; }
   .reference-images { grid-template-columns: repeat(2, 1fr); }
@@ -550,6 +760,32 @@ body {
   .nav-tabs { flex-wrap: wrap; }
   .site-title { font-size: 22px; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   8 & 9. ROTATION RULES + VISUAL OVERLOAD PREVENTION
+   
+   ROTATION RULES (built into above styles):
+   • welcome-banner: rotate(-0.5deg) — 1 rotated element
+   • featured guide-card: rotate(-0.8deg) — 2 rotated elements
+   • email-capture-box: rotate(0.4deg) — 3 rotated elements
+   • MAX 3 rotated containers per viewport ✓
+   • MAX ±1.5deg ✓
+   • Text inside never rotates ✓
+   
+   VISUAL OVERLOAD PREVENTION:
+   • Max accent colors: 3 (strawberry red, hot pink, magenta)
+     Lavender is optional/rare, never primary
+   • Border usage: solid on cards/widgets, dashed on sidebars,
+     dotted nowhere (reserved for special callouts only)
+   • Shadows: 1 type (shadow var) + 1 flat offset (3px 3px 0)
+     Never more than 2 shadow layers on same element
+   • Decorative density: washi tape only on top edge of cards,
+     never bottom AND top of same card
+   • Gingham at 7% opacity — never above 10% for readability
+   • Rotations only on card-level containers, never on:
+     - Navigation, headers, text, images, form elements
+══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -938,4 +1174,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
