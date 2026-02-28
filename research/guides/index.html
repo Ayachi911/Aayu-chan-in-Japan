@@ -6,1404 +6,1367 @@
 <title>Guides — Ayachi's Japan Exchange Shrine ♡</title>
 <meta name="description" content="Practical guides for Japan exchange students. Everything I wish I'd known before applying to Kakehashi.">
 
+<!--
+  ════════════════════════════════════════════════════
+  ASSET PLACEHOLDERS — files to upload to /assets/
+  ════════════════════════════════════════════════════
+  BG TEXTURE:
+    /assets/images/bg-blueplaid.png
+    → Tile-able blue gingham/tartan image (like image 3 blue gingham bg)
+    → Search: "blue gingham seamless tile png" — get a ~100×100px seamless one
+
+  BANNER:
+    /assets/images/banner-heisei.png
+    → Optional: a hand-drawn style banner with strawberry/apple motifs
+    → OR leave blank — CSS banner is built in
+
+  DIVIDER STRIP:
+    /assets/images/divider-fruit.png
+    → A pixel/flat art horizontal strip with strawberries, stars, cherries
+    → Search: "heisei retro fruit divider png transparent"
+
+  STICKER OVERLAYS (optional, for extra chaos energy):
+    /assets/images/sticker-star.png      → yellow star sticker
+    /assets/images/sticker-cherry.png    → cherry cluster
+    /assets/images/sticker-strawberry.png → strawberry
+    /assets/images/sticker-heart.png     → puffy heart
+    /assets/images/sticker-bow.png       → ribbon bow
+  ════════════════════════════════════════════════════
+-->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Satisfy&family=Pacifico&family=Klee+One&family=DM+Sans:wght@300;400;500&family=VT323&family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Yuji+Boku&family=Press+Start+2P&family=Shrikhand&family=Righteous&family=Fredoka+One&display=swap" rel="stylesheet">
 
 <style>
 /* ══════════════════════════════════════════════════════════════
-   AYACHI'S SHRINE — "Gingham Shoujo Diary" Edition
-   Pink + Blue + Cream plaid • Scrapbook • Lace • Bows
-   One pop: hot strawberry red #e8193c
+   HEISEI RETRO — Ayachi's Japan Exchange Shrine
+   Tamagotchi × Ciao Magazine × Fruits Punch × Animal Crossing
+   Colors: apple green + strawberry red + baby blue + cream yellow
+   NO BOXY. NO BORING. FULL CHAOS COLLAGE ENERGY.
 ══════════════════════════════════════════════════════════════ */
-
 :root {
-  /* Gingham palette */
-  --pink:        #f9c6d8;
-  --pink-mid:    #f0a0bf;
-  --pink-deep:   #e06090;
-  --blue:        #b8d8ec;
-  --blue-mid:    #8cbedd;
-  --blue-deep:   #6aa4c8;
-  --lavender:    #d8caee;
-  --lav-mid:     #bba8e0;
-  --cream:       #fdf6ee;
-  --cream-warm:  #f7ece0;
-  --white-soft:  #fffcfa;
-
-  /* ONE pop color */
-  --strawberry:  #e8193c;
-
-  /* Text */
-  --ink:         #3a1a2a;
-  --ink-mid:     #7a4060;
-  --ink-soft:    #b080a0;
-
-  /* Fonts */
-  --script:   'Great Vibes', cursive;
-  --cursive2: 'Satisfy', cursive;
-  --cute:     'Pacifico', cursive;
-  --hand:     'Klee One', cursive;
-  --body:     'DM Sans', sans-serif;
-  --pixel:    'VT323', monospace;
-  --serif:    'Noto Serif JP', serif;
+  --apple:     #7ec850;   /* apple green */
+  --apple-dk:  #4a9020;
+  --straw:     #e8193c;   /* strawberry red */
+  --straw-lt:  #ff6680;
+  --cream:     #fffde8;   /* warm cream yellow */
+  --butter:    #fff4a0;   /* butter yellow */
+  --sky:       #b8e8f8;   /* baby blue */
+  --sky-dk:    #5ab8dc;
+  --pink:      #ffb8d0;   /* bubblegum */
+  --pink-dk:   #ff7aaa;
+  --mint:      #b8f0d8;
+  --lemon:     #fff066;
+  --orange:    #ffb347;
+  --white:     #fffef9;
+  --ink:       #1a1a1a;
+  --ink-soft:  #555;
+  
+  --font-main:  'M PLUS Rounded 1c', sans-serif;
+  --font-title: 'Fredoka One', cursive;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-serif: 'Shrikhand', cursive;
+  --font-right: 'Righteous', cursive;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══════════════════════════════════════════════════════════════
-   PAGE BACKGROUND — pastel pink-blue-cream plaid
-   Uses 4 overlapping gradients to simulate tartan/gingham
-══════════════════════════════════════════════════════════════ */
-body {
-  font-family: var(--body);
-  color: var(--ink);
-  overflow-x: hidden;
-  min-height: 100vh;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='4' fill='%23f0a0bf' opacity='0.8'/%3E%3C/svg%3E") 10 10, auto;
-
-  background-color: #fdf0f4;
-  background-image:
-    /* Horizontal pink bands */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 28px,
-      rgba(240, 160, 191, 0.35) 28px,
-      rgba(240, 160, 191, 0.35) 56px,
-      transparent 56px,
-      transparent 84px,
-      rgba(184, 216, 236, 0.3) 84px,
-      rgba(184, 216, 236, 0.3) 112px
-    ),
-    /* Vertical pink bands */
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 28px,
-      rgba(240, 160, 191, 0.35) 28px,
-      rgba(240, 160, 191, 0.35) 56px,
-      transparent 56px,
-      transparent 84px,
-      rgba(184, 216, 236, 0.3) 84px,
-      rgba(184, 216, 236, 0.3) 112px
-    ),
-    /* Fine diagonal overlay for fabric texture */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      transparent 6px,
-      rgba(255, 255, 255, 0.15) 6px,
-      rgba(255, 255, 255, 0.15) 7px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 6px,
-      rgba(255, 255, 255, 0.1) 6px,
-      rgba(255, 255, 255, 0.1) 7px
-    );
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--sky); }
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(45deg, var(--straw) 0, var(--straw) 4px, var(--white) 4px, var(--white) 8px);
+  border-radius: 10px;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   FLOATING GLITTER / SPARKLES
+   PAGE BACKGROUND — Blue plaid CSS tile
+   SWAP with: background-image: url('/assets/images/bg-blueplaid.png');
+   if you upload a real gingham tile
 ══════════════════════════════════════════════════════════════ */
-.sparkle-field {
+body {
+  font-family: var(--font-main);
+  color: var(--ink);
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  /* CSS blue plaid fallback — replace with image if desired */
+  background-color: #d4eef8;
+  background-image:
+    /* horizontal bands */
+    repeating-linear-gradient(0deg,
+      transparent 0, transparent 22px,
+      rgba(90,184,220,0.45) 22px, rgba(90,184,220,0.45) 44px,
+      transparent 44px, transparent 66px,
+      rgba(150,210,240,0.3) 66px, rgba(150,210,240,0.3) 88px
+    ),
+    /* vertical bands */
+    repeating-linear-gradient(90deg,
+      transparent 0, transparent 22px,
+      rgba(90,184,220,0.45) 22px, rgba(90,184,220,0.45) 44px,
+      transparent 44px, transparent 66px,
+      rgba(150,210,240,0.3) 66px, rgba(150,210,240,0.3) 88px
+    ),
+    /* diagonal texture */
+    repeating-linear-gradient(45deg,
+      transparent 0, transparent 4px,
+      rgba(255,255,255,0.18) 4px, rgba(255,255,255,0.18) 5px
+    );
+  /* UNCOMMENT this line + comment background-image above to use uploaded gingham: */
+  /* background-image: url('../../assets/images/bg-blueplaid.png'); background-size: 88px 88px; */
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FLOATING STICKER ELEMENTS (background layer)
+══════════════════════════════════════════════════════════════ */
+.bg-stickers {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0; left: 0; width: 100%; height: 100%;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
 }
-.sparkle {
+.bg-sticker {
   position: absolute;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: twinkle var(--dur, 4s) ease-in-out infinite var(--delay, 0s);
-  opacity: 0;
+  font-size: var(--fs, 22px);
+  opacity: 0.25;
+  animation: floatBg var(--dur, 8s) ease-in-out infinite var(--dly, 0s);
+  user-select: none;
 }
-.sparkle::before {
-  content: '✦';
-  position: absolute;
-  font-size: var(--size, 12px);
-  color: var(--col, #f0a0bf);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-}
-@keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(0.5) translateY(0); }
-  40%, 60% { opacity: 0.9; transform: scale(1.2) translateY(-8px); }
+@keyframes floatBg {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-18px) rotate(calc(var(--rot, 0deg) + 8deg)); }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   OUTER WRAPPER + CANDY BORDER
+   PAGE WRAPPER — scrapbook "page" on top of gingham bg
 ══════════════════════════════════════════════════════════════ */
 .page-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 1160px;
-  margin: 1.5rem auto;
-  padding: 6px;
-  /* Lace-like outer border using box-shadow layers */
-  background:
-    /* Gingham border stripe */
-    repeating-linear-gradient(
-      90deg,
-      var(--pink-mid) 0px, var(--pink-mid) 10px,
-      var(--white-soft) 10px, var(--white-soft) 20px,
-      var(--blue-mid) 20px, var(--blue-mid) 30px,
-      var(--white-soft) 30px, var(--white-soft) 40px
-    );
-  border-radius: 8px;
-  box-shadow:
-    0 0 0 1px var(--pink-mid),
-    0 12px 40px rgba(224, 96, 144, 0.2),
-    0 4px 12px rgba(0,0,0,0.06);
-}
-.inner-wrapper {
-  background: var(--white-soft);
-  border-radius: 4px;
-  border: 1.5px solid var(--pink);
-  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 8px 40px;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   BANNER HEADER
+   TOP TICKER TAPE
 ══════════════════════════════════════════════════════════════ */
-.banner-container {
-  position: relative;
+.ticker-wrap {
   width: 100%;
-  min-height: 200px;
+  background: var(--straw);
   overflow: hidden;
-  /* Pink-blue gingham background for banner */
-  background-color: #fce8f0;
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 18px,
-      rgba(240,160,191,0.5) 18px, rgba(240,160,191,0.5) 36px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 18px,
-      rgba(184,216,236,0.4) 18px, rgba(184,216,236,0.4) 36px
-    );
+  height: 28px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2.5rem 1rem 1.5rem;
+  border-bottom: 3px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.ticker-content {
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
-/* Top bow row decoration */
-.banner-container::before {
-  content: '🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀';
-  position: absolute;
-  top: 8px; left: 0; right: 0;
-  text-align: center;
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  opacity: 0.7;
-  color: var(--pink-deep);
-}
-
-/* Bottom lace strip */
-.banner-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 20px;
-  background-image: radial-gradient(
-    circle at 10px 0,
-    transparent 7px,
-    var(--pink-mid) 7px,
-    var(--pink-mid) 9px,
-    transparent 9px
-  );
-  background-size: 20px 20px;
-  background-color: var(--cream);
-  border-top: 1px solid var(--pink-mid);
-}
-
-.banner-title-card {
-  background: rgba(255,255,255,0.88);
-  border: 2px solid var(--pink-mid);
-  border-radius: 6px;
-  padding: 1.2rem 3rem 1rem;
-  text-align: center;
+/* ══════════════════════════════════════════════════════════════
+   SITE HEADER — magazine scan energy
+══════════════════════════════════════════════════════════════ */
+.site-header {
   position: relative;
-  box-shadow:
-    0 4px 20px rgba(224,96,144,0.15),
-    3px 3px 0 rgba(184,216,236,0.5),
-    -3px -3px 0 rgba(240,160,191,0.3);
-  /* Polaroid-ish slight tilt */
-  transform: rotate(-0.3deg);
+  margin: 12px 0 0;
+  padding: 0;
 }
 
-/* Washi tape across top of card */
-.banner-title-card::before {
-  content: '';
-  position: absolute;
-  top: -10px; left: 50%; transform: translateX(-50%) rotate(-1.5deg);
-  width: 140px; height: 18px;
+/* candy stripe top bar */
+.candy-bar {
+  height: 16px;
   background: repeating-linear-gradient(
     90deg,
-    rgba(184,216,236,0.7) 0, rgba(184,216,236,0.7) 8px,
-    rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 12px,
-    rgba(184,216,236,0.7) 12px, rgba(184,216,236,0.7) 20px
+    var(--straw) 0, var(--straw) 14px,
+    var(--white) 14px, var(--white) 28px,
+    var(--pink) 28px, var(--pink) 42px,
+    var(--white) 42px, var(--white) 56px,
+    var(--apple) 56px, var(--apple) 70px,
+    var(--white) 70px, var(--white) 84px,
+    var(--sky-dk) 84px, var(--sky-dk) 98px,
+    var(--white) 98px, var(--white) 112px
   );
-  border-radius: 3px;
-  box-shadow: inset 0 0 6px rgba(255,255,255,0.4);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
 }
 
+/* main header band */
+.header-band {
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-top: none;
+  position: relative;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0;
+  min-height: 100px;
+}
+
+/* left decoration panel */
+.header-deco-left {
+  padding: 10px 12px;
+  border-right: 2.5px dashed var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--apple);
+  min-width: 80px;
+}
+.header-deco-right {
+  padding: 10px 12px;
+  border-left: 2.5px dashed var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--pink);
+  min-width: 80px;
+}
+.deco-emoji { font-size: 26px; line-height: 1; }
+.deco-mini-text {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--ink);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* center title */
+.header-center {
+  text-align: center;
+  padding: 16px 20px;
+  position: relative;
+}
 .site-title {
-  font-family: var(--script);
-  font-size: 48px;
-  font-weight: 400;
-  color: var(--pink-deep);
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 5vw, 46px);
+  color: var(--straw);
+  line-height: 1.05;
+  /* heisei retro: black stroke outline */
+  -webkit-text-stroke: 2px var(--ink);
+  text-stroke: 2px var(--ink);
   text-shadow:
-    2px 2px 0 rgba(184,216,236,0.6),
-    4px 4px 0 rgba(240,160,191,0.2);
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+    3px 3px 0 var(--ink),
+    -1px -1px 0 var(--ink);
+  letter-spacing: 0.01em;
 }
 .site-subtitle {
-  font-family: var(--hand);
-  font-size: 13px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 700;
   color: var(--ink-soft);
-  margin-top: 0.4rem;
-  letter-spacing: 0.08em;
+  margin-top: 6px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
-
-/* ══════════════════════════════════════════════════════════════
-   NAVIGATION
-══════════════════════════════════════════════════════════════ */
-.nav-tabs {
-  background-color: #fce0eb;
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 9px,
-      rgba(240,160,191,0.4) 9px, rgba(240,160,191,0.4) 18px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 9px,
-      rgba(184,216,236,0.3) 9px, rgba(184,216,236,0.3) 18px
-    );
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  padding: 0;
-  border-bottom: 2px solid var(--pink-mid);
-  border-top: 2px solid var(--pink-mid);
-}
-.tab-btn {
-  background: transparent;
-  color: var(--ink-mid);
-  text-decoration: none;
-  padding: 0.6rem 1.6rem;
-  font-family: var(--hand);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  border-bottom: 3px solid transparent;
-  transition: all 0.18s;
-  position: relative;
-}
-.tab-btn::after {
-  content: '✿';
+/* floating mini stickers on header */
+.header-sticker {
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 10px;
-  color: var(--pink-mid);
-  opacity: 0.6;
+  pointer-events: none;
+  animation: wiggle 3s ease-in-out infinite;
+  z-index: 5;
 }
-.tab-btn:hover {
-  color: var(--pink-deep);
-  background: rgba(255,255,255,0.5);
-  border-bottom-color: var(--pink-deep);
-}
-.tab-btn.active {
-  color: var(--pink-deep);
-  border-bottom-color: var(--strawberry);
-  background: rgba(255,255,255,0.6);
-  font-weight: 400;
+@keyframes wiggle {
+  0%,100% { transform: rotate(var(--wr,-8deg)) scale(1); }
+  50% { transform: rotate(calc(var(--wr,-8deg) + 12deg)) scale(1.08); }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   LACE DIVIDER — SVG bow+vine stripe pattern as section divider
+   NAV BAR — bubble tab style
 ══════════════════════════════════════════════════════════════ */
-.lace-divider {
-  width: 100%;
-  height: 40px;
-  position: relative;
-  overflow: hidden;
-  margin: 0.2rem 0;
-}
-.lace-divider-inner {
-  width: 100%;
-  height: 100%;
-  background-color: var(--cream);
-  background-image:
-    /* Alternating stripe bands like the bow wallpaper */
-    repeating-linear-gradient(
-      90deg,
-      rgba(184,216,236,0.6) 0px, rgba(184,216,236,0.6) 30px,
-      rgba(255,255,255,0.8) 30px, rgba(255,255,255,0.8) 36px,
-      rgba(240,160,191,0.4) 36px, rgba(240,160,191,0.4) 50px,
-      rgba(255,255,255,0.8) 50px, rgba(255,255,255,0.8) 56px,
-      rgba(216,202,238,0.5) 56px, rgba(216,202,238,0.5) 70px,
-      rgba(255,255,255,0.8) 70px, rgba(255,255,255,0.8) 76px,
-      rgba(240,160,191,0.4) 76px, rgba(240,160,191,0.4) 90px,
-      rgba(255,255,255,0.8) 90px, rgba(255,255,255,0.8) 96px,
-      rgba(184,216,236,0.6) 96px, rgba(184,216,236,0.6) 126px
-    );
+.nav-bar {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 14px;
-  letter-spacing: 0.5em;
-  color: var(--pink-mid);
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 8px 8px;
+  background: var(--sky);
+  border: 2.5px solid var(--ink);
+  border-top: none;
+  margin-bottom: 16px;
 }
-.lace-divider-inner::before {
-  content: '♡  ✦  ✿  🎀  ✿  ✦  ♡  ✦  ✿  🎀  ✿  ✦  ♡  ✦  ✿  🎀  ✿  ✦  ♡';
+.nav-btn {
+  display: inline-block;
+  padding: 5px 14px 6px;
+  font-family: var(--font-title);
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  transition: all 0.12s;
+  box-shadow: 2px 2px 0 var(--ink);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-  opacity: 0.7;
 }
-.lace-divider::before,
-.lace-divider::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 4px;
-  background-image: radial-gradient(circle, var(--pink-mid) 2px, transparent 2px);
-  background-size: 12px 4px;
+.nav-btn:hover {
+  background: var(--butter);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
 }
-.lace-divider::before { top: 0; }
-.lace-divider::after  { bottom: 0; }
-
-/* Thicker section divider */
-.lace-divider-lg {
-  height: 56px;
-}
-.lace-divider-lg .lace-divider-inner {
-  font-size: 16px;
+.nav-btn.active {
+  background: var(--straw);
+  color: var(--white);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 /* ══════════════════════════════════════════════════════════════
-   MAIN LAYOUT
+   FRUIT DIVIDER STRIP
+   REPLACE with: <img src="../../assets/images/divider-fruit.png">
+   for a real heisei fruit strip
 ══════════════════════════════════════════════════════════════ */
-.main-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr 200px;
-  background: var(--white-soft);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   SIDEBARS
-══════════════════════════════════════════════════════════════ */
-.left-sidebar {
-  border-right: 2px dashed var(--pink-mid);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  background:
-    repeating-linear-gradient(
-      0deg, transparent, transparent 23px,
-      rgba(184,216,236,0.15) 23px, rgba(184,216,236,0.15) 24px
-    );
-}
-.right-sidebar {
-  border-left: 2px dashed var(--pink-mid);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  background:
-    repeating-linear-gradient(
-      0deg, transparent, transparent 23px,
-      rgba(240,160,191,0.15) 23px, rgba(240,160,191,0.15) 24px
-    );
-}
-
-/* ══════════════════════════════════════════════════════════════
-   WIDGET BOXES
-══════════════════════════════════════════════════════════════ */
-.widget-box {
-  background: rgba(255,255,255,0.9);
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 2px 2px 0 rgba(184,216,236,0.5), -1px -1px 0 rgba(240,160,191,0.3);
-  position: relative;
-}
-/* Washi tape on widget boxes */
-.widget-box::before {
-  content: '';
-  position: absolute;
-  top: -6px; left: 16px;
-  width: 60px; height: 12px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(216,202,238,0.7) 0, rgba(216,202,238,0.7) 5px,
-    rgba(255,255,255,0.5) 5px, rgba(255,255,255,0.5) 8px
-  );
-  border-radius: 2px;
-  transform: rotate(-1deg);
-}
-.widget-box:nth-child(even)::before {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(184,216,236,0.7) 0, rgba(184,216,236,0.7) 5px,
-    rgba(255,255,255,0.5) 5px, rgba(255,255,255,0.5) 8px
-  );
-  transform: rotate(1.2deg);
-  left: auto;
-  right: 16px;
-}
-
-.widget-header {
-  /* Blue gingham for left sidebar widget headers */
-  background-color: var(--blue);
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 5px,
-      rgba(140,190,221,0.5) 5px, rgba(140,190,221,0.5) 10px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 5px,
-      rgba(140,190,221,0.4) 5px, rgba(140,190,221,0.4) 10px
-    );
-  border-bottom: 1.5px solid var(--blue-mid);
-  padding: 0.35rem 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-}
-.right-sidebar .widget-header {
-  background-color: var(--pink);
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 5px,
-      rgba(240,160,191,0.5) 5px, rgba(240,160,191,0.5) 10px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 5px,
-      rgba(240,160,191,0.4) 5px, rgba(240,160,191,0.4) 10px
-    );
-  border-bottom-color: var(--pink-mid);
-}
-.widget-title {
-  font-family: var(--cursive2);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--ink-mid);
-}
-.widget-content { padding: 0.7rem 0.8rem; }
-
-/* ── PROFILE ── */
-.profile-block {
-  background: rgba(255,255,255,0.92);
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 2px 2px 0 rgba(184,216,236,0.5);
-  /* Slight tilt for polaroid feel */
-  transform: rotate(-0.8deg);
-}
-.profile-header {
-  background-color: var(--pink);
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 5px,
-      rgba(240,160,191,0.5) 5px, rgba(240,160,191,0.5) 10px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 5px,
-      rgba(240,160,191,0.4) 5px, rgba(240,160,191,0.4) 10px
-    );
-  border-bottom: 1.5px solid var(--pink-mid);
-  padding: 0.4rem 0.7rem;
-  text-align: center;
-}
-.profile-title {
-  font-family: var(--cursive2);
-  font-size: 14px;
-  color: var(--ink-mid);
-}
-.profile-content { padding: 0.8rem; text-align: center; }
-.profile-pic-frame {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 0.5rem;
-  border: 3px solid var(--white-soft);
-  /* Lace doily effect with repeated shadow rings */
-  box-shadow:
-    0 0 0 2px var(--pink-mid),
-    0 0 0 4px rgba(255,255,255,0.8),
-    0 0 0 6px var(--blue-mid),
-    0 0 0 8px rgba(255,255,255,0.5),
-    0 0 0 10px var(--lav-mid),
-    3px 3px 10px rgba(224,96,144,0.2);
-}
-.profile-pic { width: 100%; height: 100%; object-fit: cover; }
-.profile-name {
-  font-family: var(--hand);
-  font-size: 16px;
-  color: var(--pink-deep);
-  margin-bottom: 0.3rem;
-}
-.profile-bio {
-  font-family: var(--body);
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-}
-.profile-age { color: var(--strawberry); font-weight: 700; }
-.profile-stats {
-  margin-top: 0.6rem;
-  border-top: 1.5px dashed var(--pink-mid);
-  padding-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.stat-item { display: flex; justify-content: space-between; font-size: 10.5px; }
-.stat-label { color: var(--ink-soft); font-family: var(--body); }
-.stat-value { color: var(--ink); font-weight: 600; font-family: var(--body); }
-
-/* ── SOCIALS ── */
-.social-links { display: flex; flex-direction: column; gap: 0.3rem; }
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.3rem 0.5rem;
-  background: var(--cream);
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 20px;
-  color: var(--ink-mid);
-  text-decoration: none;
-  font-size: 11px;
-  font-family: var(--body);
-  transition: all 0.15s;
-}
-.social-btn:hover {
-  background: var(--pink);
-  border-color: var(--pink-deep);
-  transform: translateX(2px);
-}
-.social-icon { width: 13px; height: 13px; object-fit: contain; }
-
-/* ── PUZZLE ── */
-.stamps-container {
-  background: rgba(255,255,255,0.9);
-  border: 1.5px solid var(--blue-mid);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 2px 2px 0 rgba(184,216,236,0.6);
-}
-.stamps-header {
-  background-color: var(--blue);
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 5px,
-      rgba(140,190,221,0.5) 5px, rgba(140,190,221,0.5) 10px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 5px,
-      rgba(140,190,221,0.4) 5px, rgba(140,190,221,0.4) 10px
-    );
-  border-bottom: 1.5px solid var(--blue-mid);
-  padding: 0.35rem;
-  font-family: var(--cursive2);
-  font-size: 13px;
-  color: var(--ink-mid);
-  text-align: center;
-}
-.puzzle-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 73px);
-  margin: 0.5rem auto;
-  width: 219px;
-  gap: 0;
-  border: 1.5px solid var(--pink-mid);
-}
-.tile { width: 73px; height: 73px; cursor: pointer; border: 1px solid var(--pink-mid); transition: opacity 0.1s; }
-.tile:hover:not(.empty) { opacity: 0.8; }
-.tile.empty { background: var(--pink) !important; background-image: none !important; cursor: default; }
-.puzzle-controls { text-align: center; padding: 0.4rem; }
-#shuffleBtn {
-  font-family: var(--hand);
-  font-size: 14px;
-  background: linear-gradient(180deg, var(--pink-mid) 0%, var(--pink-deep) 100%);
-  border: 1.5px solid var(--pink-deep);
-  color: #fff;
-  padding: 0.25rem 1rem;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: filter 0.15s, transform 0.1s;
-  box-shadow: 0 2px 0 rgba(224,96,144,0.4), 0 3px 8px rgba(240,160,191,0.3);
-}
-#shuffleBtn:hover { filter: brightness(1.1); transform: translateY(-1px); }
-.win-message {
-  display: none; text-align: center;
-  font-family: var(--hand); font-size: 18px;
-  color: var(--pink-deep); padding: 0.3rem;
-}
-
-/* ── FRIENDS ── */
-.friends-list { display: flex; flex-direction: column; gap: 0.4rem; }
-.friend-item {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.25rem 0.4rem; border-radius: 20px;
-  background: var(--cream); border: 1px solid var(--pink-mid);
-  transition: background 0.15s;
-}
-.friend-item:hover { background: var(--pink); }
-.friend-icon { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--pink-mid); }
-.friend-name { font-size: 11px; color: var(--ink-soft); font-family: var(--body); }
-
-/* ── WEB BUTTONS ── */
-.button-collection { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
-.web-button { height: 20px; border: 1px solid var(--pink-mid); border-radius: 2px; }
-
-/* ══════════════════════════════════════════════════════════════
-   CENTER CONTENT
-══════════════════════════════════════════════════════════════ */
-.center-content { padding: 1.2rem; }
-
-/* ══════════════════════════════════════════════════════════════
-   WELCOME BANNER
-══════════════════════════════════════════════════════════════ */
-.welcome-banner {
-  background: rgba(255,255,255,0.88);
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 4px;
-  padding: 1.4rem 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  position: relative;
-  box-shadow: 3px 3px 0 rgba(184,216,236,0.5), -2px -2px 0 rgba(240,160,191,0.25);
-  transform: rotate(0.4deg);
-  /* lined paper bg */
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent, transparent 23px,
-      rgba(184,216,236,0.18) 23px, rgba(184,216,236,0.18) 24px
-    );
-}
-/* Pink washi tape */
-.welcome-banner::before {
-  content: '';
-  position: absolute;
-  top: -8px; left: 50%; transform: translateX(-50%) rotate(-1.5deg);
-  width: 130px; height: 16px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(240,160,191,0.65) 0, rgba(240,160,191,0.65) 8px,
-    rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 12px
-  );
-  border-radius: 2px;
-}
-/* Blue washi tape opposite corner */
-.welcome-banner::after {
-  content: '';
-  position: absolute;
-  bottom: -6px; right: 24px;
-  width: 80px; height: 14px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(184,216,236,0.65) 0, rgba(184,216,236,0.65) 6px,
-    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
-  );
-  border-radius: 2px;
-  transform: rotate(1.8deg);
-}
-.welcome-title {
-  font-family: var(--cursive2);
-  font-size: 24px;
-  color: var(--pink-deep);
-  margin: 0.5rem 0;
-}
-.welcome-text {
-  font-family: var(--body);
-  font-size: 13px;
-  line-height: 1.75;
-  color: var(--ink-soft);
-  max-width: 480px;
-  margin: 0 auto;
-}
-.divider-img {
-  max-width: 220px;
-  height: auto;
-  margin: 0.3rem auto;
-  display: block;
-  opacity: 0.4;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   SECTION HEADERS
-══════════════════════════════════════════════════════════════ */
-.section-header {
+.fruit-strip {
+  height: 32px;
+  background: var(--butter);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 1.2rem;
-}
-.section-header::before,
-.section-header::after {
-  content: '';
-  flex: 1;
-  height: 1.5px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--pink-mid) 0, var(--pink-mid) 4px,
-    transparent 4px, transparent 8px,
-    var(--blue-mid) 8px, var(--blue-mid) 12px,
-    transparent 12px, transparent 16px
-  );
-}
-.section-title {
-  font-family: var(--cute);
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--ink-mid);
-  background: linear-gradient(135deg, var(--pink) 0%, var(--lavender) 50%, var(--blue) 100%);
-  padding: 4px 18px 5px;
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 20px;
-  letter-spacing: 0.04em;
+  font-size: 18px;
+  margin: 0 0 16px;
+  overflow: hidden;
   white-space: nowrap;
-  box-shadow: 2px 2px 0 rgba(184,216,236,0.5);
+  letter-spacing: 0.3em;
 }
-.section-icon { width: 20px; height: 20px; }
+.fruit-strip span { animation: fruitBounce var(--d,1s) ease-in-out infinite var(--dl,0s); display: inline-block; }
+@keyframes fruitBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
 
 /* ══════════════════════════════════════════════════════════════
-   GUIDE CARDS — Polaroid + scrapbook
+   MAIN LAYOUT — magazine chaos grid (not boxy!)
 ══════════════════════════════════════════════════════════════ */
-.featured-guide-block, .all-guides-section { margin-bottom: 1.8rem; }
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  align-items: start;
+}
 
-.guide-card {
-  background: #fff;
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 4px;
-  padding: 1.1rem 1.3rem 1.8rem;
-  margin-bottom: 1rem;
+/* ══════════════════════════════════════════════════════════════
+   LEFT SIDEBAR
+══════════════════════════════════════════════════════════════ */
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 40px;
+}
+
+/* ── SIDEBAR CARD BASE ── */
+.s-card {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  overflow: visible;
   position: relative;
-  border-left: 4px solid var(--pink-mid);
-  box-shadow:
-    0 3px 14px rgba(224,96,144,0.1),
-    2px 2px 0 rgba(184,216,236,0.3);
-  transition: all 0.18s;
-  /* Subtle lined paper */
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent, transparent 23px,
-      rgba(240,160,191,0.08) 23px, rgba(240,160,191,0.08) 24px
-    );
+  box-shadow: 3px 3px 0 var(--ink);
 }
-.guide-card:hover {
-  border-color: var(--pink-deep);
-  border-left-color: var(--pink-deep);
-  box-shadow: 0 6px 20px rgba(224,96,144,0.15), 3px 3px 0 rgba(184,216,236,0.5);
-  transform: translateY(-2px) rotate(0.2deg);
-}
-/* Pink washi tape strip on regular cards */
-.guide-card:not(.featured)::before {
-  content: '';
-  position: absolute;
-  top: -7px; left: 18px;
-  width: 70px; height: 13px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(240,160,191,0.6) 0, rgba(240,160,191,0.6) 6px,
-    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
-  );
-  transform: rotate(-1deg);
-  border-radius: 2px;
-}
-.guide-card:nth-child(even):not(.featured)::before {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(184,216,236,0.65) 0, rgba(184,216,236,0.65) 6px,
-    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
-  );
-  transform: rotate(1.2deg);
-  left: auto; right: 18px;
-}
-.guide-card:nth-child(3n):not(.featured)::before {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(216,202,238,0.65) 0, rgba(216,202,238,0.65) 6px,
-    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
-  );
-}
-
-.guide-card.featured {
-  border-left: 5px solid var(--strawberry);
-  background: linear-gradient(135deg, rgba(249,198,216,0.2) 0%, rgba(255,255,255,0.9) 60%);
-  box-shadow: 0 5px 20px rgba(224,96,144,0.15), 3px 3px 0 rgba(232,25,60,0.15);
-  transform: rotate(-0.5deg);
-}
-.guide-card.featured::before {
-  content: '';
-  position: absolute;
-  top: -8px; left: 28px;
-  width: 110px; height: 15px;
-  /* Strawberry red washi tape for featured — the ONE pop color */
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(232,25,60,0.45) 0, rgba(232,25,60,0.45) 8px,
-    rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 11px
-  );
-  transform: rotate(-1.2deg);
-  border-radius: 2px;
-}
-
-/* ── Lace doily ring for featured card ── */
-.guide-card.featured::after {
-  content: '❧';
-  position: absolute;
-  bottom: 12px; right: 16px;
-  font-size: 30px;
-  color: var(--pink-mid);
-  opacity: 0.4;
-}
-
-.featured-badge {
-  position: absolute; top: -1px; right: 14px;
-  background: var(--strawberry);
-  color: white;
-  padding: 3px 12px 8px;
-  font-family: var(--hand);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-  box-shadow: 1px 2px 0 rgba(180,0,40,0.3);
-}
-.corner-decoration {
-  position: absolute; top: -10px; right: 1.1rem;
-  width: 26px; height: 26px; opacity: 0.7;
-}
-.guide-title {
-  font-family: var(--serif);
-  font-size: 15px;
-  font-weight: 700;
-  margin: 0 0 0.55rem;
-  line-height: 1.35;
-  color: var(--ink);
-}
-.guide-title a { color: inherit; text-decoration: none; }
-.guide-title a:hover { color: var(--pink-deep); }
-
-.guide-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
-.meta-badge {
-  background: var(--pink);
-  color: var(--ink-mid);
-  padding: 2px 10px;
-  font-family: var(--body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 1px solid var(--pink-mid);
-  border-radius: 20px;
-}
-.meta-badge.sage    { background: #d4eecc; color: #3a6830; border-color: #8ac080; }
-.meta-badge.lavender{ background: var(--lavender); color: #6020a0; border-color: var(--lav-mid); }
-.meta-time { font-size: 10.5px; color: var(--ink-soft); font-family: var(--body); }
-
-.guide-description {
-  font-family: var(--body);
-  font-size: 12.5px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  margin-bottom: 0.7rem;
-}
-.guide-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 0.8rem; }
-.tag {
-  background: var(--cream);
-  color: var(--ink-mid);
-  padding: 2px 9px;
-  font-size: 10px;
-  font-family: var(--body);
-  border: 1px solid var(--pink-mid);
-  border-radius: 10px;
-  letter-spacing: 0.03em;
-  transition: all 0.12s;
-}
-.tag:hover { background: var(--pink); border-color: var(--pink-deep); }
-
-/* ── READ BUTTON ── */
-.read-button {
-  background: linear-gradient(180deg, var(--pink-mid) 0%, var(--pink-deep) 100%);
-  color: #fff;
-  text-decoration: none;
-  padding: 0.4rem 1.2rem;
-  font-family: var(--hand);
-  font-size: 13px;
+.s-card-header {
+  font-family: var(--font-title);
+  font-size: 12px;
+  padding: 5px 10px 6px;
+  background: var(--apple);
+  border-bottom: 2px solid var(--ink);
+  border-radius: 9px 9px 0 0;
+  text-align: center;
   letter-spacing: 0.05em;
-  border-radius: 20px;
-  display: inline-block;
-  border: 1.5px solid var(--pink-deep);
-  box-shadow: 0 2px 0 rgba(200,80,120,0.4), 0 4px 8px rgba(240,160,191,0.3);
-  transition: all 0.15s;
+}
+.s-card-header.pink  { background: var(--pink); }
+.s-card-header.sky   { background: var(--sky); }
+.s-card-header.butter{ background: var(--butter); }
+.s-card-header.mint  { background: var(--mint); }
+.s-card-header.straw { background: var(--straw); color: var(--white); }
+.s-card-body { padding: 8px 10px; }
+
+/* ── PROFILE CARD ── */
+.profile-pic-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  overflow: hidden;
+  margin: 0 auto 6px;
+  background: var(--pink);
+  /* Sticker-style ring */
+  box-shadow: 0 0 0 3px var(--white), 0 0 0 6px var(--straw), 0 0 0 8px var(--white);
   position: relative;
+}
+.profile-pic-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name {
+  font-family: var(--font-title);
+  font-size: 15px;
+  text-align: center;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+}
+.profile-bio {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 4px;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  padding: 3px 0;
+  border-bottom: 1px dashed #ccc;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row .k { color: var(--ink-soft); }
+.stat-row .v { font-weight: 700; color: var(--straw); }
+
+/* ── SOCIAL LINKS ── */
+.social-list { display: flex; flex-direction: column; gap: 4px; }
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  transition: all 0.1s;
+  box-shadow: 1.5px 1.5px 0 var(--ink);
+}
+.social-link:hover { background: var(--butter); transform: translate(-1px, -1px); box-shadow: 2.5px 2.5px 0 var(--ink); }
+.social-link img { width: 12px; height: 12px; }
+
+/* ── PUZZLE — z-index fix ── */
+.puzzle-card {
+  position: relative;
+  z-index: 10; /* fixes hiding behind main block */
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  margin: 6px auto;
+  width: 180px;
+  gap: 0;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
   overflow: hidden;
 }
-.read-button::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 45%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 100%);
-  border-radius: 20px 20px 0 0;
-  pointer-events: none;
+.tile { width: 60px; height: 60px; cursor: pointer; border: 1px solid rgba(0,0,0,0.2); transition: opacity 0.1s; }
+.tile:hover:not(.empty) { opacity: 0.8; }
+.tile.empty { background: var(--sky) !important; background-image: none !important; cursor: default; }
+.puzzle-controls { text-align: center; padding: 4px; }
+#shuffleBtn {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--apple);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
 }
-.read-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
-.read-button:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(200,80,120,0.4); }
+#shuffleBtn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.win-message {
+  display: none;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--straw);
+  padding: 4px;
+}
+
+/* ── FRIENDS ── */
+.friends-list { display: flex; flex-direction: column; gap: 4px; }
+.friend-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 3px 5px;
+  border-radius: 20px;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+}
+.friend-icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--ink);
+}
+
+/* ── WEB BUTTONS ── */
+.btn-collection { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; }
+.web-button { height: 18px; border: 1px solid var(--ink); border-radius: 2px; }
+
+/* ── VISITOR COUNTER ── */
+.visitor-num {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--straw);
+  text-align: center;
+  display: block;
+  letter-spacing: 3px;
+  background: var(--ink);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 4px auto;
+  width: fit-content;
+}
+
+/* ── TIMELINE ── */
+.tl-item {
+  display: flex;
+  gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--ink);
+  font-size: 10.5px;
+  align-items: baseline;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-month {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--straw);
+  color: var(--white);
+  padding: 2px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tl-event { font-weight: 700; color: var(--ink); }
+
+/* ── MOOD ── */
+.mood-box { text-align: center; padding: 4px; }
+.mood-icon { width: 36px; height: 36px; }
+.mood-txt { font-family: var(--font-title); font-size: 12px; color: var(--pink-dk); }
+
+/* ── QUICK LINKS ── */
+.quick-links { list-style: none; }
+.quick-links li { margin-bottom: 3px; }
+.quick-links a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 2px 0;
+  transition: color 0.12s;
+}
+.quick-links a:hover { color: var(--straw); }
+.ql-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--apple);
+  flex-shrink: 0;
+}
 
 /* ══════════════════════════════════════════════════════════════
-   GLITTER DIVIDER (between sections)
+   CENTER CONTENT
 ══════════════════════════════════════════════════════════════ */
-.glitter-divider {
-  text-align: center;
-  margin: 1.5rem 0;
+.center-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   WELCOME CARD — magazine scan panel
+══════════════════════════════════════════════════════════════ */
+.welcome-card {
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px 20px 18px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-0.4deg);
+  overflow: visible;
+}
+/* washi tape strips */
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 30px;
+  width: 100px; height: 18px;
+  background: repeating-linear-gradient(90deg,
+    var(--straw) 0, var(--straw) 8px,
+    rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 12px
+  );
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 3px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.welcome-card::after {
+  content: '';
+  position: absolute;
+  top: -8px; right: 50px;
+  width: 80px; height: 16px;
+  background: repeating-linear-gradient(90deg,
+    var(--apple) 0, var(--apple) 8px,
+    rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 12px
+  );
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 3px;
+  transform: rotate(2deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.welcome-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--straw);
+  -webkit-text-stroke: 1px var(--ink);
+  margin-bottom: 8px;
+}
+.welcome-text {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  max-width: 520px;
+}
+.welcome-sticker {
+  position: absolute;
+  right: -12px; bottom: -12px;
+  font-size: 38px;
+  transform: rotate(15deg);
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.2));
+  animation: stickerPop 4s ease-in-out infinite;
+}
+@keyframes stickerPop {
+  0%,100% { transform: rotate(15deg) scale(1); }
+  50% { transform: rotate(15deg) scale(1.12); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION HEADERS — heisei magazine style
+══════════════════════════════════════════════════════════════ */
+.section-head {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;
+  position: relative;
 }
-.glitter-divider::before,
-.glitter-divider::after {
-  content: '✦ · · · ♡ · · · ✦ · · · 🌸 · · · ✦ · · · ♡ · · · ✦ · · · 🌸 · · · ✦';
+.section-head::after {
+  content: '';
   flex: 1;
-  font-size: 10px;
-  color: var(--pink-mid);
-  letter-spacing: 1px;
-  opacity: 0.7;
-  overflow: hidden;
+  height: 2.5px;
+  background: repeating-linear-gradient(90deg,
+    var(--straw) 0, var(--straw) 6px,
+    transparent 6px, transparent 10px
+  );
+}
+.section-label {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--white);
+  background: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  padding: 3px 16px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
   white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--ink);
+  flex-shrink: 0;
 }
-.glitter-divider::before {
-  text-align: right;
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 100%);
-}
-.glitter-divider::after {
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, transparent 100%);
-}
-.glitter-center-icon { font-size: 20px; flex-shrink: 0; }
+.section-label.green { background: var(--apple); color: var(--ink); -webkit-text-stroke: none; }
+.section-label.blue  { background: var(--sky-dk); }
+.section-icon { font-size: 20px; flex-shrink: 0; }
 
 /* ══════════════════════════════════════════════════════════════
-   EMAIL CAPTURE
+   GUIDE CARDS — COLLAGE STYLE
+   Inspired by image 3: stickers at angles on a pinboard
 ══════════════════════════════════════════════════════════════ */
-.email-capture-box {
-  background: rgba(255,255,255,0.9);
+
+/* Featured: big card, slight tilt */
+.guide-card-featured {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 16px 18px 20px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-0.6deg);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.guide-card-featured:hover {
+  transform: rotate(-0.6deg) translateY(-3px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+/* red gingham accent panel (like image 3 red gingham card) */
+.guide-card-featured::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  border-radius: 7px 0 0 7px;
+  background:
+    repeating-linear-gradient(0deg, var(--straw) 0, var(--straw) 5px, var(--white) 5px, var(--white) 10px),
+    repeating-linear-gradient(90deg, var(--straw) 0, var(--straw) 5px, var(--white) 5px, var(--white) 10px);
+  background-blend-mode: multiply;
+  background-color: var(--straw);
+  opacity: 0.8;
+}
+.featured-ribbon {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--straw);
+  color: var(--white);
+  padding: 3px 10px 4px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  letter-spacing: 0.1em;
+}
+
+/* ── COLLAGE GRID (all guides) ── */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  position: relative;
+}
+
+/* Base guide card */
+.guide-card {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 12px 14px 16px;
+  position: relative;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s, box-shadow 0.15s;
+  overflow: visible;
+}
+.guide-card:hover {
+  transform: translateY(-3px) rotate(var(--card-rot, 0deg));
+  box-shadow: 5px 5px 0 var(--ink);
+}
+/* Alternating tilts for scrapbook feel */
+.guide-card:nth-child(1) { --card-rot: -1deg; transform: rotate(-1deg); background: var(--cream); }
+.guide-card:nth-child(2) { --card-rot: 1.2deg; transform: rotate(1.2deg); }
+.guide-card:nth-child(3) { --card-rot: 0.5deg; transform: rotate(0.5deg); background: #fff5f9; }
+.guide-card:nth-child(4) { --card-rot: -0.8deg; transform: rotate(-0.8deg); }
+.guide-card:nth-child(5) { --card-rot: 1deg; transform: rotate(1deg); background: var(--cream); }
+.guide-card:nth-child(6) { --card-rot: -1.2deg; transform: rotate(-1.2deg); background: #f0fbff; }
+.guide-card:nth-child(7) { --card-rot: 0.7deg; transform: rotate(0.7deg); }
+
+/* washi tapes alternating colors */
+.guide-card::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 16px;
+  width: 60px; height: 13px;
+  background: repeating-linear-gradient(90deg,
+    var(--washi-c, rgba(120,200,80,0.7)) 0, var(--washi-c, rgba(120,200,80,0.7)) 6px,
+    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
+  );
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  transform: rotate(var(--tape-rot, -1deg));
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.guide-card:nth-child(1)::before { --washi-c: rgba(232,25,60,0.55); --tape-rot: -2deg; }
+.guide-card:nth-child(2)::before { --washi-c: rgba(90,184,220,0.6); --tape-rot: 1.5deg; left: auto; right: 14px; }
+.guide-card:nth-child(3)::before { --washi-c: rgba(255,180,55,0.65); --tape-rot: -1deg; }
+.guide-card:nth-child(4)::before { --washi-c: rgba(216,202,238,0.8); --tape-rot: 2deg; left: auto; right: 14px; }
+.guide-card:nth-child(5)::before { --washi-c: rgba(120,200,80,0.7); --tape-rot: -1.5deg; }
+.guide-card:nth-child(6)::before { --washi-c: rgba(255,180,200,0.75); --tape-rot: 1deg; left: auto; right: 12px; }
+.guide-card:nth-child(7)::before { --washi-c: rgba(255,200,80,0.7); --tape-rot: -2deg; }
+
+/* corner sticker emoji */
+.guide-card::after {
+  content: var(--card-emoji, '🍎');
+  position: absolute;
+  bottom: 8px; right: 10px;
+  font-size: 20px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.guide-card:nth-child(1)::after  { --card-emoji: '🍓'; }
+.guide-card:nth-child(2)::after  { --card-emoji: '🎒'; }
+.guide-card:nth-child(3)::after  { --card-emoji: '💴'; }
+.guide-card:nth-child(4)::after  { --card-emoji: '🍱'; }
+.guide-card:nth-child(5)::after  { --card-emoji: '🚃'; }
+.guide-card:nth-child(6)::after  { --card-emoji: '🍡'; }
+.guide-card:nth-child(7)::after  { --card-emoji: '🫧'; }
+
+/* full-width card in collage */
+.guide-card.full-w {
+  grid-column: 1 / -1;
+}
+
+/* colored left bar on cards */
+.guide-card .card-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  border-radius: 7px 0 0 7px;
+  background: var(--bar-c, var(--apple));
+}
+.guide-card:nth-child(1) .card-bar { background: var(--straw); }
+.guide-card:nth-child(2) .card-bar { background: var(--sky-dk); }
+.guide-card:nth-child(3) .card-bar { background: var(--orange); }
+.guide-card:nth-child(4) .card-bar { background: var(--pink-dk); }
+.guide-card:nth-child(5) .card-bar { background: var(--apple); }
+.guide-card:nth-child(6) .card-bar { background: var(--sky-dk); }
+.guide-card:nth-child(7) .card-bar { background: var(--lemon); }
+
+.guide-title {
+  font-family: var(--font-title);
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.35;
+  padding-left: 6px;
+}
+.guide-title a { color: inherit; text-decoration: none; }
+.guide-title a:hover { color: var(--straw); }
+.guide-title-lg {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.guide-title-lg a { color: inherit; text-decoration: none; }
+.guide-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.meta-pill {
+  font-family: var(--font-main);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  background: var(--pill-bg, var(--sky));
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.meta-pill.sage { --pill-bg: #b8f0b8; }
+.meta-pill.pink { --pill-bg: var(--pink); }
+.meta-pill.lemon { --pill-bg: var(--butter); }
+.meta-time {
+  font-size: 10px;
+  color: var(--ink-soft);
+  font-family: var(--font-pixel);
+  font-size: 7px;
+}
+.guide-desc {
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+.guide-tags { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 8px; }
+.tag {
+  font-size: 9.5px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  padding: 2px 7px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--cream);
+  transition: background 0.1s;
+  cursor: default;
+}
+.tag:hover { background: var(--butter); }
+
+/* ── READ BUTTON ── */
+.read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--straw);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 5px 14px 6px;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.read-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); background: var(--straw-lt); }
+.read-btn.green { background: var(--apple); color: var(--ink); }
+.read-btn.blue  { background: var(--sky-dk); }
+
+/* ══════════════════════════════════════════════════════════════
+   REFERENCE IMAGES (polaroid collage)
+══════════════════════════════════════════════════════════════ */
+.ref-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.ref-polaroid {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  padding: 4px 4px 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+  position: relative;
+  transition: transform 0.15s;
+}
+.ref-polaroid:nth-child(odd) { transform: rotate(-2deg); }
+.ref-polaroid:nth-child(even) { transform: rotate(1.5deg); }
+.ref-polaroid:hover { transform: rotate(0deg) scale(1.04) !important; z-index: 5; }
+.ref-polaroid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.ref-cap {
+  position: absolute;
+  bottom: 3px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 9px;
+  color: var(--ink-soft);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EMAIL CAPTURE — memo note style
+══════════════════════════════════════════════════════════════ */
+.email-card {
+  background: var(--butter);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 16px 20px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(0.4deg);
+  /* lined paper */
   background-image:
     repeating-linear-gradient(0deg,
       transparent, transparent 23px,
-      rgba(240,160,191,0.12) 23px, rgba(240,160,191,0.12) 24px
+      rgba(0,0,0,0.06) 23px, rgba(0,0,0,0.06) 24px
     );
-  border: 1.5px solid var(--blue-mid);
-  border-left: 4px solid var(--blue-mid);
-  border-radius: 4px;
-  padding: 1.3rem;
-  margin-top: 1.8rem;
-  text-align: center;
-  position: relative;
-  box-shadow: 3px 3px 0 rgba(184,216,236,0.5);
-  transform: rotate(-0.3deg);
 }
-.email-capture-box::before {
+.email-card::before {
+  content: '📬';
+  position: absolute;
+  top: -18px; right: 20px;
+  font-size: 28px;
+  animation: stickerPop 3s ease-in-out infinite;
+}
+.email-card::after {
   content: '';
   position: absolute;
-  top: -7px; right: 28px;
-  width: 80px; height: 13px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(216,202,238,0.65) 0, rgba(216,202,238,0.65) 6px,
-    rgba(255,255,255,0.5) 6px, rgba(255,255,255,0.5) 9px
+  top: -8px; left: 30px;
+  width: 90px; height: 15px;
+  background: repeating-linear-gradient(90deg,
+    rgba(184,216,236,0.8) 0, rgba(184,216,236,0.8) 7px,
+    rgba(255,255,255,0.5) 7px, rgba(255,255,255,0.5) 10px
   );
-  transform: rotate(1.5deg);
   border-radius: 2px;
+  transform: rotate(-1deg);
+  border: 1px solid rgba(0,0,0,0.1);
 }
-.email-capture-box h3 {
-  font-family: var(--cursive2);
-  font-size: 18px;
-  color: var(--blue-deep);
-  margin-bottom: 0.5rem;
+.email-card h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 6px;
+  text-align: center;
 }
-.email-capture-box p {
-  font-family: var(--body);
-  font-size: 12px;
+.email-card p {
+  font-size: 11.5px;
   color: var(--ink-soft);
-  margin-bottom: 0.8rem;
   line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
 }
-.email-form { display: flex; flex-direction: column; gap: 0.45rem; }
+.email-form { display: flex; flex-direction: column; gap: 5px; }
 .email-input {
-  padding: 0.45rem 0.8rem;
-  border: 1.5px solid var(--blue-mid);
-  background: var(--cream);
-  font-family: var(--body);
-  font-size: 13px;
-  color: var(--ink);
+  padding: 6px 12px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  font-family: var(--font-main);
+  font-size: 12px;
   border-radius: 20px;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.12s;
+  box-shadow: 2px 2px 0 var(--ink);
 }
-.email-input:focus { border-color: var(--blue-deep); }
+.email-input:focus { border-color: var(--straw); }
 .email-submit {
-  background: linear-gradient(180deg, var(--blue-mid) 0%, var(--blue-deep) 100%);
-  color: #fff;
-  border: 1.5px solid var(--blue-deep);
-  padding: 0.45rem 1.2rem;
-  font-family: var(--hand);
-  font-size: 14px;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  background: var(--straw);
+  color: var(--white);
+  border: 2px solid var(--ink);
+  padding: 7px 16px;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 2px 0 rgba(106,164,200,0.5);
-  transition: filter 0.15s;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
+  letter-spacing: 0.1em;
 }
-.email-submit:hover { filter: brightness(1.1); }
-.email-privacy { font-size: 10px !important; color: var(--ink-soft) !important; margin: 0.4rem 0 0 !important; }
+.email-submit:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.email-privacy { font-size: 9px; color: var(--ink-soft); text-align: center; margin-top: 5px; }
 
 /* ══════════════════════════════════════════════════════════════
-   RIGHT SIDEBAR SPECIFICS
+   GLITTER DIVIDER
 ══════════════════════════════════════════════════════════════ */
-#visitor-count {
-  font-size: 26px;
-  font-family: var(--pixel);
-  letter-spacing: 3px;
-  color: var(--pink-deep);
-  text-align: center;
-  display: block;
+.glitter-div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 2px;
 }
-.timeline { font-size: 11.5px; }
-.timeline-item {
-  display: flex; justify-content: space-between;
-  padding: 4px 0;
-  border-bottom: 1px dashed var(--pink-mid);
+.glitter-div::before, .glitter-div::after {
+  content: '✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦';
+  flex: 1;
+  font-size: 9px;
+  color: var(--straw);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
-.timeline-item:last-child { border-bottom: none; }
-.timeline-month {
-  font-family: var(--hand); font-size: 13px; color: var(--pink-deep);
+.glitter-div::before {
+  text-align: right;
+  -webkit-mask-image: linear-gradient(to left, black, transparent);
 }
-.timeline-event { font-family: var(--body); font-size: 10.5px; color: var(--ink-soft); }
-
-.mood-display { text-align: center; }
-.mood-icon { width: 38px; height: 38px; margin-bottom: 5px; }
-.mood-text { font-family: var(--hand); font-size: 13px; color: var(--ink-soft); }
-
-.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
-.pixel-badge {
-  width: 100%; aspect-ratio: 1; object-fit: contain;
-  border: 1.5px solid var(--pink-mid); border-radius: 2px;
-  background: var(--cream); transition: transform 0.2s;
+.glitter-div::after {
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
 }
-.pixel-badge:hover { transform: scale(1.1) rotate(-3deg); }
-.quick-links { list-style: none; }
-.quick-links li { margin-bottom: 4px; }
-.quick-links a {
-  font-family: var(--body); color: var(--ink-soft);
-  text-decoration: none; font-size: 11.5px;
-  display: flex; align-items: center; gap: 4px;
-  padding: 2px 0; transition: color 0.15s;
-}
-.quick-links a:hover { color: var(--pink-deep); }
-.quick-links a::before { content: '♡'; color: var(--pink-mid); font-size: 10px; }
+.gd-icon { font-size: 16px; flex-shrink: 0; }
 
 /* ══════════════════════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════════════════════ */
 .site-footer {
-  position: relative;
-  padding: 1.5rem;
+  margin-top: 20px;
+  background: var(--apple);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px;
   text-align: center;
-  background-color: #fce0eb;
-  background-image:
-    repeating-linear-gradient(0deg,
-      transparent 0, transparent 18px,
-      rgba(240,160,191,0.4) 18px, rgba(240,160,191,0.4) 36px
-    ),
-    repeating-linear-gradient(90deg,
-      transparent 0, transparent 18px,
-      rgba(184,216,236,0.3) 18px, rgba(184,216,236,0.3) 36px
-    );
-  border-top: 2px solid var(--pink-mid);
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
 }
 .site-footer::before {
-  content: '🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀  ✦  🌸  ✦  🎀';
+  content: '🍎 · · · 🍓 · · · ⭐ · · · 🍒 · · · 🍎 · · · 🍓 · · · ⭐ · · · 🍒';
   display: block;
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  color: var(--pink-deep);
-  opacity: 0.7;
-  margin-bottom: 0.8rem;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
-.footer-text {
-  font-family: var(--cursive2);
+.footer-txt {
+  font-family: var(--font-serif);
   font-size: 16px;
-  color: var(--pink-deep);
-  margin: 0.3rem 0;
+  color: var(--white);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 3px;
 }
 .footer-note {
-  font-family: var(--hand);
-  font-size: 12px;
-  font-style: italic;
-  color: var(--ink-mid);
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
 }
-.footer-credits {
-  font-family: var(--body);
-  font-size: 10px;
-  color: var(--ink-soft);
-  margin-top: 0.3rem;
-  letter-spacing: 0.05em;
-}
-.footer-divider { max-width: 200px; height: auto; margin: 0.4rem auto; display: block; opacity: 0.3; }
-
-/* ══════════════════════════════════════════════════════════════
-   REFERENCE IMAGES (polaroid grid)
-══════════════════════════════════════════════════════════════ */
-.reference-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.7rem;
-  margin: 0 0 1.5rem;
-}
-.ref-img-frame {
-  border: 2px solid var(--pink-mid);
-  padding: 4px 4px 22px;
-  background: #fff;
-  position: relative;
-  box-shadow: 2px 2px 0 rgba(184,216,236,0.4);
-  /* Polaroid rotation */
-}
-.ref-img-frame:nth-child(odd) { transform: rotate(-1.2deg); }
-.ref-img-frame:nth-child(even) { transform: rotate(1deg); }
-.ref-img-frame img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
-  filter: saturate(1.1);
-}
-.ref-img-caption {
-  font-family: var(--hand);
-  font-size: 10px;
-  color: var(--ink-soft);
-  text-align: center;
-  padding: 0.3rem 0 0;
-  letter-spacing: 0.04em;
+.footer-credit {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: rgba(0,0,0,0.5);
+  margin-top: 6px;
+  letter-spacing: 0.1em;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — MOBILE
 ══════════════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .main-layout { grid-template-columns: 1fr; }
-  .left-sidebar, .right-sidebar {
+@media (max-width: 760px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .left-sidebar {
+    position: static;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    border: none;
-    border-top: 2px dashed var(--pink-mid);
-    padding: 1rem;
+    gap: 8px;
   }
-  .profile-block { grid-column: 1 / -1; transform: none; }
+  .profile-card { grid-column: 1 / -1; }
+  .collage-grid { grid-template-columns: 1fr; }
+  .guide-card { transform: none !important; }
+  .guide-card:hover { transform: translateY(-2px) !important; }
+  .site-title { font-size: 24px; -webkit-text-stroke: 1.5px var(--ink); }
+  .header-deco-left, .header-deco-right { display: none; }
+  .ref-collage { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 640px) {
-  .site-title { font-size: 34px; }
-  .banner-title-card { padding: 1rem 1.5rem; }
-  .main-layout { grid-template-columns: 1fr; }
-  .left-sidebar, .right-sidebar { grid-template-columns: 1fr; }
-  .reference-images { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 480px) {
+  .left-sidebar { grid-template-columns: 1fr; }
+  .nav-bar { gap: 3px; }
+  .nav-btn { font-size: 11px; padding: 4px 10px; }
+  .fruit-strip { font-size: 15px; }
+  .collage-grid { grid-template-columns: 1fr; }
 }
 
-/* ── GLITTER CURSOR TRAIL (CSS keyframe sparkles) ── */
-@keyframes sparkleFloat {
-  0% { opacity: 0; transform: scale(0) translateY(0); }
-  50% { opacity: 1; transform: scale(1.3) translateY(-15px); }
-  100% { opacity: 0; transform: scale(0) translateY(-30px); }
-}
-
-/* ── Animated doily lace ring on section headers ── */
-.doily-frame {
-  display: inline-block;
-  position: relative;
-  border-radius: 50%;
-}
-.doily-frame::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 3px dotted var(--pink-mid);
-  animation: spin 12s linear infinite;
-}
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-/* ── HOVER TILT on cards ── */
-.guide-card { transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s; }
-
-/* ── Striped flower divider section (between featured + all guides) ── */
-.stripe-divider {
-  width: 100%;
-  margin: 0.5rem 0 1.5rem;
-  height: 28px;
+/* ── BADGE GRID ── */
+.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+.pixel-badge {
+  width: 100%; aspect-ratio: 1;
+  object-fit: contain;
+  border: 1.5px solid var(--ink);
   border-radius: 3px;
-  overflow: hidden;
-  border: 1px solid var(--pink-mid);
-  display: flex;
+  background: var(--cream);
+  transition: transform 0.15s;
 }
-.stripe-band {
-  flex: 1;
-  height: 100%;
-}
-.sb-pink-floral {
-  background-color: rgba(249,198,216,0.5);
-  background-image: repeating-linear-gradient(
-    0deg, transparent, transparent 9px,
-    rgba(240,160,191,0.4) 9px, rgba(240,160,191,0.4) 10px
-  );
-}
-.sb-lace {
-  flex: 0.3;
-  background: rgba(255,255,255,0.9);
-  background-image: radial-gradient(circle, var(--pink-mid) 1px, transparent 1px);
-  background-size: 8px 8px;
-}
-.sb-gingham {
-  background-color: rgba(184,216,236,0.4);
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 6px, rgba(140,190,221,0.4) 6px, rgba(140,190,221,0.4) 12px),
-    repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(140,190,221,0.4) 6px, rgba(140,190,221,0.4) 12px);
-}
-.sb-stripe {
-  flex: 0.5;
-  background: repeating-linear-gradient(
-    0deg,
-    var(--pink-mid) 0, var(--pink-mid) 4px,
-    transparent 4px, transparent 8px
-  );
-  opacity: 0.5;
-}
-.sb-lavender {
-  background-color: rgba(216,202,238,0.4);
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent, transparent 5px,
-    rgba(187,168,224,0.3) 5px, rgba(187,168,224,0.3) 6px
-  );
-}
+.pixel-badge:hover { transform: scale(1.12) rotate(-5deg); }
+
 </style>
 </head>
 <body>
 
-<!-- Sparkle field -->
-<div class="sparkle-field" id="sparkleField"></div>
+<!-- ═══ BG FLOATING STICKERS ═══ -->
+<div class="bg-stickers" aria-hidden="true" id="bgStickers"></div>
 
-<!-- Page wrapper -->
+<!-- ═══ STICKY TICKER ═══ -->
+<div class="ticker-wrap">
+  <div class="ticker-content">
+    ★ AYACHI'S JAPAN EXCHANGE SHRINE ★ kakehashi program ★ yokohama life ★ bento diaries ★ gacha pulls ★ sakura season ★ melon float ★ train life ★ ほんとに楽しかった ★ AYACHI'S JAPAN EXCHANGE SHRINE ★ kakehashi program ★ yokohama life ★ bento diaries ★ gacha pulls ★
+  </div>
+</div>
+
 <div class="page-wrapper">
-<div class="inner-wrapper">
 
-  <!-- BANNER -->
-  <div class="banner-container">
-    <div class="banner-title-card">
-      <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
-      <p class="site-subtitle">♡ guides · diary · memories · Japan ♡</p>
+  <!-- ═══ HEADER ═══ -->
+  <div class="site-header">
+    <div class="candy-bar"></div>
+    <div class="header-band">
+
+      <div class="header-deco-left">
+        <span class="deco-emoji">🍓</span>
+        <span class="deco-emoji">⭐</span>
+        <span class="deco-mini-text">YOKOHAMA<br>DIARIES</span>
+      </div>
+
+      <div class="header-center">
+        <!-- floating stickers on header -->
+        <span class="header-sticker" style="top:-8px;left:10%;font-size:22px;--wr:-12deg;">🌸</span>
+        <span class="header-sticker" style="top:-10px;right:12%;font-size:20px;--wr:10deg;animation-delay:1s;">⭐</span>
+        <span class="header-sticker" style="bottom:-6px;left:20%;font-size:16px;--wr:6deg;animation-delay:1.5s;">🍒</span>
+        <span class="header-sticker" style="bottom:-8px;right:8%;font-size:18px;--wr:-8deg;animation-delay:0.5s;">🎀</span>
+
+        <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
+        <p class="site-subtitle">♡ guides for real exchange students ♡ yokohama × kakehashi ♡</p>
+      </div>
+
+      <div class="header-deco-right">
+        <span class="deco-emoji">🍎</span>
+        <span class="deco-emoji">🐾</span>
+        <span class="deco-mini-text">EST.<br>2024</span>
+      </div>
+
     </div>
   </div>
 
-  <!-- NAV -->
-  <nav class="nav-tabs">
-    <a href="../../index.html" class="tab-btn">Home</a>
-    <a href="index.html" class="tab-btn active">Guides</a>
-    <a href="../../diary/index.html" class="tab-btn">Diary</a>
-    <a href="../../gallery/index.html" class="tab-btn">Gallery</a>
-    <a href="../../about.html" class="tab-btn">About</a>
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-btn">🏠 Home</a>
+    <a href="index.html" class="nav-btn active">📖 Guides</a>
+    <a href="../../diary/index.html" class="nav-btn">📔 Diary</a>
+    <a href="../../gallery/index.html" class="nav-btn">📸 Gallery</a>
+    <a href="../../about.html" class="nav-btn">🌸 About</a>
   </nav>
 
-  <!-- LACE DIVIDER -->
-  <div class="lace-divider"><div class="lace-divider-inner"></div></div>
+  <!-- ═══ FRUIT DIVIDER ═══ -->
+  <!-- REPLACE INNER CONTENT with: <img src="../../assets/images/divider-fruit.png" style="height:32px;width:100%;object-fit:cover;"> -->
+  <div class="fruit-strip">
+    <span style="--d:0.9s;--dl:0s">🍓</span>
+    <span style="--d:1.1s;--dl:0.1s">⭐</span>
+    <span style="--d:0.8s;--dl:0.2s">🍎</span>
+    <span style="--d:1.3s;--dl:0.3s">🌸</span>
+    <span style="--d:0.9s;--dl:0.4s">🍒</span>
+    <span style="--d:1.1s;--dl:0.5s">⭐</span>
+    <span style="--d:1s;--dl:0.6s">🍋</span>
+    <span style="--d:0.8s;--dl:0.7s">🎀</span>
+    <span style="--d:1.2s;--dl:0.8s">🍓</span>
+    <span style="--d:1s;--dl:0.9s">⭐</span>
+    <span style="--d:0.9s;--dl:1s">🍎</span>
+    <span style="--d:1.1s;--dl:1.1s">🌸</span>
+    <span style="--d:0.8s;--dl:1.2s">🍒</span>
+    <span style="--d:1.3s;--dl:1.3s">⭐</span>
+    <span style="--d:1s;--dl:1.4s">🍋</span>
+    <span style="--d:0.9s;--dl:1.5s">🎀</span>
+  </div>
 
-  <!-- MAIN LAYOUT -->
-  <div class="main-layout">
+  <!-- ═══ MAIN WRAPPER ═══ -->
+  <div class="main-wrapper">
 
-    <!-- LEFT SIDEBAR -->
+    <!-- ══════════ LEFT SIDEBAR ══════════ -->
     <aside class="left-sidebar">
 
-      <div class="profile-block">
-        <div class="profile-header"><span class="profile-title">✿ about me ✿</span></div>
-        <div class="profile-content">
-          <div class="profile-pic-frame">
-            <img src="../../assets/images/profile.jpg" alt="Ayachi" class="profile-pic" onerror="this.style.background='linear-gradient(135deg,#f9c6d8,#b8d8ec)';this.style.display='block';this.style.width='100%';this.style.height='100%';">
+      <!-- Profile -->
+      <div class="s-card profile-card">
+        <div class="s-card-header pink">✿ ayachi ✿</div>
+        <div class="s-card-body" style="text-align:center;">
+          <div class="profile-pic-wrap">
+            <img src="../../assets/images/profile.jpg" alt="Ayachi"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#ffb8d0,#b8e8f8)';this.remove();">
           </div>
           <p class="profile-name">Ayachi 🌸</p>
-          <p class="profile-bio">16-year-old exchange student via Kakehashi Project. Living in Yokohama, writing everything down!</p>
-          <div class="profile-stats">
-            <div class="stat-item"><span class="stat-label">Location</span><span class="stat-value">Yokohama 🇯🇵</span></div>
-            <div class="stat-item"><span class="stat-label">School</span><span class="stat-value">High School</span></div>
-            <div class="stat-item"><span class="stat-label">Exchange</span><span class="stat-value">Japan 🇯🇵</span></div>
-            <div class="stat-item"><span class="stat-label">Status</span><span class="stat-value">Writing! ✦</span></div>
+          <p class="profile-bio">16 · exchange student<br>kakehashi × yokohama<br>writing it all down ♡</p>
+          <div style="margin-top:8px;">
+            <div class="stat-row"><span class="k">location</span><span class="v">Yokohama 🇯🇵</span></div>
+            <div class="stat-row"><span class="k">exchange</span><span class="v">Kakehashi</span></div>
+            <div class="stat-row"><span class="k">status</span><span class="v">writing! ✦</span></div>
           </div>
         </div>
       </div>
 
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Socials ☆</span></div>
-        <div class="widget-content">
-          <div class="social-links">
-            <a href="https://github.com/Ayachi911" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-github.png" alt="" class="social-icon" onerror="this.style.display='none'"><span>GitHub</span>
+      <!-- Visitor Counter -->
+      <div class="s-card">
+        <div class="s-card-header sky">visitors ♡</div>
+        <div class="s-card-body" style="text-align:center;">
+          <span class="visitor-num" id="visitor-count">······</span>
+        </div>
+      </div>
+
+      <!-- Socials -->
+      <div class="s-card">
+        <div class="s-card-header butter">socials ☆</div>
+        <div class="s-card-body">
+          <div class="social-list">
+            <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-github.png" alt="" onerror="this.style.display='none'">GitHub
             </a>
-            <a href="#" class="social-btn">
-              <img src="../../assets/images/icon-linkedin.png" alt="" class="social-icon" onerror="this.style.display='none'"><span>LinkedIn</span>
+            <a href="#" class="social-link">
+              <img src="../../assets/images/icon-linkedin.png" alt="" onerror="this.style.display='none'">LinkedIn
             </a>
-            <a href="https://pin.it/sQGY1KQgt" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-pinterest.png" alt="" class="social-icon" onerror="this.style.display='none'"><span>Pinterest</span>
+            <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-pinterest.png" alt="" onerror="this.style.display='none'">Pinterest
             </a>
-            <a href="https://instagram.com/brehen.yeeteager" class="social-btn" target="_blank" rel="noopener">
-              <img src="../../assets/images/icon-instagram.png" alt="" class="social-icon" onerror="this.style.display='none'"><span>Instagram</span>
+            <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-instagram.png" alt="" onerror="this.style.display='none'">Instagram
             </a>
           </div>
         </div>
       </div>
 
-      <div class="stamps-container">
-        <div class="stamps-header">Links x Puzzle ✿</div>
-        <div id="puzzle" class="puzzle-grid"></div>
-        <div class="puzzle-controls">
-          <button id="shuffleBtn">Shuffle ♡</button>
+      <!-- PUZZLE — z-index fixed -->
+      <div class="s-card puzzle-card">
+        <div class="s-card-header mint">links × puzzle ✿</div>
+        <div class="s-card-body" style="padding:6px;">
+          <div id="puzzle" class="puzzle-grid"></div>
+          <div class="puzzle-controls">
+            <button id="shuffleBtn">SHUFFLE ♡</button>
+          </div>
+          <div id="winMessage" class="win-message">YOU WIN! ✨</div>
         </div>
-        <div id="winMessage" class="win-message">You Win! ✨</div>
       </div>
 
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Best Friends ♡</span></div>
-        <div class="widget-content">
+      <!-- App Timeline -->
+      <div class="s-card">
+        <div class="s-card-header straw">app timeline</div>
+        <div class="s-card-body">
+          <div class="tl-item"><span class="tl-month">AUG-SEP</span><span class="tl-event">Apps Open</span></div>
+          <div class="tl-item"><span class="tl-month">OCT-NOV</span><span class="tl-event">Interviews</span></div>
+          <div class="tl-item"><span class="tl-month">DEC</span><span class="tl-event">Results</span></div>
+          <div class="tl-item"><span class="tl-month">JAN-MAR</span><span class="tl-event">Departure</span></div>
+        </div>
+      </div>
+
+      <!-- Current Mood -->
+      <div class="s-card">
+        <div class="s-card-header">current mood</div>
+        <div class="s-card-body">
+          <div class="mood-box">
+            <img src="../../assets/images/mood-happy.gif" alt="" class="mood-icon"
+              onerror="this.outerHTML='<div style=font-size:32px>✨</div>'">
+            <p class="mood-txt">excited! ✨</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Friends -->
+      <div class="s-card">
+        <div class="s-card-header pink">best friends ♡</div>
+        <div class="s-card-body">
           <div class="friends-list">
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0430.jpeg" alt="" class="friend-icon" onerror="this.style.background='#f9c6d8';this.style.border='none'">
-              <span class="friend-name">Pranav</span>
+              <img src="../../assets/images/IMG_0430.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#ffb8d0';this.removeAttribute('src');">
+              <span>Pranav</span>
             </div>
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0431.jpeg" alt="" class="friend-icon" onerror="this.style.background='#b8d8ec';this.style.border='none'">
-              <span class="friend-name">Aarush</span>
+              <img src="../../assets/images/IMG_0431.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#b8e8f8';this.removeAttribute('src');">
+              <span>Aarush</span>
             </div>
             <div class="friend-item">
-              <img src="../../assets/images/IMG_0432.jpeg" alt="" class="friend-icon" onerror="this.style.background='#d8caee';this.style.border='none'">
-              <span class="friend-name">Anish</span>
+              <img src="../../assets/images/IMG_0432.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#d8caee';this.removeAttribute('src');">
+              <span>Anish</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Web Buttons</span></div>
-        <div class="widget-content">
-          <div class="button-collection">
+      <!-- Pixel Badges -->
+      <div class="s-card">
+        <div class="s-card-header sky">pixel badges</div>
+        <div class="s-card-body">
+          <div class="badge-grid">
+            <img src="../../assets/images/badge1.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#ffb8d0,#b8e8f8)'">
+            <img src="../../assets/images/badge2.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#d8caee,#ffb8d0)'">
+            <img src="../../assets/images/badge3.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#b8e8f8,#d8caee)'">
+            <img src="../../assets/images/badge4.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#fff4a0,#ffb8d0)'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Buttons -->
+      <div class="s-card">
+        <div class="s-card-header butter">web buttons</div>
+        <div class="s-card-body">
+          <div class="btn-collection">
             <img src="../../assets/images/button1.gif" alt="" class="web-button">
             <img src="../../assets/images/button2.gif" alt="" class="web-button">
             <img src="../../assets/images/button3.gif" alt="" class="web-button">
@@ -1412,328 +1375,277 @@ body {
         </div>
       </div>
 
-    </aside>
-
-    <!-- CENTER CONTENT -->
-    <main class="center-content">
-
-      <div class="welcome-banner">
-        <img src="../../assets/images/divider-top.png" alt="" class="divider-img">
-        <h2 class="welcome-title">✿ Welcome to my Guide Collection! ✿</h2>
-        <p class="welcome-text">
-          Hi! I'm Ayachi, and I went to Japan at 16 through the Asia Kakehashi Project. These guides are everything I wish I knew before applying. Click any guide to start reading! ♡
-        </p>
-        <img src="../../assets/images/divider-bottom.png" alt="" class="divider-img">
-      </div>
-
-      <!-- STRIPE DIVIDER (bow wallpaper inspired) -->
-      <div class="stripe-divider">
-        <div class="stripe-band sb-pink-floral"></div>
-        <div class="stripe-band sb-lace"></div>
-        <div class="stripe-band sb-gingham"></div>
-        <div class="stripe-band sb-stripe"></div>
-        <div class="stripe-band sb-lavender"></div>
-        <div class="stripe-band sb-lace"></div>
-        <div class="stripe-band sb-gingham"></div>
-        <div class="stripe-band sb-stripe"></div>
-        <div class="stripe-band sb-pink-floral"></div>
-      </div>
-
-      <!-- FEATURED GUIDE -->
-      <div class="featured-guide-block">
-        <div class="section-header">
-          <img src="../../assets/images/star-icon.gif" alt="" class="section-icon">
-          <h3 class="section-title">★ Start Here ★</h3>
-          <img src="../../assets/images/star-icon.gif" alt="" class="section-icon">
-        </div>
-        <div class="guide-card featured">
-          <div class="featured-badge">FEATURED</div>
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="kakehashi-guide.html">Complete Guide to Asia Kakehashi Project</a></h4>
-          <div class="guide-meta">
-            <span class="meta-badge">9th–10th Graders</span>
-            <span class="meta-time">⏱ 12 min</span>
-          </div>
-          <p class="guide-description">Everything you need to know about applying to the Asia Kakehashi Project. Essay tips, interview prep, what actually happens during the program, and insider advice from someone who's been there.</p>
-          <div class="guide-tags">
-            <span class="tag">Application</span><span class="tag">Scholarship</span><span class="tag">Interview</span><span class="tag">Essay Tips</span>
-          </div>
-          <a href="kakehashi-guide.html" class="read-button">Read Guide →</a>
-        </div>
-      </div>
-
-      <!-- GLITTER DIVIDER -->
-      <div class="glitter-divider">
-        <span class="glitter-center-icon">🍓</span>
-      </div>
-
-      <!-- ALL GUIDES -->
-      <div class="all-guides-section">
-        <div class="section-header">
-          <img src="../../assets/images/book-icon.gif" alt="" class="section-icon">
-          <h3 class="section-title">All Guides</h3>
-          <img src="../../assets/images/book-icon.gif" alt="" class="section-icon">
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h4>
-          <div class="guide-meta"><span class="meta-badge sage">10th–12th Graders</span><span class="meta-time">⏱ 18 min</span></div>
-          <p class="guide-description">Real talk about preparing mentally, socially, and emotionally for high school exchange in Japan. Beyond packing lists — this is about culture shock, homesickness, and actually thriving.</p>
-          <div class="guide-tags"><span class="tag">Mental Prep</span><span class="tag">Culture Shock</span><span class="tag">Real Talk</span></div>
-          <a href="japan-exchange-survival-guide.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/star-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="packing-guide.html">What to Pack for a Year in Japan (Tested List)</a></h4>
-          <div class="guide-meta"><span class="meta-badge sage">All Exchange Students</span><span class="meta-time">⏱ 15 min</span></div>
-          <p class="guide-description">What to bring, what to skip, what to buy in Japan. Tested over a full year in Yokohama — includes packing checklist, gear recs, shoe sizing warnings, and the tech setup you actually need.</p>
-          <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Gear</span><span class="tag">Tech</span><span class="tag">Clothes</span></div>
-          <a href="packing-guide.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h4>
-          <div class="guide-meta"><span class="meta-badge lavender">Students + Parents</span><span class="meta-time">⏱ 12 min</span></div>
-          <p class="guide-description">Real numbers. What's covered, what isn't, monthly spend breakdown, travel insurance options, and the honest total your family needs to budget. No sugar-coating.</p>
-          <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span><span class="tag">Insurance</span><span class="tag">Parents</span></div>
-          <a href="budget-guide.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="retirement-dinner.html">What I Ate at a Japanese Retirement Celebration Dinner</a></h4>
-          <div class="guide-meta"><span class="meta-badge sage">Host Family Life</span><span class="meta-time">⏱ 10 min</span></div>
-          <p class="guide-description">My host ojii-chan retired at 70+. The whole family gathered. Here's everything on that table — plus what daily host family food actually looks like, bento culture, breakfast, and dinner etiquette.</p>
-          <div class="guide-tags"><span class="tag">Food</span><span class="tag">Host Family</span><span class="tag">Culture</span><span class="tag">Etiquette</span></div>
-          <a href="retirement-dinner.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Bento.html">What My Host Mom Packed in My Bento Every Day</a></h4>
-          <div class="guide-meta"><span class="meta-badge sage">Host Family Life</span><span class="meta-time">⏱ 10 min</span></div>
-          <p class="guide-description">What my host mom packed me every day. Everything in that bento box — plus what daily host family food actually looks like, bento culture, breakfast, and dinner etiquette.</p>
-          <div class="guide-tags"><span class="tag">Food</span><span class="tag">Host Family</span><span class="tag">Culture</span><span class="tag">Etiquette</span></div>
-          <a href="Bento.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/corner-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Train.html">How to Survive the Daily Commute to a Japanese High School</a></h4>
-          <div class="guide-meta"><span class="meta-badge sage">Daily Life</span><span class="meta-time">⏱ 8 min</span></div>
-          <p class="guide-description">Bus 111 from Kounandai, 11 minutes. Train to Yokohama, 23 minutes. Walk uphill, 15 minutes. The full commute — and the morning the bus driver saved me.</p>
-          <div class="guide-tags"><span class="tag">Transport</span><span class="tag">Commute</span><span class="tag">Daily Life</span></div>
-          <a href="Train.html" class="read-button">Read Guide →</a>
-        </div>
-
-        <div class="guide-card">
-          <img src="../../assets/images/flower-deco.png" alt="" class="corner-decoration">
-          <h4 class="guide-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
-          <div class="guide-meta"><span class="meta-badge">Events</span><span class="meta-time">⏱ 10 min</span></div>
-          <p class="guide-description">A strawberry festival in Yokohama. Everything that was on that table — and what Japanese festival food culture actually looks like from the inside.</p>
-          <div class="guide-tags"><span class="tag">Food</span><span class="tag">Festival</span><span class="tag">Yokohama</span></div>
-          <a href="Strobby-festival.html" class="read-button">Read Guide →</a>
-        </div>
-
-      </div>
-
-      <!-- EMAIL CAPTURE -->
-      <div class="email-capture-box">
-        <h3>📥 Get the Free Japan Application Starter Kit</h3>
-        <p>Application timeline, document checklist, essay frameworks — one free PDF. Used by students applying to Kakehashi and similar programs.</p>
-        <form class="email-form" onsubmit="handleSignup(event)">
-          <input type="text" class="email-input" placeholder="First name" id="idx-name" required>
-          <input type="email" class="email-input" placeholder="your@email.com" id="idx-email" required>
-          <button type="submit" class="email-submit">Get It Free ♡</button>
-        </form>
-        <p class="email-privacy">No spam. One email max/week. Unsubscribe anytime.</p>
-      </div>
-
-    </main>
-
-    <!-- RIGHT SIDEBAR -->
-    <aside class="right-sidebar">
-
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Visitors ♡</span></div>
-        <div class="widget-content" style="text-align:center;">
-          <p id="visitor-count">······</p>
-        </div>
-      </div>
-
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">App Timeline</span></div>
-        <div class="widget-content">
-          <div class="timeline">
-            <div class="timeline-item"><span class="timeline-month">Aug–Sep</span><span class="timeline-event">Apps Open</span></div>
-            <div class="timeline-item"><span class="timeline-month">Oct–Nov</span><span class="timeline-event">Interviews</span></div>
-            <div class="timeline-item"><span class="timeline-month">December</span><span class="timeline-event">Results</span></div>
-            <div class="timeline-item"><span class="timeline-month">Jan–Mar</span><span class="timeline-event">Departure</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Current Mood</span></div>
-        <div class="widget-content">
-          <div class="mood-display">
-            <img src="../../assets/images/mood-happy.gif" alt="" class="mood-icon" onerror="this.style.fontSize='28px';this.alt='✨';this.onerror=null;">
-            <p class="mood-text">excited! ✨</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Pixel Badges</span></div>
-        <div class="widget-content">
-          <div class="badge-grid">
-            <img src="../../assets/images/badge1.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#f9c6d8,#b8d8ec)'">
-            <img src="../../assets/images/badge2.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#d8caee,#f9c6d8)'">
-            <img src="../../assets/images/badge3.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#b8d8ec,#d8caee)'">
-            <img src="../../assets/images/badge4.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#f9c6d8,#d8caee)'">
-          </div>
-        </div>
-      </div>
-
-      <div class="widget-box">
-        <div class="widget-header"><span class="widget-title">Quick Links</span></div>
-        <div class="widget-content">
+      <!-- Quick Links -->
+      <div class="s-card">
+        <div class="s-card-header mint">quick links</div>
+        <div class="s-card-body">
           <ul class="quick-links">
-            <li><a href="#featured">Start Here</a></li>
-            <li><a href="kakehashi-guide.html">Kakehashi Guide</a></li>
-            <li><a href="packing-guide.html">Packing List</a></li>
-            <li><a href="budget-guide.html">Budget Guide</a></li>
+            <li><a href="#featured"><span class="ql-dot"></span>Start Here</a></li>
+            <li><a href="kakehashi-guide.html"><span class="ql-dot" style="background:var(--straw)"></span>Kakehashi Guide</a></li>
+            <li><a href="packing-guide.html"><span class="ql-dot" style="background:var(--sky-dk)"></span>Packing List</a></li>
+            <li><a href="budget-guide.html"><span class="ql-dot" style="background:var(--orange)"></span>Budget Guide</a></li>
           </ul>
         </div>
       </div>
 
     </aside>
-  </div>
 
-  <!-- FOOTER LACE DIVIDER -->
-  <div class="lace-divider lace-divider-lg"><div class="lace-divider-inner"></div></div>
+    <!-- ══════════ CENTER COLUMN ══════════ -->
+    <div class="center-col">
 
-  <!-- FOOTER -->
+      <!-- WELCOME CARD -->
+      <div class="welcome-card">
+        <img src="../../assets/images/divider-top.png" alt="" style="max-width:200px;opacity:.3;display:block;margin:0 auto 8px;">
+        <h2 class="welcome-title">✿ welcome to my guide collection!</h2>
+        <p class="welcome-text">
+          Hi! I'm Ayachi, and I went to Japan at 16 through the Asia Kakehashi Project 🌸 These guides are everything I wish I knew before applying. Packing, food, commutes, school life, budget — click any card to start reading! ♡
+        </p>
+        <span class="welcome-sticker">🍓</span>
+      </div>
+
+      <!-- ── FEATURED GUIDE ── -->
+      <div id="featured">
+        <div class="section-head">
+          <span class="section-icon">⭐</span>
+          <span class="section-label">★ start here ★</span>
+          <span class="section-icon">⭐</span>
+        </div>
+
+        <div class="guide-card-featured">
+          <div class="featured-ribbon">★ FEATURED GUIDE ★</div>
+          <!-- washi tape strip via pseudo but also floating emoji -->
+          <span style="position:absolute;top:-14px;right:-10px;font-size:30px;transform:rotate(20deg);filter:drop-shadow(2px 2px 0 rgba(0,0,0,.2))">🏮</span>
+
+          <h3 class="guide-title-lg">
+            <a href="kakehashi-guide.html">Complete Guide to the Asia Kakehashi Project</a>
+          </h3>
+          <div class="guide-meta">
+            <span class="meta-pill">9th–10th Graders</span>
+            <span class="meta-time">⏱ 12 MIN READ</span>
+          </div>
+          <p class="guide-desc">
+            Everything you need to know about applying to the Asia Kakehashi Project. Essay tips, interview prep, what actually happens during the program, and insider advice from someone who's been there ♡
+          </p>
+          <div class="guide-tags">
+            <span class="tag">Application</span>
+            <span class="tag">Scholarship</span>
+            <span class="tag">Interview</span>
+            <span class="tag">Essay Tips</span>
+          </div>
+          <a href="kakehashi-guide.html" class="read-btn">READ GUIDE →</a>
+        </div>
+      </div>
+
+      <div class="glitter-div">
+        <span class="gd-icon">🍒</span>
+      </div>
+
+      <!-- ── ALL GUIDES — COLLAGE GRID ── -->
+      <div>
+        <div class="section-head">
+          <span class="section-icon">📖</span>
+          <span class="section-label green">all guides</span>
+          <span class="section-icon">📖</span>
+        </div>
+
+        <div class="collage-grid">
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill sage">10th–12th</span>
+              <span class="meta-time">⏱ 18 MIN</span>
+            </div>
+            <p class="guide-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
+            <div class="guide-tags"><span class="tag">Mental Prep</span><span class="tag">Culture Shock</span></div>
+            <a href="japan-exchange-survival-guide.html" class="read-btn green">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill">All Students</span>
+              <span class="meta-time">⏱ 15 MIN</span>
+            </div>
+            <p class="guide-desc">Tested over a full year in Yokohama. What to bring, skip, and buy in Japan.</p>
+            <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Gear</span><span class="tag">Tech</span></div>
+            <a href="packing-guide.html" class="read-btn blue">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill lemon">Students + Parents</span>
+              <span class="meta-time">⏱ 12 MIN</span>
+            </div>
+            <p class="guide-desc">Real numbers. Monthly spend, what's covered, what isn't. No sugar-coating.</p>
+            <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
+            <a href="budget-guide.html" class="read-btn">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="retirement-dinner.html">What I Ate at a Japanese Retirement Dinner</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Host Family Life</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">My host ojii-chan retired at 70+. The whole family gathered. Everything on that table.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Culture</span></div>
+            <a href="retirement-dinner.html" class="read-btn green">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Host Family Life</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">Every item in that lunchbox. Bento culture, breakfast, dinner etiquette.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span></div>
+            <a href="Bento.html" class="read-btn">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <h4 class="guide-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill sage">Daily Life</span>
+              <span class="meta-time">⏱ 8 MIN</span>
+            </div>
+            <p class="guide-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
+            <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
+            <a href="Train.html" class="read-btn blue">READ →</a>
+          </div>
+
+          <div class="guide-card full-w">
+            <div class="card-bar" style="background:var(--pink-dk)"></div>
+            <h4 class="guide-title" style="font-size:15px;"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri 🍓</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Events</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">A strawberry festival in Yokohama. Everything on that table — and what Japanese festival food culture actually looks like from the inside. Sticky, sweet, and very pink.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Festival</span><span class="tag">Yokohama</span><span class="tag">Seasonal</span></div>
+            <a href="Strobby-festival.html" class="read-btn">READ →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="glitter-div"><span class="gd-icon">🌸</span></div>
+
+      <!-- EMAIL CAPTURE -->
+      <div class="email-card">
+        <h3>📥 Free Japan Application Starter Kit</h3>
+        <p>Application timeline, document checklist, essay frameworks — one free PDF. Used by students applying to Kakehashi and similar programs.</p>
+        <form class="email-form" onsubmit="handleSignup(event)">
+          <input type="text" class="email-input" placeholder="first name" id="idx-name" required>
+          <input type="email" class="email-input" placeholder="your@email.com" id="idx-email" required>
+          <button type="submit" class="email-submit">GET IT FREE ♡</button>
+        </form>
+        <p class="email-privacy">no spam · max 1 email/week · unsubscribe anytime</p>
+      </div>
+
+    </div><!-- end center-col -->
+  </div><!-- end main-wrapper -->
+
+  <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
-    <img src="../../assets/images/footer-divider.png" alt="" class="footer-divider">
-    <p class="footer-text">Ayachi's Japan Exchange Guides ©️ 2026</p>
+    <img src="../../assets/images/footer-divider.png" alt="" style="max-width:180px;opacity:.3;display:block;margin:0 auto 8px;">
+    <p class="footer-txt">Ayachi's Japan Exchange Guides ©️ 2026</p>
     <p class="footer-note">Made with ♡ for future exchange students</p>
-    <p class="footer-credits">Layout inspired by 2000s anime fan sites · Ciao magazine forever 🎀</p>
-    <img src="../../assets/images/footer-divider.png" alt="" class="footer-divider">
+    <p class="footer-credit">LAYOUT INSPIRED BY 2000s ANIME FAN SITES &amp; CIAO MAGAZINE ★ HEISEI RETRO FOREVER</p>
   </footer>
 
-</div>
-</div>
+</div><!-- end page-wrapper -->
 
 <script>
-// ── SPARKLE FIELD ──
-(function() {
-  const field = document.getElementById('sparkleField');
-  const symbols = ['✦', '✿', '♡', '🌸', '✨', '⋆', '˚'];
-  const colors = ['#f0a0bf','#b8d8ec','#d8caee','#f9c6d8','#8cbedd','#e8193c','#bba8e0'];
-  for (let i = 0; i < 30; i++) {
-    const s = document.createElement('div');
-    s.className = 'sparkle';
-    s.style.cssText = `
+/* ── BG STICKERS ── */
+(function(){
+  const items = ['🍓','⭐','🍎','🌸','🍒','🎀','✦','🍋','🐾','♡','✿','🌟','🍑','🍡'];
+  const field = document.getElementById('bgStickers');
+  if (!field) return;
+  for (let i = 0; i < 24; i++) {
+    const el = document.createElement('span');
+    el.className = 'bg-sticker';
+    el.textContent = items[Math.floor(Math.random() * items.length)];
+    el.style.cssText = `
       left: ${Math.random() * 100}%;
       top: ${Math.random() * 100}%;
-      --dur: ${3 + Math.random() * 6}s;
-      --delay: ${Math.random() * 8}s;
-      --size: ${10 + Math.random() * 14}px;
-      --col: ${colors[Math.floor(Math.random() * colors.length)]};
+      --fs: ${14 + Math.random() * 20}px;
+      --dur: ${6 + Math.random() * 8}s;
+      --dly: ${Math.random() * 6}s;
+      --rot: ${(Math.random() - 0.5) * 40}deg;
     `;
-    s.querySelector ? null : null;
-    // Use text node instead
-    s.style.setProperty('--sym', `'${symbols[Math.floor(Math.random() * symbols.length)]}'`);
-    field.appendChild(s);
+    field.appendChild(el);
   }
-  // Override sparkle::before content via JS
-  const style = document.createElement('style');
-  style.textContent = `
-    .sparkle::before { content: var(--sym, '✦'); }
-  `;
-  document.head.appendChild(style);
 })();
 
-// ── EMAIL FORM ──
+/* ── EMAIL FORM ── */
 function handleSignup(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.email-submit');
-  btn.textContent = 'Sending ♡...';
+  btn.textContent = 'SENDING ♡...';
   setTimeout(() => {
-    btn.textContent = 'Check your inbox! ✨';
-    btn.style.background = 'linear-gradient(180deg, #8cbedd, #6aa4c8)';
+    btn.textContent = 'CHECK YOUR INBOX! ✨';
+    btn.style.background = 'var(--apple)';
+    btn.style.color = 'var(--ink)';
   }, 800);
 }
 
-// ── PUZZLE ──
+/* ── PUZZLE (z-index fixed via CSS already) ── */
 document.addEventListener('DOMContentLoaded', () => {
   const puzzle = document.getElementById("puzzle");
   const shuffleBtn = document.getElementById("shuffleBtn");
   const winMessage = document.getElementById("winMessage");
-  if (puzzle && shuffleBtn) {
-    const size = 3, tileSize = 73;
-    const imageSrc = "../../assets/images/stamp-main.jpg";
-    let tiles = [], emptyIndex = 8;
-    function initPuzzle() {
-      puzzle.innerHTML = ""; tiles = [];
-      for (let i = 0; i < 9; i++) {
-        const tile = document.createElement("div");
-        tile.classList.add("tile"); tile.dataset.index = i;
-        if (i === 8) { tile.classList.add("empty"); emptyIndex = i; }
-        else {
-          const row = Math.floor(i / size), col = i % size;
-          tile.style.backgroundImage = `url(${imageSrc})`;
-          tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
-          tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
-        }
-        tile.addEventListener("click", () => moveTile(i));
-        puzzle.appendChild(tile); tiles.push(tile);
+  if (!puzzle || !shuffleBtn) return;
+
+  const size = 3, tileSize = 60;
+  const imageSrc = "../../assets/images/stamp-main.jpg";
+  let tiles = [], emptyIndex = 8;
+
+  function initPuzzle() {
+    puzzle.innerHTML = ""; tiles = [];
+    for (let i = 0; i < 9; i++) {
+      const tile = document.createElement("div");
+      tile.classList.add("tile");
+      if (i === 8) { tile.classList.add("empty"); emptyIndex = i; }
+      else {
+        const row = Math.floor(i / size), col = i % size;
+        tile.style.backgroundImage = `url(${imageSrc})`;
+        tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
+        tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
       }
+      tile.addEventListener("click", () => moveTile(i));
+      puzzle.appendChild(tile); tiles.push(tile);
     }
-    function isAdjacent(i1, i2) {
-      const r1=Math.floor(i1/size),c1=i1%size,r2=Math.floor(i2/size),c2=i2%size;
-      return (Math.abs(r1-r2)+Math.abs(c1-c2))===1;
-    }
-    function swap(i1, i2) {
-      const tempBg=tiles[i1].style.backgroundPosition, tempImg=tiles[i1].style.backgroundImage;
-      tiles[i1].style.backgroundPosition=tiles[i2].style.backgroundPosition;
-      tiles[i1].style.backgroundImage=tiles[i2].style.backgroundImage;
-      tiles[i2].style.backgroundPosition=tempBg; tiles[i2].style.backgroundImage=tempImg;
-      tiles[i1].classList.toggle("empty"); tiles[i2].classList.toggle("empty");
-    }
-    function moveTile(index) { if(isAdjacent(index,emptyIndex)){swap(index,emptyIndex);emptyIndex=index;checkWin();} }
-    function shufflePuzzle() {
-      for(let i=0;i<200;i++){
-        const n=[]; for(let j=0;j<9;j++){if(isAdjacent(j,emptyIndex))n.push(j);}
-        const r=n[Math.floor(Math.random()*n.length)]; swap(r,emptyIndex); emptyIndex=r;
-      }
-      if(winMessage) winMessage.style.display="none";
-    }
-    function checkWin() {
-      let ok=true;
-      for(let i=0;i<8;i++){const row=Math.floor(i/size),col=i%size;if(tiles[i].style.backgroundPosition!==`-${col*tileSize}px -${row*tileSize}px`){ok=false;break;}}
-      if(ok&&winMessage) winMessage.style.display="block";
-    }
-    shuffleBtn.addEventListener("click", shufflePuzzle);
-    initPuzzle(); shufflePuzzle();
   }
+  function isAdjacent(i1,i2){const r1=Math.floor(i1/size),c1=i1%size,r2=Math.floor(i2/size),c2=i2%size;return(Math.abs(r1-r2)+Math.abs(c1-c2))===1;}
+  function swap(i1,i2){const tb=tiles[i1].style.backgroundPosition,ti=tiles[i1].style.backgroundImage;tiles[i1].style.backgroundPosition=tiles[i2].style.backgroundPosition;tiles[i1].style.backgroundImage=tiles[i2].style.backgroundImage;tiles[i2].style.backgroundPosition=tb;tiles[i2].style.backgroundImage=ti;tiles[i1].classList.toggle("empty");tiles[i2].classList.toggle("empty");}
+  function moveTile(index){if(isAdjacent(index,emptyIndex)){swap(index,emptyIndex);emptyIndex=index;checkWin();}}
+  function shufflePuzzle(){for(let i=0;i<200;i++){const n=[];for(let j=0;j<9;j++){if(isAdjacent(j,emptyIndex))n.push(j);}const r=n[Math.floor(Math.random()*n.length)];swap(r,emptyIndex);emptyIndex=r;}if(winMessage)winMessage.style.display="none";}
+  function checkWin(){let ok=true;for(let i=0;i<8;i++){const row=Math.floor(i/size),col=i%size;if(tiles[i].style.backgroundPosition!==`-${col*tileSize}px -${row*tileSize}px`){ok=false;break;}}if(ok&&winMessage)winMessage.style.display="block";}
+  shuffleBtn.addEventListener("click", shufflePuzzle);
+  initPuzzle(); shufflePuzzle();
 });
 </script>
 
 <script>
+/* ── VISITOR COUNTER ── */
 (function(){
-  var KEY="ayachi-samyal-shrine-v1", SESSION_KEY="ayachi_counted";
+  var KEY="ayachi-samyal-shrine-v1",SESSION_KEY="ayachi_counted";
   var BASE="https://countapi.mileshilliard.com/api/v1";
   var el=document.getElementById("visitor-count");
   function display(n){if(el)el.textContent=String(n).padStart(6,"0");}
   if(sessionStorage.getItem(SESSION_KEY)){
-    fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{if(el)el.textContent="······";});
-  } else {
-    fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{if(el)el.textContent="······";});
+    fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{if(el)el.textContent="000000";});
+  }else{
+    fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{if(el)el.textContent="000000";});
   }
 })();
 </script>
