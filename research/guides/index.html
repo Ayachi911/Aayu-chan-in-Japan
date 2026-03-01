@@ -128,9 +128,9 @@ body {
 .page-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 1080px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 8px 40px;
+  padding: 0 20px 40px;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -310,8 +310,8 @@ body {
 ══════════════════════════════════════════════════════════════ */
 .main-wrapper {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 12px;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
   align-items: start;
 }
 
@@ -603,7 +603,7 @@ body {
   font-size: 12.5px;
   line-height: 1.8;
   color: var(--ink-soft);
-  max-width: 520px;
+  max-width: 100%;
 }
 .welcome-sticker {
   position: absolute;
@@ -706,7 +706,7 @@ body {
 /* ── COLLAGE GRID (all guides) ── */
 .collage-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   position: relative;
 }
@@ -1161,6 +1161,9 @@ body {
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE — MOBILE
 ══════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .collage-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 760px) {
   .main-wrapper {
     grid-template-columns: 1fr;
@@ -1676,5 +1679,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
