@@ -169,6 +169,7 @@ body {
   position: relative;
   margin: 12px 0 16px;
   padding: 0;
+  min-height: 240px;
   background-image: url('../../assets/images/banner-main.jpg'); /* ← YOUR BANNER SCAN */
   background-color: var(--cream); /* fallback */
   background-size: cover;
@@ -266,17 +267,6 @@ body {
   margin-top: 6px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-}
-/* floating mini stickers on header */
-.header-sticker {
-  position: absolute;
-  pointer-events: none;
-  animation: wiggle 3s ease-in-out infinite;
-  z-index: 5;
-}
-@keyframes wiggle {
-  0%,100% { transform: rotate(var(--wr,-8deg)) scale(1); }
-  50% { transform: rotate(calc(var(--wr,-8deg) + 12deg)) scale(1.08); }
 }
 
 
@@ -1686,3 +1676,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
