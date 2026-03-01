@@ -123,27 +123,6 @@ body {
   background-repeat: repeat;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   FLOATING STICKER ELEMENTS (background layer)
-══════════════════════════════════════════════════════════════ */
-.bg-stickers {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.bg-sticker {
-  position: absolute;
-  font-size: var(--fs, 22px);
-  opacity: 1;
-  animation: floatBg var(--dur, 8s) ease-in-out infinite var(--dly, 0s);
-  user-select: none;
-}
-@keyframes floatBg {
-  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-  50% { transform: translateY(-18px) rotate(calc(var(--rot, 0deg) + 8deg)); }
-}
 
 /* ══════════════════════════════════════════════════════════════
    PAGE WRAPPER — scrapbook "page" on top of gingham bg
@@ -1247,9 +1226,6 @@ body {
 </head>
 <body>
 
-<!-- ═══ BG FLOATING STICKERS ═══ -->
-<div class="bg-stickers" aria-hidden="true" id="bgStickers"></div>
-
 <!-- ═══ STICKY TICKER ═══ -->
 <div class="ticker-wrap">
   <div class="ticker-content">
@@ -1657,42 +1633,6 @@ body {
 /* ── BG STICKERS ── */
 (function(){
   /*
-  ══════════════════════════════════════════════════════════════
-  BACKGROUND FLOATING STICKERS
-  To use your own PNG stickers instead of emoji, replace the
-  'items' array below with filenames like:
-    const items = [
-      '../../assets/images/sticker-strawberry.png',
-      '../../assets/images/sticker-star.png',
-      '../../assets/images/sticker-cherry.png',
-      ...
-    ];
-  And change el.textContent to:
-    const img = document.createElement('img');
-    img.src = items[Math.floor(Math.random() * items.length)];
-    img.style.cssText = 'width:var(--fs);height:var(--fs);object-fit:contain;';
-    el.appendChild(img);
-  (remove the el.textContent line below when switching)
-  ══════════════════════════════════════════════════════════════
-  */
-  const items = ['🍓','⭐','🍎','🌸','🍒','🎀','✦','🍋','🐾','♡','✿','🌟','🍑','🍡'];
-  const field = document.getElementById('bgStickers');
-  if (!field) return;
-  for (let i = 0; i < 24; i++) {
-    const el = document.createElement('span');
-    el.className = 'bg-sticker';
-    el.textContent = items[Math.floor(Math.random() * items.length)];
-    el.style.cssText = `
-      left: ${Math.random() * 100}%;
-      top: ${Math.random() * 100}%;
-      --fs: ${14 + Math.random() * 20}px;
-      --dur: ${6 + Math.random() * 8}s;
-      --dly: ${Math.random() * 6}s;
-      --rot: ${(Math.random() - 0.5) * 40}deg;
-    `;
-    field.appendChild(el);
-  }
-})();
 
 /* ── EMAIL FORM ── */
 function handleSignup(e) {
@@ -1760,6 +1700,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
