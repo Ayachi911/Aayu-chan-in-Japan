@@ -56,7 +56,7 @@
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Yuji+Boku&family=Press+Start+2P&family=Shrikhand&family=Righteous&family=Fredoka+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* ══════════════════════════════════════════════════════════════
@@ -83,11 +83,11 @@
   --ink:       #1a1a1a;
   --ink-soft:  #555;
   
-  --font-main:  'M PLUS Rounded 1c', sans-serif;
-  --font-title: 'Fredoka One', cursive;
+  --font-main:  'Raleway', sans-serif;
+  --font-title: 'Cormorant Garamond', serif;
   --font-pixel: 'Press Start 2P', monospace;
-  --font-serif: 'Shrikhand', cursive;
-  --font-right: 'Righteous', cursive;
+  --font-serif: 'DM Serif Display', serif;
+  --font-right: 'Libre Baskerville', serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -233,34 +233,35 @@ body {
   width: 100%;
 }
 
-/* nav inside the banner — fully transparent, no extra borders */
+/* nav lives BELOW the banner now */
 .nav-bar {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   flex-wrap: wrap;
-  padding: 8px 8px 12px;
+  padding: 8px 8px 6px;
   background: transparent;
   border: none;
   margin-bottom: 0;
+  margin-top: 8px;
 }
 .site-title {
   font-family: var(--font-serif);
   font-size: clamp(26px, 5vw, 46px);
   color: var(--straw);
   line-height: 1.05;
-  /* heisei retro: black stroke outline */
-  -webkit-text-stroke: 2px var(--ink);
-  text-stroke: 2px var(--ink);
+  -webkit-text-stroke: 1.5px var(--ink);
+  text-stroke: 1.5px var(--ink);
   text-shadow:
-    3px 3px 0 var(--ink),
+    2px 2px 0 var(--ink),
     -1px -1px 0 var(--ink);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
+  font-style: italic;
 }
 .site-subtitle {
   font-family: var(--font-main);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-soft);
   margin-top: 6px;
   letter-spacing: 0.15em;
@@ -279,30 +280,31 @@ body {
 }
 
 
-/* ── NAV BUTTONS ── */
+/* ── NAV BUTTONS — flat thin rectangles, barely-there curve ── */
 .nav-btn {
   display: inline-block;
-  padding: 5px 14px 6px;
-  font-family: var(--font-title);
-  font-size: 13px;
+  padding: 5px 20px 6px;
+  font-family: var(--font-main);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 20px;
+  border-radius: 3px;
   transition: all 0.12s;
-  box-shadow: 2px 2px 0 var(--ink);
   white-space: nowrap;
 }
 .nav-btn:hover {
   background: var(--butter);
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 var(--ink);
+  transform: translateY(-1px);
 }
 .nav-btn.active {
   background: var(--straw);
   color: var(--white);
-  box-shadow: 2px 2px 0 var(--ink);
+  border-color: var(--ink);
 }
 
 /* ══ FRUIT DIVIDER STRIP ══
@@ -789,7 +791,7 @@ body {
 /* top sticker img — floats above the card top edge */
 .card-top-sticker {
   position: absolute;
-  top: -18px;
+  top: -22px;
   left: 12px;
   width: auto;
   height: 44px;
@@ -802,6 +804,12 @@ body {
 .card-top-sticker.right {
   left: auto;
   right: 12px;
+}
+/* eki sign is wide — give it extra lift so it clears the card body */
+.card-top-sticker.right.eki-sticker {
+  top: -28px;
+  height: 36px;
+  right: 8px;
 }
 
 /* ── RAMEN corner sticker: tinted overlay on bento card ── */
@@ -1225,19 +1233,18 @@ body {
       <div class="header-center">
         <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
         <p class="site-subtitle">♡ guides for real exchange students ♡ yokohama × kakehashi ♡</p>
-
-        <!-- nav lives inside the banner now -->
-        <nav class="nav-bar">
-          <a href="../../index.html" class="nav-btn">🏠 Home</a>
-          <a href="index.html" class="nav-btn active">📖 Guides</a>
-          <a href="../../diary/index.html" class="nav-btn">📔 Diary</a>
-          <a href="../../gallery/index.html" class="nav-btn">📸 Gallery</a>
-          <a href="../../about.html" class="nav-btn">🌸 About</a>
-        </nav>
       </div>
 
     </div>
   </div>
+
+  <!-- ═══ NAV BAR — below the banner ═══ -->
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-btn">Home</a>
+    <a href="index.html" class="nav-btn active">Guides</a>
+    <a href="../../gallery/index.html" class="nav-btn">Gallery</a>
+    <a href="../../about.html" class="nav-btn">About</a>
+  </nav>
 
   <!-- ═══ FRUIT DIVIDER ═══
        ↓↓ SWAP FILENAME HERE — any PNG/JPG/GIF works ↓↓ -->
@@ -1551,7 +1558,7 @@ body {
           <div class="guide-card">
             <div class="card-bar"></div>
             <!-- top sticker -->
-            <img class="card-top-sticker right" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
+            <img class="card-top-sticker right eki-sticker" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
             <!-- TOKYO STATION corner sticker (special!) -->
             <img class="card-sticker-stanpu" src="../../assets/images/stanpu.png" alt="">
             <h4 class="guide-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
@@ -1679,17 +1686,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
