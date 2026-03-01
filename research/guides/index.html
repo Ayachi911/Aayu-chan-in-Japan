@@ -192,32 +192,30 @@ body {
   position: relative;
   margin: 12px 0 16px;
   padding: 0;
-}
-
-/* ══ HEADER TOP STRIP — washi tape image ══
-   Upload a washi tape strip PNG/JPG (any width, ~16–20px tall recommended).
-   It will tile horizontally across the full width.
-   ↓↓ SWAP FILENAME HERE ↓↓ */
-.candy-bar {
-  height: 20px;            /* adjust to match your image height */
-  background-image: url('../../assets/images/washi-header.png'); /* ← YOUR FILE */
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-}
-
-/* ══ MAIN HEADER BAND — banner scan image ══
-   Single full-width box. Banner image covers title, subtitle AND nav.
-   ↓↓ SWAP FILENAME for banner background HERE ↓↓ */
-.header-band {
-  background: var(--cream);                            /* fallback if no image */
   background-image: url('../../assets/images/banner-scan.png'); /* ← YOUR BANNER SCAN */
+  background-color: var(--cream); /* fallback */
   background-size: cover;
   background-position: center top;
   border: 2.5px solid var(--ink);
-  border-top: none;
-  border-bottom: none; /* nav bar now handles the bottom border */
+  border-radius: 4px;
+  overflow: hidden; /* clips banner image cleanly to border */
+}
+
+/* candy-bar: now a thin washi strip INSIDE the banner at the very top */
+.candy-bar {
+  height: 18px;
+  background-image: url('../../assets/images/washi-header.png'); /* ← YOUR WASHI FILE */
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-color: var(--straw); /* fallback colour if no washi image */
+  border-bottom: 2px solid var(--ink);
+  width: 100%;
+}
+
+/* header-band: transparent now — site-header holds the image */
+.header-band {
+  background: transparent;
+  border: none;
   position: relative;
   overflow: visible;
   width: 100%;
@@ -269,19 +267,16 @@ body {
   width: 100%;
 }
 
-/* nav inside the banner — transparent bg, bottom border closes the band */
+/* nav inside the banner — fully transparent, no extra borders */
 .nav-bar {
   display: flex;
   justify-content: center;
   gap: 4px;
   flex-wrap: wrap;
-  padding: 8px 8px 10px;
+  padding: 8px 8px 12px;
   background: transparent;
   border: none;
-  border-top: none;
   margin-bottom: 0;
-  /* bottom border of the whole header block */
-  box-shadow: 0 2.5px 0 0 var(--ink);
 }
 .site-title {
   font-family: var(--font-serif);
