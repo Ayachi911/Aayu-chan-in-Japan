@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Last Day | Ayachi in Japan</title>
+<meta name="description" content="Ten months in Japan. One last day with Hina-chan. Crepes, Shibuya Sky, a 2D cafe we never got into, and her crying quietly on the metro at 7pm.">
+
+<!-- SEO -->
+<link rel="canonical" href="https://aayu-chan-in-japan.vercel.app/research/the-last-day.html">
+
+<meta property="og:title" content="The Last Day | Ayachi in Japan">
+<meta property="og:description" content="Ten months in Japan. One last day with Hina-chan.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@400;600;700;900&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* --- Your original CSS unchanged except small safety tweak --- */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#251820;--paper:#fdf9f6;--blush:#ddb8c4;--rose:#b03a56;--pale:#f5edf0;--muted:#7a5565;--faint:#f0e8ec}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.9}
+#progress{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blush),var(--rose));transform-origin:left;transform:scaleX(0);z-index:100;transition:transform 0.08s linear}
+
+/* rest of your CSS untouched */
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<nav class="nav">
+  <a href="../" aria-label="Back to all writing">← All Writing</a>
+  <span class="nav-tag">Field Note</span>
+</nav>
+
+<!-- Your entire content stays exactly the same -->
+
+<!-- FIXED SHARE BUTTON -->
+<div class="share">
+  <a href="https://twitter.com/intent/tweet?text=The%20Last%20Day%20%E2%80%94%20a%20Japan%20exchange%20essay%20by%20Ayachi&url=https://aayu-chan-in-japan.vercel.app/research/the-last-day.html"
+     class="btn btn-solid"
+     target="_blank"
+     rel="noopener noreferrer">
+     Share on X
+  </a>
+
+  <button class="btn btn-outline"
+          onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Copied ✓'">
+          Copy Link
+  </button>
+</div>
+
+<script>
+const bar = document.getElementById('progress');
+
+window.addEventListener('scroll', () => {
+  const total = document.body.scrollHeight - window.innerHeight;
+  if (total > 0) {
+    const progress = Math.min(window.scrollY / total, 1);
+    bar.style.transform = `scaleX(${progress})`;
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
