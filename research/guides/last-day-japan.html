@@ -3,71 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Last Day | Ayachi in Japan</title>
 <meta name="description" content="Ten months in Japan. One last day with Hina-chan. Crepes, Shibuya Sky, a 2D cafe we never got into, and her crying quietly on the metro at 7pm.">
-
-<!-- SEO -->
-<link rel="canonical" href="https://aayu-chan-in-japan.vercel.app/research/the-last-day.html">
-
-<meta property="og:title" content="The Last Day | Ayachi in Japan">
-<meta property="og:description" content="Ten months in Japan. One last day with Hina-chan.">
-<meta property="og:type" content="article">
-<meta property="og:image" content="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg">
-
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@400;600;700;900&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-/* --- Your original CSS unchanged except small safety tweak --- */
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#251820;--paper:#fdf9f6;--blush:#ddb8c4;--rose:#b03a56;--pale:#f5edf0;--muted:#7a5565;--faint:#f0e8ec}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.9}
 #progress{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blush),var(--rose));transform-origin:left;transform:scaleX(0);z-index:100;transition:transform 0.08s linear}
-
-/* rest of your CSS untouched */
+.nav{position:sticky;top:0;z-index:50;background:rgba(253,249,246,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--blush);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav a{font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;color:var(--muted);text-decoration:none;letter-spacing:.1em;text-transform:uppercase}
+.nav a:hover{color:var(--rose)}
+.nav-tag{font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;color:var(--rose);background:var(--faint);border:1px solid var(--blush);padding:3px 12px;letter-spacing:.12em;text-transform:uppercase}
+.hero{max-width:700px;margin:4.5rem auto 0;padding:0 2rem;text-align:center}
+.overline{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:var(--rose);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.4rem}
+.overline::before,.overline::after{content:'';width:36px;height:1px;background:var(--blush)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,7.5vw,70px);line-height:1.05;letter-spacing:-.01em;margin-bottom:1.3rem}
+h1 em{font-style:italic;color:var(--rose)}
+.hero-sub{font-family:'Klee One',cursive;font-size:clamp(14px,1.8vw,17px);color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.meta{display:flex;justify-content:center;gap:1.8rem;flex-wrap:wrap;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3rem}
+.hero-photo{max-width:900px;margin:0 auto 4.5rem;padding:0 1.5rem}
+.hero-photo img{width:100%;display:block;object-fit:cover;aspect-ratio:4/3;filter:brightness(.97) saturate(.93)}
+.caption{font-family:'Klee One',cursive;font-size:13px;color:var(--muted);text-align:center;margin-top:.7rem;font-style:italic}
+.essay{max-width:660px;margin:0 auto;padding:0 2rem 7rem}
+.essay p{margin-bottom:1.7rem;font-size:clamp(17px,2vw,20px);line-height:1.95}
+.essay p:first-of-type::first-letter{font-size:4.8em;font-weight:600;float:left;line-height:.72;margin:.1em .1em 0 0;color:var(--rose);font-family:'Cormorant Garamond',serif}
+.stamp{display:inline-flex;align-items:center;gap:7px;background:var(--faint);border:1px solid var(--blush);padding:4px 14px;margin:.3rem 0 1.3rem;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.pq{margin:2.8rem 0;padding:1.6rem 2rem;border-left:3px solid var(--rose);background:var(--faint);font-size:clamp(17px,2.2vw,21px);font-style:italic;line-height:1.7;position:relative}
+.pq::before{content:'\201C';font-size:5em;line-height:0;color:var(--blush);position:absolute;top:1.2rem;left:.9rem;font-family:'Cormorant Garamond',serif}
+.br{text-align:center;margin:2.8rem 0;font-size:17px;letter-spacing:14px;color:var(--blush)}
+.aside{font-family:'Klee One',cursive;font-size:15px;color:var(--rose);text-align:center;margin:2.2rem 0;line-height:1.8;padding:0 1rem}
+.photos-full{margin:2.2rem 0}
+.photos-full img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.photos-pair{margin:2.2rem 0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.photos-pair img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block}
+.photos-trio{margin:2.2rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.photos-trio img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.photos-split{margin:2.2rem 0;display:grid;grid-template-columns:2fr 3fr;gap:6px}
+.photos-split img{width:100%;height:320px;object-fit:cover;display:block}
+.end{margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--blush)}
+.end-label{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.8rem}
+.tag{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;padding:4px 14px;background:var(--faint);color:var(--muted);border:1px solid var(--blush);letter-spacing:.06em;text-transform:uppercase}
+.share{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn{font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;padding:9px 22px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border:none;text-decoration:none;transition:all .14s}
+.btn-solid{background:var(--rose);color:white;box-shadow:3px 3px 0 #7a1830}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:3px 5px 0 #7a1830}
+.btn-outline{background:white;color:var(--rose);border:2px solid var(--blush);box-shadow:2px 2px 0 var(--blush)}
+.btn-outline:hover{background:var(--faint)}
+.more{border-top:1px solid var(--blush);padding-top:2rem;margin-top:2rem}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.more-card{background:var(--faint);border:1px solid var(--blush);padding:1rem;text-decoration:none;color:inherit;display:block;transition:background .14s}
+.more-card:hover{background:var(--blush)}
+.more-card-cat{font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;color:var(--rose);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.more-card-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;line-height:1.3}
+.aff{background:var(--faint);border:1px solid var(--blush);padding:1.2rem 1.5rem;margin:2.8rem 0;display:flex;gap:1rem;align-items:flex-start}
+.aff-icon{font-size:26px;flex-shrink:0}
+.aff h4{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;margin-bottom:.3rem}
+.aff p{font-size:13px!important;color:var(--muted)!important;line-height:1.55!important;margin-bottom:.5rem!important}
+.aff a.link{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:var(--rose);text-decoration:none;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:600px){
+  .hero,.essay{padding:0 1.2rem}
+  .hero-photo{padding:0 1rem}
+  .photos-pair,.more-grid{grid-template-columns:1fr}
+  .photos-trio{grid-template-columns:1fr 1fr}
+  .photos-split{grid-template-columns:1fr}
+  .photos-split img{height:240px}
+  .meta{flex-direction:column;gap:.4rem}
+}
 </style>
 </head>
-
 <body>
 
 <div id="progress"></div>
 
 <nav class="nav">
-  <a href="../" aria-label="Back to all writing">← All Writing</a>
+  <a href="../">← All Writing</a>
   <span class="nav-tag">Field Note</span>
 </nav>
 
-<!-- Your entire content stays exactly the same -->
+<header class="hero">
+  <div class="overline">Tokyo · March 2022</div>
+  <h1>The Last <em>Day</em></h1>
+  <p class="hero-sub">Ten months in Japan. One day left before Haneda.<br>Hina-chan and I decided to do everything.<br>At 7pm, on the metro home, she cried.</p>
+  <div class="meta">
+    <span>✦ Ayachi</span>
+    <span>✦ 12 min read</span>
+    <span>✦ Harajuku → Shibuya</span>
+  </div>
+</header>
 
-<!-- FIXED SHARE BUTTON -->
-<div class="share">
-  <a href="https://twitter.com/intent/tweet?text=The%20Last%20Day%20%E2%80%94%20a%20Japan%20exchange%20essay%20by%20Ayachi&url=https://aayu-chan-in-japan.vercel.app/research/the-last-day.html"
-     class="btn btn-solid"
-     target="_blank"
-     rel="noopener noreferrer">
-     Share on X
-  </a>
-
-  <button class="btn btn-outline"
-          onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Copied ✓'">
-          Copy Link
-  </button>
+<div class="hero-photo">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg" alt="Ayachi and Hina-chan at Shibuya Sky">
+  <p class="caption">Shibuya Sky, 46F. All of Tokyo behind us. Neither of us said anything about how this was the last time.</p>
 </div>
 
+<article class="essay">
+
+<p>I should say upfront that I was fine. That's the strange part of this story. I had been in Japan for ten months. I had done the crying already — in private, in stages, quietly — and by the time this day arrived I had reached somewhere past it. A kind of peaceful numbness. We had one day left and I intended to spend it well.</p>
+
+<p>Hina-chan was not fine. But I didn't know that yet.</p>
+
+<div class="stamp">📍 Harajuku — Takeshita Dori</div>
+
+<p>We started at Takeshita Dori because ten months of Japan had taught me that the correct response to any overwhelming feeling is to walk somewhere loud and eat something. Takeshita Dori is built for this. It is impossible to feel solemn there. It smells like crepes and sugar and someone is always wearing something extraordinary.</p>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_23_PM.jpeg" alt="Takeshita Dori, Marion Crepes in the distance">
+  <p class="caption">Marion Crepes has been on this corner since 1976. We got crepes.</p>
+</div>
+
+<p>We got crepes. Obviously. I got the strawberry cheesecake one. She got something with caramel. They were warm and we stood on the pavement holding them like this was any other Saturday, because we needed it to be any other Saturday for a little longer.</p>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_22_PM.jpeg" alt="Two crepes held up in pink wrappers">
+  <p class="caption">¥610 each. Worth every yen every single time.</p>
+</div>
+
+<p>We walked the whole street. We went into a K-pop shop because Hina-chan had to — there was a Suga birthday banner outside it. We went into Sugar High because the colours were insane and she disappeared into the lip tints for fifteen minutes. We found gacha machines. There is something very specifically Japanese about stopping to do gacha in the middle of doing something emotionally significant.</p>
+
+<div class="photos-trio">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_231_PM.jpeg" alt="BTS Suga birthday banner outside Harajuku shop">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_251_PM.jpeg" alt="Hina-chan in Sugar High, yellow cardigan">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_24_PM.jpeg" alt="Hina-chan opening a gacha capsule">
+</div>
+<p class="caption" style="margin-top:-.8rem;">The Suga birthday shrine. Hina-chan at Sugar High. She stopped to do gacha. Of course she did.</p>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 The 2D Cafe — Harajuku</div>
+
+<p>The queue for the 2D Cafe was long. Long enough that we looked at it, looked at each other, looked back at it, did a calculation involving everything else we still wanted to do, and left.</p>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_25_PM.jpeg" alt="Queue outside the 2D Cafe in Harajuku">
+  <p class="caption">That's us, at the back of the queue, about thirty seconds before we decided not to.</p>
+</div>
+
+<div class="pq">We stood in a queue for a cafe we never entered. That somehow became one of my clearest memories of the day.</div>
+
+<p>The 2D Cafe is designed to look like you're inside a manga panel — all black outline and flat colour, desserts only. We had wanted to go for weeks. I think we were more comfortable abandoning the queue than we would have been sitting quietly inside, with nothing to look at but each other's faces and the fact that tomorrow I was leaving.</p>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 Shibuya Scramble Square</div>
+
+<p>We went to Shibuya Scramble Square next — Hina-chan wanted to browse, which is how we ended up doing a mirror selfie in front of Jimmy Choo with her yellow instax and my phone. Ten months of photos like this. I will have them forever.</p>
+
+<div class="photos-split">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_16_PM.jpeg" alt="Mirror selfie inside Shibuya Scramble Square">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_15_PM.jpeg" alt="Shibuya Scramble Square entrance">
+</div>
+<p class="caption">She always had that yellow instax. That pink tote bag of hers is in half my memories of Japan.</p>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 Shibuya Sky — 46F</div>
+
+<p>We went up to Shibuya Sky. The whole city opened below us — the scramble crossing, the train lines, the cranes still building what Tokyo is still becoming, and then just rooftops forever until they blurred into the horizon.</p>
+
+<div class="photos-pair">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_20_PM.jpeg" alt="View of Shibuya crossing from Shibuya Sky">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_201_PM.jpeg" alt="Holding Shibuya Sky tickets with crossing below">
+</div>
+<p class="caption">The view from 46F. She held up our tickets with the crossing below. I still have my stub.</p>
+
+<p>We didn't talk much up there. The view was saying everything and talking over it would have been rude. Ten months of Japan was somewhere down in all of that. My school. My host family's kitchen. The 7:15am bus. Every convenience store. Every morning walking up the hill.</p>
+
+<div class="aside">Hina-chan pointed at something and said she thought she could see our school from here.<br>I don't think you actually can. But we both looked anyway.</div>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg" alt="Ayachi and Hina-chan at Shibuya Sky with arms raised">
+  <p class="caption">Arms up like we owned it. All of Tokyo behind us.</p>
+</div>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 Shinjuku Gyoen — Sakura</div>
+
+<p>We went to Shinjuku Gyoen in the afternoon. The kawazu zakura were already out — that deep pink that comes before the pale spring sakura everyone knows. Hina-chan photographed them with her instax. She always photographed things with her instax. She has a whole collection of pictures taken while I stood behind her watching.</p>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_19_PM.jpeg" alt="Hina-chan photographing kawazu zakura with yellow instax">
+  <p class="caption">Kawazu zakura, March. The early ones. She had her instax up the whole time.</p>
+</div>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 Shibuya — Evening</div>
+
+<p>We found Alice on Wednesday somewhere in Shibuya — gold lettering on white walls, little potion bottles glowing on a shelf. Then we walked the scramble at dusk. At street level you're in the middle of it, everyone flowing past in every direction. From above it was a pattern. Down here it was alive.</p>
+
+<div class="photos-pair">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_17_PM.jpeg" alt="Alice on Wednesday shop interior">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_26_PM.jpeg" alt="Shibuya scramble crossing at golden hour">
+</div>
+<p class="caption">Alice on Wednesday, 水曜日のアリス. And Shibuya at golden hour — that light that makes everything look like it should be looked at one last time.</p>
+
+<p>We ate at a small Korean restaurant. Hina-chan ordered the spicy one and demolished it without flinching while I watched in genuine awe. The tteokbokki was a shade of red that felt like a personal challenge. She ate all of it.</p>
+
+<div class="photos-pair">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_241_PM.jpeg" alt="Ayachi outside the Korean restaurant">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_242_PM.jpeg" alt="Hina-chan's intensely spicy tteokbokki">
+</div>
+<p class="caption">Me outside. Her food. She ate every single bite.</p>
+
+<div class="br">✦ ✧ ✦</div>
+
+<div class="stamp">📍 Metro — Shibuya, 7pm</div>
+
+<p>She started crying on the metro.</p>
+
+<p>Not at the turnstiles. Not at the entrance. We'd said goodbye like it was any Tuesday — see you, get home safe, text me. And then somewhere between the doors closing and the train beginning to move, I looked over and she was crying. Quietly. Not making a production of it. Just her eyes, wet, looking somewhere past the window at the platform sliding away behind us.</p>
+
+<div class="photos-full">
+  <img src="WhatsApp_Image_2026-03-02_at_10_44_18_PM.jpeg" alt="Train platform at night, reflection in glass">
+  <p class="caption">I don't know if this is exactly that station. But this is what the light looked like. This is what it felt like.</p>
+</div>
+
+<div class="pq">She was sixteen. I was seventeen. We had promised to meet again. The train was moving. Some goodbyes sneak up on you.</div>
+
+<p>I thought about all the mornings she had waited for me at the school gate because I was always three minutes late off the bus. How she corrected my Japanese so gently I didn't realise I'd made a mistake until later. How she would always watch my face when I tried something new, waiting for my reaction before giving her own.</p>
+
+<p>The train moved. She was still crying, quietly. I was pretending I wasn't.</p>
+
+<div class="aside">We still text.<br>We have promised to meet again approximately nine times.<br>One day, we will.</div>
+
+<div class="br">✦ ✧ ✦</div>
+
+<p>The next morning I took a bus to Haneda with my two suitcases. Ten months of Japan packed down to what I could carry. The bus went past the part of Yokohama I'd learned to read like a map — the combini on the corner, the park with the cat, the hill up to school. I looked out the window the whole way.</p>
+
+<p>Here is what nobody tells you about exchange: the leaving isn't one moment. It's a hundred small ones. The last school lunch. The last morning bus. The last time you walk down your host family's street. By the time you reach the actual gate your body has already said most of the goodbye and the gate itself is almost a relief.</p>
+
+<p>Almost.</p>
+
+<div class="aff">
+  <div class="aff-icon">🎒</div>
+  <div>
+    <h4>Thinking about your own exchange year?</h4>
+    <p>Everything I know about applying, packing, and actually surviving a year in Japan — in one place.</p>
+    <a href="../guides/kakehashi-guide.html" class="link">Complete Kakehashi Application Guide →</a>
+  </div>
+</div>
+
+<div class="end">
+  <div class="end-label">Filed under</div>
+  <div class="tags">
+    <span class="tag">Japan</span><span class="tag">Exchange Year</span><span class="tag">Tokyo</span>
+    <span class="tag">Friendships</span><span class="tag">Harajuku</span><span class="tag">Shibuya</span><span class="tag">Goodbyes</span>
+  </div>
+  <div class="end-label">Share this</div>
+  <div class="share">
+    <a href="https://twitter.com/intent/tweet?text=The Last Day — a Japan exchange essay by Ayachi&url=YOUR_URL_HERE" class="btn btn-solid" target="_blank" rel="noopener">Share on X</a>
+    <button class="btn btn-outline" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Copied ✓'">Copy Link</button>
+  </div>
+  <div class="more">
+    <div class="end-label">Read next</div>
+    <div class="more-grid">
+      <a href="../guides/kakehashi-guide.html" class="more-card">
+        <div class="more-card-cat">Guide</div>
+        <div class="more-card-title">Complete Guide to the Asia Kakehashi Project</div>
+      </a>
+      <a href="../guides/japan-exchange-survival-guide.html" class="more-card">
+        <div class="more-card-cat">Guide</div>
+        <div class="more-card-title">The Japan Exchange Survival Guide I Wish I Had</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</article>
+
 <script>
-const bar = document.getElementById('progress');
-
-window.addEventListener('scroll', () => {
-  const total = document.body.scrollHeight - window.innerHeight;
-  if (total > 0) {
-    const progress = Math.min(window.scrollY / total, 1);
-    bar.style.transform = `scaleX(${progress})`;
-  }
-}, { passive: true });
+const bar=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const total=document.body.scrollHeight-window.innerHeight;
+  bar.style.transform=`scaleX(${Math.min(window.scrollY/total,1)})`;
+},{passive:true});
 </script>
-
 </body>
 </html>
