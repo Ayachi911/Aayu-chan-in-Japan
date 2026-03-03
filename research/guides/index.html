@@ -49,11 +49,16 @@
 html{scroll-behavior:smooth;}
 
 body {
-  background: var(--cream);
   color: var(--ink);
   font-family: var(--serif);
   line-height: 1.75;
   overflow-x: hidden;
+  background-color: #e4d9c4;
+  background-image:
+    repeating-linear-gradient(0deg,  transparent, transparent 19px, rgba(139,86,36,0.13) 19px, rgba(139,86,36,0.13) 20px),
+    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139,86,36,0.13) 19px, rgba(139,86,36,0.13) 20px),
+    repeating-linear-gradient(0deg,  transparent, transparent 79px, rgba(192,87,42,0.09) 79px, rgba(192,87,42,0.09) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(192,87,42,0.09) 79px, rgba(192,87,42,0.09) 80px);
 }
 
 /* paper noise texture */
@@ -771,9 +776,9 @@ footer {
 }
 .footer-stamps { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
 /* stamps in footer — lighter color to show on dark bg */
-.site-footer .stamp { border-color: currentColor; }
-.site-footer .st-terra { color: rgba(232,137,106,0.8); }
-.site-footer .st-moss  { color: rgba(140,185,135,0.75); }
+.site-footer .xstamp.xs-kake { background: rgba(180,80,60,0.9); }
+.site-footer .xstamp.xs-yoko { color: rgba(140,195,135,0.85); border-color: rgba(140,195,135,0.65); box-shadow: inset 0 0 0 3px rgba(140,195,135,0.1); }
+.site-footer .xstamp.xs-india { background: rgba(180,140,40,0.9); }
 
 .footer-nav { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 0.2rem; }
 .footer-nav-head {
@@ -837,6 +842,145 @@ footer {
 }
 
 
+
+/* ── CUSTOM HEADER STAMPS ── */
+.xstamp {
+  font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em;
+  text-align: center; line-height: 1.55; position: relative;
+  transform: rotate(var(--xr, 0deg));
+  display: inline-flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+/* KAKEHASHI — filled parallelogram, deep burgundy */
+.xs-kake {
+  --xr: -5deg;
+  background: #6e1b28;
+  color: #f5edd8;
+  font-size: 0.58rem;
+  padding: 0.4rem 1.1rem 0.45rem;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  box-shadow: 3px 3px 0 rgba(40,0,10,0.35);
+  min-width: 90px;
+}
+.xs-kake::after {
+  content: '';
+  position: absolute; inset: 3px;
+  border: 1px solid rgba(245,237,216,0.25);
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  pointer-events: none;
+}
+/* YOKOHAMA — double oval, moss, outline */
+.xs-yoko {
+  --xr: 4deg;
+  color: rgba(60,100,58,0.9);
+  font-size: 0.55rem;
+  border: 2px solid rgba(74,106,72,0.75);
+  border-radius: 60px;
+  padding: 0.38rem 1.15rem;
+  box-shadow: inset 0 0 0 4px rgba(74,106,72,0.1);
+  min-width: 88px;
+}
+.xs-yoko::before {
+  content: '';
+  position: absolute; inset: 3px;
+  border: 1px dashed rgba(74,106,72,0.3);
+  border-radius: 60px;
+  pointer-events: none;
+}
+/* INDIA — solid gold diamond */
+.xs-india {
+  --xr: 8deg;
+  background: #9a7828;
+  color: #1c1207;
+  font-size: 0.52rem;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 72px; height: 72px;
+  box-shadow: 2px 3px 0 rgba(80,50,0,0.3);
+}
+
+/* ── PILLAR ROW STAMPS ── */
+.pstamp {
+  font-family: var(--sans); font-weight: 700; font-size: 0.54rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-align: center; line-height: 1.5;
+  position: relative; display: inline-flex;
+  align-items: center; justify-content: center;
+  transform: rotate(var(--pr, 0deg));
+}
+/* solid pill, terracotta */
+.ps-pill {
+  --pr: -2deg;
+  background: var(--terra); color: white;
+  padding: 0.28rem 1rem; border-radius: 50px;
+  font-size: 0.58rem; letter-spacing: 0.14em;
+  box-shadow: 2px 2px 0 rgba(100,30,10,0.22);
+}
+/* hexagonal clip, moss outline */
+.ps-hex {
+  --pr: 3deg;
+  color: var(--moss); border: 2px solid rgba(74,106,72,0.75);
+  padding: 0.32rem 0.7rem;
+  clip-path: polygon(10% 0%,90% 0%,100% 50%,90% 100%,10% 100%,0% 50%);
+  min-width: 64px; min-height: 38px;
+  font-size: 0.5rem;
+  flex-direction: column;
+}
+/* tiny solid gold rotated square */
+.ps-box {
+  --pr: 14deg;
+  background: var(--gold); color: white;
+  width: 40px; height: 40px;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  box-shadow: 2px 2px 0 rgba(80,50,0,0.22);
+  flex-direction: column;
+}
+/* ticket/scallop, ink outline */
+.ps-ticket {
+  --pr: -3deg;
+  color: var(--ink-mid); border: 2px solid var(--ink-mid);
+  padding: 0.28rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.5rem; min-width: 68px;
+  flex-direction: column;
+  position: relative;
+}
+.ps-ticket::before,.ps-ticket::after {
+  content: '';
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 6px;
+  background: var(--cream); border-radius: 50%;
+  border: 1px solid var(--ink-mid);
+}
+.ps-ticket::before { left: -3px; }
+.ps-ticket::after  { right: -3px; }
+
+/* ── CORNER STICKERS on guide + pillar cards ── */
+.card-sticker-corner {
+  position: absolute; bottom: 7px; right: 8px;
+  width: 36px; height: 36px; object-fit: contain;
+  pointer-events: none; z-index: 4;
+  filter: sepia(0.25) saturate(1.15) brightness(0.9)
+          drop-shadow(1px 1px 0 rgba(0,0,0,0.1));
+  transform: rotate(var(--sc, 8deg));
+  transition: transform 0.18s;
+}
+.guide-card:hover .card-sticker-corner,
+.pillar-card:hover .card-sticker-corner {
+  transform: rotate(calc(var(--sc, 8deg) + 5deg)) scale(1.08);
+}
+/* vary rotation per card via nth-child */
+.guide-card:nth-child(1) .card-sticker-corner { --sc: -6deg; }
+.guide-card:nth-child(2) .card-sticker-corner { --sc: 10deg; }
+.guide-card:nth-child(3) .card-sticker-corner { --sc: -9deg; }
+.guide-card:nth-child(4) .card-sticker-corner { --sc: 7deg; }
+.guide-card:nth-child(5) .card-sticker-corner { --sc: -5deg; }
+.guide-card:nth-child(6) .card-sticker-corner { --sc: 12deg; }
+.guide-card:nth-child(7) .card-sticker-corner { --sc: -4deg; }
+
+/* SNS icon */
+.sns-icon { width: 14px; height: 14px; object-fit: contain; flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -888,9 +1032,12 @@ footer {
       </div>
 
       <div class="header-stamps">
-        <div class="stamp st-terra">KAKEHASHI<br>架け橋</div>
-        <div class="stamp st-moss">YOKOHAMA<br>横浜 2021</div>
-        <div class="stamp st-circle st-terra">INDIA<br>21<br>選抜</div>
+        <!-- solid filled parallelogram, deep burgundy -->
+        <div class="xstamp xs-kake">KAKEHASHI<br><span style="font-size:0.85em;letter-spacing:0.04em;">架け橋</span></div>
+        <!-- double-ring oval, moss -->
+        <div class="xstamp xs-yoko">YOKOHAMA<br><span style="opacity:0.75;font-size:0.9em;">横浜 2021</span></div>
+        <!-- solid gold rotated diamond -->
+        <div class="xstamp xs-india">INDIA<br>✦ 選抜</div>
       </div>
     </div>
 
@@ -956,8 +1103,8 @@ footer {
 
       <!-- 1 -->
       <div class="guide-card card-1">
-        <div class="card-tape left tape-terra"></div>
-        <div class="card-emoji" style="--er:-5deg;">🍓</div>
+        <img class="card-top-sticker" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
         <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">18 min</span></div>
         <h3 class="guide-card-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h3>
         <p class="guide-card-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
@@ -967,8 +1114,8 @@ footer {
 
       <!-- 2 -->
       <div class="guide-card card-2">
-        <div class="card-tape right tape-moss"></div>
-        <div class="card-emoji" style="--er:6deg;">🧳</div>
+        <img class="card-top-sticker right" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🎒</span>'">
         <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
         <h3 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h3>
         <p class="guide-card-desc">Tested over a full year in Yokohama. What to bring, what to skip, what to buy when you get there.</p>
@@ -978,8 +1125,8 @@ footer {
 
       <!-- 3 -->
       <div class="guide-card card-3">
-        <div class="card-tape left tape-gold"></div>
-        <div class="card-emoji" style="--er:-8deg;">💴</div>
+        <img class="card-top-sticker" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">💴</span>'">
         <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
         <h3 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h3>
         <p class="guide-card-desc">Real numbers. Monthly spend, what the scholarship covers, what it doesn't. No sugar-coating.</p>
@@ -989,8 +1136,8 @@ footer {
 
       <!-- 4 -->
       <div class="guide-card card-4">
-        <div class="card-tape right tape-terra"></div>
-        <div class="card-emoji" style="--er:5deg;">🍜</div>
+        <img class="card-top-sticker right" src="../../assets/images/ramen.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/sticker-bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
         <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
         <h3 class="guide-card-title"><a href="../../research/field-notes/retirement-dinner.html">What I Ate at a Japanese Retirement Dinner</a></h3>
         <p class="guide-card-desc">My host ojii-chan retired at 70+. The whole family gathered. Everything on that table, explained.</p>
@@ -1000,8 +1147,8 @@ footer {
 
       <!-- 5 -->
       <div class="guide-card card-5">
-        <div class="card-tape left tape-moss"></div>
-        <div class="card-emoji" style="--er:-6deg;">🍱</div>
+        <img class="card-top-sticker" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
         <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
         <h3 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h3>
         <p class="guide-card-desc">Every item in that lunchbox, every day. Bento culture, morning routine, dinner etiquette.</p>
@@ -1011,8 +1158,8 @@ footer {
 
       <!-- 6 -->
       <div class="guide-card card-6">
-        <div class="card-tape right tape-gold"></div>
-        <div class="card-emoji" style="--er:4deg;">🚃</div>
+        <img class="card-top-sticker right" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/stanpu.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🚃</span>'">
         <div class="card-meta"><span class="meta-pill">Daily Life</span><span class="meta-time">8 min</span></div>
         <h3 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h3>
         <p class="guide-card-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
@@ -1022,8 +1169,8 @@ footer {
 
       <!-- 7 — full width -->
       <div class="guide-card card-7">
-        <div class="card-tape left tape-terra"></div>
-        <div class="card-emoji" style="--er:-3deg; bottom:10px; right:16px; font-size:1.8rem; opacity:0.5;">🍓</div>
+        <img class="card-top-sticker" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
+        <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
         <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;flex-wrap:wrap;">
           <div>
             <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-pill">Yokohama</span><span class="meta-time">10 min</span></div>
@@ -1052,11 +1199,15 @@ footer {
       <div class="section-head" style="flex:1;margin-bottom:0;">
         <span class="section-label" style="background:var(--ink-mid);">Browse by topic</span>
       </div>
-      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-        <span class="stamp st-terra" style="font-size:0.55rem;">TOKYO<br>GUIDES</span>
-        <span class="stamp st-moss" style="font-size:0.55rem;">EXCHANGE<br>LIFE</span>
-        <span class="stamp st-ink" style="font-size:0.55rem;">FOOD &amp;<br>CULTURE</span>
-        <span class="stamp st-circle st-terra" style="width:52px;height:52px;font-size:0.45rem;">日本<br>生活</span>
+      <div style="display:flex;gap:0.7rem;flex-wrap:wrap;align-items:center;">
+        <!-- solid pill, terracotta -->
+        <span class="pstamp ps-pill">TOKYO GUIDES</span>
+        <!-- hex clip, moss outline -->
+        <span class="pstamp ps-hex">EXCHANGE<br>LIFE</span>
+        <!-- tiny solid square tilted, gold -->
+        <span class="pstamp ps-box">食<br>FOOD</span>
+        <!-- scallop / ticket shape, ink -->
+        <span class="pstamp ps-ticket">実用<br>ESSENTIALS</span>
       </div>
     </div>
 
@@ -1078,9 +1229,8 @@ footer {
       <div class="pillar-grid">
         <!-- Existing card -->
         <div class="pillar-card pc-terra">
-          <div class="card-tape left tape-terra"></div>
           <img class="card-top-sticker" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
-          <div class="card-emoji" style="--er:-5deg;">🏮</div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🏮</span>'">
           <div class="card-meta"><span class="meta-pill terra">Featured</span><span class="meta-time">12 min</span></div>
           <h4 class="guide-card-title"><a href="kakehashi-guide.html">Complete Kakehashi Application Guide</a></h4>
           <p class="guide-card-desc">Essays, interviews, what the program actually looks like inside.</p>
@@ -1089,7 +1239,7 @@ footer {
         </div>
         <!-- Placeholder for future post -->
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape right tape-ink"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🏠</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Host Family Etiquette Guide</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">What to say, what not to do, how to make it feel like home.</p>
@@ -1097,7 +1247,7 @@ footer {
         </div>
         <!-- Placeholder -->
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape left tape-moss"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">📚</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese School Life Explained</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Clubs, uniforms, exams, the weird and the wonderful.</p>
@@ -1124,9 +1274,8 @@ footer {
       <p class="pillar-desc">Where to go, how to move, what to spend. Tokyo through the eyes of someone who actually lived there.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-moss">
-          <div class="card-tape left tape-moss"></div>
           <img class="card-top-sticker right" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'" style="height:36px;top:-24px;">
-          <div class="card-emoji" style="--er:6deg;">🚃</div>
+          <img class="card-sticker-corner" src="../../assets/images/stanpu.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🚃</span>'">
           <div class="card-meta"><span class="meta-pill moss">Daily Life</span><span class="meta-time">8 min</span></div>
           <h4 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
           <p class="guide-card-desc">Bus 111 → train → uphill walk. The full breakdown.</p>
@@ -1134,14 +1283,14 @@ footer {
           <a href="Train.html" class="read-btn moss-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape right tape-gold"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🗼</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Best Neighbourhoods to Stay in Tokyo</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">For first-timers, exchange students, and budget travellers.</p>
           <div class="guide-tags"><span class="tag">Tokyo</span><span class="tag">Where to Stay</span></div>
         </div>
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape left tape-terra"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🗺️</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Day Trips from Yokohama &amp; Tokyo</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Kamakura, Hakone, Nikko — all tested on a student budget.</p>
@@ -1168,9 +1317,8 @@ footer {
       <p class="pillar-desc">What's actually on the table. Japanese food culture explained from the inside — host family dinners, festival stalls, school lunches.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-gold">
-          <div class="card-tape left tape-gold"></div>
-          <img class="card-top-sticker" src="../../assets/images/ramen.png" alt="" onerror="this.style.display='none'">
-          <div class="card-emoji" style="--er:-6deg;">🍱</div>
+          <img class="card-top-sticker" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
+          <img class="card-sticker-corner" src="../../assets/images/bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
           <div class="card-meta"><span class="meta-pill">Host Family</span><span class="meta-time">10 min</span></div>
           <h4 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
           <p class="guide-card-desc">Every item, every day. Bento culture and school lunch etiquette.</p>
@@ -1178,9 +1326,8 @@ footer {
           <a href="Bento.html" class="read-btn ink-btn">Read →</a>
         </div>
         <div class="pillar-card pc-terra">
-          <div class="card-tape right tape-terra"></div>
           <img class="card-top-sticker right" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'" style="height:38px;top:-24px;">
-          <div class="card-emoji" style="--er:5deg;">🍓</div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
           <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-time">10 min</span></div>
           <h4 class="guide-card-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
           <p class="guide-card-desc">A strawberry festival in Yokohama. Very pink. Very sticky.</p>
@@ -1188,7 +1335,7 @@ footer {
           <a href="Strobby-festival.html" class="read-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape left tape-ink"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🏪</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese Convenience Store Guide</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">FamilyMart, Lawson, 7-Eleven — what to actually buy.</p>
@@ -1215,9 +1362,8 @@ footer {
       <p class="pillar-desc">The logistical stuff nobody tells you — SIM cards, IC cards, budgets, what to pack. Before you land and while you're there.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-moss">
-          <div class="card-tape left tape-moss"></div>
           <img class="card-top-sticker" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
-          <div class="card-emoji" style="--er:7deg;">🧳</div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🧳</span>'">
           <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
           <h4 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
           <p class="guide-card-desc">Tested over a full year. Bring, skip, buy — the definitive list.</p>
@@ -1225,9 +1371,8 @@ footer {
           <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
         </div>
         <div class="pillar-card pc-gold">
-          <div class="card-tape right tape-gold"></div>
           <img class="card-top-sticker right" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
-          <div class="card-emoji" style="--er:-4deg;">💴</div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">💴</span>'">
           <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
           <h4 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Actually Cost?</a></h4>
           <p class="guide-card-desc">Real numbers. Monthly spend, what's covered, what's not.</p>
@@ -1235,7 +1380,7 @@ footer {
           <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <div class="card-tape left tape-terra"></div>
+          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">📱</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Best SIM Cards &amp; Wi-Fi for Japan</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">IIJmio, Sakura Mobile, pocket Wi-Fi — what's actually worth it.</p>
@@ -1324,11 +1469,27 @@ footer {
       <div class="s-card-head"><span>Find Me</span><span class="s-card-head-jp">SNS</span></div>
       <div class="s-card-body">
         <div class="social-list">
-          <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener"><span class="sl-dot sl-grn"></span>GitHub</a>
-          <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener"><span class="sl-dot sl-red"></span>Pinterest</a>
-          <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener"><span class="sl-dot sl-pnk"></span>Instagram</a>
-          <a href="#" class="social-link"><span class="sl-dot sl-blu"></span>LinkedIn</a>
+          <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener">
+            <img src="../../assets/images/icon-github.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-grn&quot;></span>'">GitHub</a>
+          <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener">
+            <img src="../../assets/images/icon-pinterest.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-red&quot;></span>'">Pinterest</a>
+          <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener">
+            <img src="../../assets/images/icon-instagram.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-pnk&quot;></span>'">Instagram</a>
+          <a href="#" class="social-link">
+            <img src="../../assets/images/icon-linkedin.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-blu&quot;></span>'">LinkedIn</a>
         </div>
+      </div>
+    </div>
+
+    <!-- Puzzle ♡ is back -->
+    <div class="s-card" style="position:relative;z-index:10;">
+      <div class="s-card-head"><span>Puzzle ✿</span><span class="s-card-head-jp">パズル</span></div>
+      <div class="s-card-body" style="padding:6px 8px 8px;">
+        <div id="puzzle" style="display:grid;grid-template-columns:repeat(3,60px);margin:2px auto 0;width:180px;border:2px solid var(--rule-dk);border-radius:3px;overflow:hidden;"></div>
+        <div style="text-align:center;padding:6px 0 2px;">
+          <button id="shuffleBtn" style="font-family:var(--serif);font-style:italic;font-size:0.8rem;background:var(--terra-pale);border:1.5px solid var(--ink);color:var(--ink);padding:4px 14px;cursor:pointer;border-radius:3px;box-shadow:2px 2px 0 var(--rule-dk);">Shuffle ♡</button>
+        </div>
+        <div id="winMsg" style="display:none;text-align:center;font-family:var(--sans);font-size:0.65rem;font-weight:700;color:var(--terra);padding:3px;">you solved it! ✨</div>
       </div>
     </div>
 
@@ -1356,9 +1517,9 @@ footer {
       <div class="footer-logo">Ayachi Samyal</div>
       <div class="footer-logo-jp">サムヤル アヤチ · 綾智</div>
       <div class="footer-stamps">
-        <span class="stamp st-terra" style="font-size:0.48rem;--rot:-3deg;">KAKEHASHI<br>架け橋</span>
-        <span class="stamp st-moss" style="font-size:0.48rem;--rot:3deg;">YOKOHAMA<br>横浜 2021</span>
-        <span class="stamp st-circle st-terra" style="width:44px;height:44px;font-size:0.42rem;--rot:6deg;">日本<br>留学</span>
+        <div class="xstamp xs-kake" style="font-size:0.46rem;--xr:-4deg;">KAKEHASHI<br><span>架け橋</span></div>
+        <div class="xstamp xs-yoko" style="font-size:0.44rem;--xr:3deg;">YOKOHAMA<br><span style="opacity:0.7;">横浜</span></div>
+        <div class="xstamp xs-india" style="width:40px;height:40px;font-size:0.38rem;--xr:6deg;">日本<br>留学</div>
       </div>
     </div>
 
@@ -1397,6 +1558,39 @@ footer {
 
 <script>
 const rp=document.getElementById('rp');
+
+/* PUZZLE */
+(function(){
+  var pz=document.getElementById('puzzle'),sb=document.getElementById('shuffleBtn'),wm=document.getElementById('winMsg');
+  if(!pz||!sb)return;
+  var S=3,T=60,img='../../assets/images/stamp-main.jpg',tiles=[],empty=8;
+  function init(){
+    pz.innerHTML='';tiles=[];
+    for(var i=0;i<9;i++){
+      var t=document.createElement('div');
+      t.style.cssText='width:60px;height:60px;cursor:pointer;border:1px solid rgba(0,0,0,0.12);';
+      if(i===8){t.style.background='#b8d8e8';t._e=1;empty=i;}
+      else{var r=Math.floor(i/S),c=i%S;t.style.backgroundImage='url('+img+')';t.style.backgroundPosition='-('+( c*T)+'px) -'+(r*T)+'px';t.style.backgroundSize=(T*S)+'px '+(T*S)+'px';}
+      (function(idx){t.addEventListener('click',function(){mv(idx);});})(i);
+      pz.appendChild(t);tiles.push(t);
+    }
+  }
+  function adj(a,b){return(Math.abs(Math.floor(a/S)-Math.floor(b/S))+Math.abs(a%S-b%S))===1;}
+  function sw(a,b){
+    var bp=tiles[a].style.backgroundPosition,bi=tiles[a].style.backgroundImage,ea=tiles[a]._e;
+    tiles[a].style.backgroundPosition=tiles[b].style.backgroundPosition;
+    tiles[a].style.backgroundImage=tiles[b].style.backgroundImage;
+    tiles[a]._e=tiles[b]._e;
+    if(tiles[b]._e)tiles[a].style.background='#b8d8e8'; else tiles[a].style.background='';
+    tiles[b].style.backgroundPosition=bp;tiles[b].style.backgroundImage=bi;tiles[b]._e=ea;
+    if(ea)tiles[b].style.background='#b8d8e8'; else tiles[b].style.background='';
+  }
+  function mv(i){if(adj(i,empty)){sw(i,empty);empty=i;chk();}}
+  function shuf(){for(var i=0;i<200;i++){var n=[];for(var j=0;j<9;j++)if(adj(j,empty))n.push(j);var r=n[Math.floor(Math.random()*n.length)];sw(r,empty);empty=r;}if(wm)wm.style.display='none';}
+  function chk(){var ok=true;for(var i=0;i<8;i++){var r=Math.floor(i/S),c=i%S;var exp='-('+( c*T)+'px) -'+(r*T)+'px';if(tiles[i].style.backgroundPosition!==exp){ok=false;break;}}if(ok&&wm)wm.style.display='block';}
+  sb.addEventListener('click',shuf);
+  init();shuf();
+})();
 window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
 
 function handleSignup(e){
