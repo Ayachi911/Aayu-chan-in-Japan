@@ -1,808 +1,1699 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Posts — Aayu-chan in Japan</title>
-  <meta name="description" content="First-person guides to Tokyo travel, Japanese exchange life, and the everyday culture between. Browse all posts by Aayu-chan." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/global.css" />
-  <style>
-    /* ============================================================
-       BLOG INDEX — Restructured for scalable information architecture
-       Brand palette + kawaii editorial aesthetic preserved
-    ============================================================ */
-
-    :root {
-      --ink: #1a1410;
-      --cream: #fdf8f2;
-      --warm-white: #fffcf7;
-      --blush: #f5c6c0;
-      --blush-light: #fceae7;
-      --sage: #c8d8c0;
-      --sage-light: #eaf2e6;
-      --lavender: #d8cce8;
-      --lavender-light: #f2eef9;
-      --gold: #d4a843;
-      --gold-light: #fdf3dc;
-      --ink-mid: #5a4a3a;
-      --ink-light: #8a7a6a;
-      --border: rgba(90, 74, 58, 0.12);
-      --font-display: 'Shippori Mincho', 'Times New Roman', serif;
-      --font-body: 'Libre Baskerville', Georgia, serif;
-      --font-mono: 'DM Mono', monospace;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--font-body);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ─── WASHI TAPE DECORATION ─── */
-    .washi-bar {
-      width: 100%;
-      height: 8px;
-      background: repeating-linear-gradient(
-        90deg,
-        #f5c6c0 0px, #f5c6c0 24px,
-        #fceae7 24px, #fceae7 26px,
-        #d8cce8 26px, #d8cce8 50px,
-        #f2eef9 50px, #f2eef9 52px,
-        #c8d8c0 52px, #c8d8c0 76px,
-        #eaf2e6 76px, #eaf2e6 78px
-      );
-      opacity: 0.8;
-    }
-
-    /* ─── HEADER ─── */
-    .page-header {
-      background: var(--warm-white);
-      border-bottom: 1px solid var(--border);
-      padding: 0 clamp(20px, 5vw, 80px);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .site-name {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
-
-    .site-name span {
-      color: var(--gold);
-    }
-
-    .header-nav {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .header-nav a {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--ink-mid);
-      transition: color 0.2s;
-    }
-
-    .header-nav a:hover { color: var(--ink); }
-
-    /* ─── PAGE HERO ─── */
-    .page-hero {
-      padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 80px) clamp(30px, 4vw, 50px);
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 18px;
-      height: 1px;
-      background: var(--ink-light);
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-      max-width: 500px;
-      line-height: 1.65;
-    }
-
-    /* ─── MAIN LAYOUT ─── */
-    .main-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 80px) 80px;
-    }
-
-    /* ─── SECTION LABEL ─── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .section-label h2 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .section-label .label-tag {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 2px;
-      background: var(--blush);
-      color: var(--ink-mid);
-    }
-
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 40px 0;
-    }
-
-    /* ─── START HERE BLOCK ─── */
-    .start-here-section {
-      background: var(--gold-light);
-      border: 1px solid rgba(212, 168, 67, 0.25);
-      border-radius: 6px;
-      padding: 28px 32px;
-      margin-bottom: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .start-here-section::before {
-      content: '✦';
-      position: absolute;
-      right: 28px;
-      top: 20px;
-      font-size: 2.5rem;
-      color: rgba(212, 168, 67, 0.2);
-      font-family: var(--font-display);
-    }
-
-    .start-here-section .section-label { margin-bottom: 16px; }
-    .start-here-section .section-label .label-tag { background: rgba(212, 168, 67, 0.3); }
-
-    .start-here-intro {
-      font-size: 0.88rem;
-      color: var(--ink-mid);
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    .start-here-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .start-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 252, 247, 0.8);
-      border: 1px solid rgba(212, 168, 67, 0.2);
-      border-radius: 4px;
-      padding: 10px 14px;
-      transition: all 0.2s ease;
-      font-size: 0.85rem;
-      color: var(--ink);
-    }
-
-    .start-link:hover {
-      background: var(--warm-white);
-      border-color: var(--gold);
-      transform: translateY(-1px);
-    }
-
-    .start-link .arrow {
-      font-size: 0.7rem;
-      color: var(--gold);
-      margin-left: auto;
-      flex-shrink: 0;
-    }
-
-    .start-link .post-category-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ─── CATEGORY BLOCKS ─── */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    .pillar-card {
-      border-radius: 6px;
-      padding: 24px;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      display: block;
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(26, 20, 16, 0.07);
-    }
-
-    .pillar-card.guides {
-      background: var(--blush-light);
-      border-color: rgba(245, 198, 192, 0.5);
-    }
-
-    .pillar-card.exchange {
-      background: var(--sage-light);
-      border-color: rgba(200, 216, 192, 0.5);
-    }
-
-    .pillar-card.essays {
-      background: var(--lavender-light);
-      border-color: rgba(216, 204, 232, 0.5);
-    }
-
-    .pillar-card.field-notes {
-      background: var(--gold-light);
-      border-color: rgba(212, 168, 67, 0.2);
-    }
-
-    .pillar-emoji {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .pillar-name {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--ink);
-    }
-
-    .pillar-desc {
-      font-size: 0.8rem;
-      color: var(--ink-mid);
-      line-height: 1.55;
-      margin-bottom: 14px;
-    }
-
-    .pillar-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .pillar-count {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-
-    .pillar-arrow {
-      font-size: 0.8rem;
-      color: var(--ink-mid);
-      transition: transform 0.2s;
-    }
-
-    .pillar-card:hover .pillar-arrow { transform: translateX(3px); }
-
-    /* ─── FILTER TABS ─── */
-    .filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 28px;
-    }
-
-    .filter-btn {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 2px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--ink-mid);
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .filter-btn:hover {
-      border-color: var(--ink-mid);
-      color: var(--ink);
-    }
-
-    .filter-btn.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--cream);
-    }
-
-    /* ─── POST GRID ─── */
-    .posts-grid {
-      display: grid;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .post-row {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 0;
-      background: var(--warm-white);
-      padding: 18px 24px;
-      transition: background 0.15s ease;
-      cursor: pointer;
-    }
-
-    .post-row:hover { background: var(--cream); }
-
-    .post-row.hidden { display: none; }
-
-    .post-category-pill {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 2px;
-      margin-right: 16px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .pill-guides { background: var(--blush); color: var(--ink-mid); }
-    .pill-exchange { background: var(--sage); color: var(--ink-mid); }
-    .pill-essays { background: var(--lavender); color: var(--ink-mid); }
-    .pill-field-notes { background: var(--gold-light); color: var(--ink-mid); border: 1px solid rgba(212,168,67,0.3); }
-
-    .post-title {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      color: var(--ink);
-      font-weight: 400;
-    }
-
-    .post-row:hover .post-title { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-
-    .post-arrow {
-      color: var(--ink-light);
-      font-size: 0.8rem;
-      margin-left: 16px;
-      transition: transform 0.15s, color 0.15s;
-    }
-
-    .post-row:hover .post-arrow {
-      transform: translateX(3px);
-      color: var(--ink);
-    }
-
-    .no-posts-msg {
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--ink-light);
-      font-style: italic;
-      display: none;
-      background: var(--warm-white);
-    }
-
-    /* ─── LATEST POSTS STRIP ─── */
-    .latest-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    .latest-card {
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 20px;
-      background: var(--warm-white);
-      transition: all 0.2s ease;
-      display: block;
-    }
-
-    .latest-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(26, 20, 16, 0.06);
-    }
-
-    .latest-card .post-category-pill { display: inline-block; margin-bottom: 10px; }
-
-    .latest-card-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      line-height: 1.4;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .latest-card-excerpt {
-      font-size: 0.8rem;
-      color: var(--ink-mid);
-      line-height: 1.6;
-    }
-
-    /* ─── FOOTER ─── */
-    .page-footer {
-      border-top: 1px solid var(--border);
-      padding: 32px clamp(20px, 5vw, 80px);
-      background: var(--warm-white);
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-copy {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.04em;
-      color: var(--ink-light);
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    .footer-nav a {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--ink-light);
-      transition: color 0.2s;
-    }
-
-    .footer-nav a:hover { color: var(--ink); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 600px) {
-      .post-row {
-        grid-template-columns: 1fr auto;
-        grid-template-rows: auto auto;
-        gap: 6px;
-      }
-
-      .post-category-pill {
-        grid-column: 1;
-        grid-row: 1;
-        margin-right: 0;
-        width: fit-content;
-      }
-
-      .post-title { grid-column: 1; grid-row: 2; font-size: 0.9rem; }
-      .post-arrow { grid-column: 2; grid-row: 1 / 3; }
-
-      .header-nav { display: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides — Ayachi's Japan Exchange Shrine ♡</title>
+<meta name="description" content="Practical guides for Japan exchange students. Everything I wish I'd known before applying to Kakehashi.">
+
+<!--
+  ════════════════════════════════════════════════════════════════════
+  ✦ MASTER ASSET SWAP GUIDE — all files live in /assets/images/
+  ════════════════════════════════════════════════════════════════════
+
+  PAGE BACKGROUND
+    bg-gingham.png          Seamless gingham/plaid tile (~100×100px)
+
+  HEADER
+    washi-header.png        Washi tape strip for the candy bar at top
+    banner-scan.png         Full banner scan fills the whole header box
+    chara-cutout.png        Anime/game character PNG (transparent bg)
+                            → floats on top of banner, right side
+  
+  HEADER FLOATING STICKERS
+    sticker-sakura.png      sticker-star.png
+    sticker-cherry.png      sticker-bow.png
+
+  DIVIDERS
+    divider-fruit.png       Wide strip below nav bar
+    divider-cherry.png      Small icon in glitter divider
+
+  WELCOME CARD WASHI
+    washi-1.png             Top-left washi tape on welcome card
+    washi-2.png             Top-right washi tape on welcome card
+
+  GUIDE CARD BACKGROUNDS (scrapbook textures, 1 per card)
+    card-bg-1.png  card-bg-2.png  card-bg-3.png  card-bg-4.png
+    card-bg-5.png  card-bg-6.png  card-bg-7.png
+
+  GUIDE CARD WASHI TAPES (little strip at top of each card)
+    washi-card-1.png  washi-card-2.png  washi-card-3.png  washi-card-4.png
+    washi-card-5.png  washi-card-6.png  washi-card-7.png
+
+  GUIDE CARD LEFT STRIPS (narrow vertical strip, 1 per card)
+    strip-card-1.png  strip-card-2.png  strip-card-3.png  strip-card-4.png
+    strip-card-5.png  strip-card-6.png  strip-card-7.png
+
+  GUIDE CARD CORNER STICKERS (bottom-right of each card)
+    sticker-strawberry.png  sticker-bag.png   sticker-coin.png
+    sticker-bento.png       sticker-train.png sticker-dango.png
+
+  BG FLOATING STICKERS
+    → See the JS at the bottom for instructions on switching emoji → PNGs
+
+  TIP: All swaps have onerror fallbacks. Missing file = emoji/colour fallback.
+  ════════════════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   HEISEI RETRO — Ayachi's Japan Exchange Shrine
+   Tamagotchi × Ciao Magazine × Fruits Punch × Animal Crossing
+   Colors: apple green + strawberry red + baby blue + cream yellow
+   NO BOXY. NO BORING. FULL CHAOS COLLAGE ENERGY.
+══════════════════════════════════════════════════════════════ */
+:root {
+  --apple:     #7ec850;   /* apple green */
+  --apple-dk:  #4a9020;
+  --straw:     #e8193c;   /* strawberry red */
+  --straw-lt:  #ff6680;
+  --cream:     #fffde8;   /* warm cream yellow */
+  --butter:    #fff4a0;   /* butter yellow */
+  --sky:       #b8e8f8;   /* baby blue */
+  --sky-dk:    #5ab8dc;
+  --pink:      #ffb8d0;   /* bubblegum */
+  --pink-dk:   #ff7aaa;
+  --mint:      #b8f0d8;
+  --lemon:     #fff066;
+  --orange:    #ffb347;
+  --white:     #fffef9;
+  --ink:       #1a1a1a;
+  --ink-soft:  #555;
+  
+  --font-main:  'Raleway', sans-serif;
+  --font-title: 'Cormorant Garamond', serif;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-serif: 'DM Serif Display', serif;
+  --font-right: 'Libre Baskerville', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--sky); }
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(45deg, var(--straw) 0, var(--straw) 4px, var(--white) 4px, var(--white) 8px);
+  border-radius: 10px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PAGE BACKGROUND — Blue plaid CSS tile
+   SWAP with: background-image: url('/assets/images/bg-blueplaid.png');
+   if you upload a real gingham tile
+══════════════════════════════════════════════════════════════ */
+body {
+  font-family: var(--font-main);
+  color: var(--ink);
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  /* ══ PAGE BACKGROUND IMAGE ══
+     Upload your gingham/plaid PNG to assets and set the filename below.
+     It tiles automatically. Recommended: a seamless ~100×100px square.
+     ↓↓ SWAP FILENAME HERE ↓↓ */
+  background-color: #d4eef8; /* fallback colour if image fails to load */
+  background-image: url('../../assets/images/bg-gingham.png'); /* ← YOUR FILE */
+  background-size: 88px 88px; /* adjust tile size to taste */
+  background-repeat: repeat;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   PAGE WRAPPER — scrapbook "page" on top of gingham bg
+══════════════════════════════════════════════════════════════ */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TOP TICKER TAPE
+══════════════════════════════════════════════════════════════ */
+.ticker-wrap {
+  width: 100%;
+  background: var(--straw);
+  overflow: hidden;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.ticker-content {
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  padding-left: 100%;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SITE HEADER — magazine scan energy
+══════════════════════════════════════════════════════════════ */
+.site-header {
+  position: relative;
+  margin: 12px 0 16px;
+  padding: 0;
+  min-height: 200px;
+  background-image: url('../../assets/images/banner-main.jpg'); /* ← YOUR BANNER SCAN */
+  background-color: var(--cream); /* fallback */
+  background-size: cover;
+  background-position: center top;
+  border: 2.5px solid var(--ink);
+  border-radius: 4px;
+  overflow: hidden; /* clips banner image cleanly to border */
+}
+
+/* header-band: transparent now — site-header holds the image */
+.header-band {
+  background: transparent;
+  border: none;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+/* ══ CHARACTER CUTOUT OVERLAY ══
+   Floats above the banner like a sticker/collage piece.
+   Upload a PNG with transparent bg.
+   ↓↓ SWAP FILENAME for chara cutout HERE ↓↓ */
+/*.header-band::after {
+  content: '';
+  position: absolute;
+  right: 10px;                   
+  bottom: 0;
+  width: 110px;                 
+  height: 130px;
+  background-image: url('../../assets/images/chara-cutout.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  pointer-events: none;
+  z-index: 4;
+} */
+
+.header-deco-left, .header-deco-right { display: none; }
+/* image inside the side panels — swap src in HTML */
+.deco-panel-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.5);
+}
+.deco-mini-text {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--white);
+  text-shadow: 1px 1px 0 var(--ink), -1px -1px 0 var(--ink); /* outline for legibility */
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* center title — sits inside banner */
+.header-center {
+  text-align: center;
+  padding: 16px 20px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* nav lives BELOW the banner now */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 8px 8px 6px;
+  background: transparent;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.site-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 5vw, 46px);
+  color: var(--straw);
+  line-height: 1.05;
+  -webkit-text-stroke: 1.5px var(--ink);
+  text-stroke: 1.5px var(--ink);
+  text-shadow:
+    2px 2px 0 var(--ink),
+    -1px -1px 0 var(--ink);
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+.site-subtitle {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+
+/* ── NAV BUTTONS — flat thin rectangles, barely-there curve ── */
+.nav-btn {
+  display: inline-block;
+  padding: 5px 20px 6px;
+  font-family: var(--font-main);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.nav-btn:hover {
+  background: var(--butter);
+  transform: translateY(-1px);
+}
+.nav-btn.active {
+  background: var(--straw);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+/* ══ FRUIT DIVIDER STRIP ══
+   Uses an image now. Upload any divider PNG/JPG/GIF.
+   ↓↓ SWAP FILENAME HERE ↓↓ */
+.fruit-strip {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+/* ══════════════════════════════════════════════════════════════
+   MAIN LAYOUT — magazine chaos grid (not boxy!)
+══════════════════════════════════════════════════════════════ */
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LEFT SIDEBAR
+══════════════════════════════════════════════════════════════ */
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 40px;
+}
+
+/* ── SIDEBAR CARD BASE ── */
+.s-card {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  overflow: visible;
+  position: relative;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.s-card-header {
+  font-family: var(--font-title);
+  font-size: 12px;
+  padding: 5px 10px 6px;
+  background: var(--apple);
+  border-bottom: 2px solid var(--ink);
+  border-radius: 9px 9px 0 0;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.s-card-header.pink  { background: var(--pink); }
+.s-card-header.sky   { background: var(--sky); }
+.s-card-header.butter{ background: var(--butter); }
+.s-card-header.mint  { background: var(--mint); }
+.s-card-header.straw { background: var(--straw); color: var(--white); }
+.s-card-body { padding: 8px 10px; }
+
+/* ── PROFILE CARD ── */
+.profile-pic-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  overflow: hidden;
+  margin: 0 auto 6px;
+  background: var(--pink);
+  /* Sticker-style ring */
+  box-shadow: 0 0 0 3px var(--white), 0 0 0 6px var(--straw), 0 0 0 8px var(--white);
+  position: relative;
+}
+.profile-pic-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name {
+  font-family: var(--font-title);
+  font-size: 15px;
+  text-align: center;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+}
+.profile-bio {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 4px;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  padding: 3px 0;
+  border-bottom: 1px dashed #ccc;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row .k { color: var(--ink-soft); }
+.stat-row .v { font-weight: 700; color: var(--straw); }
+
+/* ── SOCIAL LINKS ── */
+.social-list { display: flex; flex-direction: column; gap: 4px; }
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  transition: all 0.1s;
+  box-shadow: 1.5px 1.5px 0 var(--ink);
+}
+.social-link:hover { background: var(--butter); transform: translate(-1px, -1px); box-shadow: 2.5px 2.5px 0 var(--ink); }
+.social-link img { width: 12px; height: 12px; }
+
+/* ── PUZZLE — z-index fix ── */
+.puzzle-card {
+  position: relative;
+  z-index: 10; /* fixes hiding behind main block */
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  margin: 6px auto;
+  width: 180px;
+  gap: 0;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tile { width: 60px; height: 60px; cursor: pointer; border: 1px solid rgba(0,0,0,0.2); transition: opacity 0.1s; }
+.tile:hover:not(.empty) { opacity: 0.8; }
+.tile.empty { background: var(--sky) !important; background-image: none !important; cursor: default; }
+.puzzle-controls { text-align: center; padding: 4px; }
+#shuffleBtn {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--apple);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
+}
+#shuffleBtn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.win-message {
+  display: none;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--straw);
+  padding: 4px;
+}
+
+/* ── FRIENDS ── */
+.friends-list { display: flex; flex-direction: column; gap: 4px; }
+.friend-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 3px 5px;
+  border-radius: 20px;
+  background: var(--cream);
+  border: 1px solid var(--ink);
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+}
+.friend-icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--ink);
+}
+
+/* ── WEB BUTTONS ── */
+.btn-collection { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; }
+.web-button { height: 18px; border: 1px solid var(--ink); border-radius: 2px; }
+
+/* ── VISITOR COUNTER ── */
+.visitor-num {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--straw);
+  text-align: center;
+  display: block;
+  letter-spacing: 3px;
+  background: var(--ink);
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 4px auto;
+  width: fit-content;
+}
+
+/* ── TIMELINE ── */
+.tl-item {
+  display: flex;
+  gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--ink);
+  font-size: 10.5px;
+  align-items: baseline;
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-month {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--straw);
+  color: var(--white);
+  padding: 2px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tl-event { font-weight: 700; color: var(--ink); }
+
+/* ── MOOD ── */
+.mood-box { text-align: center; padding: 4px; }
+.mood-icon { width: 36px; height: 36px; }
+.mood-txt { font-family: var(--font-title); font-size: 12px; color: var(--pink-dk); }
+
+/* ── QUICK LINKS ── */
+.quick-links { list-style: none; }
+.quick-links li { margin-bottom: 3px; }
+.quick-links a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 2px 0;
+  transition: color 0.12s;
+}
+.quick-links a:hover { color: var(--straw); }
+.ql-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--apple);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CENTER CONTENT
+══════════════════════════════════════════════════════════════ */
+.center-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   WELCOME CARD — magazine scan panel
+══════════════════════════════════════════════════════════════ */
+.welcome-card {
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px 20px 18px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-0.4deg);
+  overflow: visible;
+}
+/* ══ WASHI TAPE ON WELCOME CARD ══
+   Two strips of washi tape. Upload separate PNGs for each.
+   ↓↓ SWAP FILENAMES HERE ↓↓ */
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 30px;
+  width: 100px; height: 18px;
+  background-image: url('../../assets/images/washi-1.png'); /* ← WASHI TAPE 1 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.welcome-card::after {
+  content: '';
+  position: absolute;
+  top: -8px; right: 50px;
+  width: 80px; height: 16px;
+  background-image: url('../../assets/images/washi-2.png'); /* ← WASHI TAPE 2 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  transform: rotate(2deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.welcome-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--straw);
+  -webkit-text-stroke: 1px var(--ink);
+  margin-bottom: 8px;
+}
+.welcome-text {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  max-width: 100%;
+}
+.welcome-sticker {
+  position: absolute;
+  right: -12px; bottom: -12px;
+  font-size: 38px;
+  transform: rotate(15deg);
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.2));
+  animation: stickerPop 4s ease-in-out infinite;
+}
+@keyframes stickerPop {
+  0%,100% { transform: rotate(15deg) scale(1); }
+  50% { transform: rotate(15deg) scale(1.12); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION HEADERS — heisei magazine style
+══════════════════════════════════════════════════════════════ */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.section-head::after {
+  content: '';
+  flex: 1;
+  height: 2.5px;
+  background: repeating-linear-gradient(90deg,
+    var(--straw) 0, var(--straw) 6px,
+    transparent 6px, transparent 10px
+  );
+}
+.section-label {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--white);
+  background: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  padding: 3px 16px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--ink);
+  flex-shrink: 0;
+}
+.section-label.green { background: var(--apple); color: var(--ink); -webkit-text-stroke: none; }
+.section-label.blue  { background: var(--sky-dk); }
+.section-icon { font-size: 20px; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════════════════════════
+   GUIDE CARDS — COLLAGE STYLE
+   Inspired by image 3: stickers at angles on a pinboard
+══════════════════════════════════════════════════════════════ */
+
+/* Featured: big card, slight tilt */
+.guide-card-featured {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 16px 18px 20px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-0.6deg);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.guide-card-featured:hover {
+  transform: rotate(-0.6deg) translateY(-3px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+/* red gingham accent panel (like image 3 red gingham card) */
+.guide-card-featured::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  border-radius: 7px 0 0 7px;
+  background:
+    repeating-linear-gradient(0deg, var(--straw) 0, var(--straw) 5px, var(--white) 5px, var(--white) 10px),
+    repeating-linear-gradient(90deg, var(--straw) 0, var(--straw) 5px, var(--white) 5px, var(--white) 10px);
+  background-blend-mode: multiply;
+  background-color: var(--straw);
+  opacity: 0.8;
+
+}
+.featured-ribbon {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  background: var(--straw);
+  color: var(--white);
+  padding: 3px 10px 4px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  letter-spacing: 0.1em;
+}
+
+/* ── COLLAGE GRID (all guides) ── */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  position: relative;
+}
+
+/* Base guide card */
+.guide-card {
+  background: var(--white);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 12px 14px 16px;
+  position: relative;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s, box-shadow 0.15s;
+  overflow: visible;
+}
+.guide-card:hover {
+  transform: translateY(-3px) rotate(var(--card-rot, 0deg));
+  box-shadow: 5px 5px 0 var(--ink);
+}
+/* ══ INDIVIDUAL CARD BACKGROUNDS ══
+   Each guide card gets its own scrapbook-style background texture.
+   Upload any JPG/PNG — paper, fabric, magazine scan, etc.
+   ↓↓ SWAP FILENAMES FOR EACH CARD BG HERE ↓↓ */
+.guide-card:nth-child(1) {
+  --card-rot: -1deg; transform: rotate(-1deg);
+  background: var(--cream); /* fallback */
+  background-image: url('../../assets/images/card-bg-1.png'); /* ← CARD 1 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(2) {
+  --card-rot: 1.2deg; transform: rotate(1.2deg);
+  background: var(--white);
+  background-image: url('../../assets/images/card-bg-2.png'); /* ← CARD 2 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(3) {
+  --card-rot: 0.5deg; transform: rotate(0.5deg);
+  background: #fff5f9;
+  background-image: url('../../assets/images/card-bg-3.png'); /* ← CARD 3 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(4) {
+  --card-rot: -0.8deg; transform: rotate(-0.8deg);
+  background: var(--white);
+  background-image: url('../../assets/images/card-bg-4.png'); /* ← CARD 4 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(5) {
+  --card-rot: 1deg; transform: rotate(1deg);
+  background: var(--cream);
+  background-image: url('../../assets/images/card-bg-5.png'); /* ← CARD 5 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(6) {
+  --card-rot: -1.2deg; transform: rotate(-1.2deg);
+  background: #f0fbff;
+  background-image: url('../../assets/images/card-bg-6.png'); /* ← CARD 6 BG */
+  background-size: cover;
+}
+.guide-card:nth-child(7) {
+  --card-rot: 0.7deg; transform: rotate(0.7deg);
+  background: var(--white);
+  background-image: url('../../assets/images/card-bg-7.png'); /* ← CARD 7 BG */
+  background-size: cover;
+}
+
+/* ══ CARD TOP STICKERS (replaces washi tape) ══
+   PNG stickers pinned at top of each guide card via .card-top-sticker img tags.
+   No more ::before pseudo washi — we use real <img> elements now. */
+.guide-card::before { content: none; }
+
+/* top sticker img — floats above the card top edge */
+.card-top-sticker {
+  position: absolute;
+  top: -22px;
+  left: 12px;
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.18));
+  animation: wiggle 4s ease-in-out infinite;
+  z-index: 6;
+}
+.card-top-sticker.right {
+  left: auto;
+  right: 12px;
+}
+/* eki sign is wide — give it extra lift so it clears the card body */
+.card-top-sticker.right.eki-sticker {
+  top: -28px;
+  height: 36px;
+  right: 8px;
+}
+
+/* ── RAMEN corner sticker: tinted overlay on bento card ── */
+.card-sticker-bento{
+  position: absolute;
+  bottom: -10px; right: -10px;
+  width: 108px; height: 108px;
+  object-fit: contain;
+  pointer-events: none;
+  filter:
+    drop-shadow(1px 1px 0 rgba(0,0,0,0.15))
+    sepia(0.25) saturate(1.3) hue-rotate(-10deg);
+  opacity: 1;
+  transform: rotate(12deg);
+  z-index: 5;
+}
+
+/* ── Tokyo station sticker pinned to commute card corner ── */
+.card-sticker-stanpu {
+  position: absolute;
+  bottom: 4px; right: 6px;
+  width: 92px; height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.18));
+  opacity: 1;
+  transform: rotate(-6deg);
+  z-index: 5;
+}
+
+/* ══ CORNER STICKER IMAGES ON GUIDE CARDS ══
+   The old emoji corners are replaced with real <img> tags in the HTML below.
+   This CSS just hides the old pseudo-element. The .card-sticker img is used instead. */
+.guide-card::after { content: none; }
+
+/* card sticker img — floats at bottom-right corner */
+.card-sticker {
+  position: absolute;
+  bottom: 6px; right: 8px;
+  width: 30px; height: 30px;
+  object-fit: contain;
+  opacity: 1;
+  pointer-events: none;
+  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.15));
+}
+
+/* full-width card in collage */
+.guide-card.full-w {
+  grid-column: 1 / -1;
+}
+
+/* ══ LEFT SIDE STRIP ON GUIDE CARDS ══
+   Each card has a thin vertical strip on its left edge.
+   Upload pattern PNGs (any height, ~8–12px wide, or wider and it crops).
+   ↓↓ SWAP FILENAMES FOR EACH CARD STRIP HERE ↓↓ */
+.guide-card .card-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  border-radius: 7px 0 0 7px;
+  background-size: auto 100%;
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+.guide-card:nth-child(1) .card-bar {
+  background-image: url('../../assets/images/strip-card-1.png'); /* ← STRIP 1 */
+  background-color: var(--straw); /* fallback */
+}
+.guide-card:nth-child(2) .card-bar {
+  background-image: url('../../assets/images/strip-card-2.png'); /* ← STRIP 2 */
+  background-color: var(--sky-dk);
+}
+.guide-card:nth-child(3) .card-bar {
+  background-image: url('../../assets/images/strip-card-3.png'); /* ← STRIP 3 */
+  background-color: var(--orange);
+}
+.guide-card:nth-child(4) .card-bar {
+  background-image: url('../../assets/images/strip-card-4.png'); /* ← STRIP 4 */
+  background-color: var(--pink-dk);
+}
+.guide-card:nth-child(5) .card-bar {
+  background-image: url('../../assets/images/strip-card-5.png'); /* ← STRIP 5 */
+  background-color: var(--apple);
+}
+.guide-card:nth-child(6) .card-bar {
+  background-image: url('../../assets/images/strip-card-6.png'); /* ← STRIP 6 */
+  background-color: var(--sky-dk);
+}
+.guide-card:nth-child(7) .card-bar {
+  background-image: url('../../assets/images/strip-card-7.png'); /* ← STRIP 7 */
+  background-color: var(--lemon);
+}
+
+.guide-title {
+  font-family: var(--font-title);
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.35;
+  padding-left: 6px;
+}
+.guide-title a { color: inherit; text-decoration: none; }
+.guide-title a:hover { color: var(--straw); }
+.guide-title-lg {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.guide-title-lg a { color: inherit; text-decoration: none; }
+.guide-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.meta-pill {
+  font-family: var(--font-main);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 20px;
+  background: var(--pill-bg, var(--sky));
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.meta-pill.sage { --pill-bg: #b8f0b8; }
+.meta-pill.pink { --pill-bg: var(--pink); }
+.meta-pill.lemon { --pill-bg: var(--butter); }
+.meta-time {
+  font-size: 10px;
+  color: var(--ink-soft);
+  font-family: var(--font-pixel);
+  font-size: 7px;
+}
+.guide-desc {
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  padding-left: 6px;
+}
+.guide-tags { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 8px; }
+.tag {
+  font-size: 9.5px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  padding: 2px 7px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--cream);
+  transition: background 0.1s;
+  cursor: default;
+}
+.tag:hover { background: var(--butter); }
+
+/* ── READ BUTTON ── */
+.read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--straw);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 5px 14px 6px;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.read-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); background: var(--straw-lt); }
+.read-btn.green { background: var(--apple); color: var(--ink); }
+.read-btn.blue  { background: var(--sky-dk); }
+
+/* ══════════════════════════════════════════════════════════════
+   REFERENCE IMAGES (polaroid collage)
+══════════════════════════════════════════════════════════════ */
+.ref-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.ref-polaroid {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  padding: 4px 4px 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+  position: relative;
+  transition: transform 0.15s;
+}
+.ref-polaroid:nth-child(odd) { transform: rotate(-2deg); }
+.ref-polaroid:nth-child(even) { transform: rotate(1.5deg); }
+.ref-polaroid:hover { transform: rotate(0deg) scale(1.04) !important; z-index: 5; }
+.ref-polaroid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.ref-cap {
+  position: absolute;
+  bottom: 3px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 9px;
+  color: var(--ink-soft);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EMAIL CAPTURE — memo note style
+══════════════════════════════════════════════════════════════ */
+.email-card {
+  background: var(--butter);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  padding: 16px 20px;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(0.4deg);
+  /* lined paper */
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent, transparent 23px,
+      rgba(0,0,0,0.06) 23px, rgba(0,0,0,0.06) 24px
+    );
+}
+.email-card::before {
+  content: '📬';
+  position: absolute;
+  top: -18px; right: 20px;
+  font-size: 28px;
+  animation: stickerPop 3s ease-in-out infinite;
+}
+.email-card::after {
+  content: '';
+  position: absolute;
+  top: -8px; left: 30px;
+  width: 90px; height: 15px;
+  background: repeating-linear-gradient(90deg,
+    rgba(184,216,236,0.8) 0, rgba(184,216,236,0.8) 7px,
+    rgba(255,255,255,0.5) 7px, rgba(255,255,255,0.5) 10px
+  );
+  border-radius: 2px;
+  transform: rotate(-1deg);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.email-card h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--straw);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 6px;
+  text-align: center;
+}
+.email-card p {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.email-form { display: flex; flex-direction: column; gap: 5px; }
+.email-input {
+  padding: 6px 12px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  font-family: var(--font-main);
+  font-size: 12px;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.12s;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.email-input:focus { border-color: var(--straw); }
+.email-submit {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  background: var(--straw);
+  color: var(--white);
+  border: 2px solid var(--ink);
+  padding: 7px 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.1s;
+  letter-spacing: 0.1em;
+}
+.email-submit:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+.email-privacy { font-size: 9px; color: var(--ink-soft); text-align: center; margin-top: 5px; }
+
+/* ══════════════════════════════════════════════════════════════
+   GLITTER DIVIDER
+══════════════════════════════════════════════════════════════ */
+.glitter-div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 2px;
+}
+.glitter-div::before, .glitter-div::after {
+  content: '✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦';
+  flex: 1;
+  font-size: 9px;
+  color: var(--straw);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  opacity: 1;
+}
+.glitter-div::before {
+  text-align: right;
+  -webkit-mask-image: linear-gradient(to left, black, transparent);
+}
+.glitter-div::after {
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+}
+.gd-icon { font-size: 16px; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════════ */
+.site-footer {
+  margin-top: 20px;
+  background: var(--apple);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.footer-txt {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--white);
+  -webkit-text-stroke: 0.5px var(--ink);
+  margin-bottom: 3px;
+}
+.footer-note {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.footer-credit {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: rgba(0,0,0,0.5);
+  margin-top: 6px;
+  letter-spacing: 0.1em;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .collage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .left-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .profile-card { grid-column: 1 / -1; }
+  .collage-grid { grid-template-columns: 1fr; }
+  .guide-card { transform: none !important; }
+  .guide-card:hover { transform: translateY(-2px) !important; }
+  .site-title { font-size: 24px; -webkit-text-stroke: 1.5px var(--ink); }
+  .header-deco-left, .header-deco-right { display: none; }
+  .ref-collage { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .left-sidebar { grid-template-columns: 1fr; }
+  .nav-bar { gap: 3px; }
+  .nav-btn { font-size: 11px; padding: 4px 10px; }
+  .fruit-strip { font-size: 15px; }
+  .collage-grid { grid-template-columns: 1fr; }
+}
+
+/* ── BADGE GRID ── */
+.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+.pixel-badge {
+  width: 100%; aspect-ratio: 1;
+  object-fit: contain;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: var(--cream);
+  transition: transform 0.15s;
+}
+.pixel-badge:hover { transform: scale(1.12) rotate(-5deg); }
+
+</style>
 </head>
 <body>
 
-  <div class="washi-bar"></div>
+<!-- ═══ STICKY TICKER ═══ -->
+<div class="ticker-wrap">
+  <div class="ticker-content">
+    ★ AYACHI'S JAPAN EXCHANGE SHRINE ★ kakehashi program ★ yokohama life ★ bento diaries ★ gacha pulls ★ sakura season ★ melon float ★ train life ★ ほんとに楽しかった ★ AYACHI'S JAPAN EXCHANGE SHRINE ★ kakehashi program ★ yokohama life ★ bento diaries ★ gacha pulls ★
+  </div>
+</div>
 
-  <!-- HEADER -->
-  <header class="page-header">
-    <div class="header-inner">
-      <a href="../index.html" class="site-name">aayu<span>-chan</span> in japan</a>
-      <nav>
-        <ul class="header-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#">Guides</a></li>
-          <li><a href="#">Exchange</a></li>
-          <li><a href="#">Essays</a></li>
-          <li><a href="../about.html">About</a></li>
-        </ul>
-      </nav>
+<div class="page-wrapper">
+
+  <!-- ═══ HEADER + NAV — one unified banner area ═══
+       The banner image covers everything: title, subtitle, AND nav buttons.
+       Upload banner-scan.png tall enough to include the nav row.
+       Recommended banner height: ~160px+ -->
+  <div class="site-header">
+    <div class="candy-bar"></div>
+    <div class="header-band">
+
+      <div class="header-center">
+        <h1 class="site-title">Ayachi's Japan Exchange Shrine</h1>
+        <p class="site-subtitle">♡ guides for real exchange students ♡ yokohama × kakehashi ♡</p>
+      </div>
+
     </div>
-  </header>
-
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <p class="eyebrow">All writing</p>
-    <h1 class="hero-title">The Blog</h1>
-    <p class="hero-subtitle">First-person guides to Tokyo travel, Japanese exchange life, and the everyday culture between.</p>
   </div>
 
+  <!-- ═══ NAV BAR — below the banner ═══ -->
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-btn">Home</a>
+    <a href="index.html" class="nav-btn active">Guides</a>
+    <a href="../../gallery/index.html" class="nav-btn">Gallery</a>
+    <a href="../../about.html" class="nav-btn">About</a>
+  </nav>
+
+  <!-- ═══ FRUIT DIVIDER ═══
+       ↓↓ SWAP FILENAME HERE — any PNG/JPG/GIF works ↓↓ -->
+  <div class="fruit-strip">
+    <img src="../../assets/images/divider-fruit.png"
+      style="height:32px;width:100%;object-fit:cover;display:block;"
+      onerror="this.style.display='none'">
+  </div>
+
+  <!-- ═══ MAIN WRAPPER ═══ -->
   <div class="main-wrapper">
 
-    <!-- START HERE -->
-    <section class="start-here-section">
-      <div class="section-label">
-        <h2>New here? Start here</h2>
-        <span class="label-tag">↓ Begin</span>
-      </div>
-      <p class="start-here-intro">These are the four posts that best introduce what this blog is about.</p>
-      <div class="start-here-grid">
-        <a href="../research/guides/japan-exchange-survival-guide.html" class="start-link">
-          <span class="post-category-dot" style="background: #c8d8c0;"></span>
-          Japan Exchange Survival Guide
-          <span class="arrow">→</span>
-        </a>
-        <a href="../research/guides/budget-guide.html" class="start-link">
-          <span class="post-category-dot" style="background: #f5c6c0;"></span>
-          Japan on a Budget
-          <span class="arrow">→</span>
-        </a>
-        <a href="../research/essays/what-living-in-japan.html" class="start-link">
-          <span class="post-category-dot" style="background: #d8cce8;"></span>
-          What Living in Japan Is Actually Like
-          <span class="arrow">→</span>
-        </a>
-        <a href="../research/guides/packing-guide.html" class="start-link">
-          <span class="post-category-dot" style="background: #f5c6c0;"></span>
-          The Complete Packing Guide
-          <span class="arrow">→</span>
-        </a>
-      </div>
-    </section>
+    <!-- ══════════ LEFT SIDEBAR ══════════ -->
+    <aside class="left-sidebar">
 
-    <!-- CATEGORY PILLARS -->
-    <section>
-      <div class="section-label">
-        <h2>Browse by topic</h2>
-      </div>
-      <div class="pillars-grid">
-        <a href="../research/guides/index.html" class="pillar-card guides">
-          <span class="pillar-emoji">🗾</span>
-          <div class="pillar-name">Tokyo & Japan Guides</div>
-          <p class="pillar-desc">Practical, first-person guides for navigating Japan — transport, food, budgeting, festivals, and more.</p>
-          <div class="pillar-meta">
-            <span class="pillar-count">7 guides</span>
-            <span class="pillar-arrow">→</span>
+      <!-- Profile -->
+      <div class="s-card profile-card">
+        <div class="s-card-header pink">✿ ayachi ✿</div>
+        <div class="s-card-body" style="text-align:center;">
+          <div class="profile-pic-wrap">
+            <img src="../../assets/images/profile.jpg" alt="Ayachi"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#ffb8d0,#b8e8f8)';this.remove();">
           </div>
-        </a>
-        <a href="../research/guides/japan-exchange-survival-guide.html" class="pillar-card exchange">
-          <span class="pillar-emoji">✈️</span>
-          <div class="pillar-name">Exchange Life</div>
-          <p class="pillar-desc">Everything I wish I'd known before my Japan exchange — from packing to Kakehashi to coming home.</p>
-          <div class="pillar-meta">
-            <span class="pillar-count">3 guides</span>
-            <span class="pillar-arrow">→</span>
+          <p class="profile-name">Ayachi 🌸</p>
+          <p class="profile-bio">21 · exchange student<br>kakehashi × yokohama<br>writing it all down ♡</p>
+          <div style="margin-top:8px;">
+            <div class="stat-row"><span class="k">location</span><span class="v">Yokohama 🇯🇵</span></div>
+            <div class="stat-row"><span class="k">exchange</span><span class="v">Kakehashi</span></div>
+            <div class="stat-row"><span class="k">status</span><span class="v">writing! ✦</span></div>
           </div>
-        </a>
-        <a href="../research/essays/index.html" class="pillar-card essays">
-          <span class="pillar-emoji">📝</span>
-          <div class="pillar-name">Culture & Essays</div>
-          <p class="pillar-desc">Honest observations about Japanese society, cultural exchange, and what living there actually teaches you.</p>
-          <div class="pillar-meta">
-            <span class="pillar-count">5 essays</span>
-            <span class="pillar-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- Visitor Counter -->
+      <div class="s-card">
+        <div class="s-card-header sky">visitors ♡</div>
+        <div class="s-card-body" style="text-align:center;">
+          <span class="visitor-num" id="visitor-count">······</span>
+        </div>
+      </div>
+
+      <!-- Socials -->
+      <div class="s-card">
+        <div class="s-card-header butter">socials ☆</div>
+        <div class="s-card-body">
+          <div class="social-list">
+            <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-github.png" alt="" onerror="this.style.display='none'">GitHub
+            </a>
+            <a href="#" class="social-link">
+              <img src="../../assets/images/icon-linkedin.png" alt="" onerror="this.style.display='none'">LinkedIn
+            </a>
+            <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-pinterest.png" alt="" onerror="this.style.display='none'">Pinterest
+            </a>
+            <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener">
+              <img src="../../assets/images/icon-instagram.png" alt="" onerror="this.style.display='none'">Instagram
+            </a>
           </div>
-        </a>
-        <a href="../research/field-notes/retirement-dinner.html" class="pillar-card field-notes">
-          <span class="pillar-emoji">🌸</span>
-          <div class="pillar-name">Field Notes</div>
-          <p class="pillar-desc">Short dispatches from daily life in Japan — the small, specific moments that don't fit anywhere else.</p>
-          <div class="pillar-meta">
-            <span class="pillar-count">1 note</span>
-            <span class="pillar-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- PUZZLE — z-index fixed -->
+      <div class="s-card puzzle-card">
+        <div class="s-card-header mint">links × puzzle ✿</div>
+        <div class="s-card-body" style="padding:6px;">
+          <div id="puzzle" class="puzzle-grid"></div>
+          <div class="puzzle-controls">
+            <button id="shuffleBtn">SHUFFLE ♡</button>
           </div>
-        </a>
-      </div>
-    </section>
-
-    <hr class="section-divider" />
-
-    <!-- ALL POSTS WITH FILTER -->
-    <section>
-      <div class="section-label">
-        <h2>All posts</h2>
-        <span class="label-tag" id="post-count-label">10 posts</span>
+          <div id="winMessage" class="win-message">YOU WIN! ✨</div>
+        </div>
       </div>
 
-      <div class="filter-row">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="guides">Guides</button>
-        <button class="filter-btn" data-filter="exchange">Exchange</button>
-        <button class="filter-btn" data-filter="essays">Essays</button>
-        <button class="filter-btn" data-filter="field-notes">Field Notes</button>
+      <!-- App Timeline -->
+      <div class="s-card">
+        <div class="s-card-header straw">app timeline</div>
+        <div class="s-card-body">
+          <div class="tl-item"><span class="tl-month">AUG-SEP</span><span class="tl-event">Apps Open</span></div>
+          <div class="tl-item"><span class="tl-month">OCT-NOV</span><span class="tl-event">Interviews</span></div>
+          <div class="tl-item"><span class="tl-month">DEC</span><span class="tl-event">Results</span></div>
+          <div class="tl-item"><span class="tl-month">JAN-MAR</span><span class="tl-event">Departure</span></div>
+        </div>
       </div>
 
-      <div class="posts-grid" id="posts-grid">
-
-        <!-- GUIDES -->
-        <a href="../research/guides/japan-exchange-survival-guide.html" class="post-row" data-category="exchange">
-          <span class="post-category-pill pill-exchange">Exchange</span>
-          <span class="post-title">Japan Exchange Survival Guide</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/budget-guide.html" class="post-row" data-category="guides">
-          <span class="post-category-pill pill-guides">Guide</span>
-          <span class="post-title">Japan on a Budget: How to Travel Without Overspending</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/packing-guide.html" class="post-row" data-category="guides">
-          <span class="post-category-pill pill-guides">Guide</span>
-          <span class="post-title">The Complete Japan Packing Guide</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/kakehashi-guide.html" class="post-row" data-category="exchange">
-          <span class="post-category-pill pill-exchange">Exchange</span>
-          <span class="post-title">The Kakehashi Program: What to Expect</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/Train.html" class="post-row" data-category="guides">
-          <span class="post-category-pill pill-guides">Guide</span>
-          <span class="post-title">Navigating Japan's Train System</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/Bento.html" class="post-row" data-category="guides">
-          <span class="post-category-pill pill-guides">Guide</span>
-          <span class="post-title">Japanese Bento Culture: A Guide</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/Strobby-festival.html" class="post-row" data-category="guides">
-          <span class="post-category-pill pill-guides">Guide</span>
-          <span class="post-title">Strobby Festival: What You Need to Know</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/guides/last-day-japan.html" class="post-row" data-category="exchange">
-          <span class="post-category-pill pill-exchange">Exchange</span>
-          <span class="post-title">My Last Day in Japan</span>
-          <span class="post-arrow">→</span>
-        </a>
-
-        <!-- ESSAYS -->
-        <a href="../research/essays/what-living-in-japan.html" class="post-row" data-category="essays">
-          <span class="post-category-pill pill-essays">Essay</span>
-          <span class="post-title">What Living in Japan Is Actually Like</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/essays/cultural-exchange.html" class="post-row" data-category="essays">
-          <span class="post-category-pill pill-essays">Essay</span>
-          <span class="post-title">Cultural Exchange as a Two-Way Street</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/essays/cultural-exchange-statecraft.html" class="post-row" data-category="essays">
-          <span class="post-category-pill pill-essays">Essay</span>
-          <span class="post-title">Cultural Exchange and Statecraft</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/essays/host-family-dinner.html" class="post-row" data-category="essays">
-          <span class="post-category-pill pill-essays">Essay</span>
-          <span class="post-title">Dinner with My Host Family</span>
-          <span class="post-arrow">→</span>
-        </a>
-        <a href="../research/essays/bus-driver.html" class="post-row" data-category="essays">
-          <span class="post-category-pill pill-essays">Essay</span>
-          <span class="post-title">The Bus Driver</span>
-          <span class="post-arrow">→</span>
-        </a>
-
-        <!-- FIELD NOTES -->
-        <a href="../research/field-notes/retirement-dinner.html" class="post-row" data-category="field-notes">
-          <span class="post-category-pill pill-field-notes">Field Note</span>
-          <span class="post-title">Retirement Dinner</span>
-          <span class="post-arrow">→</span>
-        </a>
-
-        <div class="no-posts-msg" id="no-posts-msg">No posts in this category yet — check back soon ✿</div>
+      <!-- Current Mood -->
+      <div class="s-card">
+        <div class="s-card-header">current mood</div>
+        <div class="s-card-body">
+          <div class="mood-box">
+            <img src="../../assets/images/mood-happy.gif" alt="" class="mood-icon"
+              onerror="this.outerHTML='<div style=font-size:32px>✨</div>'">
+            <p class="mood-txt">excited! ✨</p>
+          </div>
+        </div>
       </div>
-    </section>
 
-  </div><!-- /main-wrapper -->
+      <!-- Best Friends -->
+      <div class="s-card">
+        <div class="s-card-header pink">best friends ♡</div>
+        <div class="s-card-body">
+          <div class="friends-list">
+            <div class="friend-item">
+              <img src="../../assets/images/IMG_0430.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#ffb8d0';this.removeAttribute('src');">
+              <span>Pranav</span>
+            </div>
+            <div class="friend-item">
+              <img src="../../assets/images/IMG_0431.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#b8e8f8';this.removeAttribute('src');">
+              <span>Aarush</span>
+            </div>
+            <div class="friend-item">
+              <img src="../../assets/images/IMG_0432.jpeg" alt="" class="friend-icon"
+                onerror="this.style.background='#d8caee';this.removeAttribute('src');">
+              <span>Anish</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="washi-bar"></div>
+      <!-- Pixel Badges -->
+      <div class="s-card">
+        <div class="s-card-header sky">pixel badges</div>
+        <div class="s-card-body">
+          <div class="badge-grid">
+            <img src="../../assets/images/badge1.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#ffb8d0,#b8e8f8)'">
+            <img src="../../assets/images/badge2.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#d8caee,#ffb8d0)'">
+            <img src="../../assets/images/badge3.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#b8e8f8,#d8caee)'">
+            <img src="../../assets/images/badge4.png" alt="" class="pixel-badge" onerror="this.style.background='linear-gradient(135deg,#fff4a0,#ffb8d0)'">
+          </div>
+        </div>
+      </div>
 
-  <footer class="page-footer">
-    <div class="footer-inner">
-      <p class="footer-copy">© 2025 Aayu-chan in Japan · All rights reserved</p>
-      <nav>
-        <ul class="footer-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../free-kit/index.html">Free Kit</a></li>
-          <li><a href="../projects/index.html">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
+      <!-- Web Buttons -->
+      <div class="s-card">
+        <div class="s-card-header butter">web buttons</div>
+        <div class="s-card-body">
+          <div class="btn-collection">
+            <img src="../../assets/images/button1.gif" alt="" class="web-button">
+            <img src="../../assets/images/button2.gif" alt="" class="web-button">
+            <img src="../../assets/images/button3.gif" alt="" class="web-button">
+            <img src="../../assets/images/button4.gif" alt="" class="web-button">
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="s-card">
+        <div class="s-card-header mint">quick links</div>
+        <div class="s-card-body">
+          <ul class="quick-links">
+            <li><a href="#featured"><span class="ql-dot"></span>Start Here</a></li>
+            <li><a href="kakehashi-guide.html"><span class="ql-dot" style="background:var(--straw)"></span>Kakehashi Guide</a></li>
+            <li><a href="packing-guide.html"><span class="ql-dot" style="background:var(--sky-dk)"></span>Packing List</a></li>
+            <li><a href="budget-guide.html"><span class="ql-dot" style="background:var(--orange)"></span>Budget Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ══════════ CENTER COLUMN ══════════ -->
+    <div class="center-col">
+
+      <!-- WELCOME CARD -->
+      <div class="welcome-card">
+        <img src="../../assets/images/divider-top.png" alt="" style="max-width:200px;opacity:.3;display:block;margin:0 auto 8px;">
+        <h2 class="welcome-title">✿ welcome to my guide collection!</h2>
+        <p class="welcome-text">
+          Hi! I'm Ayachi, and I went to Japan at  through the Asia Kakehashi Project 🌸 These guides are everything I wish I knew before applying. Packing, food, commutes, school life, budget — click any card to start reading! ♡
+        </p>
+        <span class="welcome-sticker">🍓</span>
+      </div>
+
+      <!-- ── FEATURED GUIDE ── -->
+      <div id="featured">
+        <div class="section-head">
+          <span class="section-icon">⭐</span>
+          <span class="section-label">★ start here ★</span>
+          <span class="section-icon">⭐</span>
+        </div>
+
+        <div class="guide-card-featured">
+          <div class="featured-ribbon">★ FEATURED GUIDE ★</div>
+          <!-- washi tape strip via pseudo but also floating emoji -->
+          <span style="position:absolute;top:-14px;right:-10px;font-size:30px;transform:rotate(20deg);filter:drop-shadow(2px 2px 0 rgba(0,0,0,.2))">🏮</span>
+
+          <h3 class="guide-title-lg">
+            <a href="kakehashi-guide.html">Complete Guide to the Asia Kakehashi Project</a>
+          </h3>
+          <div class="guide-meta">
+            <span class="meta-pill">9th–10th Graders</span>
+            <span class="meta-time">⏱ 12 MIN READ</span>
+          </div>
+          <p class="guide-desc">
+            Everything you need to know about applying to the Asia Kakehashi Project. Essay tips, interview prep, what actually happens during the program, and insider advice from someone who's been there ♡
+          </p>
+          <div class="guide-tags">
+            <span class="tag">Application</span>
+            <span class="tag">Scholarship</span>
+            <span class="tag">Interview</span>
+            <span class="tag">Essay Tips</span>
+          </div>
+          <a href="kakehashi-guide.html" class="read-btn">READ GUIDE →</a>
+        </div>
+      </div>
+
+      <!-- ═══ CHERRY DIVIDER ═══
+           ↓↓ SWAP FILENAME — upload your own cherry/fruit divider PNG ↓↓ -->
+      <div class="glitter-div">
+        <img src="../../assets/images/divider-cherry.png" class="gd-icon" alt=""
+          style="width:auto;height:20px;object-fit:contain;"
+          onerror="this.outerHTML='<span class=\'gd-icon\'>🍒</span>'">
+      </div>
+
+      <!-- ── ALL GUIDES — COLLAGE GRID ── -->
+      <div>
+        <div class="section-head">
+          <span class="section-icon">📖</span>
+          <span class="section-label green">all guides</span>
+          <span class="section-icon">📖</span>
+        </div>
+
+        <div class="collage-grid">
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
+            <!-- corner sticker -->
+            <img class="card-sticker" src="../../assets/images/sticker-strawberry.png" alt=""
+              onerror="this.outerHTML='<span class=\'card-sticker\' style=\'font-size:20px;\'>🍓</span>'">
+            <h4 class="guide-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill sage">10th–12th</span>
+              <span class="meta-time">⏱ 18 MIN</span>
+            </div>
+            <p class="guide-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
+            <div class="guide-tags"><span class="tag">Mental Prep</span><span class="tag">Culture Shock</span></div>
+            <a href="japan-exchange-survival-guide.html" class="read-btn green">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker right" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
+            <!-- corner sticker -->
+            <img class="card-sticker" src="../../assets/images/sticker-bag.png" alt=""
+              onerror="this.outerHTML='<span class=\'card-sticker\' style=\'font-size:20px;\'>🎒</span>'">
+            <h4 class="guide-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill">All Students</span>
+              <span class="meta-time">⏱ 15 MIN</span>
+            </div>
+            <p class="guide-desc">Tested over a full year in Yokohama. What to bring, skip, and buy in Japan.</p>
+            <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Gear</span><span class="tag">Tech</span></div>
+            <a href="packing-guide.html" class="read-btn blue">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
+            <!-- corner sticker -->
+            <img class="card-sticker" src="../../assets/images/sticker-coin.png" alt=""
+              onerror="this.outerHTML='<span class=\'card-sticker\' style=\'font-size:20px;\'>💴</span>'">
+            <h4 class="guide-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill lemon">Students + Parents</span>
+              <span class="meta-time">⏱ 12 MIN</span>
+            </div>
+            <p class="guide-desc">Real numbers. Monthly spend, what's covered, what isn't. No sugar-coating.</p>
+            <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
+            <a href="budget-guide.html" class="read-btn">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker right" src="../../assets/images/ramen.png" alt="" onerror="this.style.display='none'">
+            <!-- corner sticker -->
+            <img class="card-sticker" src="../../assets/images/bento.png" alt=""
+              onerror="this.outerHTML='<span class=\'card-sticker\' style=\'font-size:20px;\'>🍱</span>'">
+            <h4 class="guide-title"><a href="retirement-dinner.html">What I Ate at a Japanese Retirement Dinner</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Host Family Life</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">My host ojii-chan retired at 70+. The whole family gathered. Everything on that table.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Culture</span></div>
+            <a href="retirement-dinner.html" class="read-btn green">READ →</a>
+          </div>
+
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'" style="--wr:5deg;">
+            <!-- RAMEN tinted corner sticker (special!) -->
+            <img class="card-sticker-bento" src="../../assets/images/bento.png" alt="">
+            <h4 class="guide-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Host Family Life</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">Every item in that lunchbox. Bento culture, breakfast, dinner etiquette.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span></div>
+            <a href="Bento.html" class="read-btn">READ →</a>
+          </div>
+ <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker right" src="../../assets/images/ramen.png" alt="" onerror="this.style.display='none'">
+            <!-- corner sticker -->
+            <img class="card-sticker" src="../../assets/images/bento.png" alt=""
+              onerror="this.outerHTML='<span class=\'card-sticker\' style=\'font-size:20px;\'>🍱</span>'">
+            <h4 class="guide-title"><a href="last-day-japan.html">llasttt</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Host Family Life</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">My host ojii-chan retired at 70+. The whole family gathered. Everything on that table.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Culture</span></div>
+            <a href="last-day-japan.html" class="read-btn green">READ →</a>
+          </div>
+          <div class="guide-card">
+            <div class="card-bar"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker right eki-sticker" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
+            <!-- TOKYO STATION corner sticker (special!) -->
+            <img class="card-sticker-stanpu" src="../../assets/images/stanpu.png" alt="">
+            <h4 class="guide-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill sage">Daily Life</span>
+              <span class="meta-time">⏱ 8 MIN</span>
+            </div>
+            <p class="guide-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
+            <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
+            <a href="Train.html" class="read-btn blue">READ →</a>
+          </div>
+
+          <div class="guide-card full-w">
+            <div class="card-bar" style="background:var(--pink-dk)"></div>
+            <!-- top sticker -->
+            <img class="card-top-sticker" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
+            <h4 class="guide-title" style="font-size:15px;"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri 🍓</a></h4>
+            <div class="guide-meta">
+              <span class="meta-pill pink">Events</span>
+              <span class="meta-time">⏱ 10 MIN</span>
+            </div>
+            <p class="guide-desc">A strawberry festival in Yokohama. Everything on that table — and what Japanese festival food culture actually looks like from the inside. Sticky, sweet, and very pink.</p>
+            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Festival</span><span class="tag">Yokohama</span><span class="tag">Seasonal</span></div>
+            <a href="Strobby-festival.html" class="read-btn">READ →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="glitter-div"><span class="gd-icon">🌸</span></div>
+
+      <!-- EMAIL CAPTURE -->
+      <div class="email-card">
+        <h3>📥 Free Japan Application Starter Kit</h3>
+        <p>Application timeline, document checklist, essay frameworks — one free PDF. Used by students applying to Kakehashi and similar programs.</p>
+        <form class="email-form" onsubmit="handleSignup(event)">
+          <input type="text" class="email-input" placeholder="first name" id="idx-name" required>
+          <input type="email" class="email-input" placeholder="your@email.com" id="idx-email" required>
+          <button type="submit" class="email-submit">GET IT FREE ♡</button>
+        </form>
+        <p class="email-privacy">no spam · max 1 email/week · unsubscribe anytime</p>
+      </div>
+
+    </div><!-- end center-col -->
+  </div><!-- end main-wrapper -->
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <img src="../../assets/images/footer-divider.png" alt="" style="max-width:180px;opacity:.3;display:block;margin:0 auto 8px;">
+    <p class="footer-txt">Ayachi's Japan Exchange Guides ©️ 2026</p>
+    <p class="footer-note">Made with ♡ for future exchange students</p>
+    <p class="footer-credit">LAYOUT INSPIRED BY 2000s ANIME FAN SITES &amp; CIAO MAGAZINE ★ HEISEI RETRO FOREVER</p>
   </footer>
 
-  <script>
-    // ── Filter logic ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const postRows = document.querySelectorAll('.post-row');
-    const noPostsMsg = document.getElementById('no-posts-msg');
-    const countLabel = document.getElementById('post-count-label');
+</div><!-- end page-wrapper -->
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
+<script>
+/* ── BG STICKERS ── */
+(function(){
+  /*
 
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+/* ── EMAIL FORM ── */
+function handleSignup(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.email-submit');
+  btn.textContent = 'SENDING ♡...';
+  setTimeout(() => {
+    btn.textContent = 'CHECK YOUR INBOX! ✨';
+    btn.style.background = 'var(--apple)';
+    btn.style.color = 'var(--ink)';
+  }, 800);
+}
 
-        let visible = 0;
-        postRows.forEach(row => {
-          const match = filter === 'all' || row.dataset.category === filter;
-          row.classList.toggle('hidden', !match);
-          if (match) visible++;
-        });
+/* ── PUZZLE (z-index fixed via CSS already) ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const puzzle = document.getElementById("puzzle");
+  const shuffleBtn = document.getElementById("shuffleBtn");
+  const winMessage = document.getElementById("winMessage");
+  if (!puzzle || !shuffleBtn) return;
 
-        noPostsMsg.style.display = visible === 0 ? 'block' : 'none';
-        countLabel.textContent = filter === 'all'
-          ? `${visible} posts`
-          : `${visible} ${filter.replace('-', ' ')} post${visible !== 1 ? 's' : ''}`;
-      });
-    });
-  </script>
+  const size = 3, tileSize = 60;
+  const imageSrc = "../../assets/images/stamp-main.jpg";
+  let tiles = [], emptyIndex = 8;
+
+  function initPuzzle() {
+    puzzle.innerHTML = ""; tiles = [];
+    for (let i = 0; i < 9; i++) {
+      const tile = document.createElement("div");
+      tile.classList.add("tile");
+      if (i === 8) { tile.classList.add("empty"); emptyIndex = i; }
+      else {
+        const row = Math.floor(i / size), col = i % size;
+        tile.style.backgroundImage = `url(${imageSrc})`;
+        tile.style.backgroundPosition = `-${col * tileSize}px -${row * tileSize}px`;
+        tile.style.backgroundSize = `${tileSize * size}px ${tileSize * size}px`;
+      }
+      tile.addEventListener("click", () => moveTile(i));
+      puzzle.appendChild(tile); tiles.push(tile);
+    }
+  }
+  function isAdjacent(i1,i2){const r1=Math.floor(i1/size),c1=i1%size,r2=Math.floor(i2/size),c2=i2%size;return(Math.abs(r1-r2)+Math.abs(c1-c2))===1;}
+  function swap(i1,i2){const tb=tiles[i1].style.backgroundPosition,ti=tiles[i1].style.backgroundImage;tiles[i1].style.backgroundPosition=tiles[i2].style.backgroundPosition;tiles[i1].style.backgroundImage=tiles[i2].style.backgroundImage;tiles[i2].style.backgroundPosition=tb;tiles[i2].style.backgroundImage=ti;tiles[i1].classList.toggle("empty");tiles[i2].classList.toggle("empty");}
+  function moveTile(index){if(isAdjacent(index,emptyIndex)){swap(index,emptyIndex);emptyIndex=index;checkWin();}}
+  function shufflePuzzle(){for(let i=0;i<200;i++){const n=[];for(let j=0;j<9;j++){if(isAdjacent(j,emptyIndex))n.push(j);}const r=n[Math.floor(Math.random()*n.length)];swap(r,emptyIndex);emptyIndex=r;}if(winMessage)winMessage.style.display="none";}
+  function checkWin(){let ok=true;for(let i=0;i<8;i++){const row=Math.floor(i/size),col=i%size;if(tiles[i].style.backgroundPosition!==`-${col*tileSize}px -${row*tileSize}px`){ok=false;break;}}if(ok&&winMessage)winMessage.style.display="block";}
+  shuffleBtn.addEventListener("click", shufflePuzzle);
+  initPuzzle(); shufflePuzzle();
+});
+</script>
+
+<script>
+/* ── VISITOR COUNTER ── */
+(function(){
+  var KEY="ayachi-samyal-shrine-v1",SESSION_KEY="ayachi_counted";
+  var BASE="https://countapi.mileshilliard.com/api/v1";
+  var el=document.getElementById("visitor-count");
+  function display(n){if(el)el.textContent=String(n).padStart(6,"0");}
+  if(sessionStorage.getItem(SESSION_KEY)){
+    fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{if(el)el.textContent="000000";});
+  }else{
+    fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{if(el)el.textContent="000000";});
+  }
+})();
+</script>
 
 </body>
 </html>
+
+
+
