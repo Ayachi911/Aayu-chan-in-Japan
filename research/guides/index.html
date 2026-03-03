@@ -14,35 +14,28 @@
    AYACHI SAMYAL — GUIDES INDEX
    Elevated scrapbook: Playfair titles + EB Garamond body
    Palette: warm cream · deep ink · terracotta accent · moss
-   Collage soul kept — chaos controlled
 ══════════════════════════════════════════════════════ */
 
 :root {
-  /* palette — warm, mature, not childish */
   --cream:        #f7f1e3;
   --cream-dk:     #ede4cc;
   --paper:        #faf7f0;
   --ink:          #1c1510;
   --ink-mid:      #3d2e1e;
   --ink-soft:     #7a6a58;
-  --terra:        #c0572a;   /* single warm accent — terracotta */
+  --terra:        #c0572a;
   --terra-lt:     #e8896a;
   --terra-pale:   #f5ddd4;
-  --moss:         #4a6a48;   /* secondary — only for tags/labels */
+  --moss:         #4a6a48;
   --moss-lt:      #c8dcc4;
   --gold:         #9a7828;
   --gold-pale:    #f0e4b8;
   --rule:         rgba(60,40,20,0.15);
   --rule-dk:      rgba(60,40,20,0.3);
-
-  /* type */
   --display:  'Playfair Display', serif;
   --serif:    'EB Garamond', serif;
   --sans:     'DM Sans', sans-serif;
   --jp:       'Noto Serif JP', serif;
-
-  /* spacing */
-  --rhythm: 3rem;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -61,32 +54,24 @@ body {
     repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(192,87,42,0.09) 79px, rgba(192,87,42,0.09) 80px);
 }
 
-/* paper noise texture */
 body::before {
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events:none;z-index:0;
 }
-
-/* faint grid — like notebook paper */
 body::after {
   content:'';position:fixed;inset:0;
-  background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.06) 27px,rgba(90,60,20,0.06) 28px);
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.06) 27px,rgba(90,60,20,0.06) 28px);
   pointer-events:none;z-index:0;
 }
 
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:8px;}
 ::-webkit-scrollbar-track{background:var(--cream-dk);}
 ::-webkit-scrollbar-thumb{background:var(--terra);border-radius:4px;}
 
-/* ── READING PROGRESS ── */
 .reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--terra),var(--gold));z-index:9999;width:0%;transition:width 0.1s linear;}
 
-/* ════════════════════════════════════════════════════
-   NAV — clean, editorial, matches main site
-════════════════════════════════════════════════════ */
+/* ── NAV ── */
 .global-nav {
   position: sticky; top: 0; z-index: 100;
   background: var(--ink);
@@ -98,6 +83,7 @@ body::after {
   font-family: var(--display); font-style: italic; font-size: 1.1rem;
   color: var(--cream); text-decoration: none; letter-spacing: 0.02em;
   padding: 0.85rem 0; display: flex; align-items: center; gap: 0.6rem;
+  flex-shrink: 0;
 }
 .nav-logo-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 0.78rem; font-weight: 300; opacity: 0.45; font-style: normal; }
 .nav-links { display: flex; }
@@ -111,18 +97,14 @@ body::after {
 .nav-links a:hover { color: var(--cream); }
 .nav-links a.active { color: var(--terra-lt); }
 
-/* ════════════════════════════════════════════════════
-   HEADER — collage scan energy, mature version
-════════════════════════════════════════════════════ */
+/* ── HEADER ── */
 .site-header {
   position: relative; z-index: 1;
   background: var(--paper);
   border-bottom: 1px solid var(--rule-dk);
-  padding: 2.5rem 2.5rem 0;
+  padding: 2rem 2.5rem 0;
   overflow: hidden;
 }
-
-/* faint kanji watermark background */
 .site-header::before {
   content: 'ガイド';
   position: absolute; right: 3rem; top: 50%; transform: translateY(-50%);
@@ -130,18 +112,10 @@ body::after {
   color: rgba(60,40,20,0.04); pointer-events: none; letter-spacing: 0.15em;
   line-height: 1;
 }
-
 .header-inner { max-width: 1100px; margin: 0 auto; }
 
-/* washi tape strip at very top of header */
-.washi-strip {
-  display: flex; gap: 0; margin-bottom: 2rem;
-  height: 14px; overflow: hidden;
-}
-.washi-segment {
-  height: 14px; flex: 1;
-  opacity: 0.75;
-}
+.washi-strip { display: flex; gap: 0; margin-bottom: 1.5rem; height: 14px; overflow: hidden; }
+.washi-segment { height: 14px; flex: 1; opacity: 0.75; }
 .ws-1 { background: repeating-linear-gradient(45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px); }
 .ws-2 { background: repeating-linear-gradient(-45deg,var(--moss) 0,var(--moss) 4px,var(--moss-lt) 4px,var(--moss-lt) 8px); }
 .ws-3 { background: repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 4px,var(--gold-pale) 4px,var(--gold-pale) 8px); }
@@ -153,80 +127,84 @@ body::after {
   display: grid; grid-template-columns: 1fr auto;
   gap: 2rem; align-items: end;
 }
-
-.header-text {}
 .header-overline {
   font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--terra); margin-bottom: 0.75rem;
+  color: var(--terra); margin-bottom: 0.6rem;
   display: flex; align-items: center; gap: 0.6rem;
 }
 .header-overline::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--terra); }
-
 .site-title {
-  font-family: var(--display); font-size: clamp(2rem, 4vw, 3.2rem);
+  font-family: var(--display); font-size: clamp(1.7rem, 4vw, 3.2rem);
   font-weight: 400; line-height: 1.1; color: var(--ink);
-  margin-bottom: 0.6rem; letter-spacing: -0.01em;
+  margin-bottom: 0.5rem; letter-spacing: -0.01em;
 }
 .site-title em { font-style: italic; color: var(--terra); }
-
 .site-subtitle {
-  font-family: var(--serif); font-size: 1rem; font-weight: 400;
+  font-family: var(--serif); font-size: 0.95rem; font-weight: 400;
   color: var(--ink-soft); line-height: 1.7; max-width: 480px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.welcome-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.wmeta-item { display: flex; flex-direction: column; gap: 0.1rem; }
+.wmeta-label { font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
+.wmeta-value { font-family: var(--serif); font-size: 0.88rem; color: var(--terra); }
+
+.header-stamps { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; padding-bottom: 1.5rem; }
+.xstamp {
+  font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em;
+  text-align: center; line-height: 1.55; position: relative;
+  transform: rotate(var(--xr, 0deg));
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.xs-kake {
+  --xr: -5deg; background: #6e1b28; color: #f5edd8; font-size: 0.58rem;
+  padding: 0.4rem 1.1rem 0.45rem;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  box-shadow: 3px 3px 0 rgba(40,0,10,0.35); min-width: 90px;
+}
+.xs-kake::after {
+  content: ''; position: absolute; inset: 3px;
+  border: 1px solid rgba(245,237,216,0.25);
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); pointer-events: none;
+}
+.xs-yoko {
+  --xr: 4deg; color: rgba(60,100,58,0.9); font-size: 0.55rem;
+  border: 2px solid rgba(74,106,72,0.75); border-radius: 60px;
+  padding: 0.38rem 1.15rem; box-shadow: inset 0 0 0 4px rgba(74,106,72,0.1); min-width: 88px;
+}
+.xs-yoko::before {
+  content: ''; position: absolute; inset: 3px;
+  border: 1px dashed rgba(74,106,72,0.3); border-radius: 60px; pointer-events: none;
+}
+.xs-india {
+  --xr: 8deg; background: #9a7828; color: #1c1207; font-size: 0.52rem;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 72px; height: 72px; box-shadow: 2px 3px 0 rgba(80,50,0,0.3);
 }
 
-/* stamp cluster in header */
-.header-stamps {
-  display: flex; flex-direction: column; align-items: flex-end;
-  gap: 0.8rem; padding-bottom: 1.5rem;
-}
-.stamp {
-  display: inline-block; border: 2px solid currentColor; border-radius: 2px;
-  padding: 0.3rem 0.65rem; font-family: var(--sans);
-  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em;
-  text-align: center; line-height: 1.4;
-  transform: rotate(var(--rot, -3deg)); position: relative;
-}
-.stamp::before { content: ''; position: absolute; inset: 2px; border: 1px solid currentColor; opacity: 0.3; }
-.st-terra  { color: rgba(192,87,42,0.75); --rot: -4deg; }
-.st-moss   { color: rgba(74,106,72,0.75);  --rot:  3deg; }
-.st-ink    { color: rgba(60,40,20,0.6);    --rot: -1deg; }
-.st-circle { border-radius: 50%; width: 68px; height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.52rem; line-height: 1.5; padding: 0; --rot: 6deg; }
-
-/* nav row below header content */
 .header-nav {
   display: flex; gap: 0.4rem; flex-wrap: wrap;
-  padding: 1rem 0 1.2rem;
+  padding: 0.9rem 0 1rem;
   border-top: 1px solid var(--rule);
-  margin-top: 0;
 }
 .hnav-btn {
-  font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-mid); text-decoration: none;
-  padding: 0.35rem 1rem;
-  border: 1.5px solid var(--rule-dk);
-  border-radius: 2px;
-  background: transparent;
-  transition: all 0.12s;
+  padding: 0.3rem 0.85rem;
+  border: 1.5px solid var(--rule-dk); border-radius: 2px;
+  background: transparent; transition: all 0.12s;
 }
 .hnav-btn:hover { background: var(--terra-pale); border-color: var(--terra); color: var(--terra); }
 .hnav-btn.active { background: var(--terra); color: white; border-color: var(--terra); }
 
-/* ════════════════════════════════════════════════════
-   PAGE LAYOUT
-════════════════════════════════════════════════════ */
+/* ── LAYOUT ── */
 .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 5rem; position: relative; z-index: 1; }
-.main-wrap { display: grid; grid-template-columns: 1fr 210px; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+.main-wrap { display: grid; grid-template-columns: 1fr 210px; gap: 3rem; align-items: start; margin-top: 2rem; }
 
-/* ════════════════════════════════════════════════════
-   SECTION HEADERS
-════════════════════════════════════════════════════ */
-.section-head {
-  display: flex; align-items: center; gap: 1rem;
-  margin-bottom: 1.4rem;
-}
+/* ── SECTION HEADERS ── */
+.section-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
 .section-head::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--rule-dk), transparent); }
 .section-label {
   font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
@@ -235,154 +213,111 @@ body::after {
 }
 .section-label::before { content: ''; display: inline-block; width: 12px; height: 1px; background: var(--terra); }
 
-/* ════════════════════════════════════════════════════
-   WELCOME CARD — paper note pinned to board
-════════════════════════════════════════════════════ */
+/* ── WELCOME CARD ── */
 .welcome-card {
-  background: #fffdf4;
-  border: 1px solid var(--rule-dk);
-  padding: 1.6rem 1.8rem 1.5rem;
-  position: relative;
+  background: #fffdf4; border: 1px solid var(--rule-dk);
+  padding: 1.3rem 1.6rem 1.2rem; position: relative;
   box-shadow: 2px 3px 0 var(--rule-dk), 4px 6px 16px rgba(60,40,20,0.06);
-  transform: rotate(-0.3deg);
-  margin-bottom: 0;
+  transform: rotate(-0.3deg); margin-bottom: 0;
 }
-/* top tape */
 .welcome-card::before {
-  content: '';
-  position: absolute; top: -9px; left: 40px;
+  content: ''; position: absolute; top: -9px; left: 40px;
   width: 80px; height: 16px;
-  background: repeating-linear-gradient(90deg,
-    rgba(192,87,42,0.55) 0, rgba(192,87,42,0.55) 6px,
-    rgba(245,221,212,0.7) 6px, rgba(245,221,212,0.7) 10px
-  );
-  border-radius: 1px;
-  transform: rotate(-1.5deg);
+  background: repeating-linear-gradient(90deg,rgba(192,87,42,0.55) 0,rgba(192,87,42,0.55) 6px,rgba(245,221,212,0.7) 6px,rgba(245,221,212,0.7) 10px);
+  border-radius: 1px; transform: rotate(-1.5deg);
 }
 .welcome-card::after {
-  content: '';
-  position: absolute; top: -7px; right: 60px;
+  content: ''; position: absolute; top: -7px; right: 60px;
   width: 60px; height: 14px;
-  background: repeating-linear-gradient(-45deg,
-    rgba(74,106,72,0.45) 0, rgba(74,106,72,0.45) 4px,
-    rgba(200,220,196,0.6) 4px, rgba(200,220,196,0.6) 8px
-  );
-  border-radius: 1px;
-  transform: rotate(2deg);
+  background: repeating-linear-gradient(-45deg,rgba(74,106,72,0.45) 0,rgba(74,106,72,0.45) 4px,rgba(200,220,196,0.6) 4px,rgba(200,220,196,0.6) 8px);
+  border-radius: 1px; transform: rotate(2deg);
 }
-.welcome-title {
-  font-family: var(--display); font-size: 1.25rem; font-style: italic;
-  color: var(--ink); margin-bottom: 0.6rem;
-}
-.welcome-text {
-  font-family: var(--serif); font-size: 0.95rem; line-height: 1.8;
-  color: var(--ink-mid); max-width: 560px;
-}
-.welcome-meta {
-  display: flex; gap: 1.5rem; margin-top: 1rem;
-  padding-top: 0.8rem; border-top: 1px dashed var(--rule-dk);
-  flex-wrap: wrap;
-}
-.wmeta-item { display: flex; flex-direction: column; gap: 0.1rem; }
-.wmeta-label { font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
-.wmeta-value { font-family: var(--serif); font-size: 0.88rem; color: var(--terra); }
+.welcome-title { font-family: var(--display); font-size: 1.15rem; font-style: italic; color: var(--ink); margin-bottom: 0.4rem; }
+.welcome-text { font-family: var(--serif); font-size: 0.9rem; line-height: 1.75; color: var(--ink-mid); max-width: 560px; }
 
-/* ════════════════════════════════════════════════════
-   FEATURED CARD
-════════════════════════════════════════════════════ */
+/* ── FEATURED CARD ── */
 .featured-card {
-  background: var(--paper);
-  border: 1px solid var(--rule-dk);
+  background: var(--paper); border: 1px solid var(--rule-dk);
   border-left: 4px solid var(--terra);
-  padding: 1.8rem 1.8rem 1.6rem 2rem;
-  position: relative;
+  padding: 1.5rem 1.6rem 1.4rem 1.8rem; position: relative;
   transform: rotate(0.2deg);
   box-shadow: 3px 4px 0 var(--rule), 6px 8px 20px rgba(60,40,20,0.07);
   transition: transform 0.15s, box-shadow 0.15s;
 }
 .featured-card:hover { transform: rotate(0.2deg) translateY(-3px); box-shadow: 3px 7px 0 var(--rule), 6px 12px 24px rgba(60,40,20,0.1); }
-
 .featured-ribbon {
-  display: inline-block;
-  font-family: var(--sans); font-size: 0.6rem; font-weight: 700;
+  display: inline-block; font-family: var(--sans); font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.25em; text-transform: uppercase;
-  background: var(--terra); color: white;
-  padding: 0.2rem 0.7rem; margin-bottom: 0.9rem;
+  background: var(--terra); color: white; padding: 0.2rem 0.7rem; margin-bottom: 0.8rem;
 }
 .featured-title {
-  font-family: var(--display); font-size: clamp(1.3rem, 2.5vw, 1.75rem);
-  font-weight: 600; line-height: 1.2; color: var(--ink); margin-bottom: 0.5rem;
+  font-family: var(--display); font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-weight: 600; line-height: 1.2; color: var(--ink); margin-bottom: 0.4rem;
 }
 .featured-title a { color: inherit; text-decoration: none; transition: color 0.15s; }
 .featured-title a:hover { color: var(--terra); }
 .featured-title-jp {
-  display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 0.75rem;
-  font-weight: 300; color: var(--ink-soft); letter-spacing: 0.2em; margin-top: 0.25rem;
+  display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 0.72rem;
+  font-weight: 300; color: var(--ink-soft); letter-spacing: 0.2em; margin-top: 0.2rem;
 }
 .featured-desc {
-  font-family: var(--serif); font-size: 0.93rem; line-height: 1.8;
-  color: var(--ink-mid); margin: 0.8rem 0 1rem; max-width: 560px;
+  font-family: var(--serif); font-size: 0.9rem; line-height: 1.75;
+  color: var(--ink-mid); margin: 0.7rem 0 0.9rem; max-width: 560px;
 }
-.card-meta { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+
+/* shared meta / tags / btn */
+.card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
 .meta-pill {
-  font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
+  font-family: var(--sans); font-size: 0.58rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 0.2rem 0.65rem; border-radius: 2px;
-  border: 1.5px solid var(--rule-dk);
-  background: var(--cream-dk);
-  color: var(--ink-mid);
+  padding: 0.18rem 0.6rem; border-radius: 2px;
+  border: 1.5px solid var(--rule-dk); background: var(--cream-dk); color: var(--ink-mid);
 }
 .meta-pill.terra { background: var(--terra-pale); border-color: var(--terra); color: var(--terra); }
 .meta-pill.moss  { background: var(--moss-lt); border-color: var(--moss); color: var(--moss); }
-.meta-time { font-family: var(--sans); font-size: 0.62rem; color: var(--ink-soft); }
-
-.guide-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.meta-time { font-family: var(--sans); font-size: 0.6rem; color: var(--ink-soft); }
+.guide-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
 .tag {
-  font-family: var(--sans); font-size: 0.62rem; font-weight: 500;
-  padding: 0.18rem 0.55rem; border: 1px solid var(--rule-dk);
-  border-radius: 1px; color: var(--ink-soft); cursor: default;
-  transition: background 0.1s;
+  font-family: var(--sans); font-size: 0.6rem; font-weight: 500;
+  padding: 0.15rem 0.5rem; border: 1px solid var(--rule-dk);
+  border-radius: 1px; color: var(--ink-soft);
 }
-.tag:hover { background: var(--cream-dk); color: var(--ink-mid); }
-
 .read-btn {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  font-family: var(--serif); font-style: italic; font-size: 0.82rem;
   color: white; background: var(--terra);
-  padding: 0.5rem 1.4rem; text-decoration: none;
-  border: none; transition: background 0.12s;
+  padding: 0.38rem 1rem 0.42rem; text-decoration: none;
+  border-radius: 3px; box-shadow: 2px 2px 0 var(--rule-dk);
+  transition: background 0.12s, box-shadow 0.12s;
 }
-.read-btn:hover { background: var(--ink); }
+.read-btn:hover { background: var(--ink); box-shadow: 3px 3px 0 var(--rule-dk); }
 .read-btn.moss-btn { background: var(--moss); }
 .read-btn.moss-btn:hover { background: var(--ink); }
 .read-btn.ink-btn { background: var(--ink-mid); }
 .read-btn.ink-btn:hover { background: var(--ink); }
 
-/* ════════════════════════════════════════════════════
-   COLLAGE GRID — the heart of the page
-   Cards feel like pinned notes, not all identical
-════════════════════════════════════════════════════ */
+/* ── COLLAGE GRID ── */
 .collage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
+/* ── GUIDE CARD — compact scrapbook clipping ── */
 .guide-card {
   background: var(--paper);
   border: 1px solid var(--rule-dk);
-  padding: 1.2rem 1.3rem 1.4rem;
+  padding: 1rem 1.15rem 1.1rem;
   position: relative;
+  overflow: visible; /* stickers can peek out */
   transition: transform 0.15s, box-shadow 0.15s;
   transform: rotate(var(--cr, 0deg));
+  /* extra bottom padding so sticker doesn't overlap button */
 }
 .guide-card::before {
-  /* left color bar — each card gets its own */
   content: '';
   position: absolute; left: 0; top: 0; bottom: 0;
-  width: 4px;
-  background: var(--bar-color, var(--terra));
+  width: 4px; background: var(--bar-color, var(--terra));
 }
 .guide-card:hover {
   transform: rotate(var(--cr, 0deg)) translateY(-4px);
@@ -390,596 +325,296 @@ body::after {
   z-index: 5;
 }
 
-/* card top tape — each card different */
-.card-tape {
-  position: absolute; top: -8px;
-  height: 14px; width: 60px;
-  border-radius: 1px; opacity: 0.8;
-}
-.card-tape.left  { left: 16px; }
-.card-tape.right { right: 16px; transform: rotate(2deg); }
-.tape-terra { background: repeating-linear-gradient(90deg, rgba(192,87,42,0.7) 0, rgba(192,87,42,0.7) 5px, rgba(245,221,212,0.8) 5px, rgba(245,221,212,0.8) 9px); }
-.tape-moss  { background: repeating-linear-gradient(-45deg, rgba(74,106,72,0.6) 0, rgba(74,106,72,0.6) 4px, rgba(200,220,196,0.7) 4px, rgba(200,220,196,0.7) 8px); }
-.tape-gold  { background: repeating-linear-gradient(90deg, rgba(154,120,40,0.65) 0, rgba(154,120,40,0.65) 5px, rgba(240,228,184,0.8) 5px, rgba(240,228,184,0.8) 9px); }
-.tape-ink   { background: repeating-linear-gradient(45deg, rgba(60,40,20,0.45) 0, rgba(60,40,20,0.45) 4px, rgba(240,235,225,0.7) 4px, rgba(240,235,225,0.7) 8px); }
-
-/* individual card identities */
 .card-1 { --cr: -0.8deg; --bar-color: var(--terra); background: #fefaf2; }
 .card-2 { --cr:  1.2deg; --bar-color: var(--moss);  background: #f8fcf8; }
 .card-3 { --cr: -0.4deg; --bar-color: var(--gold);  background: #fdf9ee; }
 .card-4 { --cr:  0.9deg; --bar-color: var(--terra); background: #faf7f2; }
 .card-5 { --cr: -1.1deg; --bar-color: var(--moss);  background: #f5fbf5; }
 .card-6 { --cr:  0.5deg; --bar-color: var(--gold);  background: #fdf8ec; }
-.card-7 { --cr: -0.6deg; --bar-color: var(--ink-mid); background: var(--paper); grid-column: 1 / -1; --cr: 0deg; }
 
-.card-emoji {
-  position: absolute; bottom: 8px; right: 10px;
-  font-size: 1.4rem; opacity: 0.6;
-  transform: rotate(var(--er, 8deg));
-  pointer-events: none;
+/* card tape strips at top */
+.card-tape {
+  position: absolute; top: -8px;
+  height: 14px; width: 60px; border-radius: 1px; opacity: 0.8;
 }
+.card-tape.left  { left: 16px; }
+.card-tape.right { right: 16px; transform: rotate(2deg); }
+.tape-terra { background: repeating-linear-gradient(90deg,rgba(192,87,42,0.7) 0,rgba(192,87,42,0.7) 5px,rgba(245,221,212,0.8) 5px,rgba(245,221,212,0.8) 9px); }
+.tape-moss  { background: repeating-linear-gradient(-45deg,rgba(74,106,72,0.6) 0,rgba(74,106,72,0.6) 4px,rgba(200,220,196,0.7) 4px,rgba(200,220,196,0.7) 8px); }
+.tape-gold  { background: repeating-linear-gradient(90deg,rgba(154,120,40,0.65) 0,rgba(154,120,40,0.65) 5px,rgba(240,228,184,0.8) 5px,rgba(240,228,184,0.8) 9px); }
+.tape-ink   { background: repeating-linear-gradient(45deg,rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px); }
+
+/* ── CORNER STICKERS — the scrapbook soul ──
+   Two per card, placed in any 2 of the 4 corners.
+   They sit outside the card bounds (overflow:visible).
+   Rotate varies per card for that hand-placed feel.
+── */
+.stk {
+  position: absolute;
+  width: 46px; height: 46px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 6;
+  filter: sepia(0.15) saturate(1.1) brightness(0.95)
+          drop-shadow(1px 2px 2px rgba(0,0,0,0.2));
+  transition: transform 0.2s;
+}
+/* corner positions */
+.stk-tl { top: -18px;    left: -14px;  }
+.stk-tr { top: -18px;    right: -14px; }
+.stk-bl { bottom: -18px; left: -14px;  }
+.stk-br { bottom: -18px; right: -14px; }
+
+/* rotation per card/corner */
+.card-1 .stk-tl { transform: rotate(-14deg); }
+.card-1 .stk-br { transform: rotate(10deg);  }
+.card-2 .stk-tr { transform: rotate(12deg);  }
+.card-2 .stk-bl { transform: rotate(-8deg);  }
+.card-3 .stk-tl { transform: rotate(9deg);   }
+.card-3 .stk-br { transform: rotate(-11deg); }
+.card-4 .stk-tr { transform: rotate(-13deg); }
+.card-4 .stk-bl { transform: rotate(7deg);   }
+.card-5 .stk-tl { transform: rotate(11deg);  }
+.card-5 .stk-br { transform: rotate(-9deg);  }
+.card-6 .stk-tr { transform: rotate(-10deg); }
+.card-6 .stk-bl { transform: rotate(14deg);  }
+
+.guide-card:hover .stk { filter: sepia(0) saturate(1.2) brightness(1) drop-shadow(2px 3px 3px rgba(0,0,0,0.22)); }
 
 .guide-card-title {
-  font-family: var(--display); font-size: 1rem; font-weight: 600;
-  line-height: 1.3; color: var(--ink); margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
+  font-family: var(--display); font-size: 0.96rem; font-weight: 600;
+  line-height: 1.3; color: var(--ink); margin-bottom: 0.4rem; padding-left: 0.5rem;
 }
 .guide-card-title a { color: inherit; text-decoration: none; transition: color 0.12s; }
 .guide-card-title a:hover { color: var(--terra); }
-
 .guide-card-desc {
-  font-family: var(--serif); font-size: 0.85rem; line-height: 1.7;
-  color: var(--ink-mid); margin-bottom: 0.8rem; padding-left: 0.5rem;
+  font-family: var(--serif); font-size: 0.83rem; line-height: 1.65;
+  color: var(--ink-mid); margin-bottom: 0.7rem; padding-left: 0.5rem;
 }
 
-/* ════════════════════════════════════════════════════
-   DIVIDER — washi tape strip between sections
-════════════════════════════════════════════════════ */
-.washi-divider {
-  display: flex; align-items: center; gap: 0.8rem;
-  margin: 2.5rem 0;
-}
-.washi-divider::before, .washi-divider::after {
-  content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rule-dk), transparent);
-}
-.wd-inner {
-  font-family: 'Noto Sans JP', sans-serif; font-size: 0.68rem;
-  font-weight: 300; letter-spacing: 0.4em; color: var(--ink-soft);
-  white-space: nowrap;
-}
+/* ── DIVIDERS ── */
+.washi-divider { display: flex; align-items: center; gap: 0.8rem; margin: 2rem 0; }
+.washi-divider::before,.washi-divider::after { content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule-dk),transparent); }
+.wd-inner { font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.4em;color:var(--ink-soft);white-space:nowrap; }
 
-/* ════════════════════════════════════════════════════
-   EMAIL CAPTURE — notebook paper style
-════════════════════════════════════════════════════ */
+/* ── EMAIL CARD ── */
 .email-card {
   background: #fffde8;
-  border: 1px solid rgba(154,120,40,0.4);
-  border-left: 4px solid var(--gold);
-  padding: 1.6rem 1.8rem;
-  position: relative;
-  transform: rotate(0.3deg);
-  box-shadow: 2px 3px 0 rgba(154,120,40,0.2);
-  /* lined paper */
-  background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(154,120,40,0.08) 27px, rgba(154,120,40,0.08) 28px);
+  border: 1px solid rgba(154,120,40,0.4); border-left: 4px solid var(--gold);
+  padding: 1.4rem 1.6rem; position: relative;
+  transform: rotate(0.3deg); box-shadow: 2px 3px 0 rgba(154,120,40,0.2);
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(154,120,40,0.08) 27px,rgba(154,120,40,0.08) 28px);
 }
 .email-card::before {
-  content: '';
-  position: absolute; top: -8px; right: 40px;
-  width: 70px; height: 13px;
-  background: repeating-linear-gradient(90deg,
-    rgba(74,106,72,0.5) 0, rgba(74,106,72,0.5) 5px,
-    rgba(200,220,196,0.7) 5px, rgba(200,220,196,0.7) 9px
-  );
-  border-radius: 1px; transform: rotate(1.5deg);
+  content:'';position:absolute;top:-8px;right:40px;width:70px;height:13px;
+  background:repeating-linear-gradient(90deg,rgba(74,106,72,0.5) 0,rgba(74,106,72,0.5) 5px,rgba(200,220,196,0.7) 5px,rgba(200,220,196,0.7) 9px);
+  border-radius:1px;transform:rotate(1.5deg);
 }
-.email-title {
-  font-family: var(--display); font-size: 1.15rem; font-style: italic;
-  color: var(--ink); margin-bottom: 0.4rem;
-}
-.email-card p {
-  font-family: var(--serif); font-size: 0.9rem; line-height: 1.75;
-  color: var(--ink-mid); margin-bottom: 0.9rem;
-}
-.email-form { display: flex; flex-direction: column; gap: 0.4rem; }
-.email-input {
-  padding: 0.55rem 1rem; border: 1px solid rgba(154,120,40,0.5);
-  background: rgba(255,255,255,0.75); font-family: var(--serif); font-size: 0.9rem;
-  color: var(--ink); outline: none; transition: border-color 0.12s;
-  border-radius: 0;
-}
-.email-input:focus { border-color: var(--gold); background: white; }
-.email-submit {
-  font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  background: var(--gold); color: white; border: none;
-  padding: 0.65rem 1.4rem; cursor: pointer;
-  transition: background 0.12s;
-}
-.email-submit:hover { background: var(--ink); }
-.email-privacy { font-family: var(--sans); font-size: 0.65rem; color: var(--ink-soft); margin-top: 0.5rem; }
+.email-title { font-family:var(--display);font-size:1.1rem;font-style:italic;color:var(--ink);margin-bottom:0.4rem; }
+.email-card p { font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-mid);margin-bottom:0.8rem; }
+.email-form { display:flex;flex-direction:column;gap:0.4rem; }
+.email-input { padding:0.5rem 0.9rem;border:1px solid rgba(154,120,40,0.5);background:rgba(255,255,255,0.75);font-family:var(--serif);font-size:0.9rem;color:var(--ink);outline:none;transition:border-color 0.12s;border-radius:0; }
+.email-input:focus { border-color:var(--gold);background:white; }
+.email-submit { font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:white;border:none;padding:0.6rem 1.4rem;cursor:pointer;transition:background 0.12s; }
+.email-submit:hover { background:var(--ink); }
+.email-privacy { font-family:var(--sans);font-size:0.63rem;color:var(--ink-soft);margin-top:0.4rem; }
 
-/* ════════════════════════════════════════════════════
-   SIDEBAR — trimmed, purposeful
-════════════════════════════════════════════════════ */
-.sidebar { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: 1.1rem; }
-
-.s-card {
-  background: var(--paper);
-  border: 1px solid var(--rule-dk);
-  overflow: hidden;
-}
+/* ── SIDEBAR ── */
+.sidebar { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.s-card { background:var(--paper);border:1px solid var(--rule-dk);overflow:hidden; }
 .s-card-head {
-  font-family: var(--sans); font-size: 0.62rem; font-weight: 700;
-  letter-spacing: 0.25em; text-transform: uppercase;
-  background: var(--ink); color: var(--cream);
-  padding: 0.35rem 0.8rem;
-  display: flex; align-items: center; justify-content: space-between;
+  font-family:var(--sans);font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;
+  background:var(--ink);color:var(--cream);padding:0.35rem 0.8rem;
+  display:flex;align-items:center;justify-content:space-between;
 }
-.s-card-head-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 0.6rem; font-weight: 300; opacity: 0.5; }
-.s-card-body { padding: 0.9rem 0.9rem; }
+.s-card-head-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;opacity:0.5; }
+.s-card-body { padding:0.9rem; }
 
-/* profile */
-.profile-pic {
-  width: 58px; height: 58px; border-radius: 50%;
-  border: 2px solid var(--rule-dk); overflow: hidden;
-  background: linear-gradient(135deg, var(--terra-pale), var(--moss-lt));
-  margin: 0 auto 0.6rem; display: block;
-}
-.profile-pic img { width: 100%; height: 100%; object-fit: cover; }
-.profile-name {
-  font-family: var(--display); font-size: 1rem; font-style: italic;
-  color: var(--ink); text-align: center; display: block;
-  margin-bottom: 0.3rem;
-}
-.profile-bio {
-  font-family: var(--serif); font-size: 0.8rem; line-height: 1.65;
-  color: var(--ink-mid); text-align: center;
-}
-.profile-stats {
-  display: flex; flex-direction: column; gap: 0;
-  margin-top: 0.8rem; border-top: 1px solid var(--rule);
-}
-.stat-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0.35rem 0; border-bottom: 1px dashed var(--rule);
-  font-size: 0.78rem;
-}
-.stat-row:last-child { border-bottom: none; }
-.stat-k { font-family: var(--sans); font-size: 0.62rem; color: var(--ink-soft); letter-spacing: 0.05em; }
-.stat-v { font-family: var(--serif); font-size: 0.82rem; color: var(--terra); font-weight: 400; }
+.profile-pic { width:58px;height:58px;border-radius:50%;border:2px solid var(--rule-dk);overflow:hidden;background:linear-gradient(135deg,var(--terra-pale),var(--moss-lt));margin:0 auto 0.6rem;display:block; }
+.profile-pic img { width:100%;height:100%;object-fit:cover; }
+.profile-name { font-family:var(--display);font-size:1rem;font-style:italic;color:var(--ink);text-align:center;display:block;margin-bottom:0.3rem; }
+.profile-bio { font-family:var(--serif);font-size:0.8rem;line-height:1.65;color:var(--ink-mid);text-align:center; }
+.profile-stats { display:flex;flex-direction:column;gap:0;margin-top:0.8rem;border-top:1px solid var(--rule); }
+.stat-row { display:flex;justify-content:space-between;align-items:center;padding:0.35rem 0;border-bottom:1px dashed var(--rule); }
+.stat-row:last-child { border-bottom:none; }
+.stat-k { font-family:var(--sans);font-size:0.62rem;color:var(--ink-soft);letter-spacing:0.05em; }
+.stat-v { font-family:var(--serif);font-size:0.82rem;color:var(--terra); }
 
-/* timeline */
-.tl-list { display: flex; flex-direction: column; }
-.tl-item {
-  display: flex; gap: 0.6rem; align-items: flex-start;
-  padding: 0.4rem 0; border-bottom: 1px dashed var(--rule);
-}
-.tl-item:last-child { border-bottom: none; }
-.tl-month {
-  font-family: var(--sans); font-size: 0.58rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  background: var(--terra); color: white;
-  padding: 0.15rem 0.4rem; white-space: nowrap; flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-.tl-month.moss-bg { background: var(--moss); }
-.tl-event { font-family: var(--serif); font-size: 0.82rem; color: var(--ink-mid); line-height: 1.4; }
+.tl-list { display:flex;flex-direction:column; }
+.tl-item { display:flex;gap:0.6rem;align-items:flex-start;padding:0.4rem 0;border-bottom:1px dashed var(--rule); }
+.tl-item:last-child { border-bottom:none; }
+.tl-month { font-family:var(--sans);font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--terra);color:white;padding:0.15rem 0.4rem;white-space:nowrap;flex-shrink:0;margin-top:0.1rem; }
+.tl-month.moss-bg { background:var(--moss); }
+.tl-event { font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);line-height:1.4; }
 
-/* quick links */
-.quick-links { display: flex; flex-direction: column; }
-.quick-link {
-  display: flex; align-items: center; justify-content: space-between;
-  font-family: var(--serif); font-size: 0.82rem; color: var(--ink-mid);
-  text-decoration: none; padding: 0.4rem 0;
-  border-bottom: 1px dashed var(--rule);
-  transition: color 0.12s;
-}
-.quick-link:last-child { border-bottom: none; }
-.quick-link::after { content: '›'; color: var(--terra); font-size: 1rem; }
-.quick-link:hover { color: var(--terra); }
+.quick-links { display:flex;flex-direction:column; }
+.quick-link { display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);text-decoration:none;padding:0.4rem 0;border-bottom:1px dashed var(--rule);transition:color 0.12s; }
+.quick-link:last-child { border-bottom:none; }
+.quick-link::after { content:'›';color:var(--terra);font-size:1rem; }
+.quick-link:hover { color:var(--terra); }
 
-/* socials */
-.social-list { display: flex; flex-direction: column; gap: 0.35rem; }
-.social-link {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-  color: var(--ink-mid); text-decoration: none;
-  padding: 0.35rem 0.5rem; border: 1px solid var(--rule);
-  transition: background 0.1s, border-color 0.1s;
-}
-.social-link:hover { background: var(--terra-pale); border-color: var(--terra); color: var(--terra); }
-.sl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.sl-red  { background: var(--terra); }
-.sl-grn  { background: var(--moss); }
-.sl-blu  { background: #5570c0; }
-.sl-pnk  { background: #c05080; }
+.social-list { display:flex;flex-direction:column;gap:0.35rem; }
+.social-link { display:flex;align-items:center;gap:0.5rem;font-family:var(--sans);font-size:0.75rem;font-weight:500;color:var(--ink-mid);text-decoration:none;padding:0.35rem 0.5rem;border:1px solid var(--rule);transition:background 0.1s,border-color 0.1s; }
+.social-link:hover { background:var(--terra-pale);border-color:var(--terra);color:var(--terra); }
+.sl-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.sl-red{background:var(--terra);} .sl-grn{background:var(--moss);} .sl-blu{background:#5570c0;} .sl-pnk{background:#c05080;}
 
-/* visitor counter */
-.visitor-num {
-  font-family: var(--sans); font-size: 1.4rem; font-weight: 700;
-  letter-spacing: 0.2em; color: var(--terra);
-  text-align: center; display: block;
-  background: var(--ink); padding: 0.4rem 0.8rem;
-  margin: 0.2rem auto;
-  width: fit-content;
-  font-variant-numeric: tabular-nums;
-}
-.visitor-label { font-family: var(--sans); font-size: 0.6rem; color: var(--ink-soft); text-align: center; margin-top: 0.3rem; letter-spacing: 0.1em; }
+.visitor-num { font-family:var(--sans);font-size:1.4rem;font-weight:700;letter-spacing:0.2em;color:var(--terra);text-align:center;display:block;background:var(--ink);padding:0.4rem 0.8rem;margin:0.2rem auto;width:fit-content;font-variant-numeric:tabular-nums; }
+.visitor-label { font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);text-align:center;margin-top:0.3rem;letter-spacing:0.1em; }
 
-/* ════════════════════════════════════════════════════
-   TICKER — refined, not pixelated
-════════════════════════════════════════════════════ */
-.ticker-wrap {
-  background: var(--terra); overflow: hidden; height: 26px;
-  display: flex; align-items: center;
-  border-top: 1px solid rgba(255,255,255,0.15);
-}
-.ticker-content {
-  white-space: nowrap;
-  animation: ticker 35s linear infinite;
-  font-family: var(--sans); font-size: 0.65rem; font-weight: 600;
-  color: rgba(255,255,255,0.85); letter-spacing: 0.15em; text-transform: uppercase;
-  padding-left: 100%;
-}
+/* ── TICKER ── */
+.ticker-wrap { background:var(--terra);overflow:hidden;height:26px;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,0.15); }
+.ticker-content { white-space:nowrap;animation:ticker 35s linear infinite;font-family:var(--sans);font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.15em;text-transform:uppercase;padding-left:100%; }
 @keyframes ticker { from{transform:translateX(0);} to{transform:translateX(-100%);} }
 
-/* footer */
-footer {
-  position: relative; z-index: 1;
-  background: var(--ink); border-top: 3px solid var(--terra);
-  padding: 1.8rem 2.5rem; margin-top: 2rem;
-}
-.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.footer-logo { font-family: var(--display); font-style: italic; font-size: 1.1rem; color: var(--cream); }
-.footer-note { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(247,241,227,0.35); }
-.footer-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 0.65rem; font-weight: 300; color: rgba(247,241,227,0.2); letter-spacing: 0.15em; }
+/* ── PILLAR BLOCKS ── */
+.pillar-block { margin-bottom: 2.5rem; position: relative; }
+.pillar-header { display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.7rem;padding-bottom:0.7rem;border-bottom:1px solid var(--rule-dk); }
+.pillar-header-left { display:flex;align-items:flex-start;gap:0.9rem; }
+.pillar-number { font-family:var(--display);font-size:2.5rem;font-weight:400;color:var(--terra);opacity:0.18;line-height:1;flex-shrink:0;margin-top:-0.2rem; }
+.pillar-kicker { font-family:var(--sans);font-size:0.65rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.2rem; }
+.pillar-title { font-family:var(--display);font-size:1.4rem;font-weight:400;color:var(--ink);line-height:1.1; }
+.pillar-title em { font-style:italic;color:var(--terra); }
+.pillar-desc { font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-soft);margin-bottom:1rem;max-width:600px; }
+.pillar-header-right { flex-shrink:0;padding-top:0.2rem; }
+.pillar-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:0.8rem; }
 
-/* ── RESPONSIVE ── */
+.pillar-card { background:var(--paper);border:1px solid var(--rule-dk);padding:0.9rem 1rem 1rem;position:relative;overflow:visible;box-shadow:2px 2px 0 var(--rule-dk);transition:transform 0.15s,box-shadow 0.15s; }
+.pillar-card:hover { transform:translateY(-3px);box-shadow:3px 5px 0 var(--rule-dk);z-index:5; }
+.pc-terra { background:#fefaf2; } .pc-moss { background:#f8fcf8; } .pc-gold { background:#fdf9ee; }
+.pc-placeholder { background:var(--cream-dk);opacity:0.75;border-style:dashed;box-shadow:none; }
+.pc-placeholder:hover { transform:none;box-shadow:none; }
+.coming-soon-label { font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.5rem;padding-left:0.5rem; }
+.tape-ink { background:repeating-linear-gradient(45deg,rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px); }
+.pillar-see-all { display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);text-decoration:none;border-bottom:1.5px solid var(--terra);padding-bottom:1px;transition:gap 0.12s; }
+.pillar-see-all:hover { gap:0.7rem; }
+.pillar-see-all span { font-size:0.9rem; }
+
+/* stamps */
+.stamp { display:inline-block;border:2px solid currentColor;border-radius:2px;padding:0.3rem 0.65rem;font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-align:center;line-height:1.4;transform:rotate(var(--rot,-3deg));position:relative; }
+.stamp::before { content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.3; }
+.st-terra { color:rgba(192,87,42,0.75);--rot:-4deg; }
+.st-moss  { color:rgba(74,106,72,0.75);--rot:3deg; }
+.st-ink   { color:rgba(60,40,20,0.6);--rot:-1deg; }
+
+.pstamp { font-family:var(--sans);font-weight:700;font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;text-align:center;line-height:1.5;position:relative;display:inline-flex;align-items:center;justify-content:center;transform:rotate(var(--pr,0deg)); }
+.ps-pill { --pr:-2deg;background:var(--terra);color:white;padding:0.28rem 1rem;border-radius:50px;font-size:0.58rem;letter-spacing:0.14em;box-shadow:2px 2px 0 rgba(100,30,10,0.22); }
+.ps-hex { --pr:3deg;color:var(--moss);border:2px solid rgba(74,106,72,0.75);padding:0.32rem 0.7rem;clip-path:polygon(10% 0%,90% 0%,100% 50%,90% 100%,10% 100%,0% 50%);min-width:64px;min-height:38px;font-size:0.5rem;flex-direction:column; }
+.ps-box { --pr:14deg;background:var(--gold);color:white;width:40px;height:40px;border-radius:4px;font-size:0.62rem;box-shadow:2px 2px 0 rgba(80,50,0,0.22);flex-direction:column; }
+.ps-ticket { --pr:-3deg;color:var(--ink-mid);border:2px solid var(--ink-mid);padding:0.28rem 0.85rem;border-radius:4px;font-size:0.5rem;min-width:68px;flex-direction:column;position:relative; }
+.ps-ticket::before,.ps-ticket::after { content:'';position:absolute;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--cream);border-radius:50%;border:1px solid var(--ink-mid); }
+.ps-ticket::before { left:-3px; }
+.ps-ticket::after  { right:-3px; }
+
+/* ── FOOTER ── */
+.site-footer { margin-top:3rem;background:var(--ink-mid);border-top:3px solid var(--terra);position:relative;z-index:1;overflow:hidden; }
+.site-footer::before { content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none; }
+.footer-washi { display:flex;height:12px;border-bottom:1px solid rgba(255,255,255,0.08); }
+.fw-seg { flex:1; }
+.footer-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.8fr;gap:2.5rem;padding:2.5rem 2.5rem 2rem;position:relative;z-index:1; }
+.footer-logo { font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--cream);margin-bottom:0.25rem;letter-spacing:0.01em; }
+.footer-logo-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(247,241,227,0.3);letter-spacing:0.15em;margin-bottom:1rem; }
+.footer-stamps { display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap; }
+.site-footer .xstamp.xs-kake { background:rgba(180,80,60,0.9); }
+.site-footer .xstamp.xs-yoko { color:rgba(140,195,135,0.85);border-color:rgba(140,195,135,0.65);box-shadow:inset 0 0 0 3px rgba(140,195,135,0.1); }
+.site-footer .xstamp.xs-india { background:rgba(180,140,40,0.9); }
+.footer-nav { display:flex;flex-direction:column;gap:0.35rem;padding-top:0.2rem; }
+.footer-nav-head { font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,241,227,0.35);margin-bottom:0.3rem; }
+.footer-nav a { font-family:var(--serif);font-size:0.85rem;color:rgba(247,241,227,0.55);text-decoration:none;transition:color 0.12s; }
+.footer-nav a:hover { color:var(--terra-lt); }
+.footer-note-block { padding-top:0.2rem; }
+.footer-tagline { font-family:var(--display);font-style:italic;font-size:0.95rem;color:rgba(247,241,227,0.6);margin-bottom:0.6rem;line-height:1.4; }
+.footer-sub { font-family:var(--serif);font-size:0.8rem;line-height:1.7;color:rgba(247,241,227,0.35);margin-bottom:0.8rem; }
+.footer-copy { font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(247,241,227,0.2); }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.07);padding:0.7rem 2.5rem;max-width:1100px;margin:0 auto;position:relative;z-index:1; }
+.footer-bottom-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.35em;color:rgba(247,241,227,0.15); }
+
+.sns-icon { width:14px;height:14px;object-fit:contain;flex-shrink:0; }
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — fully mobile-optimised
+════════════════════════════════════════════════════ */
+
+/* Tablet */
 @media(max-width:900px){
-  .main-wrap{grid-template-columns:1fr;}
-  .sidebar{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
-  .collage-grid{grid-template-columns:repeat(2,1fr);}
+  .global-nav { padding: 0 1.5rem; }
+  .site-header { padding: 1.5rem 1.5rem 0; }
+  .page-wrap { padding: 0 1.5rem 4rem; }
+  .main-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .sidebar { position: static; display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+  .collage-grid { grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+  .pillar-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1/-1; }
 }
+
+/* Mobile */
 @media(max-width:600px){
-  .collage-grid{grid-template-columns:1fr;}
-  .header-content{grid-template-columns:1fr;}
-  .header-stamps{flex-direction:row;align-items:flex-start;padding-bottom:1rem;}
-  .sidebar{grid-template-columns:1fr;}
-  .global-nav{padding:0 1rem;}
-  .page-wrap{padding:0 1.2rem 4rem;}
+  /* nav */
+  .global-nav { padding: 0 1rem; }
+  .nav-logo-jp { display: none; }
+  .nav-links a { padding: 0.85rem 0.7rem; font-size: 0.7rem; letter-spacing: 0.06em; }
+
+  /* header */
+  .site-header { padding: 1.2rem 1rem 0; }
+  .site-header::before { display: none; }
+  .header-content { grid-template-columns: 1fr; gap: 0; }
+  .header-stamps { display: none; } /* stamps hidden on small screens, too cramped */
+  .site-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .site-subtitle { font-size: 0.88rem; margin-bottom: 0.9rem; }
+  .header-nav { gap: 0.3rem; padding: 0.7rem 0 0.9rem; }
+  .hnav-btn { font-size: 0.65rem; padding: 0.28rem 0.65rem; }
+  .washi-strip { margin-bottom: 1rem; }
+
+  /* page */
+  .page-wrap { padding: 0 1rem 3rem; }
+  .main-wrap { margin-top: 1.5rem; gap: 1.5rem; }
+
+  /* welcome card */
+  .welcome-card { padding: 1.1rem 1.2rem; }
+  .welcome-title { font-size: 1rem; }
+  .welcome-text { font-size: 0.85rem; }
+
+  /* featured card */
+  .featured-card { padding: 1.2rem 1.2rem 1.1rem 1.5rem; }
+
+  /* collage grid — single column on mobile */
+  .collage-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+
+  /* stickers: pull in slightly on mobile so they don't clip the screen edge */
+  .stk { width: 38px; height: 38px; }
+  .stk-tl { top: -14px; left: -10px; }
+  .stk-tr { top: -14px; right: -10px; }
+  .stk-bl { bottom: -14px; left: -10px; }
+  .stk-br { bottom: -14px; right: -10px; }
+
+  /* sidebar */
+  .sidebar { grid-template-columns: 1fr; }
+
+  /* pillars */
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar-number { font-size: 2rem; }
+
+  /* footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 1rem; }
+  .footer-brand { grid-column: auto; }
+  .footer-note-block { grid-column: auto; }
+  .footer-bottom { padding: 0.7rem 1rem; }
+
+  /* email card */
+  .email-card { padding: 1.2rem 1.2rem; }
+
+  /* pillar stamps row — wrap nicely */
+  .pstamp { font-size: 0.5rem; }
+  .ps-pill { padding: 0.22rem 0.7rem; }
 }
 
-/* ════════════════════════════════════════════════════
-   PILLAR BLOCKS — SEO content sections
-════════════════════════════════════════════════════ */
-.pillar-block {
-  margin-bottom: 3rem;
-  position: relative;
+/* Very small phones */
+@media(max-width:380px){
+  .nav-links a { padding: 0.85rem 0.5rem; font-size: 0.65rem; }
+  .hnav-btn { font-size: 0.6rem; padding: 0.25rem 0.55rem; }
+  .collage-grid { gap: 1.8rem; } /* more gap needed so stickers don't stack */
 }
-.pillar-header {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 1rem; margin-bottom: 0.8rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--rule-dk);
-}
-.pillar-header-left { display: flex; align-items: flex-start; gap: 0.9rem; }
-.pillar-number {
-  font-family: var(--display); font-size: 2.5rem; font-weight: 400;
-  color: var(--terra); opacity: 0.18; line-height: 1;
-  flex-shrink: 0; margin-top: -0.2rem;
-}
-.pillar-kicker {
-  font-family: var(--sans); font-size: 0.65rem; font-weight: 600;
-  letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--ink-soft); margin-bottom: 0.2rem;
-}
-.pillar-title {
-  font-family: var(--display); font-size: 1.5rem; font-weight: 400;
-  color: var(--ink); line-height: 1.1;
-}
-.pillar-title em { font-style: italic; color: var(--terra); }
-.pillar-desc {
-  font-family: var(--serif); font-size: 0.9rem; line-height: 1.8;
-  color: var(--ink-soft); margin-bottom: 1.1rem; max-width: 600px;
-}
-.pillar-header-right { flex-shrink: 0; padding-top: 0.2rem; }
-.pillar-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1rem; margin-bottom: 0.9rem;
-}
-
-/* pillar card = same DNA as guide-card but slightly compact */
-.pillar-card {
-  background: var(--paper); border: 1px solid var(--rule-dk);
-  padding: 1rem 1.1rem 1.1rem;
-  position: relative; overflow: visible;
-  box-shadow: 2px 2px 0 var(--rule-dk);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.pillar-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 5px 0 var(--rule-dk);
-  z-index: 5;
-}
-.pc-terra { background: #fefaf2; }
-.pc-moss  { background: #f8fcf8; }
-.pc-gold  { background: #fdf9ee; }
-.pc-placeholder {
-  background: var(--cream-dk); opacity: 0.75;
-  border-style: dashed;
-  box-shadow: none;
-}
-.pc-placeholder:hover { transform: none; box-shadow: none; }
-.coming-soon-label {
-  font-family: var(--sans); font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ink-soft); margin-bottom: 0.5rem; padding-left: 0.5rem;
-}
-
-/* tape on pillar cards */
-.tape-ink {
-  background: repeating-linear-gradient(45deg,
-    rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,
-    rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px);
-}
-
-/* see all link */
-.pillar-see-all {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--terra); text-decoration: none;
-  border-bottom: 1.5px solid var(--terra); padding-bottom: 1px;
-  transition: gap 0.12s;
-}
-.pillar-see-all:hover { gap: 0.7rem; }
-.pillar-see-all span { font-size: 0.9rem; }
-
-/* ════════════════════════════════════════════════════
-   FOOTER REDESIGN — warm parchment, not black
-════════════════════════════════════════════════════ */
-.site-footer {
-  margin-top: 3rem;
-  background: var(--ink-mid);
-  border-top: 3px solid var(--terra);
-  position: relative; z-index: 1;
-  overflow: hidden;
-}
-/* paper texture on footer */
-.site-footer::before {
-  content:''; position:absolute; inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;
-}
-.footer-washi {
-  display: flex; height: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.fw-seg { flex: 1; }
-.footer-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.8fr;
-  gap: 2.5rem; padding: 2.5rem 2.5rem 2rem;
-  position: relative; z-index: 1;
-}
-.footer-brand {}
-.footer-logo {
-  font-family: var(--display); font-style: italic; font-size: 1.35rem;
-  color: var(--cream); margin-bottom: 0.25rem;
-  letter-spacing: 0.01em;
-}
-.footer-logo-jp {
-  font-family: 'Noto Sans JP', sans-serif; font-size: 0.65rem;
-  font-weight: 300; color: rgba(247,241,227,0.3);
-  letter-spacing: 0.15em; margin-bottom: 1rem;
-}
-.footer-stamps { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
-/* stamps in footer — lighter color to show on dark bg */
-.site-footer .xstamp.xs-kake { background: rgba(180,80,60,0.9); }
-.site-footer .xstamp.xs-yoko { color: rgba(140,195,135,0.85); border-color: rgba(140,195,135,0.65); box-shadow: inset 0 0 0 3px rgba(140,195,135,0.1); }
-.site-footer .xstamp.xs-india { background: rgba(180,140,40,0.9); }
-
-.footer-nav { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 0.2rem; }
-.footer-nav-head {
-  font-family: var(--sans); font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(247,241,227,0.35); margin-bottom: 0.3rem;
-}
-.footer-nav a {
-  font-family: var(--serif); font-size: 0.85rem;
-  color: rgba(247,241,227,0.55); text-decoration: none;
-  transition: color 0.12s;
-}
-.footer-nav a:hover { color: var(--terra-lt); }
-
-.footer-note-block { padding-top: 0.2rem; }
-.footer-tagline {
-  font-family: var(--display); font-style: italic; font-size: 0.95rem;
-  color: rgba(247,241,227,0.6); margin-bottom: 0.6rem; line-height: 1.4;
-}
-.footer-sub {
-  font-family: var(--serif); font-size: 0.8rem; line-height: 1.7;
-  color: rgba(247,241,227,0.35); margin-bottom: 0.8rem;
-}
-.footer-copy {
-  font-family: var(--sans); font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(247,241,227,0.2);
-}
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 0.7rem 2.5rem;
-  max-width: 1100px; margin: 0 auto;
-  position: relative; z-index: 1;
-}
-.footer-bottom-jp {
-  font-family: 'Noto Sans JP', sans-serif; font-size: 0.6rem;
-  font-weight: 300; letter-spacing: 0.35em;
-  color: rgba(247,241,227,0.15);
-}
-
-/* ── BUTTON TWEAK — serif italic label, softer shadow ── */
-.read-btn {
-  font-family: var(--serif) !important;
-  font-style: italic;
-  font-size: 0.82rem !important;
-  letter-spacing: 0.04em !important;
-  text-transform: none !important;
-  border-radius: 3px !important;
-  padding: 0.38rem 1rem 0.42rem !important;
-  box-shadow: 2px 2px 0 var(--rule-dk) !important;
-}
-.read-btn:hover { box-shadow: 3px 3px 0 var(--rule-dk) !important; }
-
-/* pillar grid responsive */
-@media(max-width:900px){.pillar-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){
-  .pillar-grid{grid-template-columns:1fr;}
-  .footer-inner{grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .footer-brand{grid-column:1/-1;}
-  .footer-note-block{grid-column:1/-1;}
-}
-
-
-
-/* ── CUSTOM HEADER STAMPS ── */
-.xstamp {
-  font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em;
-  text-align: center; line-height: 1.55; position: relative;
-  transform: rotate(var(--xr, 0deg));
-  display: inline-flex; flex-direction: column;
-  align-items: center; justify-content: center;
-}
-/* KAKEHASHI — filled parallelogram, deep burgundy */
-.xs-kake {
-  --xr: -5deg;
-  background: #6e1b28;
-  color: #f5edd8;
-  font-size: 0.58rem;
-  padding: 0.4rem 1.1rem 0.45rem;
-  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-  box-shadow: 3px 3px 0 rgba(40,0,10,0.35);
-  min-width: 90px;
-}
-.xs-kake::after {
-  content: '';
-  position: absolute; inset: 3px;
-  border: 1px solid rgba(245,237,216,0.25);
-  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-  pointer-events: none;
-}
-/* YOKOHAMA — double oval, moss, outline */
-.xs-yoko {
-  --xr: 4deg;
-  color: rgba(60,100,58,0.9);
-  font-size: 0.55rem;
-  border: 2px solid rgba(74,106,72,0.75);
-  border-radius: 60px;
-  padding: 0.38rem 1.15rem;
-  box-shadow: inset 0 0 0 4px rgba(74,106,72,0.1);
-  min-width: 88px;
-}
-.xs-yoko::before {
-  content: '';
-  position: absolute; inset: 3px;
-  border: 1px dashed rgba(74,106,72,0.3);
-  border-radius: 60px;
-  pointer-events: none;
-}
-/* INDIA — solid gold diamond */
-.xs-india {
-  --xr: 8deg;
-  background: #9a7828;
-  color: #1c1207;
-  font-size: 0.52rem;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  width: 72px; height: 72px;
-  box-shadow: 2px 3px 0 rgba(80,50,0,0.3);
-}
-
-/* ── PILLAR ROW STAMPS ── */
-.pstamp {
-  font-family: var(--sans); font-weight: 700; font-size: 0.54rem;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  text-align: center; line-height: 1.5;
-  position: relative; display: inline-flex;
-  align-items: center; justify-content: center;
-  transform: rotate(var(--pr, 0deg));
-}
-/* solid pill, terracotta */
-.ps-pill {
-  --pr: -2deg;
-  background: var(--terra); color: white;
-  padding: 0.28rem 1rem; border-radius: 50px;
-  font-size: 0.58rem; letter-spacing: 0.14em;
-  box-shadow: 2px 2px 0 rgba(100,30,10,0.22);
-}
-/* hexagonal clip, moss outline */
-.ps-hex {
-  --pr: 3deg;
-  color: var(--moss); border: 2px solid rgba(74,106,72,0.75);
-  padding: 0.32rem 0.7rem;
-  clip-path: polygon(10% 0%,90% 0%,100% 50%,90% 100%,10% 100%,0% 50%);
-  min-width: 64px; min-height: 38px;
-  font-size: 0.5rem;
-  flex-direction: column;
-}
-/* tiny solid gold rotated square */
-.ps-box {
-  --pr: 14deg;
-  background: var(--gold); color: white;
-  width: 40px; height: 40px;
-  border-radius: 4px;
-  font-size: 0.62rem;
-  box-shadow: 2px 2px 0 rgba(80,50,0,0.22);
-  flex-direction: column;
-}
-/* ticket/scallop, ink outline */
-.ps-ticket {
-  --pr: -3deg;
-  color: var(--ink-mid); border: 2px solid var(--ink-mid);
-  padding: 0.28rem 0.85rem;
-  border-radius: 4px;
-  font-size: 0.5rem; min-width: 68px;
-  flex-direction: column;
-  position: relative;
-}
-.ps-ticket::before,.ps-ticket::after {
-  content: '';
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 6px; height: 6px;
-  background: var(--cream); border-radius: 50%;
-  border: 1px solid var(--ink-mid);
-}
-.ps-ticket::before { left: -3px; }
-.ps-ticket::after  { right: -3px; }
-
-/* ── CORNER STICKERS on guide + pillar cards ── */
-.card-sticker-corner {
-  position: absolute; bottom: 7px; right: 8px;
-  width: 36px; height: 36px; object-fit: contain;
-  pointer-events: none; z-index: 4;
-  filter: sepia(0.25) saturate(1.15) brightness(0.9)
-          drop-shadow(1px 1px 0 rgba(0,0,0,0.1));
-  transform: rotate(var(--sc, 8deg));
-  transition: transform 0.18s;
-}
-.guide-card:hover .card-sticker-corner,
-.pillar-card:hover .card-sticker-corner {
-  transform: rotate(calc(var(--sc, 8deg) + 5deg)) scale(1.08);
-}
-/* vary rotation per card via nth-child */
-.guide-card:nth-child(1) .card-sticker-corner { --sc: -6deg; }
-.guide-card:nth-child(2) .card-sticker-corner { --sc: 10deg; }
-.guide-card:nth-child(3) .card-sticker-corner { --sc: -9deg; }
-.guide-card:nth-child(4) .card-sticker-corner { --sc: 7deg; }
-.guide-card:nth-child(5) .card-sticker-corner { --sc: -5deg; }
-.guide-card:nth-child(6) .card-sticker-corner { --sc: 12deg; }
-.guide-card:nth-child(7) .card-sticker-corner { --sc: -4deg; }
-
-/* SNS icon */
-.sns-icon { width: 14px; height: 14px; object-fit: contain; flex-shrink: 0; }
 
 </style>
 </head>
@@ -1027,16 +662,13 @@ footer {
         <div class="welcome-meta">
           <div class="wmeta-item"><span class="wmeta-label">Scholar</span><span class="wmeta-value">Kakehashi 2021</span></div>
           <div class="wmeta-item"><span class="wmeta-label">Based</span><span class="wmeta-value">Yokohama, Japan</span></div>
-          <div class="wmeta-item"><span class="wmeta-label">Guides</span><span class="wmeta-value">7 published</span></div>
+          <div class="wmeta-item"><span class="wmeta-label">Guides</span><span class="wmeta-value">8 published</span></div>
         </div>
       </div>
 
       <div class="header-stamps">
-        <!-- solid filled parallelogram, deep burgundy -->
         <div class="xstamp xs-kake">KAKEHASHI<br><span style="font-size:0.85em;letter-spacing:0.04em;">架け橋</span></div>
-        <!-- double-ring oval, moss -->
         <div class="xstamp xs-yoko">YOKOHAMA<br><span style="opacity:0.75;font-size:0.9em;">横浜 2021</span></div>
-        <!-- solid gold rotated diamond -->
         <div class="xstamp xs-india">INDIA<br>✦ 選抜</div>
       </div>
     </div>
@@ -1056,21 +688,21 @@ footer {
 <div class="page-wrap">
 <div class="main-wrap">
 
-  <!-- CENTER -->
+  <!-- MAIN CONTENT -->
   <main>
 
     <!-- WELCOME NOTE -->
-    <div class="welcome-card" style="margin-bottom:2rem;">
+    <div class="welcome-card" style="margin-bottom:1.8rem;">
       <h2 class="welcome-title">Welcome to the guide collection ♡</h2>
       <p class="welcome-text">Hi, I'm Ayachi. I went to Japan at 16 through the Asia Kakehashi Project and spent a year in Yokohama living with a host family, commuting to a Japanese public high school, and eating the best lunches of my life. These guides are everything I wish I had before I left.</p>
     </div>
 
     <!-- FEATURED -->
-    <div class="section-head" style="margin-bottom:1rem;">
+    <div class="section-head" style="margin-bottom:0.8rem;">
       <span class="section-label">Start here</span>
     </div>
 
-    <div class="featured-card" style="margin-bottom:2.5rem;" id="featured">
+    <div class="featured-card" style="margin-bottom:2rem;" id="featured">
       <div class="featured-ribbon">★ Featured Guide</div>
       <h2 class="featured-title">
         <a href="kakehashi-guide.html">Complete Guide to the Asia Kakehashi Project 2026</a>
@@ -1094,17 +726,19 @@ footer {
     <!-- DIVIDER -->
     <div class="washi-divider"><span class="wd-inner">全ガイド · ALL GUIDES</span></div>
 
-    <!-- COLLAGE GRID -->
+    <!-- COLLAGE GRID — 6 cards, 2 corner stickers each -->
     <div class="section-head">
       <span class="section-label">All guides</span>
     </div>
 
     <div class="collage-grid">
 
-      <!-- 1 -->
+      <!-- 1 — Survival Guide -->
       <div class="guide-card card-1">
-        <img class="card-top-sticker" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
+        <div class="card-tape left tape-terra"></div>
+        <!-- stickers: top-left + bottom-right -->
+        <img class="stk stk-tl" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-br" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
         <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">18 min</span></div>
         <h3 class="guide-card-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h3>
         <p class="guide-card-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
@@ -1112,54 +746,51 @@ footer {
         <a href="japan-exchange-survival-guide.html" class="read-btn">Read →</a>
       </div>
 
-      <!-- 2 -->
+      <!-- 2 — Packing -->
       <div class="guide-card card-2">
-        <img class="card-top-sticker right" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🎒</span>'">
+        <div class="card-tape right tape-moss"></div>
+        <!-- stickers: top-right + bottom-left -->
+        <img class="stk stk-tr" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-bl" src="../../assets/images/sticker-bag.png" alt="" onerror="this.style.display='none'">
         <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
         <h3 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h3>
-        <p class="guide-card-desc">Tested over a full year in Yokohama. What to bring, what to skip, what to buy when you get there.</p>
+        <p class="guide-card-desc">Tested over a full year in Yokohama. What to bring, what to skip, what to buy there.</p>
         <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Tech</span><span class="tag">Gear</span></div>
         <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
       </div>
 
-      <!-- 3 -->
+      <!-- 3 — Budget -->
       <div class="guide-card card-3">
-        <img class="card-top-sticker" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">💴</span>'">
+        <div class="card-tape left tape-gold"></div>
+        <!-- stickers: top-left + bottom-right -->
+        <img class="stk stk-tl" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-br" src="../../assets/images/sticker-coin.png" alt="" onerror="this.style.display='none'">
         <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
         <h3 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h3>
-        <p class="guide-card-desc">Real numbers. Monthly spend, what the scholarship covers, what it doesn't. No sugar-coating.</p>
+        <p class="guide-card-desc">Real numbers. Monthly spend, what the scholarship covers, what it doesn't.</p>
         <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
         <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
       </div>
 
-      <!-- 4 -->
+      <!-- 4 — Bento -->
       <div class="guide-card card-4">
-        <img class="card-top-sticker right" src="../../assets/images/ramen.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/sticker-bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
-        <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
-        <h3 class="guide-card-title"><a href="../../research/field-notes/retirement-dinner.html">What I Ate at a Japanese Retirement Dinner</a></h3>
-        <p class="guide-card-desc">My host ojii-chan retired at 70+. The whole family gathered. Everything on that table, explained.</p>
-        <div class="guide-tags"><span class="tag">Food</span><span class="tag">Culture</span><span class="tag">Field Note</span></div>
-        <a href="../../research/field-notes/retirement-dinner.html" class="read-btn moss-btn">Read →</a>
-      </div>
-
-      <!-- 5 -->
-      <div class="guide-card card-5">
-        <img class="card-top-sticker" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
+        <div class="card-tape right tape-terra"></div>
+        <!-- stickers: top-right + bottom-left -->
+        <img class="stk stk-tr" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-bl" src="../../assets/images/bento.png" alt="" onerror="this.style.display='none'">
         <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
         <h3 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h3>
         <p class="guide-card-desc">Every item in that lunchbox, every day. Bento culture, morning routine, dinner etiquette.</p>
         <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span><span class="tag">Daily Life</span></div>
-        <a href="Bento.html" class="read-btn">Read →</a>
+        <a href="Bento.html" class="read-btn moss-btn">Read →</a>
       </div>
 
-      <!-- 6 -->
-      <div class="guide-card card-6">
-        <img class="card-top-sticker right" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/stanpu.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🚃</span>'">
+      <!-- 5 — Commute -->
+      <div class="guide-card card-5">
+        <div class="card-tape left tape-ink"></div>
+        <!-- stickers: top-left + bottom-right -->
+        <img class="stk stk-tl" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-br" src="../../assets/images/stanpu.png" alt="" onerror="this.style.display='none'">
         <div class="card-meta"><span class="meta-pill">Daily Life</span><span class="meta-time">8 min</span></div>
         <h3 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h3>
         <p class="guide-card-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
@@ -1167,46 +798,35 @@ footer {
         <a href="Train.html" class="read-btn ink-btn">Read →</a>
       </div>
 
-      <!-- 7 — full width -->
-      <div class="guide-card card-7">
-        <img class="card-top-sticker" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
-        <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
-        <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;flex-wrap:wrap;">
-          <div>
-            <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-pill">Yokohama</span><span class="meta-time">10 min</span></div>
-            <h3 class="guide-card-title" style="font-size:1.1rem;"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri 🍓</a></h3>
-            <p class="guide-card-desc" style="max-width:480px;">A strawberry festival in Yokohama. Everything on that table — and what Japanese festival food culture actually looks like from the inside. Sticky, sweet, and very pink.</p>
-            <div class="guide-tags"><span class="tag">Food</span><span class="tag">Festival</span><span class="tag">Seasonal</span></div>
-          </div>
-          <a href="Strobby-festival.html" class="read-btn" style="flex-shrink:0;white-space:nowrap;">Read →</a>
-        </div>
+      <!-- 6 — Last Day in Japan (NEW) — fits Exchange Life pillar -->
+      <div class="guide-card card-6">
+        <div class="card-tape right tape-gold"></div>
+        <!-- stickers: top-right + bottom-left -->
+        <img class="stk stk-tr" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
+        <img class="stk stk-bl" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
+        <div class="card-meta"><span class="meta-pill terra">Exchange Life</span><span class="meta-time">10 min</span></div>
+        <h3 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h3>
+        <p class="guide-card-desc">What it actually feels like to pack up and leave. The goodbyes, the train ride, the moment it's real.</p>
+        <div class="guide-tags"><span class="tag">Exchange Life</span><span class="tag">Emotional</span><span class="tag">Farewell</span></div>
+        <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn">Read →</a>
       </div>
 
-    </div>
+    </div><!-- /.collage-grid -->
 
 
-    <!-- ══════════════════════════════════════
-         CONTENT PILLARS — SEO structure
-         4 expandable sections for future posts
-    ════════════════════════════════════════ -->
-
+    <!-- CONTENT PILLARS -->
     <div class="washi-divider" style="margin-top:3rem;margin-bottom:2rem;">
       <span class="wd-inner">ピラー · CONTENT PILLARS</span>
     </div>
 
-    <!-- PILLAR INTRO STAMP ROW -->
     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;">
       <div class="section-head" style="flex:1;margin-bottom:0;">
-        <span class="section-label" style="background:var(--ink-mid);">Browse by topic</span>
+        <span class="section-label">Browse by topic</span>
       </div>
       <div style="display:flex;gap:0.7rem;flex-wrap:wrap;align-items:center;">
-        <!-- solid pill, terracotta -->
         <span class="pstamp ps-pill">TOKYO GUIDES</span>
-        <!-- hex clip, moss outline -->
         <span class="pstamp ps-hex">EXCHANGE<br>LIFE</span>
-        <!-- tiny solid square tilted, gold -->
         <span class="pstamp ps-box">食<br>FOOD</span>
-        <!-- scallop / ticket shape, ink -->
         <span class="pstamp ps-ticket">実用<br>ESSENTIALS</span>
       </div>
     </div>
@@ -1227,31 +847,26 @@ footer {
       </div>
       <p class="pillar-desc">Everything you need to apply, survive, and thrive on a Japan exchange program. First-person, tested, no filler.</p>
       <div class="pillar-grid">
-        <!-- Existing card -->
         <div class="pillar-card pc-terra">
-          <img class="card-top-sticker" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🏮</span>'">
           <div class="card-meta"><span class="meta-pill terra">Featured</span><span class="meta-time">12 min</span></div>
           <h4 class="guide-card-title"><a href="kakehashi-guide.html">Complete Kakehashi Application Guide</a></h4>
           <p class="guide-card-desc">Essays, interviews, what the program actually looks like inside.</p>
           <div class="guide-tags"><span class="tag">Application</span><span class="tag">Essays</span></div>
           <a href="kakehashi-guide.html" class="read-btn">Read →</a>
         </div>
-        <!-- Placeholder for future post -->
+        <!-- Last Day in Japan — exchange life pillar -->
+        <div class="pillar-card pc-gold">
+          <div class="card-meta"><span class="meta-pill">Exchange Life</span><span class="meta-time">10 min</span></div>
+          <h4 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h4>
+          <p class="guide-card-desc">Goodbyes, the last train, the moment it all becomes a memory.</p>
+          <div class="guide-tags"><span class="tag">Farewell</span><span class="tag">Emotional</span></div>
+          <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn ink-btn">Read →</a>
+        </div>
         <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🏠</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Host Family Etiquette Guide</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">What to say, what not to do, how to make it feel like home.</p>
           <div class="guide-tags"><span class="tag">Host Family</span><span class="tag">Culture</span></div>
-        </div>
-        <!-- Placeholder -->
-        <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">📚</span>'">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese School Life Explained</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Clubs, uniforms, exams, the weird and the wonderful.</p>
-          <div class="guide-tags"><span class="tag">School</span><span class="tag">Daily Life</span></div>
         </div>
       </div>
       <a href="kakehashi-guide.html" class="pillar-see-all">See all exchange guides <span>→</span></a>
@@ -1274,8 +889,6 @@ footer {
       <p class="pillar-desc">Where to go, how to move, what to spend. Tokyo through the eyes of someone who actually lived there.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-moss">
-          <img class="card-top-sticker right" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'" style="height:36px;top:-24px;">
-          <img class="card-sticker-corner" src="../../assets/images/stanpu.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🚃</span>'">
           <div class="card-meta"><span class="meta-pill moss">Daily Life</span><span class="meta-time">8 min</span></div>
           <h4 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
           <p class="guide-card-desc">Bus 111 → train → uphill walk. The full breakdown.</p>
@@ -1283,14 +896,12 @@ footer {
           <a href="Train.html" class="read-btn moss-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🗼</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Best Neighbourhoods to Stay in Tokyo</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">For first-timers, exchange students, and budget travellers.</p>
           <div class="guide-tags"><span class="tag">Tokyo</span><span class="tag">Where to Stay</span></div>
         </div>
         <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🗺️</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Day Trips from Yokohama &amp; Tokyo</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Kamakura, Hakone, Nikko — all tested on a student budget.</p>
@@ -1317,8 +928,6 @@ footer {
       <p class="pillar-desc">What's actually on the table. Japanese food culture explained from the inside — host family dinners, festival stalls, school lunches.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-gold">
-          <img class="card-top-sticker" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
-          <img class="card-sticker-corner" src="../../assets/images/bento.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍱</span>'">
           <div class="card-meta"><span class="meta-pill">Host Family</span><span class="meta-time">10 min</span></div>
           <h4 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
           <p class="guide-card-desc">Every item, every day. Bento culture and school lunch etiquette.</p>
@@ -1326,8 +935,6 @@ footer {
           <a href="Bento.html" class="read-btn ink-btn">Read →</a>
         </div>
         <div class="pillar-card pc-terra">
-          <img class="card-top-sticker right" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'" style="height:38px;top:-24px;">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🍓</span>'">
           <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-time">10 min</span></div>
           <h4 class="guide-card-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
           <p class="guide-card-desc">A strawberry festival in Yokohama. Very pink. Very sticky.</p>
@@ -1335,7 +942,6 @@ footer {
           <a href="Strobby-festival.html" class="read-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">🏪</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese Convenience Store Guide</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">FamilyMart, Lawson, 7-Eleven — what to actually buy.</p>
@@ -1362,8 +968,6 @@ footer {
       <p class="pillar-desc">The logistical stuff nobody tells you — SIM cards, IC cards, budgets, what to pack. Before you land and while you're there.</p>
       <div class="pillar-grid">
         <div class="pillar-card pc-moss">
-          <img class="card-top-sticker" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-bag.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">🧳</span>'">
           <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
           <h4 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
           <p class="guide-card-desc">Tested over a full year. Bring, skip, buy — the definitive list.</p>
@@ -1371,8 +975,6 @@ footer {
           <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
         </div>
         <div class="pillar-card pc-gold">
-          <img class="card-top-sticker right" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\">💴</span>'">
           <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
           <h4 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Actually Cost?</a></h4>
           <p class="guide-card-desc">Real numbers. Monthly spend, what's covered, what's not.</p>
@@ -1380,7 +982,6 @@ footer {
           <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
         </div>
         <div class="pillar-card pc-placeholder">
-          <img class="card-sticker-corner" src="../../assets/images/sticker-coin.png" alt="" onerror="this.outerHTML='<span class=\"card-sticker-corner\" style=\"opacity:0.45;\">📱</span>'">
           <div class="coming-soon-label">✦ coming soon</div>
           <h4 class="guide-card-title" style="color:var(--ink-soft);">Best SIM Cards &amp; Wi-Fi for Japan</h4>
           <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">IIJmio, Sakura Mobile, pocket Wi-Fi — what's actually worth it.</p>
@@ -1391,7 +992,7 @@ footer {
     </div>
 
 
-    <!-- EMAIL -->
+    <!-- EMAIL CAPTURE -->
     <div class="washi-divider" style="margin-top:2.5rem;"><span class="wd-inner">無料キット · FREE KIT</span></div>
 
     <div class="email-card">
@@ -1410,7 +1011,6 @@ footer {
   <!-- SIDEBAR -->
   <aside class="sidebar">
 
-    <!-- Profile -->
     <div class="s-card">
       <div class="s-card-head"><span>Ayachi</span><span class="s-card-head-jp">綾智</span></div>
       <div class="s-card-body" style="text-align:center;">
@@ -1422,12 +1022,11 @@ footer {
         <div class="profile-stats">
           <div class="stat-row"><span class="stat-k">Exchange</span><span class="stat-v">Kakehashi 2021</span></div>
           <div class="stat-row"><span class="stat-k">School</span><span class="stat-v">Yokohama, Japan</span></div>
-          <div class="stat-row"><span class="stat-k">Guides</span><span class="stat-v">7 published</span></div>
+          <div class="stat-row"><span class="stat-k">Guides</span><span class="stat-v">8 published</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Quick Links -->
     <div class="s-card">
       <div class="s-card-head"><span>Quick Links</span><span class="s-card-head-jp">リンク</span></div>
       <div class="s-card-body">
@@ -1437,11 +1036,11 @@ footer {
           <a href="budget-guide.html" class="quick-link">Budget Guide</a>
           <a href="Bento.html" class="quick-link">Bento Guide</a>
           <a href="Train.html" class="quick-link">Commute Guide</a>
+          <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="quick-link">Last Day in Japan</a>
         </div>
       </div>
     </div>
 
-    <!-- Application Timeline -->
     <div class="s-card">
       <div class="s-card-head"><span>App Timeline</span><span class="s-card-head-jp">スケジュール</span></div>
       <div class="s-card-body">
@@ -1455,7 +1054,6 @@ footer {
       </div>
     </div>
 
-    <!-- Visitor Counter -->
     <div class="s-card">
       <div class="s-card-head"><span>Visitors</span><span class="s-card-head-jp">訪問者</span></div>
       <div class="s-card-body" style="text-align:center;">
@@ -1464,7 +1062,6 @@ footer {
       </div>
     </div>
 
-    <!-- Socials -->
     <div class="s-card">
       <div class="s-card-head"><span>Find Me</span><span class="s-card-head-jp">SNS</span></div>
       <div class="s-card-body">
@@ -1481,7 +1078,6 @@ footer {
       </div>
     </div>
 
-    <!-- Puzzle ♡ is back -->
     <div class="s-card" style="position:relative;z-index:10;">
       <div class="s-card-head"><span>Puzzle ✿</span><span class="s-card-head-jp">パズル</span></div>
       <div class="s-card-body" style="padding:6px 8px 8px;">
@@ -1512,7 +1108,6 @@ footer {
   </div>
 
   <div class="footer-inner">
-    <!-- Left: brand + stamps -->
     <div class="footer-brand">
       <div class="footer-logo">Ayachi Samyal</div>
       <div class="footer-logo-jp">サムヤル アヤチ · 綾智</div>
@@ -1523,7 +1118,6 @@ footer {
       </div>
     </div>
 
-    <!-- Center: nav links -->
     <div class="footer-nav">
       <div class="footer-nav-head">✦ guides</div>
       <a href="kakehashi-guide.html">Kakehashi Guide</a>
@@ -1531,6 +1125,7 @@ footer {
       <a href="budget-guide.html">Budget Guide</a>
       <a href="Bento.html">Bento Guide</a>
       <a href="Train.html">Commute Guide</a>
+      <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">Last Day in Japan</a>
     </div>
     <div class="footer-nav">
       <div class="footer-nav-head">✦ pillars</div>
@@ -1541,7 +1136,6 @@ footer {
       <a href="../../about.html">About Ayachi</a>
     </div>
 
-    <!-- Right: note + line rule -->
     <div class="footer-note-block">
       <p class="footer-tagline">"Everything I wish I knew before I left India at 16."</p>
       <p class="footer-sub">Made with ♡ for future exchange students. Guides are written from personal experience — no sponsored content, no AI fluff.</p>
@@ -1553,8 +1147,6 @@ footer {
     <span class="footer-bottom-jp">ほんとに楽しかった · Yokohama · 横浜 · 架け橋プロジェクト · 日本生活</span>
   </div>
 </footer>
-
-
 
 <script>
 const rp=document.getElementById('rp');
@@ -1591,6 +1183,7 @@ const rp=document.getElementById('rp');
   sb.addEventListener('click',shuf);
   init();shuf();
 })();
+
 window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
 
 function handleSignup(e){
