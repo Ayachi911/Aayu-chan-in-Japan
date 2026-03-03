@@ -4,683 +4,1097 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Last Day in Tokyo — with Hina-chan | Ayachi Samyal</title>
-<meta name="description" content="Shibuya Scramble Square, Shibuya Sky, Harajuku, Marion Crepes, a 2D Cafe we never got into, Korean food, cherry blossoms, and crying on a metro at 7pm.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Shippori+Mincho:wght@400;500;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
+/* ── TOKENS ── */
 :root {
-  --cream:       #f5f0e8;
-  --cream-dark:  #ede6d2;
-  --paper:       #faf6ee;
-  --pink:        #b85a6a;
-  --pink-dark:   #8a3a48;
-  --pink-light:  #e8b0bc;
-  --ink:         #1a1410;
-  --ink-mid:     #3d3020;
-  --ink-light:   #6b5a4a;
-  --grid:        rgba(180,140,120,0.22);
-  --stamp-pink:  rgba(184,90,106,0.78);
-  --stamp-navy:  rgba(26,39,68,0.82);
-  --stamp-sage:  rgba(80,110,80,0.75);
-  --gold:        #8a6a20;
-  --gold-light:  #c9a030;
-  --tan:         #cbb898;
+  --page:        #faf7f2;
+  --page-warm:   #f5f0e6;
+  --ink:         #2a2018;
+  --ink-mid:     #5a4a38;
+  --ink-soft:    #8a7a68;
+  --rose:        #c4737a;
+  --rose-light:  #e8c5c8;
+  --rose-pale:   #f5e8ea;
+  --sage:        #7a9480;
+  --sage-light:  #c8d8c8;
+  --sage-pale:   #edf2ed;
+  --tan:         #c8b090;
+  --gold:        #b09050;
+  --washi-pink:  rgba(220,170,175,0.55);
+  --washi-sage:  rgba(160,190,165,0.50);
+  --washi-blue:  rgba(160,185,210,0.50);
+  --washi-gold:  rgba(200,175,120,0.50);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--cream);
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #ede8df;
   background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 27px,var(--grid) 27px,var(--grid) 28px),
-    repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(180,140,120,0.10) 27px,rgba(180,140,120,0.10) 28px);
-  color:var(--ink);font-family:'Noto Serif JP',serif;font-weight:400;line-height:1.85;min-height:100vh;overflow-x:hidden;
+    radial-gradient(ellipse at 20% 0%, rgba(196,115,122,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(122,148,128,0.08) 0%, transparent 60%);
+  color: var(--ink);
+  font-family: 'Playfair Display', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-body::before{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;opacity:0.55;
+
+/* READING PROGRESS */
+.rp { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, var(--rose), var(--sage)); z-index: 9999; width: 0; transition: width 0.1s; }
+
+/* ── NAV ── */
+.site-nav {
+  position: relative; z-index: 100;
+  background: var(--ink);
+  padding: 0 3rem;
+  display: flex; align-items: stretch; justify-content: space-between;
+  border-bottom: 3px solid var(--rose);
 }
-.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(to right,var(--pink),var(--pink-light));z-index:9999;width:0%;transition:width 0.1s linear;}
-.page-margin-line{position:fixed;left:88px;top:0;bottom:0;width:2px;background:rgba(184,90,106,0.28);z-index:1;pointer-events:none;}
-@media(max-width:800px){.page-margin-line{display:none;}}
-
-/* TICKER */
-.transit-ticker{
-  position:relative;z-index:20;background:#1e1418;
-  color:rgba(255,255,255,0.45);font-family:'Courier Prime',monospace;
-  font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
-  padding:0.38rem 2rem;display:flex;align-items:center;gap:2rem;overflow:hidden;
-  border-bottom:3px solid var(--pink-light);
+.nav-logo {
+  font-family: 'DM Mono', monospace; font-size: 0.75rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--page-warm); text-decoration: none;
+  padding: 1rem 0; display: flex; align-items: center; gap: 1rem;
 }
-.ticker-item{white-space:nowrap;display:flex;align-items:center;gap:0.5rem;}
-.ticker-item strong{color:var(--pink-light);font-weight:700;}
-.ticker-sep{color:rgba(255,255,255,0.18);}
+.nav-logo .logo-jp {
+  font-family: 'Shippori Mincho', serif; font-size: 0.9rem;
+  letter-spacing: 0.1em; opacity: 0.5; font-weight: 400;
+}
+.nav-tag {
+  background: var(--rose); color: white;
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.18rem 0.6rem; align-self: center;
+}
+.nav-links { display: flex; }
+.nav-links a {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(250,247,242,0.5); text-decoration: none;
+  padding: 0 1.2rem; display: flex; align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--rose-light); }
 
-/* NAV */
-nav{position:relative;z-index:10;background:#2a1620;border-bottom:3px solid var(--ink);display:flex;align-items:stretch;}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 2rem;}
-.logo{font-family:'Noto Serif JP',serif;font-weight:700;font-size:0.95rem;color:var(--cream);text-decoration:none;letter-spacing:0.15em;padding:1rem 0;display:flex;align-items:center;gap:0.8rem;}
-.logo-jp{font-size:1.1rem;opacity:0.6;font-weight:300;}
-.nav-section-tag{background:var(--pink-light);color:#2a1620;font-family:'Courier Prime',monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.2em;padding:0.2rem 0.7rem;text-transform:uppercase;}
-.nav-links{display:flex;gap:0;}
-.nav-links a{font-family:'Courier Prime',monospace;font-size:0.78rem;letter-spacing:0.15em;color:rgba(245,240,224,0.6);text-decoration:none;padding:1.2rem;text-transform:uppercase;border-left:1px solid rgba(255,255,255,0.07);transition:background 0.15s,color 0.15s;}
-.nav-links a:hover{background:rgba(255,255,255,0.07);color:white;}
+/* ── TICKER ── */
+.ticker {
+  background: var(--rose); overflow: hidden;
+  padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ticker-track {
+  display: flex; gap: 0;
+  animation: ticker-scroll 30s linear infinite;
+  white-space: nowrap;
+}
+.ticker-item {
+  font-family: 'DM Mono', monospace; font-size: 0.62rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9); padding: 0 2rem;
+  display: flex; align-items: center; gap: 0.6rem;
+  flex-shrink: 0;
+}
+.ticker-item .dot { opacity: 0.4; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
-/* HEADER BAND */
-.header-band{position:relative;z-index:2;background:var(--paper);border-bottom:2px solid var(--tan);padding:3rem 2rem 2.5rem;overflow:hidden;}
-.header-band::after{content:'最後の日';position:absolute;right:-10px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:'Noto Serif JP',serif;font-size:5rem;font-weight:700;color:rgba(184,90,106,0.055);letter-spacing:0.1em;white-space:nowrap;pointer-events:none;}
-.header-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;}
+/* ── HEADER ── */
+.page-header {
+  background: var(--page-warm);
+  border-bottom: 1px solid rgba(200,176,144,0.4);
+  padding: 3.5rem 3rem 3rem;
+  position: relative; overflow: hidden;
+}
+/* washi tape strip across top of header */
+.page-header::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--washi-pink) 0px, var(--washi-pink) 60px,
+    var(--washi-sage) 60px, var(--washi-sage) 120px,
+    var(--washi-blue) 120px, var(--washi-blue) 180px,
+    var(--washi-gold) 180px, var(--washi-gold) 240px
+  );
+}
+.page-header::after {
+  content: '最後の日';
+  position: absolute; right: 3rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Shippori Mincho', serif; font-size: 7rem; font-weight: 700;
+  color: rgba(196,115,122,0.06); letter-spacing: 0.05em;
+  pointer-events: none; line-height: 1;
+}
+.header-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: start; padding-top: 1rem;
+}
+.header-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.header-eyebrow::before { content: '◦'; font-size: 1rem; }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600;
+  line-height: 1.12; color: var(--ink); margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+h1 em { font-style: italic; color: var(--rose); }
+.h1-jp {
+  display: block; font-family: 'Shippori Mincho', serif;
+  font-size: 0.85rem; font-weight: 400; color: var(--ink-soft);
+  letter-spacing: 0.2em; margin-top: 0.6rem;
+}
+.header-standfirst {
+  font-size: 1rem; line-height: 1.75; color: var(--ink-mid);
+  max-width: 580px; margin: 1.2rem 0 1.5rem;
+  font-style: italic; font-weight: 400;
+}
+.header-meta {
+  display: flex; flex-wrap: wrap; gap: 1.2rem;
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+  border-top: 1px solid rgba(200,176,144,0.5); padding-top: 1rem;
+}
+.header-meta span { display: flex; align-items: center; gap: 0.4rem; }
 
-/* STAMPS */
-.stamp-cluster{display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem;padding-top:0.4rem;}
-.stamp{display:inline-block;border:3px solid currentColor;border-radius:3px;padding:0.35rem 0.7rem;font-family:'Special Elite',cursive;font-size:0.68rem;letter-spacing:0.12em;text-align:center;line-height:1.3;transform:rotate(var(--rot,-3deg));position:relative;}
-.stamp::before{content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.4;border-radius:1px;}
-.stamp-pink{color:var(--stamp-pink);--rot:-4deg;}
-.stamp-navy{color:var(--stamp-navy);--rot:3deg;}
-.stamp-sage{color:var(--stamp-sage);--rot:-2deg;}
-.stamp-circle{border-radius:50%;width:76px;height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.58rem;line-height:1.5;padding:0;--rot:-6deg;}
+/* STAMPS — scrapbook ink-stamp aesthetic, different from bento */
+.stamp-cluster {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 1rem; padding-top: 1.5rem;
+}
+.stamp {
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.12em; text-transform: uppercase; text-align: center;
+  line-height: 1.4; padding: 0.5rem 0.8rem;
+  border: 2.5px solid currentColor; border-radius: 2px;
+  transform: rotate(var(--r, -3deg));
+  position: relative; opacity: 0.75;
+}
+.stamp::after {
+  content: ''; position: absolute; inset: 3px;
+  border: 1px dashed currentColor; opacity: 0.3; border-radius: 1px;
+}
+.s-rose { color: var(--rose); --r: -4deg; }
+.s-sage { color: var(--sage); --r: 3deg; }
+.stamp-oval {
+  font-family: 'Shippori Mincho', serif; font-size: 0.8rem;
+  font-weight: 700; color: var(--rose); opacity: 0.65;
+  border: 2.5px solid var(--rose); border-radius: 50%;
+  width: 72px; height: 72px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  line-height: 1.3; transform: rotate(-5deg);
+  padding: 0;
+}
+.stamp-oval::after { display: none; }
 
-.eyebrow-label{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.3em;color:var(--pink);text-transform:uppercase;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
-.eyebrow-label::before{content:'';display:inline-block;width:30px;height:1px;background:var(--pink);}
-h1{font-family:'Noto Serif JP',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-0.01em;}
-.h1-jp{display:block;font-size:0.9rem;font-weight:300;color:var(--ink-light);letter-spacing:0.2em;margin-top:0.4rem;font-family:'Noto Sans JP',sans-serif;}
-.hero-sub{font-size:0.9rem;color:var(--ink-mid);max-width:500px;line-height:1.8;margin-bottom:1.4rem;font-family:'Noto Serif JP',serif;font-weight:300;}
-.hero-meta{display:flex;flex-wrap:wrap;gap:1.5rem;font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.1em;color:var(--ink-light);border-top:1px solid var(--tan);padding-top:0.9rem;}
-.hero-meta span{display:flex;align-items:center;gap:0.4rem;}
+/* ── PAGE BODY ── */
+.page-body {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 3rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 4rem; align-items: start;
+  margin-top: 2.5rem;
+}
 
-/* LAYOUT */
-.page-wrap{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:0 2rem 5rem;}
-.guide-wrap{display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:start;margin-top:2.5rem;}
-.guide-body{position:relative;}
-.guide-body::before{content:'';position:absolute;left:-2rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--pink) 0%,transparent 100%);opacity:0.2;}
-.guide-body p{font-size:0.93rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.3rem;font-family:'Noto Serif JP',serif;font-weight:300;}
-.intro-p{font-size:0.96rem!important;color:var(--ink)!important;font-weight:400!important;border-left:4px solid var(--pink);padding:1.1rem 1.3rem;background:rgba(184,90,106,0.04);margin-bottom:2rem!important;}
+/* ── MAIN CONTENT ── */
+.main-content { min-width: 0; }
 
-/* SECTION HEADERS */
-.section-header{display:flex;align-items:center;gap:0;margin:3rem 0 1.2rem;position:relative;}
-.section-num{font-family:'Courier Prime',monospace;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;color:white;background:var(--pink);padding:0.2rem 0.55rem;margin-right:0.8rem;flex-shrink:0;}
-.section-header h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--ink);letter-spacing:0.05em;flex:1;}
-.section-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.75rem;font-weight:300;color:var(--ink-light);letter-spacing:0.15em;margin-left:0.8rem;flex-shrink:0;}
-.section-rule{height:1px;background:var(--tan);margin-bottom:1.2rem;}
-h3{font-family:'Noto Serif JP',serif;font-size:0.98rem;font-weight:700;color:var(--pink-dark);margin:1.8rem 0 0.6rem;letter-spacing:0.05em;display:flex;align-items:center;gap:0.6rem;}
-h3::before{content:'◆';font-size:0.6rem;color:var(--pink);flex-shrink:0;}
-.guide-body ul,.guide-body ol{padding-left:0;margin-bottom:1.3rem;list-style:none;}
-.guide-body li{font-size:0.9rem;line-height:1.85;color:var(--ink-mid);margin-bottom:0.7rem;padding-left:1.8rem;position:relative;font-family:'Noto Serif JP',serif;font-weight:300;}
-.guide-body ul li::before{content:'—';position:absolute;left:0;color:var(--pink);font-family:'Courier Prime',monospace;font-weight:700;}
+/* ── ROUTE STRIP ── */
+.route-strip {
+  background: var(--ink); color: var(--page-warm);
+  padding: 1rem 1.4rem; margin-bottom: 2.5rem;
+  border-left: 4px solid var(--rose);
+}
+.route-label {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--rose-light); margin-bottom: 0.7rem;
+}
+.route-stops {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem;
+  font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+}
+.rs { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); padding: 0.2rem 0.55rem; }
+.rs.hi { background: var(--rose); border-color: var(--rose); font-weight: 400; }
+.ra { color: rgba(255,255,255,0.25); }
+.rn { font-size: 0.56rem; color: rgba(255,255,255,0.35); margin-left: 0.2rem; }
 
-/* PHOTO CARDS */
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.8rem 0;}
-.photo-card{position:relative;background:var(--paper);border:1px solid var(--tan);padding:0.6rem;box-shadow:2px 3px 0 rgba(0,0,0,0.10);}
-.photo-card::before,.photo-card::after{content:'';position:absolute;width:10px;height:10px;border-color:var(--pink);border-style:solid;}
-.photo-card::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
-.photo-card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
-.photo-card img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;margin-bottom:0.7rem;filter:sepia(5%) saturate(92%);}
-.photo-card.tall img{aspect-ratio:3/4;}
-.photo-card-label{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;color:var(--pink);text-transform:uppercase;margin-bottom:0.2rem;display:flex;align-items:center;gap:0.4rem;}
-.photo-card-label::before{content:'';display:inline-block;width:14px;height:1px;background:var(--pink);}
-.photo-card-title{font-family:'Noto Serif JP',serif;font-size:0.88rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;}
-.photo-card-desc{font-family:'Noto Serif JP',serif;font-size:0.78rem;color:var(--ink-light);line-height:1.65;font-weight:300;}
+/* ── INTRO PARA ── */
+.intro-p {
+  font-size: 1.05rem; line-height: 1.9; color: var(--ink);
+  border-left: 3px solid var(--rose); padding: 0.8rem 1.2rem;
+  background: var(--rose-pale); margin-bottom: 2.5rem;
+  font-style: italic;
+}
 
-/* WIDE PHOTO */
-.photo-wide{margin:1.8rem 0;}
-.photo-wide img{width:100%;display:block;max-height:400px;object-fit:cover;filter:sepia(6%) saturate(90%);border:1px solid var(--tan);}
-.photo-wide-caption{display:flex;align-items:flex-start;gap:0.8rem;margin-top:0.6rem;}
-.photo-wide-caption-num{font-family:'Courier Prime',monospace;font-size:0.62rem;color:var(--pink);letter-spacing:0.15em;flex-shrink:0;padding-top:0.1rem;}
-.photo-wide-caption p{font-size:0.78rem!important;color:var(--ink-light)!important;font-style:italic;margin:0!important;line-height:1.65!important;}
+/* ── SECTION HEADERS ── */
+.sec-head {
+  display: flex; align-items: baseline; gap: 0.8rem;
+  margin: 3rem 0 0.5rem; position: relative;
+}
+/* washi tape behind section number */
+.sec-head::before {
+  content: '';
+  position: absolute; left: -0.5rem; top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% + 1rem); height: 22px;
+  background: var(--washi-tape, var(--washi-pink));
+  z-index: 0;
+}
+.sec-num {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  font-weight: 400; letter-spacing: 0.2em;
+  background: var(--rose); color: white;
+  padding: 0.15rem 0.5rem; flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.sec-head h2 {
+  font-family: 'Playfair Display', serif; font-size: 1.2rem;
+  font-weight: 600; color: var(--ink); flex: 1;
+  position: relative; z-index: 1; background: var(--page-warm);
+  padding: 0 0.4rem;
+}
+.sec-head h2 em { font-style: italic; color: var(--rose); }
+.sec-jp {
+  font-family: 'Shippori Mincho', serif; font-size: 0.72rem;
+  font-weight: 400; color: var(--ink-soft); letter-spacing: 0.15em;
+  flex-shrink: 0; position: relative; z-index: 1;
+  background: var(--page-warm); padding: 0 0.4rem;
+}
+.sec-rule { height: 1px; background: rgba(200,176,144,0.5); margin-bottom: 1.4rem; }
 
-/* CALLOUTS */
-.callout{position:relative;padding:1.1rem 1.3rem;margin:1.8rem 0;font-size:0.88rem;line-height:1.85;font-family:'Noto Serif JP',serif;font-weight:300;}
-.callout p{margin:0!important;font-size:0.88rem!important;font-weight:300;}
-.callout-label{font-family:'Courier Prime',monospace;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
-.callout-note{background:rgba(245,240,224,0.7);border:1px solid var(--tan);border-left:3px solid var(--pink);}
-.callout-note .callout-label{color:var(--pink);}
-.callout-tip{background:rgba(138,106,32,0.05);border:1px dashed var(--gold-light);border-left:3px solid var(--gold);}
-.callout-tip .callout-label{color:var(--gold);}
-.callout-moment{background:rgba(26,20,16,0.04);border:1px solid var(--ink);border-left:3px solid var(--ink);}
-.callout-moment .callout-label{color:var(--ink);}
+/* different washi colors per section */
+.washi-rose  .sec-head::before { background: var(--washi-pink); }
+.washi-sage  .sec-head::before { background: var(--washi-sage); }
+.washi-blue  .sec-head::before { background: var(--washi-blue); }
+.washi-gold  .sec-head::before { background: var(--washi-gold); }
 
-/* ROUTE STRIP */
-.route-strip{background:#1e1418;color:white;padding:1rem 1.4rem;margin:1.8rem 0;border-left:4px solid var(--pink-light);font-family:'Courier Prime',monospace;}
-.route-strip-title{font-size:0.62rem;letter-spacing:0.25em;color:var(--pink-light);text-transform:uppercase;margin-bottom:0.8rem;}
-.route-legs{display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem;font-size:0.78rem;letter-spacing:0.08em;}
-.route-stop{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.6rem;white-space:nowrap;}
-.route-stop.hl{background:var(--pink);border-color:var(--pink);color:white;font-weight:700;}
-.route-arrow{color:rgba(255,255,255,0.3);font-size:0.9rem;}
-.route-note{font-size:0.62rem;color:rgba(255,255,255,0.4);letter-spacing:0.12em;margin-left:0.3rem;}
+.main-content p {
+  font-size: 0.94rem; line-height: 1.95; color: var(--ink-mid);
+  margin-bottom: 1.3rem; font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+h3 {
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+  color: var(--rose); margin: 1.8rem 0 0.6rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+h3::before { content: '—'; font-family: 'DM Mono', monospace; font-size: 0.8rem; opacity: 0.6; }
 
-/* STORY BLOCK */
-.story-block{background:var(--paper);border:1px solid var(--tan);padding:1.4rem 1.6rem;margin:1.8rem 0;border-top:3px solid var(--pink);}
-.story-block-label{font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;color:var(--pink);text-transform:uppercase;margin-bottom:1rem;}
-.story-block p{font-size:0.88rem!important;margin-bottom:0.9rem!important;}
-.story-block p:last-child{margin-bottom:0!important;}
-.story-quote{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-style:italic;font-weight:500;color:var(--pink-dark);text-align:center;padding:0.8rem 0;border-top:1px solid var(--tan);border-bottom:1px solid var(--tan);margin:1rem 0;}
+/* ── PHOTO TAPED ── */
+/* Individual tilted photo stuck to page */
+.photo-taped-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; margin: 2rem 0;
+  align-items: start;
+}
+.photo-taped-grid.two-col { grid-template-columns: repeat(2, 1fr); }
 
-/* ITINERARY */
-.itinerary{border:1px solid var(--tan);margin:1.8rem 0;overflow:hidden;}
-.itinerary-head{background:#2a1620;color:var(--cream);font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.6rem 1rem;display:grid;grid-template-columns:70px 100px 1fr 70px;gap:1rem;border-bottom:2px solid var(--pink);}
-.itinerary-row{display:grid;grid-template-columns:70px 100px 1fr 70px;gap:1rem;align-items:start;padding:0.7rem 1rem;border-bottom:1px solid rgba(203,184,152,0.4);font-size:0.82rem;}
-.itinerary-row:last-child{border-bottom:none;}
-.itinerary-row:nth-child(even){background:rgba(245,240,232,0.5);}
-.itinerary-row.hl{background:rgba(184,90,106,0.06);border-left:3px solid var(--pink);}
-.it-time{font-family:'Courier Prime',monospace;font-weight:700;color:var(--pink-dark);font-size:0.8rem;}
-.it-stop{font-family:'Noto Serif JP',serif;font-weight:700;font-size:0.82rem;}
-.it-desc{font-family:'Noto Serif JP',serif;font-weight:300;color:var(--ink-mid);font-size:0.8rem;line-height:1.6;}
-.it-note{font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--ink-light);text-align:right;}
+.photo-taped {
+  position: relative; padding-bottom: 1.5rem;
+}
+.photo-taped:nth-child(odd)  { transform: rotate(-1.2deg); }
+.photo-taped:nth-child(even) { transform: rotate(1.4deg); }
+.photo-taped:hover { transform: rotate(0deg) scale(1.02); z-index: 10; transition: transform 0.3s ease; }
 
-/* PAGE DECO */
-.page-num-deco{text-align:center;font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.25em;color:var(--ink-light);text-transform:uppercase;padding:2rem 0;opacity:0.6;}
-.text-divider{text-align:center;margin:1.8rem 0;}
-.text-divider-inner{font-family:'Courier Prime',monospace;font-size:0.8rem;letter-spacing:0.3em;color:var(--tan);}
+/* washi tape on top of photo */
+.photo-taped::before {
+  content: '';
+  position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 16px;
+  background: var(--tape-color, var(--washi-pink));
+  z-index: 2;
+}
+.tape-rose  { --tape-color: var(--washi-pink); }
+.tape-sage  { --tape-color: var(--washi-sage); }
+.tape-blue  { --tape-color: var(--washi-blue); }
+.tape-gold  { --tape-color: var(--washi-gold); }
 
-/* CTA */
-.cta-box{background:#2a1620;color:var(--cream);padding:2rem;margin-top:3rem;border-top:3px solid var(--pink-light);}
-.cta-box h3{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:700;margin-bottom:0.6rem;color:white;}
-.cta-box h3::before{display:none;}
-.cta-box p{font-size:0.82rem!important;color:rgba(245,240,224,0.7)!important;margin-bottom:1rem!important;}
-.cta-btn{display:inline-block;background:var(--pink);color:white;text-decoration:none;font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.55rem 1.2rem;transition:background 0.15s;}
-.cta-btn:hover{background:var(--pink-dark);}
+.photo-taped img {
+  width: 100%; display: block;
+  aspect-ratio: 4/3; object-fit: cover;
+  filter: saturate(0.88) contrast(1.03) brightness(1.01);
+  box-shadow: 2px 4px 16px rgba(42,32,24,0.15);
+}
+.photo-taped.tall img { aspect-ratio: 3/4; }
 
-/* SIDEBAR */
-.guide-sidebar{position:sticky;top:1.5rem;}
-.sidebar-card{background:var(--paper);border:1px solid var(--tan);padding:1.1rem;margin-bottom:1.2rem;font-size:0.8rem;color:var(--ink-mid);line-height:1.7;font-family:'Noto Serif JP',serif;font-weight:300;}
-.sidebar-card-head{font-family:'Courier Prime',monospace;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);border-bottom:1px solid var(--tan);padding-bottom:0.5rem;margin-bottom:0.8rem;display:flex;justify-content:space-between;align-items:center;}
-.sidebar-card-head-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.75rem;font-weight:300;color:var(--ink-light);letter-spacing:0.1em;}
-.toc-list{list-style:none;}
-.toc-list li{margin-bottom:0.4rem;padding-left:0;}
-.toc-list li::before{display:none;}
-.toc-list a{font-family:'Courier Prime',monospace;font-size:0.75rem;color:var(--ink-mid);text-decoration:none;letter-spacing:0.05em;display:flex;align-items:center;gap:0.5rem;padding:0.2rem 0;transition:color 0.15s;}
-.toc-list a:hover{color:var(--pink);}
-.toc-num{font-size:0.6rem;color:var(--pink);font-weight:700;background:rgba(184,90,106,0.08);padding:0.1rem 0.3rem;flex-shrink:0;}
-.kanji-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.4rem;}
-.kanji-card{background:rgba(245,240,232,0.7);border:1px solid var(--tan);padding:0.5rem 0.6rem;text-align:center;}
-.kanji-char{display:block;font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--ink);}
-.kanji-roman{display:block;font-family:'Courier Prime',monospace;font-size:0.58rem;color:var(--pink);letter-spacing:0.08em;margin-top:0.1rem;}
-.kanji-gloss{display:block;font-family:'Noto Serif JP',serif;font-size:0.65rem;color:var(--ink-light);font-weight:300;}
-.sidebar-link{display:inline-block;color:var(--pink);font-family:'Courier Prime',monospace;font-size:0.72rem;letter-spacing:0.1em;text-decoration:none;margin-top:0.5rem;}
-.sidebar-link:hover{text-decoration:underline;}
+.photo-caption {
+  margin-top: 0.7rem; padding: 0 0.2rem;
+}
+.photo-caption-tag {
+  font-family: 'DM Mono', monospace; font-size: 0.56rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose);
+  margin-bottom: 0.15rem;
+}
+.photo-caption-title {
+  font-family: 'Caveat', cursive; font-size: 1rem;
+  color: var(--ink); line-height: 1.2; font-weight: 500;
+}
+.photo-caption-body {
+  font-family: 'Playfair Display', serif; font-size: 0.75rem;
+  color: var(--ink-soft); line-height: 1.6; font-weight: 400;
+  margin-top: 0.2rem;
+}
 
-/* FOOTER */
-footer{position:relative;z-index:2;background:#1e1418;color:rgba(245,240,224,0.55);padding:2rem;text-align:center;font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.15em;border-top:3px solid var(--pink);line-height:1.9;}
-.footer-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.8rem;font-weight:300;margin-top:0.3rem;}
+/* ── WIDE PHOTO ── */
+.photo-wide { margin: 2rem 0; }
+.photo-wide img {
+  width: 100%; display: block; max-height: 420px; object-fit: cover;
+  filter: saturate(0.88) contrast(1.04);
+  box-shadow: 0 4px 24px rgba(42,32,24,0.12);
+}
+/* washi tape strip top of wide photo */
+.photo-wide-tape {
+  height: 14px; width: 100%;
+  background: var(--tape-color, var(--washi-pink));
+  margin-bottom: -4px; position: relative; z-index: 2;
+}
+.photo-wide-caption {
+  background: var(--page-warm); padding: 0.8rem 1rem;
+  border: 1px solid rgba(200,176,144,0.3);
+  border-top: none;
+  display: flex; gap: 0.8rem; align-items: flex-start;
+}
+.pwc-fig {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.15em; color: var(--rose); flex-shrink: 0; padding-top: 2px;
+}
+.pwc-text {
+  font-family: 'Playfair Display', serif; font-size: 0.78rem;
+  font-style: italic; color: var(--ink-soft); line-height: 1.65;
+}
 
-/* RESPONSIVE */
-@media(max-width:800px){
-  .guide-wrap{grid-template-columns:1fr;}
-  .guide-sidebar{position:static;}
-  .header-inner{grid-template-columns:1fr;}
-  .stamp-cluster{display:none;}
-  .itinerary-head,.itinerary-row{grid-template-columns:60px 1fr;}
-  .it-stop,.it-note{display:none;}
-  .photo-grid{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
+/* ── FILM STRIP ── */
+.film-strip {
+  background: #1a1410; padding: 1.2rem; margin: 2rem 0;
+  position: relative;
+}
+.film-strip::before, .film-strip::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 20px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #1a1410 0px, #1a1410 8px,
+    transparent 8px, transparent 16px
+  );
+  background-size: 20px 16px;
+}
+.film-strip::before { left: 0; }
+.film-strip::after  { right: 0; }
+.film-strip-label {
+  font-family: 'DM Mono', monospace; font-size: 0.55rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); text-align: center; margin-bottom: 0.8rem;
+}
+.film-frames {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem; padding: 0 1.5rem;
+}
+.film-frame {
+  position: relative;
+}
+.film-frame img {
+  width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover;
+  filter: saturate(0.8) contrast(1.1);
+  border: 2px solid #2a2018;
+}
+.film-frame-num {
+  position: absolute; bottom: 0; right: 0;
+  font-family: 'DM Mono', monospace; font-size: 0.5rem;
+  color: rgba(255,200,100,0.7); background: rgba(0,0,0,0.5);
+  padding: 1px 4px; letter-spacing: 0.1em;
+}
+
+/* ── CALLOUT BOXES ── */
+.callout {
+  padding: 1.1rem 1.3rem; margin: 2rem 0;
+  font-family: 'Playfair Display', serif; font-size: 0.88rem; line-height: 1.85;
+  position: relative;
+}
+.callout p { margin: 0 !important; color: var(--ink-mid) !important; font-size: 0.88rem !important; }
+.callout-label {
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+  display: block; margin-bottom: 0.5rem;
+}
+.c-rose {
+  background: var(--rose-pale); border: 1px solid rgba(196,115,122,0.2);
+  border-left: 3px solid var(--rose);
+}
+.c-rose .callout-label { color: var(--rose); }
+.c-sage {
+  background: var(--sage-pale); border: 1px solid rgba(122,148,128,0.2);
+  border-left: 3px solid var(--sage);
+}
+.c-sage .callout-label { color: var(--sage); }
+.c-ink {
+  background: rgba(42,32,24,0.04); border: 1px solid rgba(42,32,24,0.15);
+  border-left: 3px solid var(--ink);
+}
+.c-ink .callout-label { color: var(--ink); }
+
+/* ── STORY BLOCK ── */
+.story-block {
+  background: var(--page-warm);
+  border: 1px solid rgba(200,176,144,0.4);
+  border-top: 3px solid var(--rose);
+  padding: 1.4rem 1.6rem; margin: 2rem 0;
+}
+.story-block-label {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose);
+  margin-bottom: 1rem;
+}
+.story-block p { font-size: 0.88rem !important; margin-bottom: 0.9rem !important; color: var(--ink-mid) !important; }
+.story-block p:last-child { margin-bottom: 0 !important; }
+.story-quote {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem;
+  font-style: italic; font-weight: 600; color: var(--rose);
+  text-align: center;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(200,176,144,0.4);
+  border-bottom: 1px solid rgba(200,176,144,0.4);
+  margin: 1rem 0;
+}
+
+/* ── ITINERARY ── */
+.itinerary { border: 1px solid rgba(200,176,144,0.4); margin: 2rem 0; overflow: hidden; }
+.it-head {
+  background: var(--ink); color: var(--page-warm);
+  font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  display: grid; grid-template-columns: 65px 90px 1fr 75px; gap: 1rem;
+  border-bottom: 2px solid var(--rose);
+}
+.it-row {
+  display: grid; grid-template-columns: 65px 90px 1fr 75px; gap: 1rem;
+  padding: 0.65rem 1rem; align-items: start;
+  border-bottom: 1px solid rgba(200,176,144,0.25); font-size: 0.82rem;
+}
+.it-row:last-child { border-bottom: none; }
+.it-row:nth-child(even) { background: rgba(250,247,242,0.6); }
+.it-row.hl { background: var(--rose-pale); border-left: 3px solid var(--rose); }
+.it-time { font-family: 'DM Mono', monospace; font-weight: 400; color: var(--rose); font-size: 0.78rem; }
+.it-stop { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.82rem; }
+.it-desc { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--ink-mid); font-size: 0.8rem; line-height: 1.6; }
+.it-note { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--ink-soft); text-align: right; line-height: 1.4; }
+
+/* ── TORN PAPER DIVIDER ── */
+.torn-divider {
+  margin: 2.5rem -3rem;
+  height: 30px; position: relative; overflow: hidden;
+}
+.torn-divider::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--tone, #ede8df);
+  clip-path: polygon(
+    0% 0%, 2% 60%, 4% 20%, 6% 80%, 8% 30%, 10% 70%, 12% 15%,
+    14% 65%, 16% 35%, 18% 75%, 20% 25%, 22% 55%, 24% 10%,
+    26% 50%, 28% 80%, 30% 40%, 32% 70%, 34% 20%, 36% 60%,
+    38% 30%, 40% 65%, 42% 15%, 44% 55%, 46% 85%, 48% 35%,
+    50% 65%, 52% 20%, 54% 70%, 56% 40%, 58% 75%, 60% 25%,
+    62% 55%, 64% 10%, 66% 50%, 68% 80%, 70% 30%, 72% 60%,
+    74% 20%, 76% 65%, 78% 35%, 80% 70%, 82% 25%, 84% 55%,
+    86% 15%, 88% 60%, 90% 30%, 92% 70%, 94% 20%, 96% 55%,
+    98% 35%, 100% 65%, 100% 100%, 0% 100%
+  );
+}
+
+/* ── PAGE NUM DECO ── */
+.page-deco {
+  text-align: center; font-family: 'DM Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink-soft); padding: 2rem 0; opacity: 0.55;
+}
+
+/* ── CTA ── */
+.cta-box {
+  background: var(--ink); color: var(--page-warm);
+  padding: 2rem; margin-top: 3rem; border-top: 3px solid var(--rose-light);
+}
+.cta-box h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem;
+  font-weight: 600; color: white; margin-bottom: 0.6rem;
+}
+.cta-box h3::before { display: none; }
+.cta-box p { font-size: 0.85rem !important; color: rgba(250,247,242,0.6) !important; margin-bottom: 1rem !important; }
+.cta-btn {
+  display: inline-block; background: var(--rose); color: white;
+  text-decoration: none; font-family: 'DM Mono', monospace;
+  font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.6rem 1.3rem; transition: background 0.2s;
+}
+.cta-btn:hover { background: #a85a62; }
+
+/* ── SIDEBAR ── */
+.sidebar { position: sticky; top: 1.5rem; }
+.sc {
+  background: var(--page-warm);
+  border: 1px solid rgba(200,176,144,0.4);
+  padding: 1.1rem; margin-bottom: 1.2rem;
+  font-family: 'Playfair Display', serif; font-size: 0.8rem;
+  color: var(--ink-mid); line-height: 1.7;
+}
+/* washi tape on sidebar cards */
+.sc::before {
+  content: '';
+  display: block; height: 10px; width: 100%; margin: -1.1rem -1.1rem 0.8rem;
+  width: calc(100% + 2.2rem);
+  background: var(--sc-tape, var(--washi-pink));
+}
+.sc-head {
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rose); border-bottom: 1px solid rgba(200,176,144,0.3);
+  padding-bottom: 0.5rem; margin-bottom: 0.8rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sc-head-jp {
+  font-family: 'Shippori Mincho', serif; font-size: 0.75rem;
+  font-weight: 400; color: var(--ink-soft); letter-spacing: 0.1em;
+}
+.toc { list-style: none; }
+.toc li { margin-bottom: 0.35rem; padding-left: 0; }
+.toc li::before { display: none; }
+.toc a {
+  font-family: 'DM Mono', monospace; font-size: 0.7rem;
+  color: var(--ink-mid); text-decoration: none; letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.18rem 0; transition: color 0.15s;
+}
+.toc a:hover { color: var(--rose); }
+.toc-n {
+  font-size: 0.55rem; color: var(--rose); font-weight: 400;
+  background: var(--rose-pale); padding: 0.1rem 0.3rem; flex-shrink: 0;
+}
+.kanji-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.4rem; }
+.kc {
+  background: rgba(255,255,255,0.5); border: 1px solid rgba(200,176,144,0.3);
+  padding: 0.45rem 0.5rem; text-align: center;
+}
+.kc-char { display: block; font-family: 'Shippori Mincho', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+.kc-rom { display: block; font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--rose); letter-spacing: 0.08em; margin-top: 0.1rem; }
+.kc-gl { display: block; font-family: 'Playfair Display', serif; font-size: 0.62rem; color: var(--ink-soft); font-style: italic; }
+.sb-link {
+  display: inline-block; color: var(--rose); font-family: 'DM Mono', monospace;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-decoration: none; margin-top: 0.4rem;
+}
+.sb-link:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); color: rgba(250,247,242,0.5);
+  padding: 2.5rem 3rem; text-align: center;
+  font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em;
+  border-top: 3px solid var(--rose); line-height: 2;
+}
+.footer-jp { font-family: 'Shippori Mincho', serif; font-size: 0.85rem; font-weight: 400; margin-top: 0.3rem; opacity: 0.6; }
+.footer-promise { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--rose-light); margin-top: 0.5rem; opacity: 0.8; letter-spacing: 0.05em; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-body { grid-template-columns: 1fr; padding: 0 1.5rem 4rem; }
+  .sidebar { display: none; }
+  .photo-taped-grid { grid-template-columns: 1fr 1fr; }
+  .film-frames { grid-template-columns: 1fr 1fr; }
+  .it-head, .it-row { grid-template-columns: 55px 1fr; }
+  .it-stop, .it-note { display: none; }
+  .header-inner { grid-template-columns: 1fr; }
+  .stamp-cluster { display: none; }
+  .site-nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .torn-divider { margin: 2rem -1.5rem; }
+  h1 { font-size: 1.8rem; }
+  .page-header { padding: 2.5rem 1.5rem 2rem; }
 }
 </style>
 </head>
 <body>
 
-<div class="reading-progress" id="rp"></div>
-<div class="page-margin-line"></div>
+<div class="rp" id="rp"></div>
 
-<div class="transit-ticker">
-  <div class="ticker-item"><strong>SHIBUYA SCRAMBLE SQUARE</strong><span class="ticker-sep">·</span>Morning</div>
-  <div class="ticker-item"><strong>SHIBUYA SKY</strong><span class="ticker-sep">·</span>46F Open Air</div>
-  <div class="ticker-item"><strong>HARAJUKU 原宿</strong><span class="ticker-sep">·</span>Takeshita</div>
-  <div class="ticker-item"><strong>2D CAFE</strong><span class="ticker-sep">·</span>queue ❌</div>
-  <div class="ticker-item"><strong>OKUBO 大久保</strong><span class="ticker-sep">·</span>Korean Town</div>
-  <div class="ticker-item"><strong>METRO</strong><span class="ticker-sep">·</span>19:00 さようなら</div>
-</div>
-
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="#">
-      Ayachi Samyal
-      <span class="logo-jp">アヤチ</span>
-      <span class="nav-section-tag">Japan Days</span>
-    </a>
-    <div class="nav-links">
-      <a href="#">All Guides</a>
-      <a href="#">Essays</a>
-      <a href="#">About</a>
-    </div>
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="nav-logo" href="#">
+    Ayachi Samyal
+    <span class="logo-jp">アヤチ</span>
+    <span class="nav-tag">Japan Days</span>
+  </a>
+  <div class="nav-links">
+    <a href="#">All Guides</a>
+    <a href="#">Essays</a>
+    <a href="#">About</a>
   </div>
 </nav>
 
-<div class="header-band">
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Shibuya Scramble Square <span class="dot">·</span></span>
+    <span class="ticker-item">渋谷スカイ 46F <span class="dot">·</span></span>
+    <span class="ticker-item">Harajuku 原宿 <span class="dot">·</span></span>
+    <span class="ticker-item">Marion Crepes since 1976 <span class="dot">·</span></span>
+    <span class="ticker-item">2D Cafe — queue ❌ <span class="dot">·</span></span>
+    <span class="ticker-item">大久保 Korean Town <span class="dot">·</span></span>
+    <span class="ticker-item">桜 Cherry Blossoms <span class="dot">·</span></span>
+    <span class="ticker-item">Metro 19:00 — さようなら <span class="dot">·</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">Shibuya Scramble Square <span class="dot">·</span></span>
+    <span class="ticker-item">渋谷スカイ 46F <span class="dot">·</span></span>
+    <span class="ticker-item">Harajuku 原宿 <span class="dot">·</span></span>
+    <span class="ticker-item">Marion Crepes since 1976 <span class="dot">·</span></span>
+    <span class="ticker-item">2D Cafe — queue ❌ <span class="dot">·</span></span>
+    <span class="ticker-item">大久保 Korean Town <span class="dot">·</span></span>
+    <span class="ticker-item">桜 Cherry Blossoms <span class="dot">·</span></span>
+    <span class="ticker-item">Metro 19:00 — さようなら <span class="dot">·</span></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="page-header">
   <div class="header-inner">
     <div>
-      <div class="eyebrow-label">Tokyo Day Log — The Last One</div>
-      <h1>
-        The Day I Didn't Want To End
-        <span class="h1-jp">最後の日 · 渋谷・原宿・大久保 · ヒナちゃんと</span>
+      <div class="header-eyebrow">Tokyo Day Log — The Last One</div>
+      <h1>The Day I Didn't<br>Want to <em>End.</em>
+        <span class="h1-jp">最後の日 · 渋谷 · 原宿 · 大久保 · ヒナちゃんと</span>
       </h1>
-      <p class="hero-sub">Shibuya Scramble Square. Shibuya Sky from the 46th floor. Harajuku crepes and K-pop stores. A 2D Cafe we never got into. Korean hot pot in Okubo. Cherry blossoms and an Instax. Crying on a metro at 7pm. With Hina-chan, my best friend.</p>
-      <div class="hero-meta">
-        <span>📍 Shibuya → Harajuku → Okubo → Metro</span>
+      <p class="header-standfirst">Shibuya Sky from the 46th floor. Marion Crepes in Harajuku. A 2D Cafe we abandoned after seeing the queue. Budae-jjigae in Okubo. Cherry blossoms with a yellow Instax. And crying on a metro at exactly 7pm — which neither of us planned.</p>
+      <div class="header-meta">
+        <span>📍 Shibuya → Harajuku → Okubo</span>
         <span>🗓 Spring 2022</span>
         <span>👯 With Hina-chan</span>
         <span>🚇 Final metro: 19:00</span>
       </div>
     </div>
     <div class="stamp-cluster">
-      <div class="stamp stamp-pink">LAST DAY<br>最後の日</div>
-      <div class="stamp stamp-navy">SPRING 2022<br>TOKYO</div>
-      <div class="stamp stamp-sage stamp-circle">また<br>会おう<br>ね</div>
+      <div class="stamp s-rose">LAST DAY<br>最後の日</div>
+      <div class="stamp s-sage">SPRING 2022<br>TOKYO</div>
+      <div class="stamp-oval">また<br>会おう<br>ね</div>
     </div>
   </div>
 </div>
 
-<div class="page-wrap">
-<div class="guide-wrap">
-<main class="guide-body">
+<!-- BODY -->
+<div class="page-body">
+<main class="main-content">
 
-  <p class="intro-p">I was laidback about the whole thing all day. We both were. We had accepted it — the return, the goodbye, the end of this particular year. We moved through Tokyo like we had all the time in the world. We did not. But we were very good at pretending until 7pm.</p>
+  <p class="intro-p">I was laidback about the whole thing all day. We both were. We had accepted it — the return, the goodbye, the end of this particular year. We moved through Tokyo like we had all the time in the world. We did not. But we were very convincing until 7pm.</p>
 
   <div class="route-strip">
-    <div class="route-strip-title">Day Route · 本日のルート</div>
-    <div class="route-legs">
-      <span class="route-stop hl">Scramble Square</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">Shibuya Sky<span class="route-note"> 46F</span></span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">Harajuku 原宿</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">2D Cafe<span class="route-note"> ❌ queue</span></span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop">Okubo 大久保</span>
-      <span class="route-arrow">→</span>
-      <span class="route-stop hl">Metro 19:00</span>
+    <div class="route-label">Day Route · 本日のルート</div>
+    <div class="route-stops">
+      <span class="rs hi">Scramble Square</span>
+      <span class="ra">→</span>
+      <span class="rs">Shibuya Sky<span class="rn">46F</span></span>
+      <span class="ra">→</span>
+      <span class="rs">Harajuku 原宿</span>
+      <span class="ra">→</span>
+      <span class="rs">2D Cafe<span class="rn">❌ queue</span></span>
+      <span class="ra">→</span>
+      <span class="rs">Okubo 大久保</span>
+      <span class="ra">→</span>
+      <span class="rs hi">Metro 19:00</span>
     </div>
   </div>
 
-  <!-- S1 -->
-  <div class="section-header" id="s1">
-    <span class="section-num">01</span>
-    <h2>Shibuya Scramble Square — Morning</h2>
-    <span class="section-jp">渋谷スクランブルスクエア</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>We started at Scramble Square because it made sense for a last day — a building that is genuinely trying to contain all of Shibuya inside one structure. The spring "Energies" campaign was everywhere: pink and teal posters on every glass door. 2.24 THU — 3.20 SUN. Scramble Point ×2 this weekend. We were not using the app.</p>
-
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_15_PM.jpeg" alt="Scramble Square entrance with Energies spring campaign">
-      <div class="photo-card-label">Location 01</div>
-      <div class="photo-card-title">The Entrance</div>
-      <div class="photo-card-desc">"Energies" spring campaign. Pink and teal. The mannequin in the window wore a crochet vest over an orange top. I took a photo of it.</div>
+  <!-- ── SECTION 1 ── -->
+  <section class="washi-rose">
+    <div class="sec-head" id="s1">
+      <span class="sec-num">01</span>
+      <h2>Shibuya Scramble Square</h2>
+      <span class="sec-jp">渋谷スクランブルスクエア</span>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_16_PM.jpeg" alt="Mirror selfie at Jimmy Choo floor">
-      <div class="photo-card-label">Mandatory Stop</div>
-      <div class="photo-card-title">Jimmy Choo Mirror Selfie</div>
-      <div class="photo-card-desc">Yellow Instax out. Two people in a luxury goods floor mirror. Yellow cardigan left, black blazer right. This is what we came here to do.</div>
+    <div class="sec-rule"></div>
+
+    <p>We started at Scramble Square because it made sense for a last day — a building genuinely trying to contain all of Shibuya inside one structure. The spring "Energies" campaign was everywhere: pink and teal posters on every glass door. The mannequin in the window wore a crochet vest over an orange top. I photographed that before we went inside.</p>
+
+    <div class="photo-taped-grid">
+      <div class="photo-taped tape-rose">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_15_PM.jpeg" alt="Scramble Square entrance, spring Energies campaign">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Location 01</div>
+          <div class="photo-caption-title">The Entrance</div>
+          <div class="photo-caption-body">"Energies." 2.24–3.20. Point up ×2.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-blue">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_16_PM.jpeg" alt="Mirror selfie at Jimmy Choo floor">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Mandatory</div>
+          <div class="photo-caption-title">Jimmy Choo Mirror</div>
+          <div class="photo-caption-body">Instax out. Yellow cardigan left, black blazer right.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-sage">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_17_PM.jpeg" alt="Shiba Inu plushie island">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Must See</div>
+          <div class="photo-caption-title">The Shiba Inu Island</div>
+          <div class="photo-caption-body">~100 plushies in matching green outfits. Japan does not do things by halves.</div>
+        </div>
+      </div>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_17_PM.jpeg" alt="Shiba Inu plushie display counter">
-      <div class="photo-card-label">Must See</div>
-      <div class="photo-card-title">The Shiba Inu Island</div>
-      <div class="photo-card-desc">Approximately one hundred Shiba Inu plushies in matching green outfits on a glowing oval counter. Japan does not do things by halves.</div>
+
+    <p>We also found the NHK exhibit — Hina-chan stood next to the newscaster poster like she was about to deliver the evening news, waving at the camera. We spent longer in this building than intended. Zero purchases. Just existing in a place that was trying very hard to be all of Tokyo at once.</p>
+
+    <div class="callout c-rose">
+      <span class="callout-label">What we actually did here</span>
+      <p>The Jimmy Choo mirror selfie. Staring at one hundred Shibas. The NHK newscaster pose. Watching the city from the windows before paying to go properly up to the roof. No shopping. Somehow still an hour.</p>
     </div>
-  </div>
+  </section>
 
-  <p>We also passed the NHK exhibit — streaming app, weekly catch-up, 一週間見逃し配信. Hina-chan stood next to the newscaster poster like she was about to deliver the evening news. I photographed that too. We didn't buy anything in the whole building. We just existed in it.</p>
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
 
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_20_PM.jpeg" alt="NHK plus display with person posing">
-      <div class="photo-card-label">Unexpected</div>
-      <div class="photo-card-title">NHK+ Display</div>
-      <div class="photo-card-desc">一週間見逃し配信. Posing next to the newscaster like this is a completely normal thing to do. Great content she has no opinion about.</div>
+  <!-- ── SECTION 2 ── -->
+  <section class="washi-blue">
+    <div class="sec-head" id="s2">
+      <span class="sec-num">02</span>
+      <h2>Shibuya Sky — <em>Open Your Eyes</em></h2>
+      <span class="sec-jp">渋谷スカイ · 46F</span>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_19_PM.jpeg" alt="Shibuya from above through window">
-      <div class="photo-card-label">From the Window</div>
-      <div class="photo-card-title">City View, Morning</div>
-      <div class="photo-card-desc">The orange construction crane. The scramble crossing visible as a tiny grid of white stripes. People the size of punctuation marks.</div>
+    <div class="sec-rule"></div>
+
+    <p>The tickets were little illustrated cards — a futuristic tower on a pink gradient sky, the tagline "Open Your Eyes." Very correct for a last day. The floor up top is warm wood. The view is the entire city in every direction, which turns out to be the correct amount of city to see before you leave one.</p>
+
+    <div class="photo-wide">
+      <div class="photo-wide-tape tape-blue" style="--tape-color: var(--washi-blue);"></div>
+      <img src="WhatsApp_Image_2026-03-02_at_10_44_19_PM.jpeg" alt="Aerial view of Shibuya from 46F">
+      <div class="photo-wide-caption">
+        <span class="pwc-fig">FIG. 01</span>
+        <span class="pwc-text">Shibuya from the 46th floor. The construction crane is orange. The scramble crossing is a tiny grid of white stripes. The Loft sign. The UC building. The whole city laid out like it never ends — which, to be fair, it more or less doesn't.</span>
+      </div>
     </div>
-  </div>
 
-  <div class="callout callout-note">
-    <span class="callout-label">What we actually did in Scramble Square</span>
-    <p>Took the Jimmy Choo mirror selfie. Stared at the Shiba Inu plushies for longer than was strictly necessary. Posed in front of the NHK display. Watched the city from the windows without paying for the official observation deck yet — that came next. No shopping. Just being in a building that was trying very hard to be all of Tokyo at once.</p>
-  </div>
-
-  <!-- S2 -->
-  <div class="section-header" id="s2">
-    <span class="section-num">02</span>
-    <h2>Shibuya Sky — 46F, Open Air</h2>
-    <span class="section-jp">渋谷スカイ · 展望施設</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>Shibuya Sky is the open-air observation deck on the 46th floor. You get tickets — ours were little illustrated cards with a futuristic tower on a pink gradient sky. The tagline says "Open Your Eyes." Which felt very correct for a last day in a city.</p>
-
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_19_PM.jpeg" alt="Aerial view of Shibuya from Scramble Square Sky">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 01</span>
-      <p>Shibuya from 46 floors up. Orange construction crane. Scramble crossing as a small grid of white stripes. The Loft sign. The UC card building. The whole city laid out like it genuinely never ends, which it more or less doesn't.</p>
+    <!-- film strip for the sky photos -->
+    <div class="film-strip">
+      <div class="film-strip-label">Shibuya Sky · Spring 2022 · Frame sequence</div>
+      <div class="film-frames">
+        <div class="film-frame">
+          <img src="WhatsApp_Image_2026-03-02_at_10_44_201_PM.jpeg" alt="Shibuya Sky tickets">
+          <span class="film-frame-num">01</span>
+        </div>
+        <div class="film-frame">
+          <img src="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg" alt="Posing at Shibuya Sky">
+          <span class="film-frame-num">02</span>
+        </div>
+        <div class="film-frame">
+          <img src="WhatsApp_Image_2026-03-02_at_10_44_19_PM.jpeg" alt="City view from Sky">
+          <span class="film-frame-num">03</span>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_201_PM.jpeg" alt="Shibuya Sky tickets held up with city below">
-      <div class="photo-card-label">Keepsake</div>
-      <div class="photo-card-title">The Tickets</div>
-      <div class="photo-card-desc">"Open Your Eyes." One each. Kept both. The city is visible below through the glass floor behind them.</div>
+    <div class="callout c-sage">
+      <span class="callout-label">If you go</span>
+      <p>Book tickets online (~¥2,000). Clear mornings: best visibility, lowest crowds. Golden hour is extraordinary but you'll need patience. Keep the ticket stub — it's a good souvenir and it says "Open Your Eyes" which honestly applies to most days.</p>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_21_PM.jpeg" alt="Two people posing at Shibuya Sky with city behind">
-      <div class="photo-card-label">The Pose</div>
-      <div class="photo-card-title">Hands Up, City Behind</div>
-      <div class="photo-card-desc">Arms up, phones out, the entire city spread behind us. We took photos instead of just looking. That's what you do.</div>
+  </section>
+
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
+
+  <!-- ── SECTION 3 ── -->
+  <section class="washi-gold">
+    <div class="sec-head" id="s3">
+      <span class="sec-num">03</span>
+      <h2>Harajuku — Takeshita Street</h2>
+      <span class="sec-jp">原宿 · 竹下通り</span>
     </div>
-  </div>
+    <div class="sec-rule"></div>
 
-  <div class="callout callout-tip">
-    <span class="callout-label">If you go to Shibuya Sky</span>
-    <p>Book tickets online — queues can be significant. Go on a clear day. Morning has best visibility and lowest crowds. Golden hour is also extraordinary but crowded. We paid around ¥2,000 each and would pay it again without hesitation.</p>
-  </div>
+    <p>Takeshita Street smells like crepes and sugar the moment you turn off Meiji-dori. We had been here before. That doesn't change anything. You go every time.</p>
 
-  <!-- S3 -->
-  <div class="section-header" id="s3">
-    <span class="section-num">03</span>
-    <h2>Harajuku & Takeshita Street</h2>
-    <span class="section-jp">原宿 · 竹下通り</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>Takeshita Street is everything you've been told. It is also genuinely crowded, slightly overwhelming, full of things you do not need and will absolutely consider buying, and it smells like crepes and sugar from the moment you turn the corner off Meiji-dori. We had been here before. That doesn't change anything. You go every time.</p>
-
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_22_PM.jpeg" alt="Marion Crepes building on Takeshita Street Harajuku">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 02</span>
-      <p>Marion Crepes — Patisserie from Harajuku since 1976. There is always a queue. The queue is worth it. Behind it: classic white stucco and red tile, and behind that, a glass tower that says HULIC. Japan puts its old and new in the same frame constantly and it never stops looking exactly right.</p>
+    <div class="photo-taped-grid two-col">
+      <div class="photo-taped tape-gold">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_22_PM.jpeg" alt="Marion Crepes Harajuku">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Since 1976</div>
+          <div class="photo-caption-title">Marion Crepes</div>
+          <div class="photo-caption-body">The original. There is always a queue. The queue is worth it. The building behind is old Harajuku stucco meeting a new glass tower — perfectly Japan.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-rose">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_24_PM.jpeg" alt="Two Marion crepes held up">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Held Up First</div>
+          <div class="photo-caption-title">Two Crepes</div>
+          <div class="photo-caption-body">Strawberry chocola cake ¥610. Caramel cheesecake ¥560. Pink wrappers. Photo before eating. Correct order of operations.</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <h3>Marion Crepes</h3>
-  <p>Since 1976. The menus are displayed as glossy 3D scale models in the window, which is a very sensible way to show people what they're ordering. The paper wrappers are pink with a little text about how crepes are simple, anytime, anywhere, easy to hold. Both of ours were gone before we made it halfway down the block.</p>
+    <p>We also found the K-pop merch store with a full Suga birthday banner out front — 1993.0309. Happy Suga Day. The Sugar High store in pink and teal. Alice on Wednesday with its gold lettering and little coloured jars. Gachapon. A red capsule containing something small that we inspected very seriously.</p>
 
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_24_PM.jpeg" alt="Two Marion crepes held up in pink wrappers">
-      <div class="photo-card-label">Stop 03</div>
-      <div class="photo-card-title">Two Crepes</div>
-      <div class="photo-card-desc">Strawberry chocola cake & cream (¥610) and caramel cheesecake & cream (¥560). Held up for the photo before eating. Correct behaviour.</div>
+    <div class="photo-taped-grid">
+      <div class="photo-taped tape-sage">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_241_PM.jpeg" alt="BTS Suga birthday banner">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Suga Day</div>
+          <div class="photo-caption-title">방탄소년단 슈가</div>
+          <div class="photo-caption-body">1993.0309. Full banner. The organisation level of K-pop birthday tributes in Japan is something else.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-blue">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_212_PM.jpeg" alt="Alice on Wednesday store">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Hidden Find</div>
+          <div class="photo-caption-title">水曜日のアリス</div>
+          <div class="photo-caption-body">Gold lettering. White walls. Lit jars of coloured candy. Worth going inside just to look.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-gold">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_242_PM.jpeg" alt="Gachapon red capsule">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Bandai ¥300</div>
+          <div class="photo-caption-title">Gachapon</div>
+          <div class="photo-caption-body">The red ball. Something small inside. Inspected with appropriate gravity.</div>
+        </div>
+      </div>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_241_PM.jpeg" alt="BTS Suga birthday banner outside K-pop merch store">
-      <div class="photo-card-label">Discovery</div>
-      <div class="photo-card-title">Suga Day</div>
-      <div class="photo-card-desc">1993.0309. 윤기야 생일 축하해. 방탄소년단 슈가. A full birthday banner outside a K-pop merch store. The level of organisation fans bring to this in Japan is genuinely impressive.</div>
+  </section>
+
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
+
+  <!-- ── SECTION 4 ── -->
+  <section class="washi-rose">
+    <div class="sec-head" id="s4">
+      <span class="sec-num">04</span>
+      <h2>The 2D Cafe — That We Did Not Enter</h2>
+      <span class="sec-jp">絵の中のカフェ · 入れなかった</span>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_211_PM.jpeg" alt="Sugar High store in Harajuku pink and teal">
-      <div class="photo-card-label">Also Here</div>
-      <div class="photo-card-title">Sugar High!</div>
-      <div class="photo-card-desc">Pink and teal. Checkered floor. A fake candy shop facade inside a beauty store. She is peering around a shelf of rom&nd lip tints. Normal Harajuku afternoon.</div>
+    <div class="sec-rule"></div>
+
+    <div class="story-block">
+      <div class="story-block-label">What Happened · 実際のところ</div>
+      <p>The 2D Cafe is an illustrated cafe where everything looks hand-drawn and flat, like a manga panel. They serve tapioca and shaved ice. The sign outside is black ink on white in an ornate frame. It is genuinely charming. We wanted to go.</p>
+      <p>We saw the queue. We looked at each other. We left.</p>
+      <div class="story-quote">"Some things are left for next time."</div>
+      <p>This is the correct attitude for a last day. The 2D Cafe now has a specific disappointment attached to it — which means it goes on the real list, not the vague one. That's how you make sure you come back.</p>
     </div>
-  </div>
 
-  <h3>Alice on Wednesday & Gachapon</h3>
-  <p>水曜日のアリス is an Alice in Wonderland boutique with gold lettering on white walls, ornate wrought iron, and small coloured jars on a lit counter. It is exactly what it sounds like. The gachapon machines nearby produced a red capsule containing something small that was inspected with the seriousness it deserved.</p>
-
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_212_PM.jpeg" alt="Alice on Wednesday store interior wall with gold lettering">
-      <div class="photo-card-label">Hidden Find</div>
-      <div class="photo-card-title">Alice on Wednesday</div>
-      <div class="photo-card-desc">水曜日のアリス. Gold lettering. Little jars on a lit counter. The kind of shop that makes you feel like you stepped into an illustration.</div>
+    <div class="photo-wide">
+      <div class="photo-wide-tape" style="--tape-color: var(--washi-pink);"></div>
+      <img src="WhatsApp_Image_2026-03-02_at_10_44_25_PM.jpeg" alt="Queue outside 2D Cafe Harajuku">
+      <div class="photo-wide-caption">
+        <span class="pwc-fig">FIG. 02</span>
+        <span class="pwc-text">The queue. The illustrated sign. People with significantly more patience than us. 絵の中のカフェ · 年中無休 · AM11:00–PM11:00. Next time is a real plan now.</span>
+      </div>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_242_PM.jpeg" alt="Gachapon machines and red capsule">
-      <div class="photo-card-label">Classic</div>
-      <div class="photo-card-title">Gachapon ガチャポン</div>
-      <div class="photo-card-desc">Bandai capsule machines at ¥300 each. The red ball opened. Whatever was inside was small and worthy of careful inspection.</div>
+  </section>
+
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
+
+  <!-- ── SECTION 5 ── -->
+  <section class="washi-sage">
+    <div class="sec-head" id="s5">
+      <span class="sec-num">05</span>
+      <h2>Okubo — Korean Town, Hot Soup</h2>
+      <span class="sec-jp">大久保 · 韓国料理</span>
     </div>
-  </div>
+    <div class="sec-rule"></div>
 
-  <!-- S4 -->
-  <div class="section-header" id="s4">
-    <span class="section-num">04</span>
-    <h2>The 2D Cafe — That We Did Not Enter</h2>
-    <span class="section-jp">絵の中のカフェ · 入れなかった</span>
-  </div>
-  <div class="section-rule"></div>
+    <p>Okubo is not a tourist attraction — it is a functioning neighbourhood. Korean restaurants, grocery stores, cosmetics shops, all operating normally. That's exactly what makes it good. One stop from Shinjuku on the Chuo-Sobu line.</p>
 
-  <div class="story-block">
-    <div class="story-block-label">What Happened · 実際のところ</div>
-    <p>The 2D Cafe is a black-and-white illustrated cafe in Harajuku. Everything inside looks hand-drawn, flat, like a panel from a manga. They serve tapioca, shaved ice, and fresh fruit juice. The sign outside is a white panel with black ink drawings in an ornate frame. It is charming. We wanted to go.</p>
-    <p>We saw the queue. We looked at each other. We left.</p>
-    <div class="story-quote">"Some things are left for next time."</div>
-    <p>This is the correct attitude for a last day. You can't do everything. The 2D Cafe goes on the theoretical future list — which feels more real now because it has a name, a location, and a specific disappointment attached to it. That's how you make sure you come back.</p>
-  </div>
-
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_25_PM.jpeg" alt="Queue outside 2D Cafe in Harajuku">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 03</span>
-      <p>The queue. The black-and-white illustrated sign. People with significantly more patience than us. 2D Cafe · 絵の中のカフェ · 年中無休 · AM11:00–PM11:00. Next time.</p>
+    <div class="photo-taped-grid two-col">
+      <div class="photo-taped tape-sage">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_221_PM.jpeg" alt="Korean restaurant menu board Okubo">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">Stop 05</div>
+          <div class="photo-caption-title">Omu-ni Restaurant</div>
+          <div class="photo-caption-body">Samgyeopsal. Tteokbokki. Budae-jjigae. Bibimbap. Pointing at the menu board. This is called research.</div>
+        </div>
+      </div>
+      <div class="photo-taped tape-gold">
+        <img src="WhatsApp_Image_2026-03-02_at_10_44_222_PM.jpeg" alt="Budae-jjigae army stew">
+        <div class="photo-caption">
+          <div class="photo-caption-tag">The Meal</div>
+          <div class="photo-caption-title">부대찌개</div>
+          <div class="photo-caption-body">Army stew. Silver pot. Raw egg yolk on top. Kimbap on the side. Ate slowly. Talked about everything and nothing.</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- S5 -->
-  <div class="section-header" id="s5">
-    <span class="section-num">05</span>
-    <h2>Okubo — Korean Town, Hot Soup</h2>
-    <span class="section-jp">大久保 · 韓国料理</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>Okubo is Tokyo's Korean neighbourhood — one stop from Shinjuku on the Chuo-Sobu line. It is not a tourist attraction. It is a functioning neighbourhood with Korean restaurants, grocery stores, and cosmetics shops, all operating normally. That's what makes it good.</p>
-
-  <div class="photo-grid">
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_221_PM.jpeg" alt="Korean restaurant in Okubo with menu board outside">
-      <div class="photo-card-label">Stop 05</div>
-      <div class="photo-card-title">Omu-ni Restaurant</div>
-      <div class="photo-card-desc">Menu: samgyeopsal, haemul pajeon, tteokbokki, budae-jjigae, bibimbap. Standing outside pointing at it with confidence. This is research.</div>
+    <div class="callout c-ink">
+      <span class="callout-label">On last meals</span>
+      <p>You eat slowly because there is no reason to rush and every reason not to. The food was spicy and good and the restaurant had a purple-lit ambience. We finished everything. That part mattered.</p>
     </div>
-    <div class="photo-card">
-      <img src="WhatsApp_Image_2026-03-02_at_10_44_222_PM.jpeg" alt="Budae-jjigae army stew with raw egg in silver pot">
-      <div class="photo-card-label">The Meal</div>
-      <div class="photo-card-title">Budae-jjigae 부대찌개</div>
-      <div class="photo-card-desc">Army stew. Silver pot. Instant noodles, tofu, tteok, kimchi, a raw egg yolk floating on top. Kimbap on the side. Ate slowly. Talked a lot.</div>
+  </section>
+
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
+
+  <!-- ── SECTION 6 ── -->
+  <section class="washi-rose">
+    <div class="sec-head" id="s6">
+      <span class="sec-num">06</span>
+      <h2>Cherry Blossoms & the Instax Shot</h2>
+      <span class="sec-jp">桜 · カワヅザクラ</span>
     </div>
-  </div>
+    <div class="sec-rule"></div>
 
-  <p>That's the thing about a last meal with someone — you eat slowly because there's no reason to rush and every reason not to. The food was spicy and good. The restaurant had that slight purple-lit ambience. We finished everything on the table.</p>
+    <p>Kawazu-zakura — the early-blooming variety, deep pink, unreasonably vivid for early March. We found them near Shinjuku. She held the yellow Instax up over her face and took a photo of the tree instead of letting herself be photographed. I photographed that instead.</p>
 
-  <div class="callout callout-note">
-    <span class="callout-label">On Okubo</span>
-    <p>Not a tourist spot — a neighbourhood. The Korean restaurants here are not performing for visitors, they are just Korean restaurants, which is exactly what makes them good. Budget ¥1,500–2,500 per person for a proper sit-down meal with soup and a side.</p>
-  </div>
-
-  <!-- S6 -->
-  <div class="section-header" id="s6">
-    <span class="section-num">06</span>
-    <h2>Cherry Blossoms — The Instax Shot</h2>
-    <span class="section-jp">桜 · カワヅザクラ · インスタックスで</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>We found cherry blossoms somewhere near Shinjuku — an early-blooming kawazu-zakura, the deep pink variety that comes before the standard Somei Yoshino. The petals were that specific shade of vivid pink that feels too saturated to be real. Early March. Blue sky. Almost warm.</p>
-
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_251_PM.jpeg" alt="Person holding yellow Instax camera in front of cherry blossom tree">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 04</span>
-      <p>Hina-chan under a kawazu-zakura. Yellow cardigan. She's holding the Instax up over her face rather than being in the photo. I find this extremely on-brand. The tree is full and enormous and a shade of pink that feels unreasonable for nature. I photographed all of it. It came out right.</p>
+    <div class="photo-wide">
+      <div class="photo-wide-tape" style="--tape-color: var(--washi-pink);"></div>
+      <img src="WhatsApp_Image_2026-03-02_at_10_44_251_PM.jpeg" alt="Hina-chan with Instax under cherry blossom tree">
+      <div class="photo-wide-caption">
+        <span class="pwc-fig">FIG. 03</span>
+        <span class="pwc-text">Yellow cardigan. Yellow Instax obscuring her face. Deep pink blossoms, blue sky. She documented the day on film while I documented it on a phone. Both versions exist now, in different aspect ratios. Same day.</span>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="callout callout-moment">
-    <span class="callout-label">The Instax Thing</span>
-    <p>She carried a yellow Fujifilm Instax Mini all day. It was in the Jimmy Choo mirror selfie. It appeared under the cherry blossoms. She documented the day on film while I documented it on a phone. Both versions of the day now exist, in different aspect ratios, at different exposures. Same day.</p>
-  </div>
+  <div class="torn-divider" style="--tone: #ede8df;"></div>
 
-  <!-- S7 -->
-  <div class="section-header" id="s7">
-    <span class="section-num">07</span>
-    <h2>7PM — The Scramble, Then the Metro</h2>
-    <span class="section-jp">スクランブル交差点 · 地下鉄 · さようなら</span>
-  </div>
-  <div class="section-rule"></div>
-
-  <p>By the time we got to the scramble crossing it was golden hour. The Netflix Love is Blind Japan billboard. Yakult. L'Occitane. Everybody crossing in every direction at once. The city was performing itself specifically for us, which is how a city feels when you're about to leave it.</p>
-
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_23_PM.jpeg" alt="Shibuya scramble crossing at golden hour with billboards">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 05</span>
-      <p>Shibuya scramble at golden hour. Hundreds of people, all directions at once. "ラブ・イズ・ブラインド JAPAN" on a Netflix billboard. Yakult. Tinder. L'Occitane. The full media wall. Light is gold. I am about to leave all of this.</p>
+  <!-- ── SECTION 7 ── -->
+  <section class="washi-blue">
+    <div class="sec-head" id="s7">
+      <span class="sec-num">07</span>
+      <h2>7PM — Scramble Crossing, Then Metro</h2>
+      <span class="sec-jp">スクランブル交差点 · 地下鉄 · さようなら</span>
     </div>
-  </div>
+    <div class="sec-rule"></div>
 
-  <div class="itinerary">
-    <div class="itinerary-head">
-      <span>Time</span>
-      <span>Location</span>
-      <span>What Happened</span>
-      <span>Mood</span>
+    <p>By golden hour we were at the scramble crossing. Netflix. Yakult. L'Occitane. Hundreds of people in every direction. The city was performing itself specifically for us, which is how a city feels when you're about to leave it.</p>
+
+    <div class="photo-wide">
+      <div class="photo-wide-tape" style="--tape-color: var(--washi-blue);"></div>
+      <img src="WhatsApp_Image_2026-03-02_at_10_44_23_PM.jpeg" alt="Shibuya scramble crossing at golden hour">
+      <div class="photo-wide-caption">
+        <span class="pwc-fig">FIG. 04</span>
+        <span class="pwc-text">Shibuya scramble at dusk. Hundreds of people. "ラブ・イズ・ブラインド JAPAN" on a Netflix billboard. Yakult. Tinder. The full media wall. Light is gold. I am about to leave all of this.</span>
+      </div>
     </div>
-    <div class="itinerary-row">
-      <span class="it-time">All day</span>
-      <span class="it-stop">Everywhere</span>
-      <span class="it-desc">Laidback. Completely laidback. Both of us, totally fine about the departure. Accepted it. Moving through the city like it was any other day.</span>
-      <span class="it-note">Fine ✓</span>
+
+    <div class="itinerary">
+      <div class="it-head">
+        <span>Time</span>
+        <span>Location</span>
+        <span>What Happened</span>
+        <span>Status</span>
+      </div>
+      <div class="it-row">
+        <span class="it-time">All day</span>
+        <span class="it-stop">Everywhere</span>
+        <span class="it-desc">Laidback. Both of us. Completely fine about the departure. Moving through the city like it was any other day.</span>
+        <span class="it-note">Fine ✓</span>
+      </div>
+      <div class="it-row">
+        <span class="it-time">18:30</span>
+        <span class="it-stop">Scramble</span>
+        <span class="it-desc">Crossed it one last time. Netflix billboard. Golden light. Very cinematic. Still managing.</span>
+        <span class="it-note">Still fine</span>
+      </div>
+      <div class="it-row hl">
+        <span class="it-time">19:00</span>
+        <span class="it-stop">Metro</span>
+        <span class="it-desc">She was dropping me off. The train came. Something shifted. She cried. I got sad too. Doors closed.</span>
+        <span class="it-note">Not fine</span>
+      </div>
     </div>
-    <div class="itinerary-row">
-      <span class="it-time">18:30</span>
-      <span class="it-stop">Scramble</span>
-      <span class="it-desc">Crossed the scramble crossing one last time. Yakult billboard. Netflix. Golden light. Very cinematic. Still managing.</span>
-      <span class="it-note">Still fine</span>
+
+    <div class="story-block">
+      <div class="story-block-label">The Metro · 地下鉄 · 19:00</div>
+      <p>I was laidback about the return. I had accepted it. We had been fine all day — crepes and a sky observation deck and a cafe queue we gave up on. All manageable.</p>
+      <p>And then it was 7pm and she was dropping me off and the train was there and something happened to her face.</p>
+      <p>She broke down on the metro. I got sad too. It wasn't a scene — just two people who had spent a whole year in the same city, sharing a school and a language and a hundred small ordinary things, running out of the particular version of time that makes all that possible.</p>
+      <div class="story-quote">"We promised to meet later in life."</div>
+      <p>That is not a vague promise. Later in life is a real time period. It will arrive. We will both be in it. That's the thing about a good goodbye — it doesn't have to be permanent to feel like one.</p>
     </div>
-    <div class="itinerary-row hl">
-      <span class="it-time">19:00</span>
-      <span class="it-stop">Metro</span>
-      <span class="it-desc">She was dropping me off. The train came. Something shifted. She cried. I got sad too. The doors closed. That was it.</span>
-      <span class="it-note">Not fine</span>
+
+    <div class="photo-wide">
+      <div class="photo-wide-tape" style="--tape-color: var(--washi-blue);"></div>
+      <img src="WhatsApp_Image_2026-03-02_at_10_44_26_PM.jpeg" alt="Train tracks at night reflected in station glass">
+      <div class="photo-wide-caption">
+        <span class="pwc-fig">FIG. 05</span>
+        <span class="pwc-text">Shibuya station, evening. Tracks reflected in glass. A train that has already left or is about to arrive — impossible to tell. Night version of a city I saw from 46 floors up this morning.</span>
+      </div>
     </div>
-  </div>
 
-  <div class="story-block">
-    <div class="story-block-label">The Metro · 地下鉄 · 19:00</div>
-    <p>I was laidback about the return. I had accepted it. We had been fine all day — crepes and a sky observation deck and a 2D cafe queue we gave up on and it was all manageable. The whole day was manageable.</p>
-    <p>And then it was 7pm and she was dropping me off and the train was there and something happened to her face.</p>
-    <p>She broke down on the metro. I got sad too. It wasn't a scene — it was just two people who had spent a whole year in the same city, sharing a school and a language and a hundred small things, running out of the particular version of time that makes all of that possible.</p>
-    <div class="story-quote">"We promised to meet later in life."</div>
-    <p>That is not a vague promise. "Later in life" is a real time period. It will arrive. We will both be in it at some point. The promise is specific. The promise is real. That's the thing about a good goodbye — it doesn't have to be permanent to feel like one.</p>
-  </div>
+    <p>I've thought about that day more than most days from that year. Nothing extraordinary happened — no revelations, no dramatic events. Just a normal last day in a city that had been mine and was about to not be mine anymore. Those are the days you remember exactly, in order, for a long time.</p>
+  </section>
 
-  <div class="photo-wide">
-    <img src="WhatsApp_Image_2026-03-02_at_10_44_26_PM.jpeg" alt="Train tracks at night reflected in station glass">
-    <div class="photo-wide-caption">
-      <span class="photo-wide-caption-num">FIG. 06</span>
-      <p>Shibuya station, evening. Tracks reflected in glass. A train that has already left or is about to arrive — impossible to tell from here. Green signal light. Night version of a city I spent all morning seeing from above.</p>
-    </div>
-  </div>
-
-  <p>I've thought about that day more than most days from that year. Nothing extraordinary happened — no revelations, no dramatic events. Just a normal last day in a city that had been mine and was about to not be mine anymore. Those are the days you remember exactly, in order, for a long time.</p>
-
-  <div class="text-divider"><span class="text-divider-inner">· · ·</span></div>
-
-  <div class="page-num-deco">· end of day log · 日記終わり · Spring 2022 ·</div>
+  <div class="page-deco">· end of day log · 日記終わり · Spring 2022 ·</div>
 
   <div class="cta-box">
     <h3>More Japan Days →</h3>
-    <p>The bento guide, the daily commute on Bus 111, the strawberry festival, the host family dinner — all the days from the exchange year, written down while they still felt close to the surface.</p>
-    <a class="cta-btn" href="#">Browse All Japan Guides</a>
+    <p>The bento guide, the daily commute on Bus 111, the strawberry festival, the host family dinner — all the days from the exchange year, written down while they still felt close.</p>
+    <a class="cta-btn" href="#">Browse All Guides</a>
   </div>
 
-  <p style="font-size:0.78rem;color:var(--ink-light);font-style:italic;margin-top:1.5rem;font-family:'Noto Serif JP',serif;font-weight:300;line-height:1.8;">Ayachi Samyal completed an exchange year in Japan in 2021–22. This was the last full day in Tokyo. Hina-chan: if you're reading this, the promise stands.</p>
+  <p style="font-size:0.75rem;color:var(--ink-soft);font-style:italic;margin-top:1.5rem;font-family:'Playfair Display',serif;line-height:1.8;">Ayachi Samyal completed an exchange year in Japan in 2021–22. This was the last full day in Tokyo. Hina-chan: if you're reading this, the promise stands.</p>
 
 </main>
 
-<aside class="guide-sidebar">
+<!-- SIDEBAR -->
+<aside class="sidebar">
 
-  <div class="sidebar-card">
-    <div class="sidebar-card-head">
+  <div class="sc" style="--sc-tape: var(--washi-pink);">
+    <div class="sc-head">
       <span>Contents</span>
-      <span class="sidebar-card-head-jp">目次</span>
+      <span class="sc-head-jp">目次</span>
     </div>
-    <ul class="toc-list">
-      <li><a href="#s1"><span class="toc-num">01</span> Scramble Square</a></li>
-      <li><a href="#s2"><span class="toc-num">02</span> Shibuya Sky</a></li>
-      <li><a href="#s3"><span class="toc-num">03</span> Harajuku</a></li>
-      <li><a href="#s4"><span class="toc-num">04</span> 2D Cafe (nope)</a></li>
-      <li><a href="#s5"><span class="toc-num">05</span> Okubo</a></li>
-      <li><a href="#s6"><span class="toc-num">06</span> Cherry Blossoms</a></li>
-      <li><a href="#s7"><span class="toc-num">07</span> 7PM · Metro</a></li>
+    <ul class="toc">
+      <li><a href="#s1"><span class="toc-n">01</span> Scramble Square</a></li>
+      <li><a href="#s2"><span class="toc-n">02</span> Shibuya Sky</a></li>
+      <li><a href="#s3"><span class="toc-n">03</span> Harajuku</a></li>
+      <li><a href="#s4"><span class="toc-n">04</span> 2D Cafe (nope)</a></li>
+      <li><a href="#s5"><span class="toc-n">05</span> Okubo</a></li>
+      <li><a href="#s6"><span class="toc-n">06</span> Cherry Blossoms</a></li>
+      <li><a href="#s7"><span class="toc-n">07</span> 7PM · Metro</a></li>
     </ul>
   </div>
 
-  <div class="sidebar-card">
-    <div class="sidebar-card-head">
+  <div class="sc" style="--sc-tape: var(--washi-sage);">
+    <div class="sc-head">
       <span>Vocabulary</span>
-      <span class="sidebar-card-head-jp">語彙</span>
+      <span class="sc-head-jp">語彙</span>
     </div>
     <div class="kanji-grid">
-      <div class="kanji-card">
-        <span class="kanji-char">桜</span>
-        <span class="kanji-roman">sakura</span>
-        <span class="kanji-gloss">cherry blossom</span>
-      </div>
-      <div class="kanji-card">
-        <span class="kanji-char">空</span>
-        <span class="kanji-roman">sora</span>
-        <span class="kanji-gloss">sky</span>
-      </div>
-      <div class="kanji-card">
-        <span class="kanji-char">最後</span>
-        <span class="kanji-roman">saigo</span>
-        <span class="kanji-gloss">last / final</span>
-      </div>
-      <div class="kanji-card">
-        <span class="kanji-char">また</span>
-        <span class="kanji-roman">mata</span>
-        <span class="kanji-gloss">again / see you</span>
-      </div>
-      <div class="kanji-card">
-        <span class="kanji-char">友達</span>
-        <span class="kanji-roman">tomodachi</span>
-        <span class="kanji-gloss">friend</span>
-      </div>
-      <div class="kanji-card">
-        <span class="kanji-char">約束</span>
-        <span class="kanji-roman">yakusoku</span>
-        <span class="kanji-gloss">promise</span>
-      </div>
+      <div class="kc"><span class="kc-char">桜</span><span class="kc-rom">sakura</span><span class="kc-gl">cherry blossom</span></div>
+      <div class="kc"><span class="kc-char">空</span><span class="kc-rom">sora</span><span class="kc-gl">sky</span></div>
+      <div class="kc"><span class="kc-char">最後</span><span class="kc-rom">saigo</span><span class="kc-gl">the last</span></div>
+      <div class="kc"><span class="kc-char">また</span><span class="kc-rom">mata</span><span class="kc-gl">again / see you</span></div>
+      <div class="kc"><span class="kc-char">友達</span><span class="kc-rom">tomodachi</span><span class="kc-gl">friend</span></div>
+      <div class="kc"><span class="kc-char">約束</span><span class="kc-rom">yakusoku</span><span class="kc-gl">promise</span></div>
     </div>
   </div>
 
-  <div class="sidebar-card">
-    <div class="sidebar-card-head">
+  <div class="sc" style="--sc-tape: var(--washi-blue);">
+    <div class="sc-head">
       <span>Shibuya Sky</span>
-      <span class="sidebar-card-head-jp">渋谷スカイ</span>
+      <span class="sc-head-jp">渋谷スカイ</span>
     </div>
-    <p>46F open-air observation deck, Scramble Square. Book online in advance (~¥2,000 adult). Open daily. Clear mornings are best for visibility and lowest crowds.</p>
-    <p style="margin-top:0.6rem;">Ticket stub: keep it. It's a good souvenir.</p>
+    <p>46F open-air observation, Scramble Square. Book online (~¥2,000). Best on clear mornings. Keep your ticket stub.</p>
   </div>
 
-  <div class="sidebar-card">
-    <div class="sidebar-card-head">
+  <div class="sc" style="--sc-tape: var(--washi-gold);">
+    <div class="sc-head">
       <span>2D Cafe Note</span>
-      <span class="sidebar-card-head-jp">列に注意</span>
+      <span class="sc-head-jp">列に注意</span>
     </div>
-    <p>絵の中のカフェ opens at 11AM daily. Go early or expect a significant queue. We did not go early. We regret nothing. Next time is a real plan.</p>
-    <a class="sidebar-link" href="#">Harajuku Guide →</a>
+    <p>Opens at 11AM daily. Go early or accept the queue. We did not go early. We accept this.</p>
+    <a class="sb-link" href="#">Harajuku Guide →</a>
   </div>
 
-  <div class="sidebar-card">
-    <div class="sidebar-card-head">
+  <div class="sc" style="--sc-tape: var(--washi-pink);">
+    <div class="sc-head">
       <span>Related Guides</span>
-      <span class="sidebar-card-head-jp">関連記事</span>
+      <span class="sc-head-jp">関連記事</span>
     </div>
-    <ul class="toc-list">
+    <ul class="toc">
       <li><a href="#">The Bento Guide</a></li>
       <li><a href="#">Daily Commute · Bus 111</a></li>
       <li><a href="#">Strawberry Festival</a></li>
@@ -690,19 +1104,18 @@ footer{position:relative;z-index:2;background:#1e1418;color:rgba(245,240,224,0.5
 
 </aside>
 </div>
-</div>
 
 <footer>
   <p>Ayachi Samyal · Japan Exchange Guides · 交換留学ブログ</p>
   <p class="footer-jp">渋谷 → 原宿 → 大久保 → 地下鉄 19:00 · 最後の日</p>
-  <p style="margin-top:0.8rem;font-size:0.65rem;opacity:0.45;">また会おうね、ヒナちゃん</p>
+  <p class="footer-promise">また会おうね、ヒナちゃん</p>
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{
-  const bar=document.getElementById('rp');
-  const total=document.documentElement.scrollHeight-window.innerHeight;
-  bar.style.width=Math.min((window.scrollY/total)*100,100)+'%';
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('rp');
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = Math.min((window.scrollY / total) * 100, 100) + '%';
 });
 </script>
 </body>
