@@ -5,628 +5,418 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guides — Ayachi Samyal</title>
 <meta name="description" content="Practical guides for Japan exchange students. Everything I wish I'd known before applying to Kakehashi.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
-
 <style>
-/* ══════════════════════════════════════════════════════
-   AYACHI SAMYAL — GUIDES INDEX
-   Elevated scrapbook: Playfair titles + EB Garamond body
-   Palette: warm cream · deep ink · terracotta accent · moss
-══════════════════════════════════════════════════════ */
-
 :root {
-  --cream:        #f7f1e3;
-  --cream-dk:     #ede4cc;
-  --paper:        #faf7f0;
-  --ink:          #1c1510;
-  --ink-mid:      #3d2e1e;
-  --ink-soft:     #7a6a58;
-  --terra:        #c0572a;
-  --terra-lt:     #e8896a;
-  --terra-pale:   #f5ddd4;
-  --moss:         #4a6a48;
-  --moss-lt:      #c8dcc4;
-  --gold:         #9a7828;
-  --gold-pale:    #f0e4b8;
-  --rule:         rgba(60,40,20,0.15);
-  --rule-dk:      rgba(60,40,20,0.3);
-  --display:  'Playfair Display', serif;
-  --serif:    'EB Garamond', serif;
-  --sans:     'DM Sans', sans-serif;
-  --jp:       'Noto Serif JP', serif;
+  --cream:#f7f1e3; --cream-dk:#ede4cc; --paper:#faf7f0;
+  --ink:#1c1510; --ink-mid:#3d2e1e; --ink-soft:#7a6a58;
+  --terra:#c0572a; --terra-lt:#e8896a; --terra-pale:#f5ddd4;
+  --moss:#4a6a48; --moss-lt:#c8dcc4;
+  --gold:#9a7828; --gold-pale:#f0e4b8;
+  --rule:rgba(60,40,20,0.15); --rule-dk:rgba(60,40,20,0.3);
+  --display:'Playfair Display',serif; --serif:'EB Garamond',serif;
+  --sans:'DM Sans',sans-serif; --jp:'Noto Serif JP',serif;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-
-body {
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.75;
-  overflow-x: hidden;
-  background-color: #e4d9c4;
+body{color:var(--ink);font-family:var(--serif);line-height:1.75;overflow-x:hidden;
+  background-color:#e4d9c4;
   background-image:
-    repeating-linear-gradient(0deg,  transparent, transparent 19px, rgba(139,86,36,0.13) 19px, rgba(139,86,36,0.13) 20px),
-    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(139,86,36,0.13) 19px, rgba(139,86,36,0.13) 20px),
-    repeating-linear-gradient(0deg,  transparent, transparent 79px, rgba(192,87,42,0.09) 79px, rgba(192,87,42,0.09) 80px),
-    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(192,87,42,0.09) 79px, rgba(192,87,42,0.09) 80px);
-}
-
-body::before {
-  content:'';position:fixed;inset:0;
+    repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(139,86,36,0.13) 19px,rgba(139,86,36,0.13) 20px),
+    repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(139,86,36,0.13) 19px,rgba(139,86,36,0.13) 20px),
+    repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(192,87,42,0.09) 79px,rgba(192,87,42,0.09) 80px),
+    repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(192,87,42,0.09) 79px,rgba(192,87,42,0.09) 80px);}
+body::before{content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;
-}
-body::after {
-  content:'';position:fixed;inset:0;
+  pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;
   background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,60,20,0.06) 27px,rgba(90,60,20,0.06) 28px);
-  pointer-events:none;z-index:0;
-}
-
+  pointer-events:none;z-index:0;}
 ::-webkit-scrollbar{width:8px;}
 ::-webkit-scrollbar-track{background:var(--cream-dk);}
 ::-webkit-scrollbar-thumb{background:var(--terra);border-radius:4px;}
-
 .reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--terra),var(--gold));z-index:9999;width:0%;transition:width 0.1s linear;}
 
-/* ── NAV ── */
-.global-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--ink);
-  border-bottom: 2px solid var(--terra);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2.5rem;
-}
-.nav-logo {
-  font-family: var(--display); font-style: italic; font-size: 1.1rem;
-  color: var(--cream); text-decoration: none; letter-spacing: 0.02em;
-  padding: 0.85rem 0; display: flex; align-items: center; gap: 0.6rem;
-  flex-shrink: 0;
-}
-.nav-logo-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 0.78rem; font-weight: 300; opacity: 0.45; font-style: normal; }
-.nav-links { display: flex; }
-.nav-links a {
-  font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(247,241,227,0.55); text-decoration: none;
-  padding: 0.85rem 1rem; border-left: 1px solid rgba(192,87,42,0.2);
-  transition: color 0.15s;
-}
-.nav-links a:hover { color: var(--cream); }
-.nav-links a.active { color: var(--terra-lt); }
+/* NAV */
+.global-nav{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:2px solid var(--terra);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;}
+.nav-logo{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--cream);text-decoration:none;letter-spacing:0.02em;padding:0.85rem 0;display:flex;align-items:center;gap:0.6rem;flex-shrink:0;}
+.nav-logo-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.78rem;font-weight:300;opacity:0.45;font-style:normal;}
+.nav-links{display:flex;}
+.nav-links a{font-family:var(--sans);font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(247,241,227,0.55);text-decoration:none;padding:0.85rem 1rem;border-left:1px solid rgba(192,87,42,0.2);transition:color 0.15s;}
+.nav-links a:hover{color:var(--cream);}
+.nav-links a.active{color:var(--terra-lt);}
 
-/* ── HEADER ── */
-.site-header {
-  position: relative; z-index: 1;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule-dk);
-  padding: 2rem 2.5rem 0;
-  overflow: hidden;
-}
-.site-header::before {
-  content: 'ガイド';
-  position: absolute; right: 3rem; top: 50%; transform: translateY(-50%);
-  font-family: var(--jp); font-size: 9rem; font-weight: 700;
-  color: rgba(60,40,20,0.04); pointer-events: none; letter-spacing: 0.15em;
-  line-height: 1;
-}
-.header-inner { max-width: 1100px; margin: 0 auto; }
+/* HEADER */
+.site-header{position:relative;z-index:1;background:var(--paper);border-bottom:1px solid var(--rule-dk);padding:2rem 2rem 0;overflow:hidden;}
+.site-header::before{content:'ガイド';position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-family:var(--jp);font-size:9rem;font-weight:700;color:rgba(60,40,20,0.04);pointer-events:none;letter-spacing:0.15em;line-height:1;}
+.header-inner{max-width:1300px;margin:0 auto;}
+.washi-strip{display:flex;gap:0;margin-bottom:1.5rem;height:14px;overflow:hidden;}
+.washi-segment{height:14px;flex:1;opacity:0.75;}
+.ws-1{background:repeating-linear-gradient(45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px);}
+.ws-2{background:repeating-linear-gradient(-45deg,var(--moss) 0,var(--moss) 4px,var(--moss-lt) 4px,var(--moss-lt) 8px);}
+.ws-3{background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 4px,var(--gold-pale) 4px,var(--gold-pale) 8px);}
+.ws-4{background:repeating-linear-gradient(45deg,var(--ink-mid) 0,var(--ink-mid) 4px,var(--cream-dk) 4px,var(--cream-dk) 8px);}
+.ws-5{background:repeating-linear-gradient(-45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px);}
+.ws-6{background:repeating-linear-gradient(90deg,var(--moss) 0,var(--moss) 4px,var(--moss-lt) 4px,var(--moss-lt) 8px);}
+.header-content{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
+.header-overline{font-family:var(--sans);font-size:0.68rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem;}
+.header-overline::before{content:'';display:inline-block;width:20px;height:1px;background:var(--terra);}
+.site-title{font-family:var(--display);font-size:clamp(1.7rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:0.5rem;letter-spacing:-0.01em;}
+.site-title em{font-style:italic;color:var(--terra);}
+.site-subtitle{font-family:var(--serif);font-size:0.95rem;color:var(--ink-soft);line-height:1.7;max-width:520px;margin-bottom:1.2rem;}
+.welcome-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.wmeta-item{display:flex;flex-direction:column;gap:0.1rem;}
+.wmeta-label{font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
+.wmeta-value{font-family:var(--serif);font-size:0.88rem;color:var(--terra);}
+.header-stamps{display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem;padding-bottom:1.5rem;}
+.xstamp{font-family:var(--sans);font-weight:700;letter-spacing:0.12em;text-align:center;line-height:1.55;position:relative;transform:rotate(var(--xr,0deg));display:inline-flex;flex-direction:column;align-items:center;justify-content:center;}
+.xs-kake{--xr:-5deg;background:#6e1b28;color:#f5edd8;font-size:0.58rem;padding:0.4rem 1.1rem 0.45rem;clip-path:polygon(5% 0%,100% 0%,95% 100%,0% 100%);box-shadow:3px 3px 0 rgba(40,0,10,0.35);min-width:90px;}
+.xs-kake::after{content:'';position:absolute;inset:3px;border:1px solid rgba(245,237,216,0.25);clip-path:polygon(5% 0%,100% 0%,95% 100%,0% 100%);pointer-events:none;}
+.xs-yoko{--xr:4deg;color:rgba(60,100,58,0.9);font-size:0.55rem;border:2px solid rgba(74,106,72,0.75);border-radius:60px;padding:0.38rem 1.15rem;box-shadow:inset 0 0 0 4px rgba(74,106,72,0.1);min-width:88px;}
+.xs-yoko::before{content:'';position:absolute;inset:3px;border:1px dashed rgba(74,106,72,0.3);border-radius:60px;pointer-events:none;}
+.xs-india{--xr:8deg;background:#9a7828;color:#1c1207;font-size:0.52rem;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);width:72px;height:72px;box-shadow:2px 3px 0 rgba(80,50,0,0.3);}
+.header-nav{display:flex;gap:0.4rem;flex-wrap:wrap;padding:0.9rem 0 1rem;border-top:1px solid var(--rule);}
+.hnav-btn{font-family:var(--sans);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;padding:0.3rem 0.85rem;border:1.5px solid var(--rule-dk);border-radius:2px;background:transparent;transition:all 0.12s;}
+.hnav-btn:hover{background:var(--terra-pale);border-color:var(--terra);color:var(--terra);}
+.hnav-btn.active{background:var(--terra);color:white;border-color:var(--terra);}
 
-.washi-strip { display: flex; gap: 0; margin-bottom: 1.5rem; height: 14px; overflow: hidden; }
-.washi-segment { height: 14px; flex: 1; opacity: 0.75; }
-.ws-1 { background: repeating-linear-gradient(45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px); }
-.ws-2 { background: repeating-linear-gradient(-45deg,var(--moss) 0,var(--moss) 4px,var(--moss-lt) 4px,var(--moss-lt) 8px); }
-.ws-3 { background: repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 4px,var(--gold-pale) 4px,var(--gold-pale) 8px); }
-.ws-4 { background: repeating-linear-gradient(45deg,var(--ink-mid) 0,var(--ink-mid) 4px,var(--cream-dk) 4px,var(--cream-dk) 8px); }
-.ws-5 { background: repeating-linear-gradient(-45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px); }
-.ws-6 { background: repeating-linear-gradient(90deg,var(--moss) 0,var(--moss) 4px,var(--moss-lt) 4px,var(--moss-lt) 8px); }
+/* LAYOUT — wider, less dead space on right */
+.page-wrap{max-width:1300px;margin:0 auto;padding:0 2rem 5rem;position:relative;z-index:1;}
+.main-wrap{display:grid;grid-template-columns:1fr 220px;gap:2.5rem;align-items:start;margin-top:2rem;}
 
-.header-content {
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 2rem; align-items: end;
-}
-.header-overline {
-  font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--terra); margin-bottom: 0.6rem;
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.header-overline::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--terra); }
-.site-title {
-  font-family: var(--display); font-size: clamp(1.7rem, 4vw, 3.2rem);
-  font-weight: 400; line-height: 1.1; color: var(--ink);
-  margin-bottom: 0.5rem; letter-spacing: -0.01em;
-}
-.site-title em { font-style: italic; color: var(--terra); }
-.site-subtitle {
-  font-family: var(--serif); font-size: 0.95rem; font-weight: 400;
-  color: var(--ink-soft); line-height: 1.7; max-width: 480px;
-  margin-bottom: 1.2rem;
-}
-.welcome-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.wmeta-item { display: flex; flex-direction: column; gap: 0.1rem; }
-.wmeta-label { font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
-.wmeta-value { font-family: var(--serif); font-size: 0.88rem; color: var(--terra); }
+/* SECTION HEADERS */
+.section-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;}
+.section-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--rule-dk),transparent);}
+.section-label{font-family:var(--sans);font-size:0.68rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;display:flex;align-items:center;gap:0.5rem;}
+.section-label::before{content:'';display:inline-block;width:12px;height:1px;background:var(--terra);}
 
-.header-stamps { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; padding-bottom: 1.5rem; }
-.xstamp {
-  font-family: var(--sans); font-weight: 700; letter-spacing: 0.12em;
-  text-align: center; line-height: 1.55; position: relative;
-  transform: rotate(var(--xr, 0deg));
-  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
-}
-.xs-kake {
-  --xr: -5deg; background: #6e1b28; color: #f5edd8; font-size: 0.58rem;
-  padding: 0.4rem 1.1rem 0.45rem;
-  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-  box-shadow: 3px 3px 0 rgba(40,0,10,0.35); min-width: 90px;
-}
-.xs-kake::after {
-  content: ''; position: absolute; inset: 3px;
-  border: 1px solid rgba(245,237,216,0.25);
-  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); pointer-events: none;
-}
-.xs-yoko {
-  --xr: 4deg; color: rgba(60,100,58,0.9); font-size: 0.55rem;
-  border: 2px solid rgba(74,106,72,0.75); border-radius: 60px;
-  padding: 0.38rem 1.15rem; box-shadow: inset 0 0 0 4px rgba(74,106,72,0.1); min-width: 88px;
-}
-.xs-yoko::before {
-  content: ''; position: absolute; inset: 3px;
-  border: 1px dashed rgba(74,106,72,0.3); border-radius: 60px; pointer-events: none;
-}
-.xs-india {
-  --xr: 8deg; background: #9a7828; color: #1c1207; font-size: 0.52rem;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  width: 72px; height: 72px; box-shadow: 2px 3px 0 rgba(80,50,0,0.3);
-}
+/* WELCOME CARD */
+.welcome-card{background:#fffdf4;border:1px solid var(--rule-dk);padding:1.3rem 1.6rem 1.2rem;position:relative;box-shadow:2px 3px 0 var(--rule-dk),4px 6px 16px rgba(60,40,20,0.06);transform:rotate(-0.3deg);margin-bottom:0;}
+.welcome-card::before{content:'';position:absolute;top:-9px;left:40px;width:80px;height:16px;background:repeating-linear-gradient(90deg,rgba(192,87,42,0.55) 0,rgba(192,87,42,0.55) 6px,rgba(245,221,212,0.7) 6px,rgba(245,221,212,0.7) 10px);border-radius:1px;transform:rotate(-1.5deg);}
+.welcome-card::after{content:'';position:absolute;top:-7px;right:60px;width:60px;height:14px;background:repeating-linear-gradient(-45deg,rgba(74,106,72,0.45) 0,rgba(74,106,72,0.45) 4px,rgba(200,220,196,0.6) 4px,rgba(200,220,196,0.6) 8px);border-radius:1px;transform:rotate(2deg);}
+.welcome-title{font-family:var(--display);font-size:1.15rem;font-style:italic;color:var(--ink);margin-bottom:0.4rem;}
+.welcome-text{font-family:var(--serif);font-size:0.9rem;line-height:1.75;color:var(--ink-mid);max-width:600px;}
 
-.header-nav {
-  display: flex; gap: 0.4rem; flex-wrap: wrap;
-  padding: 0.9rem 0 1rem;
-  border-top: 1px solid var(--rule);
-}
-.hnav-btn {
-  font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink-mid); text-decoration: none;
-  padding: 0.3rem 0.85rem;
-  border: 1.5px solid var(--rule-dk); border-radius: 2px;
-  background: transparent; transition: all 0.12s;
-}
-.hnav-btn:hover { background: var(--terra-pale); border-color: var(--terra); color: var(--terra); }
-.hnav-btn.active { background: var(--terra); color: white; border-color: var(--terra); }
+/* FEATURED CARD */
+.featured-card{background:var(--paper);border:1px solid var(--rule-dk);border-left:4px solid var(--terra);padding:1.5rem 1.6rem 1.4rem 1.8rem;position:relative;transform:rotate(0.2deg);box-shadow:3px 4px 0 var(--rule),6px 8px 20px rgba(60,40,20,0.07);transition:transform 0.15s,box-shadow 0.15s;}
+.featured-card:hover{transform:rotate(0.2deg) translateY(-3px);box-shadow:3px 7px 0 var(--rule),6px 12px 24px rgba(60,40,20,0.1);}
+.featured-ribbon{display:inline-block;font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;background:var(--terra);color:white;padding:0.2rem 0.7rem;margin-bottom:0.8rem;}
+.featured-title{font-family:var(--display);font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:600;line-height:1.2;color:var(--ink);margin-bottom:0.4rem;}
+.featured-title a{color:inherit;text-decoration:none;transition:color 0.15s;}
+.featured-title a:hover{color:var(--terra);}
+.featured-title-jp{display:block;font-family:'Noto Sans JP',sans-serif;font-size:0.72rem;font-weight:300;color:var(--ink-soft);letter-spacing:0.2em;margin-top:0.2rem;}
+.featured-desc{font-family:var(--serif);font-size:0.9rem;line-height:1.75;color:var(--ink-mid);margin:0.7rem 0 0.9rem;max-width:580px;}
 
-/* ── LAYOUT ── */
-.page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 5rem; position: relative; z-index: 1; }
-.main-wrap { display: grid; grid-template-columns: 1fr 210px; gap: 3rem; align-items: start; margin-top: 2rem; }
+/* SHARED META / TAGS / BTN */
+.card-meta{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;flex-wrap:wrap;}
+.meta-pill{font-family:var(--sans);font-size:0.58rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.6rem;border-radius:2px;border:1.5px solid var(--rule-dk);background:var(--cream-dk);color:var(--ink-mid);}
+.meta-pill.terra{background:var(--terra-pale);border-color:var(--terra);color:var(--terra);}
+.meta-pill.moss{background:var(--moss-lt);border-color:var(--moss);color:var(--moss);}
+.meta-time{font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);}
+.guide-tags{display:flex;gap:0.3rem;flex-wrap:wrap;margin-bottom:0.9rem;}
+.tag{font-family:var(--sans);font-size:0.6rem;font-weight:500;padding:0.15rem 0.5rem;border:1px solid var(--rule-dk);border-radius:1px;color:var(--ink-soft);}
+.read-btn{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--serif);font-style:italic;font-size:0.82rem;color:white;background:var(--terra);padding:0.38rem 1rem 0.42rem;text-decoration:none;border-radius:3px;box-shadow:2px 2px 0 var(--rule-dk);transition:background 0.12s,box-shadow 0.12s;}
+.read-btn:hover{background:var(--ink);box-shadow:3px 3px 0 var(--rule-dk);}
+.read-btn.moss-btn{background:var(--moss);}
+.read-btn.moss-btn:hover{background:var(--ink);}
+.read-btn.ink-btn{background:var(--ink-mid);}
+.read-btn.ink-btn:hover{background:var(--ink);}
 
-/* ── SECTION HEADERS ── */
-.section-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
-.section-head::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--rule-dk), transparent); }
-.section-label {
-  font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink-soft);
-  white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;
-}
-.section-label::before { content: ''; display: inline-block; width: 12px; height: 1px; background: var(--terra); }
+/* COLLAGE GRID */
+.collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-bottom:0;}
 
-/* ── WELCOME CARD ── */
-.welcome-card {
-  background: #fffdf4; border: 1px solid var(--rule-dk);
-  padding: 1.3rem 1.6rem 1.2rem; position: relative;
-  box-shadow: 2px 3px 0 var(--rule-dk), 4px 6px 16px rgba(60,40,20,0.06);
-  transform: rotate(-0.3deg); margin-bottom: 0;
-}
-.welcome-card::before {
-  content: ''; position: absolute; top: -9px; left: 40px;
-  width: 80px; height: 16px;
-  background: repeating-linear-gradient(90deg,rgba(192,87,42,0.55) 0,rgba(192,87,42,0.55) 6px,rgba(245,221,212,0.7) 6px,rgba(245,221,212,0.7) 10px);
-  border-radius: 1px; transform: rotate(-1.5deg);
-}
-.welcome-card::after {
-  content: ''; position: absolute; top: -7px; right: 60px;
-  width: 60px; height: 14px;
-  background: repeating-linear-gradient(-45deg,rgba(74,106,72,0.45) 0,rgba(74,106,72,0.45) 4px,rgba(200,220,196,0.6) 4px,rgba(200,220,196,0.6) 8px);
-  border-radius: 1px; transform: rotate(2deg);
-}
-.welcome-title { font-family: var(--display); font-size: 1.15rem; font-style: italic; color: var(--ink); margin-bottom: 0.4rem; }
-.welcome-text { font-family: var(--serif); font-size: 0.9rem; line-height: 1.75; color: var(--ink-mid); max-width: 560px; }
+/* GUIDE CARD */
+.guide-card{background:var(--paper);border:1px solid var(--rule-dk);padding:1.1rem 1.2rem 1.2rem;position:relative;overflow:visible;transition:transform 0.15s,box-shadow 0.15s;transform:rotate(var(--cr,0deg));}
+.guide-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bar-color,var(--terra));}
+.guide-card:hover{transform:rotate(var(--cr,0deg)) translateY(-4px);box-shadow:3px 5px 0 rgba(60,40,20,0.12),4px 8px 20px rgba(60,40,20,0.08);z-index:5;}
+.card-1{--cr:-0.8deg;--bar-color:var(--terra);background:#fefaf2;}
+.card-2{--cr:1.2deg;--bar-color:var(--moss);background:#f8fcf8;}
+.card-3{--cr:-0.4deg;--bar-color:var(--gold);background:#fdf9ee;}
+.card-4{--cr:0.9deg;--bar-color:var(--terra);background:#faf7f2;}
+.card-5{--cr:-1.1deg;--bar-color:var(--moss);background:#f5fbf5;}
+.card-6{--cr:0.5deg;--bar-color:var(--gold);background:#fdf8ec;}
 
-/* ── FEATURED CARD ── */
-.featured-card {
-  background: var(--paper); border: 1px solid var(--rule-dk);
-  border-left: 4px solid var(--terra);
-  padding: 1.5rem 1.6rem 1.4rem 1.8rem; position: relative;
-  transform: rotate(0.2deg);
-  box-shadow: 3px 4px 0 var(--rule), 6px 8px 20px rgba(60,40,20,0.07);
-  transition: transform 0.15s, box-shadow 0.15s;
+/* CARD TAPE */
+.card-tape{position:absolute;top:-8px;height:14px;width:60px;border-radius:1px;opacity:0.8;}
+.card-tape.left{left:16px;}
+.card-tape.right{right:16px;transform:rotate(2deg);}
+.tape-terra{background:repeating-linear-gradient(90deg,rgba(192,87,42,0.7) 0,rgba(192,87,42,0.7) 5px,rgba(245,221,212,0.8) 5px,rgba(245,221,212,0.8) 9px);}
+.tape-moss{background:repeating-linear-gradient(-45deg,rgba(74,106,72,0.6) 0,rgba(74,106,72,0.6) 4px,rgba(200,220,196,0.7) 4px,rgba(200,220,196,0.7) 8px);}
+.tape-gold{background:repeating-linear-gradient(90deg,rgba(154,120,40,0.65) 0,rgba(154,120,40,0.65) 5px,rgba(240,228,184,0.8) 5px,rgba(240,228,184,0.8) 9px);}
+.tape-ink{background:repeating-linear-gradient(45deg,rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px);}
+
+/* CORNER STICKERS — bigger, scrapbook corners */
+.stk{position:absolute;width:58px;height:58px;object-fit:contain;pointer-events:none;z-index:6;
+  filter:sepia(0.15) saturate(1.1) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.22));
+  transition:transform 0.2s,filter 0.2s;}
+.stk-tl{top:-24px;left:-18px;}
+.stk-tr{top:-24px;right:-18px;}
+.stk-bl{bottom:-24px;left:-18px;}
+.stk-br{bottom:-24px;right:-18px;}
+
+/* Per-card rotations */
+.card-1 .stk-tl{transform:rotate(-14deg);}
+.card-1 .stk-br{transform:rotate(10deg);}
+.card-2 .stk-tr{transform:rotate(12deg);}
+.card-2 .stk-bl{transform:rotate(-8deg);}
+.card-3 .stk-tl{transform:rotate(9deg);}
+.card-3 .stk-br{transform:rotate(-11deg);}
+.card-4 .stk-tr{transform:rotate(-13deg);}
+.card-4 .stk-bl{transform:rotate(7deg);}
+
+/* card-5: stanpu inside card, shifted left+up; eki top-right tilted right */
+.card-5 .stk-stanpu{
+  position:absolute;
+  width:66px;height:66px;object-fit:contain;pointer-events:none;z-index:6;
+  top:-10px;left:4px; /* shifted inside-ish, top-left area */
+  transform:rotate(-8deg);
+  filter:sepia(0.15) saturate(1.1) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.22));
+  transition:transform 0.2s,filter 0.2s;
 }
-.featured-card:hover { transform: rotate(0.2deg) translateY(-3px); box-shadow: 3px 7px 0 var(--rule), 6px 12px 24px rgba(60,40,20,0.1); }
-.featured-ribbon {
-  display: inline-block; font-family: var(--sans); font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.25em; text-transform: uppercase;
-  background: var(--terra); color: white; padding: 0.2rem 0.7rem; margin-bottom: 0.8rem;
-}
-.featured-title {
-  font-family: var(--display); font-size: clamp(1.2rem, 2.5vw, 1.65rem);
-  font-weight: 600; line-height: 1.2; color: var(--ink); margin-bottom: 0.4rem;
-}
-.featured-title a { color: inherit; text-decoration: none; transition: color 0.15s; }
-.featured-title a:hover { color: var(--terra); }
-.featured-title-jp {
-  display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 0.72rem;
-  font-weight: 300; color: var(--ink-soft); letter-spacing: 0.2em; margin-top: 0.2rem;
-}
-.featured-desc {
-  font-family: var(--serif); font-size: 0.9rem; line-height: 1.75;
-  color: var(--ink-mid); margin: 0.7rem 0 0.9rem; max-width: 560px;
+.card-5 .stk-eki{
+  position:absolute;
+  width:58px;height:58px;object-fit:contain;pointer-events:none;z-index:6;
+  top:-24px;right:-18px; /* top-right corner */
+  transform:rotate(14deg); /* tilted right */
+  filter:sepia(0.15) saturate(1.1) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.22));
+  transition:transform 0.2s,filter 0.2s;
 }
 
-/* shared meta / tags / btn */
-.card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
-.meta-pill {
-  font-family: var(--sans); font-size: 0.58rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 0.18rem 0.6rem; border-radius: 2px;
-  border: 1.5px solid var(--rule-dk); background: var(--cream-dk); color: var(--ink-mid);
-}
-.meta-pill.terra { background: var(--terra-pale); border-color: var(--terra); color: var(--terra); }
-.meta-pill.moss  { background: var(--moss-lt); border-color: var(--moss); color: var(--moss); }
-.meta-time { font-family: var(--sans); font-size: 0.6rem; color: var(--ink-soft); }
-.guide-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
-.tag {
-  font-family: var(--sans); font-size: 0.6rem; font-weight: 500;
-  padding: 0.15rem 0.5rem; border: 1px solid var(--rule-dk);
-  border-radius: 1px; color: var(--ink-soft);
-}
-.read-btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: var(--serif); font-style: italic; font-size: 0.82rem;
-  color: white; background: var(--terra);
-  padding: 0.38rem 1rem 0.42rem; text-decoration: none;
-  border-radius: 3px; box-shadow: 2px 2px 0 var(--rule-dk);
-  transition: background 0.12s, box-shadow 0.12s;
-}
-.read-btn:hover { background: var(--ink); box-shadow: 3px 3px 0 var(--rule-dk); }
-.read-btn.moss-btn { background: var(--moss); }
-.read-btn.moss-btn:hover { background: var(--ink); }
-.read-btn.ink-btn { background: var(--ink-mid); }
-.read-btn.ink-btn:hover { background: var(--ink); }
+.card-6 .stk-tr{transform:rotate(-10deg);}
+.card-6 .stk-bl{transform:rotate(14deg);}
 
-/* ── COLLAGE GRID ── */
-.collage-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
-}
+.guide-card:hover .stk,
+.guide-card:hover .stk-stanpu,
+.guide-card:hover .stk-eki{filter:sepia(0) saturate(1.2) brightness(1.02) drop-shadow(2px 3px 4px rgba(0,0,0,0.25));}
 
-/* ── GUIDE CARD — compact scrapbook clipping ── */
-.guide-card {
-  background: var(--paper);
-  border: 1px solid var(--rule-dk);
-  padding: 1rem 1.15rem 1.1rem;
-  position: relative;
-  overflow: visible; /* stickers can peek out */
-  transition: transform 0.15s, box-shadow 0.15s;
-  transform: rotate(var(--cr, 0deg));
-  /* extra bottom padding so sticker doesn't overlap button */
+.guide-card-title{font-family:var(--display);font-size:0.96rem;font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:0.4rem;padding-left:0.5rem;}
+.guide-card-title a{color:inherit;text-decoration:none;transition:color 0.12s;}
+.guide-card-title a:hover{color:var(--terra);}
+.guide-card-desc{font-family:var(--serif);font-size:0.83rem;line-height:1.65;color:var(--ink-mid);margin-bottom:0.7rem;padding-left:0.5rem;}
+
+/* HORIZONTAL WIDE CARD — bus card guide */
+.wide-card{
+  background:#fdf7f0;border:1px solid var(--rule-dk);border-left:4px solid var(--moss);
+  padding:1.3rem 1.6rem 1.3rem 1.8rem;
+  position:relative;overflow:visible;
+  transform:rotate(-0.3deg);
+  box-shadow:3px 4px 0 var(--rule-dk),5px 8px 18px rgba(60,40,20,0.07);
+  transition:transform 0.15s,box-shadow 0.15s;
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+  margin-top:1.6rem;
 }
-.guide-card::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 4px; background: var(--bar-color, var(--terra));
+.wide-card:hover{transform:rotate(-0.3deg) translateY(-3px);box-shadow:3px 7px 0 var(--rule-dk),5px 12px 22px rgba(60,40,20,0.1);}
+.wide-card::before{content:'';position:absolute;top:-8px;left:30px;width:90px;height:15px;
+  background:repeating-linear-gradient(90deg,rgba(74,106,72,0.6) 0,rgba(74,106,72,0.6) 5px,rgba(200,220,196,0.7) 5px,rgba(200,220,196,0.7) 9px);
+  border-radius:1px;transform:rotate(-1.2deg);}
+.wide-card-left{}
+.wide-card-label{font-family:var(--sans);font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--moss);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem;}
+.wide-card-label::before{content:'';width:14px;height:1px;background:var(--moss);display:inline-block;}
+.wide-card-title{font-family:var(--display);font-size:clamp(1rem,2vw,1.4rem);font-weight:600;line-height:1.2;color:var(--ink);margin-bottom:0.4rem;}
+.wide-card-title a{color:inherit;text-decoration:none;transition:color 0.12s;}
+.wide-card-title a:hover{color:var(--moss);}
+.wide-card-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.7rem;font-weight:300;color:var(--ink-soft);letter-spacing:0.2em;margin-bottom:0.6rem;}
+.wide-card-desc{font-family:var(--serif);font-size:0.88rem;line-height:1.7;color:var(--ink-mid);max-width:520px;}
+.wide-card-meta{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;margin-top:0.7rem;}
+.wide-card-right{display:flex;flex-direction:column;align-items:center;gap:0.8rem;flex-shrink:0;}
+/* sticker on wide card — bus/IC card vibe */
+.wide-card-sticker{
+  position:absolute;
+  width:64px;height:64px;object-fit:contain;pointer-events:none;z-index:6;
+  top:-26px;right:60px;
+  transform:rotate(12deg);
+  filter:sepia(0.1) saturate(1.15) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
 }
-.guide-card:hover {
-  transform: rotate(var(--cr, 0deg)) translateY(-4px);
-  box-shadow: 3px 5px 0 rgba(60,40,20,0.12), 4px 8px 20px rgba(60,40,20,0.08);
-  z-index: 5;
+.wide-card-sticker2{
+  position:absolute;
+  width:56px;height:56px;object-fit:contain;pointer-events:none;z-index:6;
+  bottom:-22px;left:40px;
+  transform:rotate(-9deg);
+  filter:sepia(0.1) saturate(1.15) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
 }
 
-.card-1 { --cr: -0.8deg; --bar-color: var(--terra); background: #fefaf2; }
-.card-2 { --cr:  1.2deg; --bar-color: var(--moss);  background: #f8fcf8; }
-.card-3 { --cr: -0.4deg; --bar-color: var(--gold);  background: #fdf9ee; }
-.card-4 { --cr:  0.9deg; --bar-color: var(--terra); background: #faf7f2; }
-.card-5 { --cr: -1.1deg; --bar-color: var(--moss);  background: #f5fbf5; }
-.card-6 { --cr:  0.5deg; --bar-color: var(--gold);  background: #fdf8ec; }
+/* DIVIDERS */
+.washi-divider{display:flex;align-items:center;gap:0.8rem;margin:2rem 0;}
+.washi-divider::before,.washi-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule-dk),transparent);}
+.wd-inner{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.4em;color:var(--ink-soft);white-space:nowrap;}
 
-/* card tape strips at top */
-.card-tape {
-  position: absolute; top: -8px;
-  height: 14px; width: 60px; border-radius: 1px; opacity: 0.8;
-}
-.card-tape.left  { left: 16px; }
-.card-tape.right { right: 16px; transform: rotate(2deg); }
-.tape-terra { background: repeating-linear-gradient(90deg,rgba(192,87,42,0.7) 0,rgba(192,87,42,0.7) 5px,rgba(245,221,212,0.8) 5px,rgba(245,221,212,0.8) 9px); }
-.tape-moss  { background: repeating-linear-gradient(-45deg,rgba(74,106,72,0.6) 0,rgba(74,106,72,0.6) 4px,rgba(200,220,196,0.7) 4px,rgba(200,220,196,0.7) 8px); }
-.tape-gold  { background: repeating-linear-gradient(90deg,rgba(154,120,40,0.65) 0,rgba(154,120,40,0.65) 5px,rgba(240,228,184,0.8) 5px,rgba(240,228,184,0.8) 9px); }
-.tape-ink   { background: repeating-linear-gradient(45deg,rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px); }
+/* EMAIL */
+.email-card{background:#fffde8;border:1px solid rgba(154,120,40,0.4);border-left:4px solid var(--gold);padding:1.4rem 1.6rem;position:relative;transform:rotate(0.3deg);box-shadow:2px 3px 0 rgba(154,120,40,0.2);background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(154,120,40,0.08) 27px,rgba(154,120,40,0.08) 28px);}
+.email-card::before{content:'';position:absolute;top:-8px;right:40px;width:70px;height:13px;background:repeating-linear-gradient(90deg,rgba(74,106,72,0.5) 0,rgba(74,106,72,0.5) 5px,rgba(200,220,196,0.7) 5px,rgba(200,220,196,0.7) 9px);border-radius:1px;transform:rotate(1.5deg);}
+.email-title{font-family:var(--display);font-size:1.1rem;font-style:italic;color:var(--ink);margin-bottom:0.4rem;}
+.email-card p{font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-mid);margin-bottom:0.8rem;}
+.email-form{display:flex;flex-direction:column;gap:0.4rem;}
+.email-input{padding:0.5rem 0.9rem;border:1px solid rgba(154,120,40,0.5);background:rgba(255,255,255,0.75);font-family:var(--serif);font-size:0.9rem;color:var(--ink);outline:none;transition:border-color 0.12s;border-radius:0;}
+.email-input:focus{border-color:var(--gold);background:white;}
+.email-submit{font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:white;border:none;padding:0.6rem 1.4rem;cursor:pointer;transition:background 0.12s;}
+.email-submit:hover{background:var(--ink);}
+.email-privacy{font-family:var(--sans);font-size:0.63rem;color:var(--ink-soft);margin-top:0.4rem;}
 
-/* ── CORNER STICKERS — the scrapbook soul ──
-   Two per card, placed in any 2 of the 4 corners.
-   They sit outside the card bounds (overflow:visible).
-   Rotate varies per card for that hand-placed feel.
-── */
-.stk {
-  position: absolute;
-  width: 46px; height: 46px;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 6;
-  filter: sepia(0.15) saturate(1.1) brightness(0.95)
-          drop-shadow(1px 2px 2px rgba(0,0,0,0.2));
-  transition: transform 0.2s;
-}
-/* corner positions */
-.stk-tl { top: -18px;    left: -14px;  }
-.stk-tr { top: -18px;    right: -14px; }
-.stk-bl { bottom: -18px; left: -14px;  }
-.stk-br { bottom: -18px; right: -14px; }
-
-/* rotation per card/corner */
-.card-1 .stk-tl { transform: rotate(-14deg); }
-.card-1 .stk-br { transform: rotate(10deg);  }
-.card-2 .stk-tr { transform: rotate(12deg);  }
-.card-2 .stk-bl { transform: rotate(-8deg);  }
-.card-3 .stk-tl { transform: rotate(9deg);   }
-.card-3 .stk-br { transform: rotate(-11deg); }
-.card-4 .stk-tr { transform: rotate(-13deg); }
-.card-4 .stk-bl { transform: rotate(7deg);   }
-.card-5 .stk-tl { transform: rotate(11deg);  }
-.card-5 .stk-br { transform: rotate(-9deg);  }
-.card-6 .stk-tr { transform: rotate(-10deg); }
-.card-6 .stk-bl { transform: rotate(14deg);  }
-
-.guide-card:hover .stk { filter: sepia(0) saturate(1.2) brightness(1) drop-shadow(2px 3px 3px rgba(0,0,0,0.22)); }
-
-.guide-card-title {
-  font-family: var(--display); font-size: 0.96rem; font-weight: 600;
-  line-height: 1.3; color: var(--ink); margin-bottom: 0.4rem; padding-left: 0.5rem;
-}
-.guide-card-title a { color: inherit; text-decoration: none; transition: color 0.12s; }
-.guide-card-title a:hover { color: var(--terra); }
-.guide-card-desc {
-  font-family: var(--serif); font-size: 0.83rem; line-height: 1.65;
-  color: var(--ink-mid); margin-bottom: 0.7rem; padding-left: 0.5rem;
-}
-
-/* ── DIVIDERS ── */
-.washi-divider { display: flex; align-items: center; gap: 0.8rem; margin: 2rem 0; }
-.washi-divider::before,.washi-divider::after { content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule-dk),transparent); }
-.wd-inner { font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.4em;color:var(--ink-soft);white-space:nowrap; }
-
-/* ── EMAIL CARD ── */
-.email-card {
-  background: #fffde8;
-  border: 1px solid rgba(154,120,40,0.4); border-left: 4px solid var(--gold);
-  padding: 1.4rem 1.6rem; position: relative;
-  transform: rotate(0.3deg); box-shadow: 2px 3px 0 rgba(154,120,40,0.2);
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(154,120,40,0.08) 27px,rgba(154,120,40,0.08) 28px);
-}
-.email-card::before {
-  content:'';position:absolute;top:-8px;right:40px;width:70px;height:13px;
-  background:repeating-linear-gradient(90deg,rgba(74,106,72,0.5) 0,rgba(74,106,72,0.5) 5px,rgba(200,220,196,0.7) 5px,rgba(200,220,196,0.7) 9px);
-  border-radius:1px;transform:rotate(1.5deg);
-}
-.email-title { font-family:var(--display);font-size:1.1rem;font-style:italic;color:var(--ink);margin-bottom:0.4rem; }
-.email-card p { font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-mid);margin-bottom:0.8rem; }
-.email-form { display:flex;flex-direction:column;gap:0.4rem; }
-.email-input { padding:0.5rem 0.9rem;border:1px solid rgba(154,120,40,0.5);background:rgba(255,255,255,0.75);font-family:var(--serif);font-size:0.9rem;color:var(--ink);outline:none;transition:border-color 0.12s;border-radius:0; }
-.email-input:focus { border-color:var(--gold);background:white; }
-.email-submit { font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:white;border:none;padding:0.6rem 1.4rem;cursor:pointer;transition:background 0.12s; }
-.email-submit:hover { background:var(--ink); }
-.email-privacy { font-family:var(--sans);font-size:0.63rem;color:var(--ink-soft);margin-top:0.4rem; }
-
-/* ── SIDEBAR ── */
-.sidebar { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-.s-card { background:var(--paper);border:1px solid var(--rule-dk);overflow:hidden; }
-.s-card-head {
-  font-family:var(--sans);font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;
-  background:var(--ink);color:var(--cream);padding:0.35rem 0.8rem;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.s-card-head-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;opacity:0.5; }
-.s-card-body { padding:0.9rem; }
-
-.profile-pic { width:58px;height:58px;border-radius:50%;border:2px solid var(--rule-dk);overflow:hidden;background:linear-gradient(135deg,var(--terra-pale),var(--moss-lt));margin:0 auto 0.6rem;display:block; }
-.profile-pic img { width:100%;height:100%;object-fit:cover; }
-.profile-name { font-family:var(--display);font-size:1rem;font-style:italic;color:var(--ink);text-align:center;display:block;margin-bottom:0.3rem; }
-.profile-bio { font-family:var(--serif);font-size:0.8rem;line-height:1.65;color:var(--ink-mid);text-align:center; }
-.profile-stats { display:flex;flex-direction:column;gap:0;margin-top:0.8rem;border-top:1px solid var(--rule); }
-.stat-row { display:flex;justify-content:space-between;align-items:center;padding:0.35rem 0;border-bottom:1px dashed var(--rule); }
-.stat-row:last-child { border-bottom:none; }
-.stat-k { font-family:var(--sans);font-size:0.62rem;color:var(--ink-soft);letter-spacing:0.05em; }
-.stat-v { font-family:var(--serif);font-size:0.82rem;color:var(--terra); }
-
-.tl-list { display:flex;flex-direction:column; }
-.tl-item { display:flex;gap:0.6rem;align-items:flex-start;padding:0.4rem 0;border-bottom:1px dashed var(--rule); }
-.tl-item:last-child { border-bottom:none; }
-.tl-month { font-family:var(--sans);font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--terra);color:white;padding:0.15rem 0.4rem;white-space:nowrap;flex-shrink:0;margin-top:0.1rem; }
-.tl-month.moss-bg { background:var(--moss); }
-.tl-event { font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);line-height:1.4; }
-
-.quick-links { display:flex;flex-direction:column; }
-.quick-link { display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);text-decoration:none;padding:0.4rem 0;border-bottom:1px dashed var(--rule);transition:color 0.12s; }
-.quick-link:last-child { border-bottom:none; }
-.quick-link::after { content:'›';color:var(--terra);font-size:1rem; }
-.quick-link:hover { color:var(--terra); }
-
-.social-list { display:flex;flex-direction:column;gap:0.35rem; }
-.social-link { display:flex;align-items:center;gap:0.5rem;font-family:var(--sans);font-size:0.75rem;font-weight:500;color:var(--ink-mid);text-decoration:none;padding:0.35rem 0.5rem;border:1px solid var(--rule);transition:background 0.1s,border-color 0.1s; }
-.social-link:hover { background:var(--terra-pale);border-color:var(--terra);color:var(--terra); }
-.sl-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+/* SIDEBAR */
+.sidebar{position:sticky;top:1.5rem;display:flex;flex-direction:column;gap:1rem;}
+.s-card{background:var(--paper);border:1px solid var(--rule-dk);overflow:hidden;}
+.s-card-head{font-family:var(--sans);font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:0.35rem 0.8rem;display:flex;align-items:center;justify-content:space-between;}
+.s-card-head-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;opacity:0.5;}
+.s-card-body{padding:0.9rem;}
+.profile-pic{width:58px;height:58px;border-radius:50%;border:2px solid var(--rule-dk);overflow:hidden;background:linear-gradient(135deg,var(--terra-pale),var(--moss-lt));margin:0 auto 0.6rem;display:block;}
+.profile-pic img{width:100%;height:100%;object-fit:cover;}
+.profile-name{font-family:var(--display);font-size:1rem;font-style:italic;color:var(--ink);text-align:center;display:block;margin-bottom:0.3rem;}
+.profile-bio{font-family:var(--serif);font-size:0.8rem;line-height:1.65;color:var(--ink-mid);text-align:center;}
+.profile-stats{display:flex;flex-direction:column;gap:0;margin-top:0.8rem;border-top:1px solid var(--rule);}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:0.35rem 0;border-bottom:1px dashed var(--rule);}
+.stat-row:last-child{border-bottom:none;}
+.stat-k{font-family:var(--sans);font-size:0.62rem;color:var(--ink-soft);letter-spacing:0.05em;}
+.stat-v{font-family:var(--serif);font-size:0.82rem;color:var(--terra);}
+.tl-list{display:flex;flex-direction:column;}
+.tl-item{display:flex;gap:0.6rem;align-items:flex-start;padding:0.4rem 0;border-bottom:1px dashed var(--rule);}
+.tl-item:last-child{border-bottom:none;}
+.tl-month{font-family:var(--sans);font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--terra);color:white;padding:0.15rem 0.4rem;white-space:nowrap;flex-shrink:0;margin-top:0.1rem;}
+.tl-month.moss-bg{background:var(--moss);}
+.tl-event{font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);line-height:1.4;}
+.quick-links{display:flex;flex-direction:column;}
+.quick-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:0.82rem;color:var(--ink-mid);text-decoration:none;padding:0.4rem 0;border-bottom:1px dashed var(--rule);transition:color 0.12s;}
+.quick-link:last-child{border-bottom:none;}
+.quick-link::after{content:'›';color:var(--terra);font-size:1rem;}
+.quick-link:hover{color:var(--terra);}
+.social-list{display:flex;flex-direction:column;gap:0.35rem;}
+.social-link{display:flex;align-items:center;gap:0.5rem;font-family:var(--sans);font-size:0.75rem;font-weight:500;color:var(--ink-mid);text-decoration:none;padding:0.35rem 0.5rem;border:1px solid var(--rule);transition:background 0.1s,border-color 0.1s;}
+.social-link:hover{background:var(--terra-pale);border-color:var(--terra);color:var(--terra);}
+.sl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .sl-red{background:var(--terra);} .sl-grn{background:var(--moss);} .sl-blu{background:#5570c0;} .sl-pnk{background:#c05080;}
+.visitor-num{font-family:var(--sans);font-size:1.4rem;font-weight:700;letter-spacing:0.2em;color:var(--terra);text-align:center;display:block;background:var(--ink);padding:0.4rem 0.8rem;margin:0.2rem auto;width:fit-content;font-variant-numeric:tabular-nums;}
+.visitor-label{font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);text-align:center;margin-top:0.3rem;letter-spacing:0.1em;}
 
-.visitor-num { font-family:var(--sans);font-size:1.4rem;font-weight:700;letter-spacing:0.2em;color:var(--terra);text-align:center;display:block;background:var(--ink);padding:0.4rem 0.8rem;margin:0.2rem auto;width:fit-content;font-variant-numeric:tabular-nums; }
-.visitor-label { font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);text-align:center;margin-top:0.3rem;letter-spacing:0.1em; }
+/* TICKER */
+.ticker-wrap{background:var(--terra);overflow:hidden;height:26px;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,0.15);}
+.ticker-content{white-space:nowrap;animation:ticker 35s linear infinite;font-family:var(--sans);font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.15em;text-transform:uppercase;padding-left:100%;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-100%);}}
 
-/* ── TICKER ── */
-.ticker-wrap { background:var(--terra);overflow:hidden;height:26px;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,0.15); }
-.ticker-content { white-space:nowrap;animation:ticker 35s linear infinite;font-family:var(--sans);font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.15em;text-transform:uppercase;padding-left:100%; }
-@keyframes ticker { from{transform:translateX(0);} to{transform:translateX(-100%);} }
+/* PILLARS */
+.pillar-block{margin-bottom:2.5rem;position:relative;}
+.pillar-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.7rem;padding-bottom:0.7rem;border-bottom:1px solid var(--rule-dk);}
+.pillar-header-left{display:flex;align-items:flex-start;gap:0.9rem;}
+.pillar-number{font-family:var(--display);font-size:2.5rem;font-weight:400;color:var(--terra);opacity:0.18;line-height:1;flex-shrink:0;margin-top:-0.2rem;}
+.pillar-kicker{font-family:var(--sans);font-size:0.65rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.2rem;}
+.pillar-title{font-family:var(--display);font-size:1.4rem;font-weight:400;color:var(--ink);line-height:1.1;}
+.pillar-title em{font-style:italic;color:var(--terra);}
+.pillar-desc{font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-soft);margin-bottom:1rem;max-width:600px;}
+.pillar-header-right{flex-shrink:0;padding-top:0.2rem;}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:0.8rem;}
+.pillar-card{background:var(--paper);border:1px solid var(--rule-dk);padding:0.9rem 1rem 1rem;position:relative;overflow:visible;box-shadow:2px 2px 0 var(--rule-dk);transition:transform 0.15s,box-shadow 0.15s;}
+.pillar-card:hover{transform:translateY(-3px);box-shadow:3px 5px 0 var(--rule-dk);z-index:5;}
+.pc-terra{background:#fefaf2;} .pc-moss{background:#f8fcf8;} .pc-gold{background:#fdf9ee;}
+.pc-placeholder{background:var(--cream-dk);opacity:0.75;border-style:dashed;box-shadow:none;}
+.pc-placeholder:hover{transform:none;box-shadow:none;}
+.coming-soon-label{font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.5rem;padding-left:0.5rem;}
+.pillar-see-all{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);text-decoration:none;border-bottom:1.5px solid var(--terra);padding-bottom:1px;transition:gap 0.12s;}
+.pillar-see-all:hover{gap:0.7rem;}
+.pillar-see-all span{font-size:0.9rem;}
+.stamp{display:inline-block;border:2px solid currentColor;border-radius:2px;padding:0.3rem 0.65rem;font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-align:center;line-height:1.4;transform:rotate(var(--rot,-3deg));position:relative;}
+.stamp::before{content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.3;}
+.st-terra{color:rgba(192,87,42,0.75);--rot:-4deg;}
+.st-moss{color:rgba(74,106,72,0.75);--rot:3deg;}
+.st-ink{color:rgba(60,40,20,0.6);--rot:-1deg;}
+.pstamp{font-family:var(--sans);font-weight:700;font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;text-align:center;line-height:1.5;position:relative;display:inline-flex;align-items:center;justify-content:center;transform:rotate(var(--pr,0deg));}
+.ps-pill{--pr:-2deg;background:var(--terra);color:white;padding:0.28rem 1rem;border-radius:50px;font-size:0.58rem;letter-spacing:0.14em;box-shadow:2px 2px 0 rgba(100,30,10,0.22);}
+.ps-hex{--pr:3deg;color:var(--moss);border:2px solid rgba(74,106,72,0.75);padding:0.32rem 0.7rem;clip-path:polygon(10% 0%,90% 0%,100% 50%,90% 100%,10% 100%,0% 50%);min-width:64px;min-height:38px;font-size:0.5rem;flex-direction:column;}
+.ps-box{--pr:14deg;background:var(--gold);color:white;width:40px;height:40px;border-radius:4px;font-size:0.62rem;box-shadow:2px 2px 0 rgba(80,50,0,0.22);flex-direction:column;}
+.ps-ticket{--pr:-3deg;color:var(--ink-mid);border:2px solid var(--ink-mid);padding:0.28rem 0.85rem;border-radius:4px;font-size:0.5rem;min-width:68px;flex-direction:column;position:relative;}
+.ps-ticket::before,.ps-ticket::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--cream);border-radius:50%;border:1px solid var(--ink-mid);}
+.ps-ticket::before{left:-3px;}
+.ps-ticket::after{right:-3px;}
 
-/* ── PILLAR BLOCKS ── */
-.pillar-block { margin-bottom: 2.5rem; position: relative; }
-.pillar-header { display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.7rem;padding-bottom:0.7rem;border-bottom:1px solid var(--rule-dk); }
-.pillar-header-left { display:flex;align-items:flex-start;gap:0.9rem; }
-.pillar-number { font-family:var(--display);font-size:2.5rem;font-weight:400;color:var(--terra);opacity:0.18;line-height:1;flex-shrink:0;margin-top:-0.2rem; }
-.pillar-kicker { font-family:var(--sans);font-size:0.65rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.2rem; }
-.pillar-title { font-family:var(--display);font-size:1.4rem;font-weight:400;color:var(--ink);line-height:1.1; }
-.pillar-title em { font-style:italic;color:var(--terra); }
-.pillar-desc { font-family:var(--serif);font-size:0.88rem;line-height:1.75;color:var(--ink-soft);margin-bottom:1rem;max-width:600px; }
-.pillar-header-right { flex-shrink:0;padding-top:0.2rem; }
-.pillar-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:0.8rem; }
+/* FOOTER */
+.site-footer{margin-top:3rem;background:var(--ink-mid);border-top:3px solid var(--terra);position:relative;z-index:1;overflow:hidden;}
+.site-footer::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;}
+.footer-washi{display:flex;height:12px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.fw-seg{flex:1;}
+.footer-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.8fr;gap:2.5rem;padding:2.5rem 2rem 2rem;position:relative;z-index:1;}
+.footer-logo{font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--cream);margin-bottom:0.25rem;}
+.footer-logo-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(247,241,227,0.3);letter-spacing:0.15em;margin-bottom:1rem;}
+.footer-stamps{display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;}
+.site-footer .xstamp.xs-kake{background:rgba(180,80,60,0.9);}
+.site-footer .xstamp.xs-yoko{color:rgba(140,195,135,0.85);border-color:rgba(140,195,135,0.65);box-shadow:inset 0 0 0 3px rgba(140,195,135,0.1);}
+.site-footer .xstamp.xs-india{background:rgba(180,140,40,0.9);}
+.footer-nav{display:flex;flex-direction:column;gap:0.35rem;padding-top:0.2rem;}
+.footer-nav-head{font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,241,227,0.35);margin-bottom:0.3rem;}
+.footer-nav a{font-family:var(--serif);font-size:0.85rem;color:rgba(247,241,227,0.55);text-decoration:none;transition:color 0.12s;}
+.footer-nav a:hover{color:var(--terra-lt);}
+.footer-note-block{padding-top:0.2rem;}
+.footer-tagline{font-family:var(--display);font-style:italic;font-size:0.95rem;color:rgba(247,241,227,0.6);margin-bottom:0.6rem;line-height:1.4;}
+.footer-sub{font-family:var(--serif);font-size:0.8rem;line-height:1.7;color:rgba(247,241,227,0.35);margin-bottom:0.8rem;}
+.footer-copy{font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(247,241,227,0.2);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding:0.7rem 2rem;max-width:1300px;margin:0 auto;position:relative;z-index:1;}
+.footer-bottom-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.35em;color:rgba(247,241,227,0.15);}
+.sns-icon{width:14px;height:14px;object-fit:contain;flex-shrink:0;}
 
-.pillar-card { background:var(--paper);border:1px solid var(--rule-dk);padding:0.9rem 1rem 1rem;position:relative;overflow:visible;box-shadow:2px 2px 0 var(--rule-dk);transition:transform 0.15s,box-shadow 0.15s; }
-.pillar-card:hover { transform:translateY(-3px);box-shadow:3px 5px 0 var(--rule-dk);z-index:5; }
-.pc-terra { background:#fefaf2; } .pc-moss { background:#f8fcf8; } .pc-gold { background:#fdf9ee; }
-.pc-placeholder { background:var(--cream-dk);opacity:0.75;border-style:dashed;box-shadow:none; }
-.pc-placeholder:hover { transform:none;box-shadow:none; }
-.coming-soon-label { font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.5rem;padding-left:0.5rem; }
-.tape-ink { background:repeating-linear-gradient(45deg,rgba(60,40,20,0.45) 0,rgba(60,40,20,0.45) 4px,rgba(240,235,225,0.7) 4px,rgba(240,235,225,0.7) 8px); }
-.pillar-see-all { display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);text-decoration:none;border-bottom:1.5px solid var(--terra);padding-bottom:1px;transition:gap 0.12s; }
-.pillar-see-all:hover { gap:0.7rem; }
-.pillar-see-all span { font-size:0.9rem; }
-
-/* stamps */
-.stamp { display:inline-block;border:2px solid currentColor;border-radius:2px;padding:0.3rem 0.65rem;font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-align:center;line-height:1.4;transform:rotate(var(--rot,-3deg));position:relative; }
-.stamp::before { content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.3; }
-.st-terra { color:rgba(192,87,42,0.75);--rot:-4deg; }
-.st-moss  { color:rgba(74,106,72,0.75);--rot:3deg; }
-.st-ink   { color:rgba(60,40,20,0.6);--rot:-1deg; }
-
-.pstamp { font-family:var(--sans);font-weight:700;font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;text-align:center;line-height:1.5;position:relative;display:inline-flex;align-items:center;justify-content:center;transform:rotate(var(--pr,0deg)); }
-.ps-pill { --pr:-2deg;background:var(--terra);color:white;padding:0.28rem 1rem;border-radius:50px;font-size:0.58rem;letter-spacing:0.14em;box-shadow:2px 2px 0 rgba(100,30,10,0.22); }
-.ps-hex { --pr:3deg;color:var(--moss);border:2px solid rgba(74,106,72,0.75);padding:0.32rem 0.7rem;clip-path:polygon(10% 0%,90% 0%,100% 50%,90% 100%,10% 100%,0% 50%);min-width:64px;min-height:38px;font-size:0.5rem;flex-direction:column; }
-.ps-box { --pr:14deg;background:var(--gold);color:white;width:40px;height:40px;border-radius:4px;font-size:0.62rem;box-shadow:2px 2px 0 rgba(80,50,0,0.22);flex-direction:column; }
-.ps-ticket { --pr:-3deg;color:var(--ink-mid);border:2px solid var(--ink-mid);padding:0.28rem 0.85rem;border-radius:4px;font-size:0.5rem;min-width:68px;flex-direction:column;position:relative; }
-.ps-ticket::before,.ps-ticket::after { content:'';position:absolute;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--cream);border-radius:50%;border:1px solid var(--ink-mid); }
-.ps-ticket::before { left:-3px; }
-.ps-ticket::after  { right:-3px; }
-
-/* ── FOOTER ── */
-.site-footer { margin-top:3rem;background:var(--ink-mid);border-top:3px solid var(--terra);position:relative;z-index:1;overflow:hidden; }
-.site-footer::before { content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none; }
-.footer-washi { display:flex;height:12px;border-bottom:1px solid rgba(255,255,255,0.08); }
-.fw-seg { flex:1; }
-.footer-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.8fr;gap:2.5rem;padding:2.5rem 2.5rem 2rem;position:relative;z-index:1; }
-.footer-logo { font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--cream);margin-bottom:0.25rem;letter-spacing:0.01em; }
-.footer-logo-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(247,241,227,0.3);letter-spacing:0.15em;margin-bottom:1rem; }
-.footer-stamps { display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap; }
-.site-footer .xstamp.xs-kake { background:rgba(180,80,60,0.9); }
-.site-footer .xstamp.xs-yoko { color:rgba(140,195,135,0.85);border-color:rgba(140,195,135,0.65);box-shadow:inset 0 0 0 3px rgba(140,195,135,0.1); }
-.site-footer .xstamp.xs-india { background:rgba(180,140,40,0.9); }
-.footer-nav { display:flex;flex-direction:column;gap:0.35rem;padding-top:0.2rem; }
-.footer-nav-head { font-family:var(--sans);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,241,227,0.35);margin-bottom:0.3rem; }
-.footer-nav a { font-family:var(--serif);font-size:0.85rem;color:rgba(247,241,227,0.55);text-decoration:none;transition:color 0.12s; }
-.footer-nav a:hover { color:var(--terra-lt); }
-.footer-note-block { padding-top:0.2rem; }
-.footer-tagline { font-family:var(--display);font-style:italic;font-size:0.95rem;color:rgba(247,241,227,0.6);margin-bottom:0.6rem;line-height:1.4; }
-.footer-sub { font-family:var(--serif);font-size:0.8rem;line-height:1.7;color:rgba(247,241,227,0.35);margin-bottom:0.8rem; }
-.footer-copy { font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(247,241,227,0.2); }
-.footer-bottom { border-top:1px solid rgba(255,255,255,0.07);padding:0.7rem 2.5rem;max-width:1100px;margin:0 auto;position:relative;z-index:1; }
-.footer-bottom-jp { font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.35em;color:rgba(247,241,227,0.15); }
-
-.sns-icon { width:14px;height:14px;object-fit:contain;flex-shrink:0; }
-
-/* ════════════════════════════════════════════════════
-   RESPONSIVE — fully mobile-optimised
-════════════════════════════════════════════════════ */
-
-/* Tablet */
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media(max-width:1100px){
+  .collage-grid{grid-template-columns:repeat(2,1fr);}
+  .wide-card{grid-template-columns:1fr;}
+  .wide-card-right{flex-direction:row;justify-content:flex-start;}
+}
 @media(max-width:900px){
-  .global-nav { padding: 0 1.5rem; }
-  .site-header { padding: 1.5rem 1.5rem 0; }
-  .page-wrap { padding: 0 1.5rem 4rem; }
-  .main-wrap { grid-template-columns: 1fr; gap: 2rem; }
-  .sidebar { position: static; display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
-  .collage-grid { grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
-  .pillar-grid { grid-template-columns: repeat(2,1fr); }
-  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .footer-brand { grid-column: 1/-1; }
+  .global-nav{padding:0 1.5rem;}
+  .site-header{padding:1.5rem 1.5rem 0;}
+  .page-wrap{padding:0 1.5rem 4rem;}
+  .main-wrap{grid-template-columns:1fr;gap:2rem;}
+  .sidebar{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .pillar-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:2rem;}
+  .footer-brand{grid-column:1/-1;}
 }
-
-/* Mobile */
 @media(max-width:600px){
-  /* nav */
-  .global-nav { padding: 0 1rem; }
-  .nav-logo-jp { display: none; }
-  .nav-links a { padding: 0.85rem 0.7rem; font-size: 0.7rem; letter-spacing: 0.06em; }
-
-  /* header */
-  .site-header { padding: 1.2rem 1rem 0; }
-  .site-header::before { display: none; }
-  .header-content { grid-template-columns: 1fr; gap: 0; }
-  .header-stamps { display: none; } /* stamps hidden on small screens, too cramped */
-  .site-title { font-size: clamp(1.5rem, 7vw, 2rem); }
-  .site-subtitle { font-size: 0.88rem; margin-bottom: 0.9rem; }
-  .header-nav { gap: 0.3rem; padding: 0.7rem 0 0.9rem; }
-  .hnav-btn { font-size: 0.65rem; padding: 0.28rem 0.65rem; }
-  .washi-strip { margin-bottom: 1rem; }
-
-  /* page */
-  .page-wrap { padding: 0 1rem 3rem; }
-  .main-wrap { margin-top: 1.5rem; gap: 1.5rem; }
-
-  /* welcome card */
-  .welcome-card { padding: 1.1rem 1.2rem; }
-  .welcome-title { font-size: 1rem; }
-  .welcome-text { font-size: 0.85rem; }
-
-  /* featured card */
-  .featured-card { padding: 1.2rem 1.2rem 1.1rem 1.5rem; }
-
-  /* collage grid — single column on mobile */
-  .collage-grid { grid-template-columns: 1fr; gap: 1.4rem; }
-
-  /* stickers: pull in slightly on mobile so they don't clip the screen edge */
-  .stk { width: 38px; height: 38px; }
-  .stk-tl { top: -14px; left: -10px; }
-  .stk-tr { top: -14px; right: -10px; }
-  .stk-bl { bottom: -14px; left: -10px; }
-  .stk-br { bottom: -14px; right: -10px; }
-
-  /* sidebar */
-  .sidebar { grid-template-columns: 1fr; }
-
-  /* pillars */
-  .pillar-grid { grid-template-columns: 1fr; }
-  .pillar-number { font-size: 2rem; }
-
-  /* footer */
-  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 1rem; }
-  .footer-brand { grid-column: auto; }
-  .footer-note-block { grid-column: auto; }
-  .footer-bottom { padding: 0.7rem 1rem; }
-
-  /* email card */
-  .email-card { padding: 1.2rem 1.2rem; }
-
-  /* pillar stamps row — wrap nicely */
-  .pstamp { font-size: 0.5rem; }
-  .ps-pill { padding: 0.22rem 0.7rem; }
+  .global-nav{padding:0 1rem;}
+  .nav-logo-jp{display:none;}
+  .nav-links a{padding:0.85rem 0.7rem;font-size:0.7rem;letter-spacing:0.06em;}
+  .site-header{padding:1.2rem 1rem 0;}
+  .site-header::before{display:none;}
+  .header-content{grid-template-columns:1fr;gap:0;}
+  .header-stamps{display:none;}
+  .site-title{font-size:clamp(1.5rem,7vw,2rem);}
+  .site-subtitle{font-size:0.88rem;margin-bottom:0.9rem;}
+  .header-nav{gap:0.3rem;padding:0.7rem 0 0.9rem;}
+  .hnav-btn{font-size:0.65rem;padding:0.28rem 0.65rem;}
+  .page-wrap{padding:0 1rem 3rem;}
+  .main-wrap{margin-top:1.5rem;gap:1.5rem;}
+  .welcome-card{padding:1.1rem 1.2rem;}
+  .featured-card{padding:1.2rem 1.2rem 1.1rem 1.5rem;}
+  .collage-grid{grid-template-columns:1fr;gap:1.8rem;}
+  .stk{width:44px;height:44px;}
+  .stk-tl{top:-18px;left:-12px;}
+  .stk-tr{top:-18px;right:-12px;}
+  .stk-bl{bottom:-18px;left:-12px;}
+  .stk-br{bottom:-18px;right:-12px;}
+  .card-5 .stk-stanpu{width:52px;height:52px;top:-8px;left:4px;}
+  .card-5 .stk-eki{width:44px;height:44px;top:-18px;right:-12px;}
+  .sidebar{grid-template-columns:1fr;}
+  .pillar-grid{grid-template-columns:1fr;}
+  .pillar-number{font-size:2rem;}
+  .footer-inner{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem 1rem;}
+  .footer-brand{grid-column:auto;}
+  .footer-bottom{padding:0.7rem 1rem;}
+  .email-card{padding:1.2rem 1.2rem;}
+  .wide-card{grid-template-columns:1fr;gap:1rem;padding:1.2rem 1.2rem 1.2rem 1.5rem;}
+  .wide-card-right{flex-direction:row;flex-wrap:wrap;gap:0.5rem;}
+  .wide-card-sticker{width:48px;height:48px;top:-20px;right:30px;}
+  .wide-card-sticker2{width:44px;height:44px;bottom:-18px;left:24px;}
 }
-
-/* Very small phones */
 @media(max-width:380px){
-  .nav-links a { padding: 0.85rem 0.5rem; font-size: 0.65rem; }
-  .hnav-btn { font-size: 0.6rem; padding: 0.25rem 0.55rem; }
-  .collage-grid { gap: 1.8rem; } /* more gap needed so stickers don't stack */
+  .nav-links a{padding:0.85rem 0.5rem;font-size:0.65rem;}
+  .hnav-btn{font-size:0.6rem;padding:0.25rem 0.55rem;}
+  .collage-grid{gap:2.2rem;}
 }
-
 </style>
 </head>
 <body>
-
 <div class="reading-progress" id="rp"></div>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
-  <div class="ticker-content">
-    ✦ AYACHI SAMYAL · GUIDES FOR JAPAN EXCHANGE STUDENTS ✦ KAKEHASHI 2021 · YOKOHAMA · 横浜 ✦ PRACTICAL ADVICE FROM SOMEONE WHO'S BEEN THERE ✦ BENTO DIARIES · COMMUTE CHRONICLES · SCHOOL LIFE ✦ FULLY TESTED · ONE YEAR ✦ AYACHI SAMYAL · GUIDES FOR JAPAN EXCHANGE STUDENTS ✦
-  </div>
+  <div class="ticker-content">✦ AYACHI SAMYAL · GUIDES FOR JAPAN EXCHANGE STUDENTS ✦ KAKEHASHI 2021 · YOKOHAMA · 横浜 ✦ PRACTICAL ADVICE FROM SOMEONE WHO'S BEEN THERE ✦ BENTO DIARIES · COMMUTE CHRONICLES · SCHOOL LIFE ✦ FULLY TESTED · ONE YEAR ✦ AYACHI SAMYAL · GUIDES FOR JAPAN EXCHANGE STUDENTS ✦</div>
 </div>
 
 <!-- NAV -->
@@ -643,17 +433,12 @@ body::after {
 <div class="site-header">
   <div class="header-inner">
     <div class="washi-strip">
-      <div class="washi-segment ws-1"></div>
-      <div class="washi-segment ws-2"></div>
-      <div class="washi-segment ws-3"></div>
-      <div class="washi-segment ws-4"></div>
-      <div class="washi-segment ws-5"></div>
-      <div class="washi-segment ws-6"></div>
-      <div class="washi-segment ws-1"></div>
-      <div class="washi-segment ws-3"></div>
+      <div class="washi-segment ws-1"></div><div class="washi-segment ws-2"></div>
+      <div class="washi-segment ws-3"></div><div class="washi-segment ws-4"></div>
+      <div class="washi-segment ws-5"></div><div class="washi-segment ws-6"></div>
+      <div class="washi-segment ws-1"></div><div class="washi-segment ws-3"></div>
       <div class="washi-segment ws-2"></div>
     </div>
-
     <div class="header-content">
       <div class="header-text">
         <div class="header-overline">Practical Guides · 実用ガイド</div>
@@ -665,14 +450,12 @@ body::after {
           <div class="wmeta-item"><span class="wmeta-label">Guides</span><span class="wmeta-value">8 published</span></div>
         </div>
       </div>
-
       <div class="header-stamps">
         <div class="xstamp xs-kake">KAKEHASHI<br><span style="font-size:0.85em;letter-spacing:0.04em;">架け橋</span></div>
         <div class="xstamp xs-yoko">YOKOHAMA<br><span style="opacity:0.75;font-size:0.9em;">横浜 2021</span></div>
         <div class="xstamp xs-india">INDIA<br>✦ 選抜</div>
       </div>
     </div>
-
     <div class="header-nav">
       <a href="index.html" class="hnav-btn active">All Guides</a>
       <a href="kakehashi-guide.html" class="hnav-btn">Application</a>
@@ -688,411 +471,415 @@ body::after {
 <div class="page-wrap">
 <div class="main-wrap">
 
-  <!-- MAIN CONTENT -->
-  <main>
+<main>
 
-    <!-- WELCOME NOTE -->
-    <div class="welcome-card" style="margin-bottom:1.8rem;">
-      <h2 class="welcome-title">Welcome to the guide collection ♡</h2>
-      <p class="welcome-text">Hi, I'm Ayachi. I went to Japan at 16 through the Asia Kakehashi Project and spent a year in Yokohama living with a host family, commuting to a Japanese public high school, and eating the best lunches of my life. These guides are everything I wish I had before I left.</p>
+  <!-- WELCOME -->
+  <div class="welcome-card" style="margin-bottom:1.8rem;">
+    <h2 class="welcome-title">Welcome to the guide collection ♡</h2>
+    <p class="welcome-text">Hi, I'm Ayachi. I went to Japan at 16 through the Asia Kakehashi Project and spent a year in Yokohama living with a host family, commuting to a Japanese public high school, and eating the best lunches of my life. These guides are everything I wish I had before I left.</p>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="section-head" style="margin-bottom:0.8rem;">
+    <span class="section-label">Start here</span>
+  </div>
+  <div class="featured-card" style="margin-bottom:2rem;" id="featured">
+    <div class="featured-ribbon">★ Featured Guide</div>
+    <h2 class="featured-title">
+      <a href="kakehashi-guide.html">Complete Guide to the Asia Kakehashi Project 2026</a>
+      <span class="featured-title-jp">アジア架け橋プロジェクト 完全ガイド</span>
+    </h2>
+    <div class="card-meta">
+      <span class="meta-pill terra">9th–10th Graders</span>
+      <span class="meta-pill">Scholarship</span>
+      <span class="meta-time">⏱ 12 min read</span>
+    </div>
+    <p class="featured-desc">Everything you need to apply — eligibility, documents, what the essay committee actually wants, interview prep, and what the year itself looks like from the inside. Written by a 2021 scholar selected from India at 16.</p>
+    <div class="guide-tags">
+      <span class="tag">Application</span><span class="tag">Essay Tips</span>
+      <span class="tag">Interview Prep</span><span class="tag">Year Abroad</span>
+    </div>
+    <a href="kakehashi-guide.html" class="read-btn">Read guide →</a>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="washi-divider"><span class="wd-inner">全ガイド · ALL GUIDES</span></div>
+
+  <!-- COLLAGE GRID — 6 cards -->
+  <div class="section-head">
+    <span class="section-label">All guides</span>
+  </div>
+
+  <div class="collage-grid">
+
+    <!-- 1 — Survival Guide -->
+    <div class="guide-card card-1">
+      <div class="card-tape left tape-terra"></div>
+      <img class="stk stk-tl" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
+      <img class="stk stk-br" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">18 min</span></div>
+      <h3 class="guide-card-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h3>
+      <p class="guide-card-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
+      <div class="guide-tags"><span class="tag">Mental Prep</span><span class="tag">Culture Shock</span></div>
+      <a href="japan-exchange-survival-guide.html" class="read-btn">Read →</a>
     </div>
 
-    <!-- FEATURED -->
-    <div class="section-head" style="margin-bottom:0.8rem;">
-      <span class="section-label">Start here</span>
+    <!-- 2 — Packing -->
+    <div class="guide-card card-2">
+      <div class="card-tape right tape-moss"></div>
+      <img class="stk stk-tr" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
+      <img class="stk stk-bl" src="../../assets/images/sticker-bag.png" alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
+      <h3 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h3>
+      <p class="guide-card-desc">Tested over a full year in Yokohama. What to bring, what to skip, what to buy there.</p>
+      <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Tech</span><span class="tag">Gear</span></div>
+      <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
     </div>
 
-    <div class="featured-card" style="margin-bottom:2rem;" id="featured">
-      <div class="featured-ribbon">★ Featured Guide</div>
-      <h2 class="featured-title">
-        <a href="kakehashi-guide.html">Complete Guide to the Asia Kakehashi Project 2026</a>
-        <span class="featured-title-jp">アジア架け橋プロジェクト 完全ガイド</span>
-      </h2>
-      <div class="card-meta">
-        <span class="meta-pill terra">9th–10th Graders</span>
-        <span class="meta-pill">Scholarship</span>
-        <span class="meta-time">⏱ 12 min read</span>
+    <!-- 3 — Budget -->
+    <div class="guide-card card-3">
+      <div class="card-tape left tape-gold"></div>
+      <img class="stk stk-tl" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
+      <img class="stk stk-br" src="../../assets/images/sticker-coin.png" alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
+      <h3 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h3>
+      <p class="guide-card-desc">Real numbers. Monthly spend, what the scholarship covers, what it doesn't.</p>
+      <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
+      <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
+    </div>
+
+    <!-- 4 — Bento -->
+    <div class="guide-card card-4">
+      <div class="card-tape right tape-terra"></div>
+      <img class="stk stk-tr" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
+      <img class="stk stk-bl" src="../../assets/images/bento.png" alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
+      <h3 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h3>
+      <p class="guide-card-desc">Every item in that lunchbox, every day. Bento culture, morning routine, dinner etiquette.</p>
+      <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span><span class="tag">Daily Life</span></div>
+      <a href="Bento.html" class="read-btn moss-btn">Read →</a>
+    </div>
+
+    <!-- 5 — Commute: stanpu inside-top-left (bigger), eki top-right tilted right -->
+    <div class="guide-card card-5">
+      <div class="card-tape left tape-ink"></div>
+      <img class="stk-stanpu" src="../../assets/images/stanpu.png" alt="" onerror="this.style.display='none'">
+      <img class="stk-eki"    src="../../assets/images/eki.png"    alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill">Daily Life</span><span class="meta-time">8 min</span></div>
+      <h3 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h3>
+      <p class="guide-card-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
+      <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
+      <a href="Train.html" class="read-btn ink-btn">Read →</a>
+    </div>
+
+    <!-- 6 — Last Day in Japan -->
+    <div class="guide-card card-6">
+      <div class="card-tape right tape-gold"></div>
+      <img class="stk stk-tr" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
+      <img class="stk stk-bl" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
+      <div class="card-meta"><span class="meta-pill terra">Exchange Life</span><span class="meta-time">10 min</span></div>
+      <h3 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h3>
+      <p class="guide-card-desc">What it actually feels like to pack up and leave. The goodbyes, the train ride, the moment it's real.</p>
+      <div class="guide-tags"><span class="tag">Exchange Life</span><span class="tag">Emotional</span><span class="tag">Farewell</span></div>
+      <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn">Read →</a>
+    </div>
+
+  </div><!-- /.collage-grid -->
+
+  <!-- WIDE HORIZONTAL CARD — Bus Card / IC Card guide -->
+  <div class="wide-card">
+    <img class="wide-card-sticker"  src="../../assets/images/bucket.png"           alt="" onerror="this.style.display='none'">
+    <img class="wide-card-sticker2" src="../../assets/images/sticker-coin.png"     alt="" onerror="this.style.display='none'">
+    <div class="wide-card-left">
+      <div class="wide-card-label">Field Guide · 実用ガイド</div>
+      <h3 class="wide-card-title"><a href="bus-card-guide.html">Getting Your IC Card &amp; Bus Pass in Yokohama</a></h3>
+      <div class="wide-card-jp">バスカード · ICカード · 横浜市営バス</div>
+      <p class="wide-card-desc">The Suica, the PASMO, the city bus card — which one you actually need, where to get it, and how to top it up without being the person holding up the queue at Yokohama station.</p>
+      <div class="wide-card-meta">
+        <span class="meta-pill moss">Daily Life</span>
+        <span class="meta-pill">Yokohama</span>
+        <span class="meta-time">⏱ 7 min</span>
+        <span class="tag">Transport</span>
+        <span class="tag">IC Card</span>
+        <span class="tag">Bus</span>
       </div>
-      <p class="featured-desc">Everything you need to apply — eligibility, documents, what the essay committee actually wants, interview prep, and what the year itself looks like from the inside. Written by a 2021 scholar selected from India at 16.</p>
-      <div class="guide-tags">
-        <span class="tag">Application</span>
-        <span class="tag">Essay Tips</span>
-        <span class="tag">Interview Prep</span>
-        <span class="tag">Year Abroad</span>
-      </div>
-      <a href="kakehashi-guide.html" class="read-btn">Read guide →</a>
     </div>
-
-    <!-- DIVIDER -->
-    <div class="washi-divider"><span class="wd-inner">全ガイド · ALL GUIDES</span></div>
-
-    <!-- COLLAGE GRID — 6 cards, 2 corner stickers each -->
-    <div class="section-head">
-      <span class="section-label">All guides</span>
+    <div class="wide-card-right">
+      <a href="bus-card-guide.html" class="read-btn moss-btn" style="white-space:nowrap;">Read guide →</a>
     </div>
+  </div>
 
-    <div class="collage-grid">
 
-      <!-- 1 — Survival Guide -->
-      <div class="guide-card card-1">
-        <div class="card-tape left tape-terra"></div>
-        <!-- stickers: top-left + bottom-right -->
-        <img class="stk stk-tl" src="../../assets/images/writingmiffy.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-br" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
-        <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">18 min</span></div>
-        <h3 class="guide-card-title"><a href="japan-exchange-survival-guide.html">Japan Exchange Survival Guide I Wish I Had</a></h3>
-        <p class="guide-card-desc">Culture shock, homesickness, and actually thriving. Real talk, not just packing lists.</p>
-        <div class="guide-tags"><span class="tag">Mental Prep</span><span class="tag">Culture Shock</span></div>
-        <a href="japan-exchange-survival-guide.html" class="read-btn">Read →</a>
+  <!-- PILLARS -->
+  <div class="washi-divider" style="margin-top:3rem;margin-bottom:2rem;">
+    <span class="wd-inner">ピラー · CONTENT PILLARS</span>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;">
+    <div class="section-head" style="flex:1;margin-bottom:0;">
+      <span class="section-label">Browse by topic</span>
+    </div>
+    <div style="display:flex;gap:0.7rem;flex-wrap:wrap;align-items:center;">
+      <span class="pstamp ps-pill">TOKYO GUIDES</span>
+      <span class="pstamp ps-hex">EXCHANGE<br>LIFE</span>
+      <span class="pstamp ps-box">食<br>FOOD</span>
+      <span class="pstamp ps-ticket">実用<br>ESSENTIALS</span>
+    </div>
+  </div>
+
+  <!-- PILLAR 1 -->
+  <div class="pillar-block" id="exchange-guides">
+    <div class="pillar-header">
+      <div class="pillar-header-left">
+        <div class="pillar-number">01</div>
+        <div>
+          <div class="pillar-kicker">Application &amp; Exchange Life</div>
+          <h3 class="pillar-title">Exchange <em>Guides</em></h3>
+        </div>
       </div>
+      <div class="pillar-header-right">
+        <span class="stamp st-terra" style="font-size:0.5rem;--rot:-3deg;">架け橋<br>KAKEHASHI</span>
+      </div>
+    </div>
+    <p class="pillar-desc">Everything you need to apply, survive, and thrive on a Japan exchange program. First-person, tested, no filler.</p>
+    <div class="pillar-grid">
+      <div class="pillar-card pc-terra">
+        <div class="card-meta"><span class="meta-pill terra">Featured</span><span class="meta-time">12 min</span></div>
+        <h4 class="guide-card-title"><a href="kakehashi-guide.html">Complete Kakehashi Application Guide</a></h4>
+        <p class="guide-card-desc">Essays, interviews, what the program actually looks like inside.</p>
+        <div class="guide-tags"><span class="tag">Application</span><span class="tag">Essays</span></div>
+        <a href="kakehashi-guide.html" class="read-btn">Read →</a>
+      </div>
+      <div class="pillar-card pc-gold">
+        <div class="card-meta"><span class="meta-pill">Exchange Life</span><span class="meta-time">10 min</span></div>
+        <h4 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h4>
+        <p class="guide-card-desc">Goodbyes, the last train, the moment it all becomes a memory.</p>
+        <div class="guide-tags"><span class="tag">Farewell</span><span class="tag">Emotional</span></div>
+        <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn ink-btn">Read →</a>
+      </div>
+      <div class="pillar-card pc-placeholder">
+        <div class="coming-soon-label">✦ coming soon</div>
+        <h4 class="guide-card-title" style="color:var(--ink-soft);">Host Family Etiquette Guide</h4>
+        <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">What to say, what not to do, how to make it feel like home.</p>
+        <div class="guide-tags"><span class="tag">Host Family</span><span class="tag">Culture</span></div>
+      </div>
+    </div>
+    <a href="kakehashi-guide.html" class="pillar-see-all">See all exchange guides <span>→</span></a>
+  </div>
 
-      <!-- 2 — Packing -->
-      <div class="guide-card card-2">
-        <div class="card-tape right tape-moss"></div>
-        <!-- stickers: top-right + bottom-left -->
-        <img class="stk stk-tr" src="../../assets/images/bucket.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-bl" src="../../assets/images/sticker-bag.png" alt="" onerror="this.style.display='none'">
+  <!-- PILLAR 2 -->
+  <div class="pillar-block" id="tokyo-guides">
+    <div class="pillar-header">
+      <div class="pillar-header-left">
+        <div class="pillar-number">02</div>
+        <div>
+          <div class="pillar-kicker">Tokyo &amp; Japan Travel</div>
+          <h3 class="pillar-title">Tokyo <em>Guides</em></h3>
+        </div>
+      </div>
+      <div class="pillar-header-right">
+        <span class="stamp st-moss" style="font-size:0.5rem;--rot:4deg;">東京<br>TOKYO</span>
+      </div>
+    </div>
+    <p class="pillar-desc">Where to go, how to move, what to spend. Tokyo through the eyes of someone who actually lived there.</p>
+    <div class="pillar-grid">
+      <div class="pillar-card pc-moss">
+        <div class="card-meta"><span class="meta-pill moss">Daily Life</span><span class="meta-time">8 min</span></div>
+        <h4 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
+        <p class="guide-card-desc">Bus 111 → train → uphill walk. The full breakdown.</p>
+        <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
+        <a href="Train.html" class="read-btn moss-btn">Read →</a>
+      </div>
+      <div class="pillar-card pc-placeholder">
+        <div class="coming-soon-label">✦ coming soon</div>
+        <h4 class="guide-card-title" style="color:var(--ink-soft);">Best Neighbourhoods to Stay in Tokyo</h4>
+        <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">For first-timers, exchange students, and budget travellers.</p>
+        <div class="guide-tags"><span class="tag">Tokyo</span><span class="tag">Where to Stay</span></div>
+      </div>
+      <div class="pillar-card pc-placeholder">
+        <div class="coming-soon-label">✦ coming soon</div>
+        <h4 class="guide-card-title" style="color:var(--ink-soft);">Day Trips from Yokohama &amp; Tokyo</h4>
+        <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Kamakura, Hakone, Nikko — all tested on a student budget.</p>
+        <div class="guide-tags"><span class="tag">Day Trips</span><span class="tag">Travel</span></div>
+      </div>
+    </div>
+    <a href="Train.html" class="pillar-see-all">See all Tokyo guides <span>→</span></a>
+  </div>
+
+  <!-- PILLAR 3 -->
+  <div class="pillar-block" id="japan-life">
+    <div class="pillar-header">
+      <div class="pillar-header-left">
+        <div class="pillar-number">03</div>
+        <div>
+          <div class="pillar-kicker">Food, Festivals &amp; Everyday Life</div>
+          <h3 class="pillar-title">Japan <em>Life</em></h3>
+        </div>
+      </div>
+      <div class="pillar-header-right">
+        <span class="stamp st-ink" style="font-size:0.5rem;--rot:-2deg;">食文化<br>SHOKU</span>
+      </div>
+    </div>
+    <p class="pillar-desc">What's actually on the table. Japanese food culture explained from the inside — host family dinners, festival stalls, school lunches.</p>
+    <div class="pillar-grid">
+      <div class="pillar-card pc-gold">
+        <div class="card-meta"><span class="meta-pill">Host Family</span><span class="meta-time">10 min</span></div>
+        <h4 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
+        <p class="guide-card-desc">Every item, every day. Bento culture and school lunch etiquette.</p>
+        <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span></div>
+        <a href="Bento.html" class="read-btn ink-btn">Read →</a>
+      </div>
+      <div class="pillar-card pc-terra">
+        <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-time">10 min</span></div>
+        <h4 class="guide-card-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
+        <p class="guide-card-desc">A strawberry festival in Yokohama. Very pink. Very sticky.</p>
+        <div class="guide-tags"><span class="tag">Festival</span><span class="tag">Seasonal</span></div>
+        <a href="Strobby-festival.html" class="read-btn">Read →</a>
+      </div>
+      <div class="pillar-card pc-placeholder">
+        <div class="coming-soon-label">✦ coming soon</div>
+        <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese Convenience Store Guide</h4>
+        <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">FamilyMart, Lawson, 7-Eleven — what to actually buy.</p>
+        <div class="guide-tags"><span class="tag">Food</span><span class="tag">Daily Life</span></div>
+      </div>
+    </div>
+    <a href="Bento.html" class="pillar-see-all">See all food &amp; culture <span>→</span></a>
+  </div>
+
+  <!-- PILLAR 4 -->
+  <div class="pillar-block" id="japan-essentials">
+    <div class="pillar-header">
+      <div class="pillar-header-left">
+        <div class="pillar-number">04</div>
+        <div>
+          <div class="pillar-kicker">Money, Gear &amp; Logistics</div>
+          <h3 class="pillar-title">Practical <em>Essentials</em></h3>
+        </div>
+      </div>
+      <div class="pillar-header-right">
+        <span class="stamp st-terra" style="font-size:0.5rem;--rot:5deg;">実用<br>JITSUYOU</span>
+      </div>
+    </div>
+    <p class="pillar-desc">The logistical stuff nobody tells you — SIM cards, IC cards, budgets, what to pack. Before you land and while you're there.</p>
+    <div class="pillar-grid">
+      <div class="pillar-card pc-moss">
         <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
-        <h3 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h3>
-        <p class="guide-card-desc">Tested over a full year in Yokohama. What to bring, what to skip, what to buy there.</p>
-        <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Tech</span><span class="tag">Gear</span></div>
+        <h4 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
+        <p class="guide-card-desc">Tested over a full year. Bring, skip, buy — the definitive list.</p>
+        <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Gear</span></div>
         <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
       </div>
-
-      <!-- 3 — Budget -->
-      <div class="guide-card card-3">
-        <div class="card-tape left tape-gold"></div>
-        <!-- stickers: top-left + bottom-right -->
-        <img class="stk stk-tl" src="../../assets/images/Gemini_Generated_Image_cteu36cteu36cteu.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-br" src="../../assets/images/sticker-coin.png" alt="" onerror="this.style.display='none'">
+      <div class="pillar-card pc-gold">
         <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
-        <h3 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h3>
-        <p class="guide-card-desc">Real numbers. Monthly spend, what the scholarship covers, what it doesn't.</p>
+        <h4 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Actually Cost?</a></h4>
+        <p class="guide-card-desc">Real numbers. Monthly spend, what's covered, what's not.</p>
         <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
         <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
       </div>
-
-      <!-- 4 — Bento -->
-      <div class="guide-card card-4">
-        <div class="card-tape right tape-terra"></div>
-        <!-- stickers: top-right + bottom-left -->
-        <img class="stk stk-tr" src="../../assets/images/unicycle.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-bl" src="../../assets/images/bento.png" alt="" onerror="this.style.display='none'">
-        <div class="card-meta"><span class="meta-pill moss">Host Family</span><span class="meta-time">10 min</span></div>
-        <h3 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h3>
-        <p class="guide-card-desc">Every item in that lunchbox, every day. Bento culture, morning routine, dinner etiquette.</p>
-        <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span><span class="tag">Daily Life</span></div>
-        <a href="Bento.html" class="read-btn moss-btn">Read →</a>
-      </div>
-
-      <!-- 5 — Commute -->
-      <div class="guide-card card-5">
-        <div class="card-tape left tape-ink"></div>
-        <!-- stickers: top-left + bottom-right -->
-        <img class="stk stk-tl" src="../../assets/images/eki.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-br" src="../../assets/images/stanpu.png" alt="" onerror="this.style.display='none'">
-        <div class="card-meta"><span class="meta-pill">Daily Life</span><span class="meta-time">8 min</span></div>
-        <h3 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h3>
-        <p class="guide-card-desc">Bus 111 → train → uphill walk. Full commute breakdown + the morning the bus driver saved me.</p>
-        <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
-        <a href="Train.html" class="read-btn ink-btn">Read →</a>
-      </div>
-
-      <!-- 6 — Last Day in Japan (NEW) — fits Exchange Life pillar -->
-      <div class="guide-card card-6">
-        <div class="card-tape right tape-gold"></div>
-        <!-- stickers: top-right + bottom-left -->
-        <img class="stk stk-tr" src="../../assets/images/strobby.png" alt="" onerror="this.style.display='none'">
-        <img class="stk stk-bl" src="../../assets/images/sticker-strawberry.png" alt="" onerror="this.style.display='none'">
-        <div class="card-meta"><span class="meta-pill terra">Exchange Life</span><span class="meta-time">10 min</span></div>
-        <h3 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h3>
-        <p class="guide-card-desc">What it actually feels like to pack up and leave. The goodbyes, the train ride, the moment it's real.</p>
-        <div class="guide-tags"><span class="tag">Exchange Life</span><span class="tag">Emotional</span><span class="tag">Farewell</span></div>
-        <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn">Read →</a>
-      </div>
-
-    </div><!-- /.collage-grid -->
-
-
-    <!-- CONTENT PILLARS -->
-    <div class="washi-divider" style="margin-top:3rem;margin-bottom:2rem;">
-      <span class="wd-inner">ピラー · CONTENT PILLARS</span>
-    </div>
-
-    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;">
-      <div class="section-head" style="flex:1;margin-bottom:0;">
-        <span class="section-label">Browse by topic</span>
-      </div>
-      <div style="display:flex;gap:0.7rem;flex-wrap:wrap;align-items:center;">
-        <span class="pstamp ps-pill">TOKYO GUIDES</span>
-        <span class="pstamp ps-hex">EXCHANGE<br>LIFE</span>
-        <span class="pstamp ps-box">食<br>FOOD</span>
-        <span class="pstamp ps-ticket">実用<br>ESSENTIALS</span>
+      <div class="pillar-card pc-placeholder">
+        <div class="coming-soon-label">✦ coming soon</div>
+        <h4 class="guide-card-title" style="color:var(--ink-soft);">Best SIM Cards &amp; Wi-Fi for Japan</h4>
+        <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">IIJmio, Sakura Mobile, pocket Wi-Fi — what's actually worth it.</p>
+        <div class="guide-tags"><span class="tag">SIM</span><span class="tag">Tech</span></div>
       </div>
     </div>
+    <a href="packing-guide.html" class="pillar-see-all">See all essentials <span>→</span></a>
+  </div>
 
-    <!-- PILLAR 1 — EXCHANGE GUIDES -->
-    <div class="pillar-block" id="exchange-guides">
-      <div class="pillar-header">
-        <div class="pillar-header-left">
-          <div class="pillar-number">01</div>
-          <div>
-            <div class="pillar-kicker">Application &amp; Exchange Life</div>
-            <h3 class="pillar-title">Exchange <em>Guides</em></h3>
-          </div>
-        </div>
-        <div class="pillar-header-right">
-          <span class="stamp st-terra" style="font-size:0.5rem;--rot:-3deg;">架け橋<br>KAKEHASHI</span>
-        </div>
+  <!-- EMAIL -->
+  <div class="washi-divider" style="margin-top:2.5rem;"><span class="wd-inner">無料キット · FREE KIT</span></div>
+  <div class="email-card">
+    <h3 class="email-title">Free Japan Application Starter Kit</h3>
+    <p>Application timeline, document checklist, essay frameworks — one PDF. Used by students applying to Kakehashi and similar programs. Free.</p>
+    <form class="email-form" onsubmit="handleSignup(event)">
+      <input type="text" class="email-input" placeholder="first name" id="idx-name" required>
+      <input type="email" class="email-input" placeholder="your@email.com" id="idx-email" required>
+      <button type="submit" class="email-submit">Get it free →</button>
+    </form>
+    <p class="email-privacy">No spam · max one email per week · unsubscribe anytime</p>
+  </div>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="s-card">
+    <div class="s-card-head"><span>Ayachi</span><span class="s-card-head-jp">綾智</span></div>
+    <div class="s-card-body" style="text-align:center;">
+      <div class="profile-pic">
+        <img src="../../assets/images/profile.jpg" alt="Ayachi" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--terra-pale),var(--moss-lt))';this.remove();">
       </div>
-      <p class="pillar-desc">Everything you need to apply, survive, and thrive on a Japan exchange program. First-person, tested, no filler.</p>
-      <div class="pillar-grid">
-        <div class="pillar-card pc-terra">
-          <div class="card-meta"><span class="meta-pill terra">Featured</span><span class="meta-time">12 min</span></div>
-          <h4 class="guide-card-title"><a href="kakehashi-guide.html">Complete Kakehashi Application Guide</a></h4>
-          <p class="guide-card-desc">Essays, interviews, what the program actually looks like inside.</p>
-          <div class="guide-tags"><span class="tag">Application</span><span class="tag">Essays</span></div>
-          <a href="kakehashi-guide.html" class="read-btn">Read →</a>
-        </div>
-        <!-- Last Day in Japan — exchange life pillar -->
-        <div class="pillar-card pc-gold">
-          <div class="card-meta"><span class="meta-pill">Exchange Life</span><span class="meta-time">10 min</span></div>
-          <h4 class="guide-card-title"><a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">The Last Day in Japan Nobody Warns You About</a></h4>
-          <p class="guide-card-desc">Goodbyes, the last train, the moment it all becomes a memory.</p>
-          <div class="guide-tags"><span class="tag">Farewell</span><span class="tag">Emotional</span></div>
-          <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="read-btn ink-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-placeholder">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Host Family Etiquette Guide</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">What to say, what not to do, how to make it feel like home.</p>
-          <div class="guide-tags"><span class="tag">Host Family</span><span class="tag">Culture</span></div>
-        </div>
-      </div>
-      <a href="kakehashi-guide.html" class="pillar-see-all">See all exchange guides <span>→</span></a>
-    </div>
-
-    <!-- PILLAR 2 — TOKYO & JAPAN TRAVEL -->
-    <div class="pillar-block" id="tokyo-guides">
-      <div class="pillar-header">
-        <div class="pillar-header-left">
-          <div class="pillar-number">02</div>
-          <div>
-            <div class="pillar-kicker">Tokyo &amp; Japan Travel</div>
-            <h3 class="pillar-title">Tokyo <em>Guides</em></h3>
-          </div>
-        </div>
-        <div class="pillar-header-right">
-          <span class="stamp st-moss" style="font-size:0.5rem;--rot:4deg;">東京<br>TOKYO</span>
-        </div>
-      </div>
-      <p class="pillar-desc">Where to go, how to move, what to spend. Tokyo through the eyes of someone who actually lived there.</p>
-      <div class="pillar-grid">
-        <div class="pillar-card pc-moss">
-          <div class="card-meta"><span class="meta-pill moss">Daily Life</span><span class="meta-time">8 min</span></div>
-          <h4 class="guide-card-title"><a href="Train.html">Surviving the Daily Commute to Japanese High School</a></h4>
-          <p class="guide-card-desc">Bus 111 → train → uphill walk. The full breakdown.</p>
-          <div class="guide-tags"><span class="tag">Commute</span><span class="tag">Transport</span></div>
-          <a href="Train.html" class="read-btn moss-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-placeholder">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Best Neighbourhoods to Stay in Tokyo</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">For first-timers, exchange students, and budget travellers.</p>
-          <div class="guide-tags"><span class="tag">Tokyo</span><span class="tag">Where to Stay</span></div>
-        </div>
-        <div class="pillar-card pc-placeholder">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Day Trips from Yokohama &amp; Tokyo</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">Kamakura, Hakone, Nikko — all tested on a student budget.</p>
-          <div class="guide-tags"><span class="tag">Day Trips</span><span class="tag">Travel</span></div>
-        </div>
-      </div>
-      <a href="Train.html" class="pillar-see-all">See all Tokyo guides <span>→</span></a>
-    </div>
-
-    <!-- PILLAR 3 — FOOD & CULTURE -->
-    <div class="pillar-block" id="japan-life">
-      <div class="pillar-header">
-        <div class="pillar-header-left">
-          <div class="pillar-number">03</div>
-          <div>
-            <div class="pillar-kicker">Food, Festivals &amp; Everyday Life</div>
-            <h3 class="pillar-title">Japan <em>Life</em></h3>
-          </div>
-        </div>
-        <div class="pillar-header-right">
-          <span class="stamp st-ink" style="font-size:0.5rem;--rot:-2deg;">食文化<br>SHOKU</span>
-        </div>
-      </div>
-      <p class="pillar-desc">What's actually on the table. Japanese food culture explained from the inside — host family dinners, festival stalls, school lunches.</p>
-      <div class="pillar-grid">
-        <div class="pillar-card pc-gold">
-          <div class="card-meta"><span class="meta-pill">Host Family</span><span class="meta-time">10 min</span></div>
-          <h4 class="guide-card-title"><a href="Bento.html">What My Host Mom Packed in My Bento</a></h4>
-          <p class="guide-card-desc">Every item, every day. Bento culture and school lunch etiquette.</p>
-          <div class="guide-tags"><span class="tag">Food</span><span class="tag">Bento</span></div>
-          <a href="Bento.html" class="read-btn ink-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-terra">
-          <div class="card-meta"><span class="meta-pill terra">Events</span><span class="meta-time">10 min</span></div>
-          <h4 class="guide-card-title"><a href="Strobby-festival.html">What I Ate at a Japanese Ichigo Matsuri</a></h4>
-          <p class="guide-card-desc">A strawberry festival in Yokohama. Very pink. Very sticky.</p>
-          <div class="guide-tags"><span class="tag">Festival</span><span class="tag">Seasonal</span></div>
-          <a href="Strobby-festival.html" class="read-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-placeholder">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Japanese Convenience Store Guide</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">FamilyMart, Lawson, 7-Eleven — what to actually buy.</p>
-          <div class="guide-tags"><span class="tag">Food</span><span class="tag">Daily Life</span></div>
-        </div>
-      </div>
-      <a href="Bento.html" class="pillar-see-all">See all food &amp; culture <span>→</span></a>
-    </div>
-
-    <!-- PILLAR 4 — PRACTICAL ESSENTIALS -->
-    <div class="pillar-block" id="japan-essentials">
-      <div class="pillar-header">
-        <div class="pillar-header-left">
-          <div class="pillar-number">04</div>
-          <div>
-            <div class="pillar-kicker">Money, Gear &amp; Logistics</div>
-            <h3 class="pillar-title">Practical <em>Essentials</em></h3>
-          </div>
-        </div>
-        <div class="pillar-header-right">
-          <span class="stamp st-terra" style="font-size:0.5rem;--rot:5deg;">実用<br>JITSUYOU</span>
-        </div>
-      </div>
-      <p class="pillar-desc">The logistical stuff nobody tells you — SIM cards, IC cards, budgets, what to pack. Before you land and while you're there.</p>
-      <div class="pillar-grid">
-        <div class="pillar-card pc-moss">
-          <div class="card-meta"><span class="meta-pill">All Students</span><span class="meta-time">15 min</span></div>
-          <h4 class="guide-card-title"><a href="packing-guide.html">What to Pack for a Year in Japan</a></h4>
-          <p class="guide-card-desc">Tested over a full year. Bring, skip, buy — the definitive list.</p>
-          <div class="guide-tags"><span class="tag">Packing</span><span class="tag">Gear</span></div>
-          <a href="packing-guide.html" class="read-btn moss-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-gold">
-          <div class="card-meta"><span class="meta-pill">Students + Parents</span><span class="meta-time">12 min</span></div>
-          <h4 class="guide-card-title"><a href="budget-guide.html">How Much Does a Japan Exchange Actually Cost?</a></h4>
-          <p class="guide-card-desc">Real numbers. Monthly spend, what's covered, what's not.</p>
-          <div class="guide-tags"><span class="tag">Budget</span><span class="tag">Money</span></div>
-          <a href="budget-guide.html" class="read-btn ink-btn">Read →</a>
-        </div>
-        <div class="pillar-card pc-placeholder">
-          <div class="coming-soon-label">✦ coming soon</div>
-          <h4 class="guide-card-title" style="color:var(--ink-soft);">Best SIM Cards &amp; Wi-Fi for Japan</h4>
-          <p class="guide-card-desc" style="color:var(--ink-soft);opacity:0.6;">IIJmio, Sakura Mobile, pocket Wi-Fi — what's actually worth it.</p>
-          <div class="guide-tags"><span class="tag">SIM</span><span class="tag">Tech</span></div>
-        </div>
-      </div>
-      <a href="packing-guide.html" class="pillar-see-all">See all essentials <span>→</span></a>
-    </div>
-
-
-    <!-- EMAIL CAPTURE -->
-    <div class="washi-divider" style="margin-top:2.5rem;"><span class="wd-inner">無料キット · FREE KIT</span></div>
-
-    <div class="email-card">
-      <h3 class="email-title">Free Japan Application Starter Kit</h3>
-      <p>Application timeline, document checklist, essay frameworks — one PDF. Used by students applying to Kakehashi and similar programs. Free.</p>
-      <form class="email-form" onsubmit="handleSignup(event)">
-        <input type="text" class="email-input" placeholder="first name" id="idx-name" required>
-        <input type="email" class="email-input" placeholder="your@email.com" id="idx-email" required>
-        <button type="submit" class="email-submit">Get it free →</button>
-      </form>
-      <p class="email-privacy">No spam · max one email per week · unsubscribe anytime</p>
-    </div>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="s-card">
-      <div class="s-card-head"><span>Ayachi</span><span class="s-card-head-jp">綾智</span></div>
-      <div class="s-card-body" style="text-align:center;">
-        <div class="profile-pic">
-          <img src="../../assets/images/IMG_0423.jpeg" alt="Ayachi" onerror="this.parentElement.style.background='linear-gradient(135deg,var(--terra-pale),var(--moss-lt))';this.remove();">
-        </div>
-        <span class="profile-name">Ayachi Samyal</span>
-        <p class="profile-bio">Kakehashi scholar · Yokohama 2021 · writing it all down</p>
-        <div class="profile-stats">
-          <div class="stat-row"><span class="stat-k">Exchange</span><span class="stat-v">Kakehashi 2021</span></div>
-          <div class="stat-row"><span class="stat-k">School</span><span class="stat-v">Yokohama, Japan</span></div>
-          <div class="stat-row"><span class="stat-k">Guides</span><span class="stat-v">8 published</span></div>
-        </div>
+      <span class="profile-name">Ayachi Samyal</span>
+      <p class="profile-bio">Kakehashi scholar · Yokohama 2021 · writing it all down</p>
+      <div class="profile-stats">
+        <div class="stat-row"><span class="stat-k">Exchange</span><span class="stat-v">Kakehashi 2021</span></div>
+        <div class="stat-row"><span class="stat-k">School</span><span class="stat-v">Yokohama, Japan</span></div>
+        <div class="stat-row"><span class="stat-k">Guides</span><span class="stat-v">8 published</span></div>
       </div>
     </div>
-
-    <div class="s-card">
-      <div class="s-card-head"><span>Quick Links</span><span class="s-card-head-jp">リンク</span></div>
-      <div class="s-card-body">
-        <div class="quick-links">
-          <a href="kakehashi-guide.html" class="quick-link">Kakehashi Guide</a>
-          <a href="packing-guide.html" class="quick-link">Packing List</a>
-          <a href="budget-guide.html" class="quick-link">Budget Guide</a>
-          <a href="Bento.html" class="quick-link">Bento Guide</a>
-          <a href="Train.html" class="quick-link">Commute Guide</a>
-          <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="quick-link">Last Day in Japan</a>
-        </div>
+  </div>
+  <div class="s-card">
+    <div class="s-card-head"><span>Quick Links</span><span class="s-card-head-jp">リンク</span></div>
+    <div class="s-card-body">
+      <div class="quick-links">
+        <a href="kakehashi-guide.html" class="quick-link">Kakehashi Guide</a>
+        <a href="packing-guide.html" class="quick-link">Packing List</a>
+        <a href="budget-guide.html" class="quick-link">Budget Guide</a>
+        <a href="Bento.html" class="quick-link">Bento Guide</a>
+        <a href="Train.html" class="quick-link">Commute Guide</a>
+        <a href="bus-card-guide.html" class="quick-link">Bus Card Guide</a>
+        <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html" class="quick-link">Last Day in Japan</a>
       </div>
     </div>
-
-    <div class="s-card">
-      <div class="s-card-head"><span>App Timeline</span><span class="s-card-head-jp">スケジュール</span></div>
-      <div class="s-card-body">
-        <div class="tl-list">
-          <div class="tl-item"><span class="tl-month">AUG</span><span class="tl-event">Applications open</span></div>
-          <div class="tl-item"><span class="tl-month">SEP</span><span class="tl-event">Deadline</span></div>
-          <div class="tl-item"><span class="tl-month">OCT–NOV</span><span class="tl-event">Interviews</span></div>
-          <div class="tl-item"><span class="tl-month">DEC</span><span class="tl-event">Results</span></div>
-          <div class="tl-item"><span class="tl-month moss-bg">APR</span><span class="tl-event">🇯🇵 Departure</span></div>
-        </div>
+  </div>
+  <div class="s-card">
+    <div class="s-card-head"><span>App Timeline</span><span class="s-card-head-jp">スケジュール</span></div>
+    <div class="s-card-body">
+      <div class="tl-list">
+        <div class="tl-item"><span class="tl-month">AUG</span><span class="tl-event">Applications open</span></div>
+        <div class="tl-item"><span class="tl-month">SEP</span><span class="tl-event">Deadline</span></div>
+        <div class="tl-item"><span class="tl-month">OCT–NOV</span><span class="tl-event">Interviews</span></div>
+        <div class="tl-item"><span class="tl-month">DEC</span><span class="tl-event">Results</span></div>
+        <div class="tl-item"><span class="tl-month moss-bg">APR</span><span class="tl-event">🇯🇵 Departure</span></div>
       </div>
     </div>
-
-    <div class="s-card">
-      <div class="s-card-head"><span>Visitors</span><span class="s-card-head-jp">訪問者</span></div>
-      <div class="s-card-body" style="text-align:center;">
-        <span class="visitor-num" id="visitor-count">000000</span>
-        <p class="visitor-label">readers since launch</p>
+  </div>
+  <div class="s-card">
+    <div class="s-card-head"><span>Visitors</span><span class="s-card-head-jp">訪問者</span></div>
+    <div class="s-card-body" style="text-align:center;">
+      <span class="visitor-num" id="visitor-count">000000</span>
+      <p class="visitor-label">readers since launch</p>
+    </div>
+  </div>
+  <div class="s-card">
+    <div class="s-card-head"><span>Find Me</span><span class="s-card-head-jp">SNS</span></div>
+    <div class="s-card-body">
+      <div class="social-list">
+        <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener">
+          <img src="../../assets/images/icon-github.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-grn&quot;></span>'">GitHub</a>
+        <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener">
+          <img src="../../assets/images/icon-pinterest.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-red&quot;></span>'">Pinterest</a>
+        <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener">
+          <img src="../../assets/images/icon-instagram.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-pnk&quot;></span>'">Instagram</a>
+        <a href="#" class="social-link">
+          <img src="../../assets/images/icon-linkedin.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-blu&quot;></span>'">LinkedIn</a>
       </div>
     </div>
-
-    <div class="s-card">
-      <div class="s-card-head"><span>Find Me</span><span class="s-card-head-jp">SNS</span></div>
-      <div class="s-card-body">
-        <div class="social-list">
-          <a href="https://github.com/Ayachi911" class="social-link" target="_blank" rel="noopener">
-            <img src="../../assets/images/icon-github.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-grn&quot;></span>'">GitHub</a>
-          <a href="https://pin.it/sQGY1KQgt" class="social-link" target="_blank" rel="noopener">
-            <img src="../../assets/images/icon-pinterest.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-red&quot;></span>'">Pinterest</a>
-          <a href="https://instagram.com/brehen.yeeteager" class="social-link" target="_blank" rel="noopener">
-            <img src="../../assets/images/icon-instagram.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-pnk&quot;></span>'">Instagram</a>
-          <a href="#" class="social-link">
-            <img src="../../assets/images/icon-linkedin.png" class="sns-icon" alt="" onerror="this.outerHTML='<span class=&quot;sl-dot sl-blu&quot;></span>'">LinkedIn</a>
-        </div>
+  </div>
+  <div class="s-card" style="position:relative;z-index:10;">
+    <div class="s-card-head"><span>Puzzle ✿</span><span class="s-card-head-jp">パズル</span></div>
+    <div class="s-card-body" style="padding:6px 8px 8px;">
+      <div id="puzzle" style="display:grid;grid-template-columns:repeat(3,60px);margin:2px auto 0;width:180px;border:2px solid var(--rule-dk);border-radius:3px;overflow:hidden;"></div>
+      <div style="text-align:center;padding:6px 0 2px;">
+        <button id="shuffleBtn" style="font-family:var(--serif);font-style:italic;font-size:0.8rem;background:var(--terra-pale);border:1.5px solid var(--ink);color:var(--ink);padding:4px 14px;cursor:pointer;border-radius:3px;box-shadow:2px 2px 0 var(--rule-dk);">Shuffle ♡</button>
       </div>
+      <div id="winMsg" style="display:none;text-align:center;font-family:var(--sans);font-size:0.65rem;font-weight:700;color:var(--terra);padding:3px;">you solved it! ✨</div>
     </div>
+  </div>
+</aside>
 
-    <div class="s-card" style="position:relative;z-index:10;">
-      <div class="s-card-head"><span>Puzzle ✿</span><span class="s-card-head-jp">パズル</span></div>
-      <div class="s-card-body" style="padding:6px 8px 8px;">
-        <div id="puzzle" style="display:grid;grid-template-columns:repeat(3,60px);margin:2px auto 0;width:180px;border:2px solid var(--rule-dk);border-radius:3px;overflow:hidden;"></div>
-        <div style="text-align:center;padding:6px 0 2px;">
-          <button id="shuffleBtn" style="font-family:var(--serif);font-style:italic;font-size:0.8rem;background:var(--terra-pale);border:1.5px solid var(--ink);color:var(--ink);padding:4px 14px;cursor:pointer;border-radius:3px;box-shadow:2px 2px 0 var(--rule-dk);">Shuffle ♡</button>
-        </div>
-        <div id="winMsg" style="display:none;text-align:center;font-family:var(--sans);font-size:0.65rem;font-weight:700;color:var(--terra);padding:3px;">you solved it! ✨</div>
-      </div>
-    </div>
-
-  </aside>
-
-</div>
-</div>
+</div><!-- /.main-wrap -->
+</div><!-- /.page-wrap -->
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -1106,7 +893,6 @@ body::after {
     <div class="fw-seg" style="background:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 4px,var(--gold-pale) 4px,var(--gold-pale) 8px);opacity:0.7;"></div>
     <div class="fw-seg" style="background:repeating-linear-gradient(-45deg,var(--terra) 0,var(--terra) 4px,var(--terra-pale) 4px,var(--terra-pale) 8px);opacity:0.7;"></div>
   </div>
-
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">Ayachi Samyal</div>
@@ -1117,7 +903,6 @@ body::after {
         <div class="xstamp xs-india" style="width:40px;height:40px;font-size:0.38rem;--xr:6deg;">日本<br>留学</div>
       </div>
     </div>
-
     <div class="footer-nav">
       <div class="footer-nav-head">✦ guides</div>
       <a href="kakehashi-guide.html">Kakehashi Guide</a>
@@ -1125,6 +910,7 @@ body::after {
       <a href="budget-guide.html">Budget Guide</a>
       <a href="Bento.html">Bento Guide</a>
       <a href="Train.html">Commute Guide</a>
+      <a href="bus-card-guide.html">Bus Card Guide</a>
       <a href="https://aayu-chan-in-japan.vercel.app/research/guides/last-day-japan.html">Last Day in Japan</a>
     </div>
     <div class="footer-nav">
@@ -1135,14 +921,12 @@ body::after {
       <a href="#japan-essentials">Essentials</a>
       <a href="../../about.html">About Ayachi</a>
     </div>
-
     <div class="footer-note-block">
       <p class="footer-tagline">"Everything I wish I knew before I left India at 16."</p>
       <p class="footer-sub">Made with ♡ for future exchange students. Guides are written from personal experience — no sponsored content, no AI fluff.</p>
       <p class="footer-copy">Japan Exchange Guides · Kakehashi Scholar · © 2026</p>
     </div>
   </div>
-
   <div class="footer-bottom">
     <span class="footer-bottom-jp">ほんとに楽しかった · Yokohama · 横浜 · 架け橋プロジェクト · 日本生活</span>
   </div>
@@ -1150,62 +934,21 @@ body::after {
 
 <script>
 const rp=document.getElementById('rp');
-
-/* PUZZLE */
 (function(){
   var pz=document.getElementById('puzzle'),sb=document.getElementById('shuffleBtn'),wm=document.getElementById('winMsg');
   if(!pz||!sb)return;
   var S=3,T=60,img='../../assets/images/stamp-main.jpg',tiles=[],empty=8;
-  function init(){
-    pz.innerHTML='';tiles=[];
-    for(var i=0;i<9;i++){
-      var t=document.createElement('div');
-      t.style.cssText='width:60px;height:60px;cursor:pointer;border:1px solid rgba(0,0,0,0.12);';
-      if(i===8){t.style.background='#b8d8e8';t._e=1;empty=i;}
-      else{var r=Math.floor(i/S),c=i%S;t.style.backgroundImage='url('+img+')';t.style.backgroundPosition='-('+( c*T)+'px) -'+(r*T)+'px';t.style.backgroundSize=(T*S)+'px '+(T*S)+'px';}
-      (function(idx){t.addEventListener('click',function(){mv(idx);});})(i);
-      pz.appendChild(t);tiles.push(t);
-    }
-  }
+  function init(){pz.innerHTML='';tiles=[];for(var i=0;i<9;i++){var t=document.createElement('div');t.style.cssText='width:60px;height:60px;cursor:pointer;border:1px solid rgba(0,0,0,0.12);';if(i===8){t.style.background='#b8d8e8';t._e=1;empty=i;}else{var r=Math.floor(i/S),c=i%S;t.style.backgroundImage='url('+img+')';t.style.backgroundPosition='-('+( c*T)+'px) -'+(r*T)+'px';t.style.backgroundSize=(T*S)+'px '+(T*S)+'px';}(function(idx){t.addEventListener('click',function(){mv(idx);});})(i);pz.appendChild(t);tiles.push(t);}}
   function adj(a,b){return(Math.abs(Math.floor(a/S)-Math.floor(b/S))+Math.abs(a%S-b%S))===1;}
-  function sw(a,b){
-    var bp=tiles[a].style.backgroundPosition,bi=tiles[a].style.backgroundImage,ea=tiles[a]._e;
-    tiles[a].style.backgroundPosition=tiles[b].style.backgroundPosition;
-    tiles[a].style.backgroundImage=tiles[b].style.backgroundImage;
-    tiles[a]._e=tiles[b]._e;
-    if(tiles[b]._e)tiles[a].style.background='#b8d8e8'; else tiles[a].style.background='';
-    tiles[b].style.backgroundPosition=bp;tiles[b].style.backgroundImage=bi;tiles[b]._e=ea;
-    if(ea)tiles[b].style.background='#b8d8e8'; else tiles[b].style.background='';
-  }
+  function sw(a,b){var bp=tiles[a].style.backgroundPosition,bi=tiles[a].style.backgroundImage,ea=tiles[a]._e;tiles[a].style.backgroundPosition=tiles[b].style.backgroundPosition;tiles[a].style.backgroundImage=tiles[b].style.backgroundImage;tiles[a]._e=tiles[b]._e;if(tiles[b]._e)tiles[a].style.background='#b8d8e8';else tiles[a].style.background='';tiles[b].style.backgroundPosition=bp;tiles[b].style.backgroundImage=bi;tiles[b]._e=ea;if(ea)tiles[b].style.background='#b8d8e8';else tiles[b].style.background='';}
   function mv(i){if(adj(i,empty)){sw(i,empty);empty=i;chk();}}
   function shuf(){for(var i=0;i<200;i++){var n=[];for(var j=0;j<9;j++)if(adj(j,empty))n.push(j);var r=n[Math.floor(Math.random()*n.length)];sw(r,empty);empty=r;}if(wm)wm.style.display='none';}
   function chk(){var ok=true;for(var i=0;i<8;i++){var r=Math.floor(i/S),c=i%S;var exp='-('+( c*T)+'px) -'+(r*T)+'px';if(tiles[i].style.backgroundPosition!==exp){ok=false;break;}}if(ok&&wm)wm.style.display='block';}
-  sb.addEventListener('click',shuf);
-  init();shuf();
+  sb.addEventListener('click',shuf);init();shuf();
 })();
-
 window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
-
-function handleSignup(e){
-  e.preventDefault();
-  const btn=e.target.querySelector('.email-submit');
-  btn.textContent='Sending...';
-  setTimeout(()=>{btn.textContent='Check your inbox ✓';btn.style.background='var(--moss)';},800);
-}
-
-(function(){
-  var KEY="ayachi-samyal-shrine-v1",SESSION_KEY="ayachi_counted";
-  var BASE="https://countapi.mileshilliard.com/api/v1";
-  var el=document.getElementById("visitor-count");
-  function display(n){if(el)el.textContent=String(n).padStart(6,"0");}
-  if(sessionStorage.getItem(SESSION_KEY)){
-    fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{});
-  }else{
-    fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{});
-  }
-})();
+function handleSignup(e){e.preventDefault();const btn=e.target.querySelector('.email-submit');btn.textContent='Sending...';setTimeout(()=>{btn.textContent='Check your inbox ✓';btn.style.background='var(--moss)';},800);}
+(function(){var KEY="ayachi-samyal-shrine-v1",SESSION_KEY="ayachi_counted";var BASE="https://countapi.mileshilliard.com/api/v1";var el=document.getElementById("visitor-count");function display(n){if(el)el.textContent=String(n).padStart(6,"0");}if(sessionStorage.getItem(SESSION_KEY)){fetch(BASE+"/get/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined)display(parseInt(d.value,10));}).catch(()=>{});}else{fetch(BASE+"/hit/"+KEY).then(r=>r.json()).then(d=>{if(d&&d.value!==undefined){display(parseInt(d.value,10));sessionStorage.setItem(SESSION_KEY,"1");}}).catch(()=>{});}})();
 </script>
 </body>
 </html>
-
-
