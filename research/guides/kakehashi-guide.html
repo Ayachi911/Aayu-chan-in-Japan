@@ -1,136 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Guide to Asia Kakehashi Project | Ayachi Samyal</title>
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/guides.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asia Kakehashi Project 2026 — Complete Guide for Indian Students | Ayachi Samyal</title>
+<meta name="description" content="Everything you need to apply for the Asia Kakehashi Project — eligibility, essay tips, interview prep, and what actually happens during the year. By a 2021 scholar selected from India at 16.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&family=IM+Fell+English:ital@0;1&family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --parchment:    #f7f0de;
+  --parchment-dk: #ece2c4;
+  --paper:        #faf6ec;
+  --burg:         #6b1a2a;
+  --burg-mid:     #8b2535;
+  --burg-lt:      #c4707d;
+  --gold:         #9a7020;
+  --gold-lt:      #c9a040;
+  --gold-pale:    #f0e4b8;
+  --ink:          #1c130e;
+  --ink-mid:      #3a2818;
+  --ink-lt:       #7a5c40;
+  --tan:          #cdb890;
+  --tan-lt:       #e8ddc0;
+  --grid:         rgba(160,130,80,0.18);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--parchment);
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 27px,var(--grid) 27px,var(--grid) 28px),
+    repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(160,130,80,0.1) 27px,rgba(160,130,80,0.1) 28px);
+  color: var(--ink);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 400;
+  line-height: 1.85;
+  overflow-x: hidden;
+}
+body::before {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.7;
+}
+
+.margin-line{position:fixed;left:80px;top:0;bottom:0;width:1px;background:rgba(107,26,42,0.28);z-index:1;pointer-events:none;}
+@media(max-width:800px){.margin-line{display:none;}}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--burg),var(--gold-lt));z-index:9999;width:0%;transition:width 0.1s linear;}
+
+/* NAV */
+nav{position:relative;z-index:20;background:var(--burg);border-bottom:4px double var(--gold);display:flex;align-items:stretch;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 2rem;}
+.logo{font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--gold-pale);text-decoration:none;letter-spacing:0.04em;padding:0.9rem 0;display:flex;align-items:center;gap:0.6rem;}
+.logo-jp{font-family:'Noto Serif JP',serif;font-size:0.88rem;font-weight:300;opacity:0.6;font-style:normal;}
+.nav-tag{font-family:'Courier Prime',monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold-pale);color:var(--burg);padding:0.15rem 0.6rem;}
+.nav-links{display:flex;}
+.nav-links a{font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.12em;color:rgba(240,228,184,0.6);text-decoration:none;padding:1rem 1.1rem;text-transform:uppercase;border-left:1px solid rgba(201,160,64,0.2);transition:color 0.15s,background 0.15s;}
+.nav-links a:hover{color:var(--gold-pale);background:rgba(201,160,64,0.1);}
+
+/* ═══ ACCEPTANCE LETTER HERO ═══ */
+.letter-wrap{position:relative;z-index:2;background:var(--paper);border-bottom:2px solid var(--tan);padding:3.5rem 2rem 0;}
+.letter-inner{max-width:860px;margin:0 auto;}
+
+.acceptance-letter{
+  position:relative;
+  background:#fffdf5;
+  border:1px solid var(--tan);
+  box-shadow:0 2px 0 var(--tan-lt),4px 8px 28px rgba(107,26,42,0.12);
+  padding:2.8rem 3rem 2.2rem;
+  overflow:hidden;
+}
+/* diagonal watermark kanji */
+.acceptance-letter::before{
+  content:'合格';
+  position:absolute;right:2.5rem;top:50%;
+  transform:translateY(-50%) rotate(-14deg);
+  font-family:'Noto Serif JP',serif;font-size:8rem;font-weight:700;
+  color:rgba(107,26,42,0.04);letter-spacing:0.1em;pointer-events:none;line-height:1;
+}
+
+.letter-header{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:1.2rem;margin-bottom:1.3rem;border-bottom:2px solid var(--tan-lt);gap:2rem;}
+.letter-emblem{font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-lt);margin-bottom:0.3rem;}
+.letter-org{font-family:'Noto Serif JP',serif;font-weight:700;font-size:1rem;color:var(--burg);margin-bottom:0.15rem;}
+.letter-org-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.78rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.15em;}
+
+/* wax seal */
+.wax-seal{
+  width:82px;height:82px;flex-shrink:0;border-radius:50%;
+  background:radial-gradient(circle at 38% 36%, #9b2535 0%, var(--burg) 55%, #3e0d17 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 3px 14px rgba(107,26,42,0.5),inset 0 1px 3px rgba(255,255,255,0.12);
+  transform:rotate(8deg);color:var(--gold-pale);text-align:center;
+}
+.wax-kanji{font-family:'Noto Serif JP',serif;font-size:1.6rem;font-weight:700;line-height:1;display:block;}
+.wax-text{font-family:'Courier Prime',monospace;font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.72;margin-top:0.2rem;display:block;}
+
+.letter-salutation{font-family:'IM Fell English',serif;font-style:italic;font-size:0.88rem;color:var(--ink-lt);margin-bottom:0.8rem;}
+.letter-h1{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;color:var(--ink);margin-bottom:0.5rem;}
+.letter-h1-jp{display:block;font-family:'Noto Sans JP',sans-serif;font-size:0.85rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.25em;margin-top:0.35rem;}
+.letter-opener{font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:300;color:var(--ink-mid);line-height:1.85;max-width:580px;margin:1rem 0 1.2rem;}
+.letter-meta-row{display:flex;flex-wrap:wrap;gap:1.4rem;border-top:1px solid var(--tan-lt);padding-top:1rem;}
+.letter-meta-item{display:flex;flex-direction:column;gap:0.15rem;}
+.meta-label{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-lt);}
+.meta-value{font-family:'Noto Serif JP',serif;font-size:0.82rem;font-weight:700;color:var(--burg);}
+
+/* stamps below letter card */
+.stamp-row{display:flex;align-items:flex-end;gap:1rem;padding:1.4rem 3rem 1.5rem;justify-content:flex-end;flex-wrap:wrap;}
+.stamp{display:inline-block;border:2px solid currentColor;border-radius:2px;padding:0.3rem 0.65rem;font-family:'Special Elite',cursive;font-size:0.65rem;letter-spacing:0.1em;text-align:center;line-height:1.35;transform:rotate(var(--rot,-3deg));position:relative;}
+.stamp::before{content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.35;}
+.s-burg{color:rgba(107,26,42,0.8);--rot:-5deg;}
+.s-gold{color:rgba(154,112,32,0.82);--rot:3deg;}
+.s-green{color:rgba(30,80,50,0.75);--rot:-2deg;}
+.s-circle{border-radius:50%;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.55rem;line-height:1.5;padding:0;--rot:7deg;}
+
+/* TIMELINE STRIP */
+.timeline-strip{position:relative;z-index:2;background:var(--burg);border-bottom:3px solid var(--gold);padding:1.2rem 2rem;overflow-x:auto;}
+.tl-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:0;min-width:500px;}
+.tl-node{display:flex;flex-direction:column;align-items:center;gap:0.35rem;flex-shrink:0;}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:rgba(240,228,184,0.3);border:2px solid rgba(240,228,184,0.5);}
+.tl-dot.lit{background:var(--gold-pale);box-shadow:0 0 0 3px rgba(201,160,64,0.25);}
+.tl-dot.key{background:var(--gold-lt);width:16px;height:16px;box-shadow:0 0 0 3px rgba(201,160,64,0.35);}
+.tl-label{font-family:'Courier Prime',monospace;font-size:0.57rem;letter-spacing:0.1em;color:rgba(240,228,184,0.6);text-align:center;max-width:65px;line-height:1.3;}
+.tl-label strong{color:var(--gold-pale);display:block;font-size:0.64rem;}
+.tl-line{flex:1;height:2px;background:repeating-linear-gradient(90deg,rgba(240,228,184,0.18) 0,rgba(240,228,184,0.18) 5px,transparent 5px,transparent 10px);}
+.tl-line.done{background:rgba(201,160,64,0.55);}
+
+/* PAGE */
+.page-wrap{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:0 2rem 5rem;}
+.guide-wrap{display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:start;margin-top:2.5rem;}
+
+/* BODY */
+.guide-body{position:relative;}
+.guide-body::before{content:'';position:absolute;left:-1.5rem;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--burg) 0%,transparent 100%);opacity:0.18;}
+.guide-body p{font-size:0.93rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.3rem;font-weight:300;}
+.intro-p{font-family:'IM Fell English',serif !important;font-style:italic;font-size:1rem !important;color:var(--ink) !important;font-weight:400 !important;border-left:4px solid var(--burg);padding:1.1rem 1.3rem;background:rgba(107,26,42,0.04);margin-bottom:2rem !important;line-height:1.9 !important;}
+
+/* section headers — look like notebook tab cuts */
+.section-header{display:flex;align-items:center;gap:0;margin:3rem 0 1.2rem;}
+.section-num{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:var(--gold-pale);background:var(--burg);padding:0.25rem 0.6rem;margin-right:0.9rem;flex-shrink:0;}
+.section-header h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--ink);flex:1;}
+.section-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.75rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.18em;margin-left:0.8rem;flex-shrink:0;}
+.section-rule{height:1px;background:linear-gradient(90deg,var(--burg-lt),var(--tan-lt));margin-bottom:1.2rem;}
+
+h3{font-family:'IM Fell English',serif;font-size:1rem;font-style:italic;color:var(--burg);margin:1.8rem 0 0.6rem;display:flex;align-items:center;gap:0.5rem;}
+h3::before{content:'◈';font-style:normal;font-size:0.55rem;color:var(--gold);flex-shrink:0;}
+.guide-body ul,.guide-body ol{padding-left:0;margin-bottom:1.3rem;list-style:none;}
+.guide-body li{font-size:0.9rem;line-height:1.85;color:var(--ink-mid);margin-bottom:0.7rem;padding-left:1.8rem;position:relative;font-weight:300;}
+.guide-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:'Courier Prime',monospace;font-weight:700;}
+.guide-body ol{counter-reset:item;}
+.guide-body ol li::before{content:counter(item);counter-increment:item;position:absolute;left:0;color:var(--gold-pale);background:var(--burg);font-family:'Courier Prime',monospace;font-weight:700;font-size:0.62rem;width:18px;height:18px;display:flex;align-items:center;justify-content:center;top:0.25em;}
+.guide-body strong{color:var(--ink);font-weight:700;}
+
+/* INSIGHT CARDS */
+.insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.8rem 0;}
+.insight-card{background:var(--paper);border:1px solid var(--tan);padding:1.2rem 1.1rem;position:relative;}
+.insight-card::before,.insight-card::after{content:'';position:absolute;width:10px;height:10px;border-color:var(--burg);border-style:solid;}
+.insight-card::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.insight-card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+.insight-num{font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.2em;color:var(--burg-lt);text-transform:uppercase;margin-bottom:0.35rem;}
+.insight-title{font-family:'Noto Serif JP',serif;font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;}
+.insight-body{font-family:'Noto Serif JP',serif;font-size:0.82rem;color:var(--ink-mid);font-weight:300;line-height:1.7;}
+
+/* APP TIMELINE TABLE */
+.app-timeline{border:1px solid var(--tan);margin:1.8rem 0;overflow:hidden;background:var(--paper);}
+.atl-head{background:var(--burg);color:var(--gold-pale);font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.5rem 1rem;display:grid;grid-template-columns:90px 140px 1fr;gap:1rem;}
+.atl-row{display:grid;grid-template-columns:90px 140px 1fr;gap:1rem;border-top:1px solid var(--tan-lt);padding:0.8rem 1rem;align-items:start;}
+.atl-row:nth-child(odd){background:rgba(107,26,42,0.02);}
+.atl-row.key-row{background:rgba(107,26,42,0.06);border-left:3px solid var(--burg);}
+.atl-month{font-family:'Courier Prime',monospace;font-weight:700;font-size:0.88rem;color:var(--burg);}
+.atl-event{font-family:'Noto Serif JP',serif;font-size:0.85rem;font-weight:700;color:var(--ink);}
+.atl-detail{font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.6;}
+@media(max-width:640px){.atl-head,.atl-row{grid-template-columns:70px 1fr;}.atl-head>*:last-child,.atl-row>*:last-child{display:none;}}
+
+/* DOC CHECKLIST */
+.doc-checklist{background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--burg);padding:1.5rem 1.5rem 1.2rem;margin:1.8rem 0;}
+.doc-checklist-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--burg);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+.doc-checklist-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--burg);}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;}
+.doc-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.5rem 0.7rem;background:rgba(107,26,42,0.02);border:1px solid var(--tan-lt);}
+.doc-item input[type="checkbox"]{width:14px;height:14px;flex-shrink:0;margin-top:0.2rem;accent-color:var(--burg);cursor:pointer;}
+.doc-item-text{font-size:0.82rem;line-height:1.5;color:var(--ink-mid);font-weight:300;}
+.doc-item-text strong{display:block;color:var(--ink);font-weight:700;font-size:0.84rem;margin-bottom:0.1rem;}
+.doc-count{font-family:'Courier Prime',monospace;font-size:0.7rem;color:var(--ink-lt);margin-top:0.9rem;border-top:1px dashed var(--tan);padding-top:0.5rem;}
+
+/* ESSAY BLOCK */
+.essay-block{background:var(--burg);color:var(--parchment);padding:2.2rem 2rem 1.8rem;margin:2.5rem 0;position:relative;overflow:hidden;}
+.essay-block::before{content:'小論文';position:absolute;right:1.2rem;top:0.7rem;font-family:'Noto Sans JP',sans-serif;font-size:0.65rem;letter-spacing:0.15em;color:rgba(240,228,184,0.18);pointer-events:none;}
+.essay-block::after{content:'';position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid rgba(201,160,64,0.22);pointer-events:none;}
+.essay-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+.essay-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--gold-lt);}
+.essay-block p{font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:300;line-height:1.95;color:rgba(247,240,224,0.85);margin-bottom:1rem;}
+.essay-block p:last-child{margin-bottom:0;}
+.essay-block em{color:var(--gold-lt);font-style:normal;font-weight:700;}
+.essay-pull{font-family:'IM Fell English',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);border-left:2px solid var(--gold-lt);padding:0.5rem 1rem;margin:1.2rem 0;line-height:1.7;}
+
+/* QA TABLE */
+.qa-table{border:1px solid var(--tan);margin:1.8rem 0;overflow:hidden;}
+.qa-head{background:var(--burg);color:var(--gold-pale);font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.5rem 1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.qa-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-top:1px solid var(--tan-lt);padding:0.85rem 1rem;}
+.qa-row:nth-child(odd){background:rgba(107,26,42,0.025);}
+.qa-q{font-family:'Noto Serif JP',serif;font-size:0.85rem;font-weight:700;color:var(--ink);line-height:1.5;}
+.qa-a{font-family:'Noto Serif JP',serif;font-size:0.82rem;font-weight:300;color:var(--ink-mid);line-height:1.65;}
+@media(max-width:560px){.qa-head,.qa-row{grid-template-columns:1fr;}.qa-head span:last-child{display:none;}}
+
+/* YEAR PHASES */
+.year-phase{position:relative;padding:1.2rem 1.3rem 1.2rem 2rem;margin:0.9rem 0;border-left:3px solid var(--tan);}
+.phase-fog{border-color:#8aacbe;}
+.phase-sys{border-color:var(--gold);}
+.phase-int{border-color:#5a9060;}
+.phase-end{border-color:var(--burg-lt);}
+.year-phase-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.4rem;}
+.phase-fog .year-phase-label{color:#5080a0;}
+.phase-sys .year-phase-label{color:var(--gold);}
+.phase-int .year-phase-label{color:#3a7045;}
+.phase-end .year-phase-label{color:var(--burg);}
+.year-phase h3{font-family:'Noto Serif JP',serif;font-size:0.95rem;font-weight:700;color:var(--ink);margin:0 0 0.5rem;font-style:normal;}
+.year-phase h3::before{display:none;}
+.year-phase p{font-size:0.88rem;line-height:1.85;color:var(--ink-mid);font-weight:300;margin:0;}
+
+/* CALLOUTS */
+.callout{padding:1.1rem 1.3rem;margin:1.8rem 0;font-size:0.88rem;line-height:1.85;font-weight:300;}
+.callout p{margin:0!important;font-size:0.88rem!important;font-weight:300;}
+.callout-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
+.cn{background:rgba(247,240,224,0.7);border:1px solid var(--tan);border-left:3px solid var(--burg);}
+.cn .callout-label{color:var(--burg);}
+.ct{background:rgba(154,112,32,0.05);border:1px dashed var(--gold-lt);border-left:3px solid var(--gold);}
+.ct .callout-label{color:var(--gold);}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--tan-lt);}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:0.9rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);}
+.faq-icon{font-family:'Courier Prime',monospace;font-size:1.1rem;color:var(--burg);flex-shrink:0;transition:transform 0.2s;}
+.faq-q.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.faq-a.open{max-height:400px;}
+.faq-a-inner{padding:0 0 1rem;font-size:0.88rem;font-weight:300;line-height:1.85;color:var(--ink-mid);}
+
+.text-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem 0;}
+.text-divider::before,.text-divider::after{content:'';flex:1;height:1px;background:var(--tan);}
+.text-divider-inner{font-family:'Noto Sans JP',sans-serif;font-size:0.72rem;letter-spacing:0.4em;color:var(--ink-lt);white-space:nowrap;}
+.end-deco{text-align:center;margin:3rem 0 1rem;font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.3em;color:var(--tan);display:flex;align-items:center;gap:1rem;}
+.end-deco::before,.end-deco::after{content:'';flex:1;height:1px;background:var(--tan);}
+
+/* CTA */
+.cta-box{position:relative;margin:3rem 0;background:var(--burg);padding:2rem 2rem 1.8rem;text-align:center;overflow:hidden;}
+.cta-box::after{content:'';position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid rgba(201,160,64,0.2);pointer-events:none;}
+.cta-box h3{color:var(--gold-pale);font-family:'IM Fell English',serif;font-size:1.2rem;font-style:italic;margin:0 0 0.5rem;}
+.cta-box h3::before{display:none;}
+.cta-box p{color:rgba(247,240,224,0.6)!important;font-size:0.84rem!important;margin-bottom:1.3rem!important;font-weight:300!important;}
+.cta-btn{display:inline-block;background:var(--gold-lt);color:var(--burg);padding:0.65rem 2rem;font-family:'Courier Prime',monospace;font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.15s;position:relative;z-index:1;}
+.cta-btn:hover{background:var(--gold-pale);}
+
+/* SIDEBAR */
+.guide-sidebar{position:sticky;top:1.5rem;}
+.sidebar-card{background:var(--paper);border:1px solid var(--tan);padding:1.1rem;margin-bottom:1.2rem;}
+.sidebar-card-head{font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-pale);background:var(--burg);padding:0.3rem 0.6rem;margin:-1.1rem -1.1rem 0.9rem;display:flex;align-items:center;justify-content:space-between;}
+.sidebar-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.7rem;font-weight:300;opacity:0.6;}
+.toc-list{list-style:none;}
+.toc-list li{border-bottom:1px dashed var(--parchment-dk);padding:0!important;margin:0!important;}
+.toc-list li::before{display:none!important;}
+.toc-list a{font-family:'Noto Serif JP',serif;font-size:0.8rem;font-weight:300;color:var(--ink-mid);text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;transition:color 0.15s;gap:0.5rem;}
+.toc-list a::after{content:'›';color:var(--burg);font-size:1rem;flex-shrink:0;}
+.toc-list a:hover{color:var(--burg);}
+.toc-num{font-family:'Courier Prime',monospace;font-size:0.62rem;color:var(--burg-lt);background:rgba(107,26,42,0.08);padding:0.1rem 0.3rem;flex-shrink:0;}
+.sidebar-card p{font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);line-height:1.7;margin-bottom:0.7rem;font-weight:300;}
+.sidebar-link{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.1em;color:var(--burg);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.3rem;border-bottom:1px solid var(--burg-lt);padding-bottom:1px;}
+.sidebar-link::after{content:'→';}
+.related-list{list-style:none;}
+.related-list li{border-bottom:1px dashed var(--parchment-dk);padding:0!important;margin:0!important;}
+.related-list li::before{display:none!important;}
+.related-list a{font-family:'Noto Serif JP',serif;font-size:0.8rem;font-weight:300;color:var(--ink-mid);text-decoration:none;display:block;padding:0.5rem 0;transition:color 0.15s;}
+.related-list a:hover{color:var(--burg);}
+
+footer{position:relative;z-index:1;background:var(--burg);border-top:4px double var(--gold);padding:1.8rem 2rem;text-align:center;}
+footer p{font-family:'Courier Prime',monospace;font-size:0.72rem;letter-spacing:0.15em;color:rgba(247,240,224,0.45);margin-bottom:0.3rem;}
+footer .footer-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.2em;color:rgba(247,240,224,0.22);}
+
+@media(max-width:800px){.guide-wrap{grid-template-columns:1fr;}.guide-sidebar{position:static;}.stamp-row{padding:1rem 1.5rem;justify-content:flex-start;}}
+@media(max-width:640px){.acceptance-letter{padding:1.8rem 1.5rem 1.5rem;}.letter-header{flex-direction:column;}.wax-seal{align-self:flex-end;}}
+</style>
 </head>
 <body>
-    <div class="reading-progress-bar"></div>
-    <nav>
-        <a href="../" class="logo">Writing</a>
-        <div class="nav-links">
-            <a href="../essays/">Essays</a>
-            <a href="../guides/">Guides</a>
-            <a href="../about.html">About</a>
-        </div>
-    </nav>
 
-    <main>
-        <article>
-            <span class="difficulty-tag">For 9th-10th Graders</span>
-            <h1>Complete Guide to Asia Kakehashi Project 🇯🇵</h1>
-            <time datetime="2026-02-08">Last updated: February 8, 2026</time>
+<div class="reading-progress" id="rp"></div>
+<div class="margin-line"></div>
 
-            <p>So you want to go to Japan through the Asia Kakehashi Project? I was selected in 2021 at age 16, and I'm going to walk you through exactly what the process looks like.</p>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Ayachi Samyal <span class="logo-jp">綾智</span> <span class="nav-tag">Guide</span></a>
+    <div class="nav-links">
+      <a href="/guides/">Guides</a>
+      <a href="/about.html">About</a>
+    </div>
+  </div>
+</nav>
 
-            <div class="callout copyable-callout">
-                <strong>💡 Most Important Tip</strong>
-                Start your application prep at least 3 months before the deadline. This isn't something you can rush!
-                <button class="copy-btn" data-copy="Start your application prep at least 3 months before the deadline">
-                    📋 Copy this tip
-                </button>
-            </div>
+<!-- ═══ ACCEPTANCE LETTER HERO ═══ -->
+<div class="letter-wrap">
+<div class="letter-inner">
 
-            <h2>What is Asia Kakehashi Project?</h2>
+  <div class="acceptance-letter">
+    <div class="letter-header">
+      <div>
+        <div class="letter-emblem">Japan Ministry of Foreign Affairs · JICE · JICC India</div>
+        <div class="letter-org">Asia Kakehashi Project</div>
+        <div class="letter-org-jp">アジア架け橋プロジェクト · 2026 Application Guide</div>
+      </div>
+      <div class="wax-seal">
+        <span class="wax-kanji">架</span>
+        <span class="wax-text">KAKEHASHI</span>
+      </div>
+    </div>
 
-            <p>It's a fully-funded exchange program run by the Japanese government where you get to visit Japan for a full year, attend a Japanese high school, and live with a host family.</p>
+    <div class="letter-salutation">To every Indian student who wants to go to Japan —</div>
+    <h1 class="letter-h1">Complete Guide to the Asia Kakehashi Project 2026
+      <span class="letter-h1-jp">インド人学生向け完全ガイド</span>
+    </h1>
+    <p class="letter-opener">I was selected from India at 16 in 2021. One of 21 students chosen nationally. I spent the year in Yokohama, attended a Japanese public high school, lived with a host family, joined the archery club, and ate 200+ homemade bentos. This is the guide I wish had existed when I was applying.</p>
 
-            <p>The best part? It's <strong>completely free</strong> — they cover your flights, accommodation, meals, and even give you a monthly stipend.</p>
+    <div class="letter-meta-row">
+      <div class="letter-meta-item"><span class="meta-label">Author</span><span class="meta-value">2021 Kakehashi Scholar</span></div>
+      <div class="letter-meta-item"><span class="meta-label">Read Time</span><span class="meta-value">12 minutes</span></div>
+      <div class="letter-meta-item"><span class="meta-label">For</span><span class="meta-value">9th–10th Grade Students</span></div>
+      <div class="letter-meta-item"><span class="meta-label">Updated</span><span class="meta-value">2026</span></div>
+    </div>
+  </div>
 
-            <h2>Who Can Apply?</h2>
+  <div class="stamp-row">
+    <div class="stamp s-burg">JAPAN MOFA<br>外務省</div>
+    <div class="stamp s-gold">FULLY FUNDED<br>全額支給</div>
+    <div class="stamp s-green">YOKOHAMA<br>横浜 · 2021</div>
+    <div class="stamp s-circle s-burg">INDIA<br>21<br>SELECTED<br>選抜</div>
+  </div>
 
-            <p>Here's what you need:</p>
+</div>
+</div>
 
-            <ul>
-                <li>Age between 15-18 years old</li>
-                <li>Currently enrolled as a student in India</li>
-                <li>Able to communicate in English (you don't need to be fluent)</li>
-                <li>Genuinely interested in Japanese culture and international exchange</li>
-            </ul>
+<!-- TIMELINE STRIP -->
+<div class="timeline-strip">
+  <div class="tl-inner">
+    <div class="tl-node"><div class="tl-dot lit"></div><div class="tl-label"><strong>AUG–SEP</strong>Apps Open</div></div>
+    <div class="tl-line done" style="flex:1;"></div>
+    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>SEP</strong>⚑ Deadline</div></div>
+    <div class="tl-line" style="flex:1;"></div>
+    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>OCT–NOV</strong>Interview</div></div>
+    <div class="tl-line" style="flex:1;"></div>
+    <div class="tl-node"><div class="tl-dot"></div><div class="tl-label"><strong>DEC</strong>Results</div></div>
+    <div class="tl-line" style="flex:1;"></div>
+    <div class="tl-node"><div class="tl-dot"></div><div class="tl-label"><strong>JAN–MAR</strong>Prep</div></div>
+    <div class="tl-line" style="flex:1;"></div>
+    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>APR</strong>🇯🇵 Japan</div></div>
+  </div>
+</div>
 
-            <div class="divider">🌸</div>
+<div class="page-wrap">
+<div class="guide-wrap">
+<main class="guide-body">
 
-            <h2>The Application Process</h2>
+  <p class="intro-p">Kakehashi (架け橋) means bridge. The program builds one between you and a country that will not make sense at first — and then, slowly, will start to feel like somewhere you actually live. This guide covers everything from the application to the shape of the year itself, written by someone who has been on both sides.</p>
 
-            <p>The application usually opens in August-September. You'll need:</p>
+  <!-- 01 -->
+  <div class="section-header" id="what"><span class="section-num">01</span><h2>What is the Asia Kakehashi Project?</h2><span class="section-jp">概要</span></div>
+  <div class="section-rule"></div>
 
-            <ul>
-                <li>School ID card (scanned copy)</li>
-                <li>Passport-size photo</li>
-                <li>School principal's recommendation letter</li>
-                <li>Essay (this is where you win or lose)</li>
-            </ul>
-            <div class="checklist-box">
-                <h3>📋 Application Checklist</h3>
-                <ul class="interactive-checklist">
-                    <li><label><input type="checkbox"> School ID card (scanned)</label></li>
-                    <li><label><input type="checkbox"> Passport-size photo</label></li>
-                    <li><label><input type="checkbox"> Principal's recommendation letter</label></li>
-                    <li><label><input type="checkbox"> Essay draft completed</label></li>
-                    <li><label><input type="checkbox"> Essay reviewed by teacher</label></li>
-                    <li><label><input type="checkbox"> Final essay submitted</label></li>
-                </ul>
-                <p class="checklist-progress">Progress: <span id="progress-text">0/6 complete</span></p>
-            </div>
+  <p>The Asia Kakehashi Project is a fully-funded Japanese government scholarship that sends high school students from across Asia to Japan for a full academic year. Run through the Japan Ministry of Foreign Affairs and JICE, it places you inside a regular Japanese public high school — not a special program, not an international track. Your classmates are Japanese. Your teachers speak Japanese. You adapt, or you figure out how to adapt, which is the whole point.</p>
 
-            <h2>The Essay (Most Important Part)</h2>
+  <div class="insight-grid">
+    <div class="insight-card">
+      <div class="insight-num">Program · 01</div>
+      <div class="insight-title">Fully Funded</div>
+      <div class="insight-body">Flights, host family, meals, school placement, health insurance, monthly stipend. The Japanese government covers everything. Your cost is zero.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">Program · 02</div>
+      <div class="insight-title">Real School Placement</div>
+      <div class="insight-body">A regular Japanese public high school as a real enrolled student. Not a visitor. Your classmates are Japanese. The social dynamics, the clubs, the classroom rules — you are inside all of it.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-num">Program · 03</div>
+      <div class="insight-title">Host Family Living</div>
+      <div class="insight-body">You live with a Japanese family for the year. Not a dormitory, not a guesthouse. A real home. This is where most of the actual learning happens.</div>
+    </div>
+  </div>
 
-            <p><strong>What worked for me:</strong></p>
+  <div class="callout cn">
+    <span class="callout-label">What it is not</span>
+    <p>Kakehashi is not a language program, not a tourism experience, not a gap year. You are not there to accumulate stories. You are there to live inside a society and come to understand it from within. The discomfort is the point.</p>
+  </div>
 
-            <ul>
-                <li>Being specific about what aspects of Japanese culture I was interested in</li>
-                <li>Connecting it to something I'd actually DO after the program</li>
-                <li>Writing in my own voice, not trying to sound overly formal</li>
-                <li>Showing genuine curiosity, not just listing achievements</li>
-            </ul>
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do I need to know Japanese? <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No! English is fine. But learning basic greetings (arigatou, konnichiwa) shows effort and will be appreciated.</p>
-                    </div>
-                </div>
+  <!-- 02 -->
+  <div class="section-header" id="eligibility"><span class="section-num">02</span><h2>Who Can Apply</h2><span class="section-jp">応募資格</span></div>
+  <div class="section-rule"></div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What if I don't have a passport? <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>You can apply without one and get it made after selection. Just mention this clearly in your application.</p>
-                    </div>
-                </div>
+  <p>The formal eligibility criteria are not difficult to meet. The actual competition is a separate matter — 21 slots from all of India means the field thins quickly at each stage.</p>
+  <ul>
+    <li>Currently enrolled in high school in India — 9th or 10th grade is optimal</li>
+    <li>Age typically 15–18 at the time of departure for Japan</li>
+    <li>Able to communicate in English — no Japanese required at application stage</li>
+    <li>Available for the full program duration — a year, not a semester</li>
+    <li>No prior participation in Japanese government exchange programs (verify against current year guidelines)</li>
+  </ul>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can I apply if I'm not from Delhi? <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! Students from all over India can apply. If you're selected, they'll arrange your travel to Delhi for any required in-person sessions.</p>
-                    </div>
-                </div>
-            </div>
+  <div class="callout ct">
+    <span class="callout-label">The actual competition</span>
+    <p>The formal bar is low. The real filter is the essay and interview. Strong grades help but they are not the primary selector. A weak essay cannot be saved by excellent marks. A strong essay can survive average marks.</p>
+  </div>
 
-            <p>Good luck! If you have questions, reach out — my contact info is in the About section 💙</p>
-        </article>
-    </main>
-    <script src="../assets/js/guide.js"></script>
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        ↑
-    </button>
+  <!-- 03 -->
+  <div class="section-header" id="timeline"><span class="section-num">03</span><h2>Application Timeline</h2><span class="section-jp">出願スケジュール</span></div>
+  <div class="section-rule"></div>
+
+  <p>The structure below is consistent across recent cycles. Verify specific dates at the JICC India website before doing anything else — deadlines shift year to year.</p>
+
+  <div class="app-timeline">
+    <div class="atl-head"><span>Period</span><span>Stage</span><span>What this means for you</span></div>
+    <div class="atl-row"><div class="atl-month">AUG</div><div class="atl-event">Applications Open</div><div class="atl-detail">Download forms from JICC India. Begin your essay immediately — it takes longer than you expect.</div></div>
+    <div class="atl-row key-row"><div class="atl-month">SEP</div><div class="atl-event">⚑ Submission Deadline</div><div class="atl-detail">All documents submitted by the stated deadline. Late submissions are not accepted. Have a trusted adult review your essay first.</div></div>
+    <div class="atl-row"><div class="atl-month">OCT</div><div class="atl-event">Document Screening</div><div class="atl-detail">JICC reviews essays, school records, recommendation letters. You will not hear anything during this stage.</div></div>
+    <div class="atl-row key-row"><div class="atl-month">OCT–NOV</div><div class="atl-event">⚑ Interview Round</div><div class="atl-detail">Shortlisted candidates called for interviews. The decisive round. See Section 06.</div></div>
+    <div class="atl-row"><div class="atl-month">DEC</div><div class="atl-event">Results Announced</div><div class="atl-detail">Selected students notified. Visa processing and orientation begins immediately.</div></div>
+    <div class="atl-row key-row"><div class="atl-month">APR</div><div class="atl-event">⚑ Departure for Japan</div><div class="atl-detail">Orientation in Tokyo, then placement with host family and school. The year begins.</div></div>
+  </div>
+
+  <!-- 04 -->
+  <div class="section-header" id="documents"><span class="section-num">04</span><h2>Documents Required</h2><span class="section-jp">必要書類</span></div>
+  <div class="section-rule"></div>
+
+  <p>The following are consistent across recent cycles. Always confirm against the official JICC guidelines for the year you are applying.</p>
+
+  <div class="doc-checklist">
+    <div class="doc-checklist-label">Application Checklist · 書類一覧</div>
+    <div class="doc-grid">
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Application Form</strong>Official form from JICC India, completed in full. Download fresh each year.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Essay</strong>The most critical document. Usually 400–600 words. Section 05 covers this in full.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>School ID Card</strong>Scanned copy confirming current enrollment.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Principal's Recommendation</strong>On school letterhead with stamp. Request at least three weeks early.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Report Cards</strong>Last two academic years. Consistent performance matters more than one peak result.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Passport-Size Photo</strong>Recent, formal, white background. Check the official form for exact specs.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Parental Consent Letter</strong>Signed by both parents or legal guardian.</div></div>
+      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Health Certificate</strong>Basic medical clearance confirming fitness to live abroad long-term.</div></div>
+    </div>
+    <div class="doc-count" id="doc-count">0 / 8 documents checked</div>
+  </div>
+
+  <div class="callout cn">
+    <span class="callout-label">Principal's Letter — start early</span>
+    <p>School administrations move slowly. Request this at least three to four weeks before the deadline. Arrive with a draft of what you want it to say — most principals will appreciate the help, and it ensures the letter actually supports your application rather than being generic.</p>
+  </div>
+
+  <!-- 05 -->
+  <div class="section-header" id="essay"><span class="section-num">05</span><h2>The Essay — How to Actually Win It</h2><span class="section-jp">小論文の書き方</span></div>
+  <div class="section-rule"></div>
+
+  <p>The essay is where most applications are decided. Committees read hundreds of submissions from students with similar grades and credentials. The essay is the only place where you are completely irreplaceable.</p>
+
+  <div class="essay-block">
+    <div class="essay-label">What I Did · 2021</div>
+    <p>My essay was specific. Not <em>"I love Japanese culture"</em> but an actual observation I had made — about how a society that prizes collective silence produces individuals who are quietly extraordinary. Not "I want to visit Japan" but a concrete gap I'd noticed between how Japan is perceived and how it actually functions.</p>
+    <p>I connected it to something I would bring back and actually do. I had already published a book. I framed the exchange as research — not vaguely, but concretely. The committee funds people who will use the experience, not just have it.</p>
+    <div class="essay-pull">"Show them you've thought about Japan specifically. Not just about wanting to go somewhere interesting."</div>
+    <p>I also did not try to sound older than I was. I was 16. I wrote like someone 16 and genuinely curious. They read hundreds of essays from students performing diplomacy. Write like a person who has actually thought about this.</p>
+  </div>
+
+  <h3>What works</h3>
+  <ul>
+    <li><strong>Specificity over generality.</strong> "I'm interested in how Japanese concepts of ma (間) shape design thinking" beats "I love Japanese culture" immediately. Show you've engaged with something real.</li>
+    <li><strong>A real reason, not a performed one.</strong> If it's manga, own that and connect it meaningfully — how visual storytelling in manga uses silence differently than Western comics. Authenticity is always legible.</li>
+    <li><strong>What you will do with it.</strong> Be specific about what you bring back. The program funds cultural diplomacy, not tourism.</li>
+    <li><strong>Your voice, not a template.</strong> A distinct voice is noticed in the first paragraph. Every year they read thousands of identical essays.</li>
+  </ul>
+
+  <h3>What doesn't work</h3>
+  <ul>
+    <li>Lists of achievements with no connection to Japan specifically</li>
+    <li>"I have always dreamed of visiting Japan" without any evidence of actual engagement</li>
+    <li>Generic statements about cultural bridges and global citizenship</li>
+    <li>Trying to sound more formal or mature than you are — it reads as hollow</li>
+  </ul>
+
+  <!-- 06 -->
+  <div class="section-header" id="interview"><span class="section-num">06</span><h2>The Interview Round</h2><span class="section-jp">面接について</span></div>
+  <div class="section-rule"></div>
+
+  <p>If you receive an interview invitation, your essay worked. The committee now wants to see if you are the person who wrote it. Read your essay the morning of the interview — know every claim you made in it.</p>
+
+  <div class="qa-table">
+    <div class="qa-head"><span>Question they will ask</span><span>What they are actually checking</span></div>
+    <div class="qa-row"><div class="qa-q">Why Japan specifically, not another country?</div><div class="qa-a">Whether your interest is real and specific, not just wanderlust. Have a concrete answer rooted in something you've actually engaged with.</div></div>
+    <div class="qa-row"><div class="qa-q">How will you handle the language barrier?</div><div class="qa-a">Adaptability. Mention you've started learning basics. Do not claim fluency.</div></div>
+    <div class="qa-row"><div class="qa-q">What will you miss most about home?</div><div class="qa-a">Emotional honesty. "Nothing" is not believable. Say something real and explain why you'd still go.</div></div>
+    <div class="qa-row"><div class="qa-q">What will you bring back to India from this?</div><div class="qa-a">Intentionality. Have a specific answer about what you'll do with the experience.</div></div>
+    <div class="qa-row"><div class="qa-q">How do you handle discomfort or conflict?</div><div class="qa-a">Resilience. The year will be hard. They need to believe you won't become a problem in month two.</div></div>
+    <div class="qa-row"><div class="qa-q">Tell us about something you've made or built.</div><div class="qa-a">Agency. They prefer students who create things over students who receive experiences.</div></div>
+  </div>
+
+  <div class="callout cn">
+    <span class="callout-label">My interview · what I remember</span>
+    <p>My hands were not steady. My voice was. I had practiced answers out loud, not just in my head — that made the difference. They asked me to go deeper on a claim I'd made in my essay. I could, because I'd actually thought about it. The essay was the beginning of your thinking, not the end of it.</p>
+  </div>
+
+  <div class="text-divider"><span class="text-divider-inner">第二部 · THE YEAR ITSELF</span></div>
+
+  <!-- 07 -->
+  <div class="section-header" id="year"><span class="section-num">07</span><h2>What Actually Happens During the Year</h2><span class="section-jp">プログラム内容</span></div>
+  <div class="section-rule"></div>
+
+  <div class="year-phase phase-fog">
+    <div class="year-phase-label">Month 1–2 · The Fog</div>
+    <h3>You understand almost nothing</h3>
+    <p>Not the language, the social rules, the school system, or the food. This is normal. Your only job is observation — watch everything, ask less, notice more. The patterns start emerging around week six.</p>
+  </div>
+  <div class="year-phase phase-sys">
+    <div class="year-phase-label">Month 3–5 · The System</div>
+    <h3>You learn how things work</h3>
+    <p>The train schedule. The school rhythms. The unspoken classroom rules. You begin having real conversations. You find your rhythm. The year starts becoming genuinely enjoyable rather than just exhausting.</p>
+  </div>
+  <div class="year-phase phase-int">
+    <div class="year-phase-label">Month 6–9 · The Integration</div>
+    <h3>Japan stops feeling foreign</h3>
+    <p>You have a group, or at least a few people who know you. A club. Japan feels like somewhere you actually live. This is the best part of the year and it passes faster than you expect.</p>
+  </div>
+  <div class="year-phase phase-end">
+    <div class="year-phase-label">Month 10–12 · The Ending</div>
+    <h3>You start to know you are leaving</h3>
+    <p>Formal goodbye events, gifts, speeches. Your host family will say things that don't translate cleanly but that you'll understand completely. The last bus ride to school feels different from the first.</p>
+  </div>
+
+  <div class="callout cn" style="margin-top:1.5rem;">
+    <span class="callout-label">The thing nobody says</span>
+    <p>The hardest part is not the language barrier or the homesickness, though both are real. It is the middle period — when you understand enough to see clearly how far outside you still are. Push through. Month seven is when it breaks open.</p>
+  </div>
+
+  <!-- 08 -->
+  <div class="section-header" id="faq"><span class="section-num">08</span><h2>Frequently Asked Questions</h2><span class="section-jp">よくある質問</span></div>
+  <div class="section-rule"></div>
+
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need Japanese to apply? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">No. English is sufficient. But showing you've started learning even basic Japanese — hiragana, katakana, a few phrases — signals genuine initiative. Do not claim more than you know.</div></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I don't have a passport yet? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Apply anyway. Note in the application that passport processing is in progress. If selected, you will have time during the pre-departure window. Don't let this stop you.</div></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I apply if I'm not from Delhi? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. Applications are accepted from across India. If shortlisted for in-person interview, travel to the nearest JICC office may be required. Confirm logistics with JICC India directly once shortlisted.</div></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I'm not a top student? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grades matter but they are not the primary filter. The program selects for curiosity, adaptability, and genuine cultural interest. A compelling essay from a student with average grades consistently outperforms a generic essay from a class topper.</div></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Will I fall behind on Indian curriculum? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">A real concern. Research your specific board's policy and get written confirmation from your school before committing. Many schools grant leave for government-sponsored programs — but confirm, do not assume.</div></div></div>
+
+  <div class="end-deco">· END OF GUIDE · ガイド終了 ·</div>
+
+  <div class="cta-box">
+    <h3>Get the Free Japan Exchange Starter Kit</h3>
+    <p>Application timeline, document checklist, essay frameworks — one PDF, written by a 2021 Kakehashi scholar from India. Free.</p>
+    <a href="/free-kit/" class="cta-btn">Download Free Kit →</a>
+  </div>
+
+  <p style="font-size:0.78rem;color:var(--ink-lt);font-style:italic;margin-top:1.5rem;font-family:'Noto Serif JP',serif;font-weight:300;line-height:1.8;">Ayachi Samyal was selected for the Asia Kakehashi Project in 2021 at age 16. She lived with a host family in Yokohama, attended Yokohama Hiranuma High School, joined the archery club, and writes about cultural exchange and the structures of daily life in Japan.</p>
+
+</main>
+
+<aside class="guide-sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Contents</span><span class="sidebar-jp">目次</span></div>
+    <ul class="toc-list">
+      <li><a href="#what"><span class="toc-num">01</span>What is Kakehashi?</a></li>
+      <li><a href="#eligibility"><span class="toc-num">02</span>Who Can Apply</a></li>
+      <li><a href="#timeline"><span class="toc-num">03</span>Timeline</a></li>
+      <li><a href="#documents"><span class="toc-num">04</span>Documents</a></li>
+      <li><a href="#essay"><span class="toc-num">05</span>The Essay</a></li>
+      <li><a href="#interview"><span class="toc-num">06</span>Interview</a></li>
+      <li><a href="#year"><span class="toc-num">07</span>The Year</a></li>
+      <li><a href="#faq"><span class="toc-num">08</span>FAQ</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Quick Facts</span><span class="sidebar-jp">概要</span></div>
+    <p><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">21</strong>students selected from India · 2021</p>
+    <p style="margin-top:0.75rem;"><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">¥0</strong>your cost · fully government-funded</p>
+    <p style="margin-top:0.75rem;"><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">1 yr</strong>full academic year in Japan</p>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Free Resource</span><span class="sidebar-jp">無料</span></div>
+    <p>Japan Exchange Starter Kit — timeline, checklist, essay frameworks. Free PDF.</p>
+    <a href="/free-kit/" class="sidebar-link">Download free kit</a>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Related</span><span class="sidebar-jp">関連記事</span></div>
+    <ul class="related-list">
+      <li><a href="packing-guide.html">What to Pack for Japan</a></li>
+      <li><a href="budget-guide.html">How Much It Costs</a></li>
+      <li><a href="Bento.html">Host Family Bento Guide</a></li>
+      <li><a href="Train.html">Daily Commute Guide</a></li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<footer>
+  <p>Ayachi Samyal · Japan Exchange Blog · 交換留学ブログ</p>
+  <p class="footer-jp">サムヤル アヤチ · Yokohama 2021</p>
+</footer>
+
+<script>
+const rp=document.getElementById('rp');
+window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
+function toggleFaq(btn){const a=btn.nextElementSibling;const isOpen=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q.open').forEach(x=>x.classList.remove('open'));if(!isOpen){a.classList.add('open');btn.classList.add('open');}}
+function updateDocCount(){const t=document.querySelectorAll('.doc-cb').length;const c=document.querySelectorAll('.doc-cb:checked').length;document.getElementById('doc-count').textContent=c+' / '+t+' documents checked';}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
