@@ -1,392 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What to Pack for Japan Exchange Year (Tested List) | Ayachi Samyal</title>
-    <meta name="description" content="The actual packing list for a year-long Japan high school exchange. What to bring, what to skip, what to buy there. Written by a Kakehashi scholar who lived in Yokohama.">
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/guides.css">
-    <style>
-        /* Guide article overrides */
-        body { background-color: #fff0f5; }
-        main {
-            max-width: 720px;
-            margin: 2rem auto 4rem;
-            padding: 0 5%;
-        }
-        h1 { font-family: 'Fredoka', cursive; font-size: clamp(28px, 5vw, 42px); color: var(--text); margin: 1.5rem 0 0.5rem; line-height: 1.2; }
-        h2 { font-family: 'Fredoka', cursive; font-size: 26px; color: var(--text); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 3px dashed var(--border-pink); }
-        h3 { font-family: 'Quicksand', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin: 1.5rem 0 0.5rem; }
-        p { font-size: 15px; line-height: 1.8; color: var(--text-gray); margin-bottom: 1rem; }
-        ul { padding-left: 1.25rem; margin-bottom: 1rem; }
-        li { font-size: 14px; line-height: 1.8; color: var(--text-gray); margin-bottom: 0.25rem; }
-        strong { color: var(--text); }
-        .article-meta { font-size: 13px; color: var(--text-gray); margin-bottom: 2rem; }
-        .toc-box {
-            background: var(--cream);
-            border: 2px solid var(--border-pink);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0 2rem;
-        }
-        .toc-box h4 { font-family: 'Fredoka', cursive; font-size: 16px; margin-bottom: 0.75rem; }
-        .toc-box ol { padding-left: 1.25rem; }
-        .toc-box li { font-size: 13px; margin-bottom: 0.3rem; }
-        .toc-box a { color: var(--dark-pink); text-decoration: none; }
-        .toc-box a:hover { text-decoration: underline; }
-        .warning-box {
-            background: rgba(255,217,61,0.15);
-            border: 2px solid var(--yellow);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            margin: 1.5rem 0;
-            font-size: 14px;
-        }
-        .pack-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        .pack-col {
-            background: white;
-            border: 2px solid var(--border-pink);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-        .pack-col h4 { font-family: 'Fredoka', cursive; font-size: 15px; margin-bottom: 0.5rem; }
-        .pack-col ul { padding-left: 1rem; }
-        .pack-col li { font-size: 13px; }
-        @media(max-width:600px){ .pack-grid { grid-template-columns: 1fr; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What to Pack for a Year in Japan — Tested List | Ayachi Samyal</title>
+<meta name="description" content="The actual packing list for a year-long Japan high school exchange. What to bring, what to skip, what to buy there. Tested over a full year in Yokohama by a 2021 Kakehashi scholar.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --kraft:        #d4a96a;
+  --kraft-lt:     #e8c990;
+  --kraft-pale:   #f5e6c8;
+  --kraft-dk:     #b8843a;
+  --orange:       #c95a18;
+  --orange-lt:    #e8784a;
+  --orange-pale:  #f5d4b8;
+  --paper:        #faf3e0;
+  --paper-dk:     #f0e4c0;
+  --ink:          #1e140a;
+  --ink-mid:      #3d2c14;
+  --ink-lt:       #7a5c30;
+  --string:       rgba(101,65,20,0.4);
+  --grid:         rgba(180,130,60,0.2);
+  --check-green:  #2d6a30;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--kraft-pale);
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 27px,var(--grid) 27px,var(--grid) 28px),
+    repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(180,130,60,0.1) 27px,rgba(180,130,60,0.1) 28px);
+  color: var(--ink);
+  font-family: 'Special Elite', cursive;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* paper texture overlay */
+body::before {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.8;
+}
+
+.margin-line{position:fixed;left:80px;top:0;bottom:0;width:1px;background:rgba(201,90,24,0.3);z-index:1;pointer-events:none;}
+@media(max-width:800px){.margin-line{display:none;}}
+.reading-progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--kraft-lt));z-index:9999;width:0%;transition:width 0.1s linear;}
+
+/* NAV */
+nav{position:relative;z-index:20;background:var(--ink);border-bottom:4px solid var(--orange);display:flex;align-items:stretch;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 2rem;}
+.logo{font-family:'Special Elite',cursive;font-size:1rem;color:var(--kraft-lt);text-decoration:none;letter-spacing:0.08em;padding:0.9rem 0;display:flex;align-items:center;gap:0.7rem;}
+.logo-jp{font-family:'Noto Serif JP',serif;font-size:0.88rem;font-weight:300;opacity:0.5;}
+.nav-tag{font-family:'Special Elite',cursive;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--orange);color:white;padding:0.15rem 0.6rem;}
+.nav-links{display:flex;}
+.nav-links a{font-family:'Special Elite',cursive;font-size:0.78rem;letter-spacing:0.1em;color:rgba(232,201,144,0.6);text-decoration:none;padding:1rem 1.1rem;text-transform:uppercase;border-left:1px solid rgba(201,90,24,0.25);transition:color 0.15s,background 0.15s;}
+.nav-links a:hover{color:var(--kraft-lt);background:rgba(201,90,24,0.15);}
+
+/* ═══ SUITCASE LABEL HERO ═══ */
+.hero-wrap{position:relative;z-index:2;background:var(--paper);border-bottom:3px solid var(--kraft-dk);padding:3rem 2rem 2.5rem;overflow:hidden;}
+
+/* big diagonal "荷造り" watermark */
+.hero-wrap::before{
+  content:'荷造り';position:absolute;right:-20px;top:50%;
+  transform:translateY(-50%) rotate(-12deg);
+  font-family:'Noto Serif JP',serif;font-size:6rem;font-weight:700;
+  color:rgba(201,90,24,0.05);letter-spacing:0.1em;pointer-events:none;white-space:nowrap;
+}
+
+.hero-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;}
+
+/* the main suitcase label */
+.suitcase-label {
+  background: #fffdf0;
+  border: 2px solid var(--kraft-dk);
+  border-radius: 4px 4px 4px 40px; /* clipped bottom-left corner = label shape */
+  padding: 1.8rem 2rem 1.6rem;
+  position: relative;
+  box-shadow: 3px 4px 0 var(--kraft-dk), 6px 8px 20px rgba(101,65,20,0.15);
+}
+/* punch hole top center */
+.suitcase-label::before {
+  content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  width:18px;height:18px;border-radius:50%;
+  background:var(--kraft-pale);border:2px solid var(--kraft-dk);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.2);
+}
+/* string from hole */
+.suitcase-label::after {
+  content:'';position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+  width:2px;height:24px;background:var(--string);
+}
+
+.label-airline{font-family:'Special Elite',cursive;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-lt);margin-bottom:0.6rem;}
+.label-destination{font-family:'Special Elite',cursive;font-size:clamp(1.6rem,3.5vw,2.5rem);line-height:1.15;color:var(--ink);margin-bottom:0.4rem;letter-spacing:0.02em;}
+.label-dest-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.85rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.25em;display:block;margin-top:0.2rem;}
+.label-tagline{font-family:'Special Elite',cursive;font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin:0.9rem 0 1.1rem;max-width:500px;}
+.label-meta-row{display:flex;flex-wrap:wrap;gap:1.2rem;border-top:2px dashed var(--kraft);padding-top:0.9rem;}
+.label-meta-item{display:flex;flex-direction:column;gap:0.1rem;}
+.meta-label{font-family:'Special Elite',cursive;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-lt);}
+.meta-value{font-family:'Special Elite',cursive;font-size:0.82rem;color:var(--orange);}
+
+/* hanging tag cluster */
+.tags-cluster{display:flex;flex-direction:column;align-items:flex-end;gap:1rem;padding-top:1.5rem;}
+.hang-tag{
+  position:relative;background:#fffdf0;
+  border:2px solid var(--kraft-dk);
+  border-radius:3px;
+  padding:0.5rem 0.7rem 0.5rem;
+  font-family:'Special Elite',cursive;font-size:0.65rem;
+  letter-spacing:0.1em;text-align:center;line-height:1.5;
+  transform:rotate(var(--rot,3deg));
+  box-shadow:2px 2px 0 var(--kraft);
+}
+.hang-tag::before{content:'';position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--kraft-pale);border:2px solid var(--kraft-dk);}
+.hang-tag::after{content:'';position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:1px;height:18px;background:var(--string);}
+.hang-tag.orange{background:var(--orange);color:white;border-color:var(--orange);}
+.hang-tag.orange::before{background:var(--orange-pale);}
+.ht1{--rot:-4deg;}
+.ht2{--rot:5deg;}
+.ht3{--rot:-2deg;}
+.ht4{--rot:4deg;}
+
+/* PAGE */
+.page-wrap{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:0 2rem 5rem;}
+.guide-wrap{display:grid;grid-template-columns:1fr 230px;gap:3rem;align-items:start;margin-top:2.5rem;}
+
+/* BODY */
+.guide-body{position:relative;}
+.guide-body::before{content:'';position:absolute;left:-1.5rem;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--orange) 0%,transparent 100%);opacity:0.2;}
+.guide-body p{font-family:'Special Elite',cursive;font-size:0.93rem;line-height:1.85;color:var(--ink-mid);margin-bottom:1.3rem;}
+.intro-p{font-size:0.96rem!important;color:var(--ink)!important;border-left:4px solid var(--orange);padding:1.1rem 1.3rem;background:rgba(201,90,24,0.05);margin-bottom:2rem!important;line-height:1.85!important;}
+.guide-body strong{color:var(--ink);font-weight:400;text-decoration:underline;text-decoration-color:var(--kraft-dk);text-underline-offset:3px;}
+.guide-body ul,.guide-body ol{padding-left:0;margin-bottom:1.3rem;list-style:none;}
+.guide-body li{font-family:'Special Elite',cursive;font-size:0.88rem;line-height:1.8;color:var(--ink-mid);margin-bottom:0.65rem;padding-left:1.8rem;position:relative;}
+.guide-body ul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:0.8rem;}
+.guide-body ol{counter-reset:item;}
+.guide-body ol li::before{content:counter(item)".";counter-increment:item;position:absolute;left:0;color:var(--orange);font-family:'Special Elite',cursive;font-size:0.85rem;}
+
+h3{font-family:'Special Elite',cursive;font-size:0.95rem;color:var(--orange);margin:1.8rem 0 0.6rem;display:flex;align-items:center;gap:0.5rem;letter-spacing:0.05em;}
+h3::before{content:'✦';font-size:0.55rem;color:var(--kraft-dk);flex-shrink:0;}
+
+/* ═══ LUGGAGE TAG SECTION HEADERS ═══ */
+.section-header{display:flex;align-items:center;gap:1.5rem;margin:3.5rem 0 1.4rem;position:relative;}
+.section-header::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:repeating-linear-gradient(90deg,var(--kraft) 0,var(--kraft) 6px,transparent 6px,transparent 12px);}
+
+.luggage-tag {
+  position:relative;flex-shrink:0;
+  background: var(--orange);
+  color: white;
+  padding: 0.55rem 0.9rem 0.55rem 1.1rem;
+  border-radius: 3px 3px 3px 20px;
+  font-family:'Special Elite',cursive;
+  letter-spacing:0.12em;text-transform:uppercase;
+  box-shadow:2px 2px 0 var(--orange-lt),3px 4px 8px rgba(201,90,24,0.3);
+  display:flex;align-items:center;gap:0.7rem;
+  z-index:1;
+}
+/* hole */
+.luggage-tag::before{
+  content:'';position:absolute;left:-8px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;border-radius:50%;
+  background:var(--kraft-pale);border:2px solid var(--kraft-dk);
+}
+/* string */
+.luggage-tag::after{
+  content:'';position:absolute;left:-28px;top:50%;transform:translateY(-50%);
+  width:22px;height:2px;background:var(--string);
+}
+.lt-num{font-size:1rem;opacity:0.75;line-height:1;}
+.lt-text{font-size:0.78rem;line-height:1.2;}
+.lt-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.6rem;font-weight:300;opacity:0.8;display:block;margin-top:0.1rem;letter-spacing:0.1em;}
+
+.section-rule{height:1px;background:repeating-linear-gradient(90deg,var(--kraft) 0,var(--kraft) 4px,transparent 4px,transparent 8px);margin-bottom:1.2rem;margin-top:0.3rem;}
+
+/* BRING / SKIP / BUY TABLE */
+.pack-table{border:2px solid var(--kraft-dk);margin:1.8rem 0;overflow:hidden;background:var(--paper);}
+.pack-table-head{background:var(--ink);color:var(--kraft-pale);font-family:'Special Elite',cursive;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.5rem 1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;}
+.pack-table-head span:nth-child(1){color:#88c888;}
+.pack-table-head span:nth-child(2){color:#e88888;}
+.pack-table-head span:nth-child(3){color:var(--kraft-lt);}
+.pack-table-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;border-top:1px solid var(--paper-dk);padding:0.75rem 1rem;align-items:start;}
+.pack-table-row:nth-child(odd){background:rgba(212,169,106,0.06);}
+.pack-col{font-family:'Special Elite',cursive;font-size:0.8rem;line-height:1.6;color:var(--ink-mid);}
+.pack-col.bring{border-left:3px solid #5a9a5a;padding-left:0.6rem;}
+.pack-col.skip{border-left:3px solid #c06060;padding-left:0.6rem;}
+.pack-col.buy{border-left:3px solid var(--kraft-dk);padding-left:0.6rem;}
+@media(max-width:620px){.pack-table-head,.pack-table-row{grid-template-columns:1fr;}}
+
+/* CHECKLIST */
+.cl-box{background:var(--paper);border:2px solid var(--kraft-dk);border-left:4px solid var(--orange);padding:1.4rem 1.5rem 1.2rem;margin:1.8rem 0;position:relative;}
+.cl-box::before{content:'PACKING LIST';position:absolute;top:-0.7rem;left:1rem;font-family:'Special Elite',cursive;font-size:0.68rem;letter-spacing:0.25em;background:var(--orange);color:white;padding:0.1rem 0.6rem;}
+.cl-section-title{font-family:'Special Elite',cursive;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin:1rem 0 0.5rem;padding-bottom:0.3rem;border-bottom:1px dashed var(--kraft);}
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.4rem;}
+.cl-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.3rem 0;}
+.cl-item input[type="checkbox"]{width:14px;height:14px;flex-shrink:0;margin-top:0.2rem;accent-color:var(--orange);cursor:pointer;}
+.cl-item label{font-family:'Special Elite',cursive;font-size:0.8rem;color:var(--ink-mid);line-height:1.5;cursor:pointer;}
+.cl-count{font-family:'Special Elite',cursive;font-size:0.7rem;color:var(--ink-lt);margin-top:1rem;border-top:1px dashed var(--kraft);padding-top:0.5rem;}
+
+/* AFFILIATE BOX */
+.aff-box{background:var(--ink);color:var(--kraft-pale);padding:1.4rem 1.5rem;margin:1.5rem 0;position:relative;border-left:4px solid var(--orange);}
+.aff-label{font-family:'Special Elite',cursive;font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--orange);margin-bottom:0.5rem;}
+.aff-box h4{font-family:'Special Elite',cursive;font-size:0.9rem;color:var(--kraft-lt);margin-bottom:0.4rem;letter-spacing:0.05em;}
+.aff-box p{font-family:'Special Elite',cursive;font-size:0.82rem;line-height:1.75;color:rgba(232,201,144,0.8);margin-bottom:0.7rem;}
+.aff-link{display:inline-block;background:var(--orange);color:white;font-family:'Special Elite',cursive;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:0.4rem 1rem;transition:background 0.15s;}
+.aff-link:hover{background:var(--orange-lt);}
+
+/* CALLOUTS */
+.callout{padding:1.1rem 1.3rem;margin:1.8rem 0;font-size:0.88rem;line-height:1.8;}
+.callout p{margin:0!important;font-family:'Special Elite',cursive;font-size:0.88rem!important;}
+.callout-label{font-family:'Special Elite',cursive;font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
+.cn{background:rgba(245,230,200,0.7);border:1px solid var(--kraft);border-left:3px solid var(--orange);}
+.cn .callout-label{color:var(--orange);}
+.ct{background:rgba(212,169,106,0.1);border:1px dashed var(--kraft-dk);border-left:3px solid var(--kraft-dk);}
+.ct .callout-label{color:var(--ink-mid);}
+.cw{background:rgba(201,90,24,0.06);border:1px solid var(--orange-pale);border-left:3px solid var(--orange);}
+.cw .callout-label{color:var(--orange);}
+
+/* SIZE CHART */
+.size-table{border:2px solid var(--kraft-dk);margin:1.5rem 0;overflow:hidden;}
+.size-head{background:var(--ink-mid);color:var(--kraft-pale);font-family:'Special Elite',cursive;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 0.8rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;}
+.size-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;border-top:1px solid var(--paper-dk);padding:0.5rem 0.8rem;background:var(--paper);}
+.size-row:nth-child(odd){background:rgba(212,169,106,0.06);}
+.size-row span{font-family:'Special Elite',cursive;font-size:0.78rem;color:var(--ink-mid);}
+.size-row span:first-child{font-weight:400;color:var(--orange);}
+
+/* TEXT DIVIDER */
+.text-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem 0;}
+.text-divider::before,.text-divider::after{content:'';flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--kraft) 0,var(--kraft) 5px,transparent 5px,transparent 10px);}
+.text-divider-inner{font-family:'Special Elite',cursive;font-size:0.75rem;letter-spacing:0.35em;color:var(--ink-lt);white-space:nowrap;}
+
+.end-deco{text-align:center;margin:3rem 0 1rem;font-family:'Special Elite',cursive;font-size:0.7rem;letter-spacing:0.3em;color:var(--kraft-dk);display:flex;align-items:center;gap:1rem;}
+.end-deco::before,.end-deco::after{content:'';flex:1;height:1px;background:var(--kraft);}
+
+/* CTA */
+.cta-box{position:relative;margin:3rem 0;background:var(--ink);padding:2rem 2rem 1.8rem;text-align:center;border:3px solid var(--orange);overflow:hidden;}
+.cta-box::before{content:'FREE KIT';position:absolute;top:-0.8rem;left:50%;transform:translateX(-50%);font-family:'Special Elite',cursive;font-size:0.72rem;letter-spacing:0.3em;background:var(--orange);color:white;padding:0.15rem 1rem;}
+.cta-box h3{color:var(--kraft-lt);font-family:'Special Elite',cursive;font-size:1.15rem;margin:0 0 0.5rem;letter-spacing:0.05em;}
+.cta-box h3::before{display:none;}
+.cta-box p{color:rgba(232,201,144,0.6)!important;font-family:'Special Elite',cursive!important;font-size:0.84rem!important;margin-bottom:1.3rem!important;}
+.cta-btn{display:inline-block;background:var(--orange);color:white;padding:0.65rem 2rem;font-family:'Special Elite',cursive;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.15s;}
+.cta-btn:hover{background:var(--orange-lt);}
+
+/* SIDEBAR */
+.guide-sidebar{position:sticky;top:1.5rem;}
+.sidebar-card{background:var(--paper);border:2px solid var(--kraft-dk);padding:1.1rem;margin-bottom:1.2rem;position:relative;}
+.sidebar-card-head{font-family:'Special Elite',cursive;font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:white;background:var(--ink-mid);padding:0.3rem 0.6rem;margin:-1.1rem -1.1rem 0.9rem;display:flex;align-items:center;justify-content:space-between;}
+.sidebar-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;opacity:0.5;}
+.toc-list{list-style:none;}
+.toc-list li{border-bottom:1px dashed var(--paper-dk);padding:0!important;margin:0!important;}
+.toc-list li::before{display:none!important;}
+.toc-list a{font-family:'Special Elite',cursive;font-size:0.78rem;color:var(--ink-mid);text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:0.45rem 0;transition:color 0.15s;gap:0.4rem;}
+.toc-list a::after{content:'→';color:var(--orange);font-size:0.8rem;flex-shrink:0;}
+.toc-list a:hover{color:var(--orange);}
+.toc-num{font-family:'Special Elite',cursive;font-size:0.62rem;color:var(--orange);background:rgba(201,90,24,0.1);padding:0.1rem 0.3rem;flex-shrink:0;}
+.sidebar-card p{font-family:'Special Elite',cursive;font-size:0.78rem;color:var(--ink-mid);line-height:1.65;margin-bottom:0.7rem;}
+.sidebar-link{font-family:'Special Elite',cursive;font-size:0.7rem;letter-spacing:0.1em;color:var(--orange);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.3rem;border-bottom:1px solid var(--kraft-dk);}
+.sidebar-link::after{content:'→';}
+.related-list{list-style:none;}
+.related-list li{border-bottom:1px dashed var(--paper-dk);padding:0!important;margin:0!important;}
+.related-list li::before{display:none!important;}
+.related-list a{font-family:'Special Elite',cursive;font-size:0.78rem;color:var(--ink-mid);text-decoration:none;display:block;padding:0.45rem 0;transition:color 0.15s;}
+.related-list a:hover{color:var(--orange);}
+
+footer{position:relative;z-index:1;background:var(--ink);border-top:4px solid var(--orange);padding:1.8rem 2rem;text-align:center;}
+footer p{font-family:'Special Elite',cursive;font-size:0.75rem;letter-spacing:0.15em;color:rgba(232,201,144,0.4);margin-bottom:0.3rem;}
+footer .footer-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.2em;color:rgba(232,201,144,0.2);}
+
+@media(max-width:800px){.guide-wrap{grid-template-columns:1fr;}.guide-sidebar{position:static;}.hero-inner{grid-template-columns:1fr;}.tags-cluster{flex-direction:row;flex-wrap:wrap;align-items:flex-start;padding-top:0.5rem;}}
+@media(max-width:560px){.suitcase-label{padding:1.5rem 1.3rem;border-radius:3px 3px 3px 24px;}}
+</style>
 </head>
 <body>
-    <div class="reading-progress-bar"></div>
 
-    <nav>
-        <a href="../" class="logo">Writing</a>
-        <div class="nav-links">
-            <a href="../essays/">Essays</a>
-            <a href="../guides/" class="active">Guides</a>
-            <a href="../about.html">About</a>
-        </div>
-    </nav>
+<div class="reading-progress" id="rp"></div>
+<div class="margin-line"></div>
 
-    <main>
-        <span class="difficulty-tag">For Students Going to Japan</span>
-        <h1>What to Pack for a Year in Japan as a High School Exchange Student 🧳</h1>
-        <p class="article-meta">By Ayachi Samyal, Asia Kakehashi Scholar 2021 · Yokohama, Japan · Last updated February 2026 · ⏱ 15 min read</p>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Ayachi Samyal <span class="logo-jp">綾智</span> <span class="nav-tag">Guide</span></a>
+    <div class="nav-links">
+      <a href="/guides/">Guides</a>
+      <a href="/about.html">About</a>
+    </div>
+  </div>
+</nav>
 
-        <p>I packed for Japan at 16 with no idea what I was doing. I brought things I never touched and left behind things I desperately needed by month two. This is the list I wish I'd had — tested over a full year in Yokohama.</p>
+<!-- ═══ SUITCASE LABEL HERO ═══ -->
+<div class="hero-wrap">
+<div class="hero-inner">
 
-        <p class="affiliate-disclosure">⚠️ This page contains affiliate links. I only recommend things I actually used or wish I'd had. You pay nothing extra — I earn a small commission that helps keep this site running.</p>
+  <div class="suitcase-label">
+    <div class="label-airline">EXCHANGE STUDENT GUIDE · YOKOHAMA 2021 → INDIA</div>
+    <h1 class="label-destination">
+      What to Pack for a Year in Japan
+      <span class="label-dest-jp">一年分の荷造り — tested list</span>
+    </h1>
+    <p class="label-tagline">I packed for Japan at 16 with no idea what I was doing. I brought things I never touched and left behind things I desperately needed by month two. This is the list I wish I'd had.</p>
+    <div class="label-meta-row">
+      <div class="label-meta-item"><span class="meta-label">Scholar</span><span class="meta-value">Kakehashi 2021</span></div>
+      <div class="label-meta-item"><span class="meta-label">Location</span><span class="meta-value">Yokohama, Japan</span></div>
+      <div class="label-meta-item"><span class="meta-label">Read Time</span><span class="meta-value">15 minutes</span></div>
+      <div class="label-meta-item"><span class="meta-label">Updated</span><span class="meta-value">2026</span></div>
+    </div>
+  </div>
 
-        <div class="toc-box">
-            <h4>📋 What's in this guide:</h4>
-            <ol>
-                <li><a href="#non-negotiables">The Non-Negotiables (Documents & Money)</a></li>
-                <li><a href="#clothes">Clothes: What Japan Actually Requires</a></li>
-                <li><a href="#tech">Tech Setup</a></li>
-                <li><a href="#school">School Supplies</a></li>
-                <li><a href="#comfort">Comfort Items That Saved Me</a></li>
-                <li><a href="#japan-finds">What to Buy in Japan Instead</a></li>
-                <li><a href="#leave-behind">What to Leave Behind</a></li>
-                <li><a href="#checklist">Full Printable Checklist</a></li>
-            </ol>
-        </div>
+  <div class="tags-cluster">
+    <div class="hang-tag ht1">23KG LIMIT<br>荷物制限</div>
+    <div class="hang-tag orange ht2">BRING LESS<br>THAN YOU THINK</div>
+    <div class="hang-tag ht3">BUY IN<br>JAPAN 🇯🇵</div>
+    <div class="hang-tag ht4">FULLY<br>TESTED<br>1 YEAR</div>
+  </div>
 
-        <div class="callout">
-            <strong>💡 Most important rule:</strong> You will have access to shops in Japan. Bring less than you think you need. Japanese stores are incredible and you'll want room in your bag for the trip home.
-        </div>
+</div>
+</div>
 
-        <!-- SECTION 1 -->
-        <h2 id="non-negotiables">1. The Non-Negotiables</h2>
-        <p>These are things where if you forget them, no Japanese shop can fix it.</p>
+<div class="page-wrap">
+<div class="guide-wrap">
+<main class="guide-body">
 
-        <h3>Documents (keep originals + 3 copies of each)</h3>
-        <ul>
-            <li>Passport (valid for the full program duration + 6 months)</li>
-            <li>Student visa / program documents from the embassy</li>
-            <li>School enrollment letter</li>
-            <li>Program acceptance letter</li>
-            <li>Health insurance card — your Indian card won't cover Japan</li>
-            <li>Emergency contact list (printed, not just on phone)</li>
-            <li>Host family details (address, phone, printed separately)</li>
-        </ul>
+  <p class="intro-p">The most important rule: you will have access to shops when you get there. Extraordinary shops. Daiso, Tokyu Hands, every convenience store on earth. The instinct to over-pack "just in case" costs bag space and carry-on fees. Bring less than you think. Leave room for the trip home — you will need it.</p>
 
-        <div class="affiliate-box">
-            <h4>🗂️ Document Organizer</h4>
-            <p>I lost a copy of my visa on the flight because it was loose in my bag. A proper travel document organizer with RFID blocking is worth it for peace of mind.</p>
-            <a href="https://www.amazon.in/s?k=travel+document+organizer+rfid" class="affiliate-link" target="_blank" rel="noopener">View on Amazon India →</a>
-        </div>
+  <p style="font-family:'Special Elite',cursive;font-size:0.72rem;letter-spacing:0.08em;color:var(--ink-lt);background:rgba(201,90,24,0.05);border:1px dashed var(--kraft);padding:0.6rem 0.9rem;margin-bottom:1.5rem;">Disclosure: Some links below are affiliate links. I only recommend things I actually used or wish I'd had. You pay nothing extra.</p>
 
-        <h3>Money Setup</h3>
-        <ul>
-            <li><strong>¥50,000–¥80,000 cash</strong> for your first two weeks before you get a bank account set up</li>
-            <li>A debit card that works internationally — tell your bank you're travelling before you leave</li>
-            <li>Wise card (best exchange rates, low fees, works in Japan)</li>
-        </ul>
+  <!-- SECTION 1 -->
+  <div class="section-header" id="non-negotiables">
+    <div class="luggage-tag"><span class="lt-num">01</span><div class="lt-text">Non-Negotiables<span class="lt-jp">絶対必要なもの</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <div class="affiliate-box">
-            <h4>💳 Wise (Best for Sending Money Home)</h4>
-            <p>Wise gives real exchange rates with tiny fees. My parents used it to send me money from India throughout the year — way better than bank transfers. You can also use it yourself to manage money between currencies.</p>
-            <a href="https://wise.com/invite/" class="affiliate-link" target="_blank" rel="noopener">Get Wise (free account) →</a>
-        </div>
+  <p>These are items where if you forget them, no Japanese shop can fix it. Get these sorted before you think about anything else.</p>
 
-        <h3>Travel Insurance (Non-Negotiable)</h3>
-        <p>Japan has excellent healthcare but it is <strong>expensive</strong> if you're uninsured. Your program may provide basic coverage — check the paperwork carefully. If there are gaps, get supplementary coverage before you leave.</p>
+  <h3>Documents — carry originals + three printed copies of each</h3>
+  <ul>
+    <li>Passport — valid for the full program duration plus at least 6 months beyond</li>
+    <li>Student visa and all program acceptance documents from the embassy</li>
+    <li>School enrollment letter from your Indian school</li>
+    <li>Health insurance documentation — your Indian card does not cover Japan</li>
+    <li>Emergency contact list printed on paper, not just saved on your phone</li>
+    <li>Host family address and phone number printed separately</li>
+  </ul>
 
-        <div class="affiliate-box">
-            <h4>🏥 SafetyWing — Best for Long-Term Student Travel</h4>
-            <p>SafetyWing covers you month-to-month and is specifically designed for people staying abroad long-term. Way cheaper than most alternatives and has good Japan coverage. I'd recommend getting this on top of whatever your program provides.</p>
-            <a href="https://safetywing.com/?referenceId=ayachi" class="affiliate-link" target="_blank" rel="noopener">Get SafetyWing coverage →</a>
-        </div>
+  <h3>Money setup</h3>
+  <ul>
+    <li><strong>¥50,000–¥80,000 cash</strong> for your first two weeks before a local bank account is set up</li>
+    <li>International debit card — tell your bank you are travelling before you leave</li>
+    <li>Wise card — real exchange rates, low fees, works seamlessly in Japan</li>
+  </ul>
 
-        <!-- SECTION 2 -->
-        <h2 id="clothes">2. Clothes: What Japan Actually Requires</h2>
+  <div class="aff-box">
+    <div class="aff-label">Recommended · 推奨</div>
+    <h4>Wise Card — Best for Sending & Receiving Money</h4>
+    <p>My parents used Wise to send money from India throughout the year — way better than bank transfers. Real exchange rates, tiny fees. You can also manage your own money between currencies directly.</p>
+    <a href="https://wise.com/" class="aff-link" target="_blank" rel="noopener">Get Wise (free account) →</a>
+  </div>
 
-        <div class="callout">
-            <strong>⚠️ Shoe warning:</strong> If you're above a women's size 7 (EU 38) or men's size 9 (EU 43), Japanese shoe sizes will be very limited. Bring multiple pairs of the shoes you'll wear most.
-        </div>
+  <div class="callout cn">
+    <span class="callout-label">Travel Insurance — non-negotiable</span>
+    <p>Japan has excellent healthcare but it is expensive if you are uninsured. Check exactly what your program covers. If there are gaps, get supplementary coverage before you leave. This is not optional.</p>
+  </div>
 
-        <h3>You'll wear school uniform most of the time</h3>
-        <p>Your school will provide or tell you how to get your uniform. You won't need as many "going out" clothes as you think. Japanese high school is very uniform-heavy — I wore mine 5 days a week.</p>
+  <!-- SECTION 2 -->
+  <div class="section-header" id="clothes">
+    <div class="luggage-tag"><span class="lt-num">02</span><div class="lt-text">Clothes<span class="lt-jp">服装 · what Japan actually requires</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <div class="pack-grid">
-            <div class="pack-col">
-                <h4>✅ Bring</h4>
-                <ul>
-                    <li>5–6 casual outfits (weekends/breaks)</li>
-                    <li>1 formal outfit (ceremonies, events)</li>
-                    <li>Comfortable walking shoes × 2 pairs</li>
-                    <li>Indoor slippers (required in schools)</li>
-                    <li>Winter coat (Yokohama gets cold)</li>
-                    <li>Thermal underlayers × 3</li>
-                    <li>Socks × 10 pairs minimum</li>
-                    <li>Swimwear (school PE may include pool)</li>
-                </ul>
-            </div>
-            <div class="pack-col">
-                <h4>❌ Leave behind</h4>
-                <ul>
-                    <li>Fancy dresses (almost no occasions)</li>
-                    <li>Heavy boots (storage issues in Japanese homes)</li>
-                    <li>More than 2 bags/purses</li>
-                    <li>Too many graphic tees (subtle styles preferred in schools)</li>
-                    <li>Full-length winter coat if going in spring</li>
-                    <li>Pajamas (buy cute ones in Japan, much better)</li>
-                </ul>
-            </div>
-        </div>
+  <div class="callout cw">
+    <span class="callout-label">Shoe warning</span>
+    <p>If you are above a women's size 7 (EU 38) or men's size 9 (EU 43), Japanese shoe sizes will be very limited. Bring multiple pairs of the shoes you will wear most. This is the one category where over-packing is justified.</p>
+  </div>
 
-        <div class="affiliate-box">
-            <h4>🧥 Compression Packing Bags — Essential</h4>
-            <p>I fit twice the clothes I thought I could using these. Roll your clothes and compress. Game-changer for a year's worth of packing.</p>
-            <a href="https://www.amazon.in/s?k=compression+packing+bags+travel" class="affiliate-link" target="_blank" rel="noopener">View compression bags →</a>
-        </div>
+  <p>Your school will provide or tell you how to get your uniform. You will wear it five days a week. You need far fewer "going out" clothes than you think.</p>
 
-        <!-- SECTION 3 -->
-        <h2 id="tech">3. Tech Setup</h2>
+  <div class="pack-table">
+    <div class="pack-table-head"><span>✓ BRING</span><span>✗ LEAVE BEHIND</span><span>⟳ BUY IN JAPAN</span></div>
+    <div class="pack-table-row">
+      <div class="pack-col bring">5–6 casual outfits for weekends and breaks</div>
+      <div class="pack-col skip">Fancy dresses — almost no occasions</div>
+      <div class="pack-col buy">Pajamas — Japanese ones are much better</div>
+    </div>
+    <div class="pack-table-row">
+      <div class="pack-col bring">1 formal outfit for ceremonies and school events</div>
+      <div class="pack-col skip">Heavy boots — storage is tight in Japanese homes</div>
+      <div class="pack-col buy">Rain gear — cheap, everywhere</div>
+    </div>
+    <div class="pack-table-row">
+      <div class="pack-col bring">Indoor slippers — required in school buildings</div>
+      <div class="pack-col skip">More than 2 bags or purses</div>
+      <div class="pack-col buy">Seasonal clothes you underestimated</div>
+    </div>
+    <div class="pack-table-row">
+      <div class="pack-col bring">Winter coat + thermal underlayers × 3</div>
+      <div class="pack-col skip">Graphic tees — subtle styles preferred at school</div>
+      <div class="pack-col buy">Room decorations — Daiso is incredible</div>
+    </div>
+    <div class="pack-table-row">
+      <div class="pack-col bring">Socks × 10 pairs minimum. Really.</div>
+      <div class="pack-col skip">Your entire skincare collection</div>
+      <div class="pack-col buy">Skincare — Japanese drugstores are unbeatable</div>
+    </div>
+  </div>
 
-        <h3>Power Adapters</h3>
-        <p>Japan uses Type A plugs (same as US/Canada) at 100V. Indian plugs are Type C/D at 230V. You need a voltage converter for anything that isn't dual-voltage (check your device label for "100–240V" — if it says that, you only need a plug adapter).</p>
+  <div class="aff-box">
+    <div class="aff-label">Space saver · 節約</div>
+    <h4>Compression Packing Bags</h4>
+    <p>I fit twice the clothes I thought I could using these. Roll your clothes, slide them in, roll to compress. Game-changer for fitting a year's worth of packing into a checked bag and a carry-on.</p>
+    <a href="https://www.amazon.in/s?k=compression+packing+bags+travel" class="aff-link" target="_blank" rel="noopener">View compression bags →</a>
+  </div>
 
-        <div class="affiliate-box">
-            <h4>🔌 Universal Travel Adapter with USB ports</h4>
-            <p>Get one that handles Indian → Japan conversion AND has USB-A and USB-C ports built in. I used mine every single day.</p>
-            <a href="https://www.amazon.in/s?k=universal+travel+adapter+japan+india" class="affiliate-link" target="_blank" rel="noopener">View adapters on Amazon →</a>
-        </div>
+  <!-- SECTION 3 -->
+  <div class="section-header" id="tech">
+    <div class="luggage-tag"><span class="lt-num">03</span><div class="lt-text">Tech Setup<span class="lt-jp">電子機器</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <h3>SIM Card / Data</h3>
-        <p>Your Indian SIM won't work well in Japan on a regular plan. You have two good options:</p>
-        <ul>
-            <li><strong>IIJmio or Rakuten Mobile</strong> — local Japanese SIM, cheapest for long stays, but requires a Japanese bank account or address</li>
-            <li><strong>Airalo Japan eSIM</strong> — works immediately, no paperwork, best for your first few weeks while you set up a local plan</li>
-        </ul>
+  <h3>Power adapters</h3>
+  <p>Japan uses Type A plugs (same as US/Canada) at 100V. India uses Type C/D at 230V. You need a voltage converter for anything that is not dual-voltage — check your device label for "100–240V." If it says that, you only need a plug adapter, not a full converter.</p>
 
-        <div class="affiliate-box">
-            <h4>📱 Airalo eSIM — Use It for Your First Month</h4>
-            <p>Airalo is an eSIM marketplace with good Japan data packages. Use it while you're getting settled and set up a local SIM once you have an address. Works on any unlocked, eSIM-compatible phone.</p>
-            <a href="https://ref.airalo.com/ayachi" class="affiliate-link" target="_blank" rel="noopener">Get Japan eSIM on Airalo →</a>
-        </div>
+  <h3>SIM card and data</h3>
+  <p>Your Indian SIM will not work well in Japan on a regular plan. For your first few weeks while you set up a local plan, an eSIM is the easiest option. Once you have a Japanese address, IIJmio or Rakuten Mobile are the most cost-effective long-term options.</p>
 
-        <h3>Other Tech Essentials</h3>
-        <ul>
-            <li>Portable charger (10,000mAh minimum — you'll be out all day)</li>
-            <li>Earphones/headphones — commutes are long</li>
-            <li>Laptop if you'll be studying/writing seriously</li>
-            <li>Download Google Maps offline for your city before arrival</li>
-        </ul>
+  <div class="aff-box">
+    <div class="aff-label">First month · 最初の一ヶ月</div>
+    <h4>Airalo eSIM — Use This While Getting Settled</h4>
+    <p>Airalo has good Japan data packages that activate immediately, no paperwork. Works on any unlocked eSIM-compatible phone. Use it until you have a Japanese address and can set up a local plan.</p>
+    <a href="https://www.airalo.com/" class="aff-link" target="_blank" rel="noopener">Get Japan eSIM on Airalo →</a>
+  </div>
 
-        <div class="affiliate-box">
-            <h4>🔋 Anker PowerCore Portable Charger</h4>
-            <p>Anker is the most reliable brand I've used. The 10,000mAh one fits in a bag pocket and charges most phones twice. Worth every rupee.</p>
-            <a href="https://www.amazon.in/s?k=anker+powercore+10000" class="affiliate-link" target="_blank" rel="noopener">View on Amazon India →</a>
-        </div>
+  <h3>Also bring</h3>
+  <ul>
+    <li>Portable charger — 10,000mAh minimum, you will be out all day</li>
+    <li>Earphones — commutes are long (49 minutes in my case, every day)</li>
+    <li>Download Google Maps offline for your city before departure</li>
+    <li>Laptop if you plan to write or study seriously</li>
+  </ul>
 
-        <!-- SECTION 4 -->
-        <h2 id="school">4. School Supplies</h2>
+  <!-- SECTION 4 -->
+  <div class="section-header" id="school">
+    <div class="luggage-tag"><span class="lt-num">04</span><div class="lt-text">School Supplies<span class="lt-jp">学用品</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <p>Good news: Japanese stationery is <em>incredible</em> and you'll want to buy it there. Don't bring lots of pens and notebooks — you'll end up replacing them anyway with Japanese ones that are genuinely better.</p>
+  <p>Japanese stationery is extraordinary and you will want to buy it there. Do not pack lots of pens and notebooks — you will replace them anyway with Japanese ones that are genuinely better.</p>
 
-        <h3>Bring from India</h3>
-        <ul>
-            <li>Your preferred calculator (if you have one)</li>
-            <li>Any study materials in your native language you'll need</li>
-            <li>A good dictionary app downloaded offline (Japanese ↔ English)</li>
-        </ul>
+  <h3>Bring from India</h3>
+  <ul>
+    <li>Your preferred calculator if you have one</li>
+    <li>Any study materials you need in English or your native language</li>
+    <li>A dictionary app downloaded offline — Japanese to English, English to Japanese</li>
+  </ul>
 
-        <h3>Buy in Japan</h3>
-        <ul>
-            <li>Notebooks — Kokuyo Campus notebooks are legendary</li>
-            <li>Pens — Pilot, Uni, Zebra are all far superior to most Indian options</li>
-            <li>Sticky notes, highlighters, correction tape</li>
-            <li>Pencil case — 100 yen stores have great ones</li>
-        </ul>
+  <h3>Buy in Japan instead</h3>
+  <ul>
+    <li>Notebooks — Kokuyo Campus notebooks are legendary. You will buy six.</li>
+    <li>Pens — Pilot, Uni, Zebra are all far superior to most options back home</li>
+    <li>Sticky notes, highlighters, correction tape, pencil case from 100 yen stores</li>
+  </ul>
 
-        <div class="affiliate-box">
-            <h4>📓 Japanese Stationery (Order Before You Go)</h4>
-            <p>If you can't wait to get your hands on Japanese stationery, some of it is available on Amazon India now. Pilot pens in particular are worth ordering in advance.</p>
-            <a href="https://www.amazon.in/s?k=pilot+pen+japanese+stationery" class="affiliate-link" target="_blank" rel="noopener">Japanese stationery on Amazon India →</a>
-        </div>
+  <div class="callout ct">
+    <span class="callout-label">100 yen stores — Daiso, Seria</span>
+    <p>Everything you could possibly need for your school desk, your room, your bag, and your life in general — at 110 yen per item. Budget ¥3,000–5,000 for a Daiso run in your first week and just enjoy it.</p>
+  </div>
 
-        <!-- SECTION 5 -->
-        <h2 id="comfort">5. Comfort Items That Saved Me</h2>
+  <div class="text-divider"><span class="text-divider-inner">PART TWO · WHAT SAVES YOU</span></div>
 
-        <p>These are the "soft" items that sound unnecessary but genuinely help with homesickness and settling in.</p>
-        <ul>
-            <li><strong>Photos printed on paper</strong> — of your family, friends, home. Put them up in your room at the host family's house. It sounds small but it matters a lot.</li>
-            <li><strong>A comfort food you love from India</strong> — not a full bag, just a few packs of something. Instant noodles, biscuits, whatever your version is. For the first two weeks of homesickness this is genuinely helpful.</li>
-            <li><strong>Your own pillow</strong> — controversial because of bag space, but Japanese pillows tend to be harder than what most Indians are used to. A travel pillow at minimum.</li>
-            <li><strong>A journal</strong> — you will want to write things down. The year goes fast and your memory will not keep up.</li>
-        </ul>
+  <!-- SECTION 5 -->
+  <div class="section-header" id="comfort">
+    <div class="luggage-tag"><span class="lt-num">05</span><div class="lt-text">Comfort Items<span class="lt-jp">安心グッズ · the ones that saved me</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <!-- SECTION 6 -->
-        <h2 id="japan-finds">6. What to Buy in Japan Instead</h2>
-        <p>Save bag space and money by buying these there. Japan is cheaper for these categories than India.</p>
-        <ul>
-            <li>Skincare and face masks (Japanese drugstores are unbeatable)</li>
-            <li>Umbrellas (cheap, everywhere, buy one there)</li>
-            <li>Stationery as mentioned above</li>
-            <li>Cute room decorations (Daiso, Seria 100¥ stores)</li>
-            <li>Rain gear and seasonal clothes you underestimated</li>
-            <li>Snacks for daily life — Japanese convenience stores (konbini) are legendary</li>
-        </ul>
+  <p>These are the "soft" items that sound unnecessary but genuinely help with the first month, which is the hardest month.</p>
+  <ul>
+    <li><strong>Photos printed on paper.</strong> Of your family, friends, home. Put them up in your room. It sounds small. It is not small. Do this.</li>
+    <li><strong>One comfort food from India.</strong> Not a full bag. Just a few packs of something — instant noodles, biscuits, whatever your version is. For the first two weeks of homesickness this is genuinely helpful.</li>
+    <li><strong>A journal.</strong> You will want to write things down. The year goes fast. Your memory will not keep up.</li>
+    <li><strong>A small thing from home that means something.</strong> Not for showing anyone. Just for knowing it is there.</li>
+  </ul>
 
-        <!-- SECTION 7 -->
-        <h2 id="leave-behind">7. What to Leave Behind</h2>
-        <p>Things that seem necessary but you genuinely won't use or can easily replace:</p>
-        <ul>
-            <li>More than 2 pairs of jeans — you'll be in uniform most of the time</li>
-            <li>Fancy shoes — Japanese streets require practical footwear</li>
-            <li>Heavy textbooks — most academic resources can be digital</li>
-            <li>Full-size toiletries — Japanese drugstores have everything, often better quality</li>
-            <li>Your entire makeup collection — a small kit is fine</li>
-            <li>Gaming gear, large electronics — too heavy, too much hassle at customs</li>
-        </ul>
+  <!-- SECTION 6 -->
+  <div class="section-header" id="buy-there">
+    <div class="luggage-tag"><span class="lt-num">06</span><div class="lt-text">Buy in Japan<span class="lt-jp">現地調達リスト</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <div class="warning-box">
-            ⚠️ <strong>Customs note:</strong> Japan has strict customs rules around certain medications and supplements. If you take prescription medication, carry a doctor's letter in both English and Japanese if possible, and check Japan's customs rules specifically for your medication before packing.
-        </div>
+  <p>These categories are cheaper and better in Japan than anything you could pack. Save the bag space.</p>
+  <ul>
+    <li>Skincare and face masks — Japanese drugstores (Matsumoto Kiyoshi, Sundrug) are genuinely extraordinary</li>
+    <li>Umbrellas — cheap, everywhere, buy one when it first rains and keep it in your bag</li>
+    <li>All stationery as described above</li>
+    <li>Room decorations and organisers from 100 yen stores</li>
+    <li>Any seasonal clothing you underestimated — Japan has distinct seasons and you will need to adapt</li>
+  </ul>
 
-        <!-- SECTION 8 -->
-        <h2 id="checklist">8. Full Checklist</h2>
-        <p>Use this to prep your packing. Check things off as you pack them.</p>
+  <!-- SECTION 7 -->
+  <div class="section-header" id="customs">
+    <div class="luggage-tag"><span class="lt-num">07</span><div class="lt-text">Customs & Meds<span class="lt-jp">税関と薬</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-        <div class="checklist-box">
-            <h3>📋 Complete Packing Checklist</h3>
-            <ul class="interactive-checklist" id="packing-checklist">
-                <li><label><input type="checkbox"> Passport (valid 18+ months)</label></li>
-                <li><label><input type="checkbox"> Visa / program documents</label></li>
-                <li><label><input type="checkbox"> Travel insurance documents</label></li>
-                <li><label><input type="checkbox"> Emergency contact list (printed)</label></li>
-                <li><label><input type="checkbox"> Host family address & phone (printed)</label></li>
-                <li><label><input type="checkbox"> ¥50,000 cash minimum</label></li>
-                <li><label><input type="checkbox"> International debit/Wise card</label></li>
-                <li><label><input type="checkbox"> Power adapter (India → Japan)</label></li>
-                <li><label><input type="checkbox"> Portable charger</label></li>
-                <li><label><input type="checkbox"> Phone (unlocked) + SIM plan sorted</label></li>
-                <li><label><input type="checkbox"> 5–6 casual outfits</label></li>
-                <li><label><input type="checkbox"> 1 formal outfit</label></li>
-                <li><label><input type="checkbox"> Indoor slippers</label></li>
-                <li><label><input type="checkbox"> Winter coat / thermals</label></li>
-                <li><label><input type="checkbox"> 10+ pairs socks</label></li>
-                <li><label><input type="checkbox"> Medication (with doctor's letter)</label></li>
-                <li><label><input type="checkbox"> Printed family photos</label></li>
-                <li><label><input type="checkbox"> 1 comfort food pack</label></li>
-                <li><label><input type="checkbox"> Journal</label></li>
-                <li><label><input type="checkbox"> Compression packing bags</label></li>
-            </ul>
-            <p class="checklist-progress">Progress: <span id="pack-progress-text">0/20 packed</span></p>
-        </div>
+  <div class="callout cw">
+    <span class="callout-label">Important — medication rules</span>
+    <p>Japan has strict customs rules around certain medications and supplements. If you take prescription medication, carry a doctor's letter in both English and Japanese if possible, and check Japan's customs website specifically for your medication before you pack. Some common medications in India are controlled substances in Japan.</p>
+  </div>
 
-        <!-- EMAIL CAPTURE -->
-        <div class="email-capture-box">
-            <h3>📥 Get the Free Japan Application Starter Kit</h3>
-            <p>Checklist, application timeline, and essay frameworks — everything in one printable PDF. Free, no spam.</p>
-            <form class="email-form" onsubmit="handleSignup(event)">
-                <input type="text" class="email-input" placeholder="Your first name" id="cap-name" required>
-                <input type="email" class="email-input" placeholder="your@email.com" id="cap-email" required>
-                <button type="submit" class="email-submit">Get the Kit ♡</button>
-            </form>
-            <p class="email-privacy">No spam. One email max per week. Unsubscribe anytime.</p>
-        </div>
+  <p>General medications — basic pain relief, antacids, cold medicine — are available at Japanese drugstores. However, formulations differ from Indian versions and reading the packaging in Japanese can be difficult at first. Bring a two-month supply of anything you rely on regularly and restock carefully once you have someone who can help you read labels.</p>
 
-        <!-- INTERNAL LINKS -->
-        <div style="background: var(--cream); border: 2px solid var(--border-blue); border-radius: 12px; padding: 1.25rem; margin: 2rem 0;">
-            <p style="font-family: 'Fredoka', cursive; font-size: 18px; margin-bottom: 0.75rem; color: var(--text);">📚 Read Next</p>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 0.5rem;"><a href="kakehashi-guide.html" style="color: var(--dark-pink); text-decoration: none; font-weight: 700;">→ Complete Guide to Asia Kakehashi Application</a></li>
-                <li style="margin-bottom: 0.5rem;"><a href="budget-guide.html" style="color: var(--dark-pink); text-decoration: none; font-weight: 700;">→ How Much Does a Japan Exchange Year Actually Cost?</a></li>
-                <li><a href="japan-exchange-survival-guide.html" style="color: var(--dark-pink); text-decoration: none; font-weight: 700;">→ Japan Exchange Survival Guide I Wish I Had</a></li>
-            </ul>
-        </div>
-    </main>
+  <!-- SECTION 8 -->
+  <div class="section-header" id="checklist">
+    <div class="luggage-tag"><span class="lt-num">08</span><div class="lt-text">Full Checklist<span class="lt-jp">完全チェックリスト</span></div></div>
+  </div>
+  <div class="section-rule"></div>
 
-    <script src="../assets/js/guide.js"></script>
-    <script>
-    // Packing checklist persistence
-    const packBoxes = document.querySelectorAll('#packing-checklist input[type="checkbox"]');
-    const packProgress = document.getElementById('pack-progress-text');
-    function updatePack() {
-        const total = packBoxes.length;
-        const checked = document.querySelectorAll('#packing-checklist input:checked').length;
-        if (packProgress) packProgress.textContent = `${checked}/${total} packed`;
-        localStorage.setItem('packing-checklist', JSON.stringify(Array.from(packBoxes).map(c => c.checked)));
-    }
-    const savedPack = localStorage.getItem('packing-checklist');
-    if (savedPack) { JSON.parse(savedPack).forEach((v,i) => { if(packBoxes[i]) packBoxes[i].checked = v; }); updatePack(); }
-    packBoxes.forEach(cb => cb.addEventListener('change', updatePack));
+  <div class="cl-box" id="pack-cl">
+    <div class="cl-section-title">Documents & Money</div>
+    <div class="cl-grid">
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Passport (valid 18+ months)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Visa / program documents</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Travel insurance documents</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Emergency contact list (printed)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Host family address (printed)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>¥50,000 cash minimum</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>International debit / Wise card</label></div>
+    </div>
+    <div class="cl-section-title">Tech</div>
+    <div class="cl-grid">
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Power adapter (India → Japan)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Portable charger (10,000mAh+)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Phone (unlocked) + SIM sorted</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Earphones</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Google Maps offline downloaded</label></div>
+    </div>
+    <div class="cl-section-title">Clothes</div>
+    <div class="cl-grid">
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>5–6 casual outfits</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>1 formal outfit</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Indoor slippers</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Winter coat + thermals × 3</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Socks × 10 pairs minimum</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Comfortable shoes × 2 pairs</label></div>
+    </div>
+    <div class="cl-section-title">Comfort & Other</div>
+    <div class="cl-grid">
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Medication (with doctor's letter)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Photos of family (printed)</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>One comfort food from home</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Journal</label></div>
+      <div class="cl-item"><input type="checkbox" class="pcb" onchange="updateClCount()"><label>Compression packing bags</label></div>
+    </div>
+    <div class="cl-count" id="cl-count">0 / 22 packed</div>
+  </div>
 
-    // Email capture
-    function handleSignup(e) {
-        e.preventDefault();
-        const btn = e.target.querySelector('.email-submit');
-        btn.textContent = 'Sending ♡...';
-        setTimeout(() => {
-            btn.textContent = 'Check your inbox! ✨';
-            btn.style.background = '#6abf69';
-        }, 800);
-    }
+  <div class="end-deco">— PACK SMART · LEAVE ROOM · 楽しんで —</div>
 
-    // Reading progress bar
-    const bar = document.querySelector('.reading-progress-bar');
-    if (bar) {
-        window.addEventListener('scroll', () => {
-            const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            bar.style.width = Math.min(pct, 100) + '%';
-        });
-    }
+  <div class="cta-box">
+    <h3>Get the Free Japan Exchange Starter Kit</h3>
+    <p>Application timeline, packing checklist, essay frameworks — one PDF, free. Written by a 2021 Kakehashi scholar from India.</p>
+    <a href="/free-kit/" class="cta-btn">Download Free Kit →</a>
+  </div>
 
-    // Copy tip buttons
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            navigator.clipboard.writeText(btn.dataset.copy || btn.previousSibling?.textContent || '');
-            btn.textContent = '✅ Copied!';
-            setTimeout(() => btn.textContent = '📋 Copy this tip', 1500);
-        });
-    });
-    </script>
+  <p style="font-family:'Special Elite',cursive;font-size:0.78rem;color:var(--ink-lt);margin-top:1.5rem;line-height:1.8;">Ayachi Samyal packed for Japan at 16 with no idea what she was doing and came back a year later with far too much stuff she had bought there. She writes about exchange student life, Japan, and the practical details nobody mentions.</p>
+
+</main>
+
+<aside class="guide-sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Contents</span><span class="sidebar-jp">目次</span></div>
+    <ul class="toc-list">
+      <li><a href="#non-negotiables"><span class="toc-num">01</span>Non-Negotiables</a></li>
+      <li><a href="#clothes"><span class="toc-num">02</span>Clothes</a></li>
+      <li><a href="#tech"><span class="toc-num">03</span>Tech Setup</a></li>
+      <li><a href="#school"><span class="toc-num">04</span>School Supplies</a></li>
+      <li><a href="#comfort"><span class="toc-num">05</span>Comfort Items</a></li>
+      <li><a href="#buy-there"><span class="toc-num">06</span>Buy in Japan</a></li>
+      <li><a href="#customs"><span class="toc-num">07</span>Customs & Meds</a></li>
+      <li><a href="#checklist"><span class="toc-num">08</span>Full Checklist</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>The Rule</span><span class="sidebar-jp">鉄則</span></div>
+    <p style="font-size:1rem;line-height:1.6;color:var(--orange);">Bring less than you think you need.</p>
+    <p>Japan has extraordinary shops. Leave room in your bag for the journey home.</p>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Free Resource</span><span class="sidebar-jp">無料</span></div>
+    <p>Japan Exchange Starter Kit — checklist, timeline, essay frameworks. Free PDF.</p>
+    <a href="/free-kit/" class="sidebar-link">Download free kit</a>
+  </div>
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Related</span><span class="sidebar-jp">関連記事</span></div>
+    <ul class="related-list">
+      <li><a href="kakehashi-guide.html">Kakehashi Application Guide</a></li>
+      <li><a href="budget-guide.html">How Much It Costs</a></li>
+      <li><a href="Bento.html">Host Family Bento Guide</a></li>
+      <li><a href="Train.html">Daily Commute Guide</a></li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<footer>
+  <p>Ayachi Samyal · Japan Exchange Blog · 交換留学ブログ</p>
+  <p class="footer-jp">サムヤル アヤチ · Yokohama 2021</p>
+</footer>
+
+<script>
+const rp=document.getElementById('rp');
+window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
+function updateClCount(){const t=document.querySelectorAll('.pcb').length;const c=document.querySelectorAll('.pcb:checked').length;document.getElementById('cl-count').textContent=c+' / '+t+' packed';}
+</script>
 </body>
 </html>
