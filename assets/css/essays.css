@@ -1,3 +1,4 @@
+a, a:link, a:visited { color: inherit; text-decoration: none; }
 /* ══════════════════════════════════════════════════
    KAISHI — Ink-on-paper editorial aesthetic
    Ayachi Samyal · Essays
@@ -23,6 +24,12 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+
+/* Global link reset — kill browser blue everywhere */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 body {
   background: var(--paper);
@@ -104,13 +111,14 @@ body {
   max-width: var(--max-wide);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 240px;
   border-bottom: 2px solid var(--ink);
 }
 
 .essay-header-main {
   padding: 3.5rem 3rem 3rem 2.5rem;
   border-right: 1px solid var(--rule);
+  min-width: 0; /* allow flex/grid shrink */
 }
 
 .essay-header-rail {
@@ -161,7 +169,7 @@ body {
   color: #4a4340;
   border-top: 1px solid var(--rule-lt);
   padding-top: 1.2rem;
-  max-width: 560px;
+  width: 100%;
 }
 
 /* Byline strip */
@@ -232,7 +240,6 @@ body {
   line-height: 2;
   color: var(--ink);
   margin-bottom: 1.8rem;
-  max-width: 60ch;
 }
 
 .essay-text p em {
@@ -278,14 +285,20 @@ body {
   line-height: 1;
 }
 
+.pull-quote p,
+.essay-aside-box p,
+.structural-breakdown p {
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
 .pull-quote p {
-  font-family: 'IM Fell English', serif !important;
-  font-style: italic !important;
-  font-size: 1.3rem !important;
-  line-height: 1.55 !important;
-  color: var(--ink) !important;
-  margin: 0 !important;
-  max-width: 100% !important;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
 }
 
 /* ── STRUCTURAL ASIDE ─────────────────── */
@@ -297,11 +310,11 @@ body {
 }
 
 .essay-aside-box p {
-  font-size: 0.88rem !important;
-  line-height: 1.85 !important;
-  color: var(--muted) !important;
-  font-style: italic !important;
-  margin: 0 !important;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
 }
 
 /* ── SECTION RULE ─────────────────────── */
@@ -345,10 +358,10 @@ body {
 }
 
 .structural-breakdown p {
-  font-size: 0.84rem !important;
-  line-height: 1.8 !important;
-  color: var(--muted) !important;
-  margin-bottom: 0.6rem !important;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
 }
 
 /* ── ESSAY MARGIN RAIL ────────────────── */
