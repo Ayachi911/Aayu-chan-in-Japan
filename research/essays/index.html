@@ -1,75 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essays | Ayachi Samyal</title>
-    <meta name="description" content="Essays on cultural exchange, international relations, and the experience of living between worlds. By Ayachi Samyal, Asia Kakehashi Scholar 2021.">
-    <link rel="stylesheet" href="../../assets/css/essays.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essays — Ayachi Samyal</title>
+<meta name="description" content="Essays on cultural exchange, international relations, and the experience of living between worlds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Shippori+Mincho:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── KAISHI SYSTEM ─────────────────────────────────── */
+:root {
+  --ink:      #1a1714;
+  --paper:    #f7f3ed;
+  --aged:     #ede7dd;
+  --terra:    #8b4a2f;
+  --terra-lt: #c47a5a;
+  --muted:    #7a7068;
+  --rule:     #c8bfb2;
+  --rule-lt:  #ddd8d0;
+  --shadow:   rgba(26,23,20,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  /* Subtle paper grain */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ── MASTHEAD ──────────────────────────────────────── */
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.masthead-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  gap: 2rem;
+}
+
+.masthead-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.masthead-logo-wrap {
+  text-align: center;
+  flex: 1;
+}
+
+.masthead-kanji {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.5em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.masthead-name {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+  display: block;
+}
+
+.masthead-tagline {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.62rem;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.masthead-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-align: right;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.masthead-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0.55rem 2.5rem;
+}
+
+.masthead-nav a {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.3rem 1.4rem;
+  border-right: 1px solid var(--rule);
+  transition: color 0.2s;
+}
+.masthead-nav a:first-child { border-left: 1px solid var(--rule); }
+.masthead-nav a:hover, .masthead-nav a.act { color: var(--terra); }
+
+/* ── INK STAMP LABEL ───────────────────────────────── */
+.stamp {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--terra);
+  border: 1.5px solid var(--terra);
+  padding: 0.25rem 0.8rem;
+  position: relative;
+  /* Ink bleed via SVG filter */
+  filter: url(#ink-bleed);
+  opacity: 0.85;
+}
+
+/* SVG filters for ink effects */
+svg.filters { position: absolute; width: 0; height: 0; }
+
+/* ── SECTION BANNER ────────────────────────────────── */
+.section-banner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2.5rem 1.2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-banner h1 {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.section-banner p {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+/* ── BROADSHEET GRID ───────────────────────────────── */
+.broadsheet {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+}
+
+.col-rule {
+  background: var(--rule);
+  margin: 2.5rem 0;
+}
+
+/* LEAD STORY — spans full or two cols */
+.story-lead {
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+.story-lead-text {
+  padding: 2.5rem 2.5rem 2rem 0;
+  border-right: 1px solid var(--rule);
+}
+
+.story-lead-aside {
+  padding: 2.5rem 0 2rem 2.5rem;
+}
+
+/* STANDARD COLUMN STORY */
+.story {
+  padding: 2.5rem 2rem 2rem;
+  border-bottom: 1px solid var(--rule-lt);
+}
+
+.story:last-child { border-bottom: none; }
+
+/* Story labels */
+.story-rubric {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.story-rubric::after {
+  content: '';
+  flex: 0 0 24px;
+  height: 1px;
+  background: var(--terra);
+  opacity: 0.4;
+}
+
+/* Story headline */
+.story h2 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+.story h2 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.story h2 a:hover { color: var(--terra); }
+
+.story-lead-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.1;
+}
+
+/* Deck / lede */
+.story-deck {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.story-lead-text .story-deck {
+  font-size: 1.05rem;
+  color: #4a4340;
+}
+
+/* Body snippet */
+.story-snippet {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.84rem;
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+/* Byline */
+.story-byline {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule-lt);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.story-byline::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--muted);
+}
+
+/* Read link */
+.read-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--terra);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.read-link:hover { opacity: 1; }
+
+/* ── PULL QUOTE (aside) ────────────────────────────── */
+.broadsheet-aside {
+  padding: 2.5rem 0 2rem 2rem;
+  border-left: 1px solid var(--rule);
+}
+
+.aside-ornament {
+  font-family: 'IM Fell English', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--terra);
+  opacity: 0.15;
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.aside-quote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+.aside-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── BROADSHEET BOTTOM SECTION ────────────────────── */
+.broadsheet-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem 5rem;
+  border-top: 2px solid var(--ink);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+}
+
+.bottom-main {
+  padding-top: 2rem;
+  border-right: 1px solid var(--rule);
+  padding-right: 2.5rem;
+}
+
+.bottom-main h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bottom-main h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.archive-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule-lt);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.archive-row:hover .arch-title { color: var(--terra); }
+
+.arch-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  padding-top: 0.2rem;
+  line-height: 1.6;
+}
+
+.arch-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+
+.arch-desc {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  line-height: 1.6;
+}
+
+/* ── SIDEBAR ───────────────────────────────────────── */
+.bottom-sidebar {
+  padding: 2rem 0 2rem 2.5rem;
+}
+
+.sidebar-block {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule-lt);
+}
+
+.sidebar-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.sidebar-kanji-row {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-kanji {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2.2rem;
+  color: var(--ink);
+  opacity: 0.12;
+  line-height: 1;
+}
+
+.sidebar-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.sidebar-stat {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  font-family: 'IM Fell English', serif;
+  font-weight: 400;
+}
+
+/* ── FOOTER ────────────────────────────────────────── */
+.site-footer {
+  border-top: 3px double var(--ink);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: 'IM Fell English', serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.footer-copy {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── DECORATIVE RULE ───────────────────────────────── */
+.orn-rule {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--rule);
+  letter-spacing: 0.5em;
+  margin: 0.5rem 0;
+  user-select: none;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 900px) {
+  .broadsheet {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem 4rem;
+  }
+  .col-rule { display: none; }
+  .story-lead { grid-column: 1; grid-template-columns: 1fr; }
+  .story-lead-aside { display: none; }
+  .story-lead-text { padding: 2rem 0; border-right: none; }
+  .broadsheet-bottom { grid-template-columns: 1fr; padding: 0 1.5rem 4rem; }
+  .bottom-main { border-right: none; padding-right: 0; }
+  .bottom-sidebar { padding-left: 0; }
+  .masthead-top { flex-direction: column; text-align: center; }
+  .masthead-meta, .masthead-date { display: none; }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <a href="../" class="logo">Ayachi Samyal</a>
-        <div class="nav-links">
-            <a href="../essays/" class="active">Essays</a>
-            <a href="../guides/">Guides</a>
-            <a href="../about.html">About</a>
-        </div>
-    </nav>
-    <div class="essays-index">
-        <div class="essays-masthead">
-            <h1>Essays</h1>
-            <div class="masthead-meta">
-                <strong>Ayachi Samyal</strong>
-                Asia Kakehashi Scholar, 2021<br>
-                Yokohama, Japan<br>
-                BTech Student · India
-            </div>
-        </div>
-        <p class="intro-text">Reflections on cultural exchange, soft power, and the experience of living between two worlds.</p>
-        <div class="issue-label">Recent Writing</div>
-        <ul class="archive-list">
-            <li class="archive-item">
-                <time datetime="2026-02-11">Feb<br>2026</time>
-                <div>
-                    <h3><a href="cultural-exchange-statecraft.html">Cultural Exchange as Statecraft</a></h3>
-                    <p>A policy-grade analysis of how governments deploy youth exchange programs as instruments of long-term geopolitical influence — and what the Kakehashi program reveals about Japan's soft power doctrine.</p>
-                    <a href="cultural-exchange-statecraft.html" class="read-more">Read essay</a>
-                </div>
-            </li>
-            <li class="archive-item">
-                <time datetime="2026-02-10">Feb<br>2026</time>
-                <div>
-                    <h3><a href="what-living-in-japan.html">What Living in Japan Taught Me About Power, Politeness, and Strategic Silence</a></h3>
-                    <p>An analysis of how silence, deference, and social ritual function as governance tools in Japanese society — drawn from a year of direct observation inside a Yokohama high school.</p>
-                    <a href="what-living-in-japan.html" class="read-more">Read essay</a>
-                </div>
-            </li>
-            <li class="archive-item">
-                <time datetime="2026-02-08">Feb<br>2026</time>
-                <div>
-                    <h3><a href="cultural-exchange.html">On Cultural Exchange and Belonging</a></h3>
-                    <p>What the Asia Kakehashi Project taught me about identity, displacement, and finding meaning in the space between cultures.</p>
-                    <a href="cultural-exchange.html" class="read-more">Read essay</a>
-                </div>
-            </li>
-            <li class="archive-item">
-                <time datetime="2026-02-17">Feb<br>2026</time>
-                <div>
-                    <h3><a href="host-family-dinner.html">What a Feast Taught Me About Rest</a></h3>
-                    <p>A Japanese host family dinner on a rare leisure day — and what fuwa fuwa actually reveals about a culture that doesn't perform relaxation.</p>
-                    <a href="host-family-dinner.html" class="read-more">Read essay</a>
-                </div>
-            </li>
-        </ul>
+
+<!-- Hidden SVG filters for ink bleed effect -->
+<svg class="filters" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="ink-bleed" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-date">
+      WEDNESDAY · MARCH 4 · 2026<br>
+      <span style="color:var(--terra);font-size:0.58em;letter-spacing:0.15em;">YOKOHAMA / NEW DELHI</span>
     </div>
-    <script>
-    // Mark active nav
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.href === window.location.href) a.classList.add('active');
-    });
-    </script>
+    <div class="masthead-logo-wrap">
+      <span class="masthead-kanji">文 · 化 · 交 · 流</span>
+      <span class="masthead-name">Ayachi Samyal</span>
+      <span class="masthead-tagline">Asia Kakehashi Scholar, 2021 · Essays on culture, exchange & soft power</span>
+    </div>
+    <div class="masthead-meta">
+      BTech Student · India<br>
+      Kakehashi 2021<br>
+      Yokohama Hiranuma HS
+    </div>
+  </div>
+  <div class="masthead-nav">
+    <a href="#">Home</a>
+    <a href="#" class="act">Essays</a>
+    <a href="#">Guides</a>
+    <a href="#">About</a>
+  </div>
+</header>
+
+<!-- ── SECTION BANNER ── -->
+<div class="section-banner">
+  <div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Volume I · 2026</div>
+    <h1>Essays</h1>
+  </div>
+  <div style="flex:1;height:1px;background:var(--rule);margin:0 2rem;"></div>
+  <p>Reflections on cultural exchange, soft power,<br>and the experience of living between two worlds.</p>
+</div>
+
+<!-- ── BROADSHEET BODY ── -->
+<main class="broadsheet">
+
+  <!-- LEAD STORY -->
+  <div class="story-lead">
+    <div class="story-lead-text">
+      <div class="story-rubric">Featured Essay · International Relations</div>
+      <h2><a href="cultural-exchange-statecraft.html">Cultural Exchange as Statecraft</a></h2>
+      <p class="story-deck">Japan's youth exchange programs operate not as cultural goodwill gestures but as deliberate instruments of norm diffusion and relationship pre-formation — a coherent soft power doctrine operating below the level of formal diplomacy.</p>
+      <p class="story-snippet">In 2021, I was selected as one of twenty-one Indian students — and approximately two hundred and fifty from across Asia — to spend a year in Japan through the Asia Kakehashi Project. What I did not understand at the time, and have spent subsequent years trying to understand, is what exactly the Japanese government was selecting for, and why.</p>
+      <a href="cultural-exchange-statecraft.html" class="read-link">Read essay →</a>
+      <div class="story-byline">Ayachi Samyal · Feb 11, 2026 · 12 min</div>
+    </div>
+    <div class="story-lead-aside">
+      <span class="aside-ornament">"</span>
+      <p class="aside-quote">The program is not creating Japan advocates. It is creating people with a relationship to Japan that will inflect their professional judgements in ways that are neither predictable nor coerced.</p>
+      <p class="aside-attr">— Cultural Exchange as Statecraft</p>
+
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--rule-lt);">
+        <div class="story-rubric">About the Author</div>
+        <p class="story-snippet">Ayachi Samyal is a 2021 Asia Kakehashi Project scholar. She lived with a host family in Yokohama for one year as part of the high school exchange track. Currently a BTech student in India.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COL RULE -->
+  <div class="col-rule"></div>
+
+  <!-- COL 2 STORIES -->
+  <div>
+    <div class="story">
+      <div class="story-rubric">Cultural Observation · Japan</div>
+      <h2><a href="host-family-dinner.html">What a Feast Taught Me About Rest</a></h2>
+      <p class="story-deck">A Japanese host family dinner on a rare leisure day — and what <em>fuwa fuwa</em> actually reveals about a culture that doesn't perform relaxation.</p>
+      <p class="story-snippet">There is a word in Japanese — <em>fuwa fuwa</em> — that means something like "fluffy," something like "light," something like the feeling of floating just slightly above your own body. I learned it that evening, from a dinner I didn't expect, at a table I hadn't yet learned to fully belong to.</p>
+      <a href="host-family-dinner.html" class="read-link">Read essay →</a>
+      <div class="story-byline">Ayachi Samyal · Feb 17, 2026 · 6 min</div>
+    </div>
+
+    <div class="story" style="border-top: 1px solid var(--rule);">
+      <div class="story-rubric">Cultural Observation · Institutional Logic</div>
+      <h2><a href="cultural-exchange-statecraft.html">The Bus Driver Who Stopped</a></h2>
+      <p class="story-deck">What one small mercy on a Saturday morning revealed about Japanese institutional logic — the coexistence of kindness and rigidity.</p>
+      <a href="cultural-exchange-statecraft.html" class="read-link">Read essay →</a>
+      <div class="story-byline">Ayachi Samyal · Feb 19, 2026 · 5 min</div>
+    </div>
+  </div>
+
+  <!-- COL RULE -->
+  <div class="col-rule"></div>
+
+  <!-- COL 3 STORIES -->
+  <div>
+    <div class="story">
+      <div class="story-rubric">Identity · Belonging</div>
+      <h2><a href="cultural-exchange.html">On Cultural Exchange and Belonging</a></h2>
+      <p class="story-deck">What the Asia Kakehashi Project taught me about identity, displacement, and finding meaning in the space between cultures.</p>
+      <p class="story-snippet">What I discovered during the Asia Kakehashi Project was not simply exposure to a different geography, but a new lens through which to examine my own culture. The encounter forced me to see my own assumptions as assumptions — not defaults, not universals, but choices embedded in a particular history.</p>
+      <a href="cultural-exchange.html" class="read-link">Read essay →</a>
+      <div class="story-byline">Ayachi Samyal · Feb 8, 2026 · 8 min</div>
+    </div>
+
+    <div class="story" style="border-top: 1px solid var(--rule);">
+      <div style="font-family:'Shippori Mincho',serif;font-size:3.5rem;color:var(--ink);opacity:0.07;line-height:1;margin-bottom:0.5rem;">架橋</div>
+      <div class="story-rubric">In this series</div>
+      <p class="story-snippet" style="font-style:italic;">Four essays drawn from a year inside Japanese institutions — school, commute, kitchen, classroom. Written between 2025 and 2026, five years after the exchange.</p>
+    </div>
+  </div>
+
+</main>
+
+<div class="orn-rule" style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">· · · · · · · · ·</div>
+
+<!-- ── FULL ARCHIVE ── -->
+<div class="broadsheet-bottom">
+  <div class="bottom-main">
+    <h3>All Essays</h3>
+
+    <a class="archive-row" href="cultural-exchange-statecraft.html">
+      <div class="arch-date">FEB 11<br>2026</div>
+      <div>
+        <div class="arch-title">Cultural Exchange as Statecraft</div>
+        <div class="arch-desc">A policy-grade analysis of youth exchange programs as instruments of long-term geopolitical influence.</div>
+      </div>
+    </a>
+
+    <a class="archive-row" href="what-living-in-japan.html">
+      <div class="arch-date">FEB 10<br>2026</div>
+      <div>
+        <div class="arch-title">What Living in Japan Taught Me About Power, Politeness, and Strategic Silence</div>
+        <div class="arch-desc">How silence, deference, and social ritual function as governance tools in Japanese society.</div>
+      </div>
+    </a>
+
+    <a class="archive-row" href="host-family-dinner.html">
+      <div class="arch-date">FEB 17<br>2026</div>
+      <div>
+        <div class="arch-title">What a Feast Taught Me About Rest</div>
+        <div class="arch-desc">Tempura, soba, and what fuwa fuwa actually means about a culture that doesn't perform relaxation.</div>
+      </div>
+    </a>
+
+    <a class="archive-row" href="cultural-exchange.html">
+      <div class="arch-date">FEB 08<br>2026</div>
+      <div>
+        <div class="arch-title">On Cultural Exchange and Belonging</div>
+        <div class="arch-desc">Identity, displacement, and finding meaning in the space between cultures.</div>
+      </div>
+    </a>
+
+    <a class="archive-row" href="cultural-exchange-statecraft.html">
+      <div class="arch-date">FEB 19<br>2026</div>
+      <div>
+        <div class="arch-title">The Bus Driver Who Stopped</div>
+        <div class="arch-desc">One small mercy on a Saturday morning and Japanese institutional logic.</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="bottom-sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-label">About this series</div>
+      <div class="sidebar-kanji-row">
+        <span class="sidebar-kanji">記</span>
+        <span class="sidebar-text">Essays written from Yokohama and after. Personal testimony as analytical method.</span>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">At a glance</div>
+      <div class="sidebar-stat">
+        <div class="stat"><strong>5</strong>essays</div>
+        <div class="stat"><strong>1</strong>year</div>
+        <div class="stat"><strong>21</strong>scholars</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Program</div>
+      <p class="sidebar-text">Asia Kakehashi Project<br>Ministry of Foreign Affairs, Japan<br>2021 cohort · Indian delegate</p>
+    </div>
+
+    <div>
+      <div class="sidebar-label">Themes</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;">
+        <span class="stamp">Soft Power</span>
+        <span class="stamp" style="margin-top:0.4rem;">Exchange</span>
+        <span class="stamp" style="margin-top:0.4rem;">Identity</span>
+        <span class="stamp" style="margin-top:0.4rem;">Japan</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <span class="footer-logo">Ayachi Samyal</span>
+  <span class="footer-copy">© 2026 · All essays original work · Kakehashi Scholar 2021</span>
+</footer>
+
 </body>
 </html>
-
-
