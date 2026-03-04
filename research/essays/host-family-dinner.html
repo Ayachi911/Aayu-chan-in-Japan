@@ -3,308 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What a Host Family Dinner Taught Me About Rest | Ayachi Samyal</title>
+<title>What a Feast Taught Me About Rest — Ayachi Samyal</title>
 <meta name="description" content="A Japanese host family feast on a rare leisure day — tempura, soba, and what fuwa fuwa actually means about a culture that doesn't perform relaxation.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --ink: #1c1a17;
-    --paper: #faf7f2;
-    --warm: #c8956c;
-    --muted: #8a7e72;
-    --rule: #e0d8cf;
-    --accent-bg: #f3ede4;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.8;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── HEADER ─────────────────────────────── */
-  .site-header {
-    padding: 2rem 2rem 1.5rem;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .site-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  .site-nav a {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    margin-left: 2rem;
-    transition: color 0.2s;
-  }
-
-  .site-nav a:hover { color: var(--ink); }
-
-  /* ── HERO ───────────────────────────────── */
-  .hero {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 5rem 2rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-  }
-
-  .hero-text { }
-
-  .essay-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--warm);
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 300;
-    line-height: 1.15;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--warm);
-  }
-
-  .hero-meta {
-    margin-top: 2rem;
-    font-size: 0.82rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    border-top: 1px solid var(--rule);
-    padding-top: 1rem;
-    display: flex;
-    gap: 2rem;
-  }
-
-  .hero-image {
-    position: relative;
-  }
-
-  .hero-image img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    display: block;
-    filter: saturate(0.9) contrast(1.03);
-  }
-
-  .image-caption {
-    font-size: 0.72rem;
-    color: var(--muted);
-    margin-top: 0.6rem;
-    letter-spacing: 0.06em;
-    font-style: italic;
-  }
-
-  /* ── ESSAY BODY ─────────────────────────── */
-  .essay-container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 3rem 2rem 6rem;
-  }
-
-  .essay-body p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.22rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--ink);
-    margin-bottom: 1.8rem;
-  }
-
-  .essay-body p.lead {
-    font-size: 1.45rem;
-    line-height: 1.75;
-    font-weight: 300;
-    color: #2a2520;
-  }
-
-  .essay-body h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.55rem;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--ink);
-    margin: 3.5rem 0 1.2rem;
-    letter-spacing: 0.01em;
-  }
-
-  .essay-body h2::before {
-    content: '§';
-    color: var(--warm);
-    margin-right: 0.7rem;
-    font-style: normal;
-    font-size: 1.1rem;
-  }
-
-  .pull-quote {
-    margin: 3rem 0;
-    padding: 2rem 2.5rem;
-    background: var(--accent-bg);
-    border-left: 3px solid var(--warm);
-  }
-
-  .pull-quote p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.45rem !important;
-    font-style: italic;
-    line-height: 1.6 !important;
-    color: var(--ink) !important;
-    margin: 0 !important;
-  }
-
-  .japanese-word {
-    font-style: italic;
-    color: var(--warm);
-    letter-spacing: 0.03em;
-  }
-
-  .divider {
-    text-align: center;
-    color: var(--warm);
-    font-size: 1.2rem;
-    margin: 3rem 0;
-    letter-spacing: 0.5em;
-  }
-
-  /* ── FOOTER ─────────────────────────────── */
-  .essay-footer {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2rem 2rem 4rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .essay-footer p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    line-height: 1.7;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.8rem;
-    border: 1px solid var(--rule);
-    color: var(--muted);
-  }
-
-  /* ── RESPONSIVE ─────────────────────────── */
-  @media (max-width: 700px) {
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 3rem 1.5rem 2rem;
-    }
-    .essay-container { padding: 2rem 1.5rem 4rem; }
-    .essay-footer { padding: 2rem 1.5rem 3rem; }
-    .site-nav { display: none; }
-  }
-
-  /* ── FADE IN ────────────────────────────── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-text { animation: fadeUp 0.7s ease both; }
-  .hero-image { animation: fadeUp 0.7s 0.15s ease both; }
-  .essay-body { animation: fadeUp 0.6s 0.3s ease both; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Shippori+Mincho:wght@400;500;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kaishi-essays.css">
 </head>
 <body>
 
-<header class="site-header">
-  <a class="site-name" href="/">Ayachi Samyal</a>
-  <nav class="site-nav">
-    <a href="/guides/">Guides</a>
-    <a href="/essays/">Essays</a>
-    <a href="/free-kit/">Free Kit</a>
-  </nav>
+<div class="reading-progress-bar" id="rpb"></div>
+
+<svg style="position:absolute;width:0;height:0;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="ink-bleed" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ── MASTHEAD ── -->
+<header class="site-masthead">
+  <div class="masthead-bar">
+    <a class="masthead-brand" href="essays-index.html">
+      <small>文 · 化 · 交 · 流</small>
+      Ayachi Samyal
+    </a>
+    <nav class="masthead-links">
+      <a href="essays-index.html" class="active">Essays</a>
+      <a href="#">Guides</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <span class="essay-label">Essay — Host Family Life</span>
-    <h1>What a Feast Taught Me About <em>Rest</em></h1>
-    <div class="hero-meta">
+<!-- ── ESSAY HEADER ── -->
+<div class="essay-header-wrap">
+  <div class="essay-header-main">
+    <div class="essay-rubric">Host Family Life · Cultural Observation</div>
+    <h1 class="essay-title">What a Feast<br>Taught Me About <em>Rest</em></h1>
+    <p class="essay-lede">There is a word in Japanese — <em>fuwa fuwa</em> — that means something like "fluffy," something like "light," something like the feeling of floating just slightly above your own body.</p>
+    <div class="essay-byline">
       <span>Ayachi Samyal</span>
       <span>Japan, 2021</span>
+      <span>Feb 17, 2026</span>
       <span>6 min read</span>
     </div>
   </div>
-  <div class="hero-image">
-    <img src="../assets/images/IMG_0858.jpg" alt="Host family dinner — tempura and soba on a wooden table, Nara, Japan">
-    <p class="image-caption">Dinner, somewhere between Sunday and Monday. The table my host family set on a day they had nowhere to be.</p>
+  <div class="essay-header-rail">
+    <div>
+      <span class="rail-ornament">休</span>
+      <div class="rail-notes">
+        休 — kyū<br>
+        rest, vacation<br>
+        ———<br>
+        ふわふわ — fuwa fuwa<br>
+        fluffy, floating<br>
+        ———<br>
+        いただきます — itadakimasu<br>
+        I humbly receive
+      </div>
+    </div>
+    <div>
+      <div class="rail-stamp">Host Family</div>
+      <div class="rail-stamp" style="margin-top:0.4rem;">Yokohama 2021</div>
+    </div>
   </div>
-</section>
+</div>
 
-<article class="essay-container">
-  <div class="essay-body">
+<!-- ── ESSAY BODY ── -->
+<div class="essay-column">
+  <div class="essay-text">
 
-    <p class="lead">There is a word in Japanese — <span class="japanese-word">fuwa fuwa</span> — that means something like "fluffy," something like "light," something like the feeling of floating just slightly above your own body. It is the word for the texture of a soufflé pancake, for the feeling of new socks, for the warm drift between waking and sleep. I learned it that evening, from a dinner I didn't expect, at a table I hadn't yet learned to fully belong to.</p>
+    <p>There is a word in Japanese — <em>fuwa fuwa</em> — that means something like "fluffy," something like "light," something like the feeling of floating just slightly above your own body. It is the word for the texture of a soufflé pancake, for the feeling of new socks, for the warm drift between waking and sleep. I learned it that evening, from a dinner I didn't expect, at a table I hadn't yet learned to fully belong to.</p>
 
-    <p>It was a leisure day — a rare thing. My host family of four (okāsan, otōsan, and two sisters, the older one my year, the younger one two years behind) had nowhere to be. No school. No club practice. No schedule pressing itself against the hours. In the months I had spent observing them, I had come to understand that this family ran on a kind of productive precision — meals timed, routines held, mornings executed with a quiet efficiency I found both admirable and faintly exhausting. Rest, for them, was not something that simply happened. It was, I was learning, a different category of event altogether.</p>
+    <p>It was a leisure day — a rare thing. My host family of four (<em>okāsan</em>, <em>otōsan</em>, and two sisters, the older one my year, the younger one two years behind) had nowhere to be. No school. No club practice. No schedule pressing itself against the hours. In the months I had spent observing them, I had come to understand that this family ran on a kind of productive precision — meals timed, routines held, mornings executed with a quiet efficiency I found both admirable and faintly exhausting. Rest, for them, was not something that simply happened. It was, I was learning, a different category of event altogether.</p>
 
     <p>That day they cooked.</p>
 
     <div class="pull-quote">
-      <p>"Rest, for them, was not something that simply happened. It was a different category of event altogether — something you prepared for, something you made with your hands."</p>
+      <p>Rest, for them, was not something that simply happened. It was a different category of event altogether — something you prepared for, something you made with your hands.</p>
     </div>
 
     <h2>The Table as Argument</h2>
 
-    <p>What arrived on the table was not a casual dinner. Two large blue-striped bowls of cold soba, the noodles pale and precisely arranged. A shared platter of vegetable tempura — green beans, lotus root, sweet potato, a vivid orange kakiage of shredded carrot — and beside it, a second platter stacked with ebi tempura, the prawns crimson and perfectly battered, arranged in a loose pile that somehow managed to look intentional. Individual lacquered bowls of miso soup, mushrooms floating at the surface. Ceramic chopstick rests, the floral-patterned kind you find only in homes that have had them for decades.</p>
+    <p>What arrived on the table was not a casual dinner. Two large blue-striped bowls of cold soba, the noodles pale and precisely arranged. A shared platter of vegetable tempura — green beans, lotus root, sweet potato, a vivid orange <em>kakiage</em> of shredded carrot — and beside it, a second platter stacked with <em>ebi</em> tempura, the prawns crimson and perfectly battered, arranged in a loose pile that somehow managed to look intentional. Individual lacquered bowls of miso soup, mushrooms floating at the surface. Ceramic chopstick rests, the floral-patterned kind you find only in homes that have had them for decades.</p>
 
     <p>Someone had spent the better part of the afternoon on this. That fact was not announced. It was simply present in the table, in the same way that effort in Japan is often present: not performed, not narrated, just there, for anyone paying attention to receive.</p>
 
-    <p>I had been in Japan long enough by then to understand that care in this culture is frequently expressed through action rather than declaration. My okāsan did not say "I made this for you." She placed the food on the table with the same composure she brought to everything, sat down, said <span class="japanese-word">itadakimasu</span>, and picked up her chopsticks. The feast was the statement. The eating was the conversation.</p>
+    <p>I had been in Japan long enough by then to understand that care in this culture is frequently expressed through action rather than declaration. My <em>okāsan</em> did not say "I made this for you." She placed the food on the table with the same composure she brought to everything, sat down, said <em>itadakimasu</em>, and picked up her chopsticks. The feast was the statement. The eating was the conversation.</p>
 
     <h2>What Foreigners Miss About Japanese Leisure</h2>
 
@@ -312,49 +99,81 @@
 
     <p>What I watched that afternoon was categorically different. The preparation of this meal — the frying, the arrangement, the selection of which bowls — was the leisure. The act of making something beautiful for the people in your house, on a day when no one could demand it of you, was the rest. Labour and pleasure were not opposites here. They were the same motion, pointed in a chosen direction.</p>
 
-    <p>This distinction matters more than it initially appears. It means that a Japanese leisure day does not look like an Indian or British or American leisure day. It does not look like lying on a sofa. It looks like cooking a meal that takes two hours and then eating it slowly at a table with the people you love. The productivity is not incidental. It is the form that contentment takes.</p>
+    <div class="essay-aside-box">
+      <p>This distinction matters more than it initially appears. It means that a Japanese leisure day does not look like an Indian or British or American leisure day. It does not look like lying on a sofa. It looks like cooking a meal that takes two hours and then eating it slowly at a table with the people you love. The productivity is not incidental. It is the form that contentment takes.</p>
+    </div>
 
     <div class="pull-quote">
-      <p>"Labour and pleasure were not opposites here. They were the same motion, pointed in a chosen direction."</p>
+      <p>Labour and pleasure were not opposites here. They were the same motion, pointed in a chosen direction.</p>
     </div>
 
     <h2>The Younger Sister's Chopsticks</h2>
 
-    <p>The younger sister — two years below me, quiet in the particular way that middle-school-aged Japanese girls can be around foreign guests — had green chopsticks. I noticed this because mine were yellow. At some point during the meal, she looked at my plate, assessed that I had not yet tried the kakiage, and without a word used her chopsticks to place one piece onto the edge of my bowl. Then she looked away.</p>
+    <p>The younger sister — two years below me, quiet in the particular way that middle-school-aged Japanese girls can be around foreign guests — had green chopsticks. I noticed this because mine were yellow. At some point during the meal, she looked at my plate, assessed that I had not yet tried the <em>kakiage</em>, and without a word used her chopsticks to place one piece onto the edge of my bowl. Then she looked away.</p>
 
     <p>This is the texture of host family life that no guidebook captures. Not the rules (don't stick chopsticks upright in rice, don't pour your own drink), which are easy to learn and easier to perform. The texture is in the small unrequested gestures. The extra piece of tempura from a girl who had never quite managed a full sentence in my direction. The way care, in this family, moved laterally — not only downward from parents to children, not only forward from host family to guest, but sideways, between people who were still figuring out what they were to each other.</p>
 
-    <p>I ate the kakiage. I said <span class="japanese-word">oishii</span>. She nodded and went back to her soba.</p>
+    <p>I ate the <em>kakiage</em>. I said <em>oishii</em>. She nodded and went back to her soba.</p>
 
     <h2>Fuwa Fuwa</h2>
 
     <p>After dinner — after the table was cleared with the same quiet efficiency with which it had been set — I sat on the floor of my room and tried to account for what I was feeling. It was not happiness exactly, though happiness was in it. It was not gratitude exactly, though I was grateful. It was something more like saturation. A fullness that was not only physical, though the tempura and soba had been abundant. A warmth that was not only the warmth of the house, though the house was warm.</p>
 
-    <p>When I mentioned this to my host sister later that evening, reaching for words in a mix of broken Japanese and hand gestures, she gave me the word without hesitation: <span class="japanese-word">fuwa fuwa</span>. Fluffy. Floating. The feeling of being, for a moment, without edge.</p>
+    <p>When I mentioned this to my host sister later that evening, reaching for words in a mix of broken Japanese and hand gestures, she gave me the word without hesitation: <em>fuwa fuwa</em>. Fluffy. Floating. The feeling of being, for a moment, without edge.</p>
 
     <p>I wrote it in my notebook. I have not needed to look it up since.</p>
 
-    <div class="divider">· · ·</div>
+    <div class="section-rule">· · · · ·</div>
 
-    <p>Exchange programs produce a particular genre of insight — the kind that arrives not in classrooms or excursions or scheduled cultural activities, but in the unmarked hours. A leisure Sunday. A table set by people who had nowhere to be. A piece of kakiage placed without comment on the edge of your bowl. These are not the moments that feature in program brochures. They are the moments that do the actual work of making a foreign country feel, for an evening, like somewhere you are genuinely from.</p>
+    <p>Exchange programs produce a particular genre of insight — the kind that arrives not in classrooms or excursions or scheduled cultural activities, but in the unmarked hours. A leisure Sunday. A table set by people who had nowhere to be. A piece of <em>kakiage</em> placed without comment on the edge of your bowl. These are not the moments that feature in program brochures. They are the moments that do the actual work of making a foreign country feel, for an evening, like somewhere you are genuinely from.</p>
 
     <p>I left Japan understanding something I cannot fully attribute to any single source: that rest is not the absence of effort, that care does not always announce itself, and that belonging — when it comes — arrives not in declarations but in small, lateral gestures from a twelve-year-old with green chopsticks who has decided, without making a thing of it, that you deserve a piece of her tempura.</p>
 
-    <p><span class="japanese-word">Fuwa fuwa.</span> That is the word. That is exactly what it was.</p>
+    <p><em>Fuwa fuwa.</em> That is the word. That is exactly what it was.</p>
 
   </div>
-</article>
 
-<footer class="essay-footer">
-  <p>Ayachi Samyal is a 2021 Asia Kakehashi Project scholar. She lived with a host family in Japan for one year as part of the program's high school exchange track.</p>
-  <div class="tags">
-    <span class="tag">Host Family Life</span>
-    <span class="tag">Japan Exchange</span>
-    <span class="tag">Cultural Observation</span>
-    <span class="tag">Kakehashi</span>
-    <span class="tag">Japanese Culture</span>
+  <div class="essay-margin">
+    <div class="margin-item">
+      <div class="margin-label">Japanese terms</div>
+      <div class="margin-text">
+        <em>Fuwa fuwa</em> — ふわふわ<br>
+        Fluffy, light, floating<br><br>
+        <em>Okāsan</em> — お母さん<br>
+        Host mother<br><br>
+        <em>Kakiage</em> — かき揚げ<br>
+        Vegetable tempura fritter<br><br>
+        <em>Oishii</em> — おいしい<br>
+        Delicious
+      </div>
+    </div>
+
+    <div class="margin-item">
+      <div class="margin-label">Context</div>
+      <div class="margin-text">Written from Yokohama, 2021. The author was one of 21 Indian students selected for the Asia Kakehashi Project.</div>
+      <span class="margin-kanji">食</span>
+    </div>
+
+    <div class="margin-item">
+      <div class="margin-label">Theme</div>
+      <div class="margin-text">Rest as productive act. The Japanese <em>ma</em> between effort and leisure is narrower than it appears from outside.</div>
+    </div>
   </div>
-</footer>
+</div>
 
+<!-- ── FOOTER NAV ── -->
+<div class="essay-footer-nav">
+  <a href="essays-index.html">← All Essays</a>
+  <a class="brand" href="essays-index.html">Ayachi Samyal</a>
+  <a href="cultural-exchange.html">On Belonging →</a>
+</div>
+
+<script>
+const rpb = document.getElementById('rpb');
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  rpb.style.width = Math.min(pct, 100) + '%';
+});
+</script>
 </body>
 </html>
