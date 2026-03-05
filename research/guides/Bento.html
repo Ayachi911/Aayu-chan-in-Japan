@@ -3,628 +3,1359 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asia Kakehashi Project 2026: Complete Application Guide (Indian Students) | Ayachi Samyal</title>
-<link rel="canonical" href="https://aayu-chan-in-japan.vercel.app/research/guides/kakehashi-project-guide-2026.html">
-<meta name="description" content="Complete guide to the Asia Kakehashi Project 2026 — eligibility, application timeline, essay tips from a 2021 scholar, interview prep, and what a year in a Japanese public high school in Yokohama actually looks like.">
+<title>Japanese School Bento Box: What Host Families Actually Pack (Real Examples) | Ayachi Samyal</title>
+<meta name="description" content="What's actually inside a Japanese school bento box? Real host family examples from my year in Yokohama — components, unspoken rules, dietary tips, and school etiquette for exchange students.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&family=IM+Fell+English:ital@0;1&family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;700&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --parchment:    #f7f0de;
-  --parchment-dk: #ece2c4;
-  --paper:        #faf6ec;
-  --burg:         #6b1a2a;
-  --burg-mid:     #8b2535;
-  --burg-lt:      #c4707d;
-  --gold:         #9a7020;
-  --gold-lt:      #c9a040;
-  --gold-pale:    #f0e4b8;
-  --ink:          #1c130e;
-  --ink-mid:      #3a2818;
-  --ink-lt:       #7a5c40;
-  --tan:          #cdb890;
-  --tan-lt:       #e8ddc0;
-  --grid:         rgba(160,130,80,0.18);
+  --cream:       #f5f0e0;
+  --cream-dark:  #ede6cc;
+  --paper:       #faf6e8;
+  --red:         #c0272d;
+  --red-dark:    #8a1a1e;
+  --red-light:   #e8a0a3;
+  --ink:         #1a1410;
+  --ink-mid:     #3d3020;
+  --ink-light:   #6b5a45;
+  --grid:        rgba(180,160,120,0.25);
+  --stamp-red:   rgba(192,39,45,0.75);
+  --stamp-blue:  rgba(30,60,120,0.7);
+  --gold:        #8a6a20;
+  --gold-light:  #c9a030;
+  --tan:         #c8b490;
 }
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--parchment);
+  background: var(--cream);
   background-image:
-    repeating-linear-gradient(0deg,transparent,transparent 27px,var(--grid) 27px,var(--grid) 28px),
-    repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(160,130,80,0.1) 27px,rgba(160,130,80,0.1) 28px);
+    /* grid lines — the textbook feel */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      var(--grid) 27px,
+      var(--grid) 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 27px,
+      rgba(180,160,120,0.12) 27px,
+      rgba(180,160,120,0.12) 28px
+    );
   color: var(--ink);
   font-family: 'Noto Serif JP', serif;
   font-weight: 400;
   line-height: 1.85;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
+
+/* ── PAGE TEXTURE OVERLAY ── */
 body::before {
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;opacity:0.7;
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
 }
 
-.margin-line{position:fixed;left:80px;top:0;bottom:0;width:1px;background:rgba(107,26,42,0.28);z-index:1;pointer-events:none;}
-@media(max-width:800px){.margin-line{display:none;}}
-.reading-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--burg),var(--gold-lt));z-index:9999;width:0%;transition:width 0.1s linear;}
-
-/* NAV */
-nav{position:relative;z-index:20;background:var(--burg);border-bottom:4px double var(--gold);display:flex;align-items:stretch;}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 2rem;}
-.logo{font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:var(--gold-pale);text-decoration:none;letter-spacing:0.04em;padding:0.9rem 0;display:flex;align-items:center;gap:0.6rem;}
-.logo-jp{font-family:'Noto Serif JP',serif;font-size:0.88rem;font-weight:300;opacity:0.6;font-style:normal;}
-.nav-tag{font-family:'Courier Prime',monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold-pale);color:var(--burg);padding:0.15rem 0.6rem;}
-.nav-links{display:flex;}
-.nav-links a{font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.12em;color:rgba(240,228,184,0.6);text-decoration:none;padding:1rem 1.1rem;text-transform:uppercase;border-left:1px solid rgba(201,160,64,0.2);transition:color 0.15s,background 0.15s;}
-.nav-links a:hover{color:var(--gold-pale);background:rgba(201,160,64,0.1);}
-
-/* ═══ ACCEPTANCE LETTER HERO ═══ */
-.letter-wrap{position:relative;z-index:2;background:var(--paper);border-bottom:2px solid var(--tan);padding:3.5rem 2rem 0;}
-.letter-inner{max-width:860px;margin:0 auto;}
-
-.acceptance-letter{
-  position:relative;
-  background:#fffdf5;
-  border:1px solid var(--tan);
-  box-shadow:0 2px 0 var(--tan-lt),4px 8px 28px rgba(107,26,42,0.12);
-  padding:2.8rem 3rem 2.2rem;
-  overflow:hidden;
+/* ── RED MARGIN LINE ── */
+.page-margin-line {
+  position: fixed;
+  left: 88px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(192,39,45,0.35);
+  z-index: 1;
+  pointer-events: none;
 }
-/* diagonal watermark kanji */
-.acceptance-letter::before{
-  content:'合格';
-  position:absolute;right:2.5rem;top:50%;
-  transform:translateY(-50%) rotate(-14deg);
-  font-family:'Noto Serif JP',serif;font-size:8rem;font-weight:700;
-  color:rgba(107,26,42,0.04);letter-spacing:0.1em;pointer-events:none;line-height:1;
+@media (max-width: 800px) { .page-margin-line { display: none; } }
+
+/* ── NAV ── */
+nav {
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  background: var(--red-dark);
+  border-bottom: 3px solid var(--ink);
+  display: flex;
+  align-items: stretch;
 }
 
-.letter-header{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:1.2rem;margin-bottom:1.3rem;border-bottom:2px solid var(--tan-lt);gap:2rem;}
-.letter-emblem{font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-lt);margin-bottom:0.3rem;}
-.letter-org{font-family:'Noto Serif JP',serif;font-weight:700;font-size:1rem;color:var(--burg);margin-bottom:0.15rem;}
-.letter-org-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.78rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.15em;}
-
-/* wax seal */
-.wax-seal{
-  width:82px;height:82px;flex-shrink:0;border-radius:50%;
-  background:radial-gradient(circle at 38% 36%, #9b2535 0%, var(--burg) 55%, #3e0d17 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 3px 14px rgba(107,26,42,0.5),inset 0 1px 3px rgba(255,255,255,0.12);
-  transform:rotate(8deg);color:var(--gold-pale);text-align:center;
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
 }
-.wax-kanji{font-family:'Noto Serif JP',serif;font-size:1.6rem;font-weight:700;line-height:1;display:block;}
-.wax-text{font-family:'Courier Prime',monospace;font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.72;margin-top:0.2rem;display:block;}
 
-.letter-salutation{font-family:'IM Fell English',serif;font-style:italic;font-size:0.88rem;color:var(--ink-lt);margin-bottom:0.8rem;}
-.letter-h1{font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;color:var(--ink);margin-bottom:0.5rem;}
-.letter-h1-jp{display:block;font-family:'Noto Sans JP',sans-serif;font-size:0.85rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.25em;margin-top:0.35rem;}
-.letter-opener{font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:300;color:var(--ink-mid);line-height:1.85;max-width:580px;margin:1rem 0 1.2rem;}
-.letter-meta-row{display:flex;flex-wrap:wrap;gap:1.4rem;border-top:1px solid var(--tan-lt);padding-top:1rem;}
-.letter-meta-item{display:flex;flex-direction:column;gap:0.15rem;}
-.meta-label{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-lt);}
-.meta-value{font-family:'Noto Serif JP',serif;font-size:0.82rem;font-weight:700;color:var(--burg);}
+.logo {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
 
-/* stamps below letter card */
-.stamp-row{display:flex;align-items:flex-end;gap:1rem;padding:1.4rem 3rem 1.5rem;justify-content:flex-end;flex-wrap:wrap;}
-.stamp{display:inline-block;border:2px solid currentColor;border-radius:2px;padding:0.3rem 0.65rem;font-family:'Special Elite',cursive;font-size:0.65rem;letter-spacing:0.1em;text-align:center;line-height:1.35;transform:rotate(var(--rot,-3deg));position:relative;}
-.stamp::before{content:'';position:absolute;inset:2px;border:1px solid currentColor;opacity:0.35;}
-.s-burg{color:rgba(107,26,42,0.8);--rot:-5deg;}
-.s-gold{color:rgba(154,112,32,0.82);--rot:3deg;}
-.s-green{color:rgba(30,80,50,0.75);--rot:-2deg;}
-.s-circle{border-radius:50%;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.55rem;line-height:1.5;padding:0;--rot:7deg;}
+.logo-jp {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  font-weight: 300;
+}
 
-/* TIMELINE STRIP */
-.timeline-strip{position:relative;z-index:2;background:var(--burg);border-bottom:3px solid var(--gold);padding:1.2rem 2rem;overflow-x:auto;}
-.tl-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:0;min-width:500px;}
-.tl-node{display:flex;flex-direction:column;align-items:center;gap:0.35rem;flex-shrink:0;}
-.tl-dot{width:12px;height:12px;border-radius:50%;background:rgba(240,228,184,0.3);border:2px solid rgba(240,228,184,0.5);}
-.tl-dot.lit{background:var(--gold-pale);box-shadow:0 0 0 3px rgba(201,160,64,0.25);}
-.tl-dot.key{background:var(--gold-lt);width:16px;height:16px;box-shadow:0 0 0 3px rgba(201,160,64,0.35);}
-.tl-label{font-family:'Courier Prime',monospace;font-size:0.57rem;letter-spacing:0.1em;color:rgba(240,228,184,0.6);text-align:center;max-width:65px;line-height:1.3;}
-.tl-label strong{color:var(--gold-pale);display:block;font-size:0.64rem;}
-.tl-line{flex:1;height:2px;background:repeating-linear-gradient(90deg,rgba(240,228,184,0.18) 0,rgba(240,228,184,0.18) 5px,transparent 5px,transparent 10px);}
-.tl-line.done{background:rgba(201,160,64,0.55);}
+.nav-section-tag {
+  background: var(--cream);
+  color: var(--red-dark);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1px;
+  text-transform: uppercase;
+}
 
-/* PAGE */
-.page-wrap{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:0 2rem 5rem;}
-.guide-wrap{display:grid;grid-template-columns:1fr 220px;gap:3rem;align-items:start;margin-top:2.5rem;}
+.nav-links {
+  display: flex;
+  gap: 0;
+}
+.nav-links a {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: rgba(245,240,224,0.7);
+  text-decoration: none;
+  padding: 1.2rem 1.2rem;
+  text-transform: uppercase;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
 
-/* BODY */
-.guide-body{position:relative;}
-.guide-body::before{content:'';position:absolute;left:-1.5rem;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--burg) 0%,transparent 100%);opacity:0.18;}
-.guide-body p{font-size:0.93rem;line-height:1.95;color:var(--ink-mid);margin-bottom:1.3rem;font-weight:300;}
-.intro-p{font-family:'IM Fell English',serif !important;font-style:italic;font-size:1rem !important;color:var(--ink) !important;font-weight:400 !important;border-left:4px solid var(--burg);padding:1.1rem 1.3rem;background:rgba(107,26,42,0.04);margin-bottom:2rem !important;line-height:1.9 !important;}
+/* ── HEADER BAND ── */
+.header-band {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+  border-bottom: 2px solid var(--tan);
+  padding: 3rem 2rem 2.5rem;
+  max-width: none;
+  overflow: hidden;
+}
 
-/* section headers — look like notebook tab cuts */
-.section-header{display:flex;align-items:center;gap:0;margin:3rem 0 1.2rem;}
-.section-num{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;color:var(--gold-pale);background:var(--burg);padding:0.25rem 0.6rem;margin-right:0.9rem;flex-shrink:0;}
-.section-header h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--ink);flex:1;}
-.section-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.75rem;font-weight:300;color:var(--ink-lt);letter-spacing:0.18em;margin-left:0.8rem;flex-shrink:0;}
-.section-rule{height:1px;background:linear-gradient(90deg,var(--burg-lt),var(--tan-lt));margin-bottom:1.2rem;}
+.header-band::after {
+  content: 'お弁当ガイド';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(192,39,45,0.06);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+}
 
-h3{font-family:'IM Fell English',serif;font-size:1rem;font-style:italic;color:var(--burg);margin:1.8rem 0 0.6rem;display:flex;align-items:center;gap:0.5rem;}
-h3::before{content:'◈';font-style:normal;font-size:0.55rem;color:var(--gold);flex-shrink:0;}
-.guide-body ul,.guide-body ol{padding-left:0;margin-bottom:1.3rem;list-style:none;}
-.guide-body li{font-size:0.9rem;line-height:1.85;color:var(--ink-mid);margin-bottom:0.7rem;padding-left:1.8rem;position:relative;font-weight:300;}
-.guide-body ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:'Courier Prime',monospace;font-weight:700;}
-.guide-body ol{counter-reset:item;}
-.guide-body ol li::before{content:counter(item);counter-increment:item;position:absolute;left:0;color:var(--gold-pale);background:var(--burg);font-family:'Courier Prime',monospace;font-weight:700;font-size:0.62rem;width:18px;height:18px;display:flex;align-items:center;justify-content:center;top:0.25em;}
-.guide-body strong{color:var(--ink);font-weight:700;}
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
 
-/* INSIGHT CARDS */
-.insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.8rem 0;}
-.insight-card{background:var(--paper);border:1px solid var(--tan);padding:1.2rem 1.1rem;position:relative;}
-.insight-card::before,.insight-card::after{content:'';position:absolute;width:10px;height:10px;border-color:var(--burg);border-style:solid;}
-.insight-card::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
-.insight-card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
-.insight-num{font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.2em;color:var(--burg-lt);text-transform:uppercase;margin-bottom:0.35rem;}
-.insight-title{font-family:'Noto Serif JP',serif;font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.4rem;}
-.insight-body{font-family:'Noto Serif JP',serif;font-size:0.82rem;color:var(--ink-mid);font-weight:300;line-height:1.7;}
+/* STAMP CLUSTER */
+.stamp-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  padding-top: 0.4rem;
+}
 
-/* APP TIMELINE TABLE */
-.app-timeline{border:1px solid var(--tan);margin:1.8rem 0;overflow:hidden;background:var(--paper);}
-.atl-head{background:var(--burg);color:var(--gold-pale);font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.5rem 1rem;display:grid;grid-template-columns:90px 140px 1fr;gap:1rem;}
-.atl-row{display:grid;grid-template-columns:90px 140px 1fr;gap:1rem;border-top:1px solid var(--tan-lt);padding:0.8rem 1rem;align-items:start;}
-.atl-row:nth-child(odd){background:rgba(107,26,42,0.02);}
-.atl-row.key-row{background:rgba(107,26,42,0.06);border-left:3px solid var(--burg);}
-.atl-month{font-family:'Courier Prime',monospace;font-weight:700;font-size:0.88rem;color:var(--burg);}
-.atl-event{font-family:'Noto Serif JP',serif;font-size:0.85rem;font-weight:700;color:var(--ink);}
-.atl-detail{font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.6;}
-@media(max-width:640px){.atl-head,.atl-row{grid-template-columns:70px 1fr;}.atl-head>*:last-child,.atl-row>*:last-child{display:none;}}
+.stamp {
+  display: inline-block;
+  border: 3px solid currentColor;
+  border-radius: 3px;
+  padding: 0.35rem 0.7rem;
+  font-family: 'Special Elite', cursive;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-align: center;
+  line-height: 1.3;
+  transform: rotate(var(--rot, -3deg));
+  position: relative;
+}
+.stamp::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid currentColor;
+  opacity: 0.4;
+  border-radius: 1px;
+}
 
-/* DOC CHECKLIST */
-.doc-checklist{background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--burg);padding:1.5rem 1.5rem 1.2rem;margin:1.8rem 0;}
-.doc-checklist-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--burg);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
-.doc-checklist-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--burg);}
-.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;}
-.doc-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.5rem 0.7rem;background:rgba(107,26,42,0.02);border:1px solid var(--tan-lt);}
-.doc-item input[type="checkbox"]{width:14px;height:14px;flex-shrink:0;margin-top:0.2rem;accent-color:var(--burg);cursor:pointer;}
-.doc-item-text{font-size:0.82rem;line-height:1.5;color:var(--ink-mid);font-weight:300;}
-.doc-item-text strong{display:block;color:var(--ink);font-weight:700;font-size:0.84rem;margin-bottom:0.1rem;}
-.doc-count{font-family:'Courier Prime',monospace;font-size:0.7rem;color:var(--ink-lt);margin-top:0.9rem;border-top:1px dashed var(--tan);padding-top:0.5rem;}
+.stamp-red { color: var(--stamp-red); --rot: -4deg; }
+.stamp-blue { color: var(--stamp-blue); --rot: 3deg; font-size: 0.72rem; }
+.stamp-circle {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  line-height: 1.4;
+  padding: 0;
+  --rot: -5deg;
+}
 
-/* ESSAY BLOCK */
-.essay-block{background:var(--burg);color:var(--parchment);padding:2.2rem 2rem 1.8rem;margin:2.5rem 0;position:relative;overflow:hidden;}
-.essay-block::before{content:'小論文';position:absolute;right:1.2rem;top:0.7rem;font-family:'Noto Sans JP',sans-serif;font-size:0.65rem;letter-spacing:0.15em;color:rgba(240,228,184,0.18);pointer-events:none;}
-.essay-block::after{content:'';position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid rgba(201,160,64,0.22);pointer-events:none;}
-.essay-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
-.essay-label::before{content:'';display:inline-block;width:18px;height:1px;background:var(--gold-lt);}
-.essay-block p{font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:300;line-height:1.95;color:rgba(247,240,224,0.85);margin-bottom:1rem;}
-.essay-block p:last-child{margin-bottom:0;}
-.essay-block em{color:var(--gold-lt);font-style:normal;font-weight:700;}
-.essay-pull{font-family:'IM Fell English',serif;font-size:1.1rem;font-style:italic;color:var(--gold-pale);border-left:2px solid var(--gold-lt);padding:0.5rem 1rem;margin:1.2rem 0;line-height:1.7;}
+.eyebrow-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eyebrow-label::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--red);
+}
 
-/* QA TABLE */
-.qa-table{border:1px solid var(--tan);margin:1.8rem 0;overflow:hidden;}
-.qa-head{background:var(--burg);color:var(--gold-pale);font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.5rem 1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.qa-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;border-top:1px solid var(--tan-lt);padding:0.85rem 1rem;}
-.qa-row:nth-child(odd){background:rgba(107,26,42,0.025);}
-.qa-q{font-family:'Noto Serif JP',serif;font-size:0.85rem;font-weight:700;color:var(--ink);line-height:1.5;}
-.qa-a{font-family:'Noto Serif JP',serif;font-size:0.82rem;font-weight:300;color:var(--ink-mid);line-height:1.65;}
-@media(max-width:560px){.qa-head,.qa-row{grid-template-columns:1fr;}.qa-head span:last-child{display:none;}}
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
 
-/* YEAR PHASES */
-.year-phase{position:relative;padding:1.2rem 1.3rem 1.2rem 2rem;margin:0.9rem 0;border-left:3px solid var(--tan);}
-.phase-fog{border-color:#8aacbe;}
-.phase-sys{border-color:var(--gold);}
-.phase-int{border-color:#5a9060;}
-.phase-end{border-color:var(--burg-lt);}
-.year-phase-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.4rem;}
-.phase-fog .year-phase-label{color:#5080a0;}
-.phase-sys .year-phase-label{color:var(--gold);}
-.phase-int .year-phase-label{color:#3a7045;}
-.phase-end .year-phase-label{color:var(--burg);}
-.year-phase h3{font-family:'Noto Serif JP',serif;font-size:0.95rem;font-weight:700;color:var(--ink);margin:0 0 0.5rem;font-style:normal;}
-.year-phase h3::before{display:none;}
-.year-phase p{font-size:0.88rem;line-height:1.85;color:var(--ink-mid);font-weight:300;margin:0;}
+.h1-jp {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  letter-spacing: 0.2em;
+  margin-top: 0.4rem;
+  font-family: 'Noto Sans JP', sans-serif;
+}
 
-/* CALLOUTS */
-.callout{padding:1.1rem 1.3rem;margin:1.8rem 0;font-size:0.88rem;line-height:1.85;font-weight:300;}
-.callout p{margin:0!important;font-size:0.88rem!important;font-weight:300;}
-.callout-label{font-family:'Courier Prime',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-bottom:0.5rem;}
-.cn{background:rgba(247,240,224,0.7);border:1px solid var(--tan);border-left:3px solid var(--burg);}
-.cn .callout-label{color:var(--burg);}
-.ct{background:rgba(154,112,32,0.05);border:1px dashed var(--gold-lt);border-left:3px solid var(--gold);}
-.ct .callout-label{color:var(--gold);}
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+}
 
-/* FAQ */
-.faq-item{border-bottom:1px solid var(--tan-lt);}
-.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:0.9rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);}
-.faq-icon{font-family:'Courier Prime',monospace;font-size:1.1rem;color:var(--burg);flex-shrink:0;transition:transform 0.2s;}
-.faq-q.open .faq-icon{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
-.faq-a.open{max-height:400px;}
-.faq-a-inner{padding:0 0 1rem;font-size:0.88rem;font-weight:300;line-height:1.85;color:var(--ink-mid);}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-light);
+  border-top: 1px solid var(--tan);
+  padding-top: 0.9rem;
+}
+.hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
 
-.text-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem 0;}
-.text-divider::before,.text-divider::after{content:'';flex:1;height:1px;background:var(--tan);}
-.text-divider-inner{font-family:'Noto Sans JP',sans-serif;font-size:0.72rem;letter-spacing:0.4em;color:var(--ink-lt);white-space:nowrap;}
-.end-deco{text-align:center;margin:3rem 0 1rem;font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.3em;color:var(--tan);display:flex;align-items:center;gap:1rem;}
-.end-deco::before,.end-deco::after{content:'';flex:1;height:1px;background:var(--tan);}
+/* ── MAIN LAYOUT ── */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
 
-/* CTA */
-.cta-box{position:relative;margin:3rem 0;background:var(--burg);padding:2rem 2rem 1.8rem;text-align:center;overflow:hidden;}
-.cta-box::after{content:'';position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid rgba(201,160,64,0.2);pointer-events:none;}
-.cta-box h3{color:var(--gold-pale);font-family:'IM Fell English',serif;font-size:1.2rem;font-style:italic;margin:0 0 0.5rem;}
-.cta-box h3::before{display:none;}
-.cta-box p{color:rgba(247,240,224,0.6)!important;font-size:0.84rem!important;margin-bottom:1.3rem!important;font-weight:300!important;}
-.cta-btn{display:inline-block;background:var(--gold-lt);color:var(--burg);padding:0.65rem 2rem;font-family:'Courier Prime',monospace;font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.15s;position:relative;z-index:1;}
-.cta-btn:hover{background:var(--gold-pale);}
+.guide-wrap {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
 
-/* SIDEBAR */
-.guide-sidebar{position:sticky;top:1.5rem;}
-.sidebar-card{background:var(--paper);border:1px solid var(--tan);padding:1.1rem;margin-bottom:1.2rem;}
-.sidebar-card-head{font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-pale);background:var(--burg);padding:0.3rem 0.6rem;margin:-1.1rem -1.1rem 0.9rem;display:flex;align-items:center;justify-content:space-between;}
-.sidebar-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.7rem;font-weight:300;opacity:0.6;}
-.toc-list{list-style:none;}
-.toc-list li{border-bottom:1px dashed var(--parchment-dk);padding:0!important;margin:0!important;}
-.toc-list li::before{display:none!important;}
-.toc-list a{font-family:'Noto Serif JP',serif;font-size:0.8rem;font-weight:300;color:var(--ink-mid);text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;transition:color 0.15s;gap:0.5rem;}
-.toc-list a::after{content:'›';color:var(--burg);font-size:1rem;flex-shrink:0;}
-.toc-list a:hover{color:var(--burg);}
-.toc-num{font-family:'Courier Prime',monospace;font-size:0.62rem;color:var(--burg-lt);background:rgba(107,26,42,0.08);padding:0.1rem 0.3rem;flex-shrink:0;}
-.sidebar-card p{font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);line-height:1.7;margin-bottom:0.7rem;font-weight:300;}
-.sidebar-link{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.1em;color:var(--burg);text-decoration:none;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.3rem;border-bottom:1px solid var(--burg-lt);padding-bottom:1px;}
-.sidebar-link::after{content:'→';}
-.related-list{list-style:none;}
-.related-list li{border-bottom:1px dashed var(--parchment-dk);padding:0!important;margin:0!important;}
-.related-list li::before{display:none!important;}
-.related-list a{font-family:'Noto Serif JP',serif;font-size:0.8rem;font-weight:300;color:var(--ink-mid);text-decoration:none;display:block;padding:0.5rem 0;transition:color 0.15s;}
-.related-list a:hover{color:var(--burg);}
+/* ── MAIN CONTENT ── */
+.guide-body {
+  position: relative;
+}
 
-footer{position:relative;z-index:1;background:var(--burg);border-top:4px double var(--gold);padding:1.8rem 2rem;text-align:center;}
-footer p{font-family:'Courier Prime',monospace;font-size:0.72rem;letter-spacing:0.15em;color:rgba(247,240,224,0.45);margin-bottom:0.3rem;}
-footer .footer-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-weight:300;letter-spacing:0.2em;color:rgba(247,240,224,0.22);}
+/* red margin accent */
+.guide-body::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--red) 0%, transparent 100%);
+  opacity: 0.2;
+}
 
-@media(max-width:800px){.guide-wrap{grid-template-columns:1fr;}.guide-sidebar{position:static;}.stamp-row{padding:1rem 1.5rem;justify-content:flex-start;}}
-@media(max-width:640px){.acceptance-letter{padding:1.8rem 1.5rem 1.5rem;}.letter-header{flex-direction:column;}.wax-seal{align-self:flex-end;}}
+.guide-body p {
+  font-size: 0.93rem;
+  line-height: 1.95;
+  color: var(--ink-mid);
+  margin-bottom: 1.3rem;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+}
+
+.intro-p {
+  font-size: 0.96rem !important;
+  color: var(--ink) !important;
+  font-weight: 400 !important;
+  border-left: 4px solid var(--red);
+  padding: 1.1rem 1.3rem;
+  background: rgba(192,39,45,0.04);
+  margin-bottom: 2rem !important;
+  position: relative;
+}
+.intro-p::before {
+  content: '▌';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  color: var(--red);
+  font-size: 0.5rem;
+  opacity: 0;
+}
+
+/* SECTION HEADERS */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 3rem 0 1.2rem;
+  position: relative;
+}
+
+.section-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: white;
+  background: var(--red);
+  padding: 0.2rem 0.55rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  flex: 1;
+}
+
+.section-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  letter-spacing: 0.15em;
+  margin-left: 0.8rem;
+  flex-shrink: 0;
+}
+
+.section-rule {
+  height: 1px;
+  background: var(--tan);
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--red-dark);
+  margin: 1.8rem 0 0.6rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+h3::before {
+  content: '◆';
+  font-size: 0.6rem;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+/* LISTS */
+.guide-body ul, .guide-body ol {
+  padding-left: 0;
+  margin-bottom: 1.3rem;
+  list-style: none;
+}
+.guide-body li {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  margin-bottom: 0.7rem;
+  padding-left: 1.8rem;
+  position: relative;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+}
+.guide-body ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+}
+.guide-body ol { counter-reset: item; }
+.guide-body ol li::before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  color: white;
+  background: var(--ink-mid);
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  font-size: 0.65rem;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0.25em;
+  flex-shrink: 0;
+}
+
+/* BENTO SHOWCASE GRID */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.8rem 0;
+}
+
+.bento-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--tan);
+  padding: 0.7rem;
+  box-shadow: 2px 3px 0 rgba(0,0,0,0.12);
+}
+
+/* corner bracket decorations */
+.bento-card::before,
+.bento-card::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--red);
+  border-style: solid;
+}
+.bento-card::before {
+  top: -1px; left: -1px;
+  border-width: 2px 0 0 2px;
+}
+.bento-card::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.bento-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 0.8rem;
+  filter: sepia(8%);
+}
+
+.bento-card-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.bento-card-num::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--red);
+}
+
+.bento-card-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.bento-card-desc {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* CALLOUT BOXES */
+.callout {
+  position: relative;
+  padding: 1.1rem 1.3rem;
+  margin: 1.8rem 0;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+}
+.callout p { margin: 0 !important; font-size: 0.88rem !important; font-weight: 300; }
+.callout-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.callout-note {
+  background: rgba(245,240,224,0.7);
+  border: 1px solid var(--tan);
+  border-left: 3px solid var(--red);
+}
+.callout-note .callout-label { color: var(--red); }
+
+.callout-tip {
+  background: rgba(138,106,32,0.05);
+  border: 1px dashed var(--gold-light);
+  border-left: 3px solid var(--gold);
+}
+.callout-tip .callout-label { color: var(--gold); }
+
+.callout-warn {
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-left: 3px solid var(--ink);
+}
+.callout-warn .callout-label { color: var(--ink); }
+
+.callout-box-label {
+  position: absolute;
+  top: -9px;
+  right: 14px;
+  background: var(--cream);
+  padding: 0 0.5rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-light);
+  text-transform: uppercase;
+}
+
+/* DIVIDER */
+.text-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  color: var(--tan);
+}
+.text-divider::before,
+.text-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--tan);
+}
+.text-divider-inner {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--ink-light);
+  white-space: nowrap;
+}
+
+/* COMPONENT TABLE */
+.component-table {
+  background: var(--paper);
+  border: 1px solid var(--tan);
+  margin: 1.5rem 0;
+  position: relative;
+}
+.component-table-head {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+}
+
+.component-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 0.8rem 1rem;
+}
+.component-row:last-child { border-bottom: none; }
+.component-row:nth-child(odd) { background: rgba(200,180,144,0.08); }
+
+.component-name {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  color: var(--red-dark);
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.component-name-jp {
+  font-size: 0.72rem;
+  color: var(--ink-light);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.component-desc {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.83rem;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* CTA BOX */
+.cta-box {
+  position: relative;
+  margin: 3rem 0;
+  background: var(--ink);
+  padding: 2rem 2rem 1.8rem;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-box::before {
+  content: 'お知らせ';
+  position: absolute;
+  top: 0.6rem; right: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(245,240,224,0.2);
+}
+.cta-box::after {
+  content: '';
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border: 1px solid rgba(245,240,224,0.15);
+  pointer-events: none;
+}
+
+.cta-box h3 {
+  color: var(--cream);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem !important;
+  letter-spacing: 0.03em;
+}
+.cta-box h3::before { display: none; }
+.cta-box p {
+  color: rgba(245,240,224,0.65) !important;
+  font-size: 0.84rem !important;
+  margin-bottom: 1.3rem !important;
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 300 !important;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 0.65rem 2rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+  position: relative;
+  z-index: 1;
+}
+.cta-btn:hover { background: var(--red-dark); }
+
+/* ── SIDEBAR ── */
+.guide-sidebar { position: sticky; top: 1.5rem; }
+
+.sidebar-card {
+  background: var(--paper);
+  border: 1px solid var(--tan);
+  padding: 1.1rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.sidebar-card-head {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--ink-mid);
+  padding: 0.3rem 0.6rem;
+  margin: -1.1rem -1.1rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-card-head-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+.toc-list { list-style: none; }
+.toc-list li {
+  border-bottom: 1px dashed var(--cream-dark);
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+.toc-list li::before { display: none !important; }
+.toc-list a {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-mid);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  transition: color 0.15s;
+  gap: 0.5rem;
+}
+.toc-list a::after {
+  content: '›';
+  color: var(--red);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.toc-list a:hover { color: var(--red); }
+
+.toc-list .toc-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem;
+  color: var(--red);
+  background: rgba(192,39,45,0.1);
+  padding: 0.1rem 0.3rem;
+  flex-shrink: 0;
+}
+
+/* KANJI VOCABULARY */
+.kanji-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.kanji-card {
+  background: var(--cream);
+  border: 1px solid var(--tan);
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+}
+.kanji-char {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: block;
+  line-height: 1.2;
+}
+.kanji-roman {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  display: block;
+  margin-top: 0.2rem;
+}
+.kanji-gloss {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.65rem;
+  color: var(--ink-light);
+  font-weight: 300;
+  display: block;
+}
+
+/* sidebar text */
+.sidebar-card p {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 0.7rem;
+  font-weight: 300;
+}
+.sidebar-link {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-bottom: 1px solid var(--red-light);
+  padding-bottom: 1px;
+}
+.sidebar-link::after { content: '→'; font-size: 0.9rem; }
+
+/* PAGE NUMBER decoration */
+.page-num-deco {
+  text-align: center;
+  margin: 3rem 0 1rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--tan);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page-num-deco::before, .page-num-deco::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--tan);
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  background: var(--ink);
+  padding: 1.8rem 2rem;
+  text-align: center;
+}
+footer p {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(245,240,224,0.5);
+  margin-bottom: 0.3rem;
+}
+footer .footer-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(245,240,224,0.3);
+  letter-spacing: 0.2em;
+}
+
+/* ANIM */
+@keyframes fadein { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.header-band { animation: fadein 0.5s ease both; }
+.guide-wrap  { animation: fadein 0.5s 0.15s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+  .guide-wrap { grid-template-columns: 1fr; }
+  .guide-sidebar { position: static; }
+  .nav-links { display: none; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .component-row, .component-table-head { grid-template-columns: 1fr; }
+  .component-table-head > span:last-child { display: none; }
+  .header-inner { grid-template-columns: 1fr; }
+  .stamp-cluster { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .kanji-grid { grid-template-columns: repeat(3, 1fr); }
+}
 </style>
+
+<link rel="canonical" href="https://aayu-chan-in-japan.vercel.app/research/guides/japanese-school-bento-guide.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is typically in a Japanese school bento box?", "acceptedAnswer": {"@type": "Answer", "text": "A typical Japanese school bento contains rice, a protein (tamagoyaki, karaage, or grilled salmon), a vegetable component, a pickled item (tsukemono) in a foil cup, and often a piece of fruit. The balance of color and nutrition is intentional."}},
+    {"@type": "Question", "name": "Can exchange students request vegetarian bentos from a host family?", "acceptedAnswer": {"@type": "Answer", "text": "Vegetarian bentos are possible but should be discussed clearly before arrival. Full veganism is very difficult in traditional Japanese home cooking because dashi (fish stock) forms the base of many dishes. Flag dietary restrictions in writing to your program coordinator before matching."}},
+    {"@type": "Question", "name": "How do you thank a Japanese host mom for making bento?", "acceptedAnswer": {"@type": "Answer", "text": "Say 'oishii' (delicious) when you return home. Be specific — mention a component you enjoyed. The most effective thank-you is finishing the bento every day. A consistently empty box returned to the kitchen communicates gratitude more clearly than any words."}},
+    {"@type": "Question", "name": "What is tamagoyaki in a bento?", "acceptedAnswer": {"@type": "Answer", "text": "Tamagoyaki is a rolled Japanese omelette, slightly sweet, sliced into thick pieces. It is one of the most common bento proteins — appearing in 60-70% of bentos because it is stable, filling, and tastes good at room temperature."}},
+    {"@type": "Question", "name": "Should you finish all the rice in a Japanese bento?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Leaving rice is considered wasteful in Japanese food culture. If portions are too large, communicate this to your host mother so she can adjust — don't make a habit of leaving the rice tier half-full."}}
+  ]
+}
+</script>
 </head>
 <body>
 
-<div class="reading-progress" id="rp"></div>
-<div class="margin-line"></div>
+<div class="page-margin-line"></div>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">Ayachi Samyal <span class="logo-jp">綾智</span> <span class="nav-tag">Guide</span></a>
-    <div class="nav-links">
-      <a href="/research/guides">Guides</a>
-      <a href="/about.html">About</a>
+    <a class="logo" href="/">
+      Ayachi Samyal
+      <span class="logo-jp">サムヤル</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="nav-section-tag">Guides</span>
+      <div class="nav-links">
+        <a href="/essays/">Essays</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about.html">About</a>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- ═══ ACCEPTANCE LETTER HERO ═══ -->
-<div class="letter-wrap">
-<div class="letter-inner">
-
-  <div class="acceptance-letter">
-    <div class="letter-header">
-      <div>
-        <div class="letter-emblem">Japan Ministry of Foreign Affairs · JICE · JICC India</div>
-        <div class="letter-org">Asia Kakehashi Project</div>
-        <div class="letter-org-jp">アジア架け橋プロジェクト · 2026 Application Guide</div>
-      </div>
-      <div class="wax-seal">
-        <span class="wax-kanji">架</span>
-        <span class="wax-text">KAKEHASHI</span>
+<!-- HEADER -->
+<div class="header-band">
+  <div class="header-inner">
+    <div>
+      <div class="eyebrow-label">Complete Field Guide · Yokohama 2021</div>
+      <h1>
+        What My Host Mom Actually Packed in My Bento: Real Examples
+        <span class="h1-jp">ホストマザーのお弁当ガイド</span>
+      </h1>
+      <p class="hero-sub">Everything inside a Japanese school bento, explained with real photos from my year in Yokohama. The components, the etiquette, the unspoken rules, and how to navigate bento culture as an exchange student.</p>
+      <div class="hero-meta">
+        <span>✎ Ayachi Samyal</span>
+        <span>🇯🇵 Yokohama, Japan</span>
+        <span>⏱ 14 min read</span>
+        <span>200+ bentos eaten</span>
       </div>
     </div>
 
-    <div class="letter-salutation">To every Indian student who wants to go to Japan —</div>
-    <h1 class="letter-h1">Complete Guide to the Asia Kakehashi Project 2026
-      <span class="letter-h1-jp">インド人学生向け完全ガイド</span>
-    </h1>
-    <p class="letter-opener">I was selected from India at 16 in 2021. One of 21 students chosen nationally. I spent the year in Yokohama, attended a Japanese public high school, lived with a host family, joined the archery club, and ate 200+ homemade bentos (see the <a href="Bento.html" style="color:var(--gold-lt);text-decoration:underline;text-decoration-color:rgba(201,160,64,0.4);">bento guide</a>). This is the guide I wish had existed when I was applying.</p>
-
-    <div class="letter-meta-row">
-      <div class="letter-meta-item"><span class="meta-label">Author</span><span class="meta-value">2021 Kakehashi Scholar</span></div>
-      <div class="letter-meta-item"><span class="meta-label">Read Time</span><span class="meta-value">12 minutes</span></div>
-      <div class="letter-meta-item"><span class="meta-label">For</span><span class="meta-value">9th–10th Grade Students</span></div>
-      <div class="letter-meta-item"><span class="meta-label">Updated</span><span class="meta-value">2026</span></div>
+    <div class="stamp-cluster">
+      <div class="stamp stamp-red">COMPLETE<br>GUIDE<br>完全版</div>
+      <div class="stamp stamp-blue">お弁当<br>BENTO<br>MANUAL</div>
+      <div class="stamp stamp-circle stamp-red">REAL<br>PHOTOS<br>実例</div>
     </div>
   </div>
-
-  <div class="stamp-row">
-    <div class="stamp s-burg">JAPAN MOFA<br>外務省</div>
-    <div class="stamp s-gold">FULLY FUNDED<br>全額支給</div>
-    <div class="stamp s-green">YOKOHAMA<br>横浜 · 2021</div>
-    <div class="stamp s-circle s-burg">INDIA<br>21<br>SELECTED<br>選抜</div>
-  </div>
-
-</div>
 </div>
 
-<!-- TIMELINE STRIP -->
-<div class="timeline-strip">
-  <div class="tl-inner">
-    <div class="tl-node"><div class="tl-dot lit"></div><div class="tl-label"><strong>AUG–SEP</strong>Apps Open</div></div>
-    <div class="tl-line done" style="flex:1;"></div>
-    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>SEP</strong>⚑ Deadline</div></div>
-    <div class="tl-line" style="flex:1;"></div>
-    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>OCT–NOV</strong>Interview</div></div>
-    <div class="tl-line" style="flex:1;"></div>
-    <div class="tl-node"><div class="tl-dot"></div><div class="tl-label"><strong>DEC</strong>Results</div></div>
-    <div class="tl-line" style="flex:1;"></div>
-    <div class="tl-node"><div class="tl-dot"></div><div class="tl-label"><strong>JAN–MAR</strong>Prep</div></div>
-    <div class="tl-line" style="flex:1;"></div>
-    <div class="tl-node"><div class="tl-dot key"></div><div class="tl-label"><strong>APR</strong>🇯🇵 Japan</div></div>
-  </div>
-</div>
-
+<!-- MAIN -->
 <div class="page-wrap">
 <div class="guide-wrap">
 <main class="guide-body">
 
-  <p class="intro-p">Kakehashi (架け橋) means bridge. The program builds one between you and a country that will not make sense at first — and then, slowly, will start to feel like somewhere you actually live. This guide covers everything from the application to the shape of the year itself, written by someone who has been on both sides.</p>
+  <p class="intro-p">The first time I opened my bento at school, I did not know what half of it was. There were things wrapped in bacon. There was a small foil cup containing something orange and pickled. There was rice with black specks I could not identify. And there was a whole strawberry, sitting in its own compartment, as if someone had decided fruit deserved its own room.</p>
 
-  <!-- 01 -->
-  <div class="section-header" id="what"><span class="section-num">01</span><h2>What is the Asia Kakehashi Project?</h2><span class="section-jp">概要</span></div>
+  <p>Nobody explained the bento to me before I arrived in Japan. The program briefing covered chopstick etiquette and how to say itadakimasu, but not what would actually be in the box my host mother handed me every morning at 7:15am. This guide fills that gap. It is written for future exchange students who want to know what they are looking at — and what it means. If you haven't applied yet, start with the <a href="kakehashi-guide.html" style="color:var(--red);text-decoration:underline;text-decoration-color:var(--red-light);">complete Kakehashi application guide</a> — it covers what the year ahead actually looks like.</p>
+
+  <div class="text-divider"><span class="text-divider-inner">第一部 · PART ONE</span></div>
+
+  <!-- SECTION 1 -->
+  <div class="section-header" id="types">
+    <span class="section-num">01</span>
+    <h2>The Three Core Bento Styles</h2>
+    <span class="section-jp">弁当の三種類</span>
+  </div>
   <div class="section-rule"></div>
 
-  <p>The Asia Kakehashi Project is a fully-funded Japanese government scholarship that sends high school students from across Asia to Japan for a full academic year. Run through the Japan Ministry of Foreign Affairs and JICE, it places you inside a regular Japanese public high school — not a special program, not an international track. Your classmates are Japanese. Your teachers speak Japanese. You adapt, or you figure out how to adapt, which is the whole point.</p>
+  <p>Not all bentos are the same. Over the course of a year, my host okāsan packed variations on three distinct styles — each with its own logic, its own balance, and its own reason for existing. Here they are, using actual photos from my school lunches.</p>
 
-  <div class="insight-grid">
-    <div class="insight-card">
-      <div class="insight-num">Program · 01</div>
-      <div class="insight-title">Fully Funded</div>
-      <div class="insight-body">Flights, host family, meals, school placement, health insurance, monthly stipend. The Japanese government covers everything. Your cost is zero.</div>
+  <div class="bento-grid">
+
+    <div class="bento-card">
+      <img src="../assets/images/bento-asparagus-bacon.jpg" alt="Japanese bento with asparagus bacon rolls, tamagoyaki, teriyaki chicken, pickled daikon and white rice" class="bento-card-img">
+      <div class="bento-card-num">Fig. 01</div>
+      <div class="bento-card-label">The Balanced Classic</div>
+      <p class="bento-card-desc">Asparagus-wrapped bacon, tamagoyaki, seasoned chicken, pickled daikon, green pepper, white rice with black sesame. Textbook composition — protein, vegetable, pickled component, rice. Designed to last through a full school day without refrigeration.</p>
     </div>
-    <div class="insight-card">
-      <div class="insight-num">Program · 02</div>
-      <div class="insight-title">Real School Placement</div>
-      <div class="insight-body">A regular Japanese public high school as a real enrolled student. Not a visitor. Your classmates are Japanese. The social dynamics, the clubs, the classroom rules — you are inside all of it.</div>
+
+    <div class="bento-card">
+      <img src="../assets/images/bento-fish-sticks.jpg" alt="Japanese comfort bento with breaded fish, mushrooms, cheese cubes, grilled salmon and strawberry" class="bento-card-img">
+      <div class="bento-card-num">Fig. 02</div>
+      <div class="bento-card-label">The Comfort Bento</div>
+      <p class="bento-card-desc">Sautéed king oyster mushrooms, diced cheese, breaded fish sticks, grilled salmon in foil, whole strawberry. Less formal composition, more about familiar textures. Often appears on Mondays or after a long weekend.</p>
     </div>
-    <div class="insight-card">
-      <div class="insight-num">Program · 03</div>
-      <div class="insight-title">Host Family Living</div>
-      <div class="insight-body">You live with a Japanese family for the year. Not a dormitory, not a guesthouse. A real home. This is where most of the actual learning happens. You will commute to school from your host family's neighbourhood — see the <a href="Train.html" style="color:var(--gold-lt);text-decoration:underline;text-decoration-color:rgba(201,160,64,0.4);">daily commute guide</a> for what that looks like in practice.</div>
+
+    <div class="bento-card">
+      <img src="../assets/images/bento-yakisoba.jpg" alt="Japanese yakisoba bento with fried noodles, tamagoyaki, fried tofu with cheese, peppers and strawberry" class="bento-card-img">
+      <div class="bento-card-num">Fig. 03</div>
+      <div class="bento-card-label">The Carb-Forward Bento</div>
+      <p class="bento-card-desc">Yakisoba noodles as the main component, tamagoyaki, strawberry, fried tofu with cheese cubes, stir-fried peppers. The carb-on-carb bento — less common, but it exists. Signals a more casual, festival-style meal energy.</p>
+    </div>
+
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-box-label">Author's Note</div>
+    <span class="callout-label">Field observation</span>
+    <p>The style your host mom defaults to will depend on her cooking habits, your school schedule, and what is practical for that morning. Some host families rotate through all three. Others stick to one core style and vary the components within it. Both are completely normal.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-header" id="components">
+    <span class="section-num">02</span>
+    <h2>Common Bento Components Explained</h2>
+    <span class="section-jp">構成要素の解説</span>
+  </div>
+  <div class="section-rule"></div>
+
+  <p>Here is what you will encounter inside a Japanese host family bento, component by component, with explanations of what each thing is and why it is there.</p>
+
+  <div class="component-table">
+    <div class="component-table-head">
+      <span>Component</span>
+      <span>Description</span>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Rice<span class="component-name-jp">ご飯 gohan</span></div>
+      <div class="component-desc">The base. Always present unless the bento is yakisoba or onigiri-based. Usually plain white rice, sometimes mixed with black sesame, furikake seasoning, or shaped into small balls. The rice tier is typically the larger compartment in a two-tier bento box.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Tamagoyaki<span class="component-name-jp">卵焼き</span></div>
+      <div class="component-desc">Rolled Japanese omelette, slightly sweet, sliced into thick pieces. One of the most common bento proteins. Cooked in a rectangular pan and rolled while still in the pan to create layers. Appears in 60–70% of bentos because it is stable, filling, and can be made in advance.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Karaage<span class="component-name-jp">唐揚げ</span></div>
+      <div class="component-desc">Japanese fried chicken, marinated in soy sauce, ginger, and garlic. Almost always placed in a small silver foil cup to absorb oil. Karaage is the single most popular bento protein — it tastes excellent at room temperature, which is why it works so well in packed lunches.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Aspara-Bēkon<span class="component-name-jp">アスパラベーコン</span></div>
+      <div class="component-desc">Asparagus spears wrapped in bacon, pan-fried. Classic vegetable-protein hybrid. The bacon provides salt and fat; the asparagus provides color and texture. Looks fancy but takes about five minutes to make. Very common in spring when asparagus is in season.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Grilled Salmon<span class="component-name-jp">塩鮭</span></div>
+      <div class="component-desc">Small piece of salted salmon (shiozake), grilled and often wrapped in foil to contain moisture. Salmon is a breakfast staple in Japan and leftover pieces frequently make their way into bentos. Provides omega-3s and pairs well with rice.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Tsukemono<span class="component-name-jp">漬物</span></div>
+      <div class="component-desc">Pickled vegetables — usually daikon radish, cucumber, or napa cabbage. Placed in a small foil cup. The acidity cuts through the richness of fried components and aids digestion. Tsukemono is not optional filler — it is a functional part of the meal's balance.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Green Vegetables<span class="component-name-jp">野菜</span></div>
+      <div class="component-desc">Blanched broccoli, edamame, green beans, or stir-fried peppers. Always included for color and nutritional balance. Japanese bento aesthetics hold that a well-composed box should contain at least three distinct colors — green is usually one of them.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Fruit<span class="component-name-jp">果物 kudamono</span></div>
+      <div class="component-desc">Strawberries are the most common bento fruit, followed by grapes, mandarin segments, or apple slices cut into bunny shapes (usagi ringo). Fruit provides natural sweetness and a psychological end-point to the meal. It is not dessert — it is part of the composition.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Yakisoba<span class="component-name-jp">焼きそば</span></div>
+      <div class="component-desc">Stir-fried wheat noodles with sauce, cabbage, and sometimes pork or seafood. When yakisoba is the main component, the bento skips rice entirely. Yakisoba bentos are more casual and are often associated with festival food, but homemade versions appear in host family bentos too.</div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-name">Cheese Cubes<span class="component-name-jp">チーズ</span></div>
+      <div class="component-desc">Small cubes of processed cheese, often placed on top of fried items. Almost always the mild, slightly sweet processed kind rather than aged cheese. It is there for calcium and to appeal to younger eaters.</div>
     </div>
   </div>
 
-  <div class="callout cn">
-    <span class="callout-label">What it is not</span>
-    <p>Kakehashi is not a language program, not a tourism experience, not a gap year. You are not there to accumulate stories. You are there to live inside a society and come to understand it from within. The discomfort is the point.</p>
+  <div class="callout callout-tip">
+    <span class="callout-label">Why the foil cups?</span>
+    <p>The small silver or colored foil cups serve a functional purpose — they separate wet or oily components from dry ones, preventing sogginess and cross-contamination of flavors. They also make the bento easier to assemble quickly in the morning. Every Japanese kitchen has a stack of them.</p>
   </div>
 
-  <!-- 02 -->
-  <div class="section-header" id="eligibility"><span class="section-num">02</span><h2>Who Can Apply</h2><span class="section-jp">応募資格</span></div>
+  <!-- SECTION 3 -->
+  <div class="section-header" id="rules">
+    <span class="section-num">03</span>
+    <h2>The Unspoken Bento Rules</h2>
+    <span class="section-jp">暗黙のルール</span>
+  </div>
   <div class="section-rule"></div>
 
-  <p>The formal eligibility criteria are not difficult to meet. The actual competition is a separate matter — 21 slots from all of India means the field thins quickly at each stage.</p>
+  <p>Japanese bento culture operates on a set of informal principles that are rarely explained out loud but become obvious once you start paying attention.</p>
+
+  <h3>Rule 1: Balance Over Volume</h3>
+  <p>A bento is not designed to stuff you. It is designed to sustain you through the afternoon without making you sluggish. Portion sizes will seem small at first — this is intentional. Japanese bentos prioritize variety and nutritional balance over sheer calorie density. If you are still hungry, you are expected to eat more at dinner, not to demand a bigger lunchbox.</p>
+
+  <h3>Rule 2: Color Theory Matters</h3>
+  <p>A properly composed bento should contain at least three distinct colors — typically red (tomato, salmon, pickled ginger), yellow (tamagoyaki, corn), green (edamame, broccoli, peppers), white (rice), and brown (meat, mushrooms). This is not purely aesthetic. Color variety in Japanese food culture signals nutritional variety. A monochrome bento is considered poorly planned.</p>
+
+  <h3>Rule 3: Everything Has a Place</h3>
+  <p>Components do not touch unless they are meant to. Rice stays in its tier. Wet items go in foil cups. Fruit gets its own space. This is not fussiness — it is about preserving the integrity of each component so that the tamagoyaki still tastes like tamagoyaki at 12:30pm, not like the tsukemono it was sitting next to.</p>
+
+  <h3>Rule 4: The Strawberry Is Not Negotiable</h3>
+  <p>If there is a strawberry in your bento, eat it. Do not leave it. Do not give it away. The strawberry is there because your host mother chose to include it, and leaving it signals either that you did not notice it (inattentive) or that you rejected it (wasteful). Neither reads well. If you genuinely do not eat strawberries, communicate this before the bento is packed, not after.</p>
+
+  <div class="callout callout-warn">
+    <span class="callout-label">The 6am Reality</span>
+    <p>Your host mother is packing this bento before you are awake. On a school day, she is likely up by 5:45–6:00am to prepare breakfast and assemble bentos for multiple people. The effort is real. It does not announce itself. Acknowledge it.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section-header" id="dietary">
+    <span class="section-num">04</span>
+    <h2>What to Do If You Don't Like Something</h2>
+    <span class="section-jp">食の制限について</span>
+  </div>
+  <div class="section-rule"></div>
+
+  <p>You will encounter bento components you do not like. This is guaranteed. Here is how to handle it without causing offense or making your host mother feel she has failed.</p>
+
+  <h3>If It's a Preference (Not an Allergy)</h3>
+  <p>Eat it anyway. Japanese host families take pride in the meals they prepare, and rejecting food based on preference — rather than medical need — is socially costly in a way that is difficult to recover from. If you genuinely cannot eat mushrooms or do not like pickled vegetables, address this in your first week, frame it gently, and accept that accommodations may be limited.</p>
+
+  <h3>If It's an Allergy or Religious Restriction</h3>
+  <p>Communicate this clearly, in writing, before the first bento is ever packed. Use the Japanese word for allergy (arerugi — アレルギー) and provide a printed card with your restriction in Japanese. Do not assume your host family received this information from the program coordinator. Confirm it directly.</p>
+
+  <h3>What About Vegetarian or Vegan?</h3>
+  <p>Vegetarian bentos are difficult but possible. Vegan bentos are extremely difficult in a traditional Japanese home because dashi (fish stock) is the base of most Japanese cooking, including components that appear vegetarian. If this is essential, flag it with your program coordinator before matching, not after arrival.</p>
+
+  <div class="callout callout-note">
+    <span class="callout-label">What worked for me</span>
+    <p>I flagged one thing I truly could not eat (a specific type of pickled vegetable) in my second week. My okāsan stopped including it immediately and never mentioned it again. The key was framing it as a genuine physical aversion, not a casual preference, and offering gratitude for everything else she packed.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section-header" id="etiquette">
+    <span class="section-num">05</span>
+    <h2>Bento Etiquette at School</h2>
+    <span class="section-jp">学校でのマナー</span>
+  </div>
+  <div class="section-rule"></div>
+
+  <p>Opening your bento at school is not a private act. Your classmates will see what you brought. Some will comment. Here is what you need to know to avoid looking clueless.</p>
+
+  <ol>
+    <li><strong>Say itadakimasu before you start eating.</strong> This is not optional. Even if you are eating alone at your desk, say it quietly. Your Japanese classmates will notice if you skip it.</li>
+    <li><strong>Do not open your bento before lunch officially begins.</strong> Even if you are starving. Japanese schools run on a collective schedule and eating early signals impatience or disrespect for the structure.</li>
+    <li><strong>Finish your rice.</strong> Leaving rice in the bento box is considered wasteful. If you cannot finish, take less to begin with or communicate this to your host mother so she can adjust portion sizes.</li>
+    <li><strong>Do not swap bento components with classmates unless offered first.</strong> Bento trading is common among close friends, but initiating it as a foreign exchange student can come across as either too familiar or as a rejection of what your host family packed.</li>
+    <li><strong>Pack out your trash.</strong> Foil cups, plastic wraps, toothpicks — everything goes back in your bento box and comes home with you. Japanese schools do not have cafeteria-style trash systems. You are responsible for your own waste.</li>
+    <li><strong>Say gochisosama deshita when you finish.</strong> This is the closing phrase that pairs with itadakimasu. It signals gratitude for the meal and respect for the effort behind it.</li>
+  </ol>
+
+  <div class="callout callout-tip">
+    <span class="callout-label">The compliment move</span>
+    <p>When you get home, tell your host mother the bento was oishii (delicious). Be specific if possible — "the karaage was really good today" lands better than generic praise. She will not ask for feedback. Offering it anyway is the gesture.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section-header" id="thanks">
+    <span class="section-num">06</span>
+    <h2>How to Thank Your Host Mom for the Bento</h2>
+    <span class="section-jp">感謝の伝え方</span>
+  </div>
+  <div class="section-rule"></div>
+
+  <p>Your host mother will pack your bento every school day for a year unless she has indicated otherwise. That is 200+ bentos. Here is how to express gratitude in a way that registers culturally.</p>
+
+  <h3>Daily Thanks (Every Day)</h3>
   <ul>
-    <li>Currently enrolled in high school in India — 9th or 10th grade is optimal</li>
-    <li>Age typically 15–18 at the time of departure for Japan</li>
-    <li>Able to communicate in English — no Japanese required at application stage</li>
-    <li>Available for the full program duration — a year, not a semester</li>
-    <li>No prior participation in Japanese government exchange programs (verify against current year guidelines)</li>
+    <li>When she hands you the bento in the morning: <strong>"Arigatou gozaimasu"</strong> — Thank you (formal)</li>
+    <li>When you return home in the afternoon: <strong>"Obentoatsuekatta desu"</strong> — The bento was delicious</li>
   </ul>
 
-  <div class="callout ct">
-    <span class="callout-label">The actual competition</span>
-    <p>The formal bar is low. The real filter is the essay and interview. Strong grades help but they are not the primary selector. A weak essay cannot be saved by excellent marks. A strong essay can survive average marks.</p>
-  </div>
-
-  <!-- 03 -->
-  <div class="section-header" id="timeline"><span class="section-num">03</span><h2>Application Timeline</h2><span class="section-jp">出願スケジュール</span></div>
-  <div class="section-rule"></div>
-
-  <p>The structure below is consistent across recent cycles. Verify specific dates at the JICC India website before doing anything else — deadlines shift year to year.</p>
-
-  <div class="app-timeline">
-    <div class="atl-head"><span>Period</span><span>Stage</span><span>What this means for you</span></div>
-    <div class="atl-row"><div class="atl-month">AUG</div><div class="atl-event">Applications Open</div><div class="atl-detail">Download forms from JICC India. Begin your essay immediately — it takes longer than you expect.</div></div>
-    <div class="atl-row key-row"><div class="atl-month">SEP</div><div class="atl-event">⚑ Submission Deadline</div><div class="atl-detail">All documents submitted by the stated deadline. Late submissions are not accepted. Have a trusted adult review your essay first.</div></div>
-    <div class="atl-row"><div class="atl-month">OCT</div><div class="atl-event">Document Screening</div><div class="atl-detail">JICC reviews essays, school records, recommendation letters. You will not hear anything during this stage.</div></div>
-    <div class="atl-row key-row"><div class="atl-month">OCT–NOV</div><div class="atl-event">⚑ Interview Round</div><div class="atl-detail">Shortlisted candidates called for interviews. The decisive round. See Section 06.</div></div>
-    <div class="atl-row"><div class="atl-month">DEC</div><div class="atl-event">Results Announced</div><div class="atl-detail">Selected students notified. Visa processing and orientation begins immediately.</div></div>
-    <div class="atl-row key-row"><div class="atl-month">APR</div><div class="atl-event">⚑ Departure for Japan</div><div class="atl-detail">Orientation in Tokyo, then placement with host family and school. The year begins.</div></div>
-  </div>
-
-  <!-- 04 -->
-  <div class="section-header" id="documents"><span class="section-num">04</span><h2>Documents Required</h2><span class="section-jp">必要書類</span></div>
-  <div class="section-rule"></div>
-
-  <p>The following are consistent across recent cycles. Always confirm against the official JICC guidelines for the year you are applying.</p>
-
-  <div class="doc-checklist">
-    <div class="doc-checklist-label">Application Checklist · 書類一覧</div>
-    <div class="doc-grid">
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Application Form</strong>Official form from JICC India, completed in full. Download fresh each year.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Essay</strong>The most critical document. Usually 400–600 words. Section 05 covers this in full.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>School ID Card</strong>Scanned copy confirming current enrollment.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Principal's Recommendation</strong>On school letterhead with stamp. Request at least three weeks early.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Report Cards</strong>Last two academic years. Consistent performance matters more than one peak result.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Passport-Size Photo</strong>Recent, formal, white background. Check the official form for exact specs.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Parental Consent Letter</strong>Signed by both parents or legal guardian.</div></div>
-      <div class="doc-item"><input type="checkbox" class="doc-cb" onchange="updateDocCount()"><div class="doc-item-text"><strong>Health Certificate</strong>Basic medical clearance confirming fitness to live abroad long-term.</div></div>
-    </div>
-    <div class="doc-count" id="doc-count">0 / 8 documents checked</div>
-  </div>
-
-  <div class="callout cn">
-    <span class="callout-label">Principal's Letter — start early</span>
-    <p>School administrations move slowly. Request this at least three to four weeks before the deadline. Arrive with a draft of what you want it to say — most principals will appreciate the help, and it ensures the letter actually supports your application rather than being generic.</p>
-  </div>
-
-  <!-- 05 -->
-  <div class="section-header" id="essay"><span class="section-num">05</span><h2>The Essay — How to Actually Win It</h2><span class="section-jp">小論文の書き方</span></div>
-  <div class="section-rule"></div>
-
-  <p>The essay is where most applications are decided. Committees read hundreds of submissions from students with similar grades and credentials. The essay is the only place where you are completely irreplaceable.</p>
-
-  <div class="essay-block">
-    <div class="essay-label">What I Did · 2021</div>
-    <p>My essay was specific. Not <em>"I love Japanese culture"</em> but an actual observation I had made — about how a society that prizes collective silence produces individuals who are quietly extraordinary. Not "I want to visit Japan" but a concrete gap I'd noticed between how Japan is perceived and how it actually functions.</p>
-    <p>I connected it to something I would bring back and actually do. I had already published a book. I framed the exchange as research — not vaguely, but concretely. The committee funds people who will use the experience, not just have it.</p>
-    <div class="essay-pull">"Show them you've thought about Japan specifically. Not just about wanting to go somewhere interesting."</div>
-    <p>I also did not try to sound older than I was. I was 16. I wrote like someone 16 and genuinely curious. They read hundreds of essays from students performing diplomacy. Write like a person who has actually thought about this.</p>
-  </div>
-
-  <h3>What works</h3>
+  <h3>Weekly or Biweekly (More Specific)</h3>
   <ul>
-    <li><strong>Specificity over generality.</strong> "I'm interested in how Japanese concepts of ma (間) shape design thinking" beats "I love Japanese culture" immediately. Show you've engaged with something real.</li>
-    <li><strong>A real reason, not a performed one.</strong> If it's manga, own that and connect it meaningfully — how visual storytelling in manga uses silence differently than Western comics. Authenticity is always legible.</li>
-    <li><strong>What you will do with it.</strong> Be specific about what you bring back. The program funds cultural diplomacy, not tourism.</li>
-    <li><strong>Your voice, not a template.</strong> A distinct voice is noticed in the first paragraph. Every year they read thousands of identical essays.</li>
+    <li><strong>"Kyō no karaage, totemo oishikatta desu"</strong> — Today's karaage was really delicious</li>
+    <li><strong>"Itsumo baransu no ii obentoatsueku aringozaimasu"</strong> — Thank you for always making such balanced bentos</li>
   </ul>
 
-  <h3>What doesn't work</h3>
+  <h3>What Not to Do</h3>
   <ul>
-    <li>Lists of achievements with no connection to Japan specifically</li>
-    <li>"I have always dreamed of visiting Japan" without any evidence of actual engagement</li>
-    <li>Generic statements about cultural bridges and global citizenship</li>
-    <li>Trying to sound more formal or mature than you are — it reads as hollow</li>
+    <li>Do not compare the bento to food at home, even positively. It implies a ranking system.</li>
+    <li>Do not ask her to teach you how to make bento unless she offers. Many host mothers consider bento-making a private morning routine.</li>
+    <li>Do not post bento photos on social media without asking first. Some host families are fine with it; others find it invasive. Confirm before you share.</li>
   </ul>
 
-  <!-- 06 -->
-  <div class="section-header" id="interview"><span class="section-num">06</span><h2>The Interview Round</h2><span class="section-jp">面接について</span></div>
+  <div class="callout callout-note">
+    <span class="callout-label">The real thank-you</span>
+    <p>The most effective way to thank your host mother for a year of bentos is to finish them. Consistently. Every day. An empty bento box returned to the kitchen is a clearer signal of gratitude than any words you could say.</p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section-header" id="tips">
+    <span class="section-num">07</span>
+    <h2>Practical Tips for Exchange Students</h2>
+    <span class="section-jp">実践的なアドバイス</span>
+  </div>
   <div class="section-rule"></div>
 
-  <p>If you receive an interview invitation, your essay worked. The committee now wants to see if you are the person who wrote it. Read your essay the morning of the interview — know every claim you made in it.</p>
+  <ul>
+    <li>Carry a small hand towel or handkerchief to wipe your hands before and after eating. Japanese students do this automatically. Wet wipes work but a reusable cloth towel is more standard.</li>
+    <li>If your bento box has a cloth wrap (furoshiki), learn to tie it properly. There are YouTube tutorials. Your host mother will not correct you but your classmates will notice sloppy wrapping.</li>
+    <li>Do not microwave your bento unless your school explicitly allows it. Most Japanese bentos are designed to be eaten at room temperature and microwaving can make rice gummy or ruin delicate components like tamagoyaki.</li>
+    <li>If you want to pack your own bento occasionally (weekend trips, club activities), ask your host mother if this is acceptable first. Some families prefer to maintain control over packed meals for food safety and quality reasons.</li>
+    <li>Keep a small pack of tissues in your bag. Japanese schools do not always have cafeteria napkins and bento eating can get messy.</li>
+  </ul>
 
-  <div class="qa-table">
-    <div class="qa-head"><span>Question they will ask</span><span>What they are actually checking</span></div>
-    <div class="qa-row"><div class="qa-q">Why Japan specifically, not another country?</div><div class="qa-a">Whether your interest is real and specific, not just wanderlust. Have a concrete answer rooted in something you've actually engaged with.</div></div>
-    <div class="qa-row"><div class="qa-q">How will you handle the language barrier?</div><div class="qa-a">Adaptability. Mention you've started learning basics. Do not claim fluency.</div></div>
-    <div class="qa-row"><div class="qa-q">What will you miss most about home?</div><div class="qa-a">Emotional honesty. "Nothing" is not believable. Say something real and explain why you'd still go.</div></div>
-    <div class="qa-row"><div class="qa-q">What will you bring back to India from this?</div><div class="qa-a">Intentionality. Have a specific answer about what you'll do with the experience.</div></div>
-    <div class="qa-row"><div class="qa-q">How do you handle discomfort or conflict?</div><div class="qa-a">Resilience. The year will be hard. They need to believe you won't become a problem in month two.</div></div>
-    <div class="qa-row"><div class="qa-q">Tell us about something you've made or built.</div><div class="qa-a">Agency. They prefer students who create things over students who receive experiences.</div></div>
-  </div>
+  <div class="page-num-deco">・ END OF GUIDE · ガイド終了 ・</div>
 
-  <div class="callout cn">
-    <span class="callout-label">My interview · what I remember</span>
-    <p>My hands were not steady. My voice was. I had practiced answers out loud, not just in my head — that made the difference. They asked me to go deeper on a claim I'd made in my essay. I could, because I'd actually thought about it. The essay was the beginning of your thinking, not the end of it.</p>
-  </div>
-
-  <div class="text-divider"><span class="text-divider-inner">第二部 · THE YEAR ITSELF</span></div>
-
-  <!-- 07 -->
-  <div class="section-header" id="year"><span class="section-num">07</span><h2>What Actually Happens During the Year</h2><span class="section-jp">プログラム内容</span></div>
-  <div class="section-rule"></div>
-
-  <div class="year-phase phase-fog">
-    <div class="year-phase-label">Month 1–2 · The Fog</div>
-    <h3>You understand almost nothing</h3>
-    <p>Not the language, the social rules, the school system, or the food. This is normal. Your only job is observation — watch everything, ask less, notice more. You can read <a href="day-in-japanese-school.html" style="color:var(--gold-lt);text-decoration:underline;text-decoration-color:rgba(201,160,64,0.4);">what a full school day actually looks like here</a> — the classes, the lunch, the after-school clubs. The patterns start emerging around week six.</p>
-  </div>
-  <div class="year-phase phase-sys">
-    <div class="year-phase-label">Month 3–5 · The System</div>
-    <h3>You learn how things work</h3>
-    <p>The train schedule. The school rhythms. The unspoken classroom rules. You begin having real conversations. You find your rhythm. The year starts becoming genuinely enjoyable rather than just exhausting.</p>
-  </div>
-  <div class="year-phase phase-int">
-    <div class="year-phase-label">Month 6–9 · The Integration</div>
-    <h3>Japan stops feeling foreign</h3>
-    <p>You have a group, or at least a few people who know you. A club. Japan feels like somewhere you actually live. This is the best part of the year and it passes faster than you expect.</p>
-  </div>
-  <div class="year-phase phase-end">
-    <div class="year-phase-label">Month 10–12 · The Ending</div>
-    <h3>You start to know you are leaving</h3>
-    <p>Formal goodbye events, gifts, speeches. Your host family will say things that don't translate cleanly but that you'll understand completely. The last bus ride to school feels different from the first.</p>
-  </div>
-
-  <div class="callout cn" style="margin-top:1.5rem;">
-    <span class="callout-label">The thing nobody says</span>
-    <p>The hardest part is not the language barrier or the homesickness, though both are real. It is the middle period — when you understand enough to see clearly how far outside you still are. Push through. Month seven is when it breaks open.</p>
-  </div>
-
-  <!-- 08 -->
-  <div class="section-header" id="faq"><span class="section-num">08</span><h2>Frequently Asked Questions</h2><span class="section-jp">よくある質問</span></div>
-  <div class="section-rule"></div>
-
-  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need Japanese to apply? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">No. English is sufficient. But showing you've started learning even basic Japanese — hiragana, katakana, a few phrases — signals genuine initiative. Do not claim more than you know.</div></div></div>
-  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I don't have a passport yet? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Apply anyway. Note in the application that passport processing is in progress. If selected, you will have time during the pre-departure window. Don't let this stop you.</div></div></div>
-  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I apply if I'm not from Delhi? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. Applications are accepted from across India. If shortlisted for in-person interview, travel to the nearest JICC office may be required. Confirm logistics with JICC India directly once shortlisted.</div></div></div>
-  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I'm not a top student? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Grades matter but they are not the primary filter. The program selects for curiosity, adaptability, and genuine cultural interest. A compelling essay from a student with average grades consistently outperforms a generic essay from a class topper.</div></div></div>
-  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Will I fall behind on Indian curriculum? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">A real concern. Research your specific board's policy and get written confirmation from your school before committing. Many schools grant leave for government-sponsored programs — but confirm, do not assume.</div></div></div>
-
-  <div class="end-deco">· END OF GUIDE · ガイド終了 ·</div>
-
+  <!-- CTA -->
   
-  <div style="margin:2.5rem 0;">
-    <div style="font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-lt);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;">
-      <span style="display:inline-block;width:16px;height:1px;background:currentColor;"></span>
-      After You Apply · 合格後に読む
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;">
-      <a href="day-in-japanese-school.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--burg);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
-        <div style="font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--burg);margin-bottom:0.3rem;">School Life</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.2rem;">A Full Day at a Japanese High School</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.78rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">7am to 5pm — what the actual school day looks like at Hiranuma Koko.</div>
-      </a>
-      <a href="Bento.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--gold-lt);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
-        <div style="font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Host Family Food</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.2rem;">What Host Families Pack in Bentos</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.78rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">200+ school lunches distilled into one guide — every component explained.</div>
-      </a>
-      <a href="Train.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid rgba(60,100,60,0.7);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
-        <div style="font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(40,80,40,0.8);margin-bottom:0.3rem;">Getting to School</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.2rem;">The Japanese High School Commute</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.78rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">Bus, train, uphill walk — the full 49-minute route breakdown.</div>
-      </a>
-      <a href="what-1000-yen-buys.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid rgba(100,60,120,0.5);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
-        <div style="font-family:'Courier Prime',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(100,60,120,0.8);margin-bottom:0.3rem;">Budget Life</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.2rem;">What ¥1000 Buys You in Japan</div>
-        <div style="font-family:'Noto Serif JP',serif;font-size:0.78rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">Conbini hauls, takoyaki, secondhand manga, matching keychains.</div>
-      </a>
-    </div>
-  </div>
-<div class="cta-box">
-    <h3>Get the Free Japan Exchange Starter Kit</h3>
-    <p>Application timeline, document checklist, essay frameworks — one PDF, written by a 2021 Kakehashi scholar from India. Free.</p>
-    <a href="/free-kit/" class="cta-btn">Download Free Kit →</a>
+  <!-- RELATED ARTICLES -->
+  <div class="text-divider"><span class="text-divider-inner">続きを読む · READ MORE</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0 2.5rem;">
+    <a href="day-in-japanese-school.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--red);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+      <div style="font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem;">School Life</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;">A Full Day at Hiranuma High School</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">7am to 5pm — every class, every moment of a real Japanese school day in Yokohama.</div>
+    </a>
+    <a href="kakehashi-guide.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--gold);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+      <div style="font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">Application</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;">Complete Kakehashi Application Guide</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">Everything about applying — essay tips, interview prep, and what the year looks like from the inside.</div>
+    </a>
+    <a href="Train.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid var(--ink-mid);padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+      <div style="font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:0.4rem;">Daily Life</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;">The 49-Minute Commute to Japanese High School</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">Bus 111 → train → uphill walk. The full daily commute from Kounandai to Hiranuma Koko.</div>
+    </a>
+    <a href="what-1000-yen-buys.html" style="display:block;background:var(--paper);border:1px solid var(--tan);border-left:3px solid #5a9060;padding:1.1rem;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
+      <div style="font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#3a7045;margin-bottom:0.4rem;">Budget</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;">What ¥1000 Buys You in Japan</div>
+      <div style="font-family:'Noto Serif JP',serif;font-size:0.8rem;color:var(--ink-mid);font-weight:300;line-height:1.5;">Conbini hauls, takoyaki, secondhand manga, matching keychains — the full breakdown.</div>
+    </a>
   </div>
 
-  <p style="font-size:0.78rem;color:var(--ink-lt);font-style:italic;margin-top:1.5rem;font-family:'Noto Serif JP',serif;font-weight:300;line-height:1.8;">Ayachi Samyal was selected for the Asia Kakehashi Project in 2021 at age 16. She lived with a host family in Yokohama, attended Yokohama Hiranuma High School, joined the archery club, and writes about cultural exchange and the structures of daily life in Japan.</p>
+<div class="cta-box">
+    <h3>Planning Your Japan Exchange Year?</h3>
+    <p>Download the free Japan Exchange Starter Kit — Kakehashi application timeline, document checklist, packing list, essay frameworks, and bento survival tips. Written by a 2021 scholar.</p>
+    <a href="/free-kit/" class="cta-btn">Get the Free Starter Kit →</a>
+  </div>
+
+  <p style="font-size:0.78rem; color:var(--ink-light); font-style:italic; margin-top:1.5rem; font-family:'Noto Serif JP',serif; font-weight:300; line-height:1.8;">Ayachi Samyal completed the Asia Kakehashi Project in 2021, living with a host family in Yokohama, Japan. She ate 200+ homemade bentos over the course of a year and writes about food, cultural exchange, and the unspoken structures of daily life in Japan.</p>
 
 </main>
 
+<!-- SIDEBAR -->
 <aside class="guide-sidebar">
+
   <div class="sidebar-card">
-    <div class="sidebar-card-head"><span>Contents</span><span class="sidebar-jp">目次</span></div>
+    <div class="sidebar-card-head">
+      <span>Contents</span>
+      <span class="sidebar-card-head-jp">目次</span>
+    </div>
     <ul class="toc-list">
-      <li><a href="#what"><span class="toc-num">01</span>What is Kakehashi?</a></li>
-      <li><a href="#eligibility"><span class="toc-num">02</span>Who Can Apply</a></li>
-      <li><a href="#timeline"><span class="toc-num">03</span>Timeline</a></li>
-      <li><a href="#documents"><span class="toc-num">04</span>Documents</a></li>
-      <li><a href="#essay"><span class="toc-num">05</span>The Essay</a></li>
-      <li><a href="#interview"><span class="toc-num">06</span>Interview</a></li>
-      <li><a href="#year"><span class="toc-num">07</span>The Year</a></li>
-      <li><a href="#faq"><span class="toc-num">08</span>FAQ</a></li>
+      <li><a href="#types"><span class="toc-num">01</span> Three Bento Styles</a></li>
+      <li><a href="#components"><span class="toc-num">02</span> Common Components</a></li>
+      <li><a href="#rules"><span class="toc-num">03</span> Unspoken Rules</a></li>
+      <li><a href="#dietary"><span class="toc-num">04</span> Dietary Restrictions</a></li>
+      <li><a href="#etiquette"><span class="toc-num">05</span> School Etiquette</a></li>
+      <li><a href="#thanks"><span class="toc-num">06</span> How to Thank</a></li>
+      <li><a href="#tips"><span class="toc-num">07</span> Practical Tips</a></li>
     </ul>
   </div>
+
   <div class="sidebar-card">
-    <div class="sidebar-card-head"><span>Quick Facts</span><span class="sidebar-jp">概要</span></div>
-    <p><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">21</strong>students selected from India · 2021</p>
-    <p style="margin-top:0.75rem;"><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">¥0</strong>your cost · fully government-funded</p>
-    <p style="margin-top:0.75rem;"><strong style="color:var(--burg);font-size:1.5rem;font-family:'Noto Serif JP',serif;display:block;line-height:1;">1 yr</strong>full academic year in Japan</p>
+    <div class="sidebar-card-head">
+      <span>Vocabulary</span>
+      <span class="sidebar-card-head-jp">語彙</span>
+    </div>
+    <div class="kanji-grid">
+      <div class="kanji-card">
+        <span class="kanji-char">弁当</span>
+        <span class="kanji-roman">bentō</span>
+        <span class="kanji-gloss">lunchbox</span>
+      </div>
+      <div class="kanji-card">
+        <span class="kanji-char">卵焼</span>
+        <span class="kanji-roman">tamago</span>
+        <span class="kanji-gloss">egg roll</span>
+      </div>
+      <div class="kanji-card">
+        <span class="kanji-char">唐揚</span>
+        <span class="kanji-roman">karaage</span>
+        <span class="kanji-gloss">fried chx</span>
+      </div>
+      <div class="kanji-card">
+        <span class="kanji-char">漬物</span>
+        <span class="kanji-roman">tsukemono</span>
+        <span class="kanji-gloss">pickles</span>
+      </div>
+      <div class="kanji-card">
+        <span class="kanji-char">美味</span>
+        <span class="kanji-roman">oishii</span>
+        <span class="kanji-gloss">delicious</span>
+      </div>
+      <div class="kanji-card">
+        <span class="kanji-char">感謝</span>
+        <span class="kanji-roman">kansha</span>
+        <span class="kanji-gloss">gratitude</span>
+      </div>
+    </div>
   </div>
+
   <div class="sidebar-card">
-    <div class="sidebar-card-head"><span>Free Resource</span><span class="sidebar-jp">無料</span></div>
-    <p>Japan Exchange Starter Kit — timeline, checklist, essay frameworks. Free PDF.</p>
+    <div class="sidebar-card-head">
+      <span>More Guides</span>
+      <span class="sidebar-card-head-jp">関連記事</span>
+    </div>
+    <ul class="toc-list">
+      <li><a href="/guides/retirement-dinner-guide.html">Celebration Dinners</a></li>
+      <li><a href="/guides/kakehashi-guide.html">Kakehashi Application</a></li>
+      <li><a href="/guides/packing-guide.html">What to Pack</a></li>
+      <li><a href="/guides/budget-guide.html">Exchange Costs</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">
+      <span>Free Resource</span>
+      <span class="sidebar-card-head-jp">無料</span>
+    </div>
+    <p>Japan Exchange Starter Kit — application timeline, checklist, essay frameworks. Free PDF from a 2021 Kakehashi scholar.</p>
     <a href="/free-kit/" class="sidebar-link">Download free kit</a>
   </div>
-  <div class="sidebar-card">
-    <div class="sidebar-card-head"><span>Related</span><span class="sidebar-jp">関連記事</span></div>
-    <ul class="related-list">
-      <li><a href="day-in-japanese-school.html">A Full Day at Japanese High School</a></li>
-      <li><a href="Train.html">The Daily Commute Guide</a></li>
-      <li><a href="Bento.html">What Host Families Pack in Bentos</a></li>
-      <li><a href="what-1000-yen-buys.html">What ¥1000 Buys in Japan</a></li>
-      <li><a href="last-day-japan.html">The Last Day: Leaving Japan</a></li>
-      <li><a href="packing-guide.html">Full Japan Packing List</a></li>
-    </ul>
-  </div>
-</aside>
 
+</aside>
 </div>
 </div>
 
@@ -633,11 +1364,5 @@ footer .footer-jp{font-family:'Noto Sans JP',sans-serif;font-size:0.68rem;font-w
   <p class="footer-jp">サムヤル アヤチ · Yokohama 2021</p>
 </footer>
 
-<script>
-const rp=document.getElementById('rp');
-window.addEventListener('scroll',()=>{rp.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
-function toggleFaq(btn){const a=btn.nextElementSibling;const isOpen=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q.open').forEach(x=>x.classList.remove('open'));if(!isOpen){a.classList.add('open');btn.classList.add('open');}}
-function updateDocCount(){const t=document.querySelectorAll('.doc-cb').length;const c=document.querySelectorAll('.doc-cb:checked').length;document.getElementById('doc-count').textContent=c+' / '+t+' documents checked';}
-</script>
 </body>
 </html>
