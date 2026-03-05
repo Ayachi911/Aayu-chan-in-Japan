@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════
+     SEO STRATEGY
+     Primary keyword: Japanese convenience store guide
+     Supporting: konbini food recommendations, what to buy at 7-eleven Japan,
+                 FamilyMart Japan must try, Japan exchange student daily life,
+                 Japanese konbini snacks, Lawson Japan food guide
+     Meta description (157 chars):
+     URL slug: /research/guides/konbini-guide
+═══════════════════════════════════════════ -->
+
+<title>The Real Japanese Convenience Store Guide (From Someone Who Lived On Them) | Ayachi in Japan</title>
+<meta name="description" content="Konbini are not convenience stores. They are a way of life. What to actually buy at 7-Eleven, FamilyMart & Lawson in Japan — tested daily as an exchange student.">
+<meta name="keywords" content="Japanese convenience store guide, konbini food recommendations, what to buy at 7-eleven Japan, FamilyMart Japan must try, Japan exchange student daily life, Japanese konbini snacks">
+
+<!-- Open Graph / Pinterest -->
+<meta property="og:title" content="The Real Japanese Convenience Store Guide (What to Actually Buy)">
+<meta property="og:description" content="Konbini are not convenience stores. They are a way of life. What to buy at 7-Eleven, FamilyMart & Lawson — tested daily as a Japan exchange student.">
+<meta property="og:image" content="/assets/images/school/konbini-cover.jpg">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://aayu-chan-in-japan.vercel.app/research/guides/konbini-guide.html">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Klee+One:wght@400;600&family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   KONBINI DAYTIME PALETTE
+   warm cream + soft peach + mint + dusty rose
+   like a receipt, a snack wrapper, afternoon light
+═══════════════════════════════════════════ */
+:root {
+  --font-round:  'Nunito', sans-serif;
+  --font-klee:   'Klee One', cursive;
+  --font-marker: 'Permanent Marker', cursive;
+  --font-mono:   'Space Mono', monospace;
+
+  /* daytime konbini palette */
+  --bg:         #fdf6ee;
+  --bg2:        #fff9f2;
+  --cream:      #f5ede0;
+  --peach:      #f4a96a;
+  --peach-pale: #fef0e3;
+  --peach-dk:   #e07840;
+  --mint:       #7ec8a4;
+  --mint-pale:  #edf9f2;
+  --rose:       #e8889a;
+  --rose-pale:  #fdf0f3;
+  --sky:        #88b4d4;
+  --sky-pale:   #edf5fb;
+  --lemon:      #f5d76e;
+  --lemon-pale: #fefae8;
+  --ink:        #2d2118;
+  --ink-mid:    #4a3829;
+  --ink-soft:   #8a7060;
+  --ink-lt:     #b8a898;
+  --rule:       rgba(80,50,30,0.1);
+  --rule-dk:    rgba(80,50,30,0.18);
+
+  /* 7-eleven red, familymart blue-green, lawson blue */
+  --seven:   #d42b2b;
+  --fami:    #3c8c5a;
+  --lawson:  #1a6baa;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-round);
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  /* subtle paper texture via repeating dots */
+  background-image: radial-gradient(circle, rgba(200,160,100,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ═══════════════════════════════════════════
+   READING PROGRESS BAR — peach gradient
+═══════════════════════════════════════════ */
+#rp {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, var(--peach), var(--rose), var(--mint));
+  width: 0%; z-index: 999;
+  transition: width 0.1s linear;
+}
+
+/* ═══════════════════════════════════════════
+   TOP NAV
+═══════════════════════════════════════════ */
+.top-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253,246,238,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px dashed rgba(244,169,106,0.4);
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 2rem;
+  gap: 1rem;
+}
+.nav-back {
+  font-family: var(--font-round); font-size: 0.72rem;
+  font-weight: 800; letter-spacing: 0.05em;
+  color: var(--ink-soft); text-decoration: none;
+  display: flex; align-items: center; gap: 0.35rem;
+  transition: color 0.15s;
+}
+.nav-back:hover { color: var(--peach-dk); }
+.nav-back::before { content: '←'; }
+.nav-breadcrumb {
+  font-family: var(--font-mono); font-size: 0.58rem;
+  color: var(--ink-lt); letter-spacing: 0.05em;
+}
+.nav-breadcrumb span { color: var(--peach-dk); font-weight: 700; }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.nav-pill {
+  font-family: var(--font-round); font-size: 0.62rem;
+  font-weight: 800; color: white;
+  background: var(--peach-dk); padding: 0.28rem 0.85rem;
+  border-radius: 20px; text-decoration: none;
+  transition: transform 0.15s, background 0.15s;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+}
+.nav-pill:hover { transform: translateY(-1px); background: var(--ink); }
+.nav-pill.moss {
+  background: var(--mint);
+  color: var(--ink);
+}
+.nav-pill.moss:hover { background: var(--ink); color: white; }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  max-width: 1100px; margin: 0 auto;
+  padding: 3rem 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: start;
+  position: relative;
+}
+
+/* floating food stickers behind hero */
+.hero::before {
+  content: '🍙 🧃 🍡 🍜';
+  position: absolute;
+  top: 1.5rem; right: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.5rem;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-left { padding-top: 0.5rem; position: relative; z-index: 1; }
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--lemon); color: var(--ink);
+  font-family: var(--font-round); font-size: 0.62rem;
+  font-weight: 900; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  transform: rotate(-1deg);
+  display: inline-block;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+
+.hero-title {
+  font-family: var(--font-round);
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  font-weight: 900; line-height: 1.15;
+  color: var(--ink); margin-bottom: 1rem;
+}
+.hero-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--peach), var(--rose));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block; font-size: 0.72em; font-weight: 700;
+}
+
+.hero-deck {
+  font-family: var(--font-klee);
+  font-size: 1.08rem; line-height: 1.85;
+  color: var(--ink-mid); margin-bottom: 1.4rem;
+}
+
+.hero-meta {
+  display: flex; gap: 0.7rem; flex-wrap: wrap;
+  align-items: center; padding-top: 1rem;
+  border-top: 1.5px dashed var(--rule-dk);
+  font-family: var(--font-mono); font-size: 0.6rem;
+  color: var(--ink-soft);
+}
+.meta-dot { color: var(--peach); font-weight: 700; }
+.meta-tag {
+  background: var(--peach-pale); color: var(--peach-dk);
+  border: 1.5px solid var(--peach);
+  padding: 0.12rem 0.5rem; border-radius: 20px;
+  font-size: 0.58rem; font-weight: 700;
+  font-family: var(--font-round);
+}
+
+.hero-img-wrap {
+  position: relative; z-index: 1;
+  border: 2.5px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--peach), 6px 6px 0 2px var(--ink);
+  overflow: visible;
+  aspect-ratio: 4/5;
+  background: var(--cream);
+}
+.hero-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+}
+.hero-img-caption {
+  position: absolute; bottom: -0.1rem; left: 0; right: 0;
+  background: var(--ink);
+  padding: 0.55rem 0.9rem;
+  font-family: var(--font-mono); font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  color: var(--bg);
+}
+
+/* Stamp on hero — circular konbini stamp */
+.hero-stamp {
+  position: absolute; top: -0.8rem; right: -0.8rem; z-index: 2;
+  width: 70px; height: 70px;
+  background: var(--peach-dk);
+  color: white;
+  font-family: var(--font-round); font-size: 0.5rem;
+  font-weight: 900; letter-spacing: 0.08em;
+  text-align: center; line-height: 1.4;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  border: 3px solid white;
+  outline: 3px solid var(--peach-dk);
+  transform: rotate(12deg);
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   WASHI TAPE DIVIDER
+═══════════════════════════════════════════ */
+.washi-divider {
+  max-width: 1100px; margin: 2.5rem auto;
+  padding: 0 2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.washi-divider::before, .washi-divider::after {
+  content: ''; flex: 1; height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--mint) 0px, var(--mint) 12px,
+    var(--mint-pale) 12px, var(--mint-pale) 18px,
+    var(--peach) 18px, var(--peach) 30px,
+    var(--peach-pale) 30px, var(--peach-pale) 36px
+  );
+  opacity: 0.5; border-radius: 4px;
+}
+.wd-inner {
+  font-family: var(--font-marker); font-size: 0.78rem;
+  color: var(--ink-soft); white-space: nowrap;
+  letter-spacing: 0.08em;
+}
+
+/* ═══════════════════════════════════════════
+   MAIN CONTENT LAYOUT
+═══════════════════════════════════════════ */
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2rem 6rem; }
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 248px;
+  gap: 3rem; align-items: start;
+}
+
+/* ═══════════════════════════════════════════
+   ARTICLE BODY
+═══════════════════════════════════════════ */
+.article-body p {
+  font-family: var(--font-klee); font-size: 1.05rem;
+  line-height: 1.9; color: var(--ink-mid);
+  margin-bottom: 1.4rem;
+}
+.article-body p:first-of-type::first-letter {
+  font-family: var(--font-marker); font-size: 3.8rem;
+  font-weight: 400; float: left; line-height: 0.82;
+  margin: 0.05rem 0.1rem 0 0; color: var(--peach-dk);
+}
+
+.article-body h2 {
+  font-family: var(--font-round);
+  font-size: 1.55rem; font-weight: 900;
+  line-height: 1.25; color: var(--ink);
+  margin: 3rem 0 1rem;
+  padding-top: 2rem;
+  position: relative;
+}
+/* fun squiggly underline on h2 */
+.article-body h2::after {
+  content: '';
+  display: block;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, var(--peach), var(--rose));
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+.article-body h2 em { font-style: normal; color: var(--peach-dk); }
+
+.article-body h3 {
+  font-family: var(--font-round); font-size: 1.08rem;
+  font-weight: 800; color: var(--ink); margin: 1.8rem 0 0.6rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.article-body h3::before {
+  content: '▸';
+  color: var(--mint);
+  font-size: 0.85em;
+}
+
+/* Section number badges */
+.section-num-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 0.56rem;
+  font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+.section-num-badge .num {
+  font-family: var(--font-marker); font-size: 2.2rem;
+  color: var(--peach); opacity: 0.35; line-height: 1;
+}
+
+/* ═══════════════════════════════════════════
+   CALLOUT BOXES — receipt-style
+═══════════════════════════════════════════ */
+.callout {
+  border: 1.5px solid var(--peach);
+  background: var(--peach-pale);
+  padding: 1rem 1.3rem;
+  margin: 1.8rem 0;
+  border-radius: 8px;
+  position: relative;
+}
+/* receipt tear top */
+.callout::before {
+  content: '';
+  position: absolute; top: -6px; left: 10px; right: 10px; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--bg) 0px, var(--bg) 4px, transparent 4px, transparent 8px);
+}
+.callout.moss {
+  border-color: var(--mint);
+  background: var(--mint-pale);
+}
+.callout-label {
+  font-family: var(--font-round); font-size: 0.6rem;
+  font-weight: 900; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--peach-dk);
+  display: flex; align-items: center; gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.callout-label::before { content: '★'; font-size: 0.7rem; }
+.callout.moss .callout-label { color: var(--mint); }
+.callout.moss .callout-label::before { color: var(--mint); }
+.callout p {
+  font-family: var(--font-klee); font-size: 0.95rem;
+  line-height: 1.75; color: var(--ink-mid);
+  margin: 0 !important;
+}
+
+/* ═══════════════════════════════════════════
+   PULL QUOTE — sticker-style
+═══════════════════════════════════════════ */
+.pull-quote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.8rem 1.5rem 2rem;
+  background: var(--lemon-pale);
+  border: 2px solid var(--lemon);
+  border-radius: 12px;
+  position: relative;
+  transform: rotate(-0.3deg);
+  box-shadow: 4px 4px 0 rgba(245,215,110,0.4);
+}
+.pull-quote::before {
+  content: '"';
+  font-family: var(--font-marker); font-size: 4rem;
+  color: var(--peach); opacity: 0.4;
+  position: absolute; top: -0.5rem; left: 1rem;
+  line-height: 1;
+}
+.pull-quote p {
+  font-family: var(--font-klee) !important;
+  font-size: 1.15rem !important; font-style: italic;
+  line-height: 1.6 !important; color: var(--ink) !important;
+  margin: 0 !important;
+}
+.pull-quote cite {
+  display: block; margin-top: 0.75rem;
+  font-family: var(--font-mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ═══════════════════════════════════════════
+   BUDGET CARD — receipt style!
+═══════════════════════════════════════════ */
+.budget-card {
+  border: 1.5px solid var(--ink);
+  margin: 2rem 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+  background: white;
+  /* receipt texture */
+  background-image: repeating-linear-gradient(
+    transparent, transparent 23px, rgba(0,0,0,0.03) 23px, rgba(0,0,0,0.03) 24px
+  );
+}
+.budget-card-head {
+  background: var(--ink); color: var(--bg);
+  padding: 0.7rem 1rem;
+  font-family: var(--font-mono); font-size: 0.62rem;
+  font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex; justify-content: space-between;
+  align-items: center;
+}
+.budget-card-head::before { content: '🧾 '; }
+.budget-card-head span { opacity: 0.5; }
+.budget-row {
+  display: flex; justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  font-family: var(--font-mono); font-size: 0.88rem;
+}
+.budget-row:last-child { border-bottom: none; }
+.budget-row .item { color: var(--ink-mid); }
+.budget-row .price {
+  font-weight: 700; color: var(--peach-dk);
+}
+.budget-row .note {
+  font-family: var(--font-round); font-size: 0.6rem;
+  color: var(--ink-soft); font-style: italic;
+  margin-left: 0.5rem;
+}
+.budget-total {
+  background: var(--peach-pale);
+  border-top: 2px solid var(--ink);
+  display: flex; justify-content: space-between;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-mono); font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.budget-total .t-price { color: var(--peach-dk); font-size: 0.9rem; }
+
+/* ═══════════════════════════════════════════
+   KONBINI TIER LIST
+═══════════════════════════════════════════ */
+.tier-list {
+  margin: 2rem 0;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.tier-row {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1.5px solid var(--rule-dk);
+  background: white;
+  transition: background 0.12s;
+}
+.tier-row:last-child { border-bottom: none; }
+.tier-row:hover { background: var(--peach-pale); }
+.tier-rank {
+  font-family: var(--font-marker); font-size: 2rem;
+  color: var(--peach); line-height: 1;
+  width: 2rem; flex-shrink: 0; text-align: center;
+}
+.tier-name {
+  font-family: var(--font-round); font-size: 1rem;
+  font-weight: 800; color: var(--ink); min-width: 140px;
+}
+.tier-desc {
+  font-family: var(--font-klee); font-size: 0.9rem;
+  color: var(--ink-soft); flex: 1;
+}
+.tier-badge {
+  font-family: var(--font-round); font-size: 0.55rem;
+  font-weight: 900; letter-spacing: 0.1em;
+  text-transform: uppercase; color: white;
+  background: var(--mint); padding: 0.25rem 0.6rem;
+  border-radius: 20px; flex-shrink: 0;
+}
+.tier-badge.terra { background: var(--seven); }
+.tier-badge.gold { background: var(--lawson); }
+
+/* ═══════════════════════════════════════════
+   IMAGE LAYOUTS
+═══════════════════════════════════════════ */
+.img-full {
+  margin: 2rem 0;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  overflow: hidden;
+  border-radius: 4px;
+}
+.img-full img { width: 100%; display: block; }
+.img-caption {
+  padding: 0.5rem 0.8rem;
+  background: var(--ink);
+  font-family: var(--font-mono); font-size: 0.58rem;
+  letter-spacing: 0.06em; color: var(--bg);
+}
+
+.img-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin: 2rem 0;
+}
+.img-split-item {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  overflow: hidden;
+  border-radius: 4px;
+}
+.img-split-item img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+
+/* ═══════════════════════════════════════════
+   HANDWRITTEN NOTE BLOCK — sticky note style
+═══════════════════════════════════════════ */
+.note-block {
+  background: var(--lemon-pale);
+  border: 1.5px solid var(--lemon);
+  padding: 1.2rem 1.4rem;
+  margin: 2rem 0;
+  position: relative;
+  transform: rotate(-0.6deg);
+  box-shadow: 3px 4px 10px rgba(0,0,0,0.07);
+  border-radius: 4px;
+}
+/* sticky note fold corner */
+.note-block::after {
+  content: '';
+  position: absolute; bottom: 0; right: 0;
+  width: 20px; height: 20px;
+  background: linear-gradient(225deg, var(--bg) 50%, var(--lemon) 50%);
+}
+.note-block::before {
+  content: '✏️ field note';
+  display: block;
+  font-family: var(--font-round); font-size: 0.56rem;
+  font-weight: 900; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+}
+.note-block p {
+  font-family: var(--font-marker) !important;
+  font-size: 0.88rem !important; line-height: 1.85 !important;
+  color: var(--ink-mid) !important; margin: 0 !important;
+}
+
+/* ═══════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════ */
+.guide-sidebar { position: sticky; top: 3.5rem; }
+
+.sidebar-card {
+  border: 1.5px solid var(--ink);
+  margin-bottom: 1.2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  overflow: hidden;
+}
+.sidebar-card-head {
+  background: var(--peach-pale);
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1.5px solid var(--ink);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-round); font-size: 0.62rem;
+  font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink);
+}
+.sidebar-jp {
+  font-family: var(--font-klee); font-size: 0.75rem;
+  color: var(--ink-soft); font-style: normal;
+  letter-spacing: 0; text-transform: none;
+  font-weight: 400;
+}
+.sidebar-card p {
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-klee); font-size: 0.88rem;
+  line-height: 1.65; color: var(--ink-soft);
+  border-bottom: 1px dashed var(--rule);
+}
+.sidebar-card p:last-child { border-bottom: none; }
+
+.toc-list { list-style: none; padding: 0.3rem 0; }
+.toc-list li a {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.48rem 0.9rem;
+  font-family: var(--font-round); font-size: 0.7rem; font-weight: 700;
+  color: var(--ink-mid); text-decoration: none;
+  border-bottom: 1px dashed var(--rule);
+  transition: color 0.12s, background 0.12s;
+}
+.toc-list li:last-child a { border-bottom: none; }
+.toc-list li a:hover { color: var(--peach-dk); background: var(--peach-pale); }
+.toc-num {
+  font-family: var(--font-mono); font-size: 0.58rem;
+  font-weight: 700; color: var(--peach-dk); opacity: 0.7;
+  min-width: 1.5rem;
+}
+
+.related-list { list-style: none; padding: 0.3rem 0; }
+.related-list li a {
+  display: block; padding: 0.5rem 0.9rem;
+  font-family: var(--font-klee); font-size: 0.88rem;
+  color: var(--peach-dk); text-decoration: none;
+  border-bottom: 1px dashed var(--rule);
+  transition: background 0.12s;
+}
+.related-list li:last-child a { border-bottom: none; }
+.related-list li a:hover { background: var(--peach-pale); }
+
+.sidebar-link {
+  display: block; padding: 0.5rem 0.9rem;
+  font-family: var(--font-round); font-size: 0.66rem;
+  font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mint);
+  text-decoration: none; border-top: 1px dashed var(--rule);
+  transition: color 0.12s;
+}
+.sidebar-link:hover { color: var(--ink); }
+
+/* More blogs sidebar widget */
+.more-blogs-widget {
+  border: 1.5px solid var(--ink);
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  overflow: hidden;
+  background: white;
+}
+.mbw-head {
+  background: var(--peach-dk);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-round); font-size: 0.62rem;
+  font-weight: 900; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mbw-head span { opacity: 0.75; font-weight: 600; font-family: var(--font-klee); letter-spacing: 0; text-transform: none; font-size: 0.75rem; }
+.mbw-list { list-style: none; }
+.mbw-list li a {
+  display: flex; flex-direction: column; gap: 0.1rem;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px dashed var(--rule);
+  text-decoration: none; transition: background 0.12s;
+}
+.mbw-list li:last-child a { border-bottom: none; }
+.mbw-list li a:hover { background: var(--peach-pale); }
+.mbw-title {
+  font-family: var(--font-round); font-size: 0.82rem; font-weight: 700;
+  color: var(--ink); line-height: 1.3;
+}
+.mbw-tag {
+  font-family: var(--font-mono); font-size: 0.54rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ═══════════════════════════════════════════
+   FOOD STICKER FLOATS — sprinkled through content
+═══════════════════════════════════════════ */
+.food-sticker {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 0.2rem;
+  vertical-align: middle;
+  animation: wobble 3s ease-in-out infinite;
+}
+@keyframes wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* section divider sticker strip */
+.sticker-strip {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  margin: 2rem 0;
+  opacity: 0.65;
+}
+
+/* highlight marker effect */
+.hl {
+  background: linear-gradient(transparent 55%, var(--lemon) 55%);
+  padding: 0 2px;
+}
+.hl-peach {
+  background: linear-gradient(transparent 55%, rgba(244,169,106,0.4) 55%);
+  padding: 0 2px;
+}
+.hl-mint {
+  background: linear-gradient(transparent 55%, rgba(126,200,164,0.4) 55%);
+  padding: 0 2px;
+}
+.hl-rose {
+  background: linear-gradient(transparent 55%, rgba(232,136,154,0.35) 55%);
+  padding: 0 2px;
+}
+
+/* ═══════════════════════════════════════════
+   CHAIN BRAND PILLS (7-eleven, familymart, lawson)
+═══════════════════════════════════════════ */
+.brand-7 {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--seven); color: white;
+  font-family: var(--font-round); font-size: 0.6rem; font-weight: 900;
+  padding: 0.15rem 0.6rem; border-radius: 20px;
+  vertical-align: middle;
+}
+.brand-fami {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--fami); color: white;
+  font-family: var(--font-round); font-size: 0.6rem; font-weight: 900;
+  padding: 0.15rem 0.6rem; border-radius: 20px;
+  vertical-align: middle;
+}
+.brand-law {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--lawson); color: white;
+  font-family: var(--font-round); font-size: 0.6rem; font-weight: 900;
+  padding: 0.15rem 0.6rem; border-radius: 20px;
+  vertical-align: middle;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  border-top: 2px dashed rgba(244,169,106,0.4);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-mono); font-size: 0.65rem;
+  letter-spacing: 0.08em; color: var(--ink-soft);
+}
+footer .footer-jp {
+  font-family: var(--font-klee); font-size: 0.82rem;
+  color: var(--ink-lt); margin-top: 0.3rem;
+}
+footer::before {
+  content: '🍙  🧃  🍡  🍜  🍱  🧋';
+  display: block; font-size: 1.2rem;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0.8rem; opacity: 0.55;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-img-wrap { aspect-ratio: 16/9; }
+  .hero::before { display: none; }
+  .content-grid { grid-template-columns: 1fr; }
+  .guide-sidebar { position: static; }
+  .img-split { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .top-nav { padding: 0.5rem 1rem; }
+  .page-wrap { padding: 0 1rem 4rem; }
+  .hero { padding: 2rem 1rem 0; }
+}
+</style>
+</head>
+
+<body>
+<div id="rp"></div>
+
+<!-- ═══════════════════════════════════════════
+     TOP NAV — GUIDES BUTTON + BREADCRUMB
+═══════════════════════════════════════════ -->
+<nav class="top-nav">
+  <a href="/research/guides/" class="nav-back">All Guides</a>
+  <div class="nav-breadcrumb">
+    Guides / <span>Japan Life</span> / Konbini
+  </div>
+  <div class="nav-right">
+    <span style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">⏱ 9 min read</span>
+    <a href="/research/guides/" class="nav-pill">← Guides Index</a>
+    <a href="/research/guides/#japan-life" class="nav-pill moss">Japan Life ↗</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Japan Life · コンビニ Culture</div>
+    <h1 class="hero-title">
+      The Real Japanese<br>
+      Convenience Store Guide
+      <em style="display:block;font-size:0.75em;">(From Someone Who Lived On Them)</em>
+    </h1>
+    <p class="hero-deck">
+      What to actually buy at 7-Eleven, FamilyMart, and Lawson in Japan —
+      tested daily as a Yokohama exchange student. Not a listicle.
+      A survival document.
+    </p>
+    <div class="hero-meta">
+      <span>By Ayachi Samyal</span>
+      <span class="meta-dot">·</span>
+      <span>Yokohama, 2021</span>
+      <span class="meta-dot">·</span>
+      <span class="meta-tag">Japan Life</span>
+      <span class="meta-tag">Food</span>
+      <span class="meta-tag">Daily Life</span>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <!-- PHOTO: exterior or interior of a konbini at night. Warm fluorescent glow -->
+    <img src="/../../assets/images/school/konbini-night.jpg"
+         alt="Japanese convenience store at night, warm fluorescent light spilling onto a quiet street"
+         onerror="this.style.background='#e8d8c4';this.style.minHeight='400px'">
+    <div class="hero-stamp">コンビニ<br>TESTED</div>
+    <div class="hero-img-caption">FamilyMart, somewhere between school and the train. My second home.</div>
+  </div>
+</header>
+
+<!-- WASHI DIVIDER -->
+<div class="washi-divider">
+  <span class="wd-inner">🍙 コンビニ · convenience store culture · コンビニ 🧃</span>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════ -->
+<div class="page-wrap">
+<div class="content-grid">
+
+<!-- ARTICLE -->
+<main class="article-body">
+
+<!-- receipt header -->
+<div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--ink-soft);text-align:center;padding:0.8rem;background:white;border:1.5px dashed var(--rule-dk);border-radius:6px;margin-bottom:2rem;letter-spacing:0.08em;line-height:2;">
+  ★ AYACHI-IN-JAPAN GUIDE ★<br>
+  コンビニ完全ガイド · KONBINI COMPLETE GUIDE<br>
+  <span style="color:var(--peach-dk);font-weight:700;">TESTED · YOKOHAMA 2021 · 9 MIN READ</span><br>
+  ─────────────────<br>
+  <span style="font-size:0.55rem;">7-ELEVEN · FAMILYMART · LAWSON</span>
+</div>
+
+  <!-- SECTION 1: INTRO / HOOK -->
+  <div id="intro">
+    <p>
+      The first time I walked into a Japanese convenience store — a FamilyMart three minutes from my
+      host family's apartment in Yokohama — I stood in the entrance for a full sixty seconds doing nothing.
+      The smell hit first: something warm and slightly sweet, the ghost of steamed nikuman,
+      fresh coffee from a machine, maybe floor cleaner underneath it all. Then the rows of things.
+      The sheer <em>density</em> of things, all in perfect arrangement, under lights so bright and even
+      it felt like being inside a very clean dream.
+    </p>
+    <p>
+      I bought a can of green tea that cost ¥110 and didn't know what else to do with myself.
+      By the end of the year I was buying onigiri at 7:30 AM, sipping hot miso soup from a paper cup
+      on the train platform, and genuinely capable of spending twenty minutes just browsing the snack aisle
+      without buying anything. The konbini had become, in the way only Japan can manage,
+      completely mundane and still somehow extraordinary every single time.
+    </p>
+    <p>
+      This is not a list of "things tourists should try." This is what I actually bought, what I
+      actually ate, and what I genuinely recommend — built from almost a year of daily visits
+      as a 16-year-old who was very hungry and had about ¥1,000 a day to spend.
+    </p>
+  </div>
+
+  <div class="pull-quote">
+    <p>The konbini is not a corner shop. It is a philosophy. A 24-hour, fluorescent-lit argument that life should be both convenient and delicious.</p>
+    <cite>— a thing I thought on the train home, eating my third onigiri of the week</cite>
+  </div>
+
+  <!-- SECTION 2: THE THREE CHAINS -->
+  <h2 id="chains"><span class="section-num-badge"><span class="num">01</span> The Three Chains</span><br>7-Eleven vs FamilyMart vs <em>Lawson</em></h2>
+
+  <p>
+    You will have opinions about this by month two. Every exchange student does.
+    The three main konbini chains each have a personality, and knowing which is which
+    will save you from wandering into a Lawson at 8 AM when you needed a 7-Eleven lunch box.
+  </p>
+
+  <div class="tier-list">
+    <div class="tier-row">
+      <div class="tier-rank">1</div>
+      <div class="tier-name">7-Eleven Japan<br><small style="font-family:var(--sans);font-size:0.58rem;font-weight:400;color:var(--ink-soft);">セブン-イレブン</small></div>
+      <div class="tier-desc">Best onigiri. Best sandwiches. Dashi-based hot food that is genuinely, shockingly good. The clear overall winner for food quality.</div>
+      <div class="tier-badge terra">Food First</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-rank">2</div>
+      <div class="tier-name">FamilyMart<br><small style="font-family:var(--sans);font-size:0.58rem;font-weight:400;color:var(--ink-soft);">ファミリーマート</small></div>
+      <div class="tier-desc">Best fried chicken (FamiChiki is a religious experience). Better snack variety. Nicer seating in many locations. My personal daily driver.</div>
+      <div class="tier-badge">Daily Driver</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-rank">3</div>
+      <div class="tier-name">Lawson<br><small style="font-family:var(--sans);font-size:0.58rem;font-weight:400;color:var(--ink-soft);">ローソン</small></div>
+      <div class="tier-desc">Best sweets and desserts. Premium Lawson stores carry a different calibre of pastry. Uchi Café range is excellent. Underrated for snacks.</div>
+      <div class="tier-badge gold">Dessert Win</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">The honest answer</span>
+    <p>They are all good. Japan's convenience store quality across the board is so far above anything comparable elsewhere that ranking them is almost beside the point. The real answer is: go to whichever is closest. Then go to the others too.</p>
+  </div>
+
+  <!-- SECTION 3: WHAT TO BUY -->
+  <h2 id="what-to-buy"><span class="section-num-badge"><span class="num">02</span> What to Actually Buy</span><br>The Honest, <em>Tested</em> List</h2>
+
+  <p>
+    I kept a rough mental log of my konbini spending — the kind of accounting you do when
+    you're on a student stipend and every ¥100 counts. What follows are the things I went back to
+    repeatedly, not because I was trying to "experience Japanese culture" but because they were
+    simply, genuinely, the best version of what they were.
+  </p>
+
+  <h3>Onigiri (おにぎり) — the ¥110–¥180 meal</h3>
+  <p>
+    The single most important konbini item. A rice ball wrapped in nori, filled with something — tuna mayo,
+    salmon, mentaiko, pickled plum — and engineered for perfect eating via a three-step plastic wrapper
+    that deserves its own TED Talk. The 7-Eleven onigiri is the benchmark. Specifically:
+    the <em>salmon</em> onigiri at 7-Eleven, eaten cold on a train platform at 7:40 AM, is one of the better
+    breakfasts I have had in my life, and I say this with full seriousness.
+  </p>
+
+  <!-- Image: onigiri or konbini food counter -->
+  <div class="img-full">
+    <img src="/../../assets/images/school/konbini-food.jpg"
+         alt="Rows of colourful onigiri in a Japanese convenience store refrigerator"
+         onerror="this.style.background='#ddd';this.style.height='240px';this.style.display='block'">
+    <div class="img-caption">The onigiri wall. Every morning. This is where decisions get made.</div>
+  </div>
+
+  <h3>FamiChiki — ファミチキ</h3>
+  <p>
+    FamilyMart's fried chicken. Available hot, from the counter, at any hour of the day or night.
+    There are no circumstances under which this is a bad idea. I have eaten FamiChiki at 11 PM after
+    a school cultural festival and it tasted exactly like victory. ¥220.
+  </p>
+
+  <h3>Hot drinks from the machine</h3>
+  <p>
+    Every konbini has a machine that makes fresh coffee, hot chocolate, and several varieties of tea.
+    In winter — and Yokohama winters are mild but damp and grey in a way that gets into your coat —
+    this machine becomes essential. A hot café latte for ¥150 is one of the quiet pleasures of
+    Japanese daily life that nobody thinks to mention.
+  </p>
+
+  <h3>Miso soup (味噌汁) from the hot foods section</h3>
+  <p>
+    Poured from a machine or available in small cups near the register. It costs about ¥100
+    and it is actual, real miso soup. This is not a travesty. This is just what Japan is like.
+  </p>
+
+  <div class="note-block">
+    <p>Ate konbini miso soup every morning for a month during exams because it was the only warm thing I had time for before the 8:03 train. Still don't regret it. Japan is doing fine with its konbini food, I promise.</p>
+  </div>
+
+  <!-- SECTION 4: BUDGET -->
+  <h2 id="budget"><span class="section-num-badge"><span class="num">03</span> The Budget Reality</span><br>How Far <em>¥1,000 Goes</em></h2>
+
+  <p>
+    As a Kakehashi exchange student, my daily spending money was limited enough that I had to think
+    about konbini spending carefully. Here is a realistic breakdown of what a full day of konbini meals
+    actually costs — which is relevant if you're on a student stipend and trying to figure out
+    whether you can eat there every day. (You can. Easily.)
+  </p>
+
+  <div class="budget-card">
+    <div class="budget-card-head">
+      Full Day on Konbini Food <span>Yokohama · 2021 prices</span>
+    </div>
+    <div class="budget-row">
+      <span class="item">Breakfast — onigiri (salmon) + canned green tea</span>
+      <span class="price">¥270</span>
+    </div>
+    <div class="budget-row">
+      <span class="item">Lunch — hot bento box (weekday special)</span>
+      <span class="price">¥480–¥580</span>
+    </div>
+    <div class="budget-row">
+      <span class="item">Afternoon snack — FamiChiki or egg salad sandwich</span>
+      <span class="price">¥180–¥230</span>
+    </div>
+    <div class="budget-row">
+      <span class="item">Evening — onigiri ×2 or instant ramen (cup)</span>
+      <span class="price">¥200–¥320</span>
+    </div>
+    <div class="budget-total">
+      <span>TOTAL DAILY SPEND</span>
+      <span class="t-price">¥1,130–¥1,400</span>
+    </div>
+  </div>
+
+  <p>
+    You can eat three real, satisfying meals and a snack for under ¥1,500. In a country where a sit-down
+    restaurant lunch starts at ¥800 and a family dinner is easily ¥2,000–¥3,000 per person,
+    this is remarkable. The konbini is how Japan makes daily life functional on a student budget.
+  </p>
+
+  <!-- SECTION 5: THE SNACK PHILOSOPHY -->
+  <h2 id="snacks"><span class="section-num-badge"><span class="num">04</span> The Snack Aisle</span><br>A Brief <em>Philosophy</em></h2>
+
+  <p>
+    The konbini snack aisle operates on a principle I came to deeply respect: seasonal rotation.
+    Every major season brings a wave of limited-edition flavours that replace the previous season's
+    limited-edition flavours with no apology and no warning. You learn to buy things when you see them
+    because they may not be there next week.
+  </p>
+
+  <!-- Split image layout -->
+  <div class="img-split">
+    <div class="img-split-item">
+      <img src="/../../assets/images/school/konbini-snacks.jpg"
+           alt="Japanese konbini snack wall with seasonal limited edition products"
+           onerror="this.style.background='#e0d8cc';this.style.display='block'">
+    </div>
+    <div class="img-split-item">
+      <img src="/../../assets/images/school/konbini-sweets.jpg"
+           alt="Lawson dessert shelf with Uchi Cafe premium sweets"
+           onerror="this.style.background='#e8d8c4';this.style.display='block'">
+    </div>
+  </div>
+
+  <p>
+    A few items that I would specifically recommend not missing under any circumstances:
+  </p>
+
+  <p>
+    <strong>Pocky variations beyond original chocolate.</strong> The seasonal flavours — matcha, strawberry,
+    almond crush — are genuinely better than the standard version and cost the same ¥150–¥180.
+    The Giant Pocky format also exists and is an objectively good life choice.
+  </p>
+
+  <p>
+    <strong>Kinoko no Yama vs Takenoko no Sato.</strong> This is Japan's great cultural debate.
+    Mushroom-shaped versus bamboo shoot-shaped chocolate biscuit snacks. I am Team Takenoko
+    and I will not be debating this. Both are ¥200 and both are correct.
+  </p>
+
+  <p>
+    <strong>Koala no March.</strong> Little koala-shaped crackers with chocolate filling, each one printed
+    with a small drawing. I ate these constantly. At ¥120, they are essentially free. There are
+    collector sets with rare designs. I am not ashamed of caring about this.
+  </p>
+
+  <div class="callout moss">
+    <span class="callout-label">The one thing worth splurging on</span>
+    <p>Lawson's Uchi Café premium pudding (プリン). It is about ¥250–¥300, which is not cheap for a konbini item, but it is a small, very cold, very serious pudding in a glass jar and it is substantially better than it has any right to be. Buy it once just to understand.</p>
+  </div>
+
+  <!-- SECTION 6: THINGS PEOPLE DON'T MENTION -->
+  <h2 id="underrated"><span class="section-num-badge"><span class="num">05</span> Underrated & Overlooked</span><br>The Stuff Nobody <em>Talks About</em></h2>
+
+  <p>
+    Konbini guides online tend to cover the same twelve items. Here are the things that don't appear
+    on most tourist lists but that I found myself returning to consistently.
+  </p>
+
+  <h3>The stationary section</h3>
+  <p>
+    Every konbini sells pens, notebooks, sticky notes, and basic stationery. The quality is
+    surprisingly high — these are Japanese pens, after all — and the prices are reasonable.
+    I replaced my pen at a FamilyMart at least twice rather than going to a proper stationery shop.
+    Sometimes you are already at the konbini. The pen is right there.
+  </p>
+
+  <h3>Print services</h3>
+  <p>
+    The large multifunction printers in the back of every konbini print documents, scan, copy, and
+    even print photos from your phone. I used this for school assignments, group project materials,
+    and at one point, a printed map of Harajuku because my phone was at 3% battery. ¥10 per page.
+    Works better than most dedicated print shops.
+  </p>
+
+  <h3>Atm at odd hours</h3>
+  <p>
+    7-Eleven ATMs accept international cards reliably. The fees are low. They work at 2 AM.
+    This is extremely relevant information for exchange students whose host family's bank is
+    not in the same prefecture as where they actually are.
+  </p>
+
+  <h3>The seasonal hot foods you walk past</h3>
+  <p>
+    Near the register, there is always a heated display. In winter it contains nikuman
+    (steamed pork buns), which are ¥150 and which you should eat immediately upon purchase
+    while standing outside in the cold because that is the only correct way to eat nikuman.
+  </p>
+
+  <!-- SECTION 7: CLOSING -->
+  <div class="sticker-strip">🍙 🧃 🍡 🍜 🍱 🧋 🍣 🍘</div>
+  <h2 id="closing"><span class="section-num-badge"><span class="num">06</span> Why the Konbini Actually Matters</span><br>More Than <em>Just Shopping</em></h2>
+
+  <p>
+    Near the end of my exchange year, I spent a lot of time in the konbini around the corner
+    from school for reasons that had nothing to do with food. It was warm. It was bright.
+    On hard days — the kind that are hard in a specific way when you are 16 and far from home
+    and not sure you're doing any of this correctly — the konbini was simply a place you could
+    exist without anyone needing anything from you.
+  </p>
+  <p>
+    You could buy a ¥110 green tea and stand there for a moment and feel, in some small way,
+    like a person who belonged in the city. Like someone for whom Japan was just where they lived.
+    There is something in that which is not really about the food at all.
+  </p>
+  <p>
+    But also, the onigiri genuinely is that good. Both things are true.
+  </p>
+
+  <div class="pull-quote">
+    <p>The konbini is where Japan shows you what it thinks daily life should feel like: efficient, clean, warm, and full of options. It is a reasonable philosophy for a convenience store to have.</p>
+    <cite>— closing thoughts, on the train home from Yokohama one last time</cite>
+  </div>
+
+  <!-- SEO INTERNAL LINKS -->
+  <div class="callout" style="margin-top:3rem;border-color:var(--mint);background:var(--mint-pale);">
+    <span class="callout-label" style="color:var(--mint);">More Japan Life Guides</span>
+    <p>
+      Related reads: <a href="/research/guides/Bento.html" style="color:var(--fami);font-weight:700;">What My Host Mom Packed in My Bento</a> covers the other side of daily eating in Japan.
+      For full budget context, see <a href="/research/guides/budget-guide.html" style="color:var(--fami);font-weight:700;">How Much a Japan Exchange Actually Costs</a>.
+      And if you're still in the planning stage: <a href="/research/guides/packing-guide.html" style="color:var(--fami);font-weight:700;">What to Pack for a Year in Japan</a>.
+    </p>
+  </div>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside class="guide-sidebar">
+
+  <!-- Back to Guides (top right corner of sidebar = prominent) -->
+  <div class="sidebar-card" style="border-color:var(--peach-dk);box-shadow:3px 3px 0 var(--peach-dk);">
+    <div class="sidebar-card-head" style="background:var(--peach-dk);color:white;">
+      <span>← Back to All Guides</span>
+      <span style="opacity:0.7">ガイド</span>
+    </div>
+    <p>This guide is part of the Japan Life pillar — covering food, culture, and everyday life as an exchange student.</p>
+    <a href="/research/guides/" class="sidebar-link" style="color:var(--peach-dk);">View Guides Index →</a>
+  </div>
+
+  <!-- TOC -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Contents</span><span class="sidebar-jp">目次</span></div>
+    <ul class="toc-list">
+      <li><a href="#chains"><span class="toc-num">01</span>The Three Chains</a></li>
+      <li><a href="#what-to-buy"><span class="toc-num">02</span>What to Actually Buy</a></li>
+      <li><a href="#budget"><span class="toc-num">03</span>Budget Reality</a></li>
+      <li><a href="#snacks"><span class="toc-num">04</span>The Snack Aisle</a></li>
+      <li><a href="#underrated"><span class="toc-num">05</span>Underrated Finds</a></li>
+      <li><a href="#closing"><span class="toc-num">06</span>Why It Matters</a></li>
+    </ul>
+  </div>
+
+  <!-- More Blogs widget (right sidebar) -->
+  <div class="more-blogs-widget">
+    <div class="mbw-head">
+      Check Out More Blogs <span>関連記事</span>
+    </div>
+    <ul class="mbw-list">
+      <li>
+        <a href="/research/guides/Bento.html">
+          <span class="mbw-title">What My Host Mom Packed in My Bento</span>
+          <span class="mbw-tag">Food · Host Family</span>
+        </a>
+      </li>
+      <li>
+        <a href="/research/guides/Strobby-festival.html">
+          <span class="mbw-title">What I Ate at a Japanese Ichigo Matsuri</span>
+          <span class="mbw-tag">Festival · Seasonal Food</span>
+        </a>
+      </li>
+      <li>
+        <a href="/research/guides/Train.html">
+          <span class="mbw-title">Surviving the Daily Commute to Japanese High School</span>
+          <span class="mbw-tag">Daily Life · Transport</span>
+        </a>
+      </li>
+      <li>
+        <a href="/research/guides/budget-guide.html">
+          <span class="mbw-title">How Much Does a Japan Exchange Cost?</span>
+          <span class="mbw-tag">Budget · Money</span>
+        </a>
+      </li>
+      <li>
+        <a href="/research/guides/packing-guide.html">
+          <span class="mbw-title">What to Pack for a Year in Japan</span>
+          <span class="mbw-tag">Packing · Essentials</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Quick fact card -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Quick Fact</span><span class="sidebar-jp">豆知識</span></div>
+    <p>Japan has approximately 56,000 convenience stores — that's roughly one for every 2,200 people. They are everywhere on purpose.</p>
+  </div>
+
+  <!-- Free Kit CTA -->
+  <div class="sidebar-card">
+    <div class="sidebar-card-head"><span>Free Resource</span><span class="sidebar-jp">無料</span></div>
+    <p>Japan Exchange Starter Kit — application timeline, checklist, essay frameworks. Free PDF from a 2021 Kakehashi scholar.</p>
+    <a href="/free-kit/" class="sidebar-link">Download free kit →</a>
+  </div>
+
+</aside>
+
+</div><!-- /content-grid -->
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <p>Ayachi Samyal · Japan Exchange Blog · 交換留学ブログ</p>
+  <p class="footer-jp">サムヤル アヤチ · Yokohama 2021 · Pillar 03: Japan Life</p>
+</footer>
+
+<script>
+/* Reading progress bar */
+const rp = document.getElementById('rp');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  rp.style.width = pct + '%';
+});
+</script>
+
+<!-- ═══════════════════════════════════════════
+     SEO STRATEGY NOTES (for reference)
+     ─────────────────────────────────────────
+     PRIMARY KEYWORD: Japanese convenience store guide
+     SUPPORTING KEYWORDS:
+       - konbini food recommendations
+       - what to buy at 7-eleven Japan
+       - FamilyMart Japan must try
+       - Japan exchange student daily life
+       - Japanese konbini snacks
+     
+     ALT TITLES:
+       1. "What to Buy at Japanese Convenience Stores (Tested on a Student Budget)"
+       2. "Konbini Guide Japan: Every Chain, Every Must-Try Food, Ranked"
+       3. "I Lived at Japanese Convenience Stores for a Year — Here's What to Get"
+     
+     URL SLUG: /research/guides/konbini-guide
+     
+     PINTEREST STRATEGY:
+     Pin titles:
+       1. "What to Eat at Japanese 7-Eleven (Tested by an Exchange Student)"
+       2. "Japanese Convenience Store Guide: FamilyMart vs 7-Eleven vs Lawson"
+       3. "Konbini Food You NEED to Try in Japan 🇯🇵"
+       4. "Japan Exchange Student Daily Life: Living on Konbini"
+       5. "Best Japanese Snacks at Konbini (Ranked + Budget Breakdown)"
+     Viral hooks:
+       - "Japan's convenience stores are better than most restaurants. Here's proof."
+       - "I ate konbini food every day for a year. Worth it? Yes."
+       - "The guide I wish existed before my Japan exchange."
+     
+     PILLAR: 03 — Japan Life (Food, Festivals & Everyday Life)
+     INTERNAL LINKS TO ADD IN INDEX: /research/guides/konbini-guide.html
+     
+     EXPANSION IDEAS (next blogs in this cluster):
+       1. "Japanese Drugstore Finds: What to Buy at Matsumoto Kiyoshi"
+       2. "How to Order Food in Japan Without Knowing Japanese"
+       3. "Best Seasonal Konbini Foods by Month (Japan Calendar)"
+═══════════════════════════════════════════ -->
+
+</body>
+</html>
