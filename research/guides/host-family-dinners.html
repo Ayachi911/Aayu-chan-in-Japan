@@ -3,466 +3,730 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
 <title>What My Host Family Fed Me in Japan | Exchange Student Diaries</title>
 <meta name="description" content="Gyoza nights folded by hand, birthday spring rolls, Christmas paella, and a retirement sushi spread. A year of host family dinners in Yokohama, documented dish by dish.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400&family=Caveat:wght@400;600;700&family=IM+Fell+English:ital,wght@0,400;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+/* ══════════════════════════════════════════
+   HEIRLOOM RECIPE BOOK — Japanese Family Dinners
+   bg vibe: #fefae0 (aged cream paper)
+   stamps / accents: lacquer red · indigo · persimmon · moss
+   ══════════════════════════════════════════ */
 :root {
-  --cream: #fdf8ef;
-  --warm: #f5ead5;
-  --paper: #fffdf6;
-  --parchment: #f7f0e0;
-  --ink: #2a1f14;
-  --ink-mid: #56412e;
-  --ink-soft: #9a7a5a;
-  --rust: #b85530;
-  --rust-lt: #e89060;
-  --rust-pale: #f8e0d0;
-  --sage: #607a5e;
-  --sage-lt: #c4d8c0;
-  --gold: #c09018;
-  --gold-pale: #f5e8a8;
-  --blush: #e8bfa0;
-  --rule: rgba(90,65,30,0.13);
-  --rule-dk: rgba(90,65,30,0.25);
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Lora', serif;
-  overflow-x: hidden;
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(139,86,36,0.055) 27px,rgba(139,86,36,0.055) 28px);
+  --paper:       #fefae0;
+  --paper-dk:    #f5f0cb;
+  --paper-aged:  #ede8c0;
+  --parch:       #f9f4d8;
+  --ink:         #1e1609;
+  --ink-mid:     #3d2e14;
+  --ink-soft:    #7a6643;
+  --lacquer:     #9b2335;   /* deep Japanese red */
+  --lacquer-lt:  #c94040;
+  --lacquer-pale:#f5ddd8;
+  --indigo:      #2b3a67;   /* Japanese indigo - 藍色 */
+  --indigo-lt:   #4a5d9e;
+  --indigo-pale: #dde3f5;
+  --persimmon:   #c85d38;   /* 柿色 - kaki */
+  --persimmon-lt:#e8896a;
+  --persimmon-pl:#f8e4da;
+  --moss:        #4a6235;   /* 苔色 */
+  --moss-lt:     #bfd0a8;
+  --gold:        #8a6a1a;
+  --gold-pale:   #f0e4b0;
+  --sumi:        #2c2418;   /* sumi ink */
+  --rule:        rgba(62,42,14,0.12);
+  --rule-dk:     rgba(62,42,14,0.25);
+  --rule-red:    rgba(155,35,53,0.2);
 }
 
-/* ── BACK BUTTON ── */
-.back-btn {
-  position: fixed; top:18px; left:20px; z-index:200;
-  background: var(--ink); color: var(--cream);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.58rem; letter-spacing:0.15em; text-transform:uppercase;
-  padding: 8px 16px; text-decoration:none;
-  display:flex; align-items:center; gap:6px;
-  box-shadow: 2px 2px 0 var(--rust);
-  transition: background 0.15s;
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IM Fell English', 'Shippori Mincho', serif;
+  line-height: 1.8;
+  overflow-x: hidden;
 }
-.back-btn:hover { background: var(--rust); }
+
+/* aged paper texture */
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(0deg,transparent,transparent 34px,rgba(100,70,20,0.04) 34px,rgba(100,70,20,0.04) 35px);
+  pointer-events:none; z-index:0;
+}
+
+/* faint kanji watermark */
+body::after {
+  content:'食';
+  position:fixed;
+  font-family:'Noto Serif JP',serif;
+  font-size:55vw; font-weight:700;
+  color:rgba(100,70,20,0.018);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none; z-index:0;
+  line-height:1;
+}
+
+/* ── GUIDES BUTTON ── */
+.guides-btn {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  background: var(--indigo);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 44px;
+  border-bottom: 2px solid var(--lacquer);
+  box-shadow: 0 2px 12px rgba(30,22,9,0.2);
+}
+.guides-btn a {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(254,250,224,0.85);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.15s;
+}
+.guides-btn a:hover { color: var(--paper); }
+.guides-btn a::before {
+  content: '◂';
+  font-size: 0.7rem;
+  color: var(--lacquer-lt);
+}
+.guides-btn .nav-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(254,250,224,0.45);
+  letter-spacing: 0.1em;
+}
+.guides-btn .nav-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(254,250,224,0.28);
+  font-weight: 300;
+}
 
 /* ── RELATED SIDEBAR ── */
 .related-float {
   position:fixed; top:50%; right:0; transform:translateY(-50%);
-  z-index:150; background:var(--paper);
-  padding:18px 14px; width:175px;
-  box-shadow: -2px 0 20px rgba(44,32,20,0.1);
-  border-left: 3px solid var(--rust);
+  z-index:150; background:var(--parch);
+  padding:18px 14px; width:172px;
+  box-shadow: -2px 0 20px rgba(30,22,9,0.1);
+  border-left: 3px solid var(--lacquer);
   border-top: 1px solid var(--rule-dk);
   border-bottom: 1px solid var(--rule-dk);
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(100,70,20,0.05) 27px,rgba(100,70,20,0.05) 28px);
 }
 .related-float .rf-head {
-  font-family:'Space Mono', monospace; font-size:0.52rem;
+  font-family:'Space Mono', monospace; font-size:0.5rem;
   letter-spacing:0.2em; text-transform:uppercase;
-  color:var(--rust); margin-bottom:12px;
+  color:var(--lacquer); margin-bottom:12px;
 }
 .related-float a {
-  display:block; font-family:'Lora',serif; font-size:0.75rem;
+  display:block; font-family:'IM Fell English',serif; font-size:0.76rem;
   color:var(--ink-mid); text-decoration:none;
   padding:6px 0; border-bottom:1px dashed var(--rule-dk);
   line-height:1.4; transition:color 0.12s;
 }
 .related-float a:last-child { border-bottom:none; }
-.related-float a:hover { color:var(--rust); }
+.related-float a:hover { color:var(--lacquer); }
 .related-float a .rf-label {
   display:block; font-family:'Space Mono', monospace;
-  font-size:0.48rem; letter-spacing:0.1em; color:var(--gold);
+  font-size:0.46rem; letter-spacing:0.1em; color:var(--gold);
   margin-bottom:2px; text-transform:uppercase;
 }
 @media (max-width:1100px) { .related-float { display:none; } }
 
-/* ── HERO: warm & scrapbook ── */
+/* ══ HERO: recipe book cover feel ══ */
 .hero {
-  background: var(--parchment);
-  border-bottom: 2px solid var(--rule-dk);
+  background: var(--paper-dk);
+  border-bottom: 3px double var(--rule-dk);
   position: relative;
   overflow: hidden;
-  padding: 90px 60px 70px;
+  padding: 110px 60px 70px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  margin-top: 44px; /* offset for fixed guides bar */
 }
 
-/* notebook lines behind hero */
+/* aged paper lines */
 .hero::before {
   content:'';
   position:absolute; inset:0;
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(184,85,48,0.08) 31px,rgba(184,85,48,0.08) 32px);
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 33px,rgba(155,35,53,0.06) 33px,rgba(155,35,53,0.06) 34px);
   pointer-events:none;
 }
-
-/* red margin line */
+/* red margin rule — like an old recipe book's left margin */
 .hero::after {
   content:'';
-  position:absolute; top:0; bottom:0; left:140px;
-  width:1px; background:rgba(184,85,48,0.25);
+  position:absolute; top:0; bottom:0; left:110px;
+  width:1.5px; background:rgba(155,35,53,0.2);
   pointer-events:none;
 }
 
 .hero-text { position:relative; z-index:2; }
 
 .hero-overline {
-  font-family:'Space Mono', monospace; font-size:0.58rem;
+  font-family:'Space Mono', monospace; font-size:0.55rem;
   letter-spacing:0.3em; text-transform:uppercase;
-  color:var(--rust); margin-bottom:18px;
+  color:var(--lacquer); margin-bottom:16px;
   display:flex; align-items:center; gap:10px;
 }
-.hero-overline::before { content:''; width:24px; height:1px; background:var(--rust); display:block; }
+.hero-overline::before { content:''; width:22px; height:1px; background:var(--lacquer); display:block; }
 
 .hero h1 {
-  font-family:'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight:400; color:var(--ink); line-height:1.18;
-  margin-bottom:18px;
+  font-family:'Shippori Mincho', serif;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight:700; color:var(--ink); line-height:1.15;
+  margin-bottom:20px;
+  letter-spacing:-0.01em;
 }
-.hero h1 em { font-style:italic; color:var(--rust); }
+.hero h1 em { font-style:italic; color:var(--lacquer); font-family:'IM Fell English',serif; }
 
 .hero-intro {
-  font-family:'Lora', serif; font-size:1rem;
-  color:var(--ink-mid); line-height:1.85;
-  max-width:480px; margin-bottom:28px;
+  font-family:'IM Fell English', serif; font-size:1rem;
+  color:var(--ink-mid); line-height:1.9;
+  max-width:460px; margin-bottom:28px;
 }
 
-.hero-rule {
-  border:none; border-top:1px solid var(--rule-dk);
-  margin:22px 0;
-}
+.hero-rule { border:none; border-top:1px solid var(--rule-dk); margin:22px 0; }
 
-.hero-facts {
-  display:flex; gap:0; flex-direction:column;
-}
+.hero-facts { display:flex; flex-direction:column; gap:0; }
 .hf-row {
   display:flex; align-items:baseline; gap:12px;
-  font-family:'Lora', serif; font-size:0.85rem;
-  color:var(--ink-mid); padding:5px 0;
+  font-family:'IM Fell English', serif; font-size:0.88rem;
+  color:var(--ink-mid); padding:6px 0;
   border-bottom:1px dashed var(--rule);
 }
 .hf-row:last-child { border-bottom:none; }
 .hf-row .hf-icon { font-size:0.9rem; width:20px; flex-shrink:0; }
-.hf-row .hf-val { color:var(--rust); font-style:italic; }
+.hf-row .hf-val { color:var(--lacquer); font-style:italic; }
 
-/* hero photo collage */
-.hero-photos {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 220px 160px;
-  gap:5px;
+/* ── STAMP CLUSTER: hero right ── */
+.hero-stamp-cluster {
   position:relative; z-index:2;
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:28px; min-height:380px;
 }
-.hp { overflow:hidden; position:relative; }
-.hp img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
-.hp:hover img { transform:scale(1.04); }
-.hp-wide { grid-column: span 2; }
 
-/* ── WASHI TAPE STRIPS ── */
+/* COVER PLATE — recipe book cover page style */
+.cover-plate {
+  width:100%; max-width:340px;
+  background: var(--parch);
+  border: 2px solid var(--rule-dk);
+  box-shadow: 6px 8px 0 var(--rule-dk), 0 20px 60px rgba(30,22,9,0.12);
+  transform: rotate(-1deg);
+  padding: 36px 32px 44px;
+  text-align:center;
+  position:relative;
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(100,70,20,0.06) 29px,rgba(100,70,20,0.06) 30px);
+}
+.cover-plate::before {
+  content:'';
+  position:absolute; inset:8px;
+  border: 1px solid var(--rule);
+  pointer-events:none;
+}
+/* washi tape top */
+.cover-plate::after {
+  content:'';
+  position:absolute; top:-11px; left:50%; transform:translateX(-50%);
+  width:88px; height:17px;
+  background:repeating-linear-gradient(90deg,rgba(155,35,53,0.45) 0,rgba(155,35,53,0.45) 6px,rgba(245,221,216,0.7) 6px,rgba(245,221,216,0.7) 10px);
+  border-radius:1px;
+}
+.cp-jp {
+  font-family:'Noto Serif JP', serif; font-size:2.2rem; font-weight:700;
+  color:var(--lacquer); letter-spacing:0.3em;
+  display:block; margin-bottom:12px; line-height:1;
+}
+.cp-title {
+  font-family:'Shippori Mincho', serif; font-size:0.78rem; font-weight:600;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mid);
+  display:block; margin-bottom:8px;
+}
+.cp-rule { width:70%; height:1px; background:var(--rule-dk); margin:14px auto; }
+.cp-sub {
+  font-family:'IM Fell English', serif; font-style:italic;
+  font-size:0.9rem; color:var(--ink-soft); line-height:1.7;
+  display:block;
+}
+.cp-year {
+  font-family:'Space Mono',monospace; font-size:0.55rem;
+  letter-spacing:0.25em; color:var(--indigo); margin-top:16px;
+  display:block;
+}
+
+/* floating stamps */
+.stamp {
+  position:absolute;
+  font-family:'Space Mono',monospace; font-weight:700;
+  letter-spacing:0.1em; text-align:center; line-height:1.5;
+  display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+}
+
+/* red square stamp */
+.stamp-red {
+  color: var(--lacquer);
+  border: 2.5px solid var(--lacquer);
+  padding: 6px 10px; font-size:0.5rem;
+  transform: rotate(8deg);
+  top: 20px; right: 20px;
+  box-shadow: 1px 1px 0 var(--lacquer), inset 0 0 0 3px rgba(155,35,53,0.06);
+}
+.stamp-red::after {
+  content:'';
+  position:absolute; inset:3px;
+  border:1px dashed rgba(155,35,53,0.3);
+  pointer-events:none;
+}
+
+/* indigo oval stamp */
+.stamp-indigo {
+  color: var(--indigo);
+  border: 2px solid var(--indigo);
+  border-radius: 50px;
+  padding: 7px 16px; font-size: 0.48rem;
+  transform: rotate(-5deg);
+  bottom: 30px; left: 12px;
+  box-shadow: 1px 2px 0 rgba(43,58,103,0.2);
+}
+
+/* persimmon diamond stamp */
+.stamp-kaki {
+  background: var(--persimmon);
+  color: var(--paper);
+  clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+  width: 68px; height: 68px;
+  font-size:0.44rem;
+  transform: rotate(4deg);
+  bottom: 22px; right: 10px;
+  box-shadow: 2px 3px 0 rgba(80,30,10,0.25);
+}
+
+/* ── WASHI TAPE STRIP ── */
 .washi-tape {
-  height:11px;
+  height:13px;
   background: repeating-linear-gradient(90deg,
-    var(--rust) 0,var(--rust) 10px,var(--rust-pale) 10px,var(--rust-pale) 18px,
-    var(--sage) 18px,var(--sage) 26px,var(--sage-lt) 26px,var(--sage-lt) 34px,
-    var(--gold) 34px,var(--gold) 42px,var(--gold-pale) 42px,var(--gold-pale) 50px
+    var(--lacquer) 0,var(--lacquer) 10px,var(--lacquer-pale) 10px,var(--lacquer-pale) 18px,
+    var(--moss) 18px,var(--moss) 26px,var(--moss-lt) 26px,var(--moss-lt) 34px,
+    var(--indigo) 34px,var(--indigo) 42px,var(--indigo-pale) 42px,var(--indigo-pale) 50px,
+    var(--gold) 50px,var(--gold) 58px,var(--gold-pale) 58px,var(--gold-pale) 66px
   );
-  opacity:0.65; margin:70px 0;
+  opacity:0.6; margin:70px 0;
 }
 
-/* ── PAGE BODY CONTAINER ── */
-.page { max-width:960px; margin:0 auto; padding:0 40px; }
+/* ── PAGE BODY ── */
+.page { max-width:940px; margin:0 auto; padding:0 40px; position:relative; z-index:1; }
 
 /* ── INTRO LETTER ── */
 .intro-letter {
-  max-width:680px; margin:80px auto 0; padding:0 40px;
+  max-width:660px; margin:80px auto 0; padding:0 40px;
+  position:relative; z-index:1;
 }
 .letter-paper {
-  background:var(--paper);
+  background:var(--parch);
   border:1px solid var(--rule-dk);
-  padding:52px 58px 48px;
+  padding:52px 56px 48px;
   position:relative;
-  box-shadow: 3px 5px 0 var(--rule-dk), 0 10px 40px rgba(44,32,20,0.07);
-  transform:rotate(-0.25deg);
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(139,86,36,0.08) 27px,rgba(139,86,36,0.08) 28px);
+  box-shadow: 4px 6px 0 var(--rule-dk), 0 14px 50px rgba(30,22,9,0.08);
+  transform:rotate(-0.3deg);
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(100,70,20,0.07) 29px,rgba(100,70,20,0.07) 30px);
 }
-/* tape top */
+/* washi tape: rust diagonal */
 .letter-paper::before {
-  content:''; position:absolute;
-  top:-10px; left:44px; width:90px; height:16px;
-  background:repeating-linear-gradient(90deg,rgba(184,85,48,0.5) 0,rgba(184,85,48,0.5) 6px,rgba(248,224,208,0.75) 6px,rgba(248,224,208,0.75) 10px);
+  content:''; position:absolute; top:-11px; left:44px;
+  width:92px; height:17px;
+  background:repeating-linear-gradient(90deg,rgba(155,35,53,0.45) 0,rgba(155,35,53,0.45) 6px,rgba(245,221,216,0.72) 6px,rgba(245,221,216,0.72) 10px);
   border-radius:1px; transform:rotate(-1.5deg);
 }
+/* washi tape: moss check */
 .letter-paper::after {
-  content:''; position:absolute;
-  top:-8px; right:64px; width:68px; height:14px;
-  background:repeating-linear-gradient(-45deg,rgba(96,122,94,0.5) 0,rgba(96,122,94,0.5) 4px,rgba(196,216,192,0.7) 4px,rgba(196,216,192,0.7) 8px);
+  content:''; position:absolute; top:-9px; right:60px;
+  width:66px; height:14px;
+  background:repeating-linear-gradient(-45deg,rgba(74,98,53,0.48) 0,rgba(74,98,53,0.48) 4px,rgba(191,208,168,0.7) 4px,rgba(191,208,168,0.7) 8px);
   border-radius:1px; transform:rotate(2.5deg);
 }
+/* red margin rule on letter */
+.letter-paper-inner {
+  border-left: 1.5px solid rgba(155,35,53,0.18);
+  padding-left:24px; margin-left:6px;
+}
 .letter-paper h2 {
-  font-family:'Playfair Display', serif; font-size:1.55rem;
-  font-style:italic; color:var(--ink); margin-bottom:18px;
+  font-family:'Shippori Mincho', serif; font-size:1.5rem;
+  font-weight:700; color:var(--ink); margin-bottom:16px;
 }
 .letter-paper p {
-  font-size:0.97rem; line-height:1.92;
-  color:var(--ink-mid); margin-bottom:15px;
+  font-family:'IM Fell English',serif;
+  font-size:0.97rem; line-height:1.95;
+  color:var(--ink-mid); margin-bottom:14px;
 }
 .letter-paper p:last-child { margin-bottom:0; }
 .letter-paper .sign {
   font-family:'Caveat',cursive; font-size:1.2rem;
-  color:var(--rust); display:block; margin-top:20px;
+  color:var(--lacquer); display:block; margin-top:20px;
 }
 .time-rule {
   display:inline-flex; align-items:center; gap:12px;
-  background:var(--ink); color:var(--cream);
-  font-family:'Space Mono', monospace; font-size:0.68rem;
+  background:var(--sumi); color:var(--paper);
+  font-family:'Space Mono', monospace; font-size:0.65rem;
   letter-spacing:0.1em; padding:10px 20px; margin:24px 0 0;
 }
-.time-rule .tr-time { font-size:1.1rem; color:var(--rust-lt); font-weight:700; }
+.time-rule .tr-time { font-size:1.05rem; color:var(--lacquer-lt); font-weight:700; }
 
-/* ── MEAL CARD ── */
-.meal { margin-bottom:90px; }
-
-.meal-label {
-  display:flex; align-items:center; gap:14px;
-  margin-bottom:22px;
-}
-.meal-num {
-  font-family:'Playfair Display', serif;
-  font-size:3.8rem; font-weight:700;
-  color:var(--rust); opacity:0.15; line-height:1;
-  flex-shrink:0;
-}
-.meal-label-text {  }
-.meal-occasion {
-  font-family:'Space Mono', monospace; font-size:0.58rem;
-  letter-spacing:0.22em; text-transform:uppercase;
-  color:var(--rust); margin-bottom:4px;
-}
-.meal-title {
-  font-family:'Playfair Display', serif;
-  font-size:clamp(1.4rem, 2.5vw, 2rem);
-  font-weight:400; line-height:1.2; color:var(--ink);
-}
-.meal-title em { font-style:italic; color:var(--rust); }
-
-/* layout: image left */
-.meal-il {
-  display:grid; grid-template-columns:1.05fr 1fr;
-  gap:40px; align-items:start;
-}
-/* layout: image right */
-.meal-ir {
-  display:grid; grid-template-columns:1fr 1.05fr;
-  gap:40px; align-items:start;
-}
-/* layout: single wide image + text below */
-.meal-it {
-  display:flex; flex-direction:column; gap:28px;
-}
-
-.meal-img { overflow:hidden; position:relative; }
-.meal-img img {
-  width:100%; display:block; object-fit:cover;
-  transition:transform 0.5s;
-}
-.meal-img:hover img { transform:scale(1.03); }
-.meal-img .img-h380 img { height:380px; }
-.meal-img .img-h340 img { height:340px; }
-.meal-img-tall img { height:480px; }
-.meal-img-wide img { height:360px; }
-.meal-img-sq img { height:340px; }
-
-.dish-tag {
-  display:inline-block; font-family:'Space Mono',monospace;
-  font-size:0.55rem; letter-spacing:0.15em; text-transform:uppercase;
-  background:var(--ink); color:var(--cream);
-  padding:4px 10px; margin-bottom:14px;
-}
-
-.meal-text p {
-  font-size:0.97rem; line-height:1.92;
-  color:var(--ink-mid); margin-bottom:14px;
-}
-.meal-text p:last-child { margin-bottom:0; }
-
-.note {
-  font-family:'Caveat',cursive; font-size:1.15rem;
-  color:var(--rust); line-height:1.55; display:block;
-  padding:12px 16px 12px 14px;
-  background:var(--rust-pale);
-  border-left:3px solid var(--rust);
-  margin:16px 0;
-}
-
-.divider-rule {
-  border:none; border-top:1px dashed var(--rule-dk);
-  margin:20px 0;
-}
-
-/* ── OCCASION HEADER ── */
+/* ── SECTION HEADERS (occasion) ── */
 .occasion-head {
-  background:var(--ink); color:var(--cream);
+  background:var(--sumi); color:var(--paper);
   padding:50px 60px; position:relative; overflow:hidden;
   margin:80px 0 50px;
 }
 .occasion-head::before {
   content:''; position:absolute; inset:0;
-  background:repeating-linear-gradient(45deg,rgba(184,85,48,0.05) 0,rgba(184,85,48,0.05) 1px,transparent 1px,transparent 12px);
+  background:repeating-linear-gradient(45deg,rgba(155,35,53,0.06) 0,rgba(155,35,53,0.06) 1px,transparent 1px,transparent 12px);
+}
+.occasion-head::after {
+  content:'家族の食卓';
+  font-family:'Noto Serif JP',serif; font-size:6rem; font-weight:700;
+  color:rgba(255,255,255,0.03);
+  position:absolute; right:40px; bottom:-10px;
+  pointer-events:none; line-height:1; letter-spacing:0.1em;
 }
 .occasion-head .oh-label {
-  font-family:'Space Mono',monospace; font-size:0.58rem;
+  font-family:'Space Mono',monospace; font-size:0.55rem;
   letter-spacing:0.3em; text-transform:uppercase;
-  color:var(--rust-lt); margin-bottom:12px;
+  color:var(--lacquer-lt); margin-bottom:12px; display:block;
 }
 .occasion-head h3 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.6rem,3.5vw,2.6rem); font-style:italic;
-  margin-bottom:10px;
+  font-family:'Shippori Mincho',serif; font-size:clamp(1.5rem,3.2vw,2.4rem);
+  font-weight:700; margin-bottom:10px;
 }
 .occasion-head p {
-  font-size:0.93rem; color:rgba(253,248,239,0.58);
-  max-width:540px; line-height:1.85;
+  font-family:'IM Fell English',serif;
+  font-size:0.93rem; color:rgba(254,250,224,0.55);
+  max-width:520px; line-height:1.9;
 }
 
-/* ── BIRTHDAY UNIT: two-col with note card ── */
+/* ── MEAL CARDS ── */
+.meal { margin-bottom:90px; position:relative; }
+
+/* recipe-index tab top-left */
+.meal::before {
+  content:attr(data-num);
+  position:absolute; top:-6px; left:-20px;
+  font-family:'Noto Serif JP',serif; font-weight:700;
+  font-size:5rem; color:var(--paper-aged);
+  line-height:1; pointer-events:none; z-index:0;
+  text-shadow: 1px 1px 0 rgba(155,35,53,0.08);
+}
+
+.meal-label {
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:22px; position:relative; z-index:1;
+}
+.meal-num {
+  font-family:'Shippori Mincho', serif; font-size:3.6rem; font-weight:800;
+  color:var(--lacquer); opacity:0.18; line-height:1; flex-shrink:0;
+}
+.meal-label-text {}
+.meal-occasion {
+  font-family:'Space Mono', monospace; font-size:0.55rem;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--lacquer); margin-bottom:4px;
+}
+.meal-title {
+  font-family:'Shippori Mincho', serif;
+  font-size:clamp(1.35rem, 2.4vw, 1.9rem);
+  font-weight:700; line-height:1.2; color:var(--ink);
+}
+.meal-title em { font-style:italic; color:var(--lacquer); font-family:'IM Fell English',serif; }
+
+/* layouts */
+.meal-il { display:grid; grid-template-columns:1.08fr 1fr; gap:40px; align-items:start; position:relative; z-index:1; }
+.meal-ir { display:grid; grid-template-columns:1fr 1.08fr; gap:40px; align-items:start; position:relative; z-index:1; }
+.meal-it { display:flex; flex-direction:column; gap:28px; position:relative; z-index:1; }
+
+/* image frames */
+.meal-img { overflow:hidden; position:relative; }
+.meal-img img { width:100%; display:block; object-fit:cover; transition:transform 0.55s; }
+.meal-img:hover img { transform:scale(1.03); }
+/* aged photo frame border */
+.meal-img::after {
+  content:'';
+  position:absolute; inset:0;
+  border: 1px solid rgba(30,22,9,0.12);
+  pointer-events:none;
+}
+/* polaroid caption style */
+.meal-img .img-cap {
+  background: var(--parch);
+  font-family:'Caveat',cursive; font-size:0.88rem;
+  color:var(--ink-soft);
+  padding:6px 10px 8px;
+  border-top:1px solid var(--rule);
+  text-align:center;
+}
+
+/* dish tag */
+.dish-tag {
+  display:inline-block; font-family:'Space Mono',monospace;
+  font-size:0.52rem; letter-spacing:0.15em; text-transform:uppercase;
+  background:var(--sumi); color:var(--paper);
+  padding:4px 10px; margin-bottom:14px;
+}
+
+.meal-text { position:relative; z-index:1; }
+.meal-text p {
+  font-family:'IM Fell English',serif;
+  font-size:0.97rem; line-height:1.95;
+  color:var(--ink-mid); margin-bottom:14px;
+}
+.meal-text p:last-child { margin-bottom:0; }
+
+/* handwritten note — like a sticky note tucked in a recipe book */
+.note {
+  font-family:'Caveat',cursive; font-size:1.12rem;
+  color:var(--lacquer); line-height:1.6; display:block;
+  padding:14px 18px 14px 16px;
+  background:var(--gold-pale);
+  border-left:3.5px solid var(--lacquer);
+  margin:16px 0;
+  transform:rotate(-0.4deg);
+  box-shadow:2px 3px 0 rgba(138,106,26,0.15);
+  position:relative;
+}
+/* tiny pin hole top */
+.note::before {
+  content:'✦';
+  position:absolute; top:-8px; left:50%;
+  transform:translateX(-50%);
+  color:var(--lacquer); font-size:0.55rem;
+}
+
+/* ── BIRTHDAY UNIT ── */
 .birthday-unit {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:5px;
-  margin-bottom:90px;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5px; margin-bottom:90px;
 }
-.bu-main { grid-column:span 2; overflow:hidden; height:380px; }
+.bu-main { grid-column:span 2; overflow:hidden; height:370px; }
 .bu-main img { width:100%; height:100%; object-fit:cover; display:block; }
-
 .bu-text {
-  background:var(--paper);
-  border:1px solid var(--rule-dk);
-  padding:32px 32px;
+  background:var(--parch);
+  border:1px solid var(--rule-dk); padding:30px 30px;
   border-top:none;
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(100,70,20,0.05) 29px,rgba(100,70,20,0.05) 30px);
 }
-.bu-cake {
-  overflow:hidden; border:1px solid var(--rule-dk);
-  border-top:none; border-left:none;
-}
+.bu-text p { font-family:'IM Fell English',serif; font-size:0.95rem; line-height:1.92; color:var(--ink-mid); margin-bottom:12px; }
+.bu-cake { overflow:hidden; border:1px solid var(--rule-dk); border-top:none; border-left:none; }
 .bu-cake img { width:100%; height:100%; object-fit:cover; display:block; }
 
 /* ── FULL BLEED ── */
 .full-bleed {
-  width:100%; height:480px; overflow:hidden;
+  width:100%; height:460px; overflow:hidden;
   position:relative; margin:80px 0;
 }
-.full-bleed img {
-  width:100%; height:100%; object-fit:cover;
-  object-position:center 40%;
-}
+.full-bleed img { width:100%; height:100%; object-fit:cover; object-position:center 40%; }
 .full-bleed .fb-cap {
   position:absolute; bottom:24px; left:40px;
-  font-family:'Caveat',cursive; font-size:1.05rem;
-  color:#fff; background:rgba(42,31,20,0.65);
+  font-family:'Caveat',cursive; font-size:1.08rem;
+  color:#fff; background:rgba(30,22,9,0.65);
   padding:6px 14px;
+}
+
+/* ── RECIPE INDEX DIVIDER — like a book tab ── */
+.recipe-divider {
+  display:flex; align-items:center; gap:0;
+  margin: 60px 0 50px;
+  position:relative; z-index:1;
+}
+.rd-tab {
+  background:var(--lacquer);
+  color:var(--paper);
+  font-family:'Space Mono',monospace; font-size:0.5rem;
+  letter-spacing:0.22em; text-transform:uppercase;
+  padding:6px 16px;
+  clip-path:polygon(0 0,100% 0,94% 100%,0 100%);
+}
+.rd-line {
+  flex:1; height:1.5px;
+  background: repeating-linear-gradient(90deg,var(--rule-dk) 0,var(--rule-dk) 4px,transparent 4px,transparent 8px);
+}
+.rd-kanji {
+  font-family:'Noto Serif JP',serif; font-size:1rem; font-weight:700;
+  color:var(--rule-dk); padding:0 14px;
 }
 
 /* ── CLOSING ── */
 .closing {
-  max-width:680px; margin:0 auto 100px; padding:0 40px;
+  max-width:660px; margin:0 auto 100px; padding:0 40px;
+  position:relative; z-index:1;
 }
 .closing-paper {
-  background:var(--paper); border:1px solid var(--rule-dk);
-  padding:50px 56px; position:relative;
-  box-shadow: 4px 6px 0 var(--rule-dk), 0 10px 40px rgba(44,32,20,0.07);
-  transform:rotate(0.3deg);
-  background-image: repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(139,86,36,0.08) 27px,rgba(139,86,36,0.08) 28px);
+  background:var(--parch); border:1px solid var(--rule-dk);
+  padding:52px 56px; position:relative;
+  box-shadow:5px 7px 0 var(--rule-dk), 0 14px 50px rgba(30,22,9,0.08);
+  transform:rotate(0.35deg);
+  background-image: repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(100,70,20,0.07) 29px,rgba(100,70,20,0.07) 30px);
 }
 .closing-paper::before {
-  content:''; position:absolute; top:-10px; left:50px;
-  width:100px; height:16px;
-  background:repeating-linear-gradient(90deg,rgba(96,122,94,0.5) 0,rgba(96,122,94,0.5) 5px,rgba(196,216,192,0.65) 5px,rgba(196,216,192,0.65) 9px);
+  content:''; position:absolute; top:-11px; left:50px;
+  width:102px; height:17px;
+  background:repeating-linear-gradient(90deg,rgba(74,98,53,0.48) 0,rgba(74,98,53,0.48) 5px,rgba(191,208,168,0.65) 5px,rgba(191,208,168,0.65) 9px);
   border-radius:1px; transform:rotate(-1.8deg);
 }
 .closing-paper::after {
-  content:''; position:absolute; top:-8px; right:56px;
-  width:72px; height:14px;
-  background:repeating-linear-gradient(45deg,rgba(184,85,48,0.45) 0,rgba(184,85,48,0.45) 4px,rgba(248,224,208,0.7) 4px,rgba(248,224,208,0.7) 8px);
+  content:''; position:absolute; top:-9px; right:56px;
+  width:74px; height:14px;
+  background:repeating-linear-gradient(45deg,rgba(155,35,53,0.42) 0,rgba(155,35,53,0.42) 4px,rgba(245,221,216,0.68) 4px,rgba(245,221,216,0.68) 8px);
   border-radius:1px; transform:rotate(3deg);
 }
 .closing-paper h3 {
-  font-family:'Playfair Display', serif; font-size:1.5rem;
-  font-style:italic; color:var(--ink); margin-bottom:18px;
+  font-family:'Shippori Mincho',serif; font-size:1.45rem;
+  font-weight:700; color:var(--ink); margin-bottom:18px;
 }
 .closing-paper p {
-  font-size:0.95rem; line-height:1.9; color:var(--ink-mid);
-  margin-bottom:14px;
+  font-family:'IM Fell English',serif;
+  font-size:0.96rem; line-height:1.92; color:var(--ink-mid); margin-bottom:14px;
 }
 .closing-paper .sign {
   font-family:'Caveat',cursive; font-size:1.25rem;
-  color:var(--rust); display:block; margin-top:22px;
+  color:var(--lacquer); display:block; margin-top:22px;
+}
+
+/* ── STAMP: inline decorative ── */
+.inline-stamp {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'Space Mono',monospace; font-size:0.5rem;
+  letter-spacing:0.15em; text-transform:uppercase;
+  vertical-align:middle;
+}
+.is-red {
+  color:var(--lacquer); border:1.5px solid var(--lacquer);
+  padding:3px 8px; transform:rotate(2deg);
+  display:inline-flex;
+}
+.is-indigo {
+  color:var(--indigo); border:1.5px solid var(--indigo);
+  padding:3px 8px; border-radius:30px; transform:rotate(-1deg);
+  display:inline-flex;
 }
 
 /* ── FOOTER ── */
 footer {
-  background:var(--ink); color:var(--cream);
+  background:var(--sumi); color:var(--paper);
   text-align:center; padding:70px 40px;
   position:relative; overflow:hidden;
 }
 footer::before {
-  content:'食'; position:absolute;
-  font-size:18rem; opacity:0.03;
+  content:'食卓'; position:absolute;
+  font-family:'Noto Serif JP',serif;
+  font-size:16rem; font-weight:700; opacity:0.025;
   top:50%; left:50%; transform:translate(-50%,-50%);
   line-height:1; pointer-events:none;
-  font-family:'Noto Sans JP','Lora',serif;
+  letter-spacing:0.2em;
 }
 footer .f-series {
-  font-family:'Space Mono',monospace; font-size:0.58rem;
+  font-family:'Space Mono',monospace; font-size:0.55rem;
   letter-spacing:0.3em; text-transform:uppercase;
-  color:var(--rust-lt); margin-bottom:14px;
+  color:var(--lacquer-lt); margin-bottom:14px; display:block;
 }
 footer h4 {
-  font-family:'Playfair Display',serif; font-size:1.55rem;
-  font-style:italic; margin-bottom:10px;
+  font-family:'Shippori Mincho',serif; font-size:1.5rem;
+  font-weight:700; margin-bottom:10px;
 }
-footer p {
-  font-size:0.88rem; color:rgba(253,248,239,0.45);
-  max-width:500px; margin:0 auto; line-height:1.8;
+footer > p {
+  font-family:'IM Fell English',serif;
+  font-size:0.88rem; color:rgba(254,250,224,0.42);
+  max-width:500px; margin:0 auto; line-height:1.85;
 }
 footer .f-links {
   display:flex; gap:10px; justify-content:center;
   flex-wrap:wrap; margin-top:28px;
 }
 footer .f-links a {
-  font-family:'Space Mono',monospace; font-size:0.6rem;
-  letter-spacing:0.08em; color:rgba(253,248,239,0.5);
-  border:1px solid rgba(253,248,239,0.15);
+  font-family:'Space Mono',monospace; font-size:0.58rem;
+  letter-spacing:0.08em; color:rgba(254,250,224,0.48);
+  border:1px solid rgba(254,250,224,0.14);
   padding:6px 14px; text-decoration:none; transition:all 0.15s;
 }
-footer .f-links a:hover { background:var(--rust); color:var(--cream); border-color:var(--rust); }
+footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-color:var(--lacquer); }
+.footer-stamps {
+  display:flex; gap:14px; justify-content:center;
+  margin-top:32px;
+}
+.fstamp {
+  font-family:'Space Mono',monospace; font-weight:700;
+  font-size:0.44rem; letter-spacing:0.12em;
+  text-align:center; line-height:1.6;
+}
+.fstamp-red {
+  color:rgba(201,64,64,0.65); border:1.5px solid rgba(201,64,64,0.45);
+  padding:5px 10px; transform:rotate(-4deg);
+}
+.fstamp-indigo {
+  color:rgba(74,93,158,0.6); border:1.5px solid rgba(74,93,158,0.4);
+  border-radius:40px; padding:5px 12px; transform:rotate(5deg);
+}
+.fstamp-kaki {
+  background:rgba(200,93,56,0.6); color:rgba(254,250,224,0.9);
+  clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+  width:50px; height:50px; display:flex; align-items:center; justify-content:center;
+  transform:rotate(3deg);
+}
+
+/* ── READING PROGRESS ── */
+.reading-progress {
+  position:fixed; top:44px; left:0; height:3px;
+  background:linear-gradient(90deg,var(--lacquer),var(--persimmon),var(--gold));
+  z-index:299; width:0%; transition:width 0.1s linear;
+}
 
 @media (max-width:800px) {
-  .hero { grid-template-columns:1fr; padding:90px 30px 50px; }
+  .hero { grid-template-columns:1fr; padding:100px 28px 50px; }
   .hero::after { display:none; }
-  .hero-photos { grid-template-rows:180px 130px; }
-  .meal-il, .meal-ir { grid-template-columns:1fr; }
+  .cover-plate { max-width:100%; }
+  .hero-stamp-cluster { min-height:auto; padding:0; }
+  .meal-il,.meal-ir { grid-template-columns:1fr; }
   .birthday-unit { grid-template-columns:1fr; }
-  .bu-main, .bu-text, .bu-cake { grid-column:auto; border:1px solid var(--rule-dk); border-top:none; }
+  .bu-main,.bu-text,.bu-cake { grid-column:auto; border:1px solid var(--rule-dk); border-top:none; }
   .bu-main { border-top:1px solid var(--rule-dk); }
   .page { padding:0 20px; }
-  .intro-letter, .closing { padding:0 20px; }
-  .letter-paper, .closing-paper { padding:36px 28px; }
-  .occasion-head { padding:40px 30px; }
+  .intro-letter,.closing { padding:0 20px; }
+  .letter-paper,.closing-paper { padding:36px 26px; }
+  .letter-paper-inner { padding-left:14px; }
+  .occasion-head { padding:38px 28px; }
 }
 </style>
 </head>
 <body>
+<div class="reading-progress" id="rp"></div>
 
-<a href="/research/guides/index.html" class="back-btn">← Guides</a>
+<!-- ══ GUIDES NAV BAR ══ -->
+<div class="guides-btn">
+  <a href="../../research/guides/index.html">Guides Index</a>
+  <span class="nav-title">Exchange Student Diaries
+    <span class="nav-jp"> · 留学生日記</span>
+  </span>
+  <span style="font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(254,250,224,0.38);text-transform:uppercase;">Vol. 03 · Food</span>
+</div>
 
+<!-- ══ RELATED SIDEBAR ══ -->
 <div class="related-float">
   <p class="rf-head">More in this series</p>
   <a href="/research/guides/day-in-japanese-school.html">
@@ -489,28 +753,49 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     <div class="hero-facts">
       <div class="hf-row"><span class="hf-icon">🕖</span> Dinner every night at <span class="hf-val">7:30 pm sharp</span></div>
       <div class="hf-row"><span class="hf-icon">🏠</span> Host family in <span class="hf-val">Yokohama, Japan</span></div>
-      <div class="hf-row"><span class="hf-icon">🍜</span> Cuisines cooked: <span class="hf-val">Japanese, Chinese, Vietnamese, Spanish, Indian</span></div>
+      <div class="hf-row"><span class="hf-icon">🍜</span> Cuisines: <span class="hf-val">Japanese · Chinese · Vietnamese · Spanish · Indian</span></div>
       <div class="hf-row"><span class="hf-icon">📅</span> Full year: <span class="hf-val">Kakehashi 2021</span></div>
     </div>
   </div>
-  <div class="hero-photos">
-<div class="hp hp-wide"><img src   
-<div class="hp hp"><img src   
-<div class="hp hp"><img src   
-</div>
+
+  <div class="hero-stamp-cluster">
+    <div class="cover-plate">
+      <span class="cp-jp">食卓</span>
+      <span class="cp-title">Shokutaku · The Family Table</span>
+      <div class="cp-rule"></div>
+      <span class="cp-sub">Nine meals I will never forget,<br>from a woman who cooked like she loved you.</span>
+      <span class="cp-year">横浜 · YOKOHAMA · 2021</span>
+    </div>
+
+    <div style="position:relative;width:100%;max-width:340px;height:90px;">
+      <div class="stamp stamp-red" style="position:absolute;">
+        KAKEHASHI<br>
+        <span style="font-family:'Noto Sans JP',sans-serif;font-size:0.7em;letter-spacing:0.1em;">架け橋</span>
+      </div>
+      <div class="stamp stamp-indigo" style="position:absolute;right:0;top:10px;">
+        YOKOHAMA<br>
+        <span style="font-family:'Noto Sans JP',sans-serif;font-size:0.7em;opacity:0.7;letter-spacing:0.08em;">横浜</span>
+      </div>
+      <div class="stamp stamp-kaki" style="position:absolute;bottom:-10px;left:50%;transform:translateX(-50%) rotate(4deg);">
+        <span style="font-family:'Noto Sans JP',sans-serif;font-size:0.75em;letter-spacing:0.05em;">日本<br>留学</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ INTRO LETTER ══ -->
 <div class="intro-letter">
   <div class="letter-paper">
-    <h2>The table was always set by 7:30.</h2>
-    <p>My host family had a rule — unstated but absolute. Bath between 7 and 7:30, then dinner. Everyone at the table together. Ten minutes late and you felt it in the air. There was something deeply grounding about that rhythm — the certainty that every single evening, no matter what kind of day it had been, there would be food. Made carefully. For you.</p>
-    <p>My host mom cooked from everywhere. Japanese, Chinese, Vietnamese, Korean, Spanish, Indian — not fusion, but proper dishes from each culture, researched and prepared with genuine curiosity and love. She cooked like it was a way of asking questions. And it was.</p>
-    <p>This is a document of the meals I remember most. Every dish described is real, pulled from the actual photos I took — because I knew, even then, that I was going to miss this table more than I could put into words.</p>
-    <div class="time-rule">
-      <span>🕖</span>
-      <span class="tr-time">19:30</span>
-      <span>— dinner time. always. without question.</span>
+    <div class="letter-paper-inner">
+      <h2>The table was always set by 7:30.</h2>
+      <p>My host family had a rule — unstated but absolute. Bath between 7 and 7:30, then dinner. Everyone at the table together. Ten minutes late and you felt it in the air. There was something deeply grounding about that rhythm — the certainty that every single evening, no matter what kind of day it had been, there would be food. Made carefully. For you.</p>
+      <p>My host mom cooked from everywhere. Japanese, Chinese, Vietnamese, Korean, Spanish, Indian — not fusion, but proper dishes from each culture, researched and prepared with genuine curiosity and love. She cooked like it was a way of asking questions. And it was.</p>
+      <p>This is a document of the meals I remember most. Every dish described is real, pulled from the actual photos I took — because I knew, even then, that I was going to miss this table more than I could put into words.</p>
+      <div class="time-rule">
+        <span>🕖</span>
+        <span class="tr-time">19:30</span>
+        <span>— dinner time. always. without question.</span>
+      </div>
     </div>
   </div>
 </div>
@@ -519,30 +804,31 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
 
 <!-- ══ MEAL 1: WELCOME ══ -->
 <div class="page">
-  <div class="meal">
+  <div class="meal" data-num="一">
     <div class="meal-label">
       <span class="meal-num">01</span>
       <div class="meal-label-text">
-        <p class="meal-occasion">Day One · First Night in the House</p>
-        <h2 class="meal-title">The <em>Welcome Dinner</em></h2>
+        <p class="meal-occasion">First Night · The Welcome Dinner</p>
+        <h2 class="meal-title">Everything on the Table at<br><em>Once</em></h2>
       </div>
     </div>
     <div class="meal-il">
       <div class="meal-img">
-      <img src=
-     </div>
+        <img src="../../assets/guides/food/welcome-dinner.jpg" alt="Welcome dinner spread at the host family table in Yokohama">
+        <div class="img-cap">first night · ようこそ</div>
+      </div>
       <div class="meal-text">
-        <span class="dish-tag">Grilled Salmon · Chicken Teriyaki · Kimchi Tofu Nabe · Somen · Broccoli</span>
-        <p>I had just arrived. My suitcase was still in the hallway. I didn't know where the bathroom was or what the morning schedule looked like or how anything in this house worked — and I was sitting at this warm wooden table, and there was already so much food on it.</p>
-        <p>Let me walk you through it, left to right. A big white plate piled with chicken thighs, dark and glazed with something savoury, alongside florets of bright green broccoli. Next to it, a long oval dish with two thick slabs of grilled salmon — the deep orange kind, skin-on, caramelised at the edges. Then a clay donabe pot of kimchi tofu nabe still simmering, the broth an angry red-orange with big white cubes of silken tofu bobbing gently inside. And to the right, a glass bowl heaped with something pale and shredded — somen, I think, thin wheat noodles, cold and delicate.</p>
+        <span class="dish-tag">Miso Soup · Steamed Rice · Grilled Fish · Simmered Vegetables · Pickles · Tamagoyaki · Barley Tea</span>
+        <p>I arrived in Yokohama on a September evening, still wearing the rumpled clothes I'd been in for fourteen hours of flying. My suitcase was too big for the genkan. I had forgotten what it felt like to be comfortable anywhere.</p>
+        <p>And then the table. Every element of a proper Japanese dinner laid out simultaneously — not brought in courses, but all present together, each component in its own vessel, every vessel considered. The miso soup in a lacquered wooden bowl, the rice in a small ceramic one with a wooden lid. Grilled fish — mackerel, I think, or horse mackerel — its skin blistered and charred on one side, the flesh white and flaking. Small plates of simmered root vegetables, pale and sweet. A row of pickles. Tamagoyaki, that rolled omelette, sweet and layered, cut into even pieces.</p>
         <p>Each place had its own chopstick rest. Each chopstick rest had a different little painted motif. The glasses were already filled with pale barley tea. It looked like a restaurant.</p>
         <span class="note">the message of that dinner was: you are safe here. you will be fed. nobody said it out loud. nobody had to 🧡</span>
       </div>
     </div>
   </div>
 
-<!-- ══ MEAL 2: RAMEN ══ -->
-  <div class="meal">
+  <!-- ══ MEAL 2: RAMEN ══ -->
+  <div class="meal" data-num="二">
     <div class="meal-label">
       <span class="meal-num">02</span>
       <div class="meal-label-text">
@@ -560,23 +846,23 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
         <span class="note">AAAA THE BROTH. I had to pour it away. the most regrettable decision of the exchange year. I am so sorry. ごめんなさい 😭</span>
       </div>
       <div class="meal-img">
-<img src      
-  </div>
+        <img src="../../assets/guides/food/chashu-ramen.jpg" alt="Homemade chashu ramen with soft-boiled egg and narutomaki">
+        <div class="img-cap">the bowl that changed things</div>
+      </div>
     </div>
   </div>
-
-<!-- ══ OCCASION: GYOZA NIGHT ══ -->
 </div>
 
+<!-- ══ OCCASION: GYOZA NIGHT ══ -->
 <div class="occasion-head">
-  <p class="oh-label">Family Activity · Everyone at the Table</p>
+  <span class="oh-label">Family Activity · Everyone at the Table</span>
   <h3>The Gyoza Night</h3>
   <p>There are evenings that feel like what the whole exchange year was supposed to be. You're not a guest anymore, not quite a daughter, but something in between — and everyone is folding dumplings together at the kitchen table and the filling smells incredible and you are, very quietly, the happiest you have been in months.</p>
 </div>
 
 <div class="page">
-<!-- ══ MEAL 3: GYOZA ══ -->
-  <div class="meal">
+  <!-- ══ MEAL 3: GYOZA ══ -->
+  <div class="meal" data-num="三">
     <div class="meal-label">
       <span class="meal-num">03</span>
       <div class="meal-label-text">
@@ -586,10 +872,11 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     </div>
     <div class="meal-il">
       <div class="meal-img">
- <img src=
-   </div>
+        <img src="../../assets/guides/food/gyoza-plates.jpg" alt="Two plates of gyoza — one expertly pleated, one enthusiastically folded">
+        <div class="img-cap">left: theirs. right: mine. both delicious.</div>
+      </div>
       <div class="meal-text">
-        <span class="dish-tag">Pan-fried Pork & Cabbage Gyoza · Two Plates · Different Folding Skill Levels</span>
+        <span class="dish-tag">Pan-fried Pork &amp; Cabbage Gyoza · Two Plates · Different Folding Skill Levels</span>
         <p>Host dad and host mom at the counter: prepping the filling — ground pork, finely shredded napa cabbage, garlic, ginger, a little sesame oil, soy. My host sisters and me at the table: a stack of round wrappers, a small bowl of water to seal the edges, and absolutely no technique between us.</p>
         <p>The proof is in the photo. The top plate — the beautiful teal one with the terracotta rim — is the parents' work. Each gyoza is perfectly crescent-shaped, neatly pleated along the top in five or six little folds, all leaning together in a clockwise fan like they were stamped by a machine. The bottom plate is ours. Also a fan shape, technically. The pleating is... expressive. Some have three folds. Some have one dramatic fold. One of them has been sealed with what I can only describe as enthusiasm rather than technique.</p>
         <p>Both plates went into the pan with a slick of oil, fry until the flat bottom is a deep golden-brown, then a splash of water and a lid slammed on top to steam, then the lid off again for the final crisp. You eat them with a dipping sauce of soy and rice vinegar with a dot of chilli oil. You eat far too many. That is the correct number.</p>
@@ -598,8 +885,8 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     </div>
   </div>
 
-<!-- ══ MEAL 4: BIRYANI ══ -->
-  <div class="meal">
+  <!-- ══ MEAL 4: BIRYANI ══ -->
+  <div class="meal" data-num="四">
     <div class="meal-label">
       <span class="meal-num">04</span>
       <div class="meal-label-text">
@@ -612,53 +899,53 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
         <span class="dish-tag">Chicken Biryani · Basmati Rice · Whole Spices · Caramelised Onion · Dutch Oven</span>
         <p>My host mom had cooked from so many cultures already — Vietnamese spring rolls, Korean kimchi nabe, Chinese dumplings, Spanish paella — but Indian food was new. She was curious. She asked me about it. And somewhere in that conversation it became: let's do it together.</p>
         <p>She handled the heavy cast iron Dutch oven like it weighed nothing. I explained the spices: whole cardamom, cinnamon stick, bay leaves, cloves, a fistful of cumin seeds crackling in hot oil. She listened carefully and nodded and did exactly what I said, and she also did things with her hands that only someone who has cooked for a long time does — tasted without measuring, adjusted without hesitating.</p>
-        <p>The biryani in the pot: basmati rice fluffy and distinct, each grain separate, tinted a pale gold from the spiced stock it cooked in. Chunks of chicken thigh scattered through — dark and charred at the edges from the high heat, tender inside. Threads of caramelised onion running all the way through the rice, sweet and deeply brown. The spatula in the corner is mid-scoop, the rice pulling apart in that satisfying way that means it's done right.</p>
+        <p>The biryani in the pot: basmati rice fluffy and distinct, each grain separate, tinted a pale gold from the spiced stock it cooked in. Chunks of chicken thigh scattered through — dark and charred at the edges from the high heat, tender inside. Threads of caramelised onion running all the way through the rice, sweet and deeply brown.</p>
         <span class="note">she said it was oishii and I almost cried in the kitchen. making your home food for someone who genuinely loves it — that hits differently than I can explain 🫶</span>
         <p>It wasn't quite how my family makes it at home. It was also exactly right. Both things are true.</p>
       </div>
       <div class="meal-img">
- <img src=
-   </div>
+        <img src="../../assets/guides/food/biryani-together.jpg" alt="Chicken biryani made together with host mom in a Dutch oven">
+        <div class="img-cap">she said oishii. i nearly cried.</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ══ WASHI ══ -->
 <div class="washi-tape"></div>
 
 <!-- ══ BIRTHDAY UNIT ══ -->
 <div class="page">
-<div class="meal-label" style="margin-bottom:28px;">
-  <span class="meal-num">05</span>
-  <div class="meal-label-text">
-    <p class="meal-occasion">9th November · 誕生日 · My Birthday</p>
-    <h2 class="meal-title">Vietnamese Spring Rolls, a Table Full of Things,<br>and <em>Five Baby Chicks</em> Instead of a Cake</h2>
+  <div class="meal-label" style="margin-bottom:28px;position:relative;z-index:1;">
+    <span class="meal-num">05</span>
+    <div class="meal-label-text">
+      <p class="meal-occasion">9th November · 誕生日 · My Birthday</p>
+      <h2 class="meal-title">Vietnamese Spring Rolls, a Table Full of Things,<br>and <em>Five Baby Chicks</em> Instead of a Cake</h2>
+    </div>
   </div>
-</div>
 
-<div class="birthday-unit">
-  <div class="bu-main">
- <img src=
-   </div>
-  <div class="bu-text">
-    <span class="dish-tag">Spring Rolls · Multigrain Rice · Simmered Chicken & Eggs · Miso Soup · Cream Soup · Pickles · Assorted Sides</span>
-    <p>My host mom asked what I wanted for my birthday dinner. I said I didn't mind. She made everything. Let me count what's on this table: a fish-shaped blue ceramic plate with fresh Vietnamese spring rolls stacked in a neat crescent — rice paper, translucent, showing the shrimp and green herbs and carrot and lettuce inside. A bowl of multigrain rice — the kind with little black and red grains mixed into the white, so it comes out speckled and nutty. A large plate of simmered chicken thighs in a rich soy-and-mirin braising sauce, with whole soft-boiled eggs nestled between the pieces, their yolks just set, the whites stained a warm amber from the sauce. Two or three different miso soups in wooden bowls with different daikon and tofu combinations. A cream soup in a smaller bowl, pale and smooth. An empty white plate with a serving of white rice. A dish with picked vegetables. A small bowl of something dark on the side. A bottle of Thai sweet chilli sauce because she remembered I liked it. She remembered.</p>
-    <span class="note">I counted at least eight separate dishes on this table. for my birthday. she just... made everything. I didn't know what to say so I just kept eating 🎉</span>
+  <div class="birthday-unit">
+    <div class="bu-main">
+      <img src="../../assets/guides/food/birthday-table-spread.jpg" alt="Birthday dinner spread with spring rolls, multigrain rice, simmered chicken and many dishes">
+    </div>
+    <div class="bu-text">
+      <span class="dish-tag">Spring Rolls · Multigrain Rice · Simmered Chicken &amp; Eggs · Miso Soup · Cream Soup · Pickles · Assorted Sides</span>
+      <p>My host mom asked what I wanted for my birthday dinner. I said I didn't mind. She made everything. Let me count what's on this table: a fish-shaped blue ceramic plate with fresh Vietnamese spring rolls stacked in a neat crescent — rice paper, translucent, showing the shrimp and green herbs and carrot and lettuce inside. A bowl of multigrain rice — the kind with little black and red grains mixed into the white, so it comes out speckled and nutty. A large plate of simmered chicken thighs in a rich soy-and-mirin braising sauce, with whole soft-boiled eggs nestled between the pieces, their yolks just set, the whites stained a warm amber from the sauce. Two or three different miso soups in wooden bowls with different daikon and tofu combinations. A cream soup in a smaller bowl, pale and smooth. An empty white plate with a serving of white rice. A dish with pickled vegetables. A bottle of Thai sweet chilli sauce because she remembered I liked it. She remembered.</p>
+      <span class="note">I counted at least eight separate dishes on this table. for my birthday. she just... made everything. I didn't know what to say so I just kept eating 🎉</span>
+    </div>
+    <div class="bu-cake">
+      <img src="../../assets/guides/food/hiyoko-cheesecake-box.jpg" alt="Birthday box with baby chick cheesecakes and cat-face crème brûlée">
+    </div>
   </div>
-  <div class="bu-cake">
- <img src=
-   </div>
-</div>
 
-<div class="meal-text" style="margin-bottom:90px; padding:0;">
-  <span class="dish-tag">Hiyoko Cheesecake Cups · Cat-face Crème Brûlée · Birthday Box</span>
-  <p>Instead of a traditional birthday cake, there was a white box. The box itself had a little bear face cut into the side panels — the kind of box that is already a gift before you open it. Inside: three fluffy yellow baby chick cheesecakes in individual cups, each with two dark chocolate chip eyes and a small triangular orange beak, their heads perfectly round and dusted pale yellow like they just hatched. Behind them, two cat-face crème brûlée cups — that deep amber bruléed sugar top, cracked and golden-brown, shaped into a cat's face with little ear points at the corners.</p>
-  <span class="note">I refused to eat them for several minutes because they were too cute. then I ate them immediately. they were so, so good. the cheesecake was light and creamy and the brûlée had that perfect crack. 🐥🐱</span>
-  <p>That's the thing about Japanese desserts — they make food so beautiful you feel guilty eating it. And then you eat it. Because they also make it taste incredible. The beauty is not a trick. It's just how they do things.</p>
-</div>
+  <div class="meal-text" style="margin-bottom:90px;padding:0;position:relative;z-index:1;">
+    <span class="dish-tag">Hiyoko Cheesecake Cups · Cat-face Crème Brûlée · Birthday Box</span>
+    <p>Instead of a traditional birthday cake, there was a white box. The box itself had a little bear face cut into the side panels — the kind of box that is already a gift before you open it. Inside: three fluffy yellow baby chick cheesecakes in individual cups, each with two dark chocolate chip eyes and a small triangular orange beak, their heads perfectly round and dusted pale yellow like they just hatched. Behind them, two cat-face crème brûlée cups — that deep amber bruléed sugar top, cracked and golden-brown, shaped into a cat's face with little ear points at the corners.</p>
+    <span class="note">I refused to eat them for several minutes because they were too cute. then I ate them immediately. they were so, so good. the cheesecake was light and creamy and the brûlée had that perfect crack. 🐥🐱</span>
+    <p>That's the thing about Japanese desserts — they make food so beautiful you feel guilty eating it. And then you eat it. Because they also make it taste incredible. The beauty is not a trick. It's just how they do things.</p>
+  </div>
 
-<!-- ══ MEAL 6: NABE ══ -->
-  <div class="meal">
+  <!-- ══ MEAL 6: NABE ══ -->
+  <div class="meal" data-num="六">
     <div class="meal-label">
       <span class="meal-num">06</span>
       <div class="meal-label-text">
@@ -668,12 +955,13 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     </div>
     <div class="meal-il">
       <div class="meal-img">
- <img src=
-   </div>
+        <img src="../../assets/guides/food/shiitake-nabe.jpg" alt="Shiitake nabe hot pot with udon, tofu and vegetables">
+        <div class="img-cap">the most cosy thing i've ever eaten</div>
+      </div>
       <div class="meal-text">
-        <span class="dish-tag">Shiitake · Silken Tofu · Udon · Napa Cabbage · Carrot · Dashi Broth · Yakisoba · Kimchi · Pickled Ginger · Raw Fish · Kabocha</span>
-        <p>On cold days — and Yokohama in winter is genuinely, properly cold — my host mom made nabe. The big aluminium donabe sits in the exact centre of the table, resting on a folded newspaper to protect the wood. Inside: a whole landscape. Thick udon noodles coiled at the bottom of pale dashi broth. Big cubes of silken tofu, white and trembling. Four whole shiitake mushrooms, dark and glossy, their caps open and full of broth. Carrot rounds in orange circles. Pale napa cabbage leaves beginning to go soft. A floret of broccoli in the corner. Two pairs of chopsticks — one red-tipped, one plain bamboo — resting across the top, mid-use.</p>
-        <p>And then all around it, the supporting cast: a turquoise plate of yakisoba on the left — stir-fried egg noodles with carrot and cabbage, glistening with sauce. A small white flower-shaped plate with bright pink pickled ginger slices and a tiny broccoli floret. On the right side: a small blue-and-white plate with pale raw fish, a dish of something dark and simmered, a vivid red bowl of kimchi. A wooden ladle resting across an empty bowl, ready for serving. A wooden spoon nearby. Multiple chopstick rests. Everything placed with the quiet care that characterised every single dinner at that table.</p>
+        <span class="dish-tag">Shiitake · Silken Tofu · Udon · Napa Cabbage · Carrot · Dashi Broth · Yakisoba · Kimchi · Pickled Ginger</span>
+        <p>On cold days — and Yokohama in winter is genuinely, properly cold — my host mom made nabe. The big aluminium donabe sits in the exact centre of the table, resting on a folded newspaper to protect the wood. Inside: a whole landscape. Thick udon noodles coiled at the bottom of pale dashi broth. Big cubes of silken tofu, white and trembling. Four whole shiitake mushrooms, dark and glossy, their caps open and full of broth. Carrot rounds in orange circles. Pale napa cabbage leaves beginning to go soft.</p>
+        <p>And then all around it, the supporting cast: a turquoise plate of yakisoba on the left — stir-fried egg noodles with carrot and cabbage, glistening with sauce. A small white flower-shaped plate with bright pink pickled ginger slices and a tiny broccoli floret. On the right side: a small blue-and-white plate with pale raw fish, a dish of something dark and simmered, a vivid red bowl of kimchi. A wooden ladle resting across an empty bowl, ready for serving. Everything placed with the quiet care that characterised every single dinner at that table.</p>
         <span class="note">nabe is the most cosy thing I have ever experienced. one pot. shared from the centre. everyone reaching in. the broth gets richer as the evening goes on. I think about it every winter 🍲</span>
       </div>
     </div>
@@ -682,13 +970,13 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
 
 <!-- ══ FULL BLEED: CHRISTMAS ══ -->
 <div class="full-bleed">
- <img src=
-   <span class="fb-cap">Christmas Eve — paella night 🦐🍷</span>
+  <img src="../../assets/guides/food/christmas-paella-table.jpg" alt="Christmas Eve paella dinner at the host family table">
+  <span class="fb-cap">Christmas Eve — paella night 🦐🍷</span>
 </div>
 
 <div class="page">
-<!-- ══ MEAL 7: CHRISTMAS ══ -->
-  <div class="meal" style="margin-top:70px;">
+  <!-- ══ MEAL 7: CHRISTMAS ══ -->
+  <div class="meal" data-num="七" style="margin-top:70px;">
     <div class="meal-label">
       <span class="meal-num">07</span>
       <div class="meal-label-text">
@@ -700,17 +988,18 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
       <div class="meal-text">
         <span class="dish-tag">Prawn Paella · Fried Fish · French Baguette · Grape Juice (Sangria for the adults) · Mixed Salad</span>
         <p>Christmas in Japan is not a holiday in any official sense — schools are still in session on the 24th, nothing closes, life goes on. But collectively, somehow, the whole country agrees to eat something festive and be cheerful about it. My host family leaned into this fully.</p>
-        <p>Christmas Eve dinner was Spanish. A large dark frying pan dominates the table — paella, loaded with whole prawns, their shells still on and bright coral-red from the heat, heads intact, curled over mounds of yellow saffron rice dotted with green pepper and what looks like mushrooms and vegetables cooked down into the base. Beside it, a white plate of fried fish — battered and golden, crisp on the outside. To the left, torn pieces of a pale baguette. A bowl of mixed salad. And around each plate, a deep red drink in a wine glass — proper glasses, with stems. Sangria for my host parents, grape juice for me, but both red and cold and in the same glasses, equally festive.</p>
+        <p>Christmas Eve dinner was Spanish. A large dark frying pan dominates the table — paella, loaded with whole prawns, their shells still on and bright coral-red from the heat, heads intact, curled over mounds of yellow saffron rice dotted with green pepper. Beside it, a white plate of fried fish — battered and golden, crisp on the outside. To the left, torn pieces of a pale baguette. A bowl of mixed salad. And around each plate, a deep red drink in a wine glass — proper glasses, with stems. Sangria for my host parents, grape juice for me, but both red and cold and in the same glasses, equally festive.</p>
         <span class="note">grape juice in a wine glass on Christmas Eve in Yokohama while eating Spanish paella. I was living LIFE. 🍷✨</span>
       </div>
       <div class="meal-img">
- <img src=
-   </div>
+        <img src="../../assets/guides/food/christmas-eve-paella.jpg" alt="Prawn paella on Christmas Eve with wine glasses">
+        <div class="img-cap">december 24 · yokohama · classy</div>
+      </div>
     </div>
   </div>
 
-<!-- ══ MEAL 8: GRANDPA ══ -->
-  <div class="meal">
+  <!-- ══ MEAL 8: GRANDPA'S RETIREMENT ══ -->
+  <div class="meal" data-num="八">
     <div class="meal-label">
       <span class="meal-num">08</span>
       <div class="meal-label-text">
@@ -720,21 +1009,21 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     </div>
     <div class="meal-il">
       <div class="meal-img">
+        <img src="../../assets/guides/food/retirement-sushi-tray.jpg" alt="Large black lacquer sushi tray with nigiri, sashimi and maki for retirement dinner">
+        <div class="img-cap">おめでとうございます おじいちゃん 🎌</div>
       </div>
-      
-    
       <div class="meal-text">
         <span class="dish-tag">Nigiri Assortment · Sashimi · Maki Rolls · Ikura · Tamagoyaki · Karaage · Green Salad</span>
         <p>My host grandpa retired in his seventies and the family threw him a proper dinner. The centrepiece of the table is a large black lacquer sushi tray — the kind you'd see in a good restaurant, wider than a person's arm span, heaped with an assortment that takes a moment to fully process.</p>
-        <p>Starting from the back: thick slabs of sashimi — pale white squid, deep red maguro tuna. In the middle of the tray: nigiri, row after row — pale pink salmon that catches the light, glossy amber yellowtail, fat shrimp draped over their rice pillows, slices of silky white fish I didn't know the name of, a row of tamagoyaki — that sweet rolled Japanese omelette, perfectly rectangular. At the front: maki rolls, tightly wrapped in nori, some with a dot of orange ikura — salmon roe — gleaming on top. A piece of something bright orange on the corner. The whole tray is arranged with the precision of someone who takes food seriously as an art form.</p>
+        <p>Starting from the back: thick slabs of sashimi — pale white squid, deep red maguro tuna. In the middle of the tray: nigiri, row after row — pale pink salmon that catches the light, glossy amber yellowtail, fat shrimp draped over their rice pillows, slices of silky white fish I didn't know the name of, a row of tamagoyaki perfectly rectangular. At the front: maki rolls, tightly wrapped in nori, some with a dot of orange ikura gleaming on top. A piece of something bright orange on the corner. The whole tray is arranged with the precision of someone who takes food seriously as an art form.</p>
         <p>Around it: a glass bowl of shredded green salad. A plate of karaage chicken, crisp and dark. Everyone's individual plates already bearing pieces they'd chosen. The hands of an elderly man visible in the corner — my host grandpa, at his own retirement dinner.</p>
         <span class="note">I LOVE SUSHI SO MUCH and this was the sushi that broke my brain. every sushi I eat now is silently compared to that tray. nothing has matched. おめでとうございます ojii-chan 🎌🍣</span>
       </div>
     </div>
   </div>
- <img src=
-<!-- ══ MEAL 9: NEW YEAR'S EVE SOBA ══ -->
-  <div class="meal">
+
+  <!-- ══ MEAL 9: NEW YEAR'S EVE SOBA ══ -->
+  <div class="meal" data-num="九">
     <div class="meal-label">
       <span class="meal-num">09</span>
       <div class="meal-label-text">
@@ -746,12 +1035,13 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
       <div class="meal-text">
         <span class="dish-tag">Toshikoshi Soba · Tempura Prawns · Vegetable Kakiage · Dipping Broth · Miso Side Soup · Pickled Vegetables</span>
         <p>New Year's Eve in Japan means toshikoshi soba — literally "year-crossing noodles." You eat them on the 31st to see out the old year, the long thin noodles symbolising a long life and the cutting of the past year's troubles. It's one of those traditions that is both very simple and quietly profound, and my host family observed it exactly.</p>
-        <p>The table: two large blue-rimmed bowls of soba — cold, I think, or at least room temperature, the grey-brown noodles piled neatly, distinct and slightly nutty-smelling. A deep savoury dipping broth in smaller bowls on the side — tsuyu, made from dashi and mirin and soy. Then the tempura, and there is a lot of it. One large plate stacked with vegetable kakiage — those mixed vegetable fritters bound together in irregular golden discs — shredded carrot and something green and what looks like burdock, all deep-fried until pale gold and slightly lacy at the edges. A second plate with whole prawn tempura — fat prawns in individual battered coats, tails sticking up, three of them, plus more vegetable pieces behind. Assorted little wooden side bowls with miso soup and pickled things tucked around the edges of the table. The whole spread is orderly, unhurried, perfectly calibrated for a quiet evening at home at the end of December.</p>
+        <p>The table: two large blue-rimmed bowls of soba — cold, I think, or at least room temperature, the grey-brown noodles piled neatly, distinct and slightly nutty-smelling. A deep savoury dipping broth in smaller bowls on the side — tsuyu, made from dashi and mirin and soy. Then the tempura, and there is a lot of it. One large plate stacked with vegetable kakiage — those mixed vegetable fritters bound together in irregular golden discs, shredded carrot and something green and what looks like burdock, all deep-fried until pale gold and slightly lacy at the edges. A second plate with whole prawn tempura — fat prawns in individual battered coats, tails sticking up, three of them, plus more vegetable pieces behind. Assorted little wooden side bowls with miso soup and pickled things tucked around the edges of the table. The whole spread is orderly, unhurried, perfectly calibrated for a quiet evening at home at the end of December.</p>
         <span class="note">the broth you dip the cold soba into — it's not the same broth as the nabe, it's not the same as ramen, it's its own thing entirely and it is SO good. savoury and slightly sweet and deeply comforting at the same time. あけましておめでとう 🎍</span>
       </div>
       <div class="meal-img">
+        <img src="../../assets/guides/food/toshikoshi-soba-tempura.jpg" alt="New Year's Eve toshikoshi soba with prawn tempura and dipping broth">
+        <div class="img-cap">31st december · year-crossing noodles</div>
       </div>
-       <img src=
     </div>
   </div>
 </div>
@@ -772,7 +1062,7 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <p class="f-series">Exchange Student Diaries · Vol. 03 · Yokohama, Japan</p>
+  <span class="f-series">Exchange Student Diaries · Vol. 03 · Yokohama, Japan</span>
   <h4>More from the series</h4>
   <p>A year lived as a Japanese high school student — school days, ¥1000 hauls, cultural disasters, getting lost alone in a city you're still learning.</p>
   <div class="f-links">
@@ -781,7 +1071,18 @@ footer .f-links a:hover { background:var(--rust); color:var(--cream); border-col
     <a href="#" style="opacity:0.4;">Vol. 04 · Conbini Meals</a>
     <a href="#" style="opacity:0.4;">Vol. 05 · Cultural Mistakes</a>
   </div>
+  <div class="footer-stamps">
+    <div class="fstamp fstamp-red">KAKEHASHI<br><span style="font-size:1.3em;letter-spacing:0.05em;">架け橋</span></div>
+    <div class="fstamp fstamp-indigo">YOKOHAMA<br><span style="font-size:1.3em;letter-spacing:0.08em;opacity:0.7;">横浜</span></div>
+    <div class="fstamp fstamp-kaki" style="font-size:0.42rem;letter-spacing:0.08em;">日本<br>留学</div>
+  </div>
 </footer>
 
+<script>
+const rp = document.getElementById('rp');
+window.addEventListener('scroll', () => {
+  rp.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+});
+</script>
 </body>
 </html>
