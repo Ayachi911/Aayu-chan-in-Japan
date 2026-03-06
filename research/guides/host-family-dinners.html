@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What My Host Family Fed Me in Japan | Exchange Student Diaries</title>
-<meta name="description" content="Gyoza nights folded by hand, birthday spring rolls, Christmas paella, and a retirement sushi spread. A year of host family dinners in Yokohama, documented dish by dish.">
+<title>Nine Dinners My Japanese Host Family Made Me | Exchange Student Diaries</title>
+<meta name="description" content="From a welcome dinner of miso and grilled fish to gyoza folded by hand and toshikoshi soba on New Year's Eve — a year of host family dinners in Yokohama, dish by dish.">
+<link rel="canonical" href="/japan-life/host-family-dinners-yokohama">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nine Dinners My Japanese Host Family Made Me",
+  "description": "From a welcome dinner of miso and grilled fish to gyoza folded by hand and toshikoshi soba on New Year's Eve — a year of host family dinners in Yokohama, dish by dish.",
+  "author": { "@type": "Person", "name": "Ayachi" },
+  "inLanguage": "en",
+  "keywords": "host family Japan, exchange student food, Yokohama, toshikoshi soba, gyoza, Piyorin, Kakehashi",
+  "image": "../../assets/images/host fam/KIMG0111.JPG"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400&family=Caveat:wght@400;600;700&family=IM+Fell+English:ital,wght@0,400;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
@@ -697,25 +710,190 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
   z-index:299; width:0%; transition:width 0.1s linear;
 }
 
-@media (max-width:800px) {
-  .hero { grid-template-columns:1fr; padding:100px 28px 50px; }
-  .hero::after { display:none; }
-  .cover-plate { max-width:100%; }
-  .hero-stamp-cluster { min-height:auto; padding:0; }
-  .meal-il,.meal-ir { grid-template-columns:1fr; }
-  .birthday-unit { grid-template-columns:1fr; }
-  .bu-main,.bu-text,.bu-cake { grid-column:auto; border:1px solid var(--rule-dk); border-top:none; }
-  .bu-main { border-top:1px solid var(--rule-dk); }
-  .page { padding:0 20px; }
-  .intro-letter,.closing { padding:0 20px; }
-  .letter-paper,.closing-paper { padding:36px 26px; }
-  .letter-paper-inner { padding-left:14px; }
-  .occasion-head { padding:38px 28px; }
+/* ── MEAL INDEX ── */
+.meal-index {
+  max-width: 660px; margin: 28px auto 0;
+  padding: 0 40px; position: relative; z-index: 1;
+}
+.meal-index .mi-head {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--lacquer);
+  margin-bottom: 10px; padding: 0 16px;
+}
+.meal-index .mi-grid {
+  background: var(--parch);
+  border: 1px solid var(--rule-dk);
+  border-top: 3px solid var(--lacquer);
+  padding: 14px 22px;
+  display: flex; flex-wrap: wrap; gap: 0;
+}
+.meal-index .mi-item {
+  display: flex; align-items: baseline; gap: 5px;
+  padding: 7px 12px 7px 0; margin-right: 12px;
+  border-right: 1px solid var(--rule);
+  text-decoration: none; transition: color 0.1s;
+}
+.meal-index .mi-item:last-child { border-right: none; }
+.meal-index .mi-n {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem; letter-spacing: 0.1em; color: var(--lacquer);
+}
+.meal-index .mi-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.85rem; color: var(--ink-mid); transition: color 0.12s;
+}
+.meal-index .mi-item:hover .mi-name { color: var(--lacquer); }
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  border-top: 2.5px solid var(--lacquer);
+  border-bottom: 1px dashed var(--rule-dk);
+  padding: 28px 48px; margin: 36px 0;
+  text-align: center; position: relative;
+  background: var(--parch);
+}
+.pull-quote blockquote {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-style: italic; color: var(--ink); line-height: 1.55;
+}
+.pull-quote blockquote em { color: var(--lacquer); font-family: 'IM Fell English', serif; }
+.pull-quote blockquote::before {
+  content: '\201C';
+  font-family: 'Shippori Mincho', serif;
+  font-size: 3.5rem; color: rgba(155,35,53,0.15);
+  position: absolute; top: 8px; left: 14px; line-height: 1;
+}
+.pull-quote.pq-indigo { border-top-color: var(--indigo); }
+.pull-quote.pq-moss   { border-top-color: var(--moss); }
+
+/* ── SECTION PROGRESS NAV ── */
+.section-nav {
+  position: fixed; top: 50%; right: 18px;
+  transform: translateY(-50%);
+  z-index: 200; padding: 14px 10px;
+  background: var(--parch);
+  border-left: 3px solid var(--lacquer);
+  border-top: 1px solid var(--rule-dk);
+  border-bottom: 1px solid var(--rule-dk);
+  box-shadow: -2px 0 16px rgba(30,22,9,0.08);
+  width: 90px;
+}
+.section-nav .sn-head {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.42rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--lacquer); margin-bottom: 10px;
+}
+.section-nav .sn-item {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 0; text-decoration: none; position: relative;
+}
+.section-nav .sn-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.44rem; color: var(--rule-dk); transition: color 0.15s; flex-shrink: 0;
+}
+.section-nav .sn-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.76rem; color: var(--ink-soft); transition: color 0.15s;
+}
+.section-nav .sn-item.active .sn-num { color: var(--lacquer); }
+.section-nav .sn-item.active .sn-name { color: var(--ink); font-style: italic; }
+.section-nav .sn-item.active::before {
+  content: '';
+  position: absolute; left: -13px;
+  width: 3px; height: 18px; background: var(--lacquer);
+}
+@media (max-width: 1180px) { .section-nav { display: none; } }
+
+/* ── ESSAY INTRO HEADER ── */
+.essay-intro {
+  max-width: 660px; margin: 0 auto 32px;
+  padding: 0 40px; text-align: center;
+  position: relative; z-index: 1;
+}
+.essay-intro .ei-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--lacquer);
+  display: block; margin-bottom: 8px;
+}
+.essay-intro .ei-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px;
+}
+.essay-intro .ei-rule {
+  width: 60px; height: 2px;
+  background: var(--lacquer); margin: 0 auto;
+}
+
+/* ── FINAL STATEMENT ── */
+.final-statement {
+  text-align: center; padding: 80px 40px;
+  position: relative; z-index: 1;
+  border-top: 1px dashed var(--rule-dk);
+}
+.final-statement p {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  color: var(--ink-soft); line-height: 1.4;
+}
+.final-statement .fs-em {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--lacquer); margin-top: 4px;
+}
+.final-statement .fs-jp {
+  display: block; margin-top: 22px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.25em;
+  color: var(--ink-soft); opacity: 0.5;
+}
+
+/* ── ENHANCED PHOTO HOVER ── */
+.meal-img::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(30,22,9,0.18) 100%);
+  opacity: 0; transition: opacity 0.4s;
+  pointer-events: none;
+}
+.meal-img:hover::before { opacity: 1; }
+.meal-img img {
+  filter: sepia(0.12) contrast(1.04);
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+}
+.meal-img:hover img {
+  transform: scale(1.04);
+  filter: sepia(0.05) contrast(1.06);
+}
+
+@media (max-width: 800px) {
+  .meal-index { padding: 0 20px; }
+  .pull-quote { padding: 22px 24px; }
+  .essay-intro { padding: 0 20px; }
+  .final-statement { padding: 60px 24px; }
 }
 </style>
 </head>
 <body>
 <div class="reading-progress" id="rp"></div>
+
+<!-- ══ SECTION PROGRESS NAV ══ -->
+<nav class="section-nav" id="sectionNav" aria-label="Article sections">
+  <p class="sn-head">Meals</p>
+  <a class="sn-item" href="#meal-01" data-section="meal-01"><span class="sn-num">01</span><span class="sn-name">Welcome</span></a>
+  <a class="sn-item" href="#meal-02" data-section="meal-02"><span class="sn-num">02</span><span class="sn-name">Ramen</span></a>
+  <a class="sn-item" href="#meal-03" data-section="meal-03"><span class="sn-num">03</span><span class="sn-name">Gyoza</span></a>
+  <a class="sn-item" href="#meal-04" data-section="meal-04"><span class="sn-num">04</span><span class="sn-name">Biryani</span></a>
+  <a class="sn-item" href="#meal-05" data-section="meal-05"><span class="sn-num">05</span><span class="sn-name">Birthday</span></a>
+  <a class="sn-item" href="#meal-06" data-section="meal-06"><span class="sn-num">06</span><span class="sn-name">Nabe</span></a>
+  <a class="sn-item" href="#meal-07" data-section="meal-07"><span class="sn-num">07</span><span class="sn-name">Xmas</span></a>
+  <a class="sn-item" href="#meal-08" data-section="meal-08"><span class="sn-num">08</span><span class="sn-name">Sushi</span></a>
+  <a class="sn-item" href="#meal-09" data-section="meal-09"><span class="sn-num">09</span><span class="sn-name">New Year</span></a>
+</nav>
 
 <!-- ══ GUIDES NAV BAR ══ -->
 <div class="guides-btn">
@@ -800,11 +978,25 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
   </div>
 </div>
 
-<div class="washi-tape"></div>
+<!-- ══ MEAL INDEX ══ -->
+<nav class="meal-index" aria-label="Jump to meal">
+  <p class="mi-head">Nine Meals · 食卓の記録</p>
+  <div class="mi-grid">
+    <a class="mi-item" href="#meal-01"><span class="mi-n">01</span><span class="mi-name">Welcome</span></a>
+    <a class="mi-item" href="#meal-02"><span class="mi-n">02</span><span class="mi-name">Ramen</span></a>
+    <a class="mi-item" href="#meal-03"><span class="mi-n">03</span><span class="mi-name">Gyoza</span></a>
+    <a class="mi-item" href="#meal-04"><span class="mi-n">04</span><span class="mi-name">Biryani</span></a>
+    <a class="mi-item" href="#meal-05"><span class="mi-n">05</span><span class="mi-name">Birthday</span></a>
+    <a class="mi-item" href="#meal-06"><span class="mi-n">06</span><span class="mi-name">Nabe</span></a>
+    <a class="mi-item" href="#meal-07"><span class="mi-n">07</span><span class="mi-name">Christmas</span></a>
+    <a class="mi-item" href="#meal-08"><span class="mi-n">08</span><span class="mi-name">Sushi</span></a>
+    <a class="mi-item" href="#meal-09"><span class="mi-n">09</span><span class="mi-name">New Year</span></a>
+  </div>
+</nav>
 
-<!-- ══ MEAL 1: WELCOME ══ -->
+<div class="washi-tape"></div>
 <div class="page">
-  <div class="meal" data-num="一">
+  <div class="meal" id="meal-01" data-num="一">
     <div class="meal-label">
       <span class="meal-num">01</span>
       <div class="meal-label-text">
@@ -819,16 +1011,17 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
       </div>
       <div class="meal-text">
         <span class="dish-tag">Miso Soup · Steamed Rice · Grilled Fish · Simmered Vegetables · Pickles · Tamagoyaki · Barley Tea</span>
-        <p>I arrived in Yokohama on an October evening, still wearing the rumpled clothes I'd been in for two hours of bus drive from my quarantine hotel. My suitcases looked heavy in the densha. I had forgotten what it felt like to be comfortable anywhere.</p>
+        <p>I arrived in Yokohama on an October evening still wearing the clothes I'd been in since the quarantine hotel. My suitcases felt heavier than they were. I had forgotten what it felt like to be comfortable anywhere.</p>
         <p>And then the table. Every element of a proper Japanese dinner laid out simultaneously — not brought in courses, but all present together, each component in its own vessel, every vessel considered. The miso soup in a lacquered wooden bowl, the rice in a small ceramic one with a wooden lid. Grilled fish — mackerel, I think, or horse mackerel — its skin blistered and charred on one side, the flesh white and flaking. Small plates of simmered root vegetables, pale and sweet. A row of pickles. Tamagoyaki, that rolled omelette, sweet and layered, cut into even pieces.</p>
         <p>Each place had its own chopstick rest. Each chopstick rest had a different little painted motif. The glasses were already filled with pale barley tea. It looked like a restaurant.</p>
+        <p>I stood in the doorway for a moment too long. I was trying to understand that someone had done all of this — for me, specifically — on the night I arrived a stranger.</p>
         <span class="note">the message of that dinner was: you are safe here. you will be fed. nobody said it out loud. nobody had to 🧡</span>
       </div>
     </div>
   </div>
 
   <!-- ══ MEAL 2: RAMEN ══ -->
-  <div class="meal" data-num="二">
+  <div class="meal" id="meal-02" data-num="二">
     <div class="meal-label">
       <span class="meal-num">02</span>
       <div class="meal-label-text">
@@ -843,7 +1036,6 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
         <p>Look at it. A deep white bowl, wide enough to swim in. The broth is a clear amber-brown shoyu base — soy sauce and dashi and something slow-cooked, deepened by time. Resting across the top is a thick, curling slab of chashu pork belly, the fat rendered translucent and silky, the meat pulling apart at the edges. A narutomaki — that little fish cake with the pink spiral stamped through the centre — floats near the left. A soft-boiled egg sits halved at the front, the yolk that perfect jammy orange that means it was cooked for exactly six minutes and marinated overnight. A small pile of crisp bean sprouts on the right. A few leaves of dark green komatsuna, blanched and soft, tucked in the corner.</p>
         <span class="note">I stared at it for a full thirty seconds before picking up the chopsticks. it looked exactly like the ramen in anime. because that's where anime gets it from. BECAUSE IT'S REAL.</span>
         <p>I ate every noodle. I ate the egg. I ate every bit of the pork. And then I came to the broth — all that deep, savoury, irreplaceable broth — and I ran out of stomach. I drained it away. I think about it still. I'm sorry.</p>
-        <span class="note">AAAA THE BROTH. I had to pour it away. the most regrettable decision of the exchange year. I am so sorry. ごめんなさい 😭</span>
       </div>
       <div class="meal-img">
         <img src="../../assets/images/host fam/KIMG0164.JPG" alt="Homemade chashu ramen with soft-boiled egg and narutomaki">
@@ -862,7 +1054,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
 
 <div class="page">
   <!-- ══ MEAL 3: GYOZA ══ -->
-  <div class="meal" data-num="三">
+  <div class="meal" id="meal-03" data-num="三">
     <div class="meal-label">
       <span class="meal-num">03</span>
       <div class="meal-label-text">
@@ -886,7 +1078,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
   </div>
 
   <!-- ══ MEAL 4: BIRYANI ══ -->
-  <div class="meal" data-num="四">
+  <div class="meal" id="meal-04" data-num="四">
     <div class="meal-label">
       <span class="meal-num">04</span>
       <div class="meal-label-text">
@@ -902,6 +1094,9 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
         <p>The biryani in the pot: basmati rice fluffy and distinct, each grain separate, tinted a pale gold from the spiced stock it cooked in. Chunks of chicken thigh scattered through — dark and charred at the edges from the high heat, tender inside. Threads of caramelised onion running all the way through the rice, sweet and deeply brown.</p>
         <span class="note">she said it was oishii and I almost cried in the kitchen. making your home food for someone who genuinely loves it — that hits differently than I can explain 🫶</span>
         <p>It wasn't quite how my family makes it at home. It was also exactly right. Both things are true.</p>
+        <aside class="pull-quote pq-moss">
+          <blockquote>It wasn't quite how my family makes it at home. It was also exactly right. <em>Both things are true.</em></blockquote>
+        </aside>
       </div>
       <div class="meal-img">
         <img src="../../assets/images/host fam/1636369697182.jpg" alt="Chicken biryani made together with host mom in a Dutch oven">
@@ -914,7 +1109,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
 <div class="washi-tape"></div>
 
 <!-- ══ BIRTHDAY UNIT ══ -->
-<div class="page">
+<div class="page" id="meal-05">
   <div class="meal-label" style="margin-bottom:28px;position:relative;z-index:1;">
     <span class="meal-num">05</span>
     <div class="meal-label-text">
@@ -929,23 +1124,23 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
     </div>
     <div class="bu-text">
       <span class="dish-tag">Spring Rolls · Multigrain Rice · Simmered Chicken &amp; Eggs · Miso Soup · Cream Soup · Pickles · Assorted Sides</span>
-      <p>My host mom asked what I wanted for my birthday dinner. I said I didn't mind. She made everything. Let me count what's on this table: a fish-shaped blue ceramic plate with fresh Vietnamese spring rolls stacked in a neat crescent — rice paper, translucent, showing the shrimp and green herbs and carrot and lettuce inside. A bowl of multigrain rice — the kind with little black and red grains mixed into the white, so it comes out speckled and nutty. A large plate of simmered chicken thighs in a rich soy-and-mirin braising sauce, with whole soft-boiled eggs nestled between the pieces, their yolks just set, the whites stained a warm amber from the sauce. Two or three different miso soups in wooden bowls with different daikon and tofu combinations. A cream soup in a smaller bowl, pale and smooth. An empty white plate with a serving of white rice. A dish with pickled vegetables. A bottle of Thai sweet chilli sauce because she remembered I liked it. She remembered.</p>
+      <p>My host mom asked what I wanted for my birthday dinner. I said I didn't mind. She made everything. Let me count what was on this table. A fish-shaped blue ceramic plate with fresh Vietnamese spring rolls — rice paper, translucent, showing the shrimp and herbs and carrot inside. Multigrain rice, speckled black and red and nutty. Simmered chicken thighs in soy-and-mirin braising sauce with whole soft-boiled eggs stained warm amber. Two different miso soups. A cream soup. Pickled vegetables. And a bottle of Thai sweet chilli sauce — because she remembered I liked it. She remembered.</p>
       <span class="note">I counted at least eight separate dishes on this table. for my birthday. she just... made everything. I didn't know what to say so I just kept eating 🎉</span>
     </div>
     <div class="bu-cake">
-      <img src="../../assets/images/host fam/KIMG0184~2.JPG" alt="Birthday box with baby chick cheesecakes and cat-face crème brûlée">
+      <img src="../../assets/images/host fam/KIMG0184~2.JPG" alt="Birthday box with three Piyorin chick custard puddings and cat-face crème brûlée">
     </div>
   </div>
 
   <div class="meal-text" style="margin-bottom:90px;padding:0;position:relative;z-index:1;">
-    <span class="dish-tag">Hiyoko Cheesecake Cups · Cat-face Crème Brûlée · Birthday Box</span>
-    <p>Instead of a traditional birthday cake, there was a white box. The box itself had a little bear face cut into the side panels — the kind of box that is already a gift before you open it. Inside: three fluffy yellow baby chick cheesecakes in individual cups, each with two dark chocolate chip eyes and a small triangular orange beak, their heads perfectly round and dusted pale yellow like they just hatched. Behind them, two cat-face crème brûlée cups — that deep amber bruléed sugar top, cracked and golden-brown, shaped into a cat's face with little ear points at the corners.</p>
+    <span class="dish-tag">Piyorin · Custard Pudding Chicks · Cat-face Crème Brûlée · Birthday Box</span>
+    <p>Instead of a traditional birthday cake, there was a white box. The box itself had a little bear face cut into the side panels — the kind of box that is already a gift before you open it. Inside: three Piyorin — those famous little chick-shaped custard puddings that are apparently a whole thing in Japan and I completely understand why. Each one a perfect round yellow dome, two tiny dark chocolate chip eyes, a small orange beak. Soft sponge at the bottom, creamy custard inside, dusted pale yellow on top like they'd just decided to exist and were very pleased about it. Behind them, two cat-face crème brûlée cups — that deep amber bruléed sugar top, cracked and golden-brown, shaped into a cat's face with little ear points at the corners.</p>
     <span class="note">I refused to eat them for several minutes because they were too cute. then I ate them immediately. they were so, so good. the cheesecake was light and creamy and the brûlée had that perfect crack. 🐥🐱</span>
     <p>That's the thing about Japanese desserts — they make food so beautiful you feel guilty eating it. And then you eat it. Because they also make it taste incredible. The beauty is not a trick. It's just how they do things.</p>
   </div>
 
   <!-- ══ MEAL 6: NABE ══ -->
-  <div class="meal" data-num="六">
+  <div class="meal" id="meal-06" data-num="六">
     <div class="meal-label">
       <span class="meal-num">06</span>
       <div class="meal-label-text">
@@ -976,7 +1171,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
 
 <div class="page">
   <!-- ══ MEAL 7: CHRISTMAS ══ -->
-  <div class="meal" data-num="七" style="margin-top:70px;">
+  <div class="meal" id="meal-07" data-num="七" style="margin-top:70px;">
     <div class="meal-label">
       <span class="meal-num">07</span>
       <div class="meal-label-text">
@@ -999,7 +1194,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
   </div>
 
   <!-- ══ MEAL 8: GRANDPA'S RETIREMENT ══ -->
-  <div class="meal" data-num="八">
+  <div class="meal" id="meal-08" data-num="八">
     <div class="meal-label">
       <span class="meal-num">08</span>
       <div class="meal-label-text">
@@ -1023,7 +1218,7 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
   </div>
 
   <!-- ══ MEAL 9: NEW YEAR'S EVE SOBA ══ -->
-  <div class="meal" data-num="九">
+  <div class="meal" id="meal-09" data-num="九">
     <div class="meal-label">
       <span class="meal-num">09</span>
       <div class="meal-label-text">
@@ -1049,15 +1244,29 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
 <div class="washi-tape"></div>
 
 <!-- ══ CLOSING ══ -->
+<div class="essay-intro">
+  <span class="ei-label">Afterword</span>
+  <h2 class="ei-title">What a year of host family dinners taught me</h2>
+  <div class="ei-rule"></div>
+</div>
+
+<aside class="pull-quote" style="max-width:660px;margin:0 auto 32px;padding-left:56px;padding-right:56px;">
+  <blockquote>Food was how she asked: <em>how are you doing? Are you homesick? Do you feel at home yet?</em> She never asked those questions directly.</blockquote>
+</aside>
+
 <div class="closing">
   <div class="closing-paper">
-    <h3>What that table taught me</h3>
     <p>I sat at that wooden table for somewhere close to 365 dinners. I was always there by 7:30. I learned to put my chopsticks on their rest when I wasn't using them. I learned to say itadakimasu before eating and gochisousama deshita when I was done. I learned that in Japan, finishing your rice completely is a compliment. I learned that the soup is not a starter — it's concurrent with everything else.</p>
-    <p>But the bigger thing I learned is harder to name. My host mom cooked from Spanish tradition and Vietnamese tradition and Indian tradition and Korean tradition and her own, all with the same quality of attention. She wasn't performing worldliness. She was just genuinely curious about food, about cultures, about people — and cooking was how she expressed it.</p>
+    <p>The bigger thing I learned doesn't have a word for it. My host mom cooked from Spanish tradition and Vietnamese tradition and Indian tradition and Korean tradition and her own, all with the same quality of attention. She wasn't performing worldliness. She was just genuinely curious about food, about cultures, about people — and cooking was how she expressed it.</p>
     <p>Food was how she asked: how are you doing? Are you homesick? Do you feel at home yet? She never asked those questions directly. She made biryani with me instead. She put a Thai sweet chilli sauce on the table on my birthday because she remembered I liked it. She made toshikoshi soba on New Year's Eve because that's what you do, and she wanted me to know what that felt like.</p>
-    <p>I think about that table almost every evening. I set mine a little more carefully now, because of her.</p>
     <span class="sign">— Ayachi, Yokohama 2021 · ごちそうさまでした ✦</span>
   </div>
+</div>
+
+<div class="final-statement">
+  <p>I set mine a little more carefully now,</p>
+  <p class="fs-em">because of her.</p>
+  <span class="fs-jp">ごちそうさまでした</span>
 </div>
 
 <!-- ══ FOOTER ══ -->
@@ -1079,10 +1288,27 @@ footer .f-links a:hover { background:var(--lacquer); color:var(--paper); border-
 </footer>
 
 <script>
+// Reading progress bar
 const rp = document.getElementById('rp');
 window.addEventListener('scroll', () => {
   rp.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
 });
+
+// Section nav scroll highlight
+const sectionIds = ['meal-01','meal-02','meal-03','meal-04','meal-05','meal-06','meal-07','meal-08','meal-09'];
+function updateActiveSection() {
+  let current = sectionIds[0];
+  const offset = window.innerHeight * 0.38;
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < offset) current = id;
+  });
+  document.querySelectorAll('.sn-item').forEach(a => {
+    a.classList.toggle('active', a.dataset.section === current);
+  });
+}
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+updateActiveSection();
 </script>
 </body>
 </html>
