@@ -1,0 +1,59 @@
+<!--
+  ============================================================
+  ARTICLE WRAPPER SNIPPET — components/article-wrapper.html
+  ============================================================
+  Add to the TOP of every guide/essay HTML file, inside <body>:
+  1. The home button (top-left, before article content)
+  2. The related posts section (bottom of each article)
+  
+  Each existing guide keeps its own CSS/design unchanged.
+  Just insert these two chunks at the right spots.
+  ============================================================
+-->
+
+<!-- ── HOME BUTTON (insert at very top of article content, above hero) ── -->
+<div style="position:fixed;top:76px;left:1.25rem;z-index:150;">
+  <a href="../../index.html" class="home-btn" aria-label="Back to home feed">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Home
+  </a>
+</div>
+
+<!-- ── RELATED POSTS (insert at very bottom, before closing </body>) ── -->
+<!--
+  Replace the placeholder hrefs and titles with 4-5 actual related articles.
+  The .related-posts section uses global.css classes.
+-->
+<section class="related-posts" style="max-width:740px;margin:0 auto;padding:0 2rem;">
+  <h2 class="related-title">Related guides</h2>
+  <div class="related-grid">
+    <article class="card">
+      <div class="card-body">
+        <div class="card-header"><span class="card-cat">Exchange Programs</span></div>
+        <h3 class="card-title"><a href="../../research/guides/kakehashi-guide.html">Asia Kakehashi Project — Complete Guide</a></h3>
+        <div class="card-meta"><span>18 min</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <div class="card-header"><span class="card-cat">Packing</span></div>
+        <h3 class="card-title"><a href="../../research/guides/packing-guide.html">What to Pack for a Year in Japan</a></h3>
+        <div class="card-meta"><span>10 min</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <div class="card-header"><span class="card-cat">Budget</span></div>
+        <h3 class="card-title"><a href="../../research/guides/budget-guide.html">How Much Does a Japan Exchange Year Cost?</a></h3>
+        <div class="card-meta"><span>10 min</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-body">
+        <div class="card-header"><span class="card-cat">Food</span></div>
+        <h3 class="card-title"><a href="../../research/guides/konbini-guide.html">The Real Japanese Convenience Store Guide</a></h3>
+        <div class="card-meta"><span>8 min</span></div>
+      </div>
+    </article>
+  </div>
+</section>
