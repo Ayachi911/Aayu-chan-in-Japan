@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer — Ayachi in Japan</title>
+  <meta name="description" content="Disclaimer for Ayachi in Japan — accuracy, affiliate links, and editorial independence.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/global.css">
+  <style>
+    .legal-wrap { max-width: 720px; margin: 3.5rem auto; padding: 0 2rem 5rem; }
+    .legal-title { font-family: var(--display); font-size: 2rem; color: var(--ink); margin-bottom: 0.4rem; }
+    .legal-updated { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-muted); margin-bottom: 2.5rem; }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ayachi in Japan <span class="nav-logo-jp">日本留学記</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="essays.html">Essays</a></li>
+        <li><a href="categories.html">Topics</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-hamburger" id="menuToggle" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu">
+      <a href="../index.html">Home</a><a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </nav>
+</header>
+
+<main>
+  <div class="legal-wrap">
+    <h1 class="legal-title">Disclaimer</h1>
+    <p class="legal-updated">Last updated: January 2025</p>
+
+    <article class="prose">
+      <h2>Accuracy of Information</h2>
+      <p>The content on Ayachi in Japan is based on personal experience and research. While every effort is made to ensure accuracy, information — particularly regarding exchange programs, visa requirements, costs, schedules, and policies — changes over time. Content should be verified against official sources before making any decisions, especially for applications to exchange programs.</p>
+      <p>If you notice outdated or incorrect information, please <a href="contact.html">contact us</a>. Corrections are made as promptly as possible.</p>
+
+      <h2>Personal Opinion</h2>
+      <p>Essays and observations reflect personal experience and opinion. They are not intended as definitive statements about Japan, Japanese culture, or exchange programs generally. Cultural experiences vary significantly from person to person, and what was true for one exchange student in Yokohama in 2021 may not reflect the experience of others.</p>
+
+      <h2>Affiliate Links</h2>
+      <p>Some articles may contain affiliate links — links to products or services for which we may earn a small commission if you make a purchase, at no additional cost to you. Affiliate relationships do not influence editorial content. Recommendations are based on genuine experience and opinion. Affiliate links are disclosed where they appear.</p>
+
+      <h2>Advertising</h2>
+      <p>This site may display advertisements through Google AdSense or similar platforms. Advertisers do not influence editorial content. The presence of an advertisement does not constitute an endorsement of the advertised product or service.</p>
+
+      <h2>External Links</h2>
+      <p>Links to external websites are provided for convenience and informational purposes. We are not responsible for the content, accuracy, or privacy practices of external sites. Links do not imply endorsement.</p>
+
+      <h2>Not Professional Advice</h2>
+      <p>Nothing on this site constitutes legal, financial, medical, or professional advice of any kind. Content is informational only. Always consult appropriate professionals for specific advice relevant to your situation.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>Ayachi in Japan and its author shall not be liable for any losses or damages arising from the use of information on this site. Use of this site is at your own risk.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this disclaimer can be directed to the <a href="contact.html">contact page</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><p class="footer-name">Ayachi in Japan</p><p>Guides and observations from a year in Yokohama, Japan.</p></div>
+    <div><p class="footer-col-title">Guides</p><ul class="footer-links"><li><a href="guides.html">All Guides</a></li></ul></div>
+    <div><p class="footer-col-title">Legal</p><ul class="footer-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    <div><p class="footer-col-title">Site</p><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ayachi Samyal. All rights reserved.</span></div>
+</footer>
+<script>
+  const mt=document.getElementById('menuToggle'),mm=document.getElementById('mobileMenu');
+  mt.addEventListener('click',()=>{const o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+</script>
+</body>
+</html>

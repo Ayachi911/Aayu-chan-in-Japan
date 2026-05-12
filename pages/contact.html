@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ayachi in Japan</title>
+  <meta name="description" content="Get in touch with Ayachi Samyal — for questions about Japan exchange programs, corrections, or collaboration.">
+  <meta name="robots" content="index, follow">
+  <meta name="google-adsense-account" content="ca-pub-8953157466159181">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/global.css">
+  <style>
+    .contact-wrap { max-width: 640px; margin: 4rem auto; padding: 0 2rem 5rem; }
+    .contact-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; }
+    .contact-kicker::before { content: ''; display: inline-block; width: 16px; height: 1.5px; background: var(--terra); }
+    .contact-title { font-family: var(--display); font-size: 2.2rem; color: var(--ink); margin-bottom: 1rem; }
+    .contact-intro { font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2.5rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label { font-family: var(--sans); font-size: 0.78rem; font-weight: 500; color: var(--ink-mid); letter-spacing: 0.05em; }
+    .form-input, .form-textarea, .form-select {
+      font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
+      background: var(--paper); border: 1.5px solid var(--rule-dk);
+      border-radius: var(--r); padding: 0.7rem 0.9rem;
+      transition: border-color 0.15s; width: 100%;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none; border-color: var(--terra);
+    }
+    .form-textarea { resize: vertical; min-height: 140px; line-height: 1.65; }
+    .form-submit {
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.06em; color: #fff;
+      background: var(--terra); border: none; border-radius: var(--r);
+      padding: 0.8rem 2rem; cursor: pointer;
+      align-self: flex-start; transition: background 0.15s;
+    }
+    .form-submit:hover { background: var(--terra-lt); }
+    .contact-alt {
+      margin-top: 2.5rem; padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans); font-size: 0.84rem; color: var(--ink-soft);
+    }
+    .contact-alt a { color: var(--terra); }
+  </style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar" aria-hidden="true"></div>
+<header>
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ayachi in Japan <span class="nav-logo-jp">日本留学記</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="essays.html">Essays</a></li>
+        <li><a href="categories.html">Topics</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-search-btn" id="searchOpen"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Search</button>
+      <button class="nav-hamburger" id="menuToggle" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu">
+      <a href="../index.html">Home</a><a href="guides.html">Guides</a><a href="essays.html">Essays</a><a href="categories.html">Topics</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </nav>
+</header>
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <div class="search-box"><div class="search-input-wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--ink-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="searchInput" type="search" placeholder="Search…" autocomplete="off">
+    <button class="search-close" id="searchClose">×</button>
+  </div></div>
+</div>
+
+<main>
+  <div class="contact-wrap">
+    <p class="contact-kicker">Get in touch</p>
+    <h1 class="contact-title">Contact</h1>
+    <p class="contact-intro">For questions about Japan exchange programs, corrections to something I've written, media inquiries, or collaboration — use the form below. I read everything and reply when I can.</p>
+
+    <form class="contact-form" name="contact" method="POST" action="#" aria-label="Contact form">
+      <div class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="subject">Subject</label>
+        <select class="form-select" id="subject" name="subject">
+          <option value="">Select a reason…</option>
+          <option value="question">Question about Japan exchange</option>
+          <option value="correction">Correction or update</option>
+          <option value="media">Media / collaboration</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message…" required></textarea>
+      </div>
+      <button class="form-submit" type="submit">Send message</button>
+    </form>
+
+    <div class="contact-alt">
+      <p>Prefer email? Reach me at <a href="mailto:hello@ayachiinJapan.com">hello@ayachiinJapan.com</a> — replace with your actual address before publishing.</p>
+      <p style="margin-top:0.5rem;">Response time is typically a few days. I'm not always fast, but I do read everything.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><p class="footer-name">Ayachi in Japan</p><p>Guides and observations from a year in Yokohama, Japan.</p></div>
+    <div><p class="footer-col-title">Guides</p><ul class="footer-links"><li><a href="../research/guides/kakehashi-guide.html">Kakehashi Guide</a></li><li><a href="guides.html">All Guides →</a></li></ul></div>
+    <div><p class="footer-col-title">Publication</p><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    <div><p class="footer-col-title">Topics</p><ul class="footer-links"><li><a href="categories.html">All Topics</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ayachi Samyal. All rights reserved.</span></div>
+</footer>
+<script>
+  const mt=document.getElementById('menuToggle'),mm=document.getElementById('mobileMenu');
+  mt.addEventListener('click',()=>{const o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+  const sO=document.getElementById('searchOpen'),sC=document.getElementById('searchClose'),sOv=document.getElementById('searchOverlay'),sI=document.getElementById('searchInput');
+  sO.addEventListener('click',()=>{sOv.classList.add('open');sI.focus();});
+  sC.addEventListener('click',()=>sOv.classList.remove('open'));
+  sOv.addEventListener('click',e=>{if(e.target===sOv)sOv.classList.remove('open');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')sOv.classList.remove('open');});
+</script>
+</body>
+</html>

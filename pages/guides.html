@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Exchange Student Guides — Ayachi in Japan</title>
+  <meta name="description" content="Practical guides for Japan exchange students — Kakehashi application, packing lists, budget breakdowns, school life, konbini culture, and more. Written from a full year in Yokohama.">
+  <meta name="author" content="Ayachi Samyal">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Japan Exchange Student Guides — Ayachi in Japan">
+  <meta property="og:description" content="Practical guides from a 2021 Kakehashi scholar — packing, budgets, school life, konbini, and more.">
+  <meta property="og:type" content="website">
+  <meta name="google-adsense-account" content="ca-pub-8953157466159181">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/global.css">
+  <style>
+    .page-hero {
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule-dk);
+      padding: 3rem 0 2rem;
+    }
+    .page-hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+    .page-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; }
+    .page-kicker::before { content: ''; display: inline-block; width: 16px; height: 1.5px; background: var(--terra); }
+    .page-title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--ink); margin-bottom: 0.75rem; }
+    .page-desc { font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); line-height: 1.7; max-width: 580px; }
+    .guides-layout { max-width: var(--max-w); margin: 0 auto; padding: 2.5rem 2rem 5rem; display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: start; }
+    .guides-sidebar { position: sticky; top: 80px; }
+    .sidebar-block { background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 1.25rem; margin-bottom: 1.25rem; }
+    .sidebar-title { font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.9rem; }
+    .sidebar-links { list-style: none; display: flex; flex-direction: column; gap: 0.1rem; }
+    .sidebar-links a { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-mid); padding: 0.4rem 0.6rem; border-radius: var(--r); display: block; transition: background 0.15s, color 0.15s; }
+    .sidebar-links a:hover { background: var(--terra-pale); color: var(--terra); }
+    .guides-section { margin-bottom: 3rem; }
+    .guides-section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule-dk); }
+    .guides-section-title { font-family: var(--display); font-size: 1.2rem; color: var(--ink); }
+    .guides-count { font-family: var(--sans); font-size: 0.75rem; color: var(--ink-muted); }
+    @media (max-width: 900px) { .guides-layout { grid-template-columns: 1fr; } .guides-sidebar { position: static; } }
+  </style>
+</head>
+<body>
+<div class="reading-bar" id="readingBar" aria-hidden="true"></div>
+<header>
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ayachi in Japan <span class="nav-logo-jp">日本留学記</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="guides.html" class="active">Guides</a></li>
+        <li><a href="essays.html">Essays</a></li>
+        <li><a href="categories.html">Topics</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-search-btn" id="searchOpen"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Search</button>
+      <button class="nav-hamburger" id="menuToggle" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu">
+      <a href="../index.html">Home</a><a href="guides.html">Guides</a><a href="essays.html">Essays</a><a href="categories.html">Topics</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </nav>
+</header>
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <div class="search-box"><div class="search-input-wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--ink-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="searchInput" type="search" placeholder="Search guides…" autocomplete="off">
+    <button class="search-close" id="searchClose">×</button>
+  </div></div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-kicker">All Guides</p>
+      <h1 class="page-title">Japan Exchange Student Guides</h1>
+      <p class="page-desc">Practical, experience-backed guides from a full year in Yokohama. No filler, no guessing — everything here was tested in real life.</p>
+    </div>
+  </section>
+
+  <div class="guides-layout">
+    <div>
+      <!-- Exchange Programs -->
+      <section class="guides-section" id="exchange">
+        <div class="guides-section-head">
+          <h2 class="guides-section-title">Exchange Programs</h2>
+          <span class="guides-count">4 guides</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <a href="../research/guides/kakehashi-guide.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Exchange Programs</span></div>
+              <h3 class="card-title"><a href="../research/guides/kakehashi-guide.html">Asia Kakehashi Project — Complete Guide for Indian Students (2026)</a></h3>
+              <p class="card-desc">Application process, essay strategy, interview prep, and what a full year in a Japanese high school actually looks like.</p>
+              <div class="card-meta"><span>18 min</span><span>·</span><span>Updated 2026</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/japan-exchange-survival-guide.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Exchange Programs</span></div>
+              <h3 class="card-title"><a href="../research/guides/japan-exchange-survival-guide.html">The Japan Exchange Survival Guide I Wish I Had at 16</a></h3>
+              <p class="card-desc">Everything no one tells you before you fly — host family etiquette, school culture, loneliness, and how to actually enjoy yourself.</p>
+              <div class="card-meta"><span>15 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/packing-guide.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Packing</span></div>
+              <h3 class="card-title"><a href="../research/guides/packing-guide.html">What to Pack for a Year in Japan — Tested List</a></h3>
+              <p class="card-desc">What to bring, what to skip, what to buy once you're there. Tested over a full year in Yokohama.</p>
+              <div class="card-meta"><span>10 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/budget-guide.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Budget</span></div>
+              <h3 class="card-title"><a href="../research/guides/budget-guide.html">How Much Does a Japan Exchange Year Actually Cost?</a></h3>
+              <p class="card-desc">Real budget breakdown — program coverage, monthly costs, international transfers, and what surprised me most.</p>
+              <div class="card-meta"><span>10 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- School Life -->
+      <section class="guides-section" id="school">
+        <div class="guides-section-head">
+          <h2 class="guides-section-title">School Life</h2>
+          <span class="guides-count">2 guides</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <a href="../research/guides/day-in-japanese-school.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">School Life</span></div>
+              <h3 class="card-title"><a href="../research/guides/day-in-japanese-school.html">A Full Day in a Japanese High School: What Exchange Students Actually Experience</a></h3>
+              <p class="card-desc">Period by period — from 7am shokupan to kyudo club at 5pm. Written from Hiranuma High School, Yokohama.</p>
+              <div class="card-meta"><span>12 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/Train.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Daily Life</span></div>
+              <h3 class="card-title"><a href="../research/guides/Train.html">Japanese High School Commute: What It's Actually Like as an Exchange Student</a></h3>
+              <p class="card-desc">IC cards, rush hour trains, station routines — the commute nobody writes about.</p>
+              <div class="card-meta"><span>8 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Food -->
+      <section class="guides-section" id="food">
+        <div class="guides-section-head">
+          <h2 class="guides-section-title">Food &amp; Konbini</h2>
+          <span class="guides-count">4 guides</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <a href="../research/guides/konbini-guide.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Food</span></div>
+              <h3 class="card-title"><a href="../research/guides/konbini-guide.html">The Real Japanese Convenience Store Guide (From Someone Who Lived On Them)</a></h3>
+              <p class="card-desc">What to actually buy at 7-Eleven, FamilyMart &amp; Lawson in Japan — tested daily as an exchange student.</p>
+              <div class="card-meta"><span>8 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/Bento.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Food</span></div>
+              <h3 class="card-title"><a href="../research/guides/Bento.html">What My Host Mom Actually Packed in My Bento</a></h3>
+              <p class="card-desc">Components, etiquette, and how to navigate bento culture as an exchange student.</p>
+              <div class="card-meta"><span>9 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/host-family-dinners.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Food</span></div>
+              <h3 class="card-title"><a href="../research/guides/host-family-dinners.html">Nine Dinners My Japanese Host Family Made Me</a></h3>
+              <p class="card-desc">From welcome miso to toshikoshi soba on New Year's Eve — a year of host family dinners, dish by dish.</p>
+              <div class="card-meta"><span>10 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/what-1000-yen-buys.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Budget / Food</span></div>
+              <h3 class="card-title"><a href="../research/guides/what-1000-yen-buys.html">What Can You Buy With 1000 Yen in Japan?</a></h3>
+              <p class="card-desc">Exactly what ¥1000 gets you — konbini hauls, takoyaki, secondhand manga, matching keychains. Real spending from Yokohama.</p>
+              <div class="card-meta"><span>7 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Culture -->
+      <section class="guides-section" id="culture">
+        <div class="guides-section-head">
+          <h2 class="guides-section-title">Culture &amp; Moments</h2>
+          <span class="guides-count">2 guides</span>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <a href="../research/guides/Strobby-festival.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Culture</span></div>
+              <h3 class="card-title"><a href="../research/guides/Strobby-festival.html">I Spent 800 Yen at the Yokohama Strawberry Festival</a></h3>
+              <p class="card-desc">The Akarengasoko strawberry festival and why it permanently changed how I understand fruit.</p>
+              <div class="card-meta"><span>6 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <a href="../research/guides/last-day-japan.html" tabindex="-1" aria-hidden="true"><div class="card-img"><div class="card-img-placeholder">Upload cover image</div></div></a>
+            <div class="card-body">
+              <div class="card-header"><span class="card-cat">Culture</span></div>
+              <h3 class="card-title"><a href="../research/guides/last-day-japan.html">My Last Day in Japan: Shibuya, Harajuku, and Goodbye</a></h3>
+              <p class="card-desc">Shibuya Sky from the 46th floor, Marion Crepes in Harajuku, and crying on a metro at 7pm.</p>
+              <div class="card-meta"><span>9 min</span><span>·</span><span>2025</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="guides-sidebar">
+      <div class="sidebar-block">
+        <p class="sidebar-title">Jump to topic</p>
+        <ul class="sidebar-links">
+          <li><a href="#exchange">Exchange Programs</a></li>
+          <li><a href="#school">School Life</a></li>
+          <li><a href="#food">Food &amp; Konbini</a></li>
+          <li><a href="#culture">Culture &amp; Moments</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sidebar-title">Start here</p>
+        <ul class="sidebar-links">
+          <li><a href="../research/guides/kakehashi-guide.html">→ Kakehashi Guide</a></li>
+          <li><a href="../research/guides/packing-guide.html">→ Packing List</a></li>
+          <li><a href="../research/guides/budget-guide.html">→ Budget Guide</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sidebar-title">Also read</p>
+        <ul class="sidebar-links">
+          <li><a href="essays.html">→ Essays</a></li>
+          <li><a href="about.html">→ About this site</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><p class="footer-name">Ayachi in Japan</p><p>Guides and observations from a year in Yokohama, Japan.</p></div>
+    <div><p class="footer-col-title">Guides</p><ul class="footer-links"><li><a href="../research/guides/kakehashi-guide.html">Kakehashi Guide</a></li><li><a href="../research/guides/packing-guide.html">Packing List</a></li><li><a href="../research/guides/konbini-guide.html">Konbini Guide</a></li></ul></div>
+    <div><p class="footer-col-title">Publication</p><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    <div><p class="footer-col-title">Topics</p><ul class="footer-links"><li><a href="categories.html#exchange">Exchange Programs</a></li><li><a href="categories.html#food">Food</a></li><li><a href="categories.html#culture">Culture</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Ayachi Samyal. All rights reserved.</span><span>Written from Yokohama &amp; Ludhiana</span></div>
+</footer>
+<script>
+  const mt=document.getElementById('menuToggle'),mm=document.getElementById('mobileMenu');
+  mt.addEventListener('click',()=>{const o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
+  const sO=document.getElementById('searchOpen'),sC=document.getElementById('searchClose'),sOv=document.getElementById('searchOverlay'),sI=document.getElementById('searchInput');
+  sO.addEventListener('click',()=>{sOv.classList.add('open');sI.focus();});
+  sC.addEventListener('click',()=>sOv.classList.remove('open'));
+  sOv.addEventListener('click',e=>{if(e.target===sOv)sOv.classList.remove('open');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')sOv.classList.remove('open');});
+</script>
+</body>
+</html>
